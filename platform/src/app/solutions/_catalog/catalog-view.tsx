@@ -63,7 +63,7 @@ export function CatalogView() {
               </div>
               <div className="mt-4 grid grid-cols-3 gap-4 max-xl:grid-cols-2 max-md:grid-cols-1">
                 {items.map((s, i) => (
-                  <motion.div key={s.slug} initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.04 }}>
+                  <motion.div key={s.slug} initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.04 }}>
                     <Link
                       href={solutionPath(s)}
                       className="group flex h-full flex-col rounded-lg border border-border bg-card p-5 transition-all hover:border-border-strong hover:shadow-[0_2px_18px_rgba(0,0,0,0.05)]"

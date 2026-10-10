@@ -5,7 +5,7 @@ import { chatStream } from "@/lib/ai/client";
 import { langName } from "@/lib/ai/request";
 import type { Emitter } from "@/lib/ai/stream";
 import type { Citation } from "@/lib/ai/events";
-import { search, type SearchHit } from "@/lib/retrieval";
+import { listDocs, search, type SearchHit } from "@/lib/retrieval";
 import { LIB, SOL, excerpt, pool, verifyQuote } from "./server";
 import { mergeStatus, requirementCheck, validityEnd, fmt, addWorkingDays } from "./compliance";
 import { claimSentences } from "./sentences";
@@ -19,6 +19,7 @@ import {
   type Coverage,
   type CoverageStatus,
   type EvidenceRef,
+  type FormRecord,
   type ReqCategory,
   type Requirement,
   type TeamMember,
@@ -145,10 +146,11 @@ export async function extractRequirements(
     items.push({
       id,
       ref: r.ref,
-      category: normCategory(r.category, id),
+      // For the coded MNDA RFP the chapter structure is authoritative (§4.1 = pass/fail, prefixes = categories).
+      category: opts.custom ? normCategory(r.category, id) : normCategory("", id),
       title: r.title,
       text: r.text,
-      mandatory: r.mandatory || id.startsWith("M-"),
+      mandatory: opts.custom ? r.mandatory : id.startsWith("M-"),
       evidenceNeeded: r.evidenceNeeded,
       section: opts.sectionOf?.(id) ?? null,
     });
@@ -195,7 +197,14 @@ function toRef(h: SearchHit, quote?: string): EvidenceRef {
 
 export async function mapEvidence(
   ctx: Ctx,
-  opts: { requirements: Requirement[]; seed: BidSeed; certs: CertificateRecord[]; computeChecks: boolean; onBatch: (entries: Coverage[]) => void },
+  opts: {
+    requirements: Requirement[];
+    seed: BidSeed;
+    certs: CertificateRecord[];
+    forms: FormRecord[];
+    computeChecks: boolean;
+    onBatch: (entries: Coverage[]) => void;
+  },
 ): Promise<Coverage[]> {
   const { emit, lang, modelKey } = ctx;
   const { requirements, seed } = opts;
@@ -214,6 +223,7 @@ export async function mapEvidence(
     "- met: the passages evidence every element of the requirement, including numeric thresholds, frequencies, dates and named documents.",
     "- partial: some elements are evidenced, or the evidence is weaker than required (e.g. quarterly instead of monthly, no committed target, shared rather than dedicated role).",
     "- missing: no passage evidences the requirement.",
+    "Judge the substance, not the paperwork: a procedure, plan or capability described in an approved document counts as evidence of it; narrative requirements (e.g. understanding of scope) are met when the library holds the facts needed to write them. Bid-specific forms, priced schedules and bank guarantees are tracked in a separate register — judge them only on what the passages show.",
     `Key dates: tender closing date ${fmt(seed.tender.closing)}; bid validity ends ${fmt(validityEnd(seed))}. A certificate or policy that expires before the date the requirement needs is NOT valid evidence.`,
     "For each requirement return: id; status; confidence 0–1; passages: ids of the passages relied on (e.g. [\"P2\"]); quote: ONE sentence copied verbatim from the strongest passage (max 35 words, \"\" if missing); rationale: one sentence; gap: what is missing or weaker than required (null if met).",
     `Write rationale and gap in ${langName(lang)}.`,
@@ -254,7 +264,7 @@ export async function mapEvidence(
         .map((p) => hs[Number(p.replace(/\D/g, "")) - 1])
         .filter(Boolean) as SearchHit[];
       const evidence = (used.length ? used : aiStatus === "missing" ? [] : hs.slice(0, 1)).map((h, i) => toRef(h, i === 0 ? res?.quote : undefined));
-      const check = opts.computeChecks ? requirementCheck(seed, r.id, opts.certs) : null;
+      const check = opts.computeChecks ? requirementCheck(seed, r.id, opts.certs, opts.forms) : null;
       entries.push({
         reqId: r.id,
         aiStatus,
@@ -286,12 +296,14 @@ export async function mapEvidence(
 /* ════════════════ 3. Section drafting ════════════════ */
 
 export function gatherSources(requirements: Requirement[], extra: Array<{ docId: string; title: string; section: string; text: string }>): Citation[] {
+  // Internal-only records (e.g. KPI extracts) inform the claim check but are never quoted in a client-facing response.
+  const internal = new Set(listDocs(LIB).filter((d) => /internal/i.test(String(d.classification ?? ""))).map((d) => d.id));
   const seen = new Set<string>();
   const hits: SearchHit[] = [];
   for (const r of requirements) {
-    for (const h of search(LIB, [r.title, r.text, r.evidenceNeeded], 4)) {
+    for (const h of search(LIB, [r.title, r.text, r.evidenceNeeded], 5)) {
       const key = `${h.docId}|${h.section}`;
-      if (seen.has(key)) continue;
+      if (seen.has(key) || internal.has(h.docId)) continue;
       seen.add(key);
       hits.push(h);
     }

@@ -22,6 +22,20 @@ const STATS_KEY = `${SOLUTION}:stats`;
 export const HR_SERVICES = { name: "Latifa Khamis Al Romaithi", title: "Senior HR Services Officer" };
 export const IT_DESK = { name: "Yousef Ibrahim Al Hosani", title: "IT Service Desk Lead" };
 
+/** Arabic forms of approver names, so Arabic replies never transliterate badly. */
+export const NAMES_AR: Record<string, string> = {
+  "Latifa Khamis Al Romaithi": "لطيفة خميس الرميثي",
+  "Yousef Ibrahim Al Hosani": "يوسف إبراهيم الحوسني",
+  "Eng. Hamad Juma Al Kaabi": "م. حمد جمعة الكعبي",
+  "Eng. Layla Ahmed Al Marzooqi": "م. ليلى أحمد المرزوقي",
+  "Eng. Omar Yousef Al Hammadi": "م. عمر يوسف الحمادي",
+  "Hessa Abdulla Al Suwaidi": "حصة عبدالله السويدي",
+  "Sara Ahmed Al Blooshi": "سارة أحمد البلوشي",
+  "Mariam Saeed Al Kaabi": "مريم سعيد الكعبي",
+  "Fatima Obaid Al Nuaimi": "فاطمة عبيد النعيمي",
+  "Maryam Hassan Al Shamsi": "مريم حسن الشامسي",
+};
+
 /* ───────────── Dates (UAE working week Mon–Fri) ───────────── */
 
 const TODAY = new Date(`${DEMO_TODAY}T09:00:00+04:00`);
@@ -143,8 +157,9 @@ export function profileFacts(e: Employee) {
     email: e.email,
     workPattern: e.workPattern,
     location: e.location,
-    lineManager: e.manager,
-    director: e.director,
+    lineManager: { ...e.manager, arabicName: NAMES_AR[e.manager.name] ?? null },
+    director: { ...e.director, arabicName: NAMES_AR[e.director.name] ?? null },
+    nameArabic: e.nameAr,
     annualLeave: { entitlement: e.leave.entitlement, taken: e.leave.taken, pendingApproval: e.leave.pending, remaining, sickDaysTaken: e.leave.sickTaken },
     remoteWork: {
       roleIsRemoteEligible: e.remoteEligible,

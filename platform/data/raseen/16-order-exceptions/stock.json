@@ -1,0 +1,156 @@
+{
+  "asOf": "2026-10-09T18:00:00+04:00",
+  "note": "On hand per warehouse at end of day Fri 9 Oct 2026 (after the day's dispatches). Reserved = not available to promise (QC hold, offcuts, damaged).",
+  "items": [
+    {
+      "sku": "RB-B500-12",
+      "warehouse": "JA",
+      "onHand": 186.4,
+      "reserved": 0
+    },
+    {
+      "sku": "RB-B500-12",
+      "warehouse": "MN05",
+      "onHand": 74.2,
+      "reserved": 0
+    },
+    {
+      "sku": "RB-B500-16",
+      "warehouse": "JA",
+      "onHand": 116,
+      "reserved": 8,
+      "reservedReason": "Short-length offcuts (6–9 m) — not saleable as 12 m bars"
+    },
+    {
+      "sku": "RB-B500-16",
+      "warehouse": "MN05",
+      "onHand": 140.5,
+      "reserved": 12.5,
+      "reservedReason": "QC hold — mill certificate for heat SRM-26-4471 pending"
+    },
+    {
+      "sku": "RB-B500-20",
+      "warehouse": "JA",
+      "onHand": 9.5,
+      "reserved": 3.5,
+      "reservedReason": "Bent bars from yard handling — inspection"
+    },
+    {
+      "sku": "RB-B500-20",
+      "warehouse": "MN05",
+      "onHand": 30,
+      "reserved": 0
+    },
+    {
+      "sku": "RB-B500-25",
+      "warehouse": "JA",
+      "onHand": 142.3,
+      "reserved": 0
+    },
+    {
+      "sku": "RB-B500-25",
+      "warehouse": "MN05",
+      "onHand": 58,
+      "reserved": 0
+    },
+    {
+      "sku": "CEM-OPC-50",
+      "warehouse": "JA",
+      "onHand": 16240,
+      "reserved": 120,
+      "reservedReason": "Torn bags — write-off pending"
+    },
+    {
+      "sku": "CEM-OPC-50",
+      "warehouse": "MN05",
+      "onHand": 11640,
+      "reserved": 0
+    },
+    {
+      "sku": "CEM-SRC-50",
+      "warehouse": "JA",
+      "onHand": 2360,
+      "reserved": 0
+    },
+    {
+      "sku": "CEM-SRC-50",
+      "warehouse": "MN05",
+      "onHand": 8120,
+      "reserved": 0
+    },
+    {
+      "sku": "BLK-HOL-20",
+      "warehouse": "JA",
+      "onHand": 38700,
+      "reserved": 450,
+      "reservedReason": "Chipped blocks — return to factory"
+    },
+    {
+      "sku": "BLK-HOL-20",
+      "warehouse": "MN05",
+      "onHand": 41850,
+      "reserved": 0
+    },
+    {
+      "sku": "TIL-POR-60120",
+      "warehouse": "JA",
+      "onHand": 2736,
+      "reserved": 0
+    },
+    {
+      "sku": "TIL-POR-60120",
+      "warehouse": "MN05",
+      "onHand": 1152,
+      "reserved": 0
+    },
+    {
+      "sku": "TIL-CER-3060",
+      "warehouse": "JA",
+      "onHand": 3456,
+      "reserved": 0
+    },
+    {
+      "sku": "TIL-CER-3060",
+      "warehouse": "MN05",
+      "onHand": 864,
+      "reserved": 0
+    },
+    {
+      "sku": "SAN-WC-WH",
+      "warehouse": "JA",
+      "onHand": 84,
+      "reserved": 2,
+      "reservedReason": "Damaged cisterns — supplier claim"
+    },
+    {
+      "sku": "SAN-WC-WH",
+      "warehouse": "MN05",
+      "onHand": 78,
+      "reserved": 0
+    },
+    {
+      "sku": "WPF-BIT-4",
+      "warehouse": "JA",
+      "onHand": 268,
+      "reserved": 0
+    },
+    {
+      "sku": "WPF-BIT-4",
+      "warehouse": "MN05",
+      "onHand": 412,
+      "reserved": 0
+    },
+    {
+      "sku": "PNT-TS-20",
+      "warehouse": "JA",
+      "onHand": 0,
+      "reserved": 0
+    },
+    {
+      "sku": "PNT-TS-20",
+      "warehouse": "MN05",
+      "onHand": 0,
+      "reserved": 0
+    }
+  ]
+}

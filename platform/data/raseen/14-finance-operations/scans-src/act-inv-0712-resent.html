@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><title>ACT/INV/26/0712</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; width: 1240px; height: 1754px; overflow: hidden; background: #d9d6cf; }
+  .page {
+    position: absolute; left: 30px; top: 26px; width: 1180px; height: 1700px; background: #fbfaf6;
+    transform: rotate(-0.3deg); transform-origin: 50% 40%;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 2px 10px rgba(0,0,0,.12);
+    font-family: Georgia, 'Times New Roman', serif; color: #1d1d1b; font-size: 17px; padding: 56px 64px 40px;
+  }
+  .grain { position:absolute; inset:0; background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.36  0 0 0 0 0.33  0 0 0 0 0.28  0 0 0 0.10 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); pointer-events:none; mix-blend-mode:multiply; opacity:.9; }
+  .shade { position:absolute; inset:0; pointer-events:none; background: radial-gradient(ellipse at 50% 45%, rgba(255,255,255,0) 60%, rgba(120,110,95,.10) 100%); }
+  .ar { font-family: Tahoma, 'Segoe UI', sans-serif; direction: rtl; }
+  .lh { display:flex; align-items:center; gap:24px; padding-bottom:16px; }
+  .lh-names { flex:1; }
+  .lh-en { font-family:Georgia, serif; font-size:33px; font-weight:700; letter-spacing:.3px; }
+  .lh-ar { font-family: Tahoma, 'Segoe UI', sans-serif; font-size:24px; font-weight:700; color:#333; direction:rtl; text-align:left; margin:2px 0 6px; }
+  .lh-line { font-size:14.5px; color:#444; line-height:1.45; }
+  .lh-trn { text-align:right; font-size:14px; color:#444; border:1.5px solid #bbb; padding:8px 12px; }
+  .lh-trn b { font-size:18px; color:#111; letter-spacing:.5px; }
+  .title { margin:22px 0 18px; padding:10px 18px; display:flex; justify-content:space-between; align-items:center; font-weight:700; }
+  .t-en { font-size:28px; letter-spacing:4px; }
+  .t-ar { font-family: Tahoma, 'Segoe UI', sans-serif; font-size:27px; }
+  .blocks { display:flex; gap:26px; }
+  .party { flex:1.15; border:1.5px solid #c9c6be; padding:14px 16px; font-size:16px; line-height:1.5; }
+  .party .h { font-size:13px; text-transform:uppercase; letter-spacing:1.5px; color:#666; margin-bottom:4px; }
+  .party .nm { font-weight:700; font-size:17.5px; }
+  .meta { flex:1; border-collapse:collapse; font-size:15.5px; }
+  .meta td { border:1.5px solid #c9c6be; padding:6px 10px; vertical-align:top; }
+  .meta .mk { color:#555; width:47%; white-space:nowrap; }
+  .meta .mk .ar { font-size:13px; color:#777; }
+  table.items { width:100%; border-collapse:collapse; margin-top:24px; font-size:16px; }
+  table.items th { background:#1f3352; color:#fff; padding:9px 8px; font-size:14px; text-align:left; border:1.5px solid #1f3352; }
+  table.items th .ar { display:block; font-size:12.5px; font-weight:400; opacity:.9; }
+  table.items td { border:1.5px solid #c9c6be; padding:9px 8px; vertical-align:top; }
+  table.items tr.empty td { height:38px; }
+  .c { text-align:center; } .r { text-align:right; white-space:nowrap; }
+  .code { font-family: Consolas, 'Courier New', monospace; font-size:14.5px; white-space:nowrap; }
+  .sub { font-size:13px; color:#666; margin-top:2px; }
+  .bottom { display:flex; gap:28px; margin-top:20px; }
+  .words { flex:1.2; font-size:15.5px; line-height:1.55; }
+  .words .lbl { font-size:13px; text-transform:uppercase; letter-spacing:1.4px; color:#666; }
+  .tot { flex:1; border-collapse:collapse; font-size:16.5px; align-self:flex-start; }
+  .tot td { border:1.5px solid #c9c6be; padding:7px 10px; }
+  .tot .tl { color:#333; } .tot .tl .ar { font-size:13px; color:#777; }
+  .tot .tv { text-align:right; white-space:nowrap; width:42%; }
+  .tot tr.grand td { background:#efece4; font-weight:700; font-size:19px; border-top:3px double #555; }
+  .bank { margin-top:22px; border:1.5px dashed #bdb9b0; padding:12px 16px; font-size:15px; line-height:1.6; }
+  .bank b { font-family: Consolas, 'Courier New', monospace; font-size:16px; letter-spacing:.5px; }
+  .notes { margin-top:14px; font-size:14px; color:#555; line-height:1.5; }
+  .sigrow { position:relative; margin-top:96px; display:flex; justify-content:space-between; align-items:flex-end; }
+  .sigbox { width:380px; font-size:14.5px; color:#444; position:relative; }
+  .sigbox .line { border-top:1.5px solid #555; padding-top:6px; }
+  .sig { position:absolute; left:20px; bottom:30px; }
+  .stamp { position:absolute; left:210px; bottom:-30px; }
+  .recvbox { width:340px; font-size:14.5px; color:#444; position:relative; }
+  .recvbox .line { border-top:1.5px solid #555; padding-top:6px; }
+  .foot { position:absolute; left:64px; right:64px; bottom:40px; border-top:3px solid #1f3352; padding-top:10px; font-size:13px; color:#555; display:flex; justify-content:space-between; }
+  .rcv { position:absolute; right:18px; bottom:52px; border:3px solid #b3261e; color:#b3261e; padding:8px 14px; transform:rotate(-7deg); opacity:.78; font-family: 'Courier New', monospace; font-weight:700; text-align:center; letter-spacing:1px; background:transparent; }
+  .rcv-t { font-size:13px; } .rcv-b { font-size:14px; border-bottom:2px solid #b3261e; padding-bottom:3px; margin-bottom:3px; } .rcv-d { font-size:24px; letter-spacing:2px; } .rcv-s { font-size:12px; margin-top:2px; }
+  .rcv-s span { font-family: 'Segoe Script', 'Brush Script MT', cursive; font-size:18px; color:#1d2c6b; }
+  .fll-head { border:2px solid #1e5fbf; padding:16px 20px; background:#f2f6fd; }
+  .fll-name { font-size:34px; font-weight:700; color:#1e5fbf; letter-spacing:1px; }
+  .fll-ar { font-family: Tahoma, sans-serif; font-size:22px; color:#1e3a7a; }
+  .fll-sub { font-style:italic; color:#555; font-size:15px; margin:2px 0 6px; }
+  .fll-line { font-size:15px; color:#333; }
+  .trips { margin-top:12px; font-size:14px; color:#333; line-height:1.5; }
+  .terms { position:absolute; left:64px; right:64px; bottom:96px; font-size:12.5px; color:#666; line-height:1.5; border-top:1px solid #d6d2c8; padding-top:8px; }
+  .fold { position:absolute; left:0; right:0; top:566px; height:1px; background:rgba(0,0,0,.06); box-shadow: 0 1px 0 rgba(255,255,255,.6); }
+</style></head>
+<body>
+<div class="page">
+  <div class="lh" style="border-bottom:5px solid #1f3352">
+         <div class="logo"><svg width="96" height="96" viewBox="0 0 96 96"><g fill="none" stroke="#1f3352" stroke-width="3.5"><rect x="20" y="20" width="56" height="56"/><rect x="20" y="20" width="56" height="56" transform="rotate(45 48 48)"/><circle cx="48" cy="48" r="13"/></g><circle cx="48" cy="48" r="5" fill="#1f3352"/></svg></div>
+         <div class="lh-names">
+           <div class="lh-en" style="color:#1f3352">Andalus Ceramics Trading LLC</div>
+           <div class="lh-ar">الأندلس لتجارة السيراميك ذ.م.م</div>
+           <div class="lh-line">Showroom 3, Al Quoz 1, Dubai · Warehouse: Al Quoz Industrial 4 · P.O. Box 118204, Dubai, U.A.E.</div><div class="lh-line">T +971 4 347 2290 · accounts@andalusceramics.ae · andalusceramics.ae</div>
+         </div>
+         <div class="lh-trn">TRN<br/><b>100259038400003</b></div>
+       </div>
+  <div class="title" style="background:#1f3352;color:#fff">
+      <span class="t-ar">فاتورة ضريبية</span><span class="t-en">TAX INVOICE</span>
+    </div>
+  <div class="blocks">
+    <div class="party">
+      <div class="h">Bill to · فاتورة إلى</div>
+      <div class="nm">Raseen Building Materials Trading LLC</div>
+      <div class="ar" style="text-align:left">رصين لتجارة مواد البناء ذ.م.م</div>
+      <div>Raseen Building, Al Quoz Industrial 3, Dubai, UAE</div>
+      <div>TRN: <b>100274910600003</b></div>
+      <div style="margin-top:6px"><span class="h">Deliver to:</span> RBM Jebel Ali — Plot S30214, Jebel Ali Industrial, Dubai</div>
+    </div>
+    <table class="meta"><tr><td class="mk">Invoice No. <span class="ar">رقم الفاتورة</span></td><td class="mv"><b>ACT/INV/26/0712</b></td></tr><tr><td class="mk">Invoice Date <span class="ar">تاريخ الفاتورة</span></td><td class="mv">22-Sep-2026</td></tr><tr><td class="mk">Customer PO <span class="ar">أمر الشراء</span></td><td class="mv"><b>RBM-PO-26-04394</b></td></tr><tr><td class="mk">Delivery Note <span class="ar">إشعار التسليم</span></td><td class="mv">ACT-DO-26-2290</td></tr><tr><td class="mk">Your GRN <span class="ar">إشعار الاستلام</span></td><td class="mv">GRN-26-08386</td></tr><tr><td class="mk">Payment Terms <span class="ar">شروط الدفع</span></td><td class="mv">60 days from invoice date</td></tr><tr><td class="mk">Due Date <span class="ar">تاريخ الاستحقاق</span></td><td class="mv">21/11/2026</td></tr></table>
+  </div>
+  <table class="items">
+    <thead><tr>
+      <th style="width:44px">#</th><th style="width:150px">Item code<span class="ar">رمز الصنف</span></th><th>Description<span class="ar">الوصف</span></th>
+      <th style="width:120px;text-align:right">Qty<span class="ar">الكمية</span></th><th style="width:70px">Unit<span class="ar">الوحدة</span></th>
+      <th style="width:120px;text-align:right">Rate (AED)<span class="ar">السعر</span></th><th style="width:150px;text-align:right">Amount (AED)<span class="ar">المبلغ</span></th>
+    </tr></thead>
+    <tbody><tr>
+        <td class="c">1</td>
+        <td class="code">TIL-CER-3060</td>
+        <td>Ceramic wall tile 30×60 gloss white — 'Bianco Lucido'<div class="sub">800 boxes × 1.44 m²</div></td>
+        <td class="r">1,152</td>
+        <td class="c">m²</td>
+        <td class="r">22.40</td>
+        <td class="r">25,804.80</td>
+      </tr><tr class="empty"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="empty"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="empty"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr class="empty"><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody>
+  </table>
+  
+  <div class="bottom">
+    <div class="words">
+      <div class="lbl">Amount in words · المبلغ كتابةً</div>
+      <div><b>UAE Dirhams Twenty-Seven Thousand Ninety-Five and Four Fils Only</b></div>
+      <div class="notes">Goods once sold will not be taken back. Please quote invoice number with remittance.</div>
+    </div>
+    <table class="tot"><tr><td class="tl">Sub-total<span class="ar"> المجموع الفرعي</span></td><td class="tv">25,804.80</td></tr><tr><td class="tl">VAT @ 5%<span class="ar"> ضريبة القيمة المضافة</span></td><td class="tv">1,290.24</td></tr><tr class="grand"><td class="tl">TOTAL AED<span class="ar"> الإجمالي</span></td><td class="tv">27,095.04</td></tr></table>
+  </div>
+  <div class="bank">
+    Bank: Marsa Commercial Bank PJSC — Al Quoz<br/>Account name: Andalus Ceramics Trading LLC<br/>IBAN: <b>AE68 0360 0000 2590 3840 114</b> &nbsp;·&nbsp; SWIFT: <b>MCBPAEAD</b> &nbsp;·&nbsp; Currency: AED
+  </div>
+  <div class="sigrow">
+    <div class="sigbox"><svg class="sig" width="250" height="84" viewBox="0 0 250 84"><path d="M14 62 C 26 26, 36 22, 44 40 C 52 58, 60 66, 72 30 C 80 8, 96 12, 98 40 C 100 62, 120 60, 138 36 C 152 20, 168 30, 160 50 C 154 64, 186 54, 214 34" fill="none" stroke="#1d2c6b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/><path d="M40 70 C 90 64, 150 66, 210 60" fill="none" stroke="#1d2c6b" stroke-width="1.6" opacity="0.7"/></svg><svg class="stamp" width="190" height="190" viewBox="0 0 200 200" style="transform:rotate(-14deg)">
+  <defs>
+    <path id="topsd18n" d="M 28 100 A 72 72 0 0 1 172 100" />
+    <path id="botsd18n" d="M 34 104 A 66 66 0 0 0 166 104" />
+    <filter id="inksd18n"><feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="2" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.35" result="m"/><feComposite in="SourceGraphic" in2="m" operator="in"/></filter>
+  </defs>
+  <g fill="none" stroke="#22408f" filter="url(#inksd18n)" opacity="0.82">
+    <circle cx="100" cy="100" r="94" stroke-width="4"/>
+    <circle cx="100" cy="100" r="86" stroke-width="1.6"/>
+    <circle cx="100" cy="100" r="48" stroke-width="1.6"/>
+    <g fill="#22408f" stroke="none" font-family="Arial, sans-serif" font-weight="700">
+      <text font-size="13.5" letter-spacing="1.2"><textPath href="#topsd18n" startOffset="50%" text-anchor="middle">ANDALUS CERAMICS TRADING L.L.C</textPath></text>
+      <text font-size="15" font-family="Tahoma, 'Segoe UI', sans-serif"><textPath href="#botsd18n" startOffset="50%" text-anchor="middle">الأندلس لتجارة السيراميك ذ.م.م</textPath></text>
+      <text x="100" y="96" font-size="12" text-anchor="middle">DUBAI</text>
+      <text x="100" y="114" font-size="11" text-anchor="middle">U.A.E.</text>
+      <text x="22" y="106" font-size="16">★</text><text x="164" y="106" font-size="16">★</text>
+    </g>
+  </g>
+</svg><div class="line">For Andalus Ceramics Trading LLC<br/>Authorised Signatory · التوقيع المعتمد</div></div>
+    <div class="recvbox"><div class="rcv">
+    <div class="rcv-t">RASEEN BUILDING MATERIALS</div>
+    <div class="rcv-b">ACCOUNTS PAYABLE — RECEIVED</div>
+    <div class="rcv-d">23 SEP 2026</div>
+    <div class="rcv-s">Sign: <span>DM</span> &nbsp; Batch: SEP-26</div>
+  </div><div class="line">Received by (name, sign &amp; stamp)<br/>المستلم</div></div>
+  </div>
+  <div class="terms"><b>Terms &amp; conditions</b> — 1. Title to the goods passes on full payment. 2. Discrepancies must be notified in writing within 48 hours of delivery, quoting the delivery note. 3. Late payment may attract suspension of credit. 4. This is a tax invoice issued under UAE Federal Decree-Law No. 8 of 2017 on VAT.</div>
+  <div class="foot">
+    <span>Andalus Ceramics Trading LLC · TRN 100259038400003</span>
+    <span>Page 1 of 1</span>
+  </div>
+  <div class="fold"></div>
+  <div class="grain"></div><div class="shade"></div>
+</div>
+</body></html>

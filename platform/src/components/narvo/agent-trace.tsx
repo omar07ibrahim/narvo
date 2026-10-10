@@ -39,7 +39,7 @@ function Row({ item }: { item: TraceItem }) {
   return (
     <motion.li
       layout
-      initial={{ opacity: 0, y: 4 }}
+      initial={{ opacity: 1, y: 4 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.22 }}
       className="relative ps-7"

@@ -532,7 +532,7 @@ const rendered = [];
 for (const d of invoices) {
   if (!d.image) continue;
   const name = path.basename(d.image, ".png");
-  const po = PO[d.poRef] ?? PO[KEY.CX6 === d ? "RBM-PO-26-04481" : d.poRef];
+  const po = PO[D.find((s) => s.id === d.id).po];
   const html = renderInvoiceHtml({ doc: d, supplier: SUP[d.supplierId], company: master.company, warehouses: master.warehouses, po, grns: grns.filter((g) => d.grnRefs.includes(g.id)) });
   fs.writeFileSync(path.join(srcDir, `${name}.html`), html);
   rendered.push(name);

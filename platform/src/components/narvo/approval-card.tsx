@@ -66,7 +66,7 @@ export function ApprovalCard({
   const decided = status !== "pending";
   return (
     <motion.div
-      initial={{ opacity: 0, y: 6 }}
+      initial={{ opacity: 1, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       className={cn(
         "rounded-lg border p-3.5",

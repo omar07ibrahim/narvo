@@ -1,7 +1,7 @@
 import { eventStream, readBody } from "@/lib/ai/stream";
 import { getPrefs } from "@/lib/ai/request";
 import { addAudit } from "@/lib/store/db";
-import { SOL, getByo, getCertificates, getRequirements, loadSeed, putCoverage, setByo } from "@/app/solutions/09-bid-proposal/_lib/server";
+import { SOL, getByo, getCertificates, getForms, getRequirements, loadSeed, putCoverage, setByo } from "@/app/solutions/09-bid-proposal/_lib/server";
 import { mapEvidence } from "@/app/solutions/09-bid-proposal/_lib/ai";
 import type { Coverage } from "@/app/solutions/09-bid-proposal/_lib/types";
 
@@ -29,6 +29,7 @@ export async function POST(req: Request) {
           requirements,
           seed,
           certs: getCertificates(seed),
+          forms: getForms(seed),
           computeChecks: !custom,
           onBatch: (batch) => {
             for (const e of batch) acc[e.reqId] = e;

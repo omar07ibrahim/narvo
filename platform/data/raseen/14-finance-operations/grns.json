@@ -1,0 +1,1749 @@
+[
+  {
+    "id": "GRN-26-08262",
+    "poId": "RBM-PO-26-04318",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-08-22",
+    "deliveryNote": "NEC-DN-26-1047",
+    "receivedBy": "Sunil Thomas",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 3000,
+        "deliveredQty": 3000,
+        "receivedQty": 3000,
+        "acceptedQty": 2860,
+        "rejectedQty": 140,
+        "rejectReason": "Torn / water-damaged bags"
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "140 bags rejected at unloading: 80 torn bags returned on the NEC truck (driver return note NEC-RN-26-0611); 60 burst / hardened bags disposed at JA yard after photos — NEC representative informed by email 22/08 16:05."
+  },
+  {
+    "id": "GRN-26-08374",
+    "poId": "RBM-PO-26-04402",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-01",
+    "deliveryNote": "NEC-DN-26-1162",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 3600,
+        "deliveredQty": 3600,
+        "receivedQty": 3600,
+        "acceptedQty": 3600,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08377",
+    "poId": "RBM-PO-26-04396",
+    "supplierId": "SUP-AWB",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-01",
+    "deliveryNote": "AWB-DN-5512",
+    "receivedBy": "Marwan Qasim",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "unit": "pc",
+        "orderedQty": 10800,
+        "deliveredQty": 10800,
+        "receivedQty": 10800,
+        "acceptedQty": 10800,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08380",
+    "poId": "RBM-PO-26-04398",
+    "supplierId": "SUP-SRM",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-02",
+    "deliveryNote": "SRM-DN-26-08781",
+    "receivedBy": "Sunil Thomas",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-12",
+        "description": "Rebar B500B 12 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 38,
+        "deliveredQty": 38,
+        "receivedQty": 38,
+        "acceptedQty": 38,
+        "rejectedQty": 0,
+        "rejectReason": null
+      },
+      {
+        "lineNo": 2,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 122,
+        "deliveredQty": 122,
+        "receivedQty": 122,
+        "acceptedQty": 122,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": [
+      {
+        "ticket": "JA-WB-26-11790",
+        "vehicle": "SHJ 3-41827",
+        "grossKg": 38260,
+        "tareKg": 15400,
+        "netKg": 22860
+      },
+      {
+        "ticket": "JA-WB-26-11791",
+        "vehicle": "DXB K 48213",
+        "grossKg": 38340,
+        "tareKg": 15480,
+        "netKg": 22860
+      },
+      {
+        "ticket": "JA-WB-26-11792",
+        "vehicle": "RAK B 18273",
+        "grossKg": 38420,
+        "tareKg": 15560,
+        "netKg": 22860
+      },
+      {
+        "ticket": "JA-WB-26-11793",
+        "vehicle": "SHJ 2-77410",
+        "grossKg": 38140,
+        "tareKg": 15280,
+        "netKg": 22860
+      },
+      {
+        "ticket": "JA-WB-26-11794",
+        "vehicle": "DXB M 30518",
+        "grossKg": 38220,
+        "tareKg": 15360,
+        "netKg": 22860
+      },
+      {
+        "ticket": "JA-WB-26-11795",
+        "vehicle": "AUH 14 62287",
+        "grossKg": 38300,
+        "tareKg": 15440,
+        "netKg": 22860
+      },
+      {
+        "ticket": "JA-WB-26-11796",
+        "vehicle": "SHJ 1-90364",
+        "grossKg": 38360,
+        "tareKg": 15520,
+        "netKg": 22840
+      }
+    ],
+    "remarks": "Bundles tagged, mill certificates received per heat. Weighbridge net agrees with delivery note."
+  },
+  {
+    "id": "GRN-26-08383",
+    "poId": "RBM-PO-26-04405",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-03",
+    "deliveryNote": "NEC-DN-26-1163",
+    "receivedBy": "Marwan Qasim",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-SRC-50",
+        "description": "Sulphate-resisting cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 1200,
+        "deliveredQty": 1200,
+        "receivedQty": 1200,
+        "acceptedQty": 1200,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08386",
+    "poId": "RBM-PO-26-04394",
+    "supplierId": "SUP-ACT",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-03",
+    "deliveryNote": "ACT-DO-26-2290",
+    "receivedBy": "Imran Baig",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "TIL-CER-3060",
+        "description": "Ceramic wall tile 30×60 cm, gloss white",
+        "unit": "m²",
+        "orderedQty": 1152,
+        "deliveredQty": 1152,
+        "receivedQty": 1152,
+        "acceptedQty": 1152,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08389",
+    "poId": "RBM-PO-26-04400",
+    "supplierId": "SUP-GBP",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-04",
+    "deliveryNote": "GBP-DN-26-0731",
+    "receivedBy": "Sunil Thomas",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "WPF-BIT-4",
+        "description": "APP-modified bitumen membrane 4 mm, 1×10 m roll",
+        "unit": "roll",
+        "orderedQty": 540,
+        "deliveredQty": 540,
+        "receivedQty": 540,
+        "acceptedQty": 540,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08392",
+    "poId": "RBM-PO-26-04409",
+    "supplierId": "SUP-SRM",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-05",
+    "deliveryNote": "SRM-DN-26-08782",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 146,
+        "deliveredQty": 146,
+        "receivedQty": 146,
+        "acceptedQty": 146,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": [
+      {
+        "ticket": "JA-WB-26-11797",
+        "vehicle": "DXB L 11846",
+        "grossKg": 39860,
+        "tareKg": 15520,
+        "netKg": 24340
+      },
+      {
+        "ticket": "JA-WB-26-11798",
+        "vehicle": "RAK C 40922",
+        "grossKg": 39580,
+        "tareKg": 15240,
+        "netKg": 24340
+      },
+      {
+        "ticket": "JA-WB-26-11799",
+        "vehicle": "SHJ 3-41827",
+        "grossKg": 39660,
+        "tareKg": 15320,
+        "netKg": 24340
+      },
+      {
+        "ticket": "JA-WB-26-11800",
+        "vehicle": "DXB K 48213",
+        "grossKg": 39740,
+        "tareKg": 15400,
+        "netKg": 24340
+      },
+      {
+        "ticket": "JA-WB-26-11801",
+        "vehicle": "RAK B 18273",
+        "grossKg": 39820,
+        "tareKg": 15480,
+        "netKg": 24340
+      },
+      {
+        "ticket": "JA-WB-26-11802",
+        "vehicle": "SHJ 2-77410",
+        "grossKg": 39860,
+        "tareKg": 15560,
+        "netKg": 24300
+      }
+    ],
+    "remarks": "Bundles tagged, mill certificates received per heat. Weighbridge net agrees with delivery note."
+  },
+  {
+    "id": "GRN-26-08395",
+    "poId": "RBM-PO-26-04411",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-05",
+    "deliveryNote": "NEC-DN-26-1164",
+    "receivedBy": "Imran Baig",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 4800,
+        "deliveredQty": 2400,
+        "receivedQty": 2400,
+        "acceptedQty": 2400,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08398",
+    "poId": "RBM-PO-26-04403",
+    "supplierId": "SUP-AKT",
+    "kind": "service",
+    "warehouse": "MN05",
+    "date": "2026-09-05",
+    "deliveryNote": "AKHT-TS-26-0960",
+    "receivedBy": "Joel D'Souza",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-JA-MN05-T",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05 (per tonne)",
+        "unit": "t",
+        "orderedQty": 212,
+        "deliveredQty": 212,
+        "receivedQty": 212,
+        "acceptedQty": 212,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "212.000 t moved in 9 trailer trips, 1–5 Sep — trip sheets AKHT-TS signed at MN-05 gate."
+  },
+  {
+    "id": "GRN-26-08401",
+    "poId": "RBM-PO-26-04418",
+    "supplierId": "SUP-SRM",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-07",
+    "deliveryNote": "SRM-DN-26-08783",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-20",
+        "description": "Rebar B500B 20 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 96,
+        "deliveredQty": 96,
+        "receivedQty": 96,
+        "acceptedQty": 96,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": [
+      {
+        "ticket": "JA-WB-26-11803",
+        "vehicle": "DXB M 30518",
+        "grossKg": 39520,
+        "tareKg": 15520,
+        "netKg": 24000
+      },
+      {
+        "ticket": "JA-WB-26-11804",
+        "vehicle": "AUH 14 62287",
+        "grossKg": 39240,
+        "tareKg": 15240,
+        "netKg": 24000
+      },
+      {
+        "ticket": "JA-WB-26-11805",
+        "vehicle": "SHJ 1-90364",
+        "grossKg": 39320,
+        "tareKg": 15320,
+        "netKg": 24000
+      },
+      {
+        "ticket": "JA-WB-26-11806",
+        "vehicle": "DXB L 11846",
+        "grossKg": 39400,
+        "tareKg": 15400,
+        "netKg": 24000
+      }
+    ],
+    "remarks": "Bundles tagged, mill certificates received per heat. Weighbridge net agrees with delivery note."
+  },
+  {
+    "id": "GRN-26-08404",
+    "poId": "RBM-PO-26-04411",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-07",
+    "deliveryNote": "NEC-DN-26-1165",
+    "receivedBy": "Imran Baig",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 4800,
+        "deliveredQty": 2400,
+        "receivedQty": 2400,
+        "acceptedQty": 2400,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08407",
+    "poId": "RBM-PO-26-04407",
+    "supplierId": "SUP-ACT",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-07",
+    "deliveryNote": "ACT-DO-26-2291",
+    "receivedBy": "Sunil Thomas",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "SAN-WC-WH",
+        "description": "Wall-hung WC set with concealed cistern",
+        "unit": "set",
+        "orderedQty": 48,
+        "deliveredQty": 48,
+        "receivedQty": 48,
+        "acceptedQty": 48,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08410",
+    "poId": "RBM-PO-26-04410",
+    "supplierId": "SUP-AWB",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-07",
+    "deliveryNote": "AWB-DN-5513",
+    "receivedBy": "Joel D'Souza",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "unit": "pc",
+        "orderedQty": 8100,
+        "deliveredQty": 8100,
+        "receivedQty": 8100,
+        "acceptedQty": 8100,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08413",
+    "poId": "RBM-PO-26-04418",
+    "supplierId": "SUP-SRM",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-08",
+    "deliveryNote": "SRM-DN-26-08784",
+    "receivedBy": "Imran Baig",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-25",
+        "description": "Rebar B500B 25 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 48,
+        "deliveredQty": 48,
+        "receivedQty": 48,
+        "acceptedQty": 48,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": [
+      {
+        "ticket": "JA-WB-26-11807",
+        "vehicle": "RAK C 40922",
+        "grossKg": 39280,
+        "tareKg": 15280,
+        "netKg": 24000
+      },
+      {
+        "ticket": "JA-WB-26-11808",
+        "vehicle": "SHJ 3-41827",
+        "grossKg": 39360,
+        "tareKg": 15360,
+        "netKg": 24000
+      }
+    ],
+    "remarks": "Bundles tagged, mill certificates received per heat. Weighbridge net agrees with delivery note."
+  },
+  {
+    "id": "GRN-26-08416",
+    "poId": "RBM-PO-26-04421",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-08",
+    "deliveryNote": "NEC-DN-26-1166",
+    "receivedBy": "Joel D'Souza",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 2400,
+        "deliveredQty": 2400,
+        "receivedQty": 2400,
+        "acceptedQty": 2400,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08419",
+    "poId": "RBM-PO-26-04397",
+    "supplierId": "SUP-CCI",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-09",
+    "deliveryNote": "CCI-DN-26-0201",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "PNT-TS-20",
+        "description": "Raseen ThermaShield heat-reflective roof coating, 20 L pail",
+        "unit": "pail",
+        "orderedQty": 480,
+        "deliveredQty": 480,
+        "receivedQty": 480,
+        "acceptedQty": 480,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08422",
+    "poId": "RBM-PO-26-04414",
+    "supplierId": "SUP-GBP",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-09",
+    "deliveryNote": "GBP-DN-26-0732",
+    "receivedBy": "Joel D'Souza",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "WPF-BIT-4",
+        "description": "APP-modified bitumen membrane 4 mm, 1×10 m roll",
+        "unit": "roll",
+        "orderedQty": 320,
+        "deliveredQty": 320,
+        "receivedQty": 320,
+        "acceptedQty": 320,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08425",
+    "poId": "RBM-PO-26-04425",
+    "supplierId": "SUP-SRM",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-10",
+    "deliveryNote": "SRM-DN-26-08785",
+    "receivedBy": "Sunil Thomas",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 168,
+        "deliveredQty": 168,
+        "receivedQty": 168,
+        "acceptedQty": 168,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": [
+      {
+        "ticket": "JA-WB-26-11809",
+        "vehicle": "DXB K 48213",
+        "grossKg": 39400,
+        "tareKg": 15400,
+        "netKg": 24000
+      },
+      {
+        "ticket": "JA-WB-26-11810",
+        "vehicle": "RAK B 18273",
+        "grossKg": 39480,
+        "tareKg": 15480,
+        "netKg": 24000
+      },
+      {
+        "ticket": "JA-WB-26-11811",
+        "vehicle": "SHJ 2-77410",
+        "grossKg": 39560,
+        "tareKg": 15560,
+        "netKg": 24000
+      },
+      {
+        "ticket": "JA-WB-26-11812",
+        "vehicle": "DXB M 30518",
+        "grossKg": 39280,
+        "tareKg": 15280,
+        "netKg": 24000
+      },
+      {
+        "ticket": "JA-WB-26-11813",
+        "vehicle": "AUH 14 62287",
+        "grossKg": 39360,
+        "tareKg": 15360,
+        "netKg": 24000
+      },
+      {
+        "ticket": "JA-WB-26-11814",
+        "vehicle": "SHJ 1-90364",
+        "grossKg": 39440,
+        "tareKg": 15440,
+        "netKg": 24000
+      },
+      {
+        "ticket": "JA-WB-26-11815",
+        "vehicle": "DXB L 11846",
+        "grossKg": 39520,
+        "tareKg": 15520,
+        "netKg": 24000
+      }
+    ],
+    "remarks": "Bundles tagged, mill certificates received per heat. Weighbridge net agrees with delivery note."
+  },
+  {
+    "id": "GRN-26-08428",
+    "poId": "RBM-PO-26-04390",
+    "supplierId": "SUP-ACT",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-10",
+    "deliveryNote": "ACT-DO-26-2292",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "TIL-POR-60120",
+        "description": "Porcelain tile 60×120 cm, matt, rectified",
+        "unit": "m²",
+        "orderedQty": 2016,
+        "deliveredQty": 2016,
+        "receivedQty": 2016,
+        "acceptedQty": 2016,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08431",
+    "poId": "RBM-PO-26-04429",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-11",
+    "deliveryNote": "NEC-DN-26-1167",
+    "receivedBy": "Imran Baig",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 5400,
+        "deliveredQty": 3000,
+        "receivedQty": 3000,
+        "acceptedQty": 3000,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08434",
+    "poId": "RBM-PO-26-04427",
+    "supplierId": "SUP-AWB",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-12",
+    "deliveryNote": "AWB-DN-5514",
+    "receivedBy": "Sunil Thomas",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "unit": "pc",
+        "orderedQty": 12600,
+        "deliveredQty": 6300,
+        "receivedQty": 6300,
+        "acceptedQty": 6300,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08437",
+    "poId": "RBM-PO-26-04429",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-12",
+    "deliveryNote": "NEC-DN-26-1168",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 5400,
+        "deliveredQty": 2400,
+        "receivedQty": 2400,
+        "acceptedQty": 2400,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08440",
+    "poId": "RBM-PO-26-04424",
+    "supplierId": "SUP-AKT",
+    "kind": "service",
+    "warehouse": "MN05",
+    "date": "2026-09-12",
+    "deliveryNote": "AKHT-TS-26-0961",
+    "receivedBy": "Joel D'Souza",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-JA-MN05-T",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05 (per tonne)",
+        "unit": "t",
+        "orderedQty": 286,
+        "deliveredQty": 286,
+        "receivedQty": 286,
+        "acceptedQty": 286,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "286.000 t moved in 12 trailer trips, 7–12 Sep — trip sheets signed at MN-05 gate."
+  },
+  {
+    "id": "GRN-26-08443",
+    "poId": "RBM-PO-26-04433",
+    "supplierId": "SUP-SRM",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-14",
+    "deliveryNote": "SRM-DN-26-08786",
+    "receivedBy": "Marwan Qasim",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-12",
+        "description": "Rebar B500B 12 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 52,
+        "deliveredQty": 52,
+        "receivedQty": 52,
+        "acceptedQty": 52,
+        "rejectedQty": 0,
+        "rejectReason": null
+      },
+      {
+        "lineNo": 2,
+        "sku": "RB-B500-20",
+        "description": "Rebar B500B 20 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 70,
+        "deliveredQty": 70,
+        "receivedQty": 70,
+        "acceptedQty": 70,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": [
+      {
+        "ticket": "MN-WB-26-4410",
+        "vehicle": "RAK C 40922",
+        "grossKg": 39800,
+        "tareKg": 15400,
+        "netKg": 24400
+      },
+      {
+        "ticket": "MN-WB-26-4411",
+        "vehicle": "SHJ 3-41827",
+        "grossKg": 39880,
+        "tareKg": 15480,
+        "netKg": 24400
+      },
+      {
+        "ticket": "MN-WB-26-4412",
+        "vehicle": "DXB K 48213",
+        "grossKg": 39960,
+        "tareKg": 15560,
+        "netKg": 24400
+      },
+      {
+        "ticket": "MN-WB-26-4413",
+        "vehicle": "RAK B 18273",
+        "grossKg": 39680,
+        "tareKg": 15280,
+        "netKg": 24400
+      },
+      {
+        "ticket": "MN-WB-26-4414",
+        "vehicle": "SHJ 2-77410",
+        "grossKg": 39760,
+        "tareKg": 15360,
+        "netKg": 24400
+      }
+    ],
+    "remarks": "Bundles tagged, mill certificates received per heat. Weighbridge net agrees with delivery note."
+  },
+  {
+    "id": "GRN-26-08446",
+    "poId": "RBM-PO-26-04427",
+    "supplierId": "SUP-AWB",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-14",
+    "deliveryNote": "AWB-DN-5515",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "unit": "pc",
+        "orderedQty": 12600,
+        "deliveredQty": 6300,
+        "receivedQty": 6300,
+        "acceptedQty": 6300,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08449",
+    "poId": "RBM-PO-26-04431",
+    "supplierId": "SUP-ACT",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-15",
+    "deliveryNote": "ACT-DO-26-2293",
+    "receivedBy": "Marwan Qasim",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "TIL-CER-3060",
+        "description": "Ceramic wall tile 30×60 cm, gloss white",
+        "unit": "m²",
+        "orderedQty": 864,
+        "deliveredQty": 864,
+        "receivedQty": 864,
+        "acceptedQty": 864,
+        "rejectedQty": 0,
+        "rejectReason": null
+      },
+      {
+        "lineNo": 2,
+        "sku": "SAN-WC-WH",
+        "description": "Wall-hung WC set with concealed cistern",
+        "unit": "set",
+        "orderedQty": 24,
+        "deliveredQty": 24,
+        "receivedQty": 24,
+        "acceptedQty": 24,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08452",
+    "poId": "RBM-PO-26-04441",
+    "supplierId": "SUP-SRM",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-16",
+    "deliveryNote": "SRM-DN-26-08814",
+    "receivedBy": "Imran Baig",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 20,
+        "deliveredQty": 20,
+        "receivedQty": 18,
+        "acceptedQty": 18,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": [
+      {
+        "ticket": "JA-WB-26-11873",
+        "vehicle": "SHJ 3-41827",
+        "grossKg": 33460,
+        "tareKg": 15460,
+        "netKg": 18000
+      }
+    ],
+    "remarks": "Delivery note SRM-DN-26-08814 declares 10 bundles / 20.000 t. 9 bundles received and tagged; weighbridge net 18,000 kg (ticket JA-WB-26-11873). Driver Mohammed Arshad (SHJ 3-41827) signed the short-delivery note; Sahara despatch informed by phone 16/09 15:40."
+  },
+  {
+    "id": "GRN-26-08455",
+    "poId": "RBM-PO-26-04436",
+    "supplierId": "SUP-GBP",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-16",
+    "deliveryNote": "GBP-DN-26-0733",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "WPF-BIT-4",
+        "description": "APP-modified bitumen membrane 4 mm, 1×10 m roll",
+        "unit": "roll",
+        "orderedQty": 760,
+        "deliveredQty": 760,
+        "receivedQty": 760,
+        "acceptedQty": 760,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08458",
+    "poId": "RBM-PO-26-04438",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-16",
+    "deliveryNote": "NEC-DN-26-1169",
+    "receivedBy": "Imran Baig",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-SRC-50",
+        "description": "Sulphate-resisting cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 1800,
+        "deliveredQty": 1800,
+        "receivedQty": 1800,
+        "acceptedQty": 1800,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08461",
+    "poId": "RBM-PO-26-04439",
+    "supplierId": "SUP-AWB",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-16",
+    "deliveryNote": "AWB-DN-5516",
+    "receivedBy": "Marwan Qasim",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "unit": "pc",
+        "orderedQty": 9900,
+        "deliveredQty": 9900,
+        "receivedQty": 9900,
+        "acceptedQty": 9900,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "110 pallets received in 3 deliveries (supplier's own trucks), all in good condition. Delivered-price PO — no freight agreed."
+  },
+  {
+    "id": "GRN-26-08464",
+    "poId": "RBM-PO-26-04444",
+    "supplierId": "SUP-SRM",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-17",
+    "deliveryNote": "SRM-DN-26-08787",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 154,
+        "deliveredQty": 78,
+        "receivedQty": 78,
+        "acceptedQty": 78,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": [
+      {
+        "ticket": "JA-WB-26-11816",
+        "vehicle": "DXB M 30518",
+        "grossKg": 35020,
+        "tareKg": 15520,
+        "netKg": 19500
+      },
+      {
+        "ticket": "JA-WB-26-11817",
+        "vehicle": "AUH 14 62287",
+        "grossKg": 34740,
+        "tareKg": 15240,
+        "netKg": 19500
+      },
+      {
+        "ticket": "JA-WB-26-11818",
+        "vehicle": "SHJ 1-90364",
+        "grossKg": 34820,
+        "tareKg": 15320,
+        "netKg": 19500
+      },
+      {
+        "ticket": "JA-WB-26-11819",
+        "vehicle": "DXB L 11846",
+        "grossKg": 34900,
+        "tareKg": 15400,
+        "netKg": 19500
+      }
+    ],
+    "remarks": "Bundles tagged, mill certificates received per heat. Weighbridge net agrees with delivery note."
+  },
+  {
+    "id": "GRN-26-08467",
+    "poId": "RBM-PO-26-04412",
+    "supplierId": "SUP-ACT",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-17",
+    "deliveryNote": "ACT-DO-26-2294",
+    "receivedBy": "Imran Baig",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "TIL-POR-60120",
+        "description": "Porcelain tile 60×120 cm, matt, rectified",
+        "unit": "m²",
+        "orderedQty": 1440,
+        "deliveredQty": 1440,
+        "receivedQty": 1440,
+        "acceptedQty": 1440,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08470",
+    "poId": "RBM-PO-26-04444",
+    "supplierId": "SUP-SRM",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-18",
+    "deliveryNote": "SRM-DN-26-08788",
+    "receivedBy": "Sunil Thomas",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 154,
+        "deliveredQty": 76,
+        "receivedQty": 76,
+        "acceptedQty": 76,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": [
+      {
+        "ticket": "JA-WB-26-11820",
+        "vehicle": "RAK C 40922",
+        "grossKg": 34400,
+        "tareKg": 15400,
+        "netKg": 19000
+      },
+      {
+        "ticket": "JA-WB-26-11821",
+        "vehicle": "SHJ 3-41827",
+        "grossKg": 34480,
+        "tareKg": 15480,
+        "netKg": 19000
+      },
+      {
+        "ticket": "JA-WB-26-11822",
+        "vehicle": "DXB K 48213",
+        "grossKg": 34560,
+        "tareKg": 15560,
+        "netKg": 19000
+      },
+      {
+        "ticket": "JA-WB-26-11823",
+        "vehicle": "RAK B 18273",
+        "grossKg": 34280,
+        "tareKg": 15280,
+        "netKg": 19000
+      }
+    ],
+    "remarks": "Bundles tagged, mill certificates received per heat. Weighbridge net agrees with delivery note."
+  },
+  {
+    "id": "GRN-26-08473",
+    "poId": "RBM-PO-26-04448",
+    "supplierId": "SUP-GBP",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-19",
+    "deliveryNote": "GBP-DN-26-0734",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "WPF-BIT-4",
+        "description": "APP-modified bitumen membrane 4 mm, 1×10 m roll",
+        "unit": "roll",
+        "orderedQty": 620,
+        "deliveredQty": 620,
+        "receivedQty": 620,
+        "acceptedQty": 620,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08476",
+    "poId": "RBM-PO-26-04447",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-19",
+    "deliveryNote": "NEC-DN-26-1170",
+    "receivedBy": "Joel D'Souza",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 3000,
+        "deliveredQty": 3000,
+        "receivedQty": 3000,
+        "acceptedQty": 3000,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08479",
+    "poId": "RBM-PO-26-04446",
+    "supplierId": "SUP-AWB",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-19",
+    "deliveryNote": "AWB-DN-5517",
+    "receivedBy": "Marwan Qasim",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "unit": "pc",
+        "orderedQty": 7200,
+        "deliveredQty": 7200,
+        "receivedQty": 7200,
+        "acceptedQty": 7200,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08482",
+    "poId": "RBM-PO-26-04445",
+    "supplierId": "SUP-AKT",
+    "kind": "service",
+    "warehouse": "MN05",
+    "date": "2026-09-19",
+    "deliveryNote": "AKHT-TS-26-0962",
+    "receivedBy": "Joel D'Souza",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-JA-MN05-T",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05 (per tonne)",
+        "unit": "t",
+        "orderedQty": 174,
+        "deliveredQty": 174,
+        "receivedQty": 174,
+        "acceptedQty": 174,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "174.000 t moved in 8 trailer trips, 14–19 Sep — trip sheets signed at MN-05 gate."
+  },
+  {
+    "id": "GRN-26-08485",
+    "poId": "RBM-PO-26-04452",
+    "supplierId": "SUP-CCI",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-21",
+    "deliveryNote": "CCI-DN-26-0202",
+    "receivedBy": "Imran Baig",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "PNT-TS-20",
+        "description": "Raseen ThermaShield heat-reflective roof coating, 20 L pail",
+        "unit": "pail",
+        "orderedQty": 720,
+        "deliveredQty": 720,
+        "receivedQty": 720,
+        "acceptedQty": 720,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08488",
+    "poId": "RBM-PO-26-04456",
+    "supplierId": "SUP-SRM",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-22",
+    "deliveryNote": "SRM-DN-26-08789",
+    "receivedBy": "Sunil Thomas",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 118,
+        "deliveredQty": 118,
+        "receivedQty": 118,
+        "acceptedQty": 118,
+        "rejectedQty": 0,
+        "rejectReason": null
+      },
+      {
+        "lineNo": 2,
+        "sku": "RB-B500-25",
+        "description": "Rebar B500B 25 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 30,
+        "deliveredQty": 30,
+        "receivedQty": 30,
+        "acceptedQty": 30,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": [
+      {
+        "ticket": "JA-WB-26-11824",
+        "vehicle": "SHJ 2-77410",
+        "grossKg": 40060,
+        "tareKg": 15400,
+        "netKg": 24660
+      },
+      {
+        "ticket": "JA-WB-26-11825",
+        "vehicle": "DXB M 30518",
+        "grossKg": 40140,
+        "tareKg": 15480,
+        "netKg": 24660
+      },
+      {
+        "ticket": "JA-WB-26-11826",
+        "vehicle": "AUH 14 62287",
+        "grossKg": 40220,
+        "tareKg": 15560,
+        "netKg": 24660
+      },
+      {
+        "ticket": "JA-WB-26-11827",
+        "vehicle": "SHJ 1-90364",
+        "grossKg": 39940,
+        "tareKg": 15280,
+        "netKg": 24660
+      },
+      {
+        "ticket": "JA-WB-26-11828",
+        "vehicle": "DXB L 11846",
+        "grossKg": 40020,
+        "tareKg": 15360,
+        "netKg": 24660
+      },
+      {
+        "ticket": "JA-WB-26-11829",
+        "vehicle": "RAK C 40922",
+        "grossKg": 40140,
+        "tareKg": 15440,
+        "netKg": 24700
+      }
+    ],
+    "remarks": "Bundles tagged, mill certificates received per heat. Weighbridge net agrees with delivery note."
+  },
+  {
+    "id": "GRN-26-08491",
+    "poId": "RBM-PO-26-04459",
+    "supplierId": "SUP-ACT",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-23",
+    "deliveryNote": "ACT-DO-26-2295",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "TIL-CER-3060",
+        "description": "Ceramic wall tile 30×60 cm, gloss white",
+        "unit": "m²",
+        "orderedQty": 1728,
+        "deliveredQty": 1728,
+        "receivedQty": 1728,
+        "acceptedQty": 1728,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08494",
+    "poId": "RBM-PO-26-04463",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-24",
+    "deliveryNote": "NEC-DN-26-1171",
+    "receivedBy": "Imran Baig",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 4200,
+        "deliveredQty": 4200,
+        "receivedQty": 4200,
+        "acceptedQty": 4200,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08497",
+    "poId": "RBM-PO-26-04461",
+    "supplierId": "SUP-GBP",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-24",
+    "deliveryNote": "GBP-DN-26-0735",
+    "receivedBy": "Marwan Qasim",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "WPF-BIT-4",
+        "description": "APP-modified bitumen membrane 4 mm, 1×10 m roll",
+        "unit": "roll",
+        "orderedQty": 280,
+        "deliveredQty": 280,
+        "receivedQty": 280,
+        "acceptedQty": 280,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08500",
+    "poId": "RBM-PO-26-04470",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-24",
+    "deliveryNote": "NEC-DN-26-1172",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 6000,
+        "deliveredQty": 3600,
+        "receivedQty": 3600,
+        "acceptedQty": 3600,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08503",
+    "poId": "RBM-PO-26-04450",
+    "supplierId": "SUP-FLL",
+    "kind": "service",
+    "warehouse": "MN05",
+    "date": "2026-09-25",
+    "deliveryNote": "FLL-TS-041",
+    "receivedBy": "Marwan Qasim",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-SHUTTLE-10T",
+        "description": "MN-05 shuttle run, 10 t truck (per trip)",
+        "unit": "trip",
+        "orderedQty": 14,
+        "deliveredQty": 14,
+        "receivedQty": 14,
+        "acceptedQty": 14,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "14 shuttle trips 15–25 Sep confirmed against MN-05 gate log and dispatch sheets."
+  },
+  {
+    "id": "GRN-26-08506",
+    "poId": "RBM-PO-26-04466",
+    "supplierId": "SUP-SRM",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-25",
+    "deliveryNote": "SRM-DN-26-08790",
+    "receivedBy": "Sunil Thomas",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "unit": "t",
+        "orderedQty": 88,
+        "deliveredQty": 88,
+        "receivedQty": 88,
+        "acceptedQty": 88,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": [
+      {
+        "ticket": "JA-WB-26-11830",
+        "vehicle": "SHJ 3-41827",
+        "grossKg": 37400,
+        "tareKg": 15400,
+        "netKg": 22000
+      },
+      {
+        "ticket": "JA-WB-26-11831",
+        "vehicle": "DXB K 48213",
+        "grossKg": 37480,
+        "tareKg": 15480,
+        "netKg": 22000
+      },
+      {
+        "ticket": "JA-WB-26-11832",
+        "vehicle": "RAK B 18273",
+        "grossKg": 37560,
+        "tareKg": 15560,
+        "netKg": 22000
+      },
+      {
+        "ticket": "JA-WB-26-11833",
+        "vehicle": "SHJ 2-77410",
+        "grossKg": 37280,
+        "tareKg": 15280,
+        "netKg": 22000
+      }
+    ],
+    "remarks": "Bundles tagged, mill certificates received per heat. Weighbridge net agrees with delivery note."
+  },
+  {
+    "id": "GRN-26-08509",
+    "poId": "RBM-PO-26-04470",
+    "supplierId": "SUP-NEC",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-26",
+    "deliveryNote": "NEC-DN-26-1173",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "unit": "bag",
+        "orderedQty": 6000,
+        "deliveredQty": 2400,
+        "receivedQty": 2400,
+        "acceptedQty": 2400,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08512",
+    "poId": "RBM-PO-26-04468",
+    "supplierId": "SUP-AWB",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-26",
+    "deliveryNote": "AWB-DN-5518",
+    "receivedBy": "Joel D'Souza",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "unit": "pc",
+        "orderedQty": 11700,
+        "deliveredQty": 11700,
+        "receivedQty": 11700,
+        "acceptedQty": 11700,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "Received in good condition; counted against delivery note."
+  },
+  {
+    "id": "GRN-26-08515",
+    "poId": "RBM-PO-26-04464",
+    "supplierId": "SUP-AKT",
+    "kind": "service",
+    "warehouse": "MN05",
+    "date": "2026-09-26",
+    "deliveryNote": "AKHT-TS-26-0963",
+    "receivedBy": "Marwan Qasim",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-JA-MN05-T",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05 (per tonne)",
+        "unit": "t",
+        "orderedQty": 160,
+        "deliveredQty": 160,
+        "receivedQty": 160,
+        "acceptedQty": 160,
+        "rejectedQty": 0,
+        "rejectReason": null
+      },
+      {
+        "lineNo": 2,
+        "sku": "FRT-JA-MN05-P",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05, palletised (per tonne)",
+        "unit": "t",
+        "orderedQty": 88,
+        "deliveredQty": 88,
+        "receivedQty": 88,
+        "acceptedQty": 88,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "248.000 t moved in 11 trailer trips, 21–26 Sep (160 t rebar, 88 t palletised) — trip sheets signed at MN-05 gate."
+  },
+  {
+    "id": "GRN-26-08518",
+    "poId": "RBM-PO-26-04481",
+    "supplierId": "SUP-CCI",
+    "kind": "goods",
+    "warehouse": "JA",
+    "date": "2026-09-28",
+    "deliveryNote": "CCI-DN-26-0203",
+    "receivedBy": "Rajesh Nair",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "PNT-TS-20",
+        "description": "Raseen ThermaShield heat-reflective roof coating, 20 L pail",
+        "unit": "pail",
+        "orderedQty": 1200,
+        "deliveredQty": 1200,
+        "receivedQty": 1200,
+        "acceptedQty": 1200,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "1,200 pails (50 pallets × 24) received; batch CCI-TS-2609-B3; COA received. Stored in coatings bay C-4."
+  },
+  {
+    "id": "GRN-26-08521",
+    "poId": "RBM-PO-26-04472",
+    "supplierId": "SUP-AKT",
+    "kind": "service",
+    "warehouse": "MN05",
+    "date": "2026-09-30",
+    "deliveryNote": "AKHT-TS-26-0964",
+    "receivedBy": "Marwan Qasim",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-JA-MN05-T",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05 (per tonne)",
+        "unit": "t",
+        "orderedQty": 196,
+        "deliveredQty": 196,
+        "receivedQty": 196,
+        "acceptedQty": 196,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "196.000 t moved in 8 trailer trips, 28–30 Sep — trip sheets signed at MN-05 gate."
+  }
+]

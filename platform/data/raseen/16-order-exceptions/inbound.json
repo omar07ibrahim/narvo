@@ -1,0 +1,143 @@
+{
+  "asOf": "2026-10-09",
+  "alternativeSources": [
+    {
+      "supplier": "Al Dhafra Steel Trading LLC",
+      "trn": "100583027400003",
+      "skus": [
+        "RB-B500-12",
+        "RB-B500-16",
+        "RB-B500-20",
+        "RB-B500-25"
+      ],
+      "premiumPerT": 165,
+      "leadWorkingDays": 3,
+      "origin": "Ex-stock Mussafah",
+      "approval": "Supply Chain & Planning Manager (Joseph Abraham)",
+      "source": "RBM-SUP-DIR-2026 — Alternative steel source"
+    }
+  ],
+  "pos": [
+    {
+      "id": "RBM-PO-26-04588",
+      "supplierId": "SUP-NEC",
+      "sku": "CEM-OPC-50",
+      "qty": 12000,
+      "warehouse": "JA",
+      "poDate": "2026-09-29",
+      "eta": "2026-10-13",
+      "status": "confirmed",
+      "note": "At contract price AED 14.20/bag — surcharge not accepted."
+    },
+    {
+      "id": "RBM-PO-26-04591",
+      "supplierId": "SUP-NEC",
+      "sku": "CEM-SRC-50",
+      "qty": 4800,
+      "warehouse": "MN05",
+      "poDate": "2026-09-30",
+      "eta": "2026-10-14",
+      "status": "confirmed",
+      "note": ""
+    },
+    {
+      "id": "RBM-PO-26-04597",
+      "supplierId": "SUP-AWB",
+      "sku": "BLK-HOL-20",
+      "qty": 36000,
+      "warehouse": "MN05",
+      "poDate": "2026-10-01",
+      "eta": "2026-10-12",
+      "status": "confirmed",
+      "note": ""
+    },
+    {
+      "id": "RBM-PO-26-04603",
+      "supplierId": "SUP-ACT",
+      "sku": "TIL-POR-60120",
+      "qty": 2880,
+      "warehouse": "JA",
+      "poDate": "2026-09-02",
+      "eta": "2026-10-16",
+      "status": "confirmed",
+      "note": "Placed before the price revision — stays at PO price."
+    },
+    {
+      "id": "RBM-PO-26-04609",
+      "supplierId": "SUP-GBP",
+      "sku": "WPF-BIT-4",
+      "qty": 400,
+      "warehouse": "JA",
+      "poDate": "2026-10-02",
+      "eta": "2026-10-15",
+      "status": "confirmed",
+      "note": ""
+    },
+    {
+      "id": "RBM-PO-26-04614",
+      "supplierId": "SUP-ACT",
+      "sku": "SAN-WC-WH",
+      "qty": 120,
+      "warehouse": "JA",
+      "poDate": "2026-09-24",
+      "eta": "2026-10-19",
+      "status": "confirmed",
+      "note": ""
+    },
+    {
+      "id": "RBM-PO-26-04622",
+      "supplierId": "SUP-SRM",
+      "sku": "RB-B500-16",
+      "qty": 300,
+      "warehouse": "JA",
+      "poDate": "2026-09-16",
+      "eta": "2026-10-21",
+      "status": "confirmed",
+      "note": "First dispatches after mill maintenance (SRM/COM/2026/114) — priority PO."
+    },
+    {
+      "id": "RBM-PO-26-04625",
+      "supplierId": "SUP-SRM",
+      "sku": "RB-B500-16",
+      "qty": 90,
+      "warehouse": "MN05",
+      "poDate": "2026-09-17",
+      "eta": "2026-10-21",
+      "status": "confirmed",
+      "note": "Direct to MN-05 yard after mill restart."
+    },
+    {
+      "id": "RBM-PO-26-04631",
+      "supplierId": "SUP-SRM",
+      "sku": "RB-B500-20",
+      "qty": 140,
+      "warehouse": "JA",
+      "poDate": "2026-09-17",
+      "eta": "2026-10-22",
+      "status": "confirmed",
+      "note": ""
+    },
+    {
+      "id": "RBM-PO-26-04633",
+      "supplierId": "SUP-SRM",
+      "sku": "RB-B500-20",
+      "qty": 40,
+      "warehouse": "MN05",
+      "poDate": "2026-09-18",
+      "eta": "2026-10-22",
+      "status": "confirmed",
+      "note": ""
+    },
+    {
+      "id": "RBM-PO-26-04638",
+      "supplierId": "SUP-CCI",
+      "sku": "PNT-TS-20",
+      "qty": 2400,
+      "warehouse": "JA",
+      "poDate": "2026-10-05",
+      "eta": "2026-10-26",
+      "status": "confirmed",
+      "note": "ThermaShield launch stock (launch 1 Nov 2026)."
+    }
+  ]
+}

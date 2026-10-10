@@ -1,7 +1,7 @@
 import { eventStream, readBody } from "@/lib/ai/stream";
 import { getPrefs } from "@/lib/ai/request";
 import { addAudit, patchRecord } from "@/lib/store/db";
-import { COL, SOL, getCertificates, getCoverage, getRequirements, getTasks, loadSeed, putCoverage, verifyQuote, excerpt } from "@/app/solutions/09-bid-proposal/_lib/server";
+import { COL, SOL, getCertificates, getCoverage, getForms, getRequirements, getTasks, loadSeed, putCoverage, verifyQuote, excerpt } from "@/app/solutions/09-bid-proposal/_lib/server";
 import { judgeAnswer } from "@/app/solutions/09-bid-proposal/_lib/ai";
 import { mergeStatus, requirementCheck } from "@/app/solutions/09-bid-proposal/_lib/compliance";
 import type { Coverage } from "@/app/solutions/09-bid-proposal/_lib/types";
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
           s.done(`${target.number} → ${res.certificate.number ?? target.number} · ${res.certificate.expiry}`);
         }
       }
-      const check = requirementCheck(seed, task.reqId, certs);
+      const check = requirementCheck(seed, task.reqId, certs, getForms(seed));
       const status = mergeStatus(res.status, check);
       const quote = res.quote && verifyQuote(res.quote, body.answer) ? res.quote : excerpt(body.answer, 260);
       const entry: Coverage = {

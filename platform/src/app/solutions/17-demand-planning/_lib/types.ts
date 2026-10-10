@@ -228,3 +228,18 @@ export interface PlanRun {
   plans: PlanResult[];
   ms: number;
 }
+
+export interface PublishedPlan {
+  id: string;
+  version: number;
+  planId: "A" | "B" | "C";
+  planName: string;
+  whatIf: Partial<WhatIf> & { assumption?: string };
+  kpis: { fillRate: number; fillRateP10: number; totalCost: number; constraintFit: number; violations: number; peakJaPallets: number; peakJaYard: number };
+  overrides: number;
+  approvedBy: string;
+  publishedAt: number;
+  note?: string;
+  status: "published";
+}
+

@@ -1,0 +1,210 @@
+[
+  {
+    "id": "AUD-16-0001",
+    "ts": "2026-09-15T11:20:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "Joseph Abraham",
+      "role": "Supply Chain & Planning Manager",
+      "kind": "human"
+    },
+    "action": "Logged supply notice",
+    "subject": "Sahara Rebar Mills — SRM/COM/2026/114",
+    "detail": "Planned mill maintenance 5–19 Oct 2026; dispatches resume 20 Oct. Rebar allocation order-by-order from 5 Oct."
+  },
+  {
+    "id": "AUD-16-0002",
+    "ts": "2026-09-16T09:05:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "Joseph Abraham",
+      "role": "Supply Chain & Planning Manager",
+      "kind": "human"
+    },
+    "action": "Placed purchase order",
+    "subject": "RBM-PO-26-04622",
+    "detail": "Sahara Rebar Mills — RB-B500-16 300 t to Jebel Ali, first dispatch after restart."
+  },
+  {
+    "id": "AUD-16-0003",
+    "ts": "2026-09-17T10:40:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "Joseph Abraham",
+      "role": "Supply Chain & Planning Manager",
+      "kind": "human"
+    },
+    "action": "Placed purchase order",
+    "subject": "RBM-PO-26-04625",
+    "detail": "Sahara Rebar Mills — RB-B500-16 90 t direct to MN-05."
+  },
+  {
+    "id": "AUD-16-0004",
+    "ts": "2026-09-24T15:12:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "Joseph Abraham",
+      "role": "Supply Chain & Planning Manager",
+      "kind": "human"
+    },
+    "action": "Resolved order exception",
+    "subject": "SO-26-11702",
+    "detail": "Stock shortfall RB-B500-20 — split delivery with JA transfer (AED 38/t). Effort 47 min."
+  },
+  {
+    "id": "AUD-16-0005",
+    "ts": "2026-10-01T08:00:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "RBM ERP",
+      "role": "System",
+      "kind": "system"
+    },
+    "action": "Loaded price list",
+    "subject": "PL-2026-Q4",
+    "detail": "Q4 rebar frame rates effective for deliveries 1 Oct – 31 Dec 2026."
+  },
+  {
+    "id": "AUD-16-0006",
+    "ts": "2026-10-01T09:30:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "Fadi Khoury",
+      "role": "Sales Director, RBM",
+      "kind": "human"
+    },
+    "action": "Changed key account manager",
+    "subject": "Gulf Crest Builders LLC (RBM-C-10034)",
+    "detail": "Ahmed Soliman → Rania Mansour (handover of open orders and opportunity OPP-2026-0418)."
+  },
+  {
+    "id": "AUD-16-0007",
+    "ts": "2026-10-02T13:55:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "Nadia Rahimi",
+      "role": "Credit Controller, Group Finance",
+      "kind": "human"
+    },
+    "action": "Sent overdue reminder",
+    "subject": "Gulf Crest Builders LLC",
+    "detail": "Overdue AED 148,320 (31–60 days). Reminder +21 days per RBM-FIN-POL-04."
+  },
+  {
+    "id": "AUD-16-0008",
+    "ts": "2026-10-05T07:45:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "RBM ERP",
+      "role": "System",
+      "kind": "system"
+    },
+    "action": "Applied allocation rule",
+    "subject": "RB-B500-16 / RB-B500-20",
+    "detail": "Sahara shutdown started — available-to-promise switched to order-by-order allocation by promise date."
+  },
+  {
+    "id": "AUD-16-0009",
+    "ts": "2026-10-06T10:41:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "RBM ERP",
+      "role": "System",
+      "kind": "system"
+    },
+    "action": "Placed order on automatic credit hold",
+    "subject": "SO-26-11842",
+    "detail": "Exposure AED 2,109,582 vs limit AED 2,000,000 (AR + open orders incl. 5% VAT)."
+  },
+  {
+    "id": "AUD-16-0010",
+    "ts": "2026-10-06T10:44:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "Rania Mansour",
+      "role": "Key Account Manager",
+      "kind": "human"
+    },
+    "action": "Entered sales order",
+    "subject": "SO-26-11842",
+    "detail": "Gulf Crest — RB-B500-16 120 t at customer PO price AED 2,690/t; requested Mon 12 Oct 07:00."
+  },
+  {
+    "id": "AUD-16-0011",
+    "ts": "2026-10-07T16:44:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "RBM ERP",
+      "role": "System",
+      "kind": "system"
+    },
+    "action": "Placed order on automatic credit hold",
+    "subject": "SO-26-11856",
+    "detail": "Najm Al Sahil — exposure AED 271,035 vs limit AED 250,000."
+  },
+  {
+    "id": "AUD-16-0012",
+    "ts": "2026-10-08T08:52:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "Marwan Qasim",
+      "role": "Logistics & Dispatch Supervisor, MN-05",
+      "kind": "human"
+    },
+    "action": "Booked gate permit",
+    "subject": "MQP-GP-26-18842",
+    "detail": "Marina Quarter Properties — Tower A gate 3, Mon 12 Oct (SO-26-11806 / SO-26-11842)."
+  },
+  {
+    "id": "AUD-16-0013",
+    "ts": "2026-10-08T16:06:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "RBM ERP",
+      "role": "System",
+      "kind": "system"
+    },
+    "action": "Placed order on automatic credit hold",
+    "subject": "SO-26-11869",
+    "detail": "Saqr Al Noor — exposure AED 762,995 vs limit AED 750,000."
+  },
+  {
+    "id": "AUD-16-0014",
+    "ts": "2026-10-09T10:15:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "Rania Mansour",
+      "role": "Key Account Manager",
+      "kind": "human"
+    },
+    "action": "Requested stock check",
+    "subject": "SO-26-11842",
+    "detail": "Only 64 t RB-B500-16 available to promise at MN-05 after earlier orders; JA free stock 38 t."
+  },
+  {
+    "id": "AUD-16-0015",
+    "ts": "2026-10-09T12:30:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "NARVO Agent",
+      "role": "AI agent",
+      "kind": "agent"
+    },
+    "action": "Ran exception sweep",
+    "subject": "Open sales orders (40)",
+    "detail": "Nightly check: stock, contract price, site window and credit exposure."
+  },
+  {
+    "id": "AUD-16-0016",
+    "ts": "2026-10-09T17:20:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "Nadia Rahimi",
+      "role": "Credit Controller, Group Finance",
+      "kind": "human"
+    },
+    "action": "Requested payment commitment",
+    "subject": "Gulf Crest Builders LLC",
+    "detail": "Asked GCB for dated payment of AED 148,320 before any temporary release."
+  }
+]

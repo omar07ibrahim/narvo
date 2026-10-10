@@ -1,0 +1,1271 @@
+[
+  {
+    "id": "RBM-PO-26-04318",
+    "supplierId": "SUP-NEC",
+    "date": "2026-08-06",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "NEC supply contract 2026 — fixed to 31 Dec 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "closed",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "qty": 3000,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 42600
+      }
+    ],
+    "netAmount": 42600
+  },
+  {
+    "id": "RBM-PO-26-04390",
+    "supplierId": "SUP-ACT",
+    "date": "2026-08-17",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Andalus quotation AQ-26-0412 (AED 46.80/m², valid to 31 Aug 2026)",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "TIL-POR-60120",
+        "description": "Porcelain tile 60×120 cm, matt, rectified",
+        "qty": 2016,
+        "unit": "m²",
+        "unitPrice": 46.8,
+        "amount": 94348.8
+      }
+    ],
+    "netAmount": 94348.8
+  },
+  {
+    "id": "RBM-PO-26-04394",
+    "supplierId": "SUP-ACT",
+    "date": "2026-08-18",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Andalus Ceramics price agreement 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "TIL-CER-3060",
+        "description": "Ceramic wall tile 30×60 cm, gloss white",
+        "qty": 1152,
+        "unit": "m²",
+        "unitPrice": 22.4,
+        "amount": 25804.8
+      }
+    ],
+    "netAmount": 25804.8
+  },
+  {
+    "id": "RBM-PO-26-04396",
+    "supplierId": "SUP-AWB",
+    "date": "2026-08-19",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Al Waha Blocks delivered price list 2026 (freight included)",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "qty": 10800,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 32940
+      }
+    ],
+    "netAmount": 32940
+  },
+  {
+    "id": "RBM-PO-26-04397",
+    "supplierId": "SUP-CCI",
+    "date": "2026-08-19",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "ThermaShield contract-manufacturing agreement RBM-CM-26-03",
+    "discountPct": 0,
+    "note": "ThermaShield launch stock — batch 1 (applicator training & samples)",
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "PNT-TS-20",
+        "description": "Raseen ThermaShield heat-reflective roof coating, 20 L pail",
+        "qty": 480,
+        "unit": "pail",
+        "unitPrice": 231,
+        "amount": 110880
+      }
+    ],
+    "netAmount": 110880
+  },
+  {
+    "id": "RBM-PO-26-04398",
+    "supplierId": "SUP-SRM",
+    "date": "2026-08-20",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Sahara Rebar Mills supply contract — Q3/Q4 2026 mill price",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-12",
+        "description": "Rebar B500B 12 mm, 12 m bars",
+        "qty": 38,
+        "unit": "t",
+        "unitPrice": 2575,
+        "amount": 97850
+      },
+      {
+        "lineNo": 2,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "qty": 122,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 308660
+      }
+    ],
+    "netAmount": 406510
+  },
+  {
+    "id": "RBM-PO-26-04400",
+    "supplierId": "SUP-GBP",
+    "date": "2026-08-21",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Gulf Bitumen annual price agreement — 2% volume discount on orders ≥ 500 rolls",
+    "discountPct": 2,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "WPF-BIT-4",
+        "description": "APP-modified bitumen membrane 4 mm, 1×10 m roll",
+        "qty": 540,
+        "unit": "roll",
+        "unitPrice": 71.5,
+        "amount": 38610
+      }
+    ],
+    "netAmount": 37837.8
+  },
+  {
+    "id": "RBM-PO-26-04402",
+    "supplierId": "SUP-NEC",
+    "date": "2026-08-24",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "NEC supply contract 2026 — fixed to 31 Dec 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "qty": 3600,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 51120
+      }
+    ],
+    "netAmount": 51120
+  },
+  {
+    "id": "RBM-PO-26-04403",
+    "supplierId": "SUP-AKT",
+    "date": "2026-08-24",
+    "buyer": "Joseph Abraham",
+    "kind": "service",
+    "deliveryTerms": "service",
+    "deliveryPoint": "Jebel Ali → MN-05",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Al Khaleej Heavy Transport rate card 2026 (AED 38/t JA → MN-05)",
+    "discountPct": 0,
+    "note": "Transfers 1–5 Sep 2026",
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-JA-MN05-T",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05 (per tonne)",
+        "qty": 212,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 8056
+      }
+    ],
+    "netAmount": 8056
+  },
+  {
+    "id": "RBM-PO-26-04405",
+    "supplierId": "SUP-NEC",
+    "date": "2026-08-25",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "NEC supply contract 2026 — fixed to 31 Dec 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-SRC-50",
+        "description": "Sulphate-resisting cement, 50 kg bag",
+        "qty": 1200,
+        "unit": "bag",
+        "unitPrice": 16.35,
+        "amount": 19620
+      }
+    ],
+    "netAmount": 19620
+  },
+  {
+    "id": "RBM-PO-26-04407",
+    "supplierId": "SUP-ACT",
+    "date": "2026-08-25",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Andalus Ceramics price agreement 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "SAN-WC-WH",
+        "description": "Wall-hung WC set with concealed cistern",
+        "qty": 48,
+        "unit": "set",
+        "unitPrice": 905,
+        "amount": 43440
+      }
+    ],
+    "netAmount": 43440
+  },
+  {
+    "id": "RBM-PO-26-04409",
+    "supplierId": "SUP-SRM",
+    "date": "2026-08-26",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Sahara Rebar Mills supply contract — Q3/Q4 2026 mill price",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "qty": 146,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 369380
+      }
+    ],
+    "netAmount": 369380
+  },
+  {
+    "id": "RBM-PO-26-04410",
+    "supplierId": "SUP-AWB",
+    "date": "2026-08-26",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Al Waha Blocks delivered price list 2026 (freight included)",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "qty": 8100,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 24705
+      }
+    ],
+    "netAmount": 24705
+  },
+  {
+    "id": "RBM-PO-26-04411",
+    "supplierId": "SUP-NEC",
+    "date": "2026-08-27",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "NEC supply contract 2026 — fixed to 31 Dec 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "qty": 4800,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 68160
+      }
+    ],
+    "netAmount": 68160
+  },
+  {
+    "id": "RBM-PO-26-04412",
+    "supplierId": "SUP-ACT",
+    "date": "2026-08-27",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Andalus quotation AQ-26-0412 (AED 46.80/m², valid to 31 Aug 2026)",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "TIL-POR-60120",
+        "description": "Porcelain tile 60×120 cm, matt, rectified",
+        "qty": 1440,
+        "unit": "m²",
+        "unitPrice": 46.8,
+        "amount": 67392
+      }
+    ],
+    "netAmount": 67392
+  },
+  {
+    "id": "RBM-PO-26-04414",
+    "supplierId": "SUP-GBP",
+    "date": "2026-08-28",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Gulf Bitumen annual price agreement — 2% volume discount on orders ≥ 500 rolls",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "WPF-BIT-4",
+        "description": "APP-modified bitumen membrane 4 mm, 1×10 m roll",
+        "qty": 320,
+        "unit": "roll",
+        "unitPrice": 71.5,
+        "amount": 22880
+      }
+    ],
+    "netAmount": 22880
+  },
+  {
+    "id": "RBM-PO-26-04418",
+    "supplierId": "SUP-SRM",
+    "date": "2026-08-31",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Sahara Rebar Mills supply contract — Q3/Q4 2026 mill price",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-20",
+        "description": "Rebar B500B 20 mm, 12 m bars",
+        "qty": 96,
+        "unit": "t",
+        "unitPrice": 2520,
+        "amount": 241920
+      },
+      {
+        "lineNo": 2,
+        "sku": "RB-B500-25",
+        "description": "Rebar B500B 25 mm, 12 m bars",
+        "qty": 48,
+        "unit": "t",
+        "unitPrice": 2545,
+        "amount": 122160
+      }
+    ],
+    "netAmount": 364080
+  },
+  {
+    "id": "RBM-PO-26-04421",
+    "supplierId": "SUP-NEC",
+    "date": "2026-09-01",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "NEC supply contract 2026 — fixed to 31 Dec 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "qty": 2400,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 34080
+      }
+    ],
+    "netAmount": 34080
+  },
+  {
+    "id": "RBM-PO-26-04424",
+    "supplierId": "SUP-AKT",
+    "date": "2026-09-02",
+    "buyer": "Joseph Abraham",
+    "kind": "service",
+    "deliveryTerms": "service",
+    "deliveryPoint": "Jebel Ali → MN-05",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Al Khaleej Heavy Transport rate card 2026 (AED 38/t JA → MN-05)",
+    "discountPct": 0,
+    "note": "Transfers 7–12 Sep 2026",
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-JA-MN05-T",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05 (per tonne)",
+        "qty": 286,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 10868
+      }
+    ],
+    "netAmount": 10868
+  },
+  {
+    "id": "RBM-PO-26-04425",
+    "supplierId": "SUP-SRM",
+    "date": "2026-09-02",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Sahara Rebar Mills supply contract — Q3/Q4 2026 mill price",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "qty": 168,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 425040
+      }
+    ],
+    "netAmount": 425040
+  },
+  {
+    "id": "RBM-PO-26-04427",
+    "supplierId": "SUP-AWB",
+    "date": "2026-09-03",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Al Waha Blocks delivered price list 2026 (freight included)",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "qty": 12600,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 38430
+      }
+    ],
+    "netAmount": 38430
+  },
+  {
+    "id": "RBM-PO-26-04429",
+    "supplierId": "SUP-NEC",
+    "date": "2026-09-04",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "NEC supply contract 2026 — fixed to 31 Dec 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "qty": 5400,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 76680
+      }
+    ],
+    "netAmount": 76680
+  },
+  {
+    "id": "RBM-PO-26-04431",
+    "supplierId": "SUP-ACT",
+    "date": "2026-09-07",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Andalus Ceramics price agreement 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "TIL-CER-3060",
+        "description": "Ceramic wall tile 30×60 cm, gloss white",
+        "qty": 864,
+        "unit": "m²",
+        "unitPrice": 22.4,
+        "amount": 19353.6
+      },
+      {
+        "lineNo": 2,
+        "sku": "SAN-WC-WH",
+        "description": "Wall-hung WC set with concealed cistern",
+        "qty": 24,
+        "unit": "set",
+        "unitPrice": 905,
+        "amount": 21720
+      }
+    ],
+    "netAmount": 41073.6
+  },
+  {
+    "id": "RBM-PO-26-04433",
+    "supplierId": "SUP-SRM",
+    "date": "2026-09-07",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Sahara Rebar Mills supply contract — Q3/Q4 2026 mill price",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-12",
+        "description": "Rebar B500B 12 mm, 12 m bars",
+        "qty": 52,
+        "unit": "t",
+        "unitPrice": 2575,
+        "amount": 133900
+      },
+      {
+        "lineNo": 2,
+        "sku": "RB-B500-20",
+        "description": "Rebar B500B 20 mm, 12 m bars",
+        "qty": 70,
+        "unit": "t",
+        "unitPrice": 2520,
+        "amount": 176400
+      }
+    ],
+    "netAmount": 310300
+  },
+  {
+    "id": "RBM-PO-26-04436",
+    "supplierId": "SUP-GBP",
+    "date": "2026-09-08",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Gulf Bitumen annual price agreement — 2% volume discount on orders ≥ 500 rolls",
+    "discountPct": 2,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "WPF-BIT-4",
+        "description": "APP-modified bitumen membrane 4 mm, 1×10 m roll",
+        "qty": 760,
+        "unit": "roll",
+        "unitPrice": 71.5,
+        "amount": 54340
+      }
+    ],
+    "netAmount": 53253.2
+  },
+  {
+    "id": "RBM-PO-26-04438",
+    "supplierId": "SUP-NEC",
+    "date": "2026-09-09",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "NEC supply contract 2026 — fixed to 31 Dec 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-SRC-50",
+        "description": "Sulphate-resisting cement, 50 kg bag",
+        "qty": 1800,
+        "unit": "bag",
+        "unitPrice": 16.35,
+        "amount": 29430
+      }
+    ],
+    "netAmount": 29430
+  },
+  {
+    "id": "RBM-PO-26-04439",
+    "supplierId": "SUP-AWB",
+    "date": "2026-09-09",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Al Waha Blocks delivered price list 2026 (freight included)",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "qty": 9900,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 30195
+      }
+    ],
+    "netAmount": 30195
+  },
+  {
+    "id": "RBM-PO-26-04441",
+    "supplierId": "SUP-SRM",
+    "date": "2026-09-10",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Sahara Rebar Mills supply contract — Q3/Q4 2026 mill price",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "qty": 20,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 50600
+      }
+    ],
+    "netAmount": 50600
+  },
+  {
+    "id": "RBM-PO-26-04444",
+    "supplierId": "SUP-SRM",
+    "date": "2026-09-11",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Sahara Rebar Mills supply contract — Q3/Q4 2026 mill price",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "qty": 154,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 389620
+      }
+    ],
+    "netAmount": 389620
+  },
+  {
+    "id": "RBM-PO-26-04445",
+    "supplierId": "SUP-AKT",
+    "date": "2026-09-11",
+    "buyer": "Joseph Abraham",
+    "kind": "service",
+    "deliveryTerms": "service",
+    "deliveryPoint": "Jebel Ali → MN-05",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Al Khaleej Heavy Transport rate card 2026 (AED 38/t JA → MN-05)",
+    "discountPct": 0,
+    "note": "Transfers 14–19 Sep 2026",
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-JA-MN05-T",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05 (per tonne)",
+        "qty": 174,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 6612
+      }
+    ],
+    "netAmount": 6612
+  },
+  {
+    "id": "RBM-PO-26-04446",
+    "supplierId": "SUP-AWB",
+    "date": "2026-09-14",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Al Waha Blocks delivered price list 2026 (freight included)",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "qty": 7200,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 21960
+      }
+    ],
+    "netAmount": 21960
+  },
+  {
+    "id": "RBM-PO-26-04447",
+    "supplierId": "SUP-NEC",
+    "date": "2026-09-14",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "NEC supply contract 2026 — fixed to 31 Dec 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "qty": 3000,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 42600
+      }
+    ],
+    "netAmount": 42600
+  },
+  {
+    "id": "RBM-PO-26-04448",
+    "supplierId": "SUP-GBP",
+    "date": "2026-09-14",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Gulf Bitumen annual price agreement — 2% volume discount on orders ≥ 500 rolls",
+    "discountPct": 2,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "WPF-BIT-4",
+        "description": "APP-modified bitumen membrane 4 mm, 1×10 m roll",
+        "qty": 620,
+        "unit": "roll",
+        "unitPrice": 71.5,
+        "amount": 44330
+      }
+    ],
+    "netAmount": 43443.4
+  },
+  {
+    "id": "RBM-PO-26-04450",
+    "supplierId": "SUP-FLL",
+    "date": "2026-09-15",
+    "buyer": "Joseph Abraham",
+    "kind": "service",
+    "deliveryTerms": "service",
+    "deliveryPoint": "Jebel Ali → MN-05",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Email rate confirmation 12 Sep 2026",
+    "discountPct": 0,
+    "note": "MN-05 shuttle runs 15–25 Sep 2026 (rate agreed by email, AED 410/trip)",
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-SHUTTLE-10T",
+        "description": "MN-05 shuttle run, 10 t truck (per trip)",
+        "qty": 14,
+        "unit": "trip",
+        "unitPrice": 410,
+        "amount": 5740
+      }
+    ],
+    "netAmount": 5740
+  },
+  {
+    "id": "RBM-PO-26-04452",
+    "supplierId": "SUP-CCI",
+    "date": "2026-09-15",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "ThermaShield contract-manufacturing agreement RBM-CM-26-03",
+    "discountPct": 0,
+    "note": "ThermaShield launch stock — batch 2",
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "PNT-TS-20",
+        "description": "Raseen ThermaShield heat-reflective roof coating, 20 L pail",
+        "qty": 720,
+        "unit": "pail",
+        "unitPrice": 231,
+        "amount": 166320
+      }
+    ],
+    "netAmount": 166320
+  },
+  {
+    "id": "RBM-PO-26-04456",
+    "supplierId": "SUP-SRM",
+    "date": "2026-09-16",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Sahara Rebar Mills supply contract — Q3/Q4 2026 mill price",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "qty": 118,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 298540
+      },
+      {
+        "lineNo": 2,
+        "sku": "RB-B500-25",
+        "description": "Rebar B500B 25 mm, 12 m bars",
+        "qty": 30,
+        "unit": "t",
+        "unitPrice": 2545,
+        "amount": 76350
+      }
+    ],
+    "netAmount": 374890
+  },
+  {
+    "id": "RBM-PO-26-04459",
+    "supplierId": "SUP-ACT",
+    "date": "2026-09-17",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Andalus Ceramics price agreement 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "TIL-CER-3060",
+        "description": "Ceramic wall tile 30×60 cm, gloss white",
+        "qty": 1728,
+        "unit": "m²",
+        "unitPrice": 22.4,
+        "amount": 38707.2
+      }
+    ],
+    "netAmount": 38707.2
+  },
+  {
+    "id": "RBM-PO-26-04461",
+    "supplierId": "SUP-GBP",
+    "date": "2026-09-17",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Gulf Bitumen annual price agreement — 2% volume discount on orders ≥ 500 rolls",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "WPF-BIT-4",
+        "description": "APP-modified bitumen membrane 4 mm, 1×10 m roll",
+        "qty": 280,
+        "unit": "roll",
+        "unitPrice": 71.5,
+        "amount": 20020
+      }
+    ],
+    "netAmount": 20020
+  },
+  {
+    "id": "RBM-PO-26-04463",
+    "supplierId": "SUP-NEC",
+    "date": "2026-09-18",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "NEC supply contract 2026 — fixed to 31 Dec 2026",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "qty": 4200,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 59640
+      }
+    ],
+    "netAmount": 59640
+  },
+  {
+    "id": "RBM-PO-26-04464",
+    "supplierId": "SUP-AKT",
+    "date": "2026-09-18",
+    "buyer": "Joseph Abraham",
+    "kind": "service",
+    "deliveryTerms": "service",
+    "deliveryPoint": "Jebel Ali → MN-05",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Al Khaleej Heavy Transport rate card 2026 (AED 38/t JA → MN-05)",
+    "discountPct": 0,
+    "note": "Transfers 21–26 Sep 2026",
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-JA-MN05-T",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05 (per tonne)",
+        "qty": 160,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 6080
+      },
+      {
+        "lineNo": 2,
+        "sku": "FRT-JA-MN05-P",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05, palletised (per tonne)",
+        "qty": 88,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 3344
+      }
+    ],
+    "netAmount": 9424
+  },
+  {
+    "id": "RBM-PO-26-04466",
+    "supplierId": "SUP-SRM",
+    "date": "2026-09-21",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "Sahara Rebar Mills supply contract — Q3/Q4 2026 mill price",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "RB-B500-16",
+        "description": "Rebar B500B 16 mm, 12 m bars",
+        "qty": 88,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 222640
+      }
+    ],
+    "netAmount": 222640
+  },
+  {
+    "id": "RBM-PO-26-04468",
+    "supplierId": "SUP-AWB",
+    "date": "2026-09-21",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Al Waha Blocks delivered price list 2026 (freight included)",
+    "discountPct": 0,
+    "note": null,
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 20 cm (400×200×200)",
+        "qty": 11700,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 35685
+      }
+    ],
+    "netAmount": 35685
+  },
+  {
+    "id": "RBM-PO-26-04470",
+    "supplierId": "SUP-NEC",
+    "date": "2026-09-22",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "NEC supply contract 2026 — fixed to 31 Dec 2026",
+    "discountPct": 0,
+    "note": "Price per NEC supply contract — AED 14.20/bag to 31 Dec 2026; surcharge proposal NEC/SALES/2026/208 not accepted",
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "CEM-OPC-50",
+        "description": "OPC 42.5N cement, 50 kg bag",
+        "qty": 6000,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 85200
+      }
+    ],
+    "netAmount": 85200
+  },
+  {
+    "id": "RBM-PO-26-04472",
+    "supplierId": "SUP-AKT",
+    "date": "2026-09-22",
+    "buyer": "Joseph Abraham",
+    "kind": "service",
+    "deliveryTerms": "service",
+    "deliveryPoint": "Jebel Ali → MN-05",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Al Khaleej Heavy Transport rate card 2026 (AED 38/t JA → MN-05)",
+    "discountPct": 0,
+    "note": "Transfers 28–30 Sep 2026",
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "FRT-JA-MN05-T",
+        "description": "Inter-warehouse transfer Jebel Ali → MN-05 (per tonne)",
+        "qty": 196,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 7448
+      }
+    ],
+    "netAmount": 7448
+  },
+  {
+    "id": "RBM-PO-26-04481",
+    "supplierId": "SUP-CCI",
+    "date": "2026-09-23",
+    "buyer": "Joseph Abraham",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Jebel Ali warehouse",
+    "warehouse": "JA",
+    "currency": "AED",
+    "priceBasis": "ThermaShield contract-manufacturing agreement RBM-CM-26-03",
+    "discountPct": 0,
+    "note": "ThermaShield launch stock — batch 3 (1 Nov 2026 launch)",
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "PNT-TS-20",
+        "description": "Raseen ThermaShield heat-reflective roof coating, 20 L pail",
+        "qty": 1200,
+        "unit": "pail",
+        "unitPrice": 231,
+        "amount": 277200
+      }
+    ],
+    "netAmount": 277200
+  }
+]

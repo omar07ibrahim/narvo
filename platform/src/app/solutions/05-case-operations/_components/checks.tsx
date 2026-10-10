@@ -36,7 +36,7 @@ export function CheckList({ checks }: { checks: CaseCheck[] }) {
         {sorted.map((c, i) => (
           <motion.li
             key={c.id}
-            initial={{ opacity: 0, y: 3 }}
+            initial={{ opacity: 1, y: 3 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.04 }}
             className={cn("flex gap-3 px-3 py-2.5", c.status === "fail" && "bg-danger-soft/35", c.status === "warn" && "bg-warning-soft/35")}

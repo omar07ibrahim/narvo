@@ -1,0 +1,1638 @@
+{
+  "asOf": "2026-10-09T18:00:00+04:00",
+  "source": "RBM ERP — open sales orders (not yet invoiced)",
+  "orders": [
+    {
+      "id": "SO-26-11758",
+      "createdAt": "2026-09-21T09:14:00+04:00",
+      "customerId": "RBM-C-10242",
+      "customerName": "Sandstone Infrastructure LLC",
+      "customerPo": "SAND/PO/26/0412",
+      "project": "Marsa Al Noor Ring Road — Package 2 box culverts",
+      "site": "Ring Road Package 2, chainage 4+300",
+      "district": "MN-05 Ras Al Marsa Industrial",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-13T07:30",
+      "promiseDate": "2026-10-13",
+      "status": "partially_delivered",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Eng. Karim Saab",
+        "role": "Package Manager",
+        "email": "k.saab@sandstoneinfra.ae",
+        "mobile": "+971 50 290 5517",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-25",
+          "qty": 96,
+          "unit": "t",
+          "unitPrice": 2775,
+          "deliveredQty": 72
+        }
+      ],
+      "notes": "Three drops of 24 t delivered 30 Sep – 7 Oct. Last drop 24 t."
+    },
+    {
+      "id": "SO-26-11763",
+      "createdAt": "2026-09-21T15:02:00+04:00",
+      "customerId": "RBM-C-10021",
+      "customerName": "Bin Hilal Contracting LLC",
+      "customerPo": "BHC-PO-2026-1188",
+      "project": "Al Quoz Logistics Park — Warehouse W4",
+      "site": "Plot 368-1142, Al Quoz Industrial 4",
+      "district": "Al Quoz Industrial 4, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-12T07:00",
+      "promiseDate": "2026-10-12",
+      "status": "partially_delivered",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Mohammed Bin Hilal",
+        "role": "Managing Partner",
+        "email": "m.binhilal@binhilalcontracting.ae",
+        "mobile": "+971 50 337 1180",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-OPC-50",
+          "qty": 1800,
+          "unit": "bag",
+          "unitPrice": 16.2,
+          "deliveredQty": 1200
+        },
+        {
+          "lineNo": 2,
+          "sku": "BLK-HOL-20",
+          "qty": 14400,
+          "unit": "pc",
+          "unitPrice": 3.8,
+          "deliveredQty": 9000
+        }
+      ],
+      "notes": "Balance cement 600 bags + blocks 5,400 pcs."
+    },
+    {
+      "id": "SO-26-11769",
+      "createdAt": "2026-09-22T10:40:00+04:00",
+      "customerId": "RBM-C-10047",
+      "customerName": "Arabian Peninsula Construction Co. (APCC)",
+      "customerPo": "APCC/PO/26/3207",
+      "project": "Corniche Road Extension — box culvert BC-3",
+      "site": "Corniche Road Extension, BC-3 laydown",
+      "district": "MN-01 Downtown",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-13T07:00",
+      "promiseDate": "2026-10-13",
+      "status": "partially_delivered",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Eng. Hisham Darwish",
+        "role": "Procurement Director",
+        "email": "h.darwish@apcc.ae",
+        "mobile": "+971 50 662 9047",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-SRC-50",
+          "qty": 2400,
+          "unit": "bag",
+          "unitPrice": 18.3,
+          "deliveredQty": 1600
+        },
+        {
+          "lineNo": 2,
+          "sku": "RB-B500-20",
+          "qty": 26,
+          "unit": "t",
+          "unitPrice": 2715,
+          "deliveredQty": 26
+        }
+      ],
+      "notes": "Rebar complete. SRC balance 800 bags."
+    },
+    {
+      "id": "SO-26-11774",
+      "createdAt": "2026-09-23T11:25:00+04:00",
+      "customerId": "RBM-C-10068",
+      "customerName": "Emerald Line Construction LLC",
+      "customerPo": "ELC-PO-26-0871",
+      "project": "Jumeirah Village Triangle townhouses — cluster 7 fit-out",
+      "site": "JVT District 7, cluster 7",
+      "district": "Jumeirah Village Triangle, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-14T10:00",
+      "promiseDate": "2026-10-14",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Deepa Varghese",
+        "role": "Commercial Manager",
+        "email": "deepa.v@emeraldline.ae",
+        "mobile": "+971 52 774 0193",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "TIL-CER-3060",
+          "qty": 1240,
+          "unit": "m²",
+          "unitPrice": 29.8,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "SAN-WC-WH",
+          "qty": 46,
+          "unit": "set",
+          "unitPrice": 1180,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11778",
+      "createdAt": "2026-09-24T09:05:00+04:00",
+      "customerId": "RBM-C-10105",
+      "customerName": "Al Fayha Fit-Out & Interiors LLC",
+      "customerPo": "AFF-0926-22",
+      "project": "Business Bay office fit-out — Level 22",
+      "site": "Bay Square Tower 3, Business Bay",
+      "district": "Business Bay, Dubai",
+      "zone": "Dubai sites",
+      "cityCentre": true,
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-15T09:30",
+      "promiseDate": "2026-10-15",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Lina Haddad",
+        "role": "Project Coordinator",
+        "email": "lina@alfayhafitout.ae",
+        "mobile": "+971 56 410 2287",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "TIL-POR-60120",
+          "qty": 410,
+          "unit": "m²",
+          "unitPrice": 62.72,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "SAN-WC-WH",
+          "qty": 12,
+          "unit": "set",
+          "unitPrice": 1240,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "City-centre site — truck restrictions apply."
+    },
+    {
+      "id": "SO-26-11782",
+      "createdAt": "2026-09-25T08:50:00+04:00",
+      "customerId": "RBM-C-10118",
+      "customerName": "Coastline Marine Works LLC",
+      "customerPo": "CMW/PO/2026/0335",
+      "project": "Marina Quarter breakwater — revetment toe beam",
+      "site": "Marina Quarter breakwater, gate 2",
+      "district": "MN-08 Marina Quarter",
+      "zone": "MN-08 Marina Quarter",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-13T10:00",
+      "promiseDate": "2026-10-13",
+      "status": "open",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Capt. Rakesh Nair",
+        "role": "Site Manager",
+        "email": "rakesh.n@coastlinemarine.ae",
+        "mobile": "+971 50 845 3361",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-SRC-50",
+          "qty": 1500,
+          "unit": "bag",
+          "unitPrice": 19.3,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "WPF-BIT-4",
+          "qty": 60,
+          "unit": "roll",
+          "unitPrice": 96,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Gate permit to be booked by dispatch."
+    },
+    {
+      "id": "SO-26-11788",
+      "createdAt": "2026-09-25T13:30:00+04:00",
+      "customerId": "RBM-C-10047",
+      "customerName": "Arabian Peninsula Construction Co. (APCC)",
+      "customerPo": "APCC/PO/26/3244",
+      "project": "Ras Al Marsa Industrial — precast yard extension",
+      "site": "Plot MN-05-018-0003",
+      "district": "MN-05 Ras Al Marsa Industrial",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-12T07:00",
+      "promiseDate": "2026-10-12",
+      "status": "ready",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Eng. Hisham Darwish",
+        "role": "Procurement Director",
+        "email": "h.darwish@apcc.ae",
+        "mobile": "+971 50 662 9047",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-16",
+          "qty": 40,
+          "unit": "t",
+          "unitPrice": 2725,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Loaded on 2 trailers, staged in MN-05 yard bay R3."
+    },
+    {
+      "id": "SO-26-11791",
+      "createdAt": "2026-09-26T10:12:00+04:00",
+      "customerId": "RBM-C-10139",
+      "customerName": "Ras Al Marsa Precast Industries LLC",
+      "customerPo": "RAMPI-PO-7716",
+      "project": "Precast plant — hollow-core slab line",
+      "site": "Ras Al Marsa Precast, plant gate B",
+      "district": "MN-05 Ras Al Marsa Industrial",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-12T08:00",
+      "promiseDate": "2026-10-12",
+      "status": "ready",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Arvind Menon",
+        "role": "Plant Manager",
+        "email": "arvind.m@rampi.ae",
+        "mobile": "+971 55 391 7720",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-OPC-50",
+          "qty": 2400,
+          "unit": "bag",
+          "unitPrice": 17.07,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "RB-B500-12",
+          "qty": 18,
+          "unit": "t",
+          "unitPrice": 2808,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11795",
+      "createdAt": "2026-09-27T09:41:00+04:00",
+      "customerId": "RBM-C-10052",
+      "customerName": "Al Marsa Engineering & Contracting LLC",
+      "customerPo": "AME-PO-26-0592",
+      "project": "Al Waha Gardens — 14 citizens' villas",
+      "site": "Plots MN-04-117-0021 to 0034",
+      "district": "MN-04 Al Waha Gardens",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-13T07:30",
+      "promiseDate": "2026-10-13",
+      "status": "partially_delivered",
+      "kam": "Rania Mansour",
+      "contact": {
+        "name": "Eng. Salem Al Marri",
+        "role": "Projects Manager",
+        "email": "salem.almarri@almarsa-eng.ae",
+        "mobile": "+971 50 118 4426",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "BLK-HOL-20",
+          "qty": 21600,
+          "unit": "pc",
+          "unitPrice": 3.92,
+          "deliveredQty": 10800
+        },
+        {
+          "lineNo": 2,
+          "sku": "CEM-OPC-50",
+          "qty": 1200,
+          "unit": "bag",
+          "unitPrice": 16.7,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Blocks in two drops; second drop with cement."
+    },
+    {
+      "id": "SO-26-11799",
+      "createdAt": "2026-09-28T14:18:00+04:00",
+      "customerId": "RBM-C-10183",
+      "customerName": "Al Ruwais Roofing & Waterproofing LLC",
+      "customerPo": "ARR-2609-44",
+      "project": "Al Murjan villas — roof waterproofing (housing maintenance grants)",
+      "site": "Al Murjan, sector 2 villas",
+      "district": "MN-02 Al Murjan",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-14T07:00",
+      "promiseDate": "2026-10-14",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Faisal Ahmed",
+        "role": "Operations Manager",
+        "email": "ops@alruwaisroofing.ae",
+        "mobile": "+971 50 488 1207",
+        "channel": "whatsapp"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "WPF-BIT-4",
+          "qty": 140,
+          "unit": "roll",
+          "unitPrice": 93.5,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11801",
+      "createdAt": "2026-09-29T08:33:00+04:00",
+      "customerId": "RBM-C-10139",
+      "customerName": "Ras Al Marsa Precast Industries LLC",
+      "customerPo": "RAMPI-PO-7731",
+      "project": "Precast plant — stair & parapet units",
+      "site": "Ras Al Marsa Precast, plant gate B",
+      "district": "MN-05 Ras Al Marsa Industrial",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-12T07:00",
+      "promiseDate": "2026-10-12",
+      "status": "ready",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Arvind Menon",
+        "role": "Plant Manager",
+        "email": "arvind.m@rampi.ae",
+        "mobile": "+971 55 391 7720",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-16",
+          "qty": 24,
+          "unit": "t",
+          "unitPrice": 2760,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11806",
+      "createdAt": "2026-09-30T09:20:00+04:00",
+      "customerId": "RBM-C-10034",
+      "customerName": "Gulf Crest Builders LLC",
+      "customerPo": "GCB-PO-26-0911",
+      "project": "Marina Quarter Tower A — podium slab L2",
+      "site": "Marina Quarter Tower A, gate 3",
+      "district": "MN-08 Marina Quarter",
+      "zone": "MN-08 Marina Quarter",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-12T10:00",
+      "promiseDate": "2026-10-12",
+      "status": "ready",
+      "kam": "Rania Mansour",
+      "contact": {
+        "name": "Imran Qureshi",
+        "role": "Procurement Manager",
+        "email": "imran.q@gulfcrestbuilders.ae",
+        "mobile": "+971 55 208 6634",
+        "channel": "email"
+      },
+      "gatePermit": {
+        "ref": "MQP-GP-26-18842",
+        "date": "2026-10-12",
+        "bookedOn": "2026-10-08"
+      },
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-OPC-50",
+          "qty": 420,
+          "unit": "bag",
+          "unitPrice": 16.4,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Rides with the rebar delivery on gate permit MQP-GP-26-18842."
+    },
+    {
+      "id": "SO-26-11809",
+      "createdAt": "2026-09-30T16:05:00+04:00",
+      "customerId": "RBM-C-10144",
+      "customerName": "Desert Rose Villas Contracting LLC",
+      "customerPo": "DRV-118",
+      "project": "Al Barsha South — villa G+1 (plot 673-0412)",
+      "site": "Plot 673-0412, Al Barsha South 3",
+      "district": "Al Barsha South, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-14T07:00",
+      "promiseDate": "2026-10-14",
+      "status": "open",
+      "kam": "Rania Mansour",
+      "contact": {
+        "name": "Hassan Fakhro",
+        "role": "Owner",
+        "email": "desertrose.villas@gmail.com",
+        "mobile": "+971 52 618 0049",
+        "channel": "whatsapp"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "BLK-HOL-20",
+          "qty": 7200,
+          "unit": "pc",
+          "unitPrice": 4.07,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "CEM-OPC-50",
+          "qty": 480,
+          "unit": "bag",
+          "unitPrice": 17.25,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11813",
+      "createdAt": "2026-10-01T08:47:00+04:00",
+      "customerId": "RBM-C-10021",
+      "customerName": "Bin Hilal Contracting LLC",
+      "customerPo": "BHC-PO-2026-1203",
+      "project": "Jebel Ali labour accommodation — Block D",
+      "site": "Jebel Ali Industrial 1, plot 597-0718",
+      "district": "Jebel Ali, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-13T07:00",
+      "promiseDate": "2026-10-13",
+      "status": "ready",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Mohammed Bin Hilal",
+        "role": "Managing Partner",
+        "email": "m.binhilal@binhilalcontracting.ae",
+        "mobile": "+971 50 337 1180",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-16",
+          "qty": 52,
+          "unit": "t",
+          "unitPrice": 2735,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "RB-B500-12",
+          "qty": 20,
+          "unit": "t",
+          "unitPrice": 2780,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11815",
+      "createdAt": "2026-10-01T11:02:00+04:00",
+      "customerId": "RBM-C-10047",
+      "customerName": "Arabian Peninsula Construction Co. (APCC)",
+      "customerPo": "APCC/PO/26/3318",
+      "project": "Ring Road Interchange 4 — pier caps",
+      "site": "Interchange 4, pier caps P7–P12",
+      "district": "MN-07 Al Ghaf Community",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-15T07:00",
+      "promiseDate": "2026-10-15",
+      "status": "open",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Eng. Hisham Darwish",
+        "role": "Procurement Director",
+        "email": "h.darwish@apcc.ae",
+        "mobile": "+971 50 662 9047",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-12",
+          "qty": 30,
+          "unit": "t",
+          "unitPrice": 2730,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "CEM-OPC-50",
+          "qty": 900,
+          "unit": "bag",
+          "unitPrice": 16.05,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Entered from APCC PO — rebar rate copied from PO."
+    },
+    {
+      "id": "SO-26-11817",
+      "createdAt": "2026-10-02T09:15:00+04:00",
+      "customerId": "RBM-C-10204",
+      "customerName": "Noor Al Waha General Contracting LLC",
+      "customerPo": "NAW-0210",
+      "project": "Al Waha Gardens — 3 citizens' villas (housing grant)",
+      "site": "Plots MN-04-121-0007 to 0009",
+      "district": "MN-04 Al Waha Gardens",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-14T08:00",
+      "promiseDate": "2026-10-14",
+      "status": "open",
+      "kam": "Rania Mansour",
+      "contact": {
+        "name": "Ali Al Mazmi",
+        "role": "Owner",
+        "email": "nooralwaha.gc@gmail.com",
+        "mobile": "+971 50 559 0372",
+        "channel": "whatsapp"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "BLK-HOL-20",
+          "qty": 9000,
+          "unit": "pc",
+          "unitPrice": 4.1,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "CEM-OPC-50",
+          "qty": 600,
+          "unit": "bag",
+          "unitPrice": 17.3,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11820",
+      "createdAt": "2026-10-02T13:40:00+04:00",
+      "customerId": "RBM-C-10171",
+      "customerName": "Sidra Line Interiors LLC",
+      "customerPo": "SLI-26-140",
+      "project": "Al Sidr Residential — show villa S-118 fit-out",
+      "site": "Villa S-118, Al Sidr Residential",
+      "district": "MN-06 Al Sidr Residential",
+      "zone": "MN-06 Al Sidr Residential",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-15T10:00",
+      "promiseDate": "2026-10-15",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Reem Khalil",
+        "role": "Design Manager",
+        "email": "reem@sidraline.ae",
+        "mobile": "+971 50 731 2290",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "TIL-POR-60120",
+          "qty": 260,
+          "unit": "m²",
+          "unitPrice": 62.8,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "TIL-CER-3060",
+          "qty": 180,
+          "unit": "m²",
+          "unitPrice": 31.5,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Contractor pass held by Sidra Line."
+    },
+    {
+      "id": "SO-26-11823",
+      "createdAt": "2026-10-03T08:22:00+04:00",
+      "customerId": "RBM-C-10196",
+      "customerName": "Al Seef Engineering Works LLC",
+      "customerPo": "ASE-PO-1093",
+      "project": "Dubai Industrial City — steel warehouse slab",
+      "site": "DIC plot 532-0164",
+      "district": "Dubai Industrial City, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-14T07:00",
+      "promiseDate": "2026-10-14",
+      "status": "open",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Eng. Tarek Fawzi",
+        "role": "Project Engineer",
+        "email": "tarek.f@alseefeng.ae",
+        "mobile": "+971 56 207 8843",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-12",
+          "qty": 14,
+          "unit": "t",
+          "unitPrice": 2800,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "CEM-OPC-50",
+          "qty": 1200,
+          "unit": "bag",
+          "unitPrice": 17,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11826",
+      "createdAt": "2026-10-03T10:55:00+04:00",
+      "customerId": "RBM-C-10271",
+      "customerName": "Al Hamra Tiling & Stone LLC",
+      "customerPo": "AHT-77",
+      "project": "Dubai Hills apartments — lobby flooring",
+      "site": "Dubai Hills, building 4B",
+      "district": "Dubai Hills, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-16T08:00",
+      "promiseDate": "2026-10-16",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Rashid Al Zaabi",
+        "role": "Owner",
+        "email": "alhamra.tiling@gmail.com",
+        "mobile": "+971 50 377 6620",
+        "channel": "whatsapp"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "TIL-POR-60120",
+          "qty": 520,
+          "unit": "m²",
+          "unitPrice": 62.72,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11829",
+      "createdAt": "2026-10-04T09:10:00+04:00",
+      "customerId": "RBM-C-10219",
+      "customerName": "Al Barsha Building Materials Trading LLC",
+      "customerPo": "ABBM-PO-4471",
+      "project": "Stock replenishment — Al Barsha yard",
+      "site": "Al Barsha 2 yard, plot 375-0219",
+      "district": "Al Barsha, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-13T07:00",
+      "promiseDate": "2026-10-13",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Rajesh Pillai",
+        "role": "Purchase Manager",
+        "email": "purchase@albarshabm.ae",
+        "mobile": "+971 50 166 4598",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-OPC-50",
+          "qty": 3000,
+          "unit": "bag",
+          "unitPrice": 16.6,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "BLK-HOL-20",
+          "qty": 4500,
+          "unit": "pc",
+          "unitPrice": 4.05,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Cement price keyed from customer PO (volume deal requested by phone)."
+    },
+    {
+      "id": "SO-26-11831",
+      "createdAt": "2026-10-04T12:30:00+04:00",
+      "customerId": "RBM-C-10227",
+      "customerName": "Qasr Al Sahra Contracting LLC",
+      "customerPo": "QAS-L27",
+      "project": "Al Lulu Island — villa L-27",
+      "site": "Villa L-27, Al Lulu Island",
+      "district": "MN-03 Al Lulu Island",
+      "zone": "MN-03 Al Lulu Island",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-15T09:00",
+      "promiseDate": "2026-10-15",
+      "status": "open",
+      "kam": "Rania Mansour",
+      "contact": {
+        "name": "Mansour Al Hajeri",
+        "role": "Owner",
+        "email": "qasralsahra.c@gmail.com",
+        "mobile": "+971 50 812 3306",
+        "channel": "whatsapp"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-OPC-50",
+          "qty": 360,
+          "unit": "bag",
+          "unitPrice": 17.6,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "BLK-HOL-20",
+          "qty": 4800,
+          "unit": "pc",
+          "unitPrice": 4.15,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 3,
+          "sku": "WPF-BIT-4",
+          "qty": 24,
+          "unit": "roll",
+          "unitPrice": 96,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Gate pass via Lulu Island Developments portal."
+    },
+    {
+      "id": "SO-26-11834",
+      "createdAt": "2026-10-05T08:15:00+04:00",
+      "customerId": "RBM-C-10258",
+      "customerName": "Two Seas Marine Contracting LLC",
+      "customerPo": "TSM-PO-26-218",
+      "project": "Marsa Al Noor fishing harbour — quay wall",
+      "site": "Fishing harbour, quay wall section Q2",
+      "district": "MN-01 Downtown",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-13T07:00",
+      "promiseDate": "2026-10-13",
+      "status": "open",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Eng. Nasser Bukhari",
+        "role": "Construction Manager",
+        "email": "n.bukhari@twoseasmarine.ae",
+        "mobile": "+971 50 447 2631",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-20",
+          "qty": 22,
+          "unit": "t",
+          "unitPrice": 2731,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11837",
+      "createdAt": "2026-10-05T11:48:00+04:00",
+      "customerId": "RBM-C-10068",
+      "customerName": "Emerald Line Construction LLC",
+      "customerPo": "ELC-PO-26-0912",
+      "project": "Dubai Hills villas — kitchens & bathrooms (phase 2)",
+      "site": "Dubai Hills Estate, villas 51–66",
+      "district": "Dubai Hills, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-16T09:00",
+      "promiseDate": "2026-10-16",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Deepa Varghese",
+        "role": "Commercial Manager",
+        "email": "deepa.v@emeraldline.ae",
+        "mobile": "+971 52 774 0193",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "TIL-POR-60120",
+          "qty": 850,
+          "unit": "m²",
+          "unitPrice": 64,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "TIL-CER-3060",
+          "qty": 320,
+          "unit": "m²",
+          "unitPrice": 29.8,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Porcelain keyed at list price by order desk."
+    },
+    {
+      "id": "SO-26-11840",
+      "createdAt": "2026-10-05T15:20:00+04:00",
+      "customerId": "RBM-C-10263",
+      "customerName": "Sharq Al Emarat Contracting LLC",
+      "customerPo": "SAE/PO/26/0618",
+      "project": "Dubai South — staff housing blocks C & D",
+      "site": "Dubai South, residential district plot 41",
+      "district": "Dubai South, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-16T07:00",
+      "promiseDate": "2026-10-16",
+      "status": "open",
+      "kam": "Rania Mansour",
+      "contact": {
+        "name": "Joby Thomas",
+        "role": "Procurement Officer",
+        "email": "procurement@sharqalemarat.ae",
+        "mobile": "+971 56 118 0427",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-16",
+          "qty": 18,
+          "unit": "t",
+          "unitPrice": 2750,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "CEM-OPC-50",
+          "qty": 900,
+          "unit": "bag",
+          "unitPrice": 17.05,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11842",
+      "createdAt": "2026-10-06T10:37:00+04:00",
+      "customerId": "RBM-C-10034",
+      "customerName": "Gulf Crest Builders LLC",
+      "customerPo": "GCB-PO-26-0937",
+      "project": "Marina Quarter Tower A — podium slab L2",
+      "site": "Marina Quarter Tower A, gate 3",
+      "district": "MN-08 Marina Quarter",
+      "zone": "MN-08 Marina Quarter",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-12T07:00",
+      "promiseDate": "2026-10-12",
+      "status": "credit_hold",
+      "kam": "Rania Mansour",
+      "contact": {
+        "name": "Imran Qureshi",
+        "role": "Procurement Manager",
+        "email": "imran.q@gulfcrestbuilders.ae",
+        "mobile": "+971 55 208 6634",
+        "channel": "email"
+      },
+      "gatePermit": {
+        "ref": "MQP-GP-26-18842",
+        "date": "2026-10-12",
+        "bookedOn": "2026-10-08"
+      },
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-16",
+          "qty": 120,
+          "unit": "t",
+          "unitPrice": 2690,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Entered at customer PO price AED 2,690/t. ERP auto credit hold on entry. Pour of podium slab L2 planned Tue 13 Oct.",
+      "siteContact": {
+        "name": "Eng. Saif Al Mheiri",
+        "role": "Site Engineer, Tower A",
+        "mobile": "+971 50 912 4471",
+        "channel": "whatsapp"
+      }
+    },
+    {
+      "id": "SO-26-11845",
+      "createdAt": "2026-10-06T14:12:00+04:00",
+      "customerId": "RBM-C-10235",
+      "customerName": "Al Jazira Roofing Solutions LLC",
+      "customerPo": "AJR-2610-09",
+      "project": "Al Sidr Residential — roof membranes, villas S-201 to S-212",
+      "site": "Villas S-201 to S-212, Al Sidr Residential",
+      "district": "MN-06 Al Sidr Residential",
+      "zone": "MN-06 Al Sidr Residential",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-17T08:00",
+      "promiseDate": "2026-10-17",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Irfan Siddiqui",
+        "role": "Operations Manager",
+        "email": "irfan@aljazeeraroofing.ae",
+        "mobile": "+971 55 663 1902",
+        "channel": "whatsapp"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "WPF-BIT-4",
+          "qty": 48,
+          "unit": "roll",
+          "unitPrice": 94.1,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11848",
+      "createdAt": "2026-10-07T08:30:00+04:00",
+      "customerId": "RBM-C-10021",
+      "customerName": "Bin Hilal Contracting LLC",
+      "customerPo": "BHC-PO-2026-1219",
+      "project": "Al Quoz Logistics Park — Warehouse W5",
+      "site": "Plot 368-1143, Al Quoz Industrial 4",
+      "district": "Al Quoz Industrial 4, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-19T07:00",
+      "promiseDate": "2026-10-19",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Mohammed Bin Hilal",
+        "role": "Managing Partner",
+        "email": "m.binhilal@binhilalcontracting.ae",
+        "mobile": "+971 50 337 1180",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-OPC-50",
+          "qty": 2400,
+          "unit": "bag",
+          "unitPrice": 16.2,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "TIL-CER-3060",
+          "qty": 600,
+          "unit": "m²",
+          "unitPrice": 28.6,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11850",
+      "createdAt": "2026-10-07T10:05:00+04:00",
+      "customerId": "RBM-C-10167",
+      "customerName": "Horizon Ridge MEP Contracting LLC",
+      "customerPo": "HRM-PO-0388",
+      "project": "Marina Quarter Residences Tower C — washrooms L5–L12",
+      "site": "Marina Quarter Residences, Tower C service gate",
+      "district": "MN-08 Marina Quarter",
+      "zone": "MN-08 Marina Quarter",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-18T08:00",
+      "promiseDate": "2026-10-18",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Sameer Kulkarni",
+        "role": "MEP Project Manager",
+        "email": "sameer.k@horizonridge.ae",
+        "mobile": "+971 55 902 6614",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "SAN-WC-WH",
+          "qty": 64,
+          "unit": "set",
+          "unitPrice": 1215,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Customer wants delivery while installers are on site."
+    },
+    {
+      "id": "SO-26-11853",
+      "createdAt": "2026-10-07T13:22:00+04:00",
+      "customerId": "RBM-C-10052",
+      "customerName": "Al Marsa Engineering & Contracting LLC",
+      "customerPo": "AME-PO-26-0618",
+      "project": "Al Waha Gardens — boundary walls & majlis",
+      "site": "Plots MN-04-117-0021 to 0034",
+      "district": "MN-04 Al Waha Gardens",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-15T07:00",
+      "promiseDate": "2026-10-15",
+      "status": "open",
+      "kam": "Rania Mansour",
+      "contact": {
+        "name": "Eng. Salem Al Marri",
+        "role": "Projects Manager",
+        "email": "salem.almarri@almarsa-eng.ae",
+        "mobile": "+971 50 118 4426",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-SRC-50",
+          "qty": 800,
+          "unit": "bag",
+          "unitPrice": 18.95,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "TIL-CER-3060",
+          "qty": 240,
+          "unit": "m²",
+          "unitPrice": 29.4,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11856",
+      "createdAt": "2026-10-07T16:40:00+04:00",
+      "customerId": "RBM-C-10126",
+      "customerName": "Najm Al Sahil Building Contracting LLC",
+      "customerPo": "NAS-0710",
+      "project": "Al Warqa — G+1 villa (plot 412-0388)",
+      "site": "Plot 412-0388, Al Warqa 4",
+      "district": "Al Warqa, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-14T07:00",
+      "promiseDate": "2026-10-14",
+      "status": "credit_hold",
+      "kam": "Rania Mansour",
+      "contact": {
+        "name": "Obaid Al Shamsi",
+        "role": "Owner",
+        "email": "najmalsahil.bc@gmail.com",
+        "mobile": "+971 50 603 4418",
+        "channel": "whatsapp"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "BLK-HOL-20",
+          "qty": 5400,
+          "unit": "pc",
+          "unitPrice": 4.15,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "CEM-OPC-50",
+          "qty": 300,
+          "unit": "bag",
+          "unitPrice": 17.6,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Auto credit hold. Overdue AED 52,300 (31–60 days)."
+    },
+    {
+      "id": "SO-26-11859",
+      "createdAt": "2026-10-08T08:10:00+04:00",
+      "customerId": "RBM-C-10118",
+      "customerName": "Coastline Marine Works LLC",
+      "customerPo": "CMW/PO/2026/0351",
+      "project": "Marina Quarter — pontoon abutments",
+      "site": "Marina Quarter breakwater, gate 2",
+      "district": "MN-08 Marina Quarter",
+      "zone": "MN-08 Marina Quarter",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-20T09:30",
+      "promiseDate": "2026-10-20",
+      "status": "open",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Capt. Rakesh Nair",
+        "role": "Site Manager",
+        "email": "rakesh.n@coastlinemarine.ae",
+        "mobile": "+971 50 845 3361",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-SRC-50",
+          "qty": 900,
+          "unit": "bag",
+          "unitPrice": 19.3,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11861",
+      "createdAt": "2026-10-08T09:35:00+04:00",
+      "customerId": "RBM-C-10152",
+      "customerName": "Bayt Al Reef Building Contracting LLC",
+      "customerPo": "BAR-2610",
+      "project": "Al Murjan — citizens' villa extension",
+      "site": "Plot MN-02-044-0016, Al Murjan",
+      "district": "MN-02 Al Murjan",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-14T07:00",
+      "promiseDate": "2026-10-14",
+      "status": "open",
+      "kam": "Rania Mansour",
+      "contact": {
+        "name": "Khalifa Al Ketbi",
+        "role": "Site Supervisor",
+        "email": "baytalreef.bc@gmail.com",
+        "mobile": "+971 50 274 9913",
+        "channel": "whatsapp"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-16",
+          "qty": 14,
+          "unit": "t",
+          "unitPrice": 2790,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "CEM-OPC-50",
+          "qty": 240,
+          "unit": "bag",
+          "unitPrice": 17.6,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Ground-floor slab pour planned Thu 15 Oct."
+    },
+    {
+      "id": "SO-26-11864",
+      "createdAt": "2026-10-08T11:50:00+04:00",
+      "customerId": "RBM-C-10242",
+      "customerName": "Sandstone Infrastructure LLC",
+      "customerPo": "SAND/PO/26/0447",
+      "project": "Marsa Al Noor Ring Road — Package 2 headwalls",
+      "site": "Ring Road Package 2, chainage 4+300",
+      "district": "MN-05 Ras Al Marsa Industrial",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-16T07:00",
+      "promiseDate": "2026-10-16",
+      "status": "open",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Eng. Karim Saab",
+        "role": "Package Manager",
+        "email": "k.saab@sandstoneinfra.ae",
+        "mobile": "+971 50 290 5517",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-25",
+          "qty": 20,
+          "unit": "t",
+          "unitPrice": 2775,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "CEM-SRC-50",
+          "qty": 1200,
+          "unit": "bag",
+          "unitPrice": 19.1,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11866",
+      "createdAt": "2026-10-08T14:25:00+04:00",
+      "customerId": "RBM-C-10183",
+      "customerName": "Al Ruwais Roofing & Waterproofing LLC",
+      "customerPo": "ARR-2610-12",
+      "project": "Al Lulu Island Villas Phase 2 — roof waterproofing",
+      "site": "Lulu Island Villas Phase 2, cluster C",
+      "district": "MN-03 Al Lulu Island",
+      "zone": "MN-03 Al Lulu Island",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-17T08:00",
+      "promiseDate": "2026-10-17",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Faisal Ahmed",
+        "role": "Operations Manager",
+        "email": "ops@alruwaisroofing.ae",
+        "mobile": "+971 50 488 1207",
+        "channel": "whatsapp"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "WPF-BIT-4",
+          "qty": 96,
+          "unit": "roll",
+          "unitPrice": 93.5,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Applicator crew booked for Saturday."
+    },
+    {
+      "id": "SO-26-11869",
+      "createdAt": "2026-10-08T16:02:00+04:00",
+      "customerId": "RBM-C-10073",
+      "customerName": "Saqr Al Noor Contracting LLC",
+      "customerPo": "SANC-PO-26-077",
+      "project": "Ras Al Marsa — service road & culverts",
+      "site": "Service road SR-2, Ras Al Marsa Industrial",
+      "district": "MN-05 Ras Al Marsa Industrial",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-15T07:00",
+      "promiseDate": "2026-10-15",
+      "status": "credit_hold",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Saqr Rashid Al Noori",
+        "role": "Owner",
+        "email": "saqr@saqralnoor.ae",
+        "mobile": "+971 50 921 7735",
+        "channel": "whatsapp"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "RB-B500-20",
+          "qty": 18,
+          "unit": "t",
+          "unitPrice": 2780,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "CEM-SRC-50",
+          "qty": 600,
+          "unit": "bag",
+          "unitPrice": 19.1,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Auto credit hold on entry. Terms reduced to 30 days in July 2026."
+    },
+    {
+      "id": "SO-26-11872",
+      "createdAt": "2026-10-09T08:25:00+04:00",
+      "customerId": "RBM-C-10021",
+      "customerName": "Bin Hilal Contracting LLC",
+      "customerPo": "BHC-PO-2026-1231",
+      "project": "Business Bay residential tower — basement raft",
+      "site": "Plot 346-0827, Business Bay",
+      "district": "Business Bay, Dubai",
+      "zone": "Dubai sites",
+      "cityCentre": true,
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-13T06:00",
+      "promiseDate": "2026-10-13",
+      "status": "open",
+      "kam": "Vishal Kapoor",
+      "contact": {
+        "name": "Mohammed Bin Hilal",
+        "role": "Managing Partner",
+        "email": "m.binhilal@binhilalcontracting.ae",
+        "mobile": "+971 50 337 1180",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-OPC-50",
+          "qty": 1500,
+          "unit": "bag",
+          "unitPrice": 16.2,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "RB-B500-12",
+          "qty": 24,
+          "unit": "t",
+          "unitPrice": 2780,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": "Raft pour starts 06:30; site asked for a 06:00 drop."
+    },
+    {
+      "id": "SO-26-11874",
+      "createdAt": "2026-10-09T10:10:00+04:00",
+      "customerId": "RBM-C-10196",
+      "customerName": "Al Seef Engineering Works LLC",
+      "customerPo": "ASE-PO-1107",
+      "project": "Al Quoz — fabrication shed",
+      "site": "Al Quoz Industrial 3, plot 365-0904",
+      "district": "Al Quoz Industrial 3, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-19T08:00",
+      "promiseDate": "2026-10-19",
+      "status": "open",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Eng. Tarek Fawzi",
+        "role": "Project Engineer",
+        "email": "tarek.f@alseefeng.ae",
+        "mobile": "+971 56 207 8843",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "BLK-HOL-20",
+          "qty": 3600,
+          "unit": "pc",
+          "unitPrice": 4.01,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "WPF-BIT-4",
+          "qty": 30,
+          "unit": "roll",
+          "unitPrice": 92.7,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11876",
+      "createdAt": "2026-10-09T11:45:00+04:00",
+      "customerId": "RBM-C-10258",
+      "customerName": "Two Seas Marine Contracting LLC",
+      "customerPo": "TSM-PO-26-224",
+      "project": "Marsa Al Noor fishing harbour — fender plinths",
+      "site": "Fishing harbour, quay wall section Q3",
+      "district": "MN-01 Downtown",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-19T07:00",
+      "promiseDate": "2026-10-19",
+      "status": "open",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Eng. Nasser Bukhari",
+        "role": "Construction Manager",
+        "email": "n.bukhari@twoseasmarine.ae",
+        "mobile": "+971 50 447 2631",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-SRC-50",
+          "qty": 700,
+          "unit": "bag",
+          "unitPrice": 19.25,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11878",
+      "createdAt": "2026-10-09T13:30:00+04:00",
+      "customerId": "RBM-C-10047",
+      "customerName": "Arabian Peninsula Construction Co. (APCC)",
+      "customerPo": "APCC/PO/26/3351",
+      "project": "Corniche Road Extension — utilities duct bank",
+      "site": "Corniche Road Extension, chainage 1+150",
+      "district": "MN-01 Downtown",
+      "zone": "Other Marsa Al Noor districts",
+      "shipFrom": "MN05",
+      "requestedDelivery": "2026-10-20T07:00",
+      "promiseDate": "2026-10-20",
+      "status": "open",
+      "kam": "Ahmed Soliman",
+      "contact": {
+        "name": "Eng. Hisham Darwish",
+        "role": "Procurement Director",
+        "email": "h.darwish@apcc.ae",
+        "mobile": "+971 50 662 9047",
+        "channel": "email"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "CEM-OPC-50",
+          "qty": 1800,
+          "unit": "bag",
+          "unitPrice": 16.05,
+          "deliveredQty": 0
+        },
+        {
+          "lineNo": 2,
+          "sku": "BLK-HOL-20",
+          "qty": 6000,
+          "unit": "pc",
+          "unitPrice": 3.78,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "SO-26-11879",
+      "createdAt": "2026-10-09T15:55:00+04:00",
+      "customerId": "RBM-C-10144",
+      "customerName": "Desert Rose Villas Contracting LLC",
+      "customerPo": "DRV-121",
+      "project": "Al Barsha South — villa G+1 wet areas",
+      "site": "Plot 673-0412, Al Barsha South 3",
+      "district": "Al Barsha South, Dubai",
+      "zone": "Dubai sites",
+      "shipFrom": "JA",
+      "requestedDelivery": "2026-10-21T09:00",
+      "promiseDate": "2026-10-21",
+      "status": "open",
+      "kam": "Rania Mansour",
+      "contact": {
+        "name": "Hassan Fakhro",
+        "role": "Owner",
+        "email": "desertrose.villas@gmail.com",
+        "mobile": "+971 52 618 0049",
+        "channel": "whatsapp"
+      },
+      "gatePermit": null,
+      "lines": [
+        {
+          "lineNo": 1,
+          "sku": "TIL-CER-3060",
+          "qty": 220,
+          "unit": "m²",
+          "unitPrice": 30.9,
+          "deliveredQty": 0
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}

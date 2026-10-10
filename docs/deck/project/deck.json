@@ -1,0 +1,19 @@
+{
+  "v": 4,
+  "createdOnFiles": { "v": 1, "at": "2026-10-10T20:30:00Z" },
+  "lists": "css",
+  "title": "NARVO — Private AI systems for UAE institutions",
+  "cover": "cover",
+  "order": ["cover", "mandate", "gap", "approach", "stack", "case", "catalogue", "pilots", "engagement", "close"],
+  "sections": {
+    "s1": { "description": "Why private AI, and why now", "start": "cover" },
+    "s2": { "description": "What NARVO builds and how it runs", "start": "approach" },
+    "s3": { "description": "Proof: a live case and the full catalogue", "start": "case" },
+    "s4": { "description": "How we start together", "start": "pilots" }
+  },
+  "faces": {
+    "ibm-plex-sans": { "family": "IBM Plex Sans", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" },
+    "ibm-plex-sans-arabic": { "family": "IBM Plex Sans Arabic", "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500&display=swap" }
+  },
+  "designSystems": []
+}

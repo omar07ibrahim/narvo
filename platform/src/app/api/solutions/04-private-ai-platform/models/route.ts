@@ -1,4 +1,4 @@
-import { getEndpoint, MODEL_OPTIONS } from "@/lib/ai/config";
+import { getEndpoint, MODEL_OPTIONS, resolveModelId } from "@/lib/ai/config";
 
 let cache: { at: number; ids: string[]; ok: boolean; ms: number; error?: string } | null = null;
 
@@ -16,7 +16,7 @@ export async function GET() {
     }
   }
   const models = MODEL_OPTIONS.map((m) => {
-    const id = provider === "local" ? m.local : m.openrouter;
+    const id = provider === "local" ? resolveModelId("main", m.key) : m.openrouter;
     return { ...m, servedId: id, available: !!id && cache!.ids.some((x) => x === id || x.startsWith(id)) };
   });
   return Response.json({ provider, host: new URL(baseUrl).host, endpointOk: cache.ok, listMs: cache.ms, totalServed: cache.ids.length, error: cache.error, models });

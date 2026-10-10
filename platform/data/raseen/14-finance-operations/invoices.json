@@ -1,0 +1,2123 @@
+[
+  {
+    "id": "AP-26-09-001",
+    "docType": "invoice",
+    "supplierId": "SUP-NEC",
+    "supplierName": "Northern Emirates Cement Co.",
+    "supplierInvoiceNo": "NEC/INV/26/04391",
+    "invoiceDate": "2026-09-02",
+    "receivedDate": "2026-09-03",
+    "channel": "portal",
+    "poRef": "RBM-PO-26-04402",
+    "grnRefs": [
+      "GRN-26-08374"
+    ],
+    "deliveryNoteRefs": [
+      "NEC-DN-26-1162"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "CEM-OPC-50",
+        "description": "Ordinary Portland Cement CEM I 42.5N — 50 kg bag",
+        "qty": 3600,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 51120
+      }
+    ],
+    "grossAmount": 51120,
+    "discount": null,
+    "taxableAmount": 51120,
+    "vatRate": 0.05,
+    "vatAmount": 2556,
+    "total": 53676,
+    "currency": "AED",
+    "trnOnInvoice": "100318274500003",
+    "image": null,
+    "dueDate": "2026-11-01",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-002",
+    "docType": "invoice",
+    "supplierId": "SUP-SRM",
+    "supplierName": "Sahara Rebar Mills LLC",
+    "supplierInvoiceNo": "SRM-26-1142",
+    "invoiceDate": "2026-09-03",
+    "receivedDate": "2026-09-04",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04398",
+    "grnRefs": [
+      "GRN-26-08380"
+    ],
+    "deliveryNoteRefs": [
+      "SRM-DN-26-08781"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "RB-B500-12",
+        "description": "Deformed steel bar B500B Ø12 mm × 12 m (BS 4449)",
+        "qty": 38,
+        "unit": "t",
+        "unitPrice": 2575,
+        "amount": 97850
+      },
+      {
+        "lineNo": 2,
+        "kind": "item",
+        "sku": "RB-B500-16",
+        "description": "Deformed steel bar B500B Ø16 mm × 12 m (BS 4449)",
+        "qty": 122,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 308660
+      }
+    ],
+    "grossAmount": 406510,
+    "discount": null,
+    "taxableAmount": 406510,
+    "vatRate": 0.05,
+    "vatAmount": 20325.5,
+    "total": 426835.5,
+    "currency": "AED",
+    "trnOnInvoice": "100427615900003",
+    "image": null,
+    "dueDate": "2026-10-18",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-003",
+    "docType": "invoice",
+    "supplierId": "SUP-AWB",
+    "supplierName": "Al Waha Blocks Factory LLC",
+    "supplierInvoiceNo": "AWB-26-3304",
+    "invoiceDate": "2026-09-02",
+    "receivedDate": "2026-09-04",
+    "channel": "courier",
+    "poRef": "RBM-PO-26-04396",
+    "grnRefs": [
+      "GRN-26-08377"
+    ],
+    "deliveryNoteRefs": [
+      "AWB-DN-5512"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 400×200×200 mm, 7 N/mm²",
+        "qty": 10800,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 32940
+      }
+    ],
+    "grossAmount": 32940,
+    "discount": null,
+    "taxableAmount": 32940,
+    "vatRate": 0.05,
+    "vatAmount": 1647,
+    "total": 34587,
+    "currency": "AED",
+    "trnOnInvoice": "100186452700003",
+    "image": null,
+    "dueDate": "2026-10-02",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-004",
+    "docType": "invoice",
+    "supplierId": "SUP-NEC",
+    "supplierName": "Northern Emirates Cement Co.",
+    "supplierInvoiceNo": "NEC/INV/26/04406",
+    "invoiceDate": "2026-09-04",
+    "receivedDate": "2026-09-07",
+    "channel": "portal",
+    "poRef": "RBM-PO-26-04405",
+    "grnRefs": [
+      "GRN-26-08383"
+    ],
+    "deliveryNoteRefs": [
+      "NEC-DN-26-1163"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "CEM-SRC-50",
+        "description": "Sulphate Resisting Cement CEM I 42.5N-SR3 — 50 kg bag",
+        "qty": 1200,
+        "unit": "bag",
+        "unitPrice": 16.35,
+        "amount": 19620
+      }
+    ],
+    "grossAmount": 19620,
+    "discount": null,
+    "taxableAmount": 19620,
+    "vatRate": 0.05,
+    "vatAmount": 981,
+    "total": 20601,
+    "currency": "AED",
+    "trnOnInvoice": "100318274500003",
+    "image": null,
+    "dueDate": "2026-11-03",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-005",
+    "docType": "invoice",
+    "supplierId": "SUP-ACT",
+    "supplierName": "Andalus Ceramics Trading LLC",
+    "supplierInvoiceNo": "ACT/INV/26/0712",
+    "invoiceDate": "2026-09-04",
+    "receivedDate": "2026-09-07",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04394",
+    "grnRefs": [
+      "GRN-26-08386"
+    ],
+    "deliveryNoteRefs": [
+      "ACT-DO-26-2290"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "TIL-CER-3060",
+        "description": "Ceramic wall tile 30×60 gloss white — 'Bianco Lucido'",
+        "qty": 1152,
+        "unit": "m²",
+        "unitPrice": 22.4,
+        "amount": 25804.8
+      }
+    ],
+    "grossAmount": 25804.8,
+    "discount": null,
+    "taxableAmount": 25804.8,
+    "vatRate": 0.05,
+    "vatAmount": 1290.24,
+    "total": 27095.04,
+    "currency": "AED",
+    "trnOnInvoice": "100259038400003",
+    "image": null,
+    "dueDate": "2026-11-03",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-006",
+    "docType": "invoice",
+    "supplierId": "SUP-GBP",
+    "supplierName": "Gulf Bitumen Products FZCO",
+    "supplierInvoiceNo": "GBP-TI-26-0388",
+    "invoiceDate": "2026-09-05",
+    "receivedDate": "2026-09-07",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04400",
+    "grnRefs": [
+      "GRN-26-08389"
+    ],
+    "deliveryNoteRefs": [
+      "GBP-DN-26-0731"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "WPF-BIT-4",
+        "description": "APP modified bitumen membrane 4 mm, polyester, 1×10 m roll",
+        "qty": 540,
+        "unit": "roll",
+        "unitPrice": 71.5,
+        "amount": 38610
+      }
+    ],
+    "grossAmount": 38610,
+    "discount": {
+      "label": "Volume discount 2%",
+      "pct": 2,
+      "amount": 772.2
+    },
+    "taxableAmount": 37837.8,
+    "vatRate": 0.05,
+    "vatAmount": 1891.89,
+    "total": 39729.69,
+    "currency": "AED",
+    "trnOnInvoice": "100392716800003",
+    "image": null,
+    "dueDate": "2026-10-20",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-007",
+    "docType": "invoice",
+    "supplierId": "SUP-NEC",
+    "supplierName": "Northern Emirates Cement Co.",
+    "supplierInvoiceNo": "NEC/INV/26/04423",
+    "invoiceDate": "2026-09-07",
+    "receivedDate": "2026-09-08",
+    "channel": "portal",
+    "poRef": "RBM-PO-26-04411",
+    "grnRefs": [
+      "GRN-26-08395",
+      "GRN-26-08404"
+    ],
+    "deliveryNoteRefs": [
+      "NEC-DN-26-1164",
+      "NEC-DN-26-1165"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "CEM-OPC-50",
+        "description": "Ordinary Portland Cement CEM I 42.5N — 50 kg bag",
+        "qty": 4800,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 68160
+      }
+    ],
+    "grossAmount": 68160,
+    "discount": null,
+    "taxableAmount": 68160,
+    "vatRate": 0.05,
+    "vatAmount": 3408,
+    "total": 71568,
+    "currency": "AED",
+    "trnOnInvoice": "100318274500003",
+    "image": null,
+    "dueDate": "2026-11-06",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-008",
+    "docType": "invoice",
+    "supplierId": "SUP-SRM",
+    "supplierName": "Sahara Rebar Mills LLC",
+    "supplierInvoiceNo": "SRM-26-1156",
+    "invoiceDate": "2026-09-07",
+    "receivedDate": "2026-09-08",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04409",
+    "grnRefs": [
+      "GRN-26-08392"
+    ],
+    "deliveryNoteRefs": [
+      "SRM-DN-26-08782"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "RB-B500-16",
+        "description": "Deformed steel bar B500B Ø16 mm × 12 m (BS 4449)",
+        "qty": 146,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 369380
+      }
+    ],
+    "grossAmount": 369380,
+    "discount": null,
+    "taxableAmount": 369380,
+    "vatRate": 0.05,
+    "vatAmount": 18469,
+    "total": 387849,
+    "currency": "AED",
+    "trnOnInvoice": "100427615900003",
+    "image": null,
+    "dueDate": "2026-10-22",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-009",
+    "docType": "invoice",
+    "supplierId": "SUP-AKT",
+    "supplierName": "Al Khaleej Heavy Transport LLC",
+    "supplierInvoiceNo": "AKHT/26/0917",
+    "invoiceDate": "2026-09-07",
+    "receivedDate": "2026-09-08",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04403",
+    "grnRefs": [
+      "GRN-26-08398"
+    ],
+    "deliveryNoteRefs": [
+      "AKHT-TS-26-0960"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "FRT-JA-MN05-T",
+        "description": "Rebar transfer Jebel Ali → MN-05 (per tonne)",
+        "qty": 212,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 8056
+      }
+    ],
+    "grossAmount": 8056,
+    "discount": null,
+    "taxableAmount": 8056,
+    "vatRate": 0.05,
+    "vatAmount": 402.8,
+    "total": 8458.8,
+    "currency": "AED",
+    "trnOnInvoice": "100512839400003",
+    "image": null,
+    "dueDate": "2026-10-07",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-010",
+    "docType": "invoice",
+    "supplierId": "SUP-ACT",
+    "supplierName": "Andalus Ceramics Trading LLC",
+    "supplierInvoiceNo": "ACT/INV/26/0726",
+    "invoiceDate": "2026-09-08",
+    "receivedDate": "2026-09-09",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04407",
+    "grnRefs": [
+      "GRN-26-08407"
+    ],
+    "deliveryNoteRefs": [
+      "ACT-DO-26-2291"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "SAN-WC-WH",
+        "description": "Wall-hung WC set, concealed cistern, soft-close seat",
+        "qty": 48,
+        "unit": "set",
+        "unitPrice": 905,
+        "amount": 43440
+      }
+    ],
+    "grossAmount": 43440,
+    "discount": null,
+    "taxableAmount": 43440,
+    "vatRate": 0.05,
+    "vatAmount": 2172,
+    "total": 45612,
+    "currency": "AED",
+    "trnOnInvoice": "100259038400003",
+    "image": null,
+    "dueDate": "2026-11-07",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-011",
+    "docType": "invoice",
+    "supplierId": "SUP-NEC",
+    "supplierName": "Northern Emirates Cement Co.",
+    "supplierInvoiceNo": "NEC/INV/26/04437",
+    "invoiceDate": "2026-09-09",
+    "receivedDate": "2026-09-10",
+    "channel": "portal",
+    "poRef": "RBM-PO-26-04421",
+    "grnRefs": [
+      "GRN-26-08416"
+    ],
+    "deliveryNoteRefs": [
+      "NEC-DN-26-1166"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "CEM-OPC-50",
+        "description": "Ordinary Portland Cement CEM I 42.5N — 50 kg bag",
+        "qty": 2400,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 34080
+      }
+    ],
+    "grossAmount": 34080,
+    "discount": null,
+    "taxableAmount": 34080,
+    "vatRate": 0.05,
+    "vatAmount": 1704,
+    "total": 35784,
+    "currency": "AED",
+    "trnOnInvoice": "100318274500003",
+    "image": null,
+    "dueDate": "2026-11-08",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-012",
+    "docType": "invoice",
+    "supplierId": "SUP-SRM",
+    "supplierName": "Sahara Rebar Mills LLC",
+    "supplierInvoiceNo": "SRM-26-1163",
+    "invoiceDate": "2026-09-09",
+    "receivedDate": "2026-09-10",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04418",
+    "grnRefs": [
+      "GRN-26-08401",
+      "GRN-26-08413"
+    ],
+    "deliveryNoteRefs": [
+      "SRM-DN-26-08783",
+      "SRM-DN-26-08784"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "RB-B500-20",
+        "description": "Deformed steel bar B500B Ø20 mm × 12 m (BS 4449)",
+        "qty": 96,
+        "unit": "t",
+        "unitPrice": 2520,
+        "amount": 241920
+      },
+      {
+        "lineNo": 2,
+        "kind": "item",
+        "sku": "RB-B500-25",
+        "description": "Deformed steel bar B500B Ø25 mm × 12 m (BS 4449)",
+        "qty": 48,
+        "unit": "t",
+        "unitPrice": 2545,
+        "amount": 122160
+      }
+    ],
+    "grossAmount": 364080,
+    "discount": null,
+    "taxableAmount": 364080,
+    "vatRate": 0.05,
+    "vatAmount": 18204,
+    "total": 382284,
+    "currency": "AED",
+    "trnOnInvoice": "100427615900003",
+    "image": null,
+    "dueDate": "2026-10-24",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-013",
+    "docType": "invoice",
+    "supplierId": "SUP-AWB",
+    "supplierName": "Al Waha Blocks Factory LLC",
+    "supplierInvoiceNo": "AWB-26-3319",
+    "invoiceDate": "2026-09-08",
+    "receivedDate": "2026-09-10",
+    "channel": "courier",
+    "poRef": "RBM-PO-26-04410",
+    "grnRefs": [
+      "GRN-26-08410"
+    ],
+    "deliveryNoteRefs": [
+      "AWB-DN-5513"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 400×200×200 mm, 7 N/mm²",
+        "qty": 8100,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 24705
+      }
+    ],
+    "grossAmount": 24705,
+    "discount": null,
+    "taxableAmount": 24705,
+    "vatRate": 0.05,
+    "vatAmount": 1235.25,
+    "total": 25940.25,
+    "currency": "AED",
+    "trnOnInvoice": "100186452700003",
+    "image": null,
+    "dueDate": "2026-10-08",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-014",
+    "docType": "invoice",
+    "supplierId": "SUP-GBP",
+    "supplierName": "Gulf Bitumen Products FZCO",
+    "supplierInvoiceNo": "GBP-TI-26-0401",
+    "invoiceDate": "2026-09-10",
+    "receivedDate": "2026-09-11",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04414",
+    "grnRefs": [
+      "GRN-26-08422"
+    ],
+    "deliveryNoteRefs": [
+      "GBP-DN-26-0732"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "WPF-BIT-4",
+        "description": "APP modified bitumen membrane 4 mm, polyester, 1×10 m roll",
+        "qty": 320,
+        "unit": "roll",
+        "unitPrice": 71.5,
+        "amount": 22880
+      }
+    ],
+    "grossAmount": 22880,
+    "discount": null,
+    "taxableAmount": 22880,
+    "vatRate": 0.05,
+    "vatAmount": 1144,
+    "total": 24024,
+    "currency": "AED",
+    "trnOnInvoice": "100392716800003",
+    "image": null,
+    "dueDate": "2026-10-25",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-015",
+    "docType": "invoice",
+    "supplierId": "SUP-CCI",
+    "supplierName": "Coastal Coatings Industries LLC",
+    "supplierInvoiceNo": "CCI-INV-26-0131",
+    "invoiceDate": "2026-09-10",
+    "receivedDate": "2026-09-11",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04397",
+    "grnRefs": [],
+    "deliveryNoteRefs": [
+      "CCI-DN-26-0201"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "PNT-TS-20",
+        "description": "Raseen ThermaShield heat-reflective roof coating — 20 L pail",
+        "qty": 480,
+        "unit": "pail",
+        "unitPrice": 231,
+        "amount": 110880
+      }
+    ],
+    "grossAmount": 110880,
+    "discount": null,
+    "taxableAmount": 110880,
+    "vatRate": 0.05,
+    "vatAmount": 5544,
+    "total": 116424,
+    "currency": "AED",
+    "trnOnInvoice": "100447281600003",
+    "image": null,
+    "dueDate": "2026-11-09",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-016",
+    "docType": "invoice",
+    "supplierId": "SUP-SRM",
+    "supplierName": "Sahara Rebar Mills LLC",
+    "supplierInvoiceNo": "SRM-26-1171",
+    "invoiceDate": "2026-09-12",
+    "receivedDate": "2026-09-14",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04425",
+    "grnRefs": [
+      "GRN-26-08425"
+    ],
+    "deliveryNoteRefs": [
+      "SRM-DN-26-08785"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "RB-B500-16",
+        "description": "Deformed steel bar B500B Ø16 mm × 12 m (BS 4449)",
+        "qty": 168,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 425040
+      }
+    ],
+    "grossAmount": 425040,
+    "discount": null,
+    "taxableAmount": 425040,
+    "vatRate": 0.05,
+    "vatAmount": 21252,
+    "total": 446292,
+    "currency": "AED",
+    "trnOnInvoice": "100427615900003",
+    "image": null,
+    "dueDate": "2026-10-27",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-017",
+    "docType": "invoice",
+    "supplierId": "SUP-ACT",
+    "supplierName": "Andalus Ceramics Trading LLC",
+    "supplierInvoiceNo": "ACT/INV/26/0741",
+    "invoiceDate": "2026-09-11",
+    "receivedDate": "2026-09-14",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04390",
+    "grnRefs": [
+      "GRN-26-08428"
+    ],
+    "deliveryNoteRefs": [
+      "ACT-DO-26-2292"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "TIL-POR-60120",
+        "description": "Porcelain tile 60×120 matt rectified — 'Pietra Grigia'",
+        "qty": 2016,
+        "unit": "m²",
+        "unitPrice": 46.8,
+        "amount": 94348.8
+      }
+    ],
+    "grossAmount": 94348.8,
+    "discount": null,
+    "taxableAmount": 94348.8,
+    "vatRate": 0.05,
+    "vatAmount": 4717.44,
+    "total": 99066.24,
+    "currency": "AED",
+    "trnOnInvoice": "100259038400003",
+    "image": null,
+    "dueDate": "2026-11-10",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-018",
+    "docType": "invoice",
+    "supplierId": "SUP-NEC",
+    "supplierName": "Northern Emirates Cement Co.",
+    "supplierInvoiceNo": "NEC/INV/26/04452",
+    "invoiceDate": "2026-09-14",
+    "receivedDate": "2026-09-15",
+    "channel": "portal",
+    "poRef": "RBM-PO-26-04429",
+    "grnRefs": [
+      "GRN-26-08431",
+      "GRN-26-08437"
+    ],
+    "deliveryNoteRefs": [
+      "NEC-DN-26-1167",
+      "NEC-DN-26-1168"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "CEM-OPC-50",
+        "description": "Ordinary Portland Cement CEM I 42.5N — 50 kg bag",
+        "qty": 5400,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 76680
+      }
+    ],
+    "grossAmount": 76680,
+    "discount": null,
+    "taxableAmount": 76680,
+    "vatRate": 0.05,
+    "vatAmount": 3834,
+    "total": 80514,
+    "currency": "AED",
+    "trnOnInvoice": "100318274500003",
+    "image": null,
+    "dueDate": "2026-11-13",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-019",
+    "docType": "invoice",
+    "supplierId": "SUP-AKT",
+    "supplierName": "Al Khaleej Heavy Transport LLC",
+    "supplierInvoiceNo": "AKHT/26/0934",
+    "invoiceDate": "2026-09-14",
+    "receivedDate": "2026-09-15",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04424",
+    "grnRefs": [
+      "GRN-26-08440"
+    ],
+    "deliveryNoteRefs": [
+      "AKHT-TS-26-0961"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "FRT-JA-MN05-T",
+        "description": "Rebar transfer Jebel Ali → MN-05 (per tonne)",
+        "qty": 286,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 10868
+      }
+    ],
+    "grossAmount": 10868,
+    "discount": null,
+    "taxableAmount": 10868,
+    "vatRate": 0.05,
+    "vatAmount": 543.4,
+    "total": 11411.4,
+    "currency": "AED",
+    "trnOnInvoice": "100512839400003",
+    "image": null,
+    "dueDate": "2026-10-14",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-020",
+    "docType": "invoice",
+    "supplierId": "SUP-SRM",
+    "supplierName": "Sahara Rebar Mills LLC",
+    "supplierInvoiceNo": "SRM-26-1179",
+    "invoiceDate": "2026-09-15",
+    "receivedDate": "2026-09-16",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04433",
+    "grnRefs": [
+      "GRN-26-08443"
+    ],
+    "deliveryNoteRefs": [
+      "SRM-DN-26-08786"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "RB-B500-12",
+        "description": "Deformed steel bar B500B Ø12 mm × 12 m (BS 4449)",
+        "qty": 52,
+        "unit": "t",
+        "unitPrice": 2575,
+        "amount": 133900
+      },
+      {
+        "lineNo": 2,
+        "kind": "item",
+        "sku": "RB-B500-20",
+        "description": "Deformed steel bar B500B Ø20 mm × 12 m (BS 4449)",
+        "qty": 70,
+        "unit": "t",
+        "unitPrice": 2520,
+        "amount": 176400
+      }
+    ],
+    "grossAmount": 310300,
+    "discount": null,
+    "taxableAmount": 310300,
+    "vatRate": 0.05,
+    "vatAmount": 15515,
+    "total": 325815,
+    "currency": "AED",
+    "trnOnInvoice": "100427615900003",
+    "image": null,
+    "dueDate": "2026-10-30",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-021",
+    "docType": "invoice",
+    "supplierId": "SUP-AWB",
+    "supplierName": "Al Waha Blocks Factory LLC",
+    "supplierInvoiceNo": "AWB-26-3336",
+    "invoiceDate": "2026-09-14",
+    "receivedDate": "2026-09-16",
+    "channel": "courier",
+    "poRef": "RBM-PO-26-04427",
+    "grnRefs": [
+      "GRN-26-08434",
+      "GRN-26-08446"
+    ],
+    "deliveryNoteRefs": [
+      "AWB-DN-5514",
+      "AWB-DN-5515"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 400×200×200 mm, 7 N/mm²",
+        "qty": 12600,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 38430
+      }
+    ],
+    "grossAmount": 38430,
+    "discount": null,
+    "taxableAmount": 38430,
+    "vatRate": 0.05,
+    "vatAmount": 1921.5,
+    "total": 40351.5,
+    "currency": "AED",
+    "trnOnInvoice": "100186452700003",
+    "image": null,
+    "dueDate": "2026-10-14",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-022",
+    "docType": "invoice",
+    "supplierId": "SUP-ACT",
+    "supplierName": "Andalus Ceramics Trading LLC",
+    "supplierInvoiceNo": "ACT/INV/26/0758",
+    "invoiceDate": "2026-09-16",
+    "receivedDate": "2026-09-17",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04431",
+    "grnRefs": [
+      "GRN-26-08449"
+    ],
+    "deliveryNoteRefs": [
+      "ACT-DO-26-2293"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "TIL-CER-3060",
+        "description": "Ceramic wall tile 30×60 gloss white — 'Bianco Lucido'",
+        "qty": 864,
+        "unit": "m²",
+        "unitPrice": 22.4,
+        "amount": 19353.6
+      },
+      {
+        "lineNo": 2,
+        "kind": "item",
+        "sku": "SAN-WC-WH",
+        "description": "Wall-hung WC set, concealed cistern, soft-close seat",
+        "qty": 24,
+        "unit": "set",
+        "unitPrice": 905,
+        "amount": 21720
+      }
+    ],
+    "grossAmount": 41073.6,
+    "discount": null,
+    "taxableAmount": 41073.6,
+    "vatRate": 0.05,
+    "vatAmount": 2053.68,
+    "total": 43127.28,
+    "currency": "AED",
+    "trnOnInvoice": "100259038400003",
+    "image": null,
+    "dueDate": "2026-11-15",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-023",
+    "docType": "invoice",
+    "supplierId": "SUP-NEC",
+    "supplierName": "Northern Emirates Cement Co.",
+    "supplierInvoiceNo": "NEC/INV/26/04468",
+    "invoiceDate": "2026-09-17",
+    "receivedDate": "2026-09-18",
+    "channel": "portal",
+    "poRef": "RBM-PO-26-04438",
+    "grnRefs": [
+      "GRN-26-08458"
+    ],
+    "deliveryNoteRefs": [
+      "NEC-DN-26-1169"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "CEM-SRC-50",
+        "description": "Sulphate Resisting Cement CEM I 42.5N-SR3 — 50 kg bag",
+        "qty": 1800,
+        "unit": "bag",
+        "unitPrice": 16.35,
+        "amount": 29430
+      }
+    ],
+    "grossAmount": 29430,
+    "discount": null,
+    "taxableAmount": 29430,
+    "vatRate": 0.05,
+    "vatAmount": 1471.5,
+    "total": 30901.5,
+    "currency": "AED",
+    "trnOnInvoice": "100318274500003",
+    "image": null,
+    "dueDate": "2026-11-16",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-024",
+    "docType": "invoice",
+    "supplierId": "SUP-GBP",
+    "supplierName": "Gulf Bitumen Products FZCO",
+    "supplierInvoiceNo": "GBP-TI-26-0419",
+    "invoiceDate": "2026-09-17",
+    "receivedDate": "2026-09-18",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04436",
+    "grnRefs": [
+      "GRN-26-08455"
+    ],
+    "deliveryNoteRefs": [
+      "GBP-DN-26-0733"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "WPF-BIT-4",
+        "description": "APP modified bitumen membrane 4 mm, polyester, 1×10 m roll",
+        "qty": 760,
+        "unit": "roll",
+        "unitPrice": 71.5,
+        "amount": 54340
+      }
+    ],
+    "grossAmount": 54340,
+    "discount": {
+      "label": "Volume discount 2%",
+      "pct": 2,
+      "amount": 1086.8
+    },
+    "taxableAmount": 53253.2,
+    "vatRate": 0.05,
+    "vatAmount": 2662.66,
+    "total": 55915.86,
+    "currency": "AED",
+    "trnOnInvoice": "100392716800003",
+    "image": null,
+    "dueDate": "2026-11-01",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-025",
+    "docType": "invoice",
+    "supplierId": "SUP-SRM",
+    "supplierName": "Sahara Rebar Mills LLC",
+    "supplierInvoiceNo": "SRM-26-1187",
+    "invoiceDate": "2026-09-18",
+    "receivedDate": "2026-09-21",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04441",
+    "grnRefs": [
+      "GRN-26-08452"
+    ],
+    "deliveryNoteRefs": [
+      "SRM-DN-26-08814"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "RB-B500-16",
+        "description": "Deformed steel bar B500B Ø16 mm × 12 m (BS 4449)",
+        "qty": 20,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 50600
+      }
+    ],
+    "grossAmount": 50600,
+    "discount": null,
+    "taxableAmount": 50600,
+    "vatRate": 0.05,
+    "vatAmount": 2530,
+    "total": 53130,
+    "currency": "AED",
+    "trnOnInvoice": "100427615900003",
+    "image": "/demo/14-finance-operations/srm-26-1187-short-receipt.png",
+    "dueDate": "2026-11-02",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-026",
+    "docType": "invoice",
+    "supplierId": "SUP-SRM",
+    "supplierName": "Sahara Rebar Mills LLC",
+    "supplierInvoiceNo": "SRM-26-1190",
+    "invoiceDate": "2026-09-19",
+    "receivedDate": "2026-09-21",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04444",
+    "grnRefs": [
+      "GRN-26-08464",
+      "GRN-26-08470"
+    ],
+    "deliveryNoteRefs": [
+      "SRM-DN-26-08787",
+      "SRM-DN-26-08788"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "RB-B500-16",
+        "description": "Deformed steel bar B500B Ø16 mm × 12 m (BS 4449)",
+        "qty": 154,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 389620
+      }
+    ],
+    "grossAmount": 389620,
+    "discount": null,
+    "taxableAmount": 389620,
+    "vatRate": 0.05,
+    "vatAmount": 19481,
+    "total": 409101,
+    "currency": "AED",
+    "trnOnInvoice": "100427615900003",
+    "image": null,
+    "dueDate": "2026-11-03",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-027",
+    "docType": "invoice",
+    "supplierId": "SUP-ACT",
+    "supplierName": "Andalus Ceramics Trading LLC",
+    "supplierInvoiceNo": "ACT/INV/26/0766",
+    "invoiceDate": "2026-09-18",
+    "receivedDate": "2026-09-21",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04412",
+    "grnRefs": [
+      "GRN-26-08467"
+    ],
+    "deliveryNoteRefs": [
+      "ACT-DO-26-2294"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "TIL-POR-60120",
+        "description": "Porcelain tile 60×120 matt rectified — 'Pietra Grigia'",
+        "qty": 1440,
+        "unit": "m²",
+        "unitPrice": 49.6,
+        "amount": 71424
+      }
+    ],
+    "grossAmount": 71424,
+    "discount": null,
+    "taxableAmount": 71424,
+    "vatRate": 0.05,
+    "vatAmount": 3571.2,
+    "total": 74995.2,
+    "currency": "AED",
+    "trnOnInvoice": "100259038400003",
+    "image": null,
+    "dueDate": "2026-11-17",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": "Price as per our quotation AQ-26-0457 dated 10/09/2026",
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-028",
+    "docType": "invoice",
+    "supplierId": "SUP-AWB",
+    "supplierName": "Al Waha Blocks Factory LLC",
+    "supplierInvoiceNo": "AWB-26-3344",
+    "invoiceDate": "2026-09-17",
+    "receivedDate": "2026-09-21",
+    "channel": "courier",
+    "poRef": "RBM-PO-26-04439",
+    "grnRefs": [
+      "GRN-26-08461"
+    ],
+    "deliveryNoteRefs": [
+      "AWB-DN-5516"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 400×200×200 mm, 7 N/mm²",
+        "qty": 9900,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 30195
+      },
+      {
+        "lineNo": 2,
+        "kind": "charge",
+        "sku": null,
+        "description": "Delivery charges — 3 trips to MN-05",
+        "qty": 3,
+        "unit": "trip",
+        "unitPrice": 450,
+        "amount": 1350
+      }
+    ],
+    "grossAmount": 31545,
+    "discount": null,
+    "taxableAmount": 31545,
+    "vatRate": 0.05,
+    "vatAmount": 1577.25,
+    "total": 33122.25,
+    "currency": "AED",
+    "trnOnInvoice": "100186452700003",
+    "image": "/demo/14-finance-operations/awb-26-3344-freight.png",
+    "dueDate": "2026-10-17",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-029",
+    "docType": "invoice",
+    "supplierId": "SUP-NEC",
+    "supplierName": "Northern Emirates Cement Co.",
+    "supplierInvoiceNo": "NEC/INV/26/04479",
+    "invoiceDate": "2026-09-21",
+    "receivedDate": "2026-09-22",
+    "channel": "portal",
+    "poRef": "RBM-PO-26-04447",
+    "grnRefs": [
+      "GRN-26-08476"
+    ],
+    "deliveryNoteRefs": [
+      "NEC-DN-26-1170"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "CEM-OPC-50",
+        "description": "Ordinary Portland Cement CEM I 42.5N — 50 kg bag",
+        "qty": 3000,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 42600
+      }
+    ],
+    "grossAmount": 42600,
+    "discount": null,
+    "taxableAmount": 42600,
+    "vatRate": 0.05,
+    "vatAmount": 2130,
+    "total": 44730,
+    "currency": "AED",
+    "trnOnInvoice": "100318274500003",
+    "image": null,
+    "dueDate": "2026-11-20",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-030",
+    "docType": "invoice",
+    "supplierId": "SUP-GBP",
+    "supplierName": "Gulf Bitumen Products FZCO",
+    "supplierInvoiceNo": "GBP-TI-26-0427",
+    "invoiceDate": "2026-09-21",
+    "receivedDate": "2026-09-22",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04448",
+    "grnRefs": [
+      "GRN-26-08473"
+    ],
+    "deliveryNoteRefs": [
+      "GBP-DN-26-0734"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "WPF-BIT-4",
+        "description": "APP modified bitumen membrane 4 mm, polyester, 1×10 m roll",
+        "qty": 620,
+        "unit": "roll",
+        "unitPrice": 71.5,
+        "amount": 44330
+      }
+    ],
+    "grossAmount": 44330,
+    "discount": {
+      "label": "Volume discount 2%",
+      "pct": 2,
+      "amount": 886.6
+    },
+    "taxableAmount": 43443.4,
+    "vatRate": 0.05,
+    "vatAmount": 2216.5,
+    "total": 45659.9,
+    "currency": "AED",
+    "trnOnInvoice": "100392716800003",
+    "image": "/demo/14-finance-operations/gbp-ti-0427-vat-base.png",
+    "dueDate": "2026-11-05",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-031",
+    "docType": "invoice",
+    "supplierId": "SUP-AKT",
+    "supplierName": "Al Khaleej Heavy Transport LLC",
+    "supplierInvoiceNo": "AKHT/26/0951",
+    "invoiceDate": "2026-09-21",
+    "receivedDate": "2026-09-22",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04445",
+    "grnRefs": [
+      "GRN-26-08482"
+    ],
+    "deliveryNoteRefs": [
+      "AKHT-TS-26-0962"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "FRT-JA-MN05-T",
+        "description": "Rebar transfer Jebel Ali → MN-05 (per tonne)",
+        "qty": 174,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 6612
+      }
+    ],
+    "grossAmount": 6612,
+    "discount": null,
+    "taxableAmount": 6612,
+    "vatRate": 0.05,
+    "vatAmount": 330.6,
+    "total": 6942.6,
+    "currency": "AED",
+    "trnOnInvoice": "100512839400003",
+    "image": null,
+    "dueDate": "2026-10-21",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-032",
+    "docType": "invoice",
+    "supplierId": "SUP-ACT",
+    "supplierName": "Andalus Ceramics Trading LLC",
+    "supplierInvoiceNo": "ACT/INV/26/0712",
+    "invoiceDate": "2026-09-22",
+    "receivedDate": "2026-09-23",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04394",
+    "grnRefs": [
+      "GRN-26-08386"
+    ],
+    "deliveryNoteRefs": [
+      "ACT-DO-26-2290"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "TIL-CER-3060",
+        "description": "Ceramic wall tile 30×60 gloss white — 'Bianco Lucido'",
+        "qty": 1152,
+        "unit": "m²",
+        "unitPrice": 22.4,
+        "amount": 25804.8
+      }
+    ],
+    "grossAmount": 25804.8,
+    "discount": null,
+    "taxableAmount": 25804.8,
+    "vatRate": 0.05,
+    "vatAmount": 1290.24,
+    "total": 27095.04,
+    "currency": "AED",
+    "trnOnInvoice": "100259038400003",
+    "image": "/demo/14-finance-operations/act-inv-0712-resent.png",
+    "dueDate": "2026-11-21",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-033",
+    "docType": "invoice",
+    "supplierId": "SUP-AWB",
+    "supplierName": "Al Waha Blocks Factory LLC",
+    "supplierInvoiceNo": "AWB-26-3351",
+    "invoiceDate": "2026-09-21",
+    "receivedDate": "2026-09-23",
+    "channel": "courier",
+    "poRef": "RBM-PO-26-04446",
+    "grnRefs": [
+      "GRN-26-08479"
+    ],
+    "deliveryNoteRefs": [
+      "AWB-DN-5517"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 400×200×200 mm, 7 N/mm²",
+        "qty": 7200,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 21960
+      }
+    ],
+    "grossAmount": 21960,
+    "discount": null,
+    "taxableAmount": 21960,
+    "vatRate": 0.05,
+    "vatAmount": 1098,
+    "total": 23058,
+    "currency": "AED",
+    "trnOnInvoice": "100186452700003",
+    "image": null,
+    "dueDate": "2026-10-21",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-034",
+    "docType": "invoice",
+    "supplierId": "SUP-CCI",
+    "supplierName": "Coastal Coatings Industries LLC",
+    "supplierInvoiceNo": "CCI-INV-26-0138",
+    "invoiceDate": "2026-09-22",
+    "receivedDate": "2026-09-23",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04452",
+    "grnRefs": [],
+    "deliveryNoteRefs": [
+      "CCI-DN-26-0202"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "PNT-TS-20",
+        "description": "Raseen ThermaShield heat-reflective roof coating — 20 L pail",
+        "qty": 720,
+        "unit": "pail",
+        "unitPrice": 231,
+        "amount": 166320
+      }
+    ],
+    "grossAmount": 166320,
+    "discount": null,
+    "taxableAmount": 166320,
+    "vatRate": 0.05,
+    "vatAmount": 8316,
+    "total": 174636,
+    "currency": "AED",
+    "trnOnInvoice": "100447281600003",
+    "image": null,
+    "dueDate": "2026-11-21",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-035",
+    "docType": "invoice",
+    "supplierId": "SUP-SRM",
+    "supplierName": "Sahara Rebar Mills LLC",
+    "supplierInvoiceNo": "SRM-26-1198",
+    "invoiceDate": "2026-09-23",
+    "receivedDate": "2026-09-24",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04456",
+    "grnRefs": [
+      "GRN-26-08488"
+    ],
+    "deliveryNoteRefs": [
+      "SRM-DN-26-08789"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "RB-B500-16",
+        "description": "Deformed steel bar B500B Ø16 mm × 12 m (BS 4449)",
+        "qty": 118,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 298540
+      },
+      {
+        "lineNo": 2,
+        "kind": "item",
+        "sku": "RB-B500-25",
+        "description": "Deformed steel bar B500B Ø25 mm × 12 m (BS 4449)",
+        "qty": 30,
+        "unit": "t",
+        "unitPrice": 2545,
+        "amount": 76350
+      }
+    ],
+    "grossAmount": 374890,
+    "discount": null,
+    "taxableAmount": 374890,
+    "vatRate": 0.05,
+    "vatAmount": 18744.5,
+    "total": 393634.5,
+    "currency": "AED",
+    "trnOnInvoice": "100427615900003",
+    "image": null,
+    "dueDate": "2026-11-07",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-036",
+    "docType": "credit_note",
+    "supplierId": "SUP-NEC",
+    "supplierName": "Northern Emirates Cement Co.",
+    "supplierInvoiceNo": "NEC/CN/26/00187",
+    "invoiceDate": "2026-09-23",
+    "receivedDate": "2026-09-25",
+    "channel": "portal",
+    "poRef": "RBM-PO-26-04318",
+    "grnRefs": [
+      "GRN-26-08262"
+    ],
+    "deliveryNoteRefs": [
+      "NEC-DN-26-1047",
+      "NEC-RN-26-0611"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "CEM-OPC-50",
+        "description": "Ordinary Portland Cement CEM I 42.5N — 50 kg bag",
+        "qty": -80,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": -1136
+      }
+    ],
+    "grossAmount": -1136,
+    "discount": null,
+    "taxableAmount": -1136,
+    "vatRate": 0.05,
+    "vatAmount": -56.8,
+    "total": -1192.8,
+    "currency": "AED",
+    "trnOnInvoice": "100318274500003",
+    "image": null,
+    "dueDate": "2026-11-22",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": "NEC/INV/26/04127",
+    "reason": "Credit for damaged bags returned on delivery NEC-DN-26-1047 (return note NEC-RN-26-0611)",
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-037",
+    "docType": "invoice",
+    "supplierId": "SUP-ACT",
+    "supplierName": "Andalus Ceramics Trading LLC",
+    "supplierInvoiceNo": "ACT/INV/26/0779",
+    "invoiceDate": "2026-09-24",
+    "receivedDate": "2026-09-25",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04459",
+    "grnRefs": [
+      "GRN-26-08491"
+    ],
+    "deliveryNoteRefs": [
+      "ACT-DO-26-2295"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "TIL-CER-3060",
+        "description": "Ceramic wall tile 30×60 gloss white — 'Bianco Lucido'",
+        "qty": 1728,
+        "unit": "m²",
+        "unitPrice": 22.4,
+        "amount": 38707.2
+      }
+    ],
+    "grossAmount": 38707.2,
+    "discount": null,
+    "taxableAmount": 38707.2,
+    "vatRate": 0.05,
+    "vatAmount": 1935.36,
+    "total": 40642.56,
+    "currency": "AED",
+    "trnOnInvoice": "100259038400003",
+    "image": null,
+    "dueDate": "2026-11-23",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-038",
+    "docType": "invoice",
+    "supplierId": "SUP-NEC",
+    "supplierName": "Northern Emirates Cement Co.",
+    "supplierInvoiceNo": "NEC/INV/26/04502",
+    "invoiceDate": "2026-09-25",
+    "receivedDate": "2026-09-28",
+    "channel": "portal",
+    "poRef": "RBM-PO-26-04463",
+    "grnRefs": [
+      "GRN-26-08494"
+    ],
+    "deliveryNoteRefs": [
+      "NEC-DN-26-1171"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "CEM-OPC-50",
+        "description": "Ordinary Portland Cement CEM I 42.5N — 50 kg bag",
+        "qty": 4200,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 59640
+      }
+    ],
+    "grossAmount": 59640,
+    "discount": null,
+    "taxableAmount": 59640,
+    "vatRate": 0.05,
+    "vatAmount": 2982,
+    "total": 62622,
+    "currency": "AED",
+    "trnOnInvoice": "100318274500003",
+    "image": null,
+    "dueDate": "2026-11-24",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-039",
+    "docType": "invoice",
+    "supplierId": "SUP-SRM",
+    "supplierName": "Sahara Rebar Mills LLC",
+    "supplierInvoiceNo": "SRM-26-1207",
+    "invoiceDate": "2026-09-26",
+    "receivedDate": "2026-09-28",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04466",
+    "grnRefs": [
+      "GRN-26-08506"
+    ],
+    "deliveryNoteRefs": [
+      "SRM-DN-26-08790"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "RB-B500-16",
+        "description": "Deformed steel bar B500B Ø16 mm × 12 m (BS 4449)",
+        "qty": 88,
+        "unit": "t",
+        "unitPrice": 2530,
+        "amount": 222640
+      }
+    ],
+    "grossAmount": 222640,
+    "discount": null,
+    "taxableAmount": 222640,
+    "vatRate": 0.05,
+    "vatAmount": 11132,
+    "total": 233772,
+    "currency": "AED",
+    "trnOnInvoice": "100427615900003",
+    "image": null,
+    "dueDate": "2026-11-10",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-040",
+    "docType": "invoice",
+    "supplierId": "SUP-GBP",
+    "supplierName": "Gulf Bitumen Products FZCO",
+    "supplierInvoiceNo": "GBP-TI-26-0436",
+    "invoiceDate": "2026-09-25",
+    "receivedDate": "2026-09-28",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04461",
+    "grnRefs": [
+      "GRN-26-08497"
+    ],
+    "deliveryNoteRefs": [
+      "GBP-DN-26-0735"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "WPF-BIT-4",
+        "description": "APP modified bitumen membrane 4 mm, polyester, 1×10 m roll",
+        "qty": 280,
+        "unit": "roll",
+        "unitPrice": 71.5,
+        "amount": 20020
+      }
+    ],
+    "grossAmount": 20020,
+    "discount": null,
+    "taxableAmount": 20020,
+    "vatRate": 0.05,
+    "vatAmount": 1001,
+    "total": 21021,
+    "currency": "AED",
+    "trnOnInvoice": "100392716800003",
+    "image": null,
+    "dueDate": "2026-11-09",
+    "paymentTermsDays": 45,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-041",
+    "docType": "invoice",
+    "supplierId": "SUP-FLL",
+    "supplierName": "Fast Lane Logistics Services",
+    "supplierInvoiceNo": "FLL-0087",
+    "invoiceDate": "2026-09-26",
+    "receivedDate": "2026-09-28",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04450",
+    "grnRefs": [],
+    "deliveryNoteRefs": [
+      "FLL-TS-041"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "FRT-SHUTTLE-10T",
+        "description": "MN-05 shuttle trip JA ↔ Ras Al Marsa, 10 ton truck",
+        "qty": 14,
+        "unit": "trip",
+        "unitPrice": 410,
+        "amount": 5740
+      }
+    ],
+    "grossAmount": 5740,
+    "discount": null,
+    "taxableAmount": 5740,
+    "vatRate": 0.05,
+    "vatAmount": 287,
+    "total": 6027,
+    "currency": "AED",
+    "trnOnInvoice": null,
+    "image": "/demo/14-finance-operations/fll-0087-missing-trn.png",
+    "dueDate": "2026-10-26",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-042",
+    "docType": "invoice",
+    "supplierId": "SUP-AKT",
+    "supplierName": "Al Khaleej Heavy Transport LLC",
+    "supplierInvoiceNo": "AKHT/26/0968",
+    "invoiceDate": "2026-09-28",
+    "receivedDate": "2026-09-29",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04464",
+    "grnRefs": [
+      "GRN-26-08515"
+    ],
+    "deliveryNoteRefs": [
+      "AKHT-TS-26-0963"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "FRT-JA-MN05-T",
+        "description": "Rebar transfer Jebel Ali → MN-05 (per tonne)",
+        "qty": 160,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 6080
+      },
+      {
+        "lineNo": 2,
+        "kind": "item",
+        "sku": "FRT-JA-MN05-P",
+        "description": "Palletised cargo transfer Jebel Ali → MN-05 (per tonne)",
+        "qty": 88,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 3344
+      }
+    ],
+    "grossAmount": 9424,
+    "discount": null,
+    "taxableAmount": 9424,
+    "vatRate": 0.05,
+    "vatAmount": 471.2,
+    "total": 9895.2,
+    "currency": "AED",
+    "trnOnInvoice": "100512839400003",
+    "image": "/demo/14-finance-operations/akht-26-0968-clean.png",
+    "dueDate": "2026-10-28",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-043",
+    "docType": "invoice",
+    "supplierId": "SUP-NEC",
+    "supplierName": "Northern Emirates Cement Co.",
+    "supplierInvoiceNo": "NEC/INV/26/04515",
+    "invoiceDate": "2026-09-28",
+    "receivedDate": "2026-09-30",
+    "channel": "portal",
+    "poRef": "RBM-PO-26-04470",
+    "grnRefs": [
+      "GRN-26-08500",
+      "GRN-26-08509"
+    ],
+    "deliveryNoteRefs": [
+      "NEC-DN-26-1172",
+      "NEC-DN-26-1173"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "CEM-OPC-50",
+        "description": "Ordinary Portland Cement CEM I 42.5N — 50 kg bag",
+        "qty": 6000,
+        "unit": "bag",
+        "unitPrice": 14.2,
+        "amount": 85200
+      },
+      {
+        "lineNo": 2,
+        "kind": "charge",
+        "sku": null,
+        "description": "Energy & fuel surcharge (ref. NEC/SALES/2026/208)",
+        "qty": 6000,
+        "unit": "bag",
+        "unitPrice": 1.2,
+        "amount": 7200
+      }
+    ],
+    "grossAmount": 92400,
+    "discount": null,
+    "taxableAmount": 92400,
+    "vatRate": 0.05,
+    "vatAmount": 4620,
+    "total": 97020,
+    "currency": "AED",
+    "trnOnInvoice": "100318274500003",
+    "image": "/demo/14-finance-operations/nec-inv-04515-surcharge.png",
+    "dueDate": "2026-11-27",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-044",
+    "docType": "invoice",
+    "supplierId": "SUP-AWB",
+    "supplierName": "Al Waha Blocks Factory LLC",
+    "supplierInvoiceNo": "AWB-26-3372",
+    "invoiceDate": "2026-09-28",
+    "receivedDate": "2026-09-30",
+    "channel": "courier",
+    "poRef": "RBM-PO-26-04468",
+    "grnRefs": [
+      "GRN-26-08512"
+    ],
+    "deliveryNoteRefs": [
+      "AWB-DN-5518"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "BLK-HOL-20",
+        "description": "Hollow concrete block 400×200×200 mm, 7 N/mm²",
+        "qty": 11700,
+        "unit": "pc",
+        "unitPrice": 3.05,
+        "amount": 35685
+      }
+    ],
+    "grossAmount": 35685,
+    "discount": null,
+    "taxableAmount": 35685,
+    "vatRate": 0.05,
+    "vatAmount": 1784.25,
+    "total": 37469.25,
+    "currency": "AED",
+    "trnOnInvoice": "100186452700003",
+    "image": null,
+    "dueDate": "2026-10-28",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-045",
+    "docType": "invoice",
+    "supplierId": "SUP-CCI",
+    "supplierName": "Coastal Coatings Industries LLC",
+    "supplierInvoiceNo": "CCI-INV-26-0144",
+    "invoiceDate": "2026-09-29",
+    "receivedDate": "2026-09-30",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04418",
+    "grnRefs": [],
+    "deliveryNoteRefs": [
+      "CCI-DN-26-0203"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "PNT-TS-20",
+        "description": "Raseen ThermaShield heat-reflective roof coating — 20 L pail",
+        "qty": 1200,
+        "unit": "pail",
+        "unitPrice": 231,
+        "amount": 277200
+      }
+    ],
+    "grossAmount": 277200,
+    "discount": null,
+    "taxableAmount": 277200,
+    "vatRate": 0.05,
+    "vatAmount": 13860,
+    "total": 291060,
+    "currency": "AED",
+    "trnOnInvoice": "100447281600003",
+    "image": "/demo/14-finance-operations/cci-inv-0144-wrong-po.png",
+    "dueDate": "2026-11-28",
+    "paymentTermsDays": 60,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  },
+  {
+    "id": "AP-26-09-046",
+    "docType": "invoice",
+    "supplierId": "SUP-AKT",
+    "supplierName": "Al Khaleej Heavy Transport LLC",
+    "supplierInvoiceNo": "AKHT/26/0975",
+    "invoiceDate": "2026-09-30",
+    "receivedDate": "2026-10-01",
+    "channel": "email",
+    "poRef": "RBM-PO-26-04472",
+    "grnRefs": [
+      "GRN-26-08521"
+    ],
+    "deliveryNoteRefs": [
+      "AKHT-TS-26-0964"
+    ],
+    "lines": [
+      {
+        "lineNo": 1,
+        "kind": "item",
+        "sku": "FRT-JA-MN05-T",
+        "description": "Rebar transfer Jebel Ali → MN-05 (per tonne)",
+        "qty": 196,
+        "unit": "t",
+        "unitPrice": 38,
+        "amount": 7448
+      }
+    ],
+    "grossAmount": 7448,
+    "discount": null,
+    "taxableAmount": 7448,
+    "vatRate": 0.05,
+    "vatAmount": 372.4,
+    "total": 7820.4,
+    "currency": "AED",
+    "trnOnInvoice": "100512839400003",
+    "image": null,
+    "dueDate": "2026-10-30",
+    "paymentTermsDays": 30,
+    "relatedInvoiceNo": null,
+    "reason": null,
+    "note": null,
+    "status": "received"
+  }
+]

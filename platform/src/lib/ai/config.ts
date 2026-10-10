@@ -59,6 +59,12 @@ export function resolveModelId(role: ModelRole = "main", modelKey?: string | nul
   const chosen = findModel(modelKey);
   if (provider === "local") {
     if (!modelKey && envOverride[role]) return envOverride[role]!;
+    // Map catalogue keys to the exact ids your local server reports (GET /v1/models), e.g.
+    // NARVO_LOCAL_MODEL_MAP={"qwen3.8-27b":"mlx-community/Qwen3.8-27B-4bit"}
+    try {
+      const map = JSON.parse(process.env.NARVO_LOCAL_MODEL_MAP || "{}") as Record<string, string>;
+      if (map[chosen.key]) return map[chosen.key];
+    } catch {}
     return chosen.local;
   }
   if (!modelKey && envOverride[role]) return envOverride[role]!;

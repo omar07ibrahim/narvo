@@ -1,8 +1,9 @@
 import { readBody } from "@/lib/ai/stream";
 import { addAudit, patchRecord } from "@/lib/store/db";
-import { COL, SOL, getForms, loadSeed } from "@/app/solutions/09-bid-proposal/_lib/server";
+import { COL, SOL, getCertificates, getCoverage, getForms, loadSeed, putCoverage } from "@/app/solutions/09-bid-proposal/_lib/server";
+import { mergeStatus, requirementCheck } from "@/app/solutions/09-bid-proposal/_lib/compliance";
 
-/** Update the status of a mandatory tender form (e.g. signed declaration received). */
+/** Update the status of a mandatory tender form; coverage of the linked requirements is recomputed. */
 export async function POST(req: Request) {
   const body = await readBody<{ formId: string; status: string }>(req);
   const allowed = ["not_started", "in_progress", "pending_signature", "requested", "complete"];
@@ -16,7 +17,17 @@ export async function POST(req: Request) {
     actor: { name: "Leena Mattar", role: "Bid Manager, Raseen FM", kind: "human" },
     action: body.status === "complete" ? "Marked form complete" : "Updated form status",
     subject: `${form.id} ${form.name.en}`,
-    detail: `${form.status} → ${body.status}`,
+    detail: `${form.status.replace(/_/g, " ")} → ${body.status.replace(/_/g, " ")}`,
   });
-  return Response.json({ forms: getForms(seed) });
+  const forms = getForms(seed);
+  const certs = getCertificates(seed);
+  const cov = getCoverage();
+  const updated = (form.requirements ?? [form.requirement])
+    .filter((id) => cov[id])
+    .map((id) => {
+      const check = requirementCheck(seed, id, certs, forms);
+      return { ...cov[id], check, status: mergeStatus(cov[id].aiStatus, check), updatedAt: Date.now() };
+    });
+  if (updated.length) putCoverage(updated);
+  return Response.json({ forms, coverage: Object.fromEntries(updated.map((u) => [u.reqId, u])) });
 }

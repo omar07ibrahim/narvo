@@ -47,7 +47,7 @@ export interface Coverage {
   rationale: string;
   gap: string | null;
   evidence: EvidenceRef[];
-  check?: { status: "ok" | "warning" | "critical"; note: string } | null;
+  check?: { status: "ok" | "warning" | "critical"; note: string; derived?: CoverageStatus } | null;
   source: "ai" | "contributor";
   contributor?: string;
   updatedAt: number;
@@ -108,6 +108,7 @@ export interface FormRecord {
   id: string;
   name: Bi;
   requirement: string;
+  requirements?: string[];
   owner: string;
   status: "not_started" | "in_progress" | "pending_signature" | "requested" | "complete";
   note: Bi;

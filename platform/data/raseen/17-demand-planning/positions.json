@@ -3,28 +3,28 @@
   "note": "Opening on-hand at start of week commencing 12 Oct 2026 (generated, seed 20261011)",
   "positions": {
     "CEM-OPC-50|JA": {
-      "onHand": 56840,
+      "onHand": 23160,
       "avgLast4": 42567.5,
       "pipeline": [
         44240
       ]
     },
     "CEM-OPC-50|MN": {
-      "onHand": 26120,
+      "onHand": 11440,
       "avgLast4": 16542.3,
       "pipeline": [
         17160
       ]
     },
     "CEM-SRC-50|JA": {
-      "onHand": 22240,
+      "onHand": 9600,
       "avgLast4": 9704,
       "pipeline": [
         9760
       ]
     },
     "CEM-SRC-50|MN": {
-      "onHand": 9560,
+      "onHand": 4040,
       "avgLast4": 3704.5,
       "pipeline": [
         3720
@@ -87,21 +87,21 @@
       ]
     },
     "BLK-HOL-20|JA": {
-      "onHand": 122940,
+      "onHand": 46080,
       "avgLast4": 106479,
       "pipeline": [
         102060
       ]
     },
     "BLK-HOL-20|MN": {
-      "onHand": 62520,
+      "onHand": 25860,
       "avgLast4": 45668,
       "pipeline": [
         42660
       ]
     },
     "TIL-POR-60120|JA": {
-      "onHand": 55646,
+      "onHand": 42250,
       "avgLast4": 9728.5,
       "pipeline": [
         10058,
@@ -110,7 +110,7 @@
       ]
     },
     "TIL-POR-60120|MN": {
-      "onHand": 12386,
+      "onHand": 9189,
       "avgLast4": 2062.8,
       "pipeline": [
         1859,
@@ -119,7 +119,7 @@
       ]
     },
     "TIL-CER-3060|JA": {
-      "onHand": 45727,
+      "onHand": 29588,
       "avgLast4": 6367.3,
       "pipeline": [
         6414,
@@ -128,7 +128,7 @@
       ]
     },
     "TIL-CER-3060|MN": {
-      "onHand": 11245,
+      "onHand": 7446,
       "avgLast4": 1607.8,
       "pipeline": [
         1741,
@@ -137,7 +137,7 @@
       ]
     },
     "SAN-WC-WH|JA": {
-      "onHand": 1595,
+      "onHand": 1039,
       "avgLast4": 185.8,
       "pipeline": [
         200,
@@ -147,7 +147,7 @@
       ]
     },
     "SAN-WC-WH|MN": {
-      "onHand": 477,
+      "onHand": 316,
       "avgLast4": 53.8,
       "pipeline": [
         49,
@@ -157,7 +157,7 @@
       ]
     },
     "WPF-BIT-4|JA": {
-      "onHand": 3870,
+      "onHand": 2390,
       "avgLast4": 1185.8,
       "pipeline": [
         1113,
@@ -165,7 +165,7 @@
       ]
     },
     "WPF-BIT-4|MN": {
-      "onHand": 2381,
+      "onHand": 1465,
       "avgLast4": 581.8,
       "pipeline": [
         551,

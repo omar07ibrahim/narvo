@@ -3,7 +3,7 @@ import fs from "node:fs";
 import { dataPath, readCsv, readJson } from "@/lib/world/data";
 import { withOverlay } from "@/lib/store/db";
 import { analogueForecast, forecastSeries, type ForecastOptions } from "./forecast";
-import type { CalendarDef, ForecastBundle, Override, PlanningConfig, Position, SeriesForecast, WhId } from "./types";
+import type { CalendarDef, ForecastBundle, Override, PlanningConfig, Position, PublishedPlan, SeriesForecast, WhId } from "./types";
 
 export const SLUG = "17-demand-planning";
 export const COL_OVERRIDES = `${SLUG}/overrides`;
@@ -138,20 +138,6 @@ export function getForecastBundle(): ForecastBundle {
 
 export function loadOverrides(): Override[] {
   return withOverlay<Override>(COL_OVERRIDES, []).filter((o) => !(o as Override & { deleted?: boolean }).deleted);
-}
-
-export interface PublishedPlan {
-  id: string;
-  version: number;
-  planId: "A" | "B" | "C";
-  planName: string;
-  whatIf: Record<string, unknown>;
-  kpis: { fillRate: number; fillRateP10: number; totalCost: number; constraintFit: number; violations: number; peakJaPallets: number; peakJaYard: number };
-  overrides: number;
-  approvedBy: string;
-  publishedAt: number;
-  note?: string;
-  status: "published";
 }
 
 export function loadPublished(): PublishedPlan[] {

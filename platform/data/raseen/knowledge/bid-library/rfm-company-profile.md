@@ -25,7 +25,7 @@ At 30 September 2026 RFM employed **1,096 staff** and managed **46 sites** with 
 | Legal name | Raseen Facilities Management LLC (رصين لإدارة المرافق ذ.م.م) |
 | Parent | Raseen Group |
 | Incorporated | 2009 (FM division of Raseen Group since 2004) |
-| Trade licence | CN-2207815 |
+| Trade licence | CN-2207815, facilities management activities, valid to 19 May 2027 |
 | Tax registration number (TRN) | 100457218300003 |
 | Head office | Raseen Building, Al Quoz Industrial 3, Dubai |
 | Regional depot | Ras Al Marsa Industrial (MN-05), Marsa Al Noor |

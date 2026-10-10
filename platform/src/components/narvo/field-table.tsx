@@ -39,7 +39,7 @@ export function FieldTable({ fields, className, dense }: { fields: ExtractedFiel
           {fields.map((f, i) => (
             <motion.tr
               key={f.key}
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               transition={{ delay: i * 0.035 }}
               className={cn("border-b border-border last:border-0", f.status === "missing" && "bg-danger-soft/40", f.status === "mismatch" && "bg-warning-soft/40")}

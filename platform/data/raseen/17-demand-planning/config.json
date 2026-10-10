@@ -8,8 +8,8 @@
   "forecastWeeks": 26,
   "backtestWeeks": 12,
   "warehouses": [
-    { "id": "JA", "name": "Jebel Ali", "name_ar": "جبل علي", "palletPositions": 18000, "otherPallets": 6270, "rebarYardT": 4200, "otherYardT": 1280, "storagePerPalletWeek": 4.1, "storagePerTonneWeek": 1.9 },
-    { "id": "MN", "name": "Ras Al Marsa Industrial MN-05", "name_ar": "رأس المرسى الصناعية MN-05", "palletPositions": 6500, "otherPallets": 1150, "rebarYardT": 900, "otherYardT": 210, "storagePerPalletWeek": 3.6, "storagePerTonneWeek": 1.7 }
+    { "id": "JA", "name": "Jebel Ali", "name_ar": "جبل علي", "palletPositions": 18000, "otherPallets": 9770, "rebarYardT": 4200, "otherYardT": 1280, "storagePerPalletWeek": 4.1, "storagePerTonneWeek": 1.9 },
+    { "id": "MN", "name": "Ras Al Marsa Industrial MN-05", "name_ar": "رأس المرسى الصناعية MN-05", "palletPositions": 6500, "otherPallets": 2050, "rebarYardT": 900, "otherYardT": 210, "storagePerPalletWeek": 3.6, "storagePerTonneWeek": 1.7 }
   ],
   "families": {
     "cement": { "en": "Cement", "ar": "الإسمنت", "structural": true },
@@ -51,7 +51,7 @@
     "sahara": {
       "name": "Sahara Rebar Mills LLC",
       "maintenance": "Planned mill maintenance 5–19 Oct 2026",
-      "weeklyAllocationT": [0, 420, 1350, 1350, 1350, 1350, 1350, 1350, 1350, 1350, 1350, 1350, 1350],
+      "weeklyAllocationT": [0, 420, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280, 1280],
       "catchUpAllocationT": 1950,
       "catchUpWeeks": [2, 3, 4, 5, 6],
       "catchUpNote": "Sahara confirmed (email 7 Oct 2026) it can allocate up to 1,950 t/week for five weeks after restart (arrivals w/c 26 Oct – 23 Nov) if RBM commits by 14 Oct."
@@ -85,11 +85,11 @@
       "id": "B",
       "name": "Q4 pre-build",
       "name_ar": "البناء المسبق للربع الرابع",
-      "summary": "Service-target safety stock from forecast uncertainty, pre-build two weeks of peak demand for structural SKUs, take Sahara's 1,950 t/week catch-up allocation.",
-      "summary_ar": "مخزون أمان مبني على مستوى الخدمة المستهدف وعدم يقين التوقعات، وبناء مسبق لطلب أسبوعين من ذروة المواد الإنشائية، والاستفادة من الكمية التعويضية لصحارى 1,950 طن أسبوعياً.",
+      "summary": "Service-target safety stock from forecast uncertainty, pre-build two weeks of peak demand for rebar and blocks, take Sahara's 1,950 t/week catch-up allocation.",
+      "summary_ar": "مخزون أمان مبني على مستوى الخدمة المستهدف وعدم يقين التوقعات، وبناء مسبق لطلب أسبوعين من الذروة لحديد التسليح والطابوق، والاستفادة من الكمية التعويضية لصحارى 1,950 طن أسبوعياً.",
       "policy": "service",
       "prebuildWeeks": 2,
-      "prebuildFamilies": ["cement", "rebar", "blocks"],
+      "prebuildFamilies": ["rebar", "blocks"],
       "catchUp": true,
       "capacityAware": false,
       "transfers": false

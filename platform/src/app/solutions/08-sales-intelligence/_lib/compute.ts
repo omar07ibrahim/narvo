@@ -455,7 +455,12 @@ export function detectConflicts(data: SalesData, opp: Opportunity): ConflictRepo
         ar: `التعرض الحالي ${fmt(credit.exposure)} درهم = ${credit.utilisationPct}% من الحد البالغ ${fmt(credit.limit)} درهم${credit.overBy ? ` (تجاوز بمقدار ${fmt(credit.overBy)} درهم)` : ""}. ${credit.requiresLimitReview ? `هذه الصفقة تمثل ${credit.awardPctOfLimit}% من الحد ← يلزم مراجعة الحد قبل قبول أمر الشراء. ` : ""}الذروة المتوقعة: ${credit.scenarios.map((s) => `${fmt(s.projected)} درهم عند ${s.termsDays} يوماً`).join(" · ")}.`,
       },
       impactAed: credit.overBy || null,
-      severity: credit.exposure > credit.limit ? "high" : "medium",
+      severity:
+        credit.exposure > credit.limit
+          ? "high"
+          : (credit.scenarios.find((s) => s.termsDays === tierMaxTerms)?.projected ?? 0) > credit.limit
+            ? "medium"
+            : "low",
       approver: "Priya Raghavan — Group CFO (temporary release / limit review)",
       rule: `${data.creditPolicy.ref} — exposure & limit review`,
     });

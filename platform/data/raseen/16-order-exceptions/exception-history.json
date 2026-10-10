@@ -1,0 +1,290 @@
+{
+  "period": "2026-08-01/2026-09-30",
+  "note": "Resolved order exceptions — effortMinutes is hands-on time logged by planners (manual process).",
+  "items": [
+    {
+      "id": "EXC-26-0412",
+      "orderId": "SO-26-11290",
+      "customerId": "RBM-C-10034",
+      "types": [
+        "stock"
+      ],
+      "openedAt": "2026-08-04T08:00:00+04:00",
+      "resolvedAt": "2026-08-04T11:00:00+04:00",
+      "effortMinutes": 38,
+      "touches": 4,
+      "resolution": "Split delivery — 60% from stock, balance after transfer from Jebel Ali",
+      "resolvedBy": "Joseph Abraham"
+    },
+    {
+      "id": "EXC-26-0416",
+      "orderId": "SO-26-11309",
+      "customerId": "RBM-C-10047",
+      "types": [
+        "price"
+      ],
+      "openedAt": "2026-08-06T09:13:00+04:00",
+      "resolvedAt": "2026-08-06T19:13:00+04:00",
+      "effortMinutes": 64,
+      "touches": 6,
+      "resolution": "Order price corrected to Q3 frame rate before invoicing",
+      "resolvedBy": "Rania Mansour"
+    },
+    {
+      "id": "EXC-26-0420",
+      "orderId": "SO-26-11328",
+      "customerId": "RBM-C-10073",
+      "types": [
+        "window"
+      ],
+      "openedAt": "2026-08-09T10:26:00+04:00",
+      "resolvedAt": "2026-08-10T03:26:00+04:00",
+      "effortMinutes": 47,
+      "touches": 5,
+      "resolution": "Rescheduled to 09:00 slot; gate permit re-booked with master developer",
+      "resolvedBy": "Marwan Qasim"
+    },
+    {
+      "id": "EXC-26-0424",
+      "orderId": "SO-26-11347",
+      "customerId": "RBM-C-10126",
+      "types": [
+        "credit"
+      ],
+      "openedAt": "2026-08-12T11:39:00+04:00",
+      "resolvedAt": "2026-08-13T11:39:00+04:00",
+      "effortMinutes": 71,
+      "touches": 6,
+      "resolution": "Released after customer cheque cleared (overdue settled)",
+      "resolvedBy": "Nadia Rahimi"
+    },
+    {
+      "id": "EXC-26-0428",
+      "orderId": "SO-26-11366",
+      "customerId": "RBM-C-10021",
+      "types": [
+        "stock",
+        "window"
+      ],
+      "openedAt": "2026-08-15T12:52:00+04:00",
+      "resolvedAt": "2026-08-15T17:52:00+04:00",
+      "effortMinutes": 29,
+      "touches": 5,
+      "resolution": "Balance re-promised for Saturday window after JA transfer",
+      "resolvedBy": "Joseph Abraham"
+    },
+    {
+      "id": "EXC-26-0432",
+      "orderId": "SO-26-11385",
+      "customerId": "RBM-C-10052",
+      "types": [
+        "price",
+        "credit"
+      ],
+      "openedAt": "2026-08-18T13:05:00+04:00",
+      "resolvedAt": "2026-08-19T01:05:00+04:00",
+      "effortMinutes": 55,
+      "touches": 6,
+      "resolution": "Price corrected; CFO temporary release 8% for 30 days",
+      "resolvedBy": "Priya Raghavan"
+    },
+    {
+      "id": "EXC-26-0436",
+      "orderId": "SO-26-11404",
+      "customerId": "RBM-C-10183",
+      "types": [
+        "stock"
+      ],
+      "openedAt": "2026-08-21T14:18:00+04:00",
+      "resolvedAt": "2026-08-22T09:18:00+04:00",
+      "effortMinutes": 83,
+      "touches": 6,
+      "resolution": "Customer accepted 20 mm substitution approved by consultant",
+      "resolvedBy": "Joseph Abraham"
+    },
+    {
+      "id": "EXC-26-0440",
+      "orderId": "SO-26-11423",
+      "customerId": "RBM-C-10167",
+      "types": [
+        "window"
+      ],
+      "openedAt": "2026-08-24T08:31:00+04:00",
+      "resolvedAt": "2026-08-25T10:31:00+04:00",
+      "effortMinutes": 41,
+      "touches": 4,
+      "resolution": "Sunday request moved to Monday 09:00 — customer informed",
+      "resolvedBy": "Marwan Qasim"
+    },
+    {
+      "id": "EXC-26-0444",
+      "orderId": "SO-26-11442",
+      "customerId": "RBM-C-10219",
+      "types": [
+        "price"
+      ],
+      "openedAt": "2026-08-27T09:44:00+04:00",
+      "resolvedAt": "2026-08-27T16:44:00+04:00",
+      "effortMinutes": 36,
+      "touches": 4,
+      "resolution": "Discount above tier limit approved by Sales Director",
+      "resolvedBy": "Fadi Khoury"
+    },
+    {
+      "id": "EXC-26-0448",
+      "orderId": "SO-26-11461",
+      "customerId": "RBM-C-10068",
+      "types": [
+        "credit"
+      ],
+      "openedAt": "2026-08-30T10:57:00+04:00",
+      "resolvedAt": "2026-08-31T00:57:00+04:00",
+      "effortMinutes": 58,
+      "touches": 5,
+      "resolution": "Partial release — first drop only, balance held for payment",
+      "resolvedBy": "Nadia Rahimi"
+    },
+    {
+      "id": "EXC-26-0452",
+      "orderId": "SO-26-11480",
+      "customerId": "RBM-C-10034",
+      "types": [
+        "stock"
+      ],
+      "openedAt": "2026-09-02T11:10:00+04:00",
+      "resolvedAt": "2026-09-03T08:10:00+04:00",
+      "effortMinutes": 62,
+      "touches": 6,
+      "resolution": "Split delivery — 60% from stock, balance after transfer from Jebel Ali",
+      "resolvedBy": "Joseph Abraham"
+    },
+    {
+      "id": "EXC-26-0456",
+      "orderId": "SO-26-11499",
+      "customerId": "RBM-C-10047",
+      "types": [
+        "price"
+      ],
+      "openedAt": "2026-09-04T12:23:00+04:00",
+      "resolvedAt": "2026-09-05T16:23:00+04:00",
+      "effortMinutes": 44,
+      "touches": 4,
+      "resolution": "Order price corrected to Q3 frame rate before invoicing",
+      "resolvedBy": "Rania Mansour"
+    },
+    {
+      "id": "EXC-26-0460",
+      "orderId": "SO-26-11518",
+      "customerId": "RBM-C-10073",
+      "types": [
+        "window"
+      ],
+      "openedAt": "2026-09-07T13:36:00+04:00",
+      "resolvedAt": "2026-09-07T22:36:00+04:00",
+      "effortMinutes": 49,
+      "touches": 5,
+      "resolution": "Rescheduled to 09:00 slot; gate permit re-booked with master developer",
+      "resolvedBy": "Marwan Qasim"
+    },
+    {
+      "id": "EXC-26-0464",
+      "orderId": "SO-26-11537",
+      "customerId": "RBM-C-10126",
+      "types": [
+        "credit"
+      ],
+      "openedAt": "2026-09-10T14:49:00+04:00",
+      "resolvedAt": "2026-09-11T06:49:00+04:00",
+      "effortMinutes": 77,
+      "touches": 6,
+      "resolution": "Released after customer cheque cleared (overdue settled)",
+      "resolvedBy": "Nadia Rahimi"
+    },
+    {
+      "id": "EXC-26-0468",
+      "orderId": "SO-26-11556",
+      "customerId": "RBM-C-10021",
+      "types": [
+        "stock",
+        "window"
+      ],
+      "openedAt": "2026-09-13T08:02:00+04:00",
+      "resolvedAt": "2026-09-14T07:02:00+04:00",
+      "effortMinutes": 33,
+      "touches": 5,
+      "resolution": "Balance re-promised for Saturday window after JA transfer",
+      "resolvedBy": "Joseph Abraham"
+    },
+    {
+      "id": "EXC-26-0472",
+      "orderId": "SO-26-11575",
+      "customerId": "RBM-C-10052",
+      "types": [
+        "price",
+        "credit"
+      ],
+      "openedAt": "2026-09-16T09:15:00+04:00",
+      "resolvedAt": "2026-09-16T13:15:00+04:00",
+      "effortMinutes": 51,
+      "touches": 6,
+      "resolution": "Price corrected; CFO temporary release 8% for 30 days",
+      "resolvedBy": "Priya Raghavan"
+    },
+    {
+      "id": "EXC-26-0476",
+      "orderId": "SO-26-11594",
+      "customerId": "RBM-C-10183",
+      "types": [
+        "stock"
+      ],
+      "openedAt": "2026-09-19T10:28:00+04:00",
+      "resolvedAt": "2026-09-19T21:28:00+04:00",
+      "effortMinutes": 46,
+      "touches": 5,
+      "resolution": "Customer accepted 20 mm substitution approved by consultant",
+      "resolvedBy": "Joseph Abraham"
+    },
+    {
+      "id": "EXC-26-0480",
+      "orderId": "SO-26-11613",
+      "customerId": "RBM-C-10167",
+      "types": [
+        "window"
+      ],
+      "openedAt": "2026-09-22T11:41:00+04:00",
+      "resolvedAt": "2026-09-23T05:41:00+04:00",
+      "effortMinutes": 68,
+      "touches": 6,
+      "resolution": "Sunday request moved to Monday 09:00 — customer informed",
+      "resolvedBy": "Marwan Qasim"
+    },
+    {
+      "id": "EXC-26-0484",
+      "orderId": "SO-26-11632",
+      "customerId": "RBM-C-10219",
+      "types": [
+        "price"
+      ],
+      "openedAt": "2026-09-25T12:54:00+04:00",
+      "resolvedAt": "2026-09-26T13:54:00+04:00",
+      "effortMinutes": 40,
+      "touches": 4,
+      "resolution": "Discount above tier limit approved by Sales Director",
+      "resolvedBy": "Fadi Khoury"
+    },
+    {
+      "id": "EXC-26-0488",
+      "orderId": "SO-26-11651",
+      "customerId": "RBM-C-10068",
+      "types": [
+        "credit"
+      ],
+      "openedAt": "2026-09-28T13:07:00+04:00",
+      "resolvedAt": "2026-09-28T19:07:00+04:00",
+      "effortMinutes": 54,
+      "touches": 5,
+      "resolution": "Partial release — first drop only, balance held for payment",
+      "resolvedBy": "Nadia Rahimi"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+<title>NARVO Go-to-Market Decisions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  /* Layout: a single reading column with a sticky section index on wide screens; catalogue-style hairlines. */
+  :root {
+    --bg: #f3f1ec;
+    --surface: #fbfaf7;
+    --ink: #171614;
+    --muted: #6b675f;
+    --line: #dfdbd2;
+    --accent: #1f6f68;
+    --accent-soft: #e2eeec;
+    --warn: #9a5f17;
+    --warn-soft: #f5ead8;
+    --font-display: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --font-body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    --font-ar: "IBM Plex Sans Arabic", "Geeza Pro", Tahoma, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121211; --surface: #1a1a18; --ink: #ece9e3; --muted: #9b968d; --line: #2c2b28;
+      --accent: #6cc2b7; --accent-soft: #17302d; --warn: #e0a85a; --warn-soft: #2e2416; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121211; --surface: #1a1a18; --ink: #ece9e3; --muted: #9b968d; --line: #2c2b28;
+    --accent: #6cc2b7; --accent-soft: #17302d; --warn: #e0a85a; --warn-soft: #2e2416; color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding-inline: 24px; padding-block: 48px 96px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 56px; }
+  nav.index { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 32px); align-self: start; display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
+  nav.index a { color: var(--muted); text-decoration: none; display: flex; gap: 10px; }
+  nav.index a:hover { color: var(--ink); }
+  nav.index span { font-family: var(--font-mono); font-size: 11px; color: var(--muted); width: 18px; }
+  main { min-width: 0; }
+  .eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-family: var(--font-display); font-weight: 300; font-size: clamp(36px, 5vw, 56px); line-height: 1.04; letter-spacing: -.025em; margin: 14px 0 0; text-wrap: balance; }
+  h1 em { font-style: normal; color: var(--muted); }
+  .lede { max-width: 62ch; color: var(--muted); font-size: 17px; margin-top: 18px; }
+  section { border-top: 1px solid var(--line); padding-top: 34px; margin-top: 46px; }
+  h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; letter-spacing: -.015em; margin: 8px 0 14px; text-wrap: balance; }
+  h3 { font-size: 15px; font-weight: 600; margin: 0 0 4px; }
+  p { margin: 0 0 12px; max-width: 68ch; }
+  .muted { color: var(--muted); }
+  .answer { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 20px 22px; margin: 16px 0; }
+  .answer .q { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  .answer .a { font-size: 21px; font-weight: 400; letter-spacing: -.01em; margin-top: 6px; line-height: 1.35; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin-top: 14px; }
+  .cell { border: 1px solid var(--line); border-radius: 8px; padding: 16px; background: var(--surface); min-width: 0; }
+  .cell .k { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .cell .v { font-size: 22px; font-weight: 300; margin-top: 4px; font-variant-numeric: tabular-nums; }
+  .cell p { font-size: 14px; color: var(--muted); margin: 6px 0 0; }
+  ul.clean { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 10px; }
+  ul.clean li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; }
+  ul.clean li::before { content: "—"; color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+  th { text-align: left; font-family: var(--font-mono); font-weight: 500; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); padding: 10px 12px; border-bottom: 1px solid var(--ink); }
+  td { padding: 11px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tablebox { overflow-x: auto; margin-top: 12px; }
+  .pill { display: inline-block; font-family: var(--font-mono); font-size: 10.5px; padding: 1px 7px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; }
+  .pill.warn { background: var(--warn-soft); color: var(--warn); }
+  .ar { font-family: var(--font-ar); direction: rtl; }
+  .quote { border-inline-start: 2px solid var(--accent); padding-inline-start: 14px; color: var(--muted); margin: 14px 0; max-width: 64ch; }
+  .steps { counter-reset: s; display: grid; gap: 10px; margin-top: 12px; }
+  .steps > div { counter-increment: s; display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 10px; }
+  .steps > div::before { content: counter(s, decimal-leading-zero); font-family: var(--font-mono); font-size: 12px; color: var(--muted); padding-top: 2px; }
+  footer { margin-top: 64px; font-size: 13px; color: var(--muted); }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  @media (max-width: 860px) { .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; } nav.index { display: none; } }
+</style>
+
+<div class="wrap">
+  <nav class="index" aria-label="Sections">
+    <a href="#decisions"><span>00</span>Decisions</a>
+    <a href="#format"><span>01</span>What we bring</a>
+    <a href="#positioning"><span>02</span>Positioning</a>
+    <a href="#solutions"><span>03</span>Solutions</a>
+    <a href="#redlines"><span>04</span>Red lines</a>
+    <a href="#model"><span>05</span>Model &amp; pricing</a>
+    <a href="#plan"><span>06</span>90 days</a>
+    <a href="#ask"><span>07</span>Questions</a>
+  </nav>
+
+  <main>
+    <div class="eyebrow">NARVO · Meeting brief · Sunday 11 October 2026, 12:00</div>
+    <h1>Private AI systems for UAE institutions. <em>Built, running, and ready to show.</em></h1>
+    <p class="lede">Answers to the three questions on the agenda, with the reasoning behind each. The platform described here is already built: twenty catalogue solutions on one private core, demonstrable live and fully offline on a single Mac.</p>
+
+    <section id="decisions">
+      <div class="eyebrow">00 · The short version</div>
+      <h2>Five decisions</h2>
+      <div class="steps">
+        <div><p><strong>Lead with a live, private platform, not a deck and not a product.</strong> Every catalogue solution works on real documents in Arabic and English, on hardware we bring into the room.</p></div>
+        <div><p><strong>Position on “private, customizable, Arabic-first”.</strong> Privacy gets us past IT and security. Measured efficiency gets us the budget.</p></div>
+        <div><p><strong>Show twenty, sell five.</strong> Breadth proves capability; five pilots (one per capability-programme track) are what we price and deliver.</p></div>
+        <div><p><strong>Government and semi-government first.</strong> The UAE federal mandate creates the demand; Arabic and data residency are where global vendors are weakest.</p></div>
+        <div><p><strong>Paid pilots by default.</strong> At most one free lighthouse pilot, only with written success criteria and a pre-agreed next phase.</p></div>
+      </div>
+    </section>
+
+    <section id="format">
+      <div class="eyebrow">01 · Agenda question one</div>
+      <h2>What do we put in front of an entity?</h2>
+      <div class="answer">
+        <div class="q">Answer</div>
+        <div class="a">A live private-AI platform demo, a ten-slide deck and a one-page offer. Not a product launch, not slides alone.</div>
+      </div>
+      <p>A deck with HTML mock-ups is what every agency brings, and senior buyers in the UAE have seen dozens. A finished product takes months and still has to match each entity's process. A working platform answers the only question that matters in a first meeting: <em>can they actually do it?</em></p>
+      <div class="grid">
+        <div class="cell"><div class="k">The demo</div><div class="v">20 solutions</div><p>One core. Real model calls, real document reading, real approvals and audit trail. Runs offline on a Mac.</p></div>
+        <div class="cell"><div class="k">The moment</div><div class="v">Wi-Fi off</div><p>Disconnect the network mid-meeting. Everything keeps working; the egress counter stays at 0 bytes.</p></div>
+        <div class="cell"><div class="k">Leave-behind</div><div class="v">Deck + offer</div><p>Ten slides for the sponsor to forward internally, and one page with the pilot terms.</p></div>
+      </div>
+      <h3 style="margin-top:22px">Fifteen-minute meeting flow</h3>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>Minute</th><th>Show</th><th>What they see</th></tr></thead>
+          <tbody>
+            <tr><td class="num">0–2</td><td>Command Center</td><td>Private mode, 20 solutions, live activity, pending approvals.</td></tr>
+            <tr><td class="num">2–7</td><td>05 Case operations</td><td>Six Arabic/English scans read; Circular 9/2026 checks computed; Land Registry retrieved with consent; one Arabic clarification approved by a named official.</td></tr>
+            <tr><td class="num">7–10</td><td>07 Contact operations</td><td>A citizen speaks Emirati Arabic; the agent checks the case live and books an appointment; handoff carries full context.</td></tr>
+            <tr><td class="num">10–12</td><td>02 Decision intelligence</td><td>The Director General's weekly briefing with every figure computed and sourced.</td></tr>
+            <tr><td class="num">12–15</td><td>How it runs + Wi-Fi off</td><td>Open-weight models, their hardware, our audit trail. Then the network goes off.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="positioning">
+      <div class="eyebrow">02 · Agenda question two</div>
+      <h2>Smart efficiency, or customizable private systems?</h2>
+      <div class="answer">
+        <div class="q">Answer</div>
+        <div class="a">Both, in different places. “Private, customizable, Arabic-first” is the headline; efficiency is the number we commit to in every pilot.</div>
+      </div>
+      <p>Every vendor claims efficiency, so it does not differentiate. Privacy does, and in government it is often the entry ticket: data residency rules, security reviews and the ban on public AI tools stop most offers before the business case is heard. Once we are through that door, the budget owner needs a measured result: days saved, rework removed, cost per request.</p>
+      <p class="quote">Private AI systems for UAE institutions — built around your work, running inside your walls, fluent in Arabic.</p>
+      <div class="grid">
+        <div class="cell"><div class="k">Why now</div><p>On 23 April 2026 the UAE Cabinet set a goal of running 50% of federal government services and operations on agentic AI within two years, and approved training for 80,000 federal employees. Every entity now needs delivery partners.</p></div>
+        <div class="cell"><div class="k">Our edge</div><p>Emirati-founded, Abu Dhabi-based, Arabic-first, model-agnostic (Qwen, Gemma, Falcon, Jais), human approval built into every action.</p></div>
+        <div class="cell"><div class="k">Not our fight</div><p>We do not sell GPU capacity or cloud. We partner with whoever hosts the infrastructure and own the layer that does the work.</p></div>
+      </div>
+    </section>
+
+    <section id="solutions">
+      <div class="eyebrow">03 · Agenda question three</div>
+      <h2>Which solutions do we lead with?</h2>
+      <div class="answer">
+        <div class="q">Answer</div>
+        <div class="a">Show all twenty to prove capability. Price and deliver five, one per track of the AI Capability Programme.</div>
+      </div>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>Pilot track</th><th>Lead solution</th><th>Typical first entity</th><th>Measure we commit to</th></tr></thead>
+          <tbody>
+            <tr><td>Agentic workflow &amp; decision orchestration</td><td>05 Document, application &amp; case operations</td><td>Any authority with application-based services</td><td class="num">Resolution 19.4 → 7.5 days</td></tr>
+            <tr><td>Customer &amp; service intelligence</td><td>07 Customer service &amp; contact operations</td><td>Customer happiness centres</td><td class="num">Resolution 61% → 84%</td></tr>
+            <tr><td>Enterprise knowledge &amp; documents</td><td>01 Enterprise AI workspace</td><td>Policy-heavy departments</td><td class="num">Handling 42 → 11 min</td></tr>
+            <tr><td>Executive &amp; operational intelligence</td><td>02 Decision intelligence</td><td>Strategy &amp; performance offices</td><td class="num">Preparation 2.5 days → 40 min</td></tr>
+            <tr><td>Technical &amp; commercial intelligence</td><td>09 Bid &amp; proposal / 15 Procurement</td><td>Procurement and contracting units, semi-government groups</td><td class="num">Coverage 71% → 100%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin-top:12px">The other fifteen stay on the platform as proof of range and as expansion paths after the first pilot. Recruitment AI (12) is shown with its fairness guard but not led with: decisions about people carry the highest legal and reputational risk.</p>
+    </section>
+
+    <section id="redlines">
+      <div class="eyebrow">04 · What we will not do</div>
+      <h2>Red lines</h2>
+      <ul class="clean">
+        <li><span><strong>We do not train our own foundation model.</strong> We deploy and adapt open-weight models (Qwen, Gemma, Falcon, Jais). Training from scratch costs millions and no client is asking for it.</span></li>
+        <li><span><strong>Client data does not leave the client or the UAE.</strong> No public AI APIs on client data, ever.</span></li>
+        <li><span><strong>AI never decides about people.</strong> Eligibility, hiring, penalties and payments are recommended and evidenced; a named official approves.</span></li>
+        <li><span><strong>No accuracy promises before testing on the client's data.</strong> We commit to measures after a baseline, and we show the evaluation.</span></li>
+        <li><span><strong>No hardware resale, no 24/7 production SLAs, no CCTV or surveillance analytics</strong> until we have the team for it.</span></li>
+        <li><span><strong>No more than one free pilot,</strong> and never without written success criteria and an agreed next phase.</span></li>
+      </ul>
+    </section>
+
+    <section id="model">
+      <div class="eyebrow">05 · How we make money</div>
+      <h2>An agency with a product core</h2>
+      <p>We run as a delivery company with one reusable platform. Revenue comes from projects; the core gets stronger with each one. After three to five deployments of the same pattern, that pattern becomes a product we license.</p>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>Offer</th><th>Scope</th><th>Price hypothesis</th></tr></thead>
+          <tbody>
+            <tr><td>Agentic AI workshop</td><td>One-day hands-on session for an entity team on our platform</td><td class="num">AED 15–40k</td></tr>
+            <tr><td>Paid pilot</td><td>6 weeks, one process, baseline and measured result, credited against deployment</td><td class="num">AED 75–150k</td></tr>
+            <tr><td>Deployment</td><td>Production rollout on client infrastructure, integrations, training</td><td class="num">AED 250–750k</td></tr>
+            <tr><td>Run &amp; improve</td><td>Monitoring, evaluation, model updates, new workflows</td><td class="num">AED 20–50k / month</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted" style="margin-top:12px"><span class="pill warn">To validate</span> Prices are starting hypotheses for Ahmad to test against what target entities actually pay and their direct-purchase thresholds.</p>
+      <p>Workshops are the fastest cash: short sales cycle, low delivery risk, and they put the platform in front of the people who will sponsor pilots.</p>
+    </section>
+
+    <section id="plan">
+      <div class="eyebrow">06 · Next 90 days</div>
+      <h2>From demo to first paid pilot</h2>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>Weeks</th><th>Outcome</th><th>Owner</th></tr></thead>
+          <tbody>
+            <tr><td class="num">1</td><td>Decisions above agreed; roles and equity written down; target list of 10 entities, 3 warm.</td><td>All · Ahmad</td></tr>
+            <tr><td class="num">1–2</td><td>Platform running fully private on the Mac; deck and one-pager finalised.</td><td>Tech</td></tr>
+            <tr><td class="num">2–8</td><td>10–15 live demos; 2 workshops sold; 2 pilots agreed (at most one free).</td><td>Ahmad · Tech</td></tr>
+            <tr><td class="num">6–12</td><td>Pilots delivered with baseline and result; case study; deployment proposal.</td><td>Tech</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="ask">
+      <div class="eyebrow">07 · For Sunday</div>
+      <h2>Questions we need answered</h2>
+      <ul class="clean">
+        <li><span>Which 3–5 entities, who is the contact (DG, CIO, department director), what is their pain, and is there AI budget this year?</span></li>
+        <li><span>What is the direct-purchase threshold at those entities? Pilots priced below it close in weeks instead of months.</span></li>
+        <li><span>Is NARVO registered as a supplier, does the Masdar City licence allow direct government contracting, and do we need an ICV certificate?</span></li>
+        <li><span>Who funds the first 90 days, including model hardware for client pilots?</span></li>
+        <li><span>Roles, equity and vesting for everyone building the platform, agreed before the first contract.</span></li>
+      </ul>
+    </section>
+
+    <footer>Prepared for the NARVO founding team. The demo organisations in the platform (Marsa Al Noor Development Authority, Raseen Group) and all their data are fictional.</footer>
+  </main>
+</div>

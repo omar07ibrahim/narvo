@@ -136,10 +136,10 @@ fs.writeFileSync(path.join(dir, "sales-weekly.csv"), "week_start,sku,warehouse,u
 
 // Opening positions (start of week 12 Oct 2026) — weeks of cover vary by SKU/warehouse.
 const COVER = {
-  "CEM-OPC-50": [1.35, 1.6], "CEM-SRC-50": [2.2, 2.6],
+  "CEM-OPC-50": [0.55, 0.7], "CEM-SRC-50": [0.95, 1.1],
   "RB-B500-12": [1.25, 1.4], "RB-B500-16": [0.9, null], "RB-B500-20": [1.3, 1.25], "RB-B500-25": [1.85, 1.75],
-  "BLK-HOL-20": [1.2, 1.45], "TIL-POR-60120": [5.4, 6.2], "TIL-CER-3060": [6.8, 7.4],
-  "SAN-WC-WH": [8.6, 9.2], "WPF-BIT-4": [3.4, 3.9],
+  "BLK-HOL-20": [0.45, 0.6], "TIL-POR-60120": [4.1, 4.6], "TIL-CER-3060": [4.4, 4.9],
+  "SAN-WC-WH": [5.6, 6.1], "WPF-BIT-4": [2.1, 2.4],
 };
 const LEAD = { cement: 1, rebar: 1, blocks: 1, tiles: 3, sanitary: 4, roofing: 2 };
 const positions = {};

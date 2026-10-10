@@ -253,7 +253,7 @@ export function CommandCenter() {
               {audit.slice(0, 30).map((e, i) => {
                 const s = bySolution[e.solution];
                 return (
-                  <motion.li key={e.id} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: Math.min(i, 10) * 0.02 }} className="flex gap-3 px-4 py-3">
+                  <motion.li key={e.id} initial={false} animate={{ opacity: 1 }} transition={{ delay: Math.min(i, 10) * 0.02 }} className="flex gap-3 px-4 py-3">
                     <span
                       className={cn(
                         "mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full",

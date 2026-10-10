@@ -124,7 +124,7 @@ function simulatePlan(plan: PlanSpec, o: SimOpts, H: number, weeks: string[]): P
     const src = w - whatIf.millDelayWeeks;
     if (src < 0) return 0;
     if (whatIf.millDelayWeeks > 0 && w < whatIf.millDelayWeeks + 1) return 0;
-    const base = sahara.weeklyAllocationT[Math.min(src, sahara.weeklyAllocationT.length - 1)] ?? 1350;
+    const base = sahara.weeklyAllocationT[Math.min(src, sahara.weeklyAllocationT.length - 1)] ?? 0;
     const catchUp = plan.catchUp && sahara.catchUpWeeks.includes(src) ? sahara.catchUpAllocationT : 0;
     return Math.max(base, catchUp);
   });
@@ -231,6 +231,42 @@ function simulatePlan(plan: PlanSpec, o: SimOpts, H: number, weeks: string[]): P
         }
       }
 
+      // 2b. Capacity relief (plan C): if a site is over its usable limit, shuttle the largest
+      //     stock positions to the twin site while it has room.
+      if (plan.transfers) {
+        for (const w of [0, 1]) {
+          for (const kind of ["pallets", "yard"] as const) {
+            let over = (kind === "yard" ? yardUse(w) - capYard[w] * usable : palletUse(w) - capPallets[w] * usable);
+            if (over <= 0) continue;
+            const cand = series
+              .map((_, i) => i)
+              .filter((i) => whIdx[i] === w && (kind === "yard") === isYard[i] && twin[i] >= 0)
+              .sort((a, b) => onHand[b] / per[b] - onHand[a] / per[a]);
+            for (const i of cand) {
+              if (over <= 0) break;
+              const j = twin[i];
+              const dst = whIdx[j];
+              const room = kind === "yard" ? capYard[dst] * usable - yardUse(dst) : capPallets[dst] * usable - palletUse(dst);
+              if (room <= 0) break;
+              const movable = Math.max(0, onHand[i] - series[i].f[t] * 1.1);
+              const units = Math.min(movable, (kind === "yard" ? Math.min(over, room) : Math.min(over, room) * per[i]));
+              if (units <= 0) continue;
+              onHand[i] -= units;
+              onHand[j] += units;
+              const load = kind === "yard" ? units : units / per[i];
+              over -= load;
+              if (kind === "yard") {
+                trans += units * c.transferPerTonne;
+                transfersT += units / N;
+              } else {
+                trans += load * c.transferPerPallet;
+                transfersPal += load / N;
+              }
+            }
+          }
+        }
+      }
+
       // 3. Storage occupancy at the weekly peak (after receipts)
       const use = [palletUse(0), yardUse(0), palletUse(1), yardUse(1)];
       const caps = [capPallets[0], capYard[0], capPallets[1], capYard[1]];
@@ -282,7 +318,7 @@ function simulatePlan(plan: PlanSpec, o: SimOpts, H: number, weeks: string[]): P
       // 5a. Sahara allocation for rebar arriving at t + 1
       const rebarIdx = series.map((_, i) => i).filter((i) => isYard[i]);
       const want = rebarIdx.reduce((s, i) => s + q[i], 0);
-      const cap = alloc[t + 1] ?? 1350;
+      const cap = alloc[t + 1] ?? 0;
       if (want > cap) {
         const k = want > 0 ? cap / want : 0;
         for (const i of rebarIdx) q[i] = Math.floor(q[i] * k * 10) / 10;

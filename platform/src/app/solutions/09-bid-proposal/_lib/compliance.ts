@@ -114,22 +114,48 @@ export function certificateChecks(seed: BidSeed, certs: CertificateRecord[] = se
   });
 }
 
-/** Computed check that applies to a specific requirement (worst of its certificates). */
+/** Requirements whose evidence IS the tender form itself — their status is derived from the forms register. */
+export const FORM_DRIVEN = ["M-07", "M-08", "C-01", "C-03"];
+
+export function formCheck(forms: FormRecord[], reqId: string): { status: CheckStatus; note: string; derived: CoverageStatus } | null {
+  const linked = forms.filter((f) => (f.requirements ?? [f.requirement]).includes(reqId));
+  if (!linked.length) return null;
+  const notStarted = linked.filter((f) => f.status === "not_started");
+  const open = linked.filter((f) => f.status !== "complete");
+  return {
+    status: notStarted.length ? "critical" : open.length ? "warning" : "ok",
+    derived: notStarted.length ? "missing" : open.length ? "partial" : "met",
+    note: open.length
+      ? `Form${open.length > 1 ? "s" : ""} ${open.map((f) => `${f.id} ${f.name.en} (${f.status.replace(/_/g, " ")})`).join("; ")} not complete.`
+      : `Form${linked.length > 1 ? "s" : ""} ${linked.map((f) => f.id).join(", ")} complete.`,
+  };
+}
+
+/** Computed check that applies to a specific requirement (worst of its certificates and forms). */
 export function requirementCheck(
   seed: BidSeed,
   reqId: string,
   certs: CertificateRecord[] = seed.certificates,
-): { status: CheckStatus; note: string } | null {
-  const checks = certificateChecks(seed, certs).filter((c) => c.cert.requirement === reqId);
-  if (!checks.length) return null;
+  forms: FormRecord[] = seed.forms,
+): { status: CheckStatus; note: string; derived?: CoverageStatus } | null {
   const rank = { ok: 0, warning: 1, critical: 2 } as const;
-  const worst = checks.reduce((a, b) => (rank[b.status] > rank[a.status] ? b : a));
-  return { status: worst.status, note: `${worst.cert.name} (${worst.cert.number}): ${worst.note.en}` };
+  const parts: Array<{ status: CheckStatus; note: string; derived?: CoverageStatus }> = [];
+  const checks = certificateChecks(seed, certs).filter((c) => c.cert.requirement === reqId);
+  if (checks.length) {
+    const worst = checks.reduce((a, b) => (rank[b.status] > rank[a.status] ? b : a));
+    parts.push({ status: worst.status, note: `${worst.cert.name} (${worst.cert.number}): ${worst.note.en}` });
+  }
+  const fc = formCheck(forms, reqId);
+  if (fc) parts.push(FORM_DRIVEN.includes(reqId) ? fc : { status: fc.status, note: fc.note });
+  if (!parts.length) return null;
+  const status = parts.reduce((a, b) => (rank[b.status] > rank[a.status] ? b : a)).status;
+  return { status, note: parts.map((p) => p.note).join(" "), derived: parts.find((p) => p.derived)?.derived };
 }
 
 /** Merge model judgement with the computed check — computed facts win. */
-export function mergeStatus(ai: CoverageStatus, check: { status: CheckStatus } | null | undefined): CoverageStatus {
+export function mergeStatus(ai: CoverageStatus, check: { status: CheckStatus; derived?: CoverageStatus } | null | undefined): CoverageStatus {
   if (!check) return ai;
+  if (check.derived) return check.derived;
   if (check.status === "critical") return "missing";
   if (check.status === "warning" && ai === "met") return "partial";
   return ai;

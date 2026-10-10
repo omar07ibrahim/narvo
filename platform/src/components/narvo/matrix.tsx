@@ -88,7 +88,7 @@ export function ComparisonMatrix({
                 .map((r, i) => (
                   <motion.tr
                     key={r.id}
-                    initial={{ opacity: 0 }}
+                    initial={false}
                     animate={{ opacity: 1 }}
                     transition={{ delay: i * 0.02 }}
                     className="border-b border-border last:border-0"

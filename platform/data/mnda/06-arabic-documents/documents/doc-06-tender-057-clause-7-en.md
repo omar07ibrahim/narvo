@@ -4,7 +4,7 @@
 
 ### 7.1 General
 
-From the Service Commencement Date (1 January 2027) the Service Provider shall meet the service levels in Table 7-1 at all five facilities. Performance shall be measured monthly from CAFM and BMS records and verified by the Authority's Contract Manager.
+From the Service Commencement Date (1 January 2027) the Service Provider shall meet the service levels in Table 7-1 at all five facilities. Performance shall be measured monthly from CAFM and BMS records and verified by the Authority's Contract Manager. Each Bidder shall describe in its technical proposal how every KPI will be measured, reported and evidenced.
 
 ### 7.2 Key performance indicators
 

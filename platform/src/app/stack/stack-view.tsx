@@ -213,7 +213,7 @@ function Layer({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 8 }}
+      initial={{ opacity: 1, y: 8 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.3 }}
       className={cn("grid grid-cols-[180px_minmax(0,1fr)] gap-5 rounded-lg border p-4 max-md:grid-cols-1", dark ? "border-transparent bg-sidebar" : "border-border bg-card")}

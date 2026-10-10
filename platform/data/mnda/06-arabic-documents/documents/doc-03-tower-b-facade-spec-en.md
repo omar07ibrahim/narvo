@@ -59,6 +59,6 @@ One podium bay (3.6 × 8.4 m) with a 4.0 m length of roof screen, approved by th
 1. HP-1: anchor pull-out tests on 10% of anchors.
 2. HP-2: mock-up approval.
 3. HP-3: framing and insulation before panel closure.
-4. HP-4: screen heights checked against Table 5 at MNDA field inspection.
+4. HP-4: screen heights checked against the Section 5 schedule at MNDA field inspection.
 
-Give 48 hours' notice of each hold point. Any change to materials, colours or screen heights requires a new drawing revision and a new NOC.
+Work shall not proceed past a hold point without the consultant's written release; give 48 hours' notice. Any change to materials, colours or screen heights requires a new drawing revision and a new NOC.
