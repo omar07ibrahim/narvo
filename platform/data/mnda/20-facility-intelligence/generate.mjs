@@ -175,7 +175,7 @@ const zones = {
   "Z-MPH": { sp: 23.5, k: 1.05, occ: 1.0, name: "Multipurpose Hall" },
   "Z-LF": { sp: 22.5, k: 1.35, occ: 1.0, name: "Ladies' Fitness" },
   "Z-MF": { sp: 23.0, k: 0.6, occ: 0.7, name: "Men's Fitness" },
-  "Z-LOB": { sp: 24.0, k: 0.45, occ: 0.5, name: "Main Lobby" },
+  "Z-LOB": { sp: 23.5, k: 0.4, occ: 0.45, name: "Main Lobby" },
   "Z-LIB": { sp: 23.5, k: 0.3, occ: 0.3, name: "Library" },
   "Z-CLS": { sp: 23.5, k: 0.4, occ: 0.5, name: "Classrooms & Workshops" },
   "Z-MAJ": { sp: 23.5, k: 0.35, occ: 0.4, name: "Majlis & Admin" },

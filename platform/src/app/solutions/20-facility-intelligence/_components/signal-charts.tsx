@@ -122,15 +122,16 @@ export function SpaceChart({
         <ComposedChart data={data} margin={{ top: 10, right: 4, left: -6, bottom: 0 }}>
           <CartesianGrid {...gridProps} />
           <XAxis dataKey="t" type="number" scale="time" domain={["dataMin", "dataMax"]} tickFormatter={fmtTick} {...axisProps} minTickGap={36} />
-          <YAxis {...axisProps} domain={[s.site === "AGC" ? 5 : 20, s.site === "AGC" ? 31 : 28]} width={46} tickFormatter={(v: number) => `${v}°`} />
-          <ReferenceArea y1={COMFORT.low} y2={COMFORT.high} fill="var(--success)" fillOpacity={0.07} stroke="none" />
+          <YAxis yAxisId="z" {...axisProps} domain={s.site === "AGC" ? [20, 31] : [20, 28]} width={46} tickFormatter={(v: number) => `${v}°`} />
+          {s.site === "AGC" && <YAxis yAxisId="w" orientation="right" {...axisProps} domain={[5, 14]} width={34} tickFormatter={(v: number) => `${v}°`} />}
+          <ReferenceArea yAxisId="z" y1={COMFORT.low} y2={COMFORT.high} fill="var(--success)" fillOpacity={0.07} stroke="none" />
           {shown.map((z, i) => (
-            <Line key={z.id} dataKey={zoneCol(z.id)} name={L({ en: z.name, ar: z.nameAr })} stroke={colors[i % colors.length]} strokeWidth={1.2} dot={false} isAnimationActive={false} />
+            <Line yAxisId="z" key={z.id} dataKey={zoneCol(z.id)} name={L({ en: z.name, ar: z.nameAr })} stroke={colors[i % colors.length]} strokeWidth={1.2} dot={false} isAnimationActive={false} />
           ))}
-          {s.site === "AGC" && <Line dataKey="chws_c" name={L({ en: "CHW supply", ar: "مياه التبريد" })} stroke={CHART.faint} strokeWidth={1} strokeDasharray="3 2" dot={false} isAnimationActive={false} />}
+          {s.site === "AGC" && <Line yAxisId="w" dataKey="chws_c" name={L({ en: "CHW supply", ar: "مياه التبريد" })} stroke={CHART.faint} strokeWidth={1} strokeDasharray="3 2" dot={false} isAnimationActive={false} />}
           {visible.map((c) => {
             const y = valueAt(Date.parse(c.receivedAt), c.zone);
-            return y != null ? <ReferenceDot key={c.id} x={Date.parse(c.receivedAt)} y={y} r={3.5} fill="var(--card)" stroke="var(--danger)" strokeWidth={1.6} /> : null;
+            return y != null ? <ReferenceDot yAxisId="z" key={c.id} x={Date.parse(c.receivedAt)} y={y} r={3.5} fill="var(--card)" stroke="var(--danger)" strokeWidth={1.6} /> : null;
           })}
           <Tooltip content={<Tip units={units} />} />
           <Legend wrapperStyle={{ fontSize: 11 }} iconSize={8} iconType="plainline" />

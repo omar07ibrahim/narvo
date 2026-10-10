@@ -189,10 +189,9 @@ export function ProcessMap({ log, cases, lang }: { log: PLog; cases: PCase[]; la
           zoomOnScroll={false}
           onEdgeClick={(_, e) => setSel((s) => (s === e.id ? null : e.id))}
           onPaneClick={() => setSel(null)}
-          proOptions={{ hideAttribution: true }}
         >
           <Background gap={22} size={1} color="var(--border)" />
-          <Controls showInteractive={false} position="bottom-right" className="!shadow-none [&>button]:!border-border [&>button]:!bg-card" />
+          <Controls showInteractive={false} position="top-right" className="!shadow-none [&>button]:!border-border [&>button]:!bg-card" />
         </ReactFlow>
       </div>
       <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">

@@ -15,7 +15,7 @@
       { "id": "Z-MPH", "name": "Multipurpose Hall", "nameAr": "القاعة متعددة الأغراض", "floor": "Ground", "area": 820, "capacity": 450, "ahu": ["AHU-01", "AHU-02"], "use": "Events, ceremonies, sports", "setpoint": 23.5 },
       { "id": "Z-LF", "name": "Ladies' Fitness", "nameAr": "النادي الرياضي للسيدات", "floor": "First", "area": 310, "capacity": 45, "ahu": ["AHU-03"], "use": "Fitness classes, gym", "setpoint": 22.5 },
       { "id": "Z-MF", "name": "Men's Fitness", "nameAr": "النادي الرياضي للرجال", "floor": "First", "area": 290, "capacity": 45, "ahu": ["AHU-04"], "use": "Gym", "setpoint": 23.0 },
-      { "id": "Z-LOB", "name": "Main Lobby & Reception", "nameAr": "البهو الرئيسي والاستقبال", "floor": "Ground", "area": 540, "capacity": 120, "ahu": ["AHU-05"], "use": "Reception, waiting", "setpoint": 24.0 },
+      { "id": "Z-LOB", "name": "Main Lobby & Reception", "nameAr": "البهو الرئيسي والاستقبال", "floor": "Ground", "area": 540, "capacity": 120, "ahu": ["AHU-05"], "use": "Reception, waiting", "setpoint": 23.5 },
       { "id": "Z-LIB", "name": "Library & Study Rooms", "nameAr": "المكتبة وغرف الدراسة", "floor": "First", "area": 380, "capacity": 70, "ahu": ["AHU-06"], "use": "Study", "setpoint": 23.5 },
       { "id": "Z-CLS", "name": "Classrooms & Workshops", "nameAr": "القاعات الدراسية والورش", "floor": "First", "area": 610, "capacity": 140, "ahu": ["AHU-07"], "use": "Courses, workshops", "setpoint": 23.5 },
       { "id": "Z-MAJ", "name": "Majlis & Admin", "nameAr": "المجلس والإدارة", "floor": "Ground", "area": 450, "capacity": 80, "ahu": ["AHU-08"], "use": "Majlis, offices", "setpoint": 23.5 }

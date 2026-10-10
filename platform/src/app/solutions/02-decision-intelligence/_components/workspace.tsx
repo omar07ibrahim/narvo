@@ -35,9 +35,10 @@ export function Workspace({ dataset, initialActions, counts }: { dataset: Datase
   const [tab, setTab] = useState<Tab>("briefing");
   const [metricId, setMetricId] = useState<string>("hg_backlog");
   const [actions, setActions] = useState<ActionItem[]>(initialActions);
-  const [saved, setSaved] = useState<SavedBriefing | null>(null);
-  const [check, setCheck] = useState<FigureCheckResult | null>(null);
+  const [storedBriefing, setStoredBriefing] = useState<SavedBriefing | null>(null);
+  const [storedCheck, setStoredCheck] = useState<FigureCheckResult | null>(null);
   const [askHistory, setAskHistory] = useState<AskEntry[]>([]);
+  const [currentQ, setCurrentQ] = useState<string | null>(null);
   const [highlight, setHighlight] = useState<number | null>(null);
 
   const briefing = useNarvoRun();
@@ -51,28 +52,28 @@ export function Workspace({ dataset, initialActions, counts }: { dataset: Datase
   useEffect(() => {
     fetch(`${API}/briefing`)
       .then((r) => r.json())
-      .then((j) => setSaved(j.briefing))
+      .then((j) => setStoredBriefing(j.briefing))
       .catch(() => {});
     fetch(`${API}/figure-check`)
       .then((r) => r.json())
-      .then((j) => setCheck(j.result))
+      .then((j) => setStoredCheck(j.result))
       .catch(() => {});
   }, []);
-  useEffect(() => {
-    if (briefing.status === "done" && briefing.text.briefing)
-      setSaved({
-        text: briefing.text.briefing,
-        citations: briefing.data.citations ?? [],
-        verification: briefing.data.verification,
-        lang: "en",
-        dept,
-        ms: briefing.data.saved?.ms ?? briefing.ms ?? 0,
-        at: briefing.data.saved?.at ?? Date.now(),
-      });
-  }, [briefing.status]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    if (checker.status === "done" && checker.data.result && checker.data.result.checks?.[0]?.updateId !== "UPD-PASTED") setCheck(checker.data.result);
-  }, [checker.status]); // eslint-disable-line react-hooks/exhaustive-deps
+  /* the latest completed run supersedes what was stored */
+  const saved: SavedBriefing | null =
+    briefing.status === "done" && briefing.text.briefing
+      ? {
+          text: briefing.text.briefing,
+          citations: briefing.data.citations ?? [],
+          verification: briefing.data.verification,
+          lang: "en",
+          dept,
+          ms: briefing.data.saved?.ms ?? briefing.ms ?? 0,
+          at: briefing.data.saved?.at ?? 0,
+        }
+      : storedBriefing;
+  const check: FigureCheckResult | null =
+    checker.status === "done" && checker.data.result && checker.data.result.checks?.[0]?.updateId !== "UPD-PASTED" ? checker.data.result : storedCheck;
 
   const refreshActions = useCallback(async () => {
     const r = await fetch(`${API}/actions`);
@@ -80,18 +81,15 @@ export function Workspace({ dataset, initialActions, counts }: { dataset: Datase
     setActions(j.actions);
   }, []);
 
-  /* ask: keep a history of completed questions */
-  const [lastQ, setLastQ] = useState<string | null>(null);
-  useEffect(() => {
-    if (!lastQ) return;
-    if (ask.status === "done" || ask.status === "error") {
-      setAskHistory((h) => [
-        { q: lastQ, spec: ask.data.spec, result: ask.data.result, answer: ask.text.answer ?? "", citations: ask.data.citations ?? [], error: ask.status === "error" ? ask.error : undefined },
-        ...h,
-      ]);
-      setLastQ(null);
+  /* ask: the finished question moves into the history when the next one is asked */
+  const askQuestion = (q: string) => {
+    if (currentQ && (ask.status === "done" || ask.status === "error")) {
+      const prev: AskEntry = { q: currentQ, spec: ask.data.spec, result: ask.data.result, answer: ask.text.answer ?? "", citations: ask.data.citations ?? [], error: ask.status === "error" ? ask.error : undefined };
+      setAskHistory((h) => [prev, ...h]);
     }
-  }, [ask.status]); // eslint-disable-line react-hooks/exhaustive-deps
+    setCurrentQ(q);
+    ask.start(`${API}/ask`, { question: q, history: askHistory.slice(0, 3).map((h) => ({ q: h.q, a: h.answer })) });
+  };
 
   const defs = useMemo(() => (dept === "all" ? HEADLINE.map((id) => metricById(id)!) : METRICS.filter((m) => m.dept === dept).slice(0, 8)), [dept]);
   const snaps = useSnapshots(dataset, defs);
@@ -109,12 +107,14 @@ export function Workspace({ dataset, initialActions, counts }: { dataset: Datase
   const withTarget = allWeek.filter((x) => x.cur.rag != null).length;
 
   const activeRun = tab === "check" ? checker : tab === "ask" ? ask : tab === "decisions" ? decide : briefing;
-  const activeCitations: Citation[] = useMemo(() => {
-    if (tab === "briefing") return (briefing.status !== "idle" ? briefing.data.citations : saved?.citations) ?? [];
-    if (tab === "ask") return ask.running ? (ask.data.citations ?? []) : (askHistory[0]?.citations ?? []);
-    if (tab === "decisions") return decide.data.citations ?? [];
-    return [];
-  }, [tab, briefing.status, briefing.data.citations, saved, ask.running, ask.data.citations, askHistory, decide.data.citations]);
+  const activeCitations: Citation[] =
+    tab === "briefing"
+      ? ((briefing.status !== "idle" ? briefing.data.citations : saved?.citations) ?? [])
+      : tab === "ask"
+        ? (ask.data.citations ?? askHistory[0]?.citations ?? [])
+        : tab === "decisions"
+          ? (decide.data.citations ?? [])
+          : [];
   const activeText = tab === "briefing" ? (briefing.text.briefing ?? saved?.text ?? "") : tab === "ask" ? (ask.text.answer ?? askHistory[0]?.answer ?? "") : tab === "decisions" ? (decide.data.proposals ?? []).map((p: { rationale: string }) => p.rationale).join(" ") : "";
 
   const onCite = (n: number) => {
@@ -315,15 +315,7 @@ export function Workspace({ dataset, initialActions, counts }: { dataset: Datase
                 <FigureTab run={checker} saved={check} onRun={(text) => checker.start(`${API}/figure-check`, text ? { text } : {})} />
               </TabsContent>
               <TabsContent value="ask">
-                <AskTab
-                  run={ask}
-                  history={askHistory}
-                  onCite={onCite}
-                  onAsk={(q) => {
-                    setLastQ(q);
-                    ask.start(`${API}/ask`, { question: q, history: askHistory.slice(0, 3).map((h) => ({ q: h.q, a: h.answer })) });
-                  }}
-                />
+                <AskTab run={ask} currentQ={currentQ} history={askHistory} onCite={onCite} onAsk={askQuestion} />
               </TabsContent>
               <TabsContent value="decisions">
                 <ActionsTab run={decide} actions={actions} stats={stats} onPropose={() => propose(saved?.text)} onCite={onCite} refresh={refreshActions} />

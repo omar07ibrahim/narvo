@@ -59,7 +59,7 @@ export interface Feed {
 
 const tone = (status: string) => (/verified/i.test(status) && !/fail/i.test(status) ? "success" : /fail/i.test(status) ? "danger" : /completed/i.test(status) ? "info" : "warning");
 
-function WoDetail({ wo, onComplete, verifyRun }: { wo: WO; onComplete: () => void; verifyRun: NarvoRun | null }) {
+function WoDetail({ wo, onComplete, verifyRun, draft }: { wo: WO; onComplete: () => void; verifyRun: NarvoRun | null; draft?: boolean }) {
   const L = useL();
   const v: Verification | undefined = verifyRun?.data.verification ?? wo.verificationResult;
   const note = verifyRun?.text.note ?? wo.verificationNote;
@@ -70,15 +70,19 @@ function WoDetail({ wo, onComplete, verifyRun }: { wo: WO; onComplete: () => voi
           <div className="flex flex-wrap items-center gap-2">
             <span className="font-mono text-[11px] text-muted-foreground">{wo.id}</span>
             <StatusPill tone={wo.priority === "P1" ? "danger" : wo.priority === "P2" ? "warning" : "neutral"}>{wo.priority}</StatusPill>
-            <StatusPill tone={tone(verifyRun?.data.status ?? wo.status)}>{verifyRun?.data.status ?? wo.status}</StatusPill>
+            {draft ? (
+              <StatusPill tone="ai">{L({ en: "Draft — awaiting approval", ar: "مسودة — بانتظار الاعتماد" })}</StatusPill>
+            ) : (
+              <StatusPill tone={tone(verifyRun?.data.status ?? wo.status)}>{verifyRun?.data.status ?? wo.status}</StatusPill>
+            )}
           </div>
           <h3 className="mt-1.5 text-[16px] leading-snug font-medium">{wo.title}</h3>
           <p className="mt-1 text-[12px] text-muted-foreground">
             {wo.contractor} · {wo.asset}
-            {wo.zones.length ? ` · ${wo.zones.join(", ")}` : ""} · {L({ en: "issued", ar: "صدر" })} {wo.issuedAt} · {wo.schedule}
+            {wo.zones.length ? ` · ${wo.zones.join(", ")}` : ""} · {draft ? L({ en: "prepared", ar: "أُعدّ" }) : L({ en: "issued", ar: "صدر" })} {wo.issuedAt} · {wo.schedule}
           </p>
         </div>
-        {!wo.completedAt && (
+        {!wo.completedAt && !draft && (
           <Button size="sm" onClick={onComplete}>
             <CheckCircle2 />
             {L({ en: "Record completion", ar: "تسجيل الإنجاز" })}
@@ -253,7 +257,7 @@ export function WorkOrders({
         {draftRun.status === "error" && <div className="mt-3 rounded-md border border-danger/25 bg-danger-soft p-3 text-[12.5px] text-danger">{draftRun.error}</div>}
         {draft && (
           <div className="mt-4 rounded-md border border-border bg-card p-4">
-            <WoDetail wo={draft} onComplete={() => {}} verifyRun={null} />
+            <WoDetail wo={draft} onComplete={() => {}} verifyRun={null} draft />
             {draft.notes && <p className="mt-3 text-[12px] text-muted-foreground">{draft.notes}</p>}
             {draftRun.approvals.map((a) => (
               <ApprovalCard

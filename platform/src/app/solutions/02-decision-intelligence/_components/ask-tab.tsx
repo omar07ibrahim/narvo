@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowUp, ChevronDown, Code2, MessageSquareText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -123,24 +123,19 @@ function ResultView({ entry, live, onCite }: { entry: AskEntry; live?: boolean; 
   );
 }
 
-export function AskTab({ run, onAsk, history, onCite }: { run: NarvoRun; onAsk: (q: string) => void; history: AskEntry[]; onCite: (n: number) => void }) {
+export function AskTab({ run, onAsk, history, onCite, currentQ }: { run: NarvoRun; onAsk: (q: string) => void; history: AskEntry[]; onCite: (n: number) => void; currentQ: string | null }) {
   const L = useL();
   const [q, setQ] = useState("");
-  const [pending, setPending] = useState<string | null>(null);
   const ref = useRef<HTMLTextAreaElement>(null);
-  useEffect(() => {
-    if (!run.running) setPending(null);
-  }, [run.running]);
   const submit = (text: string) => {
     const t = text.trim();
     if (!t || run.running) return;
-    setPending(t);
     onAsk(t);
     setQ("");
   };
   const liveEntry: AskEntry | null =
-    run.running && pending
-      ? { q: pending, spec: run.data.spec, result: run.data.result, answer: run.text.answer ?? "", citations: run.data.citations ?? [] }
+    currentQ && run.status !== "idle"
+      ? { q: currentQ, spec: run.data.spec, result: run.data.result, answer: run.text.answer ?? "", citations: run.data.citations ?? [], error: run.status === "error" ? run.error : undefined }
       : null;
   return (
     <div className="space-y-4">
@@ -187,12 +182,9 @@ export function AskTab({ run, onAsk, history, onCite }: { run: NarvoRun; onAsk: 
           })}
         </p>
       </div>
-      {liveEntry && <ResultView entry={liveEntry} live onCite={onCite} />}
-      {run.status === "error" && pending == null && history.length === 0 && (
-        <div className="rounded-md border border-danger/25 bg-danger-soft p-3 text-[12.5px] text-danger">{run.error}</div>
-      )}
+      {liveEntry && <ResultView entry={liveEntry} live={run.running} onCite={onCite} />}
       {history.map((h, i) => (
-        <ResultView key={history.length - i} entry={h} onCite={i === 0 ? onCite : undefined} />
+        <ResultView key={history.length - i} entry={h} />
       ))}
       {!liveEntry && history.length === 0 && (
         <div className="flex items-center gap-2 px-1 text-[12px] text-muted-foreground">

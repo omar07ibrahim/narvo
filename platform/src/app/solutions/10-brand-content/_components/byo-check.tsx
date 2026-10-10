@@ -95,7 +95,8 @@ export function ByoCheckPanel({
     toast.success(L({ en: "Fix applied to your copy — run the check again", ar: "طُبّق الإصلاح على نصك — أعد الفحص" }));
   }
 
-  const rewriteText = useMemo(() => (result?.rewrite ? composeText(result.rewrite) : ""), [result?.rewrite]);
+  const rewrite = result?.rewrite;
+  const rewriteText = useMemo(() => (rewrite ? composeText(rewrite) : ""), [rewrite]);
 
   return (
     <div className="space-y-4">
