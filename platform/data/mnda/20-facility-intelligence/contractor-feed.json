@@ -1,0 +1,12 @@
+[
+  {
+    "job": "JOB-RFM-26-04471",
+    "reportedAt": "2026-10-06T12:05:00+04:00",
+    "workStart": "2026-10-06T06:30:00+04:00",
+    "workEnd": "2026-10-06T11:40:00+04:00",
+    "technician": "Arun Pillai",
+    "supervisor": "Mohammed Rafiq",
+    "summary": "CH-02 condenser coils chemically cleaned (alkaline coil cleaner, low-pressure rinse), all 4 condenser fans checked, fan 3 bearing greased. Chiller returned to service 11:40. Pre-clean discharge pressure at ~38 °C ambient: 1,518 kPa; post-clean at ~38 °C: 1,344 kPa. CH-01 coil clean to follow (requires CH-02 to carry load).",
+    "photos": 6
+  }
+]

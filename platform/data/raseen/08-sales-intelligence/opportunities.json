@@ -20,6 +20,7 @@
     "nextStepDate": "2026-09-29",
     "products": ["RB-B500-16", "RB-B500-20", "RB-B500-25", "RB-B500-12", "CEM-SRC-50", "WPF-BIT-4"],
     "deliveryWindow": "Oct 2026 – Jun 2027 (9 months, phased with pour sequence)",
+    "deliveryMonths": 9,
     "source": "Customer enquiry (email) 27 Aug 2026",
     "competitor": "Bayt Al Hadid Steel Trading (rebar only)"
   },

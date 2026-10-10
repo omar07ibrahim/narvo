@@ -1,0 +1,2415 @@
+[
+  {
+    "id": "T-001",
+    "en": "Building permit",
+    "ar": "رخصة بناء",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "building permits"
+    ],
+    "variants_ar": [
+      "رخصة البناء",
+      "رخص البناء",
+      "رخص بناء"
+    ],
+    "note": "Service MNDA-SVC-101 (رخصة بناء جديدة). Not 'construction licence' or 'building licence'.",
+    "source": "MNBC-2024 Art. 1-3",
+    "updated": "2026-07-15",
+    "alternatives": []
+  },
+  {
+    "id": "T-002",
+    "en": "Fit-out permit",
+    "ar": "رخصة تشطيبات داخلية",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "fit-out permits"
+    ],
+    "variants_ar": [
+      "رخصة التشطيبات الداخلية",
+      "رخص التشطيبات الداخلية",
+      "رخص تشطيبات داخلية"
+    ],
+    "note": "Registered name of service MNDA-SVC-102. For the works themselves see T-003.",
+    "source": "MNDA Service Catalogue 2026",
+    "updated": "2026-07-15",
+    "alternatives": []
+  },
+  {
+    "id": "T-003",
+    "en": "Fit-out works",
+    "ar": "أعمال التشطيبات الداخلية",
+    "domain": "Permits",
+    "status": "disputed",
+    "variants_en": [
+      "fit-out work",
+      "interior fit-out"
+    ],
+    "variants_ar": [
+      "أعمال تشطيبات داخلية"
+    ],
+    "note": "Provisional. Kept aligned with the registered service name of MNDA-SVC-102 (T-002). Terminology Committee decision scheduled for 22 Oct 2026.",
+    "source": "Circular 14/2026 §3",
+    "updated": "2026-09-24",
+    "alternatives": [
+      {
+        "ar": "أعمال التجهيز الداخلي",
+        "en": "Interior fit-out works",
+        "proposedBy": "Facilities & Assets",
+        "rationale": "In FM and tenant-handover practice 'fit-out' covers partitions, MEP and joinery, not only finishes; 'التشطيبات' suggests finishing trades (paint, tiling) and understates the scope."
+      }
+    ]
+  },
+  {
+    "id": "T-004",
+    "en": "Building completion certificate",
+    "ar": "شهادة إنجاز مبنى",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "completion certificate",
+      "building completion certificates"
+    ],
+    "variants_ar": [
+      "شهادة إنجاز المبنى",
+      "شهادات إنجاز المباني"
+    ],
+    "note": "Service MNDA-SVC-103. Not 'occupancy certificate' or 'شهادة إتمام البناء'.",
+    "source": "MNBC-2024 Art. 1-3",
+    "updated": "2026-07-15",
+    "alternatives": []
+  },
+  {
+    "id": "T-005",
+    "en": "Permit application",
+    "ar": "طلب رخصة",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "permit applications",
+      "application for a building permit"
+    ],
+    "variants_ar": [
+      "طلب الرخصة",
+      "طلبات الرخص",
+      "طلبات رخصة",
+      "طلب رخصة البناء"
+    ],
+    "note": "Application numbers follow MNDA-BP-YYYY-NNNNN (e.g. MNDA-BP-2026-02217) and are never translated.",
+    "source": "MNDA ePermits status catalogue v2.1",
+    "updated": "2026-06-02",
+    "alternatives": []
+  },
+  {
+    "id": "T-006",
+    "en": "No Objection Certificate (NOC)",
+    "ar": "شهادة عدم ممانعة",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "No Objection Certificate",
+      "NOC",
+      "NOCs",
+      "no-objection certificate"
+    ],
+    "variants_ar": [
+      "شهادة عدم الممانعة",
+      "شهادات عدم الممانعة"
+    ],
+    "note": "English: spell out on first use, then 'NOC'. Arabic: always write in full in formal documents; avoid 'الـ NOC'.",
+    "source": "Circular 14/2026",
+    "updated": "2026-07-02",
+    "alternatives": []
+  },
+  {
+    "id": "T-007",
+    "en": "Master developer",
+    "ar": "المطور الرئيسي",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "master developers",
+      "master-developer"
+    ],
+    "variants_ar": [
+      "المطورين الرئيسيين",
+      "المطورون الرئيسيون",
+      "مطور رئيسي",
+      "المطوّر الرئيسي",
+      "للمطور الرئيسي"
+    ],
+    "note": "Approved by the Terminology Committee on 30 Jun 2026. Do not use 'المطور العام' or 'المطور الأساسي'. Master developers' company names are not translated.",
+    "source": "Circular 14/2026 §2",
+    "updated": "2026-06-30",
+    "alternatives": []
+  },
+  {
+    "id": "T-008",
+    "en": "Awaiting master-developer NOC",
+    "ar": "بانتظار شهادة عدم ممانعة المطور الرئيسي",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "awaiting master developer NOC"
+    ],
+    "variants_ar": [
+      "بانتظار شهادة عدم الممانعة من المطور الرئيسي"
+    ],
+    "note": "Application status label in MNDA ePermits. Translate exactly and keep the quotation marks.",
+    "source": "Circular 14/2026 §5.2",
+    "updated": "2026-07-02",
+    "alternatives": []
+  },
+  {
+    "id": "T-009",
+    "en": "Digital NOC exchange",
+    "ar": "التبادل الرقمي لشهادات عدم الممانعة",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "digital NOC"
+    ],
+    "variants_ar": [
+      "التبادل الإلكتروني لشهادات عدم الممانعة"
+    ],
+    "note": "Feature of MNDA ePermits from 1 Nov 2026. 'MNDA ePermits' is a system name and is not translated.",
+    "source": "Notice MNDA/PBP/NTC/22/2026",
+    "updated": "2026-10-07",
+    "alternatives": []
+  },
+  {
+    "id": "T-010",
+    "en": "Validity period",
+    "ar": "مدة الصلاحية",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "validity"
+    ],
+    "variants_ar": [
+      "فترة الصلاحية",
+      "مدة صلاحية"
+    ],
+    "note": "NOC validity is 90 days from issue; an expired NOC is treated as missing.",
+    "source": "Circular 14/2026 §4.2",
+    "updated": "2026-07-02",
+    "alternatives": []
+  },
+  {
+    "id": "T-011",
+    "en": "Drawing revision",
+    "ar": "مراجعة المخطط",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "drawing revisions",
+      "revision of the drawings"
+    ],
+    "variants_ar": [
+      "مراجعة المخططات",
+      "مراجعات المخططات",
+      "رقم مراجعة المخطط"
+    ],
+    "note": "A numbered issue of a drawing set (Rev. B, Rev. C). Do not confuse with 'المراجعة الفنية' (Technical review).",
+    "source": "Circular 14/2026 §4.3",
+    "updated": "2026-07-02",
+    "alternatives": []
+  },
+  {
+    "id": "T-012",
+    "en": "Revision mismatch",
+    "ar": "عدم تطابق مراجعة المخطط",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "revision mismatches",
+      "version mismatch"
+    ],
+    "variants_ar": [
+      "عدم تطابق في مراجعة المخطط",
+      "عدم تطابق المراجعة"
+    ],
+    "note": "Return reason in MNDA ePermits; also covers site-plan version mismatches (14% of Q3 2026 returns).",
+    "source": "Circular 14/2026 §4.3",
+    "updated": "2026-07-02",
+    "alternatives": []
+  },
+  {
+    "id": "T-013",
+    "en": "Licensed consultant",
+    "ar": "الاستشاري المرخّص",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "licensed consultants",
+      "licensed engineering consultant",
+      "licensed engineering consultants"
+    ],
+    "variants_ar": [
+      "الاستشاري المرخص",
+      "استشاري مرخّص",
+      "استشاري مرخص",
+      "الاستشاريين المرخّصين",
+      "الاستشاريين المرخصين",
+      "الاستشاريون المرخّصون",
+      "للاستشاري المرخّص"
+    ],
+    "note": "Engineering consultancy licensed by MNDA. Avoid 'المكتب الهندسي' in formal texts.",
+    "source": "MNBC-2024 Art. 1-3",
+    "updated": "2026-03-11",
+    "alternatives": []
+  },
+  {
+    "id": "T-014",
+    "en": "Contractor",
+    "ar": "المقاول",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "contractors",
+      "main contractor"
+    ],
+    "variants_ar": [
+      "مقاول",
+      "المقاولين",
+      "المقاولون",
+      "للمقاول"
+    ],
+    "note": "Works contracts and building sites. For services contracts use 'Service provider / مزوّد الخدمة'.",
+    "source": "MNBC-2024 Art. 1-3",
+    "updated": "2026-03-11",
+    "alternatives": []
+  },
+  {
+    "id": "T-015",
+    "en": "Permit officer",
+    "ar": "موظف الرخص",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "permit officers"
+    ],
+    "variants_ar": [
+      "موظفو الرخص",
+      "موظفي الرخص",
+      "موظفة الرخص"
+    ],
+    "note": "Officer of the Permit Review Section who records NOC references and validity in the permit file.",
+    "source": "Circular 14/2026 §5.3",
+    "updated": "2026-07-02",
+    "alternatives": []
+  },
+  {
+    "id": "T-016",
+    "en": "Technical review",
+    "ar": "المراجعة الفنية",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "under technical review"
+    ],
+    "variants_ar": [
+      "مراجعة فنية",
+      "مراجعتها الفنية"
+    ],
+    "note": "Planning and structural review stage after the completeness check.",
+    "source": "MNDA-SVC-101 service guide",
+    "updated": "2026-07-15",
+    "alternatives": []
+  },
+  {
+    "id": "T-017",
+    "en": "Civil Defence approval",
+    "ar": "موافقة الدفاع المدني",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "Civil Defence preliminary approval",
+      "Civil Defense approval"
+    ],
+    "variants_ar": [
+      "الموافقة المبدئية من الدفاع المدني"
+    ],
+    "note": "Use British spelling 'Defence'.",
+    "source": "MNDA-SVC-101 service guide",
+    "updated": "2026-07-15",
+    "alternatives": []
+  },
+  {
+    "id": "T-018",
+    "en": "Structural calculations",
+    "ar": "الحسابات الإنشائية",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "structural calcs"
+    ],
+    "variants_ar": [
+      "حسابات إنشائية"
+    ],
+    "note": "Must be stamped and signed by a registered structural engineer (18% of Q3 2026 returns).",
+    "source": "MNBC-2024 Art. 6-1",
+    "updated": "2026-07-15",
+    "alternatives": []
+  },
+  {
+    "id": "T-019",
+    "en": "Plot",
+    "ar": "قطعة الأرض",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "plots"
+    ],
+    "variants_ar": [
+      "قطعة أرض",
+      "قطع الأراضي"
+    ],
+    "note": "Use 'plot', not 'parcel' or 'land piece'.",
+    "source": "MNBC-2024 Art. 1-3",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-020",
+    "en": "Plot number",
+    "ar": "رقم قطعة الأرض",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "plot numbers",
+      "plot no."
+    ],
+    "variants_ar": [
+      "رقم القطعة",
+      "أرقام قطع الأراضي"
+    ],
+    "note": "Format MN-DD-SSS-PPPP (district-sector-plot), e.g. MN-08-214-0007. Never translate or reorder the code.",
+    "source": "MNDA district register",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-021",
+    "en": "Site plan (affection plan)",
+    "ar": "مخطط الموقع",
+    "domain": "Permits",
+    "status": "approved",
+    "variants_en": [
+      "site plan",
+      "site plans",
+      "affection plan",
+      "affection plans"
+    ],
+    "variants_ar": [
+      "مخطط الأرض",
+      "مخططات الموقع",
+      "مخطط موقع"
+    ],
+    "note": "Issued by the Marsa Al Noor Land Registry; always quote the latest revision.",
+    "source": "MNDA-SVC-101 service guide",
+    "updated": "2026-07-15",
+    "alternatives": []
+  },
+  {
+    "id": "T-022",
+    "en": "Marsa Al Noor Building Code (MNBC-2024)",
+    "ar": "كود البناء في مرسى النور",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "Marsa Al Noor Building Code",
+      "MNBC-2024",
+      "MNBC"
+    ],
+    "variants_ar": [
+      "كود البناء"
+    ],
+    "note": "Cite as 'MNBC-2024 Art. 5-4' / 'المادة (5-4) من كود البناء في مرسى النور 2024'. Do not use 'قانون البناء'.",
+    "source": "MNBC-2024",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-023",
+    "en": "Amendment",
+    "ar": "تعديل",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "amendments",
+      "as amended"
+    ],
+    "variants_ar": [
+      "التعديل",
+      "تعديلات",
+      "وتعديلاته"
+    ],
+    "note": "'تعديل رقم (1) لسنة 2026' = 'Amendment No. 1 of 2026' (short form 'Amendment No. 1/2026').",
+    "source": "Amendment 1/2026",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-024",
+    "en": "Setback",
+    "ar": "الارتداد",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "setbacks"
+    ],
+    "variants_ar": [
+      "ارتداد",
+      "الارتدادات",
+      "ارتدادات"
+    ],
+    "note": "Minimum distance between the building line and the plot boundary.",
+    "source": "MNBC-2024 Art. 3-2",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-025",
+    "en": "Plot coverage",
+    "ar": "نسبة التغطية",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "site coverage"
+    ],
+    "variants_ar": [
+      "نسبة تغطية"
+    ],
+    "note": "Building footprint as a percentage of plot area.",
+    "source": "MNBC-2024 Art. 3-3",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-026",
+    "en": "Gross floor area (GFA)",
+    "ar": "إجمالي المساحة الطابقية",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "gross floor area",
+      "GFA"
+    ],
+    "variants_ar": [
+      "المساحة الطابقية الإجمالية"
+    ],
+    "note": "Basis of the MNDA-SVC-101 fee (AED 3 per m² of GFA).",
+    "source": "MNBC-2024 Art. 3-4",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-027",
+    "en": "Height zone",
+    "ar": "نطاق الارتفاع",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "height zones"
+    ],
+    "variants_ar": [
+      "نطاقات الارتفاع"
+    ],
+    "note": "Zones H1–H5 on the Marsa Al Noor height plan.",
+    "source": "MNBC-2024 Art. 3-6",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-028",
+    "en": "Tower separation",
+    "ar": "المسافة الفاصلة بين الأبراج",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "tower separation distance"
+    ],
+    "variants_ar": [
+      "المسافات الفاصلة بين الأبراج",
+      "التباعد بين الأبراج"
+    ],
+    "note": "Measured between the façades of tower floors above the podium.",
+    "source": "MNBC-2024 Art. 3-7",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-029",
+    "en": "Parking bay",
+    "ar": "موقف سيارة",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "parking bays",
+      "parking space"
+    ],
+    "variants_ar": [
+      "مواقف السيارات",
+      "موقف السيارة",
+      "مواقف سيارات"
+    ],
+    "note": "Use 'parking bay' for the marked space, not 'car park' (موقف/مبنى مواقف).",
+    "source": "MNBC-2024 Art. 4-2",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-030",
+    "en": "Gated community",
+    "ar": "مجتمع مسوّر",
+    "domain": "Planning & building code",
+    "status": "disputed",
+    "variants_en": [
+      "gated communities",
+      "gated district",
+      "gated districts"
+    ],
+    "variants_ar": [
+      "مجتمع مسور",
+      "المجتمع المسوّر",
+      "المجتمع المسور",
+      "المجتمعات المسوّرة",
+      "المجتمعات المسورة",
+      "مجتمعات مسوّرة",
+      "مجتمعات مسورة"
+    ],
+    "note": "Provisional; used in Circular 14/2026 and Amendment 1/2026 for MN-03, MN-06 and MN-08. Terminology Committee decision scheduled for 22 Oct 2026.",
+    "source": "Circular 14/2026 §2",
+    "updated": "2026-09-24",
+    "alternatives": [
+      {
+        "ar": "مجمّع سكني مغلق",
+        "en": "Gated residential compound",
+        "proposedBy": "Housing & Community Services",
+        "rationale": "More familiar to customers; Customer Happiness Centre agents report that callers do not recognise 'مسوّر'."
+      },
+      {
+        "ar": "مجتمع مغلق",
+        "en": "Closed community",
+        "proposedBy": "Legal Affairs",
+        "rationale": "Al Lulu Island has no perimeter wall (access is controlled at the bridge gate), so 'مسوّر' (walled) is inaccurate; 'مجمّع سكني' does not fit Marina Quarter, which is mixed-use."
+      }
+    ]
+  },
+  {
+    "id": "T-031",
+    "en": "Community design guidelines",
+    "ar": "إرشادات التصميم المجتمعي",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "design guidelines",
+      "community design guideline"
+    ],
+    "variants_ar": [
+      "إرشادات التصميم المجتمعية",
+      "دليل إرشادات التصميم المجتمعي"
+    ],
+    "note": "Issued by each master developer, e.g. Marina Quarter Properties LLC Community Design Guidelines, rev. 3.",
+    "source": "Circular 14/2026 §1",
+    "updated": "2026-07-02",
+    "alternatives": []
+  },
+  {
+    "id": "T-032",
+    "en": "Roof equipment screening",
+    "ar": "حجب معدات السطح",
+    "domain": "Planning & building code",
+    "status": "disputed",
+    "variants_en": [
+      "rooftop plant screening",
+      "roof screening",
+      "rooftop equipment screening",
+      "screening of roof equipment"
+    ],
+    "variants_ar": [
+      "حجب معدات الأسطح",
+      "حجب المعدات على السطح"
+    ],
+    "note": "Provisional; title of MNBC-2024 Art. 5-4 as amended by Amendment 1/2026. For the physical element use 'عنصر الحجب' (see Screen height).",
+    "source": "MNBC-2024 Art. 5-4 (Amendment 1/2026)",
+    "updated": "2026-09-24",
+    "alternatives": [
+      {
+        "ar": "سواتر معدات السطح",
+        "en": "Roof equipment screens",
+        "proposedBy": "Field Operations & Inspection",
+        "rationale": "Inspectors verify a physical element; 'سواتر' names the screen itself and matches site usage and inspection checklists, whereas 'حجب' describes the outcome."
+      }
+    ]
+  },
+  {
+    "id": "T-033",
+    "en": "Screen height",
+    "ar": "ارتفاع عنصر الحجب",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "screen heights"
+    ],
+    "variants_ar": [
+      "ارتفاع عناصر الحجب"
+    ],
+    "note": "Minimum = height of the tallest screened equipment + 0.3 m, measured from finished roof level.",
+    "source": "MNBC-2024 Art. 5-4(3) (Amendment 1/2026)",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-034",
+    "en": "Façade",
+    "ar": "الواجهة",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "facade",
+      "façades",
+      "facades"
+    ],
+    "variants_ar": [
+      "الواجهات",
+      "واجهة",
+      "واجهات"
+    ],
+    "note": "Keep the cedilla ('façade') in English publications.",
+    "source": "MNBC-2024 Art. 5-5",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-035",
+    "en": "Façade cladding",
+    "ar": "تكسية الواجهات",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "facade cladding",
+      "cladding"
+    ],
+    "variants_ar": [
+      "تكسية الواجهة",
+      "كسوة الواجهات"
+    ],
+    "note": "Prefer 'تكسية' over 'كسوة' in technical documents.",
+    "source": "MNBC-2024 Art. 5-5",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-036",
+    "en": "Louvre",
+    "ar": "الكاسرات",
+    "domain": "Planning & building code",
+    "status": "disputed",
+    "variants_en": [
+      "louvres",
+      "louvred",
+      "louver",
+      "louvers"
+    ],
+    "variants_ar": [
+      "كاسرات",
+      "الكاسرات المعدنية"
+    ],
+    "note": "Provisional. British spelling 'louvre' in English texts.",
+    "source": "MNBC-2024 Art. 5-4(4) (Amendment 1/2026)",
+    "updated": "2026-09-24",
+    "alternatives": [
+      {
+        "ar": "شفرات التهوية",
+        "en": "Ventilation louvres",
+        "proposedBy": "Facilities & Assets",
+        "rationale": "On plant screens the louvre's job is airflow to chillers and AHUs; 'كاسرات' is associated with sun-breakers (brise-soleil) on façades."
+      },
+      {
+        "ar": "الشرائح المعدنية",
+        "en": "Metal slats",
+        "proposedBy": "Field Operations & Inspection",
+        "rationale": "Neutral description understood by site supervisors; avoids implying a solar-shading function."
+      }
+    ]
+  },
+  {
+    "id": "T-037",
+    "en": "Opacity",
+    "ar": "نسبة العتامة",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "visual opacity"
+    ],
+    "variants_ar": [
+      "العتامة",
+      "درجة العتامة"
+    ],
+    "note": "Minimum 50% for louvred screens, measured perpendicular to the screen.",
+    "source": "MNBC-2024 Art. 5-4(4) (Amendment 1/2026)",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-038",
+    "en": "Glazing reflectivity",
+    "ar": "نسبة انعكاس الزجاج",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "reflectivity",
+      "external reflectance",
+      "glass reflectivity"
+    ],
+    "variants_ar": [
+      "انعكاسية الزجاج",
+      "نسبة الانعكاس"
+    ],
+    "note": "External visible-light reflectance; maximum 15% in gated communities.",
+    "source": "MNBC-2024 Art. 5-5(1) (Amendment 1/2026)",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-039",
+    "en": "Parapet",
+    "ar": "الدروة",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "parapets",
+      "parapet wall"
+    ],
+    "variants_ar": [
+      "دروة",
+      "الدروات",
+      "دروة السطح"
+    ],
+    "note": "Counts as a screen where it reaches the required screen height.",
+    "source": "MNBC-2024 Art. 5-4(5)",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-040",
+    "en": "Podium",
+    "ar": "المنصة",
+    "domain": "Planning & building code",
+    "status": "disputed",
+    "variants_en": [
+      "podiums"
+    ],
+    "variants_ar": [
+      "منصة",
+      "منصة المبنى"
+    ],
+    "note": "Provisional. Base storeys of a tower (retail, parking, amenities).",
+    "source": "MNBC-2024 Art. 3-7",
+    "updated": "2026-09-24",
+    "alternatives": [
+      {
+        "ar": "الطوابق القاعدية",
+        "en": "Podium levels",
+        "proposedBy": "Legal Affairs",
+        "rationale": "'المنصة' is also used for event stages under MNDA-SVC-301 (Community Event Permit), which creates ambiguity in legal texts."
+      },
+      {
+        "ar": "البوديوم",
+        "en": "Podium (transliterated)",
+        "proposedBy": "Field Operations & Inspection",
+        "rationale": "The transliteration is universal on sites and in contractors' Arabic correspondence."
+      }
+    ]
+  },
+  {
+    "id": "T-041",
+    "en": "Wind load",
+    "ar": "حمل الرياح",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "wind loads",
+      "design wind load"
+    ],
+    "variants_ar": [
+      "أحمال الرياح"
+    ],
+    "note": "Expressed in kPa.",
+    "source": "MNBC-2024 Art. 6-2",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-042",
+    "en": "Thermal transmittance (U-value)",
+    "ar": "معامل الانتقال الحراري",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "thermal transmittance",
+      "U-value"
+    ],
+    "variants_ar": [
+      "قيمة U",
+      "معامل انتقال الحرارة"
+    ],
+    "note": "Unit W/m²K; keep the symbol 'U' in Arabic texts.",
+    "source": "MNBC-2024 Art. 7-1",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-043",
+    "en": "Reaction-to-fire classification",
+    "ar": "تصنيف التفاعل مع الحريق",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "fire rating",
+      "fire classification",
+      "reaction to fire"
+    ],
+    "variants_ar": [
+      "فئة التفاعل مع الحريق",
+      "تصنيف الحريق"
+    ],
+    "note": "EN 13501-1 classes (A1, A2-s1,d0 …). This is not fire resistance; do not translate as 'مقاومة الحريق'.",
+    "source": "MNBC-2024 Art. 5-5(2)",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-044",
+    "en": "Marina Quarter",
+    "ar": "حي المارينا",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [],
+    "variants_ar": [],
+    "note": "District MN-08. The master developer's name 'Marina Quarter Properties LLC' is never translated.",
+    "source": "MNDA district register",
+    "updated": "2025-11-20",
+    "alternatives": []
+  },
+  {
+    "id": "T-045",
+    "en": "Construction site",
+    "ar": "موقع البناء",
+    "domain": "Planning & building code",
+    "status": "approved",
+    "variants_en": [
+      "construction sites",
+      "building site",
+      "building sites"
+    ],
+    "variants_ar": [
+      "مواقع البناء",
+      "موقع بناء",
+      "مواقع بناء"
+    ],
+    "note": "Any plot where works are carried out under a building or fit-out permit.",
+    "source": "Administrative Decision 37/2026 Art. 1",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-046",
+    "en": "Mock-up",
+    "ar": "نموذج تجريبي",
+    "domain": "Facilities & engineering",
+    "status": "disputed",
+    "variants_en": [
+      "mock-ups",
+      "mockup",
+      "mock up"
+    ],
+    "variants_ar": [
+      "النموذج التجريبي",
+      "نماذج تجريبية",
+      "النماذج التجريبية"
+    ],
+    "note": "Provisional. Full-scale assembly approved before fabrication; becomes the quality benchmark.",
+    "source": "FOI-PRO-12 Façade Inspection Procedure",
+    "updated": "2026-09-24",
+    "alternatives": [
+      {
+        "ar": "نموذج بالحجم الطبيعي",
+        "en": "Full-scale mock-up",
+        "proposedBy": "Planning & Building Permits",
+        "rationale": "'نموذج تجريبي' can be read as a trial product or prototype; façade mock-ups are full-scale physical assemblies used as the approval benchmark."
+      }
+    ]
+  },
+  {
+    "id": "T-047",
+    "en": "Hold point",
+    "ar": "نقطة توقف للفحص",
+    "domain": "Facilities & engineering",
+    "status": "disputed",
+    "variants_en": [
+      "hold points",
+      "hold-point"
+    ],
+    "variants_ar": [
+      "نقاط التوقف للفحص",
+      "نقطة التوقف للفحص",
+      "نقاط توقف للفحص"
+    ],
+    "note": "Provisional. Work may not proceed past it without written release. Distinguish from 'witness point' (نقطة معاينة).",
+    "source": "FOI-PRO-12 Façade Inspection Procedure",
+    "updated": "2026-09-24",
+    "alternatives": [
+      {
+        "ar": "نقطة إيقاف للفحص",
+        "en": "Inspection stop point",
+        "proposedBy": "Field Operations & Inspection",
+        "rationale": "Stresses that the inspector actively stops the work until written release, as in procedure FOI-PRO-12."
+      }
+    ]
+  },
+  {
+    "id": "T-048",
+    "en": "Material submittal",
+    "ar": "طلب اعتماد المواد",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "material submittals",
+      "submittals",
+      "submittal"
+    ],
+    "variants_ar": [
+      "طلبات اعتماد المواد",
+      "طلب اعتماد مواد"
+    ],
+    "note": "Product data, samples and test reports submitted for approval before procurement.",
+    "source": "FOI-PRO-12 Façade Inspection Procedure",
+    "updated": "2026-04-08",
+    "alternatives": []
+  },
+  {
+    "id": "T-049",
+    "en": "Shop drawings",
+    "ar": "المخططات التنفيذية",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "shop drawing"
+    ],
+    "variants_ar": [
+      "مخططات تنفيذية"
+    ],
+    "note": "Fabrication and installation drawings prepared by the contractor or specialist subcontractor.",
+    "source": "FOI-PRO-12 Façade Inspection Procedure",
+    "updated": "2026-04-08",
+    "alternatives": []
+  },
+  {
+    "id": "T-050",
+    "en": "As-built drawings",
+    "ar": "المخططات المنفذة",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "as-built drawing",
+      "as-builts"
+    ],
+    "variants_ar": [
+      "المخططات حسب التنفيذ",
+      "مخططات حسب التنفيذ"
+    ],
+    "note": "Required for the Building Completion Certificate (MNDA-SVC-103).",
+    "source": "MNDA-SVC-103 service guide",
+    "updated": "2026-04-08",
+    "alternatives": []
+  },
+  {
+    "id": "T-051",
+    "en": "Snag list",
+    "ar": "قائمة الملاحظات",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "snag lists",
+      "snagging list"
+    ],
+    "variants_ar": [
+      "قوائم الملاحظات"
+    ],
+    "note": "List of defects to close before handover or completion inspection.",
+    "source": "MNDA FM Standards 2024",
+    "updated": "2025-09-17",
+    "alternatives": []
+  },
+  {
+    "id": "T-052",
+    "en": "Facilities management",
+    "ar": "إدارة المرافق",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "facility management"
+    ],
+    "variants_ar": [
+      "خدمات إدارة المرافق"
+    ],
+    "note": "Keep 'FM' only in tables and contract headings.",
+    "source": "Tender MNDA/PRC/2026/041",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-053",
+    "en": "Planned preventive maintenance (PPM)",
+    "ar": "الصيانة الوقائية المخططة",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "planned preventive maintenance",
+      "PPM"
+    ],
+    "variants_ar": [
+      "صيانة وقائية مخططة"
+    ],
+    "note": "Measured as PPM compliance (% of scheduled tasks completed). Not 'الصيانة الدورية' in contract texts.",
+    "source": "MNDA FM Standards 2024",
+    "updated": "2025-09-17",
+    "alternatives": []
+  },
+  {
+    "id": "T-054",
+    "en": "Chiller",
+    "ar": "المبرّد",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "chillers",
+      "air-cooled chiller"
+    ],
+    "variants_ar": [
+      "المبرد",
+      "المبرّدات",
+      "المبردات",
+      "وحدة تبريد المياه",
+      "وحدات تبريد المياه"
+    ],
+    "note": "On first use in technical texts write 'المبرّد (وحدة تبريد المياه)'. Equipment tags (CH-01, CH-R01) are not translated.",
+    "source": "MNDA FM Standards 2024",
+    "updated": "2025-09-17",
+    "alternatives": []
+  },
+  {
+    "id": "T-055",
+    "en": "Air handling unit (AHU)",
+    "ar": "وحدة مناولة الهواء",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "air handling unit",
+      "air handling units",
+      "air-handling unit",
+      "AHU",
+      "AHUs"
+    ],
+    "variants_ar": [
+      "وحدات مناولة الهواء"
+    ],
+    "note": "Equipment tags (AHU-01, AHU-R01) are not translated.",
+    "source": "MNDA FM Standards 2024",
+    "updated": "2025-09-17",
+    "alternatives": []
+  },
+  {
+    "id": "T-056",
+    "en": "HVAC",
+    "ar": "التدفئة والتهوية وتكييف الهواء",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "heating, ventilation and air conditioning"
+    ],
+    "variants_ar": [
+      "أنظمة التدفئة والتهوية وتكييف الهواء",
+      "التكييف والتهوية"
+    ],
+    "note": "The abbreviation 'HVAC' may be kept in Arabic contract tables where space is limited.",
+    "source": "MNDA FM Standards 2024",
+    "updated": "2025-09-17",
+    "alternatives": []
+  },
+  {
+    "id": "T-057",
+    "en": "Comfort temperature",
+    "ar": "درجة حرارة الراحة",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "comfort temperatures"
+    ],
+    "variants_ar": [
+      "درجة الحرارة المريحة"
+    ],
+    "note": "MNDA standard: 22–24 °C in occupied spaces.",
+    "source": "MNDA FM Standards 2024",
+    "updated": "2025-09-17",
+    "alternatives": []
+  },
+  {
+    "id": "T-058",
+    "en": "Building management system (BMS)",
+    "ar": "نظام إدارة المبنى",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "building management system",
+      "BMS"
+    ],
+    "variants_ar": [
+      "نظام إدارة المباني"
+    ],
+    "note": "Source of temperature logs for comfort KPIs.",
+    "source": "MNDA FM Standards 2024",
+    "updated": "2025-09-17",
+    "alternatives": []
+  },
+  {
+    "id": "T-059",
+    "en": "CAFM system",
+    "ar": "نظام إدارة المرافق بمساعدة الحاسوب",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "CAFM",
+      "computer-aided facilities management"
+    ],
+    "variants_ar": [
+      "نظام CAFM"
+    ],
+    "note": "Mandatory for MNDA FM contracts; time stamps are the evidence for response-time KPIs.",
+    "source": "Tender MNDA/PRC/2026/041",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-060",
+    "en": "Work order",
+    "ar": "أمر عمل",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "work orders"
+    ],
+    "variants_ar": [
+      "أمر العمل",
+      "أوامر العمل",
+      "أوامر عمل"
+    ],
+    "note": "Not \"job card\" in contract texts.",
+    "source": "MNDA FM Standards 2024",
+    "updated": "2025-09-17",
+    "alternatives": []
+  },
+  {
+    "id": "T-061",
+    "en": "Response time",
+    "ar": "زمن الاستجابة",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "response times"
+    ],
+    "variants_ar": [
+      "مدة الاستجابة"
+    ],
+    "note": "Time from logging a call to technician attendance; P1 target ≤ 30 minutes.",
+    "source": "MNDA FM Standards 2024",
+    "updated": "2025-09-17",
+    "alternatives": []
+  },
+  {
+    "id": "T-062",
+    "en": "Helpdesk",
+    "ar": "مكتب المساعدة",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "help desk"
+    ],
+    "variants_ar": [
+      "مركز البلاغات"
+    ],
+    "note": "24/7 FM helpdesk. For the MNDA IT Service Desk use 'مكتب خدمات تقنية المعلومات'.",
+    "source": "Tender MNDA/PRC/2026/041",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-063",
+    "en": "Concrete pour",
+    "ar": "صب الخرسانة",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "concrete pours",
+      "concrete pouring"
+    ],
+    "variants_ar": [
+      "صبّ الخرسانة",
+      "أعمال صب الخرسانة"
+    ],
+    "note": "Out-of-hours pours in Marina Quarter need a permit requested 48 hours in advance.",
+    "source": "Administrative Decision 37/2026 Art. 4",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-064",
+    "en": "Piling",
+    "ar": "أعمال الخوازيق",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "piling works"
+    ],
+    "variants_ar": [
+      "الخوازيق",
+      "دق الخوازيق"
+    ],
+    "note": "Classed as noisy works.",
+    "source": "Administrative Decision 37/2026 Art. 1",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-065",
+    "en": "Noisy works",
+    "ar": "الأعمال المسببة للضوضاء",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "noise-generating works"
+    ],
+    "variants_ar": [
+      "الأعمال المسبّبة للضوضاء",
+      "أعمال مسببة للضوضاء"
+    ],
+    "note": "Piling, breaking and concrete cutting.",
+    "source": "Administrative Decision 37/2026 Art. 1",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-066",
+    "en": "Noise limit",
+    "ar": "حد الضوضاء",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "noise limits"
+    ],
+    "variants_ar": [
+      "حدود الضوضاء",
+      "الحد الأقصى لمستوى الضوضاء"
+    ],
+    "note": "Measured at the site boundary in dBA.",
+    "source": "Administrative Decision 37/2026 Art. 5",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-067",
+    "en": "Dust control",
+    "ar": "مكافحة الغبار",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "dust suppression"
+    ],
+    "variants_ar": [
+      "الحد من الغبار"
+    ],
+    "note": "Water spraying of haul roads and covering of loose loads.",
+    "source": "Administrative Decision 37/2026 Art. 5",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-068",
+    "en": "Heavy vehicle",
+    "ar": "مركبة ثقيلة",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "heavy vehicles",
+      "heavy goods vehicle"
+    ],
+    "variants_ar": [
+      "المركبة الثقيلة",
+      "المركبات الثقيلة",
+      "مركبات ثقيلة"
+    ],
+    "note": "Gross vehicle weight over 12 t.",
+    "source": "Administrative Decision 37/2026 Art. 1",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-069",
+    "en": "Material deliveries",
+    "ar": "توريد المواد",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "delivery of materials",
+      "material delivery",
+      "deliveries"
+    ],
+    "variants_ar": [
+      "توريدات المواد"
+    ],
+    "note": "Marina Quarter delivery window: Monday–Saturday 09:00–16:00.",
+    "source": "Administrative Decision 37/2026 Art. 3",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-070",
+    "en": "Service road",
+    "ar": "طريق الخدمة",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "service roads"
+    ],
+    "variants_ar": [
+      "طرق الخدمة"
+    ],
+    "note": "Mandatory route for heavy vehicles in Marina Quarter.",
+    "source": "Administrative Decision 37/2026 Art. 3",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-071",
+    "en": "Working hours",
+    "ar": "ساعات العمل",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "site working hours"
+    ],
+    "variants_ar": [
+      "ساعات عمل"
+    ],
+    "note": "Construction sites in Marina Quarter: 07:00–19:00, Monday–Saturday.",
+    "source": "Administrative Decision 37/2026 Art. 2",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-072",
+    "en": "Midday work ban",
+    "ar": "حظر العمل وقت الظهيرة",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "summer midday ban",
+      "midday ban"
+    ],
+    "variants_ar": [
+      "حظر العمل في وقت الظهيرة"
+    ],
+    "note": "15 June – 15 September, 12:30–15:00, for outdoor work.",
+    "source": "Administrative Decision 37/2026 Art. 6",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-073",
+    "en": "Field inspection",
+    "ar": "التفتيش الميداني",
+    "domain": "Facilities & engineering",
+    "status": "approved",
+    "variants_en": [
+      "field inspections",
+      "site inspection",
+      "site inspections"
+    ],
+    "variants_ar": [
+      "تفتيش ميداني",
+      "الفحص الميداني"
+    ],
+    "note": "Carried out by the Field Operations & Inspection Department.",
+    "source": "FOI-PRO-12 Façade Inspection Procedure",
+    "updated": "2026-04-08",
+    "alternatives": []
+  },
+  {
+    "id": "T-074",
+    "en": "Article",
+    "ar": "المادة",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "Art.",
+      "articles"
+    ],
+    "variants_ar": [
+      "مادة",
+      "المواد"
+    ],
+    "note": "Decisions: 'المادة الأولى' = 'Article 1'. Code citations: 'المادة (5-4)' = 'Art. 5-4'.",
+    "source": "MNDA Arabic Style Guide 2025",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-075",
+    "en": "Circular",
+    "ar": "تعميم",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "circulars"
+    ],
+    "variants_ar": [
+      "التعميم",
+      "تعاميم"
+    ],
+    "note": "'تعميم رقم (14) لسنة 2026' = 'Circular No. 14/2026'.",
+    "source": "MNDA Arabic Style Guide 2025",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-076",
+    "en": "Administrative decision",
+    "ar": "قرار إداري",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "administrative decisions"
+    ],
+    "variants_ar": [
+      "القرار الإداري",
+      "قرارات إدارية"
+    ],
+    "note": "'قرار إداري رقم (37) لسنة 2026' = 'Administrative Decision No. (37) of 2026'; 'هذا القرار' = 'this Decision'.",
+    "source": "MNDA Arabic Style Guide 2025",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-077",
+    "en": "Effective date",
+    "ar": "تاريخ النفاذ",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "effective",
+      "takes effect",
+      "shall come into force",
+      "comes into force"
+    ],
+    "variants_ar": [
+      "يُعمل به اعتباراً من",
+      "يعمل به اعتباراً من",
+      "يُعمل بهذا القرار اعتباراً من",
+      "يُعمل بهذا التعديل اعتباراً من",
+      "تاريخ العمل به"
+    ],
+    "note": "Operative clause 'يُعمل بهذا القرار اعتباراً من' = 'This Decision shall come into force on'.",
+    "source": "MNDA Arabic Style Guide 2025",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-078",
+    "en": "Repeal of conflicting provisions",
+    "ar": "يُلغى كل حكم يخالف",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "conflicting provision",
+      "conflicting provisions"
+    ],
+    "variants_ar": [
+      "يلغى كل حكم يخالف",
+      "يُلغى كل نص يخالف"
+    ],
+    "note": "Standard clause: 'Any provision that conflicts with this Decision is hereby repealed.'",
+    "source": "MNDA Arabic Style Guide 2025",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-079",
+    "en": "Transitional provision",
+    "ar": "حكم انتقالي",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "transitional provisions"
+    ],
+    "variants_ar": [
+      "الأحكام الانتقالية",
+      "أحكام انتقالية",
+      "الحكم الانتقالي"
+    ],
+    "note": "Heading for exemptions of pending applications.",
+    "source": "MNDA Arabic Style Guide 2025",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-080",
+    "en": "Violation",
+    "ar": "مخالفة",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "violations",
+      "offence"
+    ],
+    "variants_ar": [
+      "المخالفة",
+      "المخالفات",
+      "مخالفات"
+    ],
+    "note": "The breach itself; the monetary sanction is 'غرامة' (Fine).",
+    "source": "Administrative Decision 37/2026 Art. 7",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-081",
+    "en": "Fine",
+    "ar": "غرامة",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "fines",
+      "administrative fine",
+      "penalty",
+      "penalties"
+    ],
+    "variants_ar": [
+      "الغرامة",
+      "الغرامات",
+      "غرامات"
+    ],
+    "note": "Regulatory fine. In contracts do not use 'غرامة' for liquidated damages.",
+    "source": "Administrative Decision 37/2026 Art. 7",
+    "updated": "2026-09-14",
+    "alternatives": []
+  },
+  {
+    "id": "T-082",
+    "en": "Site stop",
+    "ar": "إيقاف الموقع",
+    "domain": "Legal & governance",
+    "status": "disputed",
+    "variants_en": [
+      "site stoppage"
+    ],
+    "variants_ar": [
+      "إيقاف المواقع"
+    ],
+    "note": "Provisional. Temporary suspension of all works on a site by Field Operations & Inspection (maximum 14 days under Decision 37/2026).",
+    "source": "Administrative Decision 37/2026 Art. 8",
+    "updated": "2026-09-24",
+    "alternatives": [
+      {
+        "ar": "وقف الأعمال في الموقع",
+        "en": "Suspension of site works",
+        "proposedBy": "Legal Affairs",
+        "rationale": "The legal measure suspends the works, not the site; avoids implying closure or seizure of the plot and matches the wording of other MNDA administrative penalties."
+      }
+    ]
+  },
+  {
+    "id": "T-083",
+    "en": "Grievance",
+    "ar": "التظلم",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "grievances"
+    ],
+    "variants_ar": [
+      "تظلم",
+      "التظلمات"
+    ],
+    "note": "Administrative appeal to the issuing authority. Not 'complaint' (شكوى).",
+    "source": "MNDA Arabic Style Guide 2025",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-084",
+    "en": "Competent department",
+    "ar": "الإدارة المختصة",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "responsible department"
+    ],
+    "variants_ar": [
+      "الإدارات المختصة",
+      "الجهة المختصة"
+    ],
+    "note": "Defined term in decisions; capitalise in English (the Competent Department).",
+    "source": "MNDA Arabic Style Guide 2025",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-085",
+    "en": "Director General",
+    "ar": "المدير العام",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "DG"
+    ],
+    "variants_ar": [
+      "مدير عام"
+    ],
+    "note": "H.E. Eng. Khalid Saif Al Mazrouei: 'سعادة المهندس' = 'H.E. Eng.'",
+    "source": "MNDA organisation chart 2026",
+    "updated": "2026-01-12",
+    "alternatives": []
+  },
+  {
+    "id": "T-086",
+    "en": "Marsa Al Noor Development Authority (MNDA)",
+    "ar": "هيئة مرسى النور للتطوير",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "Marsa Al Noor Development Authority",
+      "MNDA",
+      "the Authority"
+    ],
+    "variants_ar": [
+      "الهيئة"
+    ],
+    "note": "In running text 'the Authority' / 'الهيئة'. Never 'the Municipality' / 'البلدية'.",
+    "source": "Law No. 4 of 2011",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-087",
+    "en": "Planning & Building Permits Department",
+    "ar": "إدارة التخطيط ورخص البناء",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "Planning & Building Permits",
+      "Planning and Building Permits"
+    ],
+    "variants_ar": [],
+    "note": "Director's title: 'مدير إدارة التخطيط ورخص البناء' = 'Director, Planning & Building Permits'.",
+    "source": "MNDA organisation chart 2026",
+    "updated": "2026-01-12",
+    "alternatives": []
+  },
+  {
+    "id": "T-088",
+    "en": "Field Operations & Inspection Department",
+    "ar": "إدارة العمليات الميدانية والتفتيش",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [
+      "Field Operations & Inspection",
+      "Field Operations and Inspection"
+    ],
+    "variants_ar": [
+      "العمليات الميدانية والتفتيش"
+    ],
+    "note": "Enforces site rules and carries out field inspections.",
+    "source": "MNDA organisation chart 2026",
+    "updated": "2026-01-12",
+    "alternatives": []
+  },
+  {
+    "id": "T-089",
+    "en": "Permit Review Section",
+    "ar": "قسم مراجعة الرخص",
+    "domain": "Legal & governance",
+    "status": "approved",
+    "variants_en": [],
+    "variants_ar": [],
+    "note": "Head: Eng. Layla Ahmed Al Marzooqi. 'رئيس قسم مراجعة الرخص' = 'Head, Permit Review Section'.",
+    "source": "MNDA organisation chart 2026",
+    "updated": "2026-01-12",
+    "alternatives": []
+  },
+  {
+    "id": "T-090",
+    "en": "Tender",
+    "ar": "مناقصة",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "tenders"
+    ],
+    "variants_ar": [
+      "المناقصة",
+      "المناقصات"
+    ],
+    "note": "Tender numbers (MNDA/PRC/YYYY/NNN) are not translated.",
+    "source": "MNDA Procurement Manual 2025 §3.1",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-091",
+    "en": "Bidder",
+    "ar": "مقدّم العطاء",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "bidders",
+      "tenderer",
+      "tenderers"
+    ],
+    "variants_ar": [
+      "مقدم العطاء",
+      "مقدمي العطاءات",
+      "مقدّمي العطاءات",
+      "مقدمو العطاءات"
+    ],
+    "note": "Not 'المتناقص' or 'المزايد'.",
+    "source": "MNDA Procurement Manual 2025 §3.4",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-092",
+    "en": "Service provider",
+    "ar": "مزوّد الخدمة",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "service providers"
+    ],
+    "variants_ar": [
+      "مزود الخدمة",
+      "مزوّد الخدمات",
+      "مزود الخدمات"
+    ],
+    "note": "Party to services contracts (e.g. FM). For works contracts use 'المقاول'.",
+    "source": "MNDA Procurement Manual 2025 §1.2",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-093",
+    "en": "Contract value",
+    "ar": "قيمة العقد",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "total contract value"
+    ],
+    "variants_ar": [
+      "القيمة الإجمالية للعقد"
+    ],
+    "note": "Excluding VAT unless stated otherwise.",
+    "source": "MNDA Procurement Manual 2025 §1.2",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-094",
+    "en": "Monthly fee",
+    "ar": "المقابل الشهري",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "monthly fees"
+    ],
+    "variants_ar": [
+      "المقابل الشهري للخدمات"
+    ],
+    "note": "Monthly contract price for services; basis for calculating service credits.",
+    "source": "Contract MNDA/CON/2023/019",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-095",
+    "en": "Performance bond",
+    "ar": "ضمان حسن التنفيذ",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "performance bonds",
+      "performance guarantee"
+    ],
+    "variants_ar": [
+      "خطاب ضمان حسن التنفيذ",
+      "ضمانات حسن التنفيذ"
+    ],
+    "note": "10% of the contract value in MNDA services contracts.",
+    "source": "MNDA Procurement Manual 2025 §9.2",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-096",
+    "en": "Liquidated damages",
+    "ar": "التعويضات الاتفاقية",
+    "domain": "Procurement & contracts",
+    "status": "disputed",
+    "variants_en": [],
+    "variants_ar": [
+      "تعويضات اتفاقية",
+      "التعويض الاتفاقي"
+    ],
+    "note": "Provisional (Legal Affairs): pre-agreed compensation, not a penalty; 'غرامة' is reserved for regulatory fines.",
+    "source": "MNDA Procurement Manual 2025 §9.4",
+    "updated": "2026-09-24",
+    "alternatives": [
+      {
+        "ar": "غرامات التأخير",
+        "en": "Delay penalties",
+        "proposedBy": "Procurement & Contracts",
+        "rationale": "Wording used in MNDA tender templates since 2021 and familiar to bidders; directly describes the late-mobilisation case."
+      }
+    ]
+  },
+  {
+    "id": "T-097",
+    "en": "Service credit",
+    "ar": "خصم مستوى الخدمة",
+    "domain": "Procurement & contracts",
+    "status": "disputed",
+    "variants_en": [
+      "service credits"
+    ],
+    "variants_ar": [
+      "خصومات مستوى الخدمة"
+    ],
+    "note": "Provisional. Price adjustment deducted from the monthly invoice when a KPI target is missed.",
+    "source": "Tender MNDA/PRC/2026/057 §7",
+    "updated": "2026-09-30",
+    "alternatives": [
+      {
+        "ar": "رصيد الخدمة",
+        "en": "Service credit (literal)",
+        "proposedBy": "Facilities & Assets",
+        "rationale": "Literal rendering used in the bilingual contracts of international FM operators; keeps a one-to-one mapping with the English term."
+      },
+      {
+        "ar": "خصم الأداء",
+        "en": "Performance deduction",
+        "proposedBy": "Procurement & Contracts",
+        "rationale": "Shorter, and already used in payment certificates under contract MNDA/CON/2023/019."
+      }
+    ]
+  },
+  {
+    "id": "T-098",
+    "en": "Deduction",
+    "ar": "الخصم",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "deductions"
+    ],
+    "variants_ar": [
+      "خصم",
+      "الخصومات",
+      "خصومات"
+    ],
+    "note": "Amount withheld from a payment certificate or invoice.",
+    "source": "MNDA Procurement Manual 2025 §9.3",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-099",
+    "en": "Cap on deductions",
+    "ar": "الحد الأقصى للخصومات",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "deduction cap"
+    ],
+    "variants_ar": [
+      "سقف الخصومات"
+    ],
+    "note": "10% of the Monthly Fee in MNDA FM contracts.",
+    "source": "Tender MNDA/PRC/2026/057 §7",
+    "updated": "2026-09-30",
+    "alternatives": []
+  },
+  {
+    "id": "T-100",
+    "en": "Key performance indicator (KPI)",
+    "ar": "مؤشر أداء رئيسي",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "key performance indicator",
+      "key performance indicators",
+      "KPI",
+      "KPIs"
+    ],
+    "variants_ar": [
+      "مؤشرات الأداء الرئيسية",
+      "مؤشر الأداء الرئيسي",
+      "مؤشرات أداء رئيسية"
+    ],
+    "note": "KPI codes (KPI-01 …) are not translated.",
+    "source": "MNDA Procurement Manual 2025 §7.1",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-101",
+    "en": "Service level (SLA)",
+    "ar": "مستوى الخدمة",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "service level",
+      "service levels",
+      "SLA",
+      "service-level"
+    ],
+    "variants_ar": [
+      "مستويات الخدمة",
+      "اتفاقية مستوى الخدمة"
+    ],
+    "note": "Also used for MNDA service processing times (e.g. 15 working days for MNDA-SVC-101).",
+    "source": "MNDA Procurement Manual 2025 §7.1",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-102",
+    "en": "Mobilisation",
+    "ar": "التعبئة",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "mobilization"
+    ],
+    "variants_ar": [
+      "فترة التعبئة",
+      "أعمال التعبئة"
+    ],
+    "note": "Contract start-up (staff, tools, CAFM set-up). Not 'الحشد'.",
+    "source": "MNDA Procurement Manual 2025 §8.2",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-103",
+    "en": "Termination",
+    "ar": "إنهاء العقد",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "terminate the contract"
+    ],
+    "variants_ar": [
+      "إنهاء التعاقد"
+    ],
+    "note": "Do not use 'فسخ' (rescission) unless instructed by Legal Affairs.",
+    "source": "MNDA Procurement Manual 2025 §11.1",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-104",
+    "en": "Default notice",
+    "ar": "إشعار الإخلال",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "notice of default"
+    ],
+    "variants_ar": [
+      "إشعار بالإخلال"
+    ],
+    "note": "Written notice giving the contractor or service provider a cure period.",
+    "source": "MNDA Procurement Manual 2025 §11.2",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-105",
+    "en": "Dispute resolution",
+    "ar": "تسوية المنازعات",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "settlement of disputes"
+    ],
+    "variants_ar": [
+      "تسوية النزاعات"
+    ],
+    "note": "Amicable settlement, escalation, then the competent courts of Marsa Al Noor.",
+    "source": "MNDA Procurement Manual 2025 §12",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-106",
+    "en": "In-Country Value (ICV)",
+    "ar": "القيمة الوطنية المضافة",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "In-Country Value",
+      "ICV"
+    ],
+    "variants_ar": [
+      "برنامج القيمة الوطنية المضافة"
+    ],
+    "note": "Minimum ICV score of 25% in tender MNDA/PRC/2026/041.",
+    "source": "Tender MNDA/PRC/2026/041",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-107",
+    "en": "Emiratisation",
+    "ar": "التوطين",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "Emiratization"
+    ],
+    "variants_ar": [
+      "خطة التوطين",
+      "نسبة التوطين"
+    ],
+    "note": "British spelling 'Emiratisation' in MNDA English texts.",
+    "source": "Tender MNDA/PRC/2026/041",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-108",
+    "en": "Standby costs",
+    "ar": "تكاليف التوقف",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "standby cost",
+      "site standby"
+    ],
+    "variants_ar": [
+      "تكلفة التوقف",
+      "تكاليف توقف الموقع"
+    ],
+    "note": "Costs of retaining plant and staff on an idle site.",
+    "source": "MNDA Procurement Manual 2025 §10.3",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-109",
+    "en": "Extension of time",
+    "ar": "تمديد المدة",
+    "domain": "Procurement & contracts",
+    "status": "approved",
+    "variants_en": [
+      "extension"
+    ],
+    "variants_ar": [
+      "تمديد مدة",
+      "طلب تمديد"
+    ],
+    "note": "For hold extensions under Circular 14/2026 §5.2 use 'تمديد مدة التعليق'.",
+    "source": "MNDA Procurement Manual 2025 §10.1",
+    "updated": "2025-08-04",
+    "alternatives": []
+  },
+  {
+    "id": "T-110",
+    "en": "Housing grant",
+    "ar": "منحة سكنية",
+    "domain": "Housing",
+    "status": "approved",
+    "variants_en": [
+      "housing grants"
+    ],
+    "variants_ar": [
+      "المنحة السكنية",
+      "المنح السكنية",
+      "منح سكنية"
+    ],
+    "note": "Up to AED 600,000 for households with income ≤ AED 30,000 per month.",
+    "source": "Circular 9/2026 §3",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-111",
+    "en": "Housing loan",
+    "ar": "قرض سكني",
+    "domain": "Housing",
+    "status": "approved",
+    "variants_en": [
+      "housing loans"
+    ],
+    "variants_ar": [
+      "القرض السكني",
+      "القروض السكنية"
+    ],
+    "note": "Interest-free, up to AED 900,000 over 25 years.",
+    "source": "Circular 9/2026 §3",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-112",
+    "en": "Family book",
+    "ar": "خلاصة القيد",
+    "domain": "Housing",
+    "status": "approved",
+    "variants_en": [
+      "family books"
+    ],
+    "variants_ar": [],
+    "note": "Not 'family register' or 'دفتر العائلة'. Complete copy incl. children's pages required.",
+    "source": "Circular 9/2026 §4.3",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-113",
+    "en": "Salary certificate",
+    "ar": "شهادة راتب",
+    "domain": "Housing",
+    "status": "approved",
+    "variants_en": [
+      "salary certificates"
+    ],
+    "variants_ar": [
+      "شهادة الراتب",
+      "شهادات الراتب"
+    ],
+    "note": "For housing applications: issued within the last 30 days.",
+    "source": "Circular 9/2026 §4.4",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-114",
+    "en": "Certificate of No Property Ownership",
+    "ar": "شهادة عدم ملكية عقار",
+    "domain": "Housing",
+    "status": "approved",
+    "variants_en": [
+      "no-property certificate"
+    ],
+    "variants_ar": [
+      "شهادة عدم ملكية العقار"
+    ],
+    "note": "Issued by the Marsa Al Noor Land Registry within the last 60 days.",
+    "source": "Circular 9/2026 §4.5",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-115",
+    "en": "Applicant",
+    "ar": "المتقدم",
+    "domain": "Housing",
+    "status": "approved",
+    "variants_en": [
+      "applicants"
+    ],
+    "variants_ar": [
+      "متقدم",
+      "المتقدمين",
+      "المتقدمون",
+      "للمتقدم",
+      "مقدم الطلب"
+    ],
+    "note": "Person who submits an application. For the public in general use 'Customer / المتعامل'.",
+    "source": "Circular 9/2026 §3",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-116",
+    "en": "Customer",
+    "ar": "المتعامل",
+    "domain": "Customer service",
+    "status": "approved",
+    "variants_en": [
+      "customers"
+    ],
+    "variants_ar": [
+      "المتعاملين",
+      "المتعاملون",
+      "متعامل",
+      "للمتعامل"
+    ],
+    "note": "Government-standard term. Never 'العميل' or 'الزبون'.",
+    "source": "MNDA Arabic Style Guide 2025",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-117",
+    "en": "Customer Happiness Centre",
+    "ar": "مركز إسعاد المتعاملين",
+    "domain": "Customer service",
+    "status": "approved",
+    "variants_en": [
+      "Customer Happiness Centres",
+      "CHC"
+    ],
+    "variants_ar": [
+      "مراكز إسعاد المتعاملين"
+    ],
+    "note": "Not 'customer service centre'.",
+    "source": "MNDA Arabic Style Guide 2025",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-118",
+    "en": "Complaint",
+    "ar": "شكوى",
+    "domain": "Customer service",
+    "status": "approved",
+    "variants_en": [
+      "complaints"
+    ],
+    "variants_ar": [
+      "الشكوى",
+      "الشكاوى",
+      "شكاوى"
+    ],
+    "note": "Service MNDA-SVC-501; response within 2 working days.",
+    "source": "MNDA Service Catalogue 2026",
+    "updated": "2026-01-12",
+    "alternatives": []
+  },
+  {
+    "id": "T-119",
+    "en": "People of determination",
+    "ar": "أصحاب الهمم",
+    "domain": "Customer service",
+    "status": "approved",
+    "variants_en": [],
+    "variants_ar": [],
+    "note": "Official UAE term. Never 'disabled persons' or 'المعاقين'.",
+    "source": "MNDA Arabic Style Guide 2025",
+    "updated": "2025-05-06",
+    "alternatives": []
+  },
+  {
+    "id": "T-120",
+    "en": "Emirates ID",
+    "ar": "بطاقة الهوية الإماراتية",
+    "domain": "Customer service",
+    "status": "approved",
+    "variants_en": [
+      "Emirates ID card"
+    ],
+    "variants_ar": [
+      "الهوية الإماراتية",
+      "بطاقة الهوية"
+    ],
+    "note": "Number format 784-YYYY-NNNNNNN-C.",
+    "source": "Circular 9/2026 §4.1",
+    "updated": "2026-08-18",
+    "alternatives": []
+  },
+  {
+    "id": "T-121",
+    "en": "Working day",
+    "ar": "يوم عمل",
+    "domain": "HR & administration",
+    "status": "approved",
+    "variants_en": [
+      "working days",
+      "business day",
+      "business days"
+    ],
+    "variants_ar": [
+      "أيام عمل",
+      "أيام العمل",
+      "يوم العمل"
+    ],
+    "note": "Monday–Friday, excluding public holidays.",
+    "source": "MNDA HR Policy HC-POL-01",
+    "updated": "2025-03-02",
+    "alternatives": []
+  },
+  {
+    "id": "T-122",
+    "en": "Public holiday",
+    "ar": "عطلة رسمية",
+    "domain": "HR & administration",
+    "status": "approved",
+    "variants_en": [
+      "public holidays",
+      "official holidays"
+    ],
+    "variants_ar": [
+      "العطلات الرسمية",
+      "العطل الرسمية",
+      "عطلات رسمية"
+    ],
+    "note": "Not 'national holiday' unless referring to Eid Al Etihad.",
+    "source": "MNDA HR Policy HC-POL-01",
+    "updated": "2025-03-02",
+    "alternatives": []
+  },
+  {
+    "id": "T-123",
+    "en": "Reference number",
+    "ar": "الرقم المرجعي",
+    "domain": "HR & administration",
+    "status": "approved",
+    "variants_en": [
+      "reference number",
+      "Ref:",
+      "Ref."
+    ],
+    "variants_ar": [
+      "رقم المرجع"
+    ],
+    "note": "Reference codes (e.g. MNDA/PBP/NTC/22/2026) are reproduced exactly, left-to-right, in Arabic texts.",
+    "source": "MNDA Correspondence Manual 2024",
+    "updated": "2025-03-02",
+    "alternatives": []
+  },
+  {
+    "id": "T-124",
+    "en": "Enclosures",
+    "ar": "المرفقات",
+    "domain": "HR & administration",
+    "status": "approved",
+    "variants_en": [
+      "enclosure",
+      "Encl."
+    ],
+    "variants_ar": [
+      "مرفقات",
+      "مرفق"
+    ],
+    "note": "Letter footer heading.",
+    "source": "MNDA Correspondence Manual 2024",
+    "updated": "2025-03-02",
+    "alternatives": []
+  }
+]

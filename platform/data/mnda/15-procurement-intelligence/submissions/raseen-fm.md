@@ -90,7 +90,7 @@ On site, a helpdesk desk at MNDA Tower will be staffed 07:00–19:00, Monday to 
 
 ### 3.2 RFM Connect CAFM platform
 
-RFM Connect is Raseen FM's own CAFM system, developed in-house since 2017 and hosted in a data centre in the UAE. It covers the asset register, PPM scheduling, work orders, SLA clocks, spare parts inventory, permits-to-work and customer feedback.
+RFM Connect is Raseen FM's own CAFM system, developed in-house since 2017 and hosted in a data centre in the UAE. It covers assets, PPM, work orders, SLA clocks, spares, permits-to-work and customer feedback.
 
 - **Mobile app** for technicians, with QR-code asset identification, photo evidence and offline mode
 - **Client portal** for MNDA, with live dashboards of open work orders, KPI performance and PPM status
@@ -103,10 +103,9 @@ The Authority's Facilities & Assets team already uses the RFM Connect client por
 | Frequency | Report |
 |---|---|
 | Daily | P1/P2 incidents and status; chiller plant summary |
-| Weekly | Open work orders by age; PPM due in the next 14 days |
+| Weekly | Open work orders by age and upcoming PPM |
 | Monthly | KPI report: PPM compliance, response and rectification, customer satisfaction, HSE statistics, energy consumption |
 | Quarterly | Performance review with the Facilities & Assets Department and agreed improvement actions |
-| Annual | Asset condition report and lifecycle replacement forecast |
 
 ## 4. Staffing, Key Personnel & Training
 
@@ -126,21 +125,21 @@ The Authority's Facilities & Assets team already uses the RFM Connect client por
 | Stores and administration | 4 |
 | **Total** | **92** |
 
-Pest control is delivered by our visiting pest control unit and lift maintenance by the OEM subcontractor; neither is counted in the on-site headcount. Relief cover for leave and sickness is drawn from our workforce of approximately 1,100 staff in the UAE.
+Visiting pest control staff and the OEM lift subcontractor are not counted in the on-site headcount. Relief cover for leave and sickness is drawn from our workforce of approximately 1,100 staff in the UAE.
 
 ### 4.2 Key personnel
 
-- **Sanjay Nair — Contract Manager.** 19 years in facilities management; Certified Facility Manager (CFM). Previously Operations Head for a 2.8 million ft² commercial portfolio in Dubai. Dedicated full time to this contract.
+- **Sanjay Nair — Contract Manager.** 19 years in facilities management; Certified Facility Manager (CFM). Previously Operations Head for a 2.8 million ft² commercial portfolio in Dubai.
 - **Eng. Hisham Darwish — MEP Manager.** 15 years; B.Sc. Mechanical Engineering; has run centrifugal chiller plants of up to 3,000 TR.
 - **Joseph Varghese — HSE Manager.** 12 years; NEBOSH International Diploma.
 - **Ayesha Rashid Al Marri — Helpdesk & Customer Service Lead.** UAE national; 7 years in customer service and FM helpdesk operations.
-- **Rosalind D'Souza — Soft Services Manager.** 14 years in cleaning and hospitality services for government and commercial buildings.
+- **Rosalind D'Souza — Soft Services Manager.** 14 years in cleaning and hospitality services.
 
 Full CVs are provided in Appendix 4.
 
 ### 4.3 Training and competency
 
-Every team member completes a three-day induction on MNDA site rules, security, HSE and customer etiquette before deployment. Technicians follow a competency matrix reviewed annually, with at least 32 training hours per year delivered through the Raseen FM Training Academy in Al Quoz. Front-of-house staff receive customer service training aligned with the Authority's customer happiness standards, including Arabic etiquette for customer-facing roles.
+Every team member completes a three-day induction on MNDA site rules, security, HSE and customer etiquette before deployment. Technicians follow a competency matrix reviewed annually, with at least 32 training hours per year delivered through the Raseen FM Training Academy in Al Quoz. Front-of-house staff receive customer service training aligned with the Authority's customer happiness standards.
 
 ## 5. HSE Management
 
@@ -151,17 +150,16 @@ Raseen FM operates an HSE management system certified to ISO 45001. On the MNDA 
 - Electronic permit-to-work in RFM Connect for hot work, electrical isolation (lock-out/tag-out), work at height, and confined spaces such as water tanks and chiller sumps
 - Daily toolbox talks and monthly HSE inspections held jointly with the Authority's representative
 - A heat stress plan, including the summer midday work ban (15 June – 15 September, 12:30–15:00) for outdoor tasks such as landscaping and cooling tower works
-- COSHH assessments for all cleaning and water treatment chemicals
 
 ### 5.2 HSE performance record
 
-In 2025 Raseen FM recorded a Lost Time Injury Frequency Rate of 0.18 per million man-hours across 2.31 million man-hours worked, with no fatalities and no regulatory notices. Any incident on MNDA premises will be reported to the Authority within one hour, followed by a written report within 24 hours and a root-cause investigation within five working days.
+In 2025 Raseen FM recorded a Lost Time Injury Frequency Rate of 0.18 per million man-hours across 2.31 million man-hours worked, with no fatalities. Any incident on MNDA premises will be reported to the Authority within one hour, followed by a written report within 24 hours and a root-cause investigation within five working days.
 
 ## 6. Energy & Sustainability
 
 ### 6.1 Energy management approach and reduction target
 
-Energy management will be part of the daily routine of our operations team. We will:
+Energy management is part of our daily operations. We will:
 
 - Install sub-metering on the chiller plant, AHUs, and lighting and small power on each floor of MNDA Tower, connected to the BMS
 - Review BMS set-points and operating schedules every quarter
@@ -172,7 +170,7 @@ We commit to a **6% reduction in energy consumption over the 36-month contract t
 
 ### 6.2 Sustainability practices
 
-We use eco-certified cleaning chemicals and microfibre systems, segregate waste at source (paper, plastics, general and e-waste) with monthly diversion reporting, and use water-efficient drip irrigation for the podium and forecourt landscaping. Our service vehicle fleet is being converted to hybrid vehicles.
+We use eco-certified cleaning chemicals and microfibre systems, segregate waste at source (paper, plastics, general and e-waste) with monthly diversion reporting, and use water-efficient drip irrigation for the podium and forecourt landscaping.
 
 ## 7. Relevant Experience & References
 
@@ -187,8 +185,6 @@ We use eco-certified cleaning chemicals and microfibre systems, segregate waste 
 | Scope | Hard and soft services, pest control, helpdesk, CAFM |
 | Performance | 96.9% PPM compliance in 2024 |
 | Reference | Facilities & Assets Department, MNDA |
-
-This contract gives us direct, current experience of the Authority's procedures, security requirements and expectations of service to the public.
 
 ### 7.2 Other comparable contracts
 
@@ -208,7 +204,7 @@ Raseen FM currently employs 71 UAE nationals out of 1,096 staff (6.48%). We are 
 
 ### 8.2 In-Country Value
 
-Raseen FM's current ICV certificate (no. ICV-RFM-2026-11637, valid until 14 May 2027) shows a score of **31.4%**, above the tender minimum of 25%. Our ICV is supported by UAE-based operations, a UAE-hosted CAFM, local recruitment, and procurement of spares and consumables from UAE suppliers, including Raseen Building Materials Trading LLC within our own group. The certificate is attached as Appendix 8.
+Raseen FM's current ICV certificate (no. ICV-RFM-2026-11637, valid until 14 May 2027) shows a score of **31.4%**, above the tender minimum of 25%. Our ICV is supported by UAE-based operations, a UAE-hosted CAFM, local recruitment, and procurement of spares and consumables from UAE suppliers, including Raseen Building Materials Trading LLC within our own group.
 
 ## 9. Certifications, Assumptions & Exclusions
 
@@ -227,7 +223,6 @@ The ISO 45001 recertification audit is scheduled for 26–28 October 2026, ahead
 - Electricity and water consumption on all sites are paid by the Authority
 - A site office, technicians' rest room and storage area will be provided free of charge at MNDA Tower
 - The Annex B asset register is materially accurate; differences found during mobilisation will be agreed jointly
-- Spare parts and consumables are priced as per Schedule 3 of the Commercial Envelope
 
 ### 9.3 Exclusions
 

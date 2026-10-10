@@ -24,8 +24,8 @@ export const OUTBOX = `${SOLUTION}/outbox`;
 
 export function scopeOf(file: string): ScopeKey {
   const m = file.match(/knowledge\/([^/]+)\//);
-  const s = (m?.[1] ?? "all") as ScopeKey;
-  return ["circulars", "services", "policies", "hr", "it", "building-code", "strategy"].includes(s) ? s : "all";
+  const s = (m?.[1] ?? "other") as ScopeKey;
+  return ["circulars", "services", "policies", "hr", "it", "building-code", "strategy"].includes(s) ? s : "other";
 }
 
 export function classOf(doc: { classification?: unknown }): Classification {

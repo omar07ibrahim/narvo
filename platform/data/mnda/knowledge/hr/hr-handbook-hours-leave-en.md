@@ -39,8 +39,9 @@ The standard working week is 36.5 hours. Customer Happiness Centres (Downtown, A
 during official hours; staff on rostered shifts follow the roster published by the Centre Manager.
 
 Official public holidays are those announced for the government sector; Human Capital confirms the dates by internal
-announcement. Attendance is recorded through the MNDA People app (location-verified at MNDA sites) or the entry
-terminals at MNDA Tower and the Customer Happiness Centres.
+announcement. Attendance is recorded through the MNDA People app check-in and check-out, which is location-verified
+on MNDA premises; remote check-in is available only on approved remote days. A missed check-in is corrected through
+an attendance correction request within 3 working days.
 
 ## 3.2 Flexible start (Circular No. 11/2026)
 
@@ -71,8 +72,9 @@ are rescheduled so that site visits finish by 12:30 or resume after 15:00; time 
 office duties) during the ban is normal working time.
 
 **Summer working arrangement (1 July – 30 September).** Under Circular No. 11/2026, office-based employees in
-remote-eligible roles work remotely on Fridays during this period. These Fridays do not count against the two-day
-weekly remote allowance under HC-POL-07. Each department keeps minimum on-site cover on Fridays.
+remote-eligible roles may work remotely on Fridays during this period. The arrangement is requested once in MNDA
+People and takes effect when the line manager approves it. These Fridays do not count against the two-day weekly
+remote allowance under HC-POL-07. Each department keeps minimum on-site cover on Fridays.
 
 ## 3.4 Annual leave
 

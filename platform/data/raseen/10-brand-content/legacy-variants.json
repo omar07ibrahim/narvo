@@ -1,0 +1,71 @@
+[
+  {
+    "id": "V-instagram-en",
+    "channel": "instagram",
+    "lang": "en",
+    "headline": null,
+    "body": "Summer in the UAE just got easier! ☀️🏠🔥 Raseen ThermaShield keeps your villa cool without AC — the roof runs up to 20 °C cooler on the hottest days. Approved by the municipality and 100% leak-proof, it's the best roof coating money can buy. Every pail comes with a 15-year warranty. Now from AED 380 per pail! Link in bio.",
+    "hashtags": ["#ThermaShield", "#CoolRoof", "#DubaiVillas", "#UAESummer", "#HomeImprovement", "#Raseen"],
+    "cta": "Link in bio",
+    "factIds": [],
+    "version": 1,
+    "status": "draft",
+    "origin": "legacy",
+    "author": { "name": "Sandline Creative FZ-LLC", "role": "Launch agency (external)", "kind": "human" },
+    "assetId": "AST-09",
+    "createdAt": "2026-08-12T15:40:00+04:00",
+    "updatedAt": "2026-08-12T15:40:00+04:00",
+    "note": {
+      "en": "Agency caption written from the July launch brief — before lab report RBM-LAB-26-112 arrived and before the fact sheet was approved.",
+      "ar": "تعليق من الوكالة كُتب بناءً على موجز الإطلاق في يوليو — قبل وصول تقرير المختبر RBM-LAB-26-112 وقبل اعتماد ورقة الحقائق."
+    },
+    "history": [],
+    "flagStats": { "raised": 0, "resolved": 0, "dismissed": 0 }
+  },
+  {
+    "id": "V-whatsapp-ar",
+    "channel": "whatsapp",
+    "lang": "ar",
+    "headline": null,
+    "body": "هلا والله! 👋 وصلكم الجديد من رصين: ثيرموشيلد، طلاء للسطوح يخلي البيت بارد بدون مكيف ويبرّد السطح 20 درجة في عز الصيف. معتمد من البلدية ومقاوم للتسرب 100%. ضمان 15 سنة على كل سطل، والسعر ابتداءً من 380 درهم بس! للطلب كلمونا على الواتساب أو زوروا www.raseen-offers.com",
+    "hashtags": [],
+    "cta": "للطلب كلمونا على الواتساب",
+    "factIds": [],
+    "version": 1,
+    "status": "draft",
+    "origin": "legacy",
+    "author": { "name": "MN-05 trade counter team", "role": "Sales counter, Ras Al Marsa Industrial", "kind": "human" },
+    "assetId": "AST-10",
+    "createdAt": "2026-08-27T11:05:00+04:00",
+    "updatedAt": "2026-08-27T11:05:00+04:00",
+    "note": {
+      "en": "Broadcast drafted by the MN-05 counter for its customer list after a supplier briefing — never sent; held by Marketing & Brand.",
+      "ar": "رسالة جماعية أعدّها فريق نقطة البيع في MN-05 لقائمة عملائه بعد عرض من المورّد — لم تُرسل وأوقفها قسم التسويق والعلامة التجارية."
+    },
+    "history": [],
+    "flagStats": { "raised": 0, "resolved": 0, "dismissed": 0 }
+  },
+  {
+    "id": "V-brochure-en",
+    "channel": "brochure",
+    "lang": "en",
+    "headline": null,
+    "body": "Raseen ThermaShield is a solvent-free acrylic roof coating that delivers 18 °C cooler interiors and cuts cooling bills by up to 30%. With a solar reflectance of 0.86 and an SRI of 108, it outperforms conventional roof paints in the UAE climate. A single coat covers 2 m² per litre on concrete, metal and bitumen roofs. Backed by a 10-year warranty, ThermaShield is the smart choice for villas, warehouses and schools. Available from Raseen trade counters in Jebel Ali and Ras Al Marsa Industrial (MN-05).",
+    "hashtags": [],
+    "cta": "",
+    "factIds": [],
+    "version": 1,
+    "status": "draft",
+    "origin": "legacy",
+    "author": { "name": "Sandline Creative FZ-LLC", "role": "Launch agency (external)", "kind": "human" },
+    "assetId": "AST-11",
+    "createdAt": "2026-09-18T17:20:00+04:00",
+    "updatedAt": "2026-09-18T17:20:00+04:00",
+    "note": {
+      "en": "Brochure blurb from the agency's first layout round, based on supplier pre-test figures (0.86 / SRI 108) superseded by lab report RBM-LAB-26-112.",
+      "ar": "فقرة الكتيّب من الجولة الأولى لتصميم الوكالة، مبنية على أرقام اختبار أولي من المورّد (0.86 / SRI 108) حلّ محلها تقرير المختبر RBM-LAB-26-112."
+    },
+    "history": [],
+    "flagStats": { "raised": 0, "resolved": 0, "dismissed": 0 }
+  }
+]

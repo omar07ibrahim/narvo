@@ -1,0 +1,155 @@
+[
+  {
+    "id": "AUD-BC-0101",
+    "ts": "2026-08-12T15:40:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Sandline Creative FZ-LLC", "role": "Launch agency (external)", "kind": "human" },
+    "action": "Draft submitted",
+    "subject": "AST-09 Instagram caption (EN) — ThermaShield teaser",
+    "detail": "Written from the July launch brief; no test data attached."
+  },
+  {
+    "id": "AUD-BC-0102",
+    "ts": "2026-08-19T09:15:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Hana Yousef", "role": "Marketing & Brand Manager", "kind": "human" },
+    "action": "Launch brief issued",
+    "subject": "PNT-TS-20 Raseen ThermaShield — launch 1 Nov 2026",
+    "detail": "6 channels × EN/AR; all copy to be built from the approved fact sheet once the lab report is in."
+  },
+  {
+    "id": "AUD-BC-0103",
+    "ts": "2026-08-27T11:05:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "MN-05 trade counter team", "role": "Sales counter", "kind": "human" },
+    "action": "Draft created",
+    "subject": "AST-10 WhatsApp broadcast (AR) — MN-05 customer list",
+    "detail": "Based on a supplier briefing; not sent."
+  },
+  {
+    "id": "AUD-BC-0104",
+    "ts": "2026-09-03T13:30:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Hana Yousef", "role": "Marketing & Brand Manager", "kind": "human" },
+    "action": "Draft held",
+    "subject": "AST-09 Instagram caption (EN)",
+    "detail": "Held: \"without AC\", 20 °C and municipality approval are not backed by any test report."
+  },
+  {
+    "id": "AUD-BC-0105",
+    "ts": "2026-09-15T16:48:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Dr. Rami Khalil", "role": "Technical Director, Coastal Coatings Industries LLC", "kind": "human" },
+    "action": "Lab report issued",
+    "subject": "RBM-LAB-26-112 — solar reflectance, SRI, roof-surface temperature",
+    "detail": "Solar reflectance 0.88 (ASTM C1549); SRI 110 (ASTM E1980); up to 18 °C cooler roof surface at 46 °C ambient."
+  },
+  {
+    "id": "AUD-BC-0106",
+    "ts": "2026-09-16T10:02:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Tariq Nasser", "role": "General Manager, RBM", "kind": "human" },
+    "action": "Lab report received",
+    "subject": "RBM-LAB-26-112",
+    "detail": "Filed against PNT-TS-20; supersedes supplier pre-test values (0.86 / SRI 108)."
+  },
+  {
+    "id": "AUD-BC-0107",
+    "ts": "2026-09-18T17:20:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Sandline Creative FZ-LLC", "role": "Launch agency (external)", "kind": "human" },
+    "action": "Draft submitted",
+    "subject": "AST-11 Brochure blurb (EN) — layout round 1",
+    "detail": "Uses TDS rev. A values."
+  },
+  {
+    "id": "AUD-BC-0108",
+    "ts": "2026-09-22T12:10:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Fadi Khoury", "role": "Sales Director, RBM", "kind": "human" },
+    "action": "Trade price approved",
+    "subject": "PNT-TS-20 — PL-2026-Q4",
+    "detail": "AED 385 per 20 L pail, excluding VAT. No launch discount."
+  },
+  {
+    "id": "AUD-BC-0109",
+    "ts": "2026-09-24T15:35:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Tariq Nasser", "role": "General Manager, RBM", "kind": "human" },
+    "action": "Technical data sheet issued",
+    "subject": "RBM-TDS-PNT-TS-20 rev. B",
+    "detail": "2 coats at 1.2–1.5 m²/L; 10-year warranty when applied by a Raseen-certified applicator."
+  },
+  {
+    "id": "AUD-BC-0110",
+    "ts": "2026-09-26T11:20:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Hana Yousef", "role": "Marketing & Brand Manager", "kind": "human" },
+    "action": "Fact sheet approved",
+    "subject": "FS-PNT-TS-20 v1.0 — 16 facts",
+    "detail": "Single source for all launch copy; forbidden claims list per brand guidelines v3.1 attached."
+  },
+  {
+    "id": "AUD-BC-0111",
+    "ts": "2026-09-29T09:40:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Hana Yousef", "role": "Marketing & Brand Manager", "kind": "human" },
+    "action": "Revision requested",
+    "subject": "AST-11 Brochure blurb (EN)",
+    "detail": "Replace rev. A values with RBM-LAB-26-112 figures; remove the energy-bill percentage."
+  },
+  {
+    "id": "AUD-BC-0112",
+    "ts": "2026-10-01T08:00:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Raseen ERP", "role": "Price list service", "kind": "system" },
+    "action": "Price list effective",
+    "subject": "PL-2026-Q4",
+    "detail": "PNT-TS-20 listed at AED 385.00 per pail."
+  },
+  {
+    "id": "AUD-BC-0113",
+    "ts": "2026-10-02T14:25:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Hana Yousef", "role": "Marketing & Brand Manager", "kind": "human" },
+    "action": "Draft withdrawn",
+    "subject": "AST-10 WhatsApp broadcast (AR)",
+    "detail": "Withdrawn: \"معتمد من البلدية\" — ThermaShield holds no government certification."
+  },
+  {
+    "id": "AUD-BC-0114",
+    "ts": "2026-10-05T07:30:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Tariq Nasser", "role": "General Manager, RBM", "kind": "human" },
+    "action": "Field imagery captured",
+    "subject": "AST-02 Thermal-camera roof comparison",
+    "detail": "Al Quoz test roof, coated vs uncoated grey concrete; for illustration alongside the lab figures."
+  },
+  {
+    "id": "AUD-BC-0115",
+    "ts": "2026-10-07T16:05:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Sandline Creative FZ-LLC", "role": "Launch agency (external)", "kind": "human" },
+    "action": "Storyboard revised",
+    "subject": "AST-03 Launch video storyboard v2",
+    "detail": "Indoor-cooling line removed from voice-over."
+  },
+  {
+    "id": "AUD-BC-0116",
+    "ts": "2026-10-08T10:50:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Rania Mansour", "role": "Key Account Manager — Building Contractors desk", "kind": "human" },
+    "action": "Campaign drafted",
+    "subject": "AST-12 Applicator certification invitation",
+    "detail": "First wave: Al Ruwais Roofing & Waterproofing LLC, Al Jazira Roofing Solutions LLC."
+  },
+  {
+    "id": "AUD-BC-0117",
+    "ts": "2026-10-09T11:30:00+04:00",
+    "solution": "10-brand-content",
+    "actor": { "name": "Hana Yousef", "role": "Marketing & Brand Manager", "kind": "human" },
+    "action": "Variant set requested",
+    "subject": "ThermaShield launch copy — 6 channels × EN/AR",
+    "detail": "Target: full set verified and released by 20 Oct for print and scheduling."
+  }
+]

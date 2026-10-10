@@ -1,0 +1,68 @@
+[
+  {
+    "at": "2026-09-02T14:16:00+04:00",
+    "ambient": 44.5,
+    "dischargeKpa": 1759,
+    "lockoutHours": 3
+  },
+  {
+    "at": "2026-09-03T14:35:00+04:00",
+    "ambient": 44.4,
+    "dischargeKpa": 1759,
+    "lockoutHours": 6
+  },
+  {
+    "at": "2026-09-08T13:35:00+04:00",
+    "ambient": 44.4,
+    "dischargeKpa": 1775,
+    "lockoutHours": 4
+  },
+  {
+    "at": "2026-09-09T13:34:00+04:00",
+    "ambient": 45.6,
+    "dischargeKpa": 1773,
+    "lockoutHours": 2
+  },
+  {
+    "at": "2026-09-09T15:53:00+04:00",
+    "ambient": 46.5,
+    "dischargeKpa": 1764,
+    "lockoutHours": 2
+  },
+  {
+    "at": "2026-09-10T13:45:00+04:00",
+    "ambient": 44.7,
+    "dischargeKpa": 1761,
+    "lockoutHours": 8
+  },
+  {
+    "at": "2026-09-14T14:28:00+04:00",
+    "ambient": 44.9,
+    "dischargeKpa": 1759,
+    "lockoutHours": 5
+  },
+  {
+    "at": "2026-09-15T14:25:00+04:00",
+    "ambient": 44.4,
+    "dischargeKpa": 1759,
+    "lockoutHours": 3
+  },
+  {
+    "at": "2026-09-21T14:50:00+04:00",
+    "ambient": 44.8,
+    "dischargeKpa": 1770,
+    "lockoutHours": 7
+  },
+  {
+    "at": "2026-09-22T14:40:00+04:00",
+    "ambient": 44.3,
+    "dischargeKpa": 1774,
+    "lockoutHours": 5
+  },
+  {
+    "at": "2026-09-28T13:49:00+04:00",
+    "ambient": 44.1,
+    "dischargeKpa": 1766,
+    "lockoutHours": 6
+  }
+]

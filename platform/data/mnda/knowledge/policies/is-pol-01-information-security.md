@@ -52,7 +52,7 @@ Unlabelled information is treated as **Internal** until its owner classifies it.
 
 ## 3. Handling rules
 
-### 3.1 Storage and email
+### 3.1 Handling rules — storage and email
 
 | Level | Storage | Email |
 |---|---|---|
@@ -61,7 +61,7 @@ Unlabelled information is treated as **Internal** until its owner classifies it.
 | Confidential | EDRMS restricted folders or the system of record; never on personal devices or local desktop folders | @mnda.gov.ae only, with the "Confidential" sensitivity label (encrypts automatically); no forwarding outside MNDA |
 | Secret | Paper only, DG's Office safe | Not permitted |
 
-### 3.2 Printing, contractors and AI tools
+### 3.2 Handling rules — printing, contractors and AI tools
 
 | Level | Printing | Sharing with contractors | AI tools |
 |---|---|---|---|

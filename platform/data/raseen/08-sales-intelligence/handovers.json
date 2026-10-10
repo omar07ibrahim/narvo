@@ -1,0 +1,14 @@
+[
+  {
+    "id": "HO-2026-014",
+    "from": "Ahmed Soliman",
+    "to": "Rania Mansour",
+    "effective": "2026-10-01",
+    "approvedBy": "Fadi Khoury",
+    "reason": "Ahmed Soliman moves to lead the new Infrastructure & Government Projects desk.",
+    "accountIds": ["RBM-C-10034", "RBM-C-10052", "RBM-C-10126", "RBM-C-10144", "RBM-C-10152", "RBM-C-10204", "RBM-C-10227", "RBM-C-10263"],
+    "handoverNoteId": "INT-26-04192",
+    "dueBy": "2026-10-02",
+    "status": "Note submitted — incomplete (no commitments or approvals recorded)"
+  }
+]

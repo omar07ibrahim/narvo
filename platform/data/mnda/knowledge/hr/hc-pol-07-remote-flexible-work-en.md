@@ -56,8 +56,9 @@ Working remotely from outside the UAE is not permitted under this policy.
 1. Employees in remote-eligible roles may work remotely **up to 2 days per week**, with **line manager approval**.
 2. Remote days **do not carry over** between weeks: an unused day in one week cannot be added to the next.
 3. Remote days are whole days; half days are not recorded as remote days.
-4. **Summer arrangement:** under Circular No. 11/2026, office-based employees in remote-eligible roles work remotely on
-   Fridays from **1 July to 30 September**. These Fridays **do not count** against the 2-day weekly allowance.
+4. **Summer arrangement:** under Circular No. 11/2026, office-based employees in remote-eligible roles may work
+   remotely on Fridays from **1 July to 30 September**, requested once in MNDA People and approved by the line
+   manager. These Fridays **do not count** against the 2-day weekly allowance.
 5. Managers may set team days on which everyone is in the office (for example a weekly planning meeting), provided
    the team is informed at least one week ahead.
 6. A department may limit remote work during peak periods — for example the September–October housing
@@ -122,7 +123,8 @@ Where an employee needs to work remotely **more than 2 days per week** for a tem
 2. Employees must be **reachable on Microsoft Teams during core hours 9:00–14:00** (9:00–11:30 on Friday), with Teams
    status kept up to date, and must answer calls and messages within 15 minutes during core hours.
 3. Cameras are switched on for team meetings unless the organiser agrees otherwise.
-4. Attendance is recorded by logging on to the VPN and MNDA People; no office check-in is required.
+4. Attendance is recorded through the MNDA People app check-in, which accepts remote check-in only on approved
+   remote days.
 5. An employee who becomes sick on a remote day records sick leave in the usual way (HC-HB-03, 3.6).
 6. The employee must be able to come to the office within 2 hours if an urgent operational need arises.
 

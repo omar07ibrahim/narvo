@@ -1,0 +1,15 @@
+[
+  {
+    "id": "RBM-SOP-2026-09-v2",
+    "version": 2,
+    "planId": "A",
+    "planName": "Current policy (September S&OP)",
+    "whatIf": { "upliftPct": 0, "upliftScope": "mq", "palletLossJA": 0, "yardLossJA": 0, "millDelayWeeks": 0, "serviceTarget": 0.975, "assumption": "Normal Sahara supply (1,350 t/week); mill maintenance not yet scheduled" },
+    "kpis": { "fillRate": 0.974, "fillRateP10": 0.962, "totalCost": 2318400, "constraintFit": 1, "violations": 0, "peakJaPallets": 14210, "peakJaYard": 2980 },
+    "overrides": 10,
+    "approvedBy": "Joseph Abraham",
+    "publishedAt": 1789371000000,
+    "note": "September S&OP plan — 10 of 24 forecasts overridden by the planning team (41%).",
+    "status": "published"
+  }
+]

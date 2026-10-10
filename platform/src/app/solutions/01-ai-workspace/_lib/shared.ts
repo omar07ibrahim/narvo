@@ -5,7 +5,7 @@
 
 export type Classification = "Public" | "Internal" | "Confidential";
 export type RoleKey = "case_officer" | "director" | "contractor";
-export type ScopeKey = "all" | "circulars" | "services" | "policies" | "hr" | "it" | "building-code" | "strategy";
+export type ScopeKey = "all" | "circulars" | "services" | "policies" | "hr" | "it" | "building-code" | "strategy" | "other";
 export type Mode = "ask" | "draft" | "act";
 
 export interface Bi {
@@ -69,6 +69,7 @@ export const SCOPES: Array<{ key: ScopeKey; label: Bi }> = [
   { key: "it", label: { en: "IT", ar: "تقنية المعلومات" } },
   { key: "building-code", label: { en: "Building code", ar: "كود البناء" } },
   { key: "strategy", label: { en: "Strategy", ar: "الاستراتيجية" } },
+  { key: "other", label: { en: "Other collections", ar: "مجموعات أخرى" } },
 ];
 
 export const CLASS_LABEL: Record<Classification, Bi> = {

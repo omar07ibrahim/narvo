@@ -127,9 +127,9 @@ check the allowance rules in HC-HB-03.
 
 ## 8. Software installation
 
-- **Approved catalogue:** software listed in MNDA Service Portal → Software (for example AutoCAD viewer, Power BI
-  Desktop, Adobe Acrobat Pro, Marsa Atlas desktop client) is installed remotely after line manager approval.
-  **Fulfilment: 2 working days.**
+- **Approved catalogue:** software listed in MNDA Service Portal → Software (for example the CAD drawing viewer, the
+  business-intelligence desktop client, the PDF editor and the Marsa Atlas desktop client) is installed remotely after
+  line manager approval. **Fulfilment: 2 working days.**
 - **Non-catalogue software** requires an **Information Security review** (licensing, data handling, vendor hosting
   location) before approval. Allow 10 working days; the review may decline software that stores MNDA data outside
   the UAE.

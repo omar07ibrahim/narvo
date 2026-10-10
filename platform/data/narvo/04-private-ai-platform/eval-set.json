@@ -1,0 +1,17 @@
+{
+  "name": "MNDA knowledge — grounded answers v1",
+  "description": "Questions a case officer or contact-centre agent asks every day. A case passes when the grounded answer contains every expected fact and cites at least one source.",
+  "corpus": "mnda/knowledge",
+  "cases": [
+    { "id": "E01", "lang": "en", "q": "How recent must a salary certificate be for a housing grant application?", "expect": ["30"], "topic": "Housing" },
+    { "id": "E02", "lang": "en", "q": "What is the household income ceiling for the housing grant, and the maximum grant amount?", "expect": ["30,000", "600,000"], "topic": "Housing" },
+    { "id": "E03", "lang": "en", "q": "What is the maximum interest-free housing loan and over how many years can it be repaid?", "expect": ["900,000", "25"], "topic": "Housing" },
+    { "id": "E04", "lang": "en", "q": "How long does an applicant have to provide missing documents before the application is closed?", "expect": ["15 working days"], "topic": "Housing" },
+    { "id": "E05", "lang": "en", "q": "Which districts require a master-developer NOC for building permits?", "expect": ["MN-03", "MN-06", "MN-08"], "topic": "Permits" },
+    { "id": "E06", "lang": "en", "q": "How long is a master-developer NOC valid for?", "expect": ["90 days"], "topic": "Permits" },
+    { "id": "E07", "lang": "en", "q": "What is the service level and the fee for a new building permit?", "expect": ["15 working days", "1,500"], "topic": "Permits" },
+    { "id": "E08", "lang": "en", "q": "Can an AI tool approve or reject a housing application? Who decides?", "expect": ["Head of the Housing Applications Section"], "topic": "Governance" },
+    { "id": "E09", "lang": "ar", "q": "ما مدة صلاحية شهادة عدم ملكية العقار؟", "expect": ["60"], "topic": "Housing" },
+    { "id": "E10", "lang": "ar", "q": "ما هو رقم مركز إسعاد المتعاملين؟", "expect": ["800 6632"], "topic": "Service" }
+  ]
+}

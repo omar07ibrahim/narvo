@@ -178,8 +178,8 @@ function gfaFor(r, type) {
 
 /* ───────────── case skeletons (attributes fixed, randomness per case) ───────────── */
 let seq = 1630;
-function skeleton(submitted, cohort) {
-  const r = mulberry32(Math.floor(master() * 2 ** 31));
+function skeleton(submitted, cohort, src = master) {
+  const r = mulberry32(Math.floor(src() * 2 ** 31));
   const district = pickW(r, Object.entries(DISTRICTS).map(([k, v]) => [k, v.w]));
   const D = DISTRICTS[district];
   const type = buildingFor(r, district);
@@ -455,26 +455,47 @@ const q3IssuedInQ3 = S.traces.filter(([, e]) => {
   return i != null && i >= Q3_START && i < Q3_END;
 }).length;
 const needCarry = 936 - q3IssuedInQ3;
-const rJ = mulberry32(60606);
-const juneAll = submissionTimes(352, dateMin(2026, 6, 1), dateMin(2026, 7, 1), rJ).map((t) => skeleton(t, "Carry-in (Jun 2026)"));
-for (const c of juneAll) {
-  c.exempt = true;
-  if (c.key < 0.15) c.returns.push(c.key2 < 0.5 ? "struct" : c.key2 < 0.75 ? "site" : "other");
-}
-// Calibrate June scale so exactly `needCarry` June cases are issued in Q3 (rest issued in June)
-const PJ = { ...P, sG: P.sN * 1.05 };
-let juneTr;
-for (let it = 0; it < 50; it++) {
-  juneTr = juneAll.map((c) => [c, buildTrace(c, PJ)]);
-  const inQ3 = juneTr.filter(([, e]) => {
+// June carry-in: two knobs — submission timing skew (k) and review speed (scale).
+//   count constraint: exactly `needCarry` June cases issued in Jul–Sep (→ 936 issued in Q3 = 312 / month)
+//   median constraint: median cycle of ALL permits issued in Q3 = 21.6 d (same as the Q3-cohort median)
+const q3Issued = S.traces
+  .map(([, e]) => e)
+  .filter((e) => {
     const i = issuedAt(e);
-    return i != null && i >= Q3_START;
-  }).length;
-  if (inQ3 === needCarry) break;
-  const f = Math.pow(needCarry / Math.max(1, inQ3), 0.35);
-  PJ.sN *= f;
-  PJ.sG *= f;
+    return i != null && i >= Q3_START && i < Q3_END;
+  })
+  .map((e) => (issuedAt(e) - e[0].t) / DAY);
+let juneAll, juneTr, PJ, best = null;
+for (let kk = -120; kk <= 320; kk++) {
+  const k = kk * 0.0005;
+  const attr = mulberry32(60607);
+  const rJ = mulberry32(60606);
+  seq = 1630;
+  const ja = submissionTimes(352, dateMin(2026, 6, 1), dateMin(2026, 7, 1), rJ, (d) => Math.exp(-k * ((d - dateMin(2026, 6, 1)) / DAY))).map((t) => skeleton(t, "Carry-in (Jun 2026)", attr));
+  for (const c of ja) {
+    c.exempt = true;
+    if (c.key < 0.15) c.returns.push(c.key2 < 0.5 ? "struct" : c.key2 < 0.75 ? "site" : "other");
+  }
+  const pj = { ...P, sG: P.sN * 1.05 };
+  let tr;
+  for (let it = 0; it < 60; it++) {
+    tr = ja.map((c) => [c, buildTrace(c, pj)]);
+    const inQ3 = tr.filter(([, e]) => issuedAt(e) >= Q3_START && issuedAt(e) < Q3_END).length;
+    if (inQ3 === needCarry) break;
+    const f = Math.pow(needCarry / Math.max(1, inQ3), it < 30 ? 0.35 : 0.1);
+    pj.sN *= f;
+    pj.sG *= f;
+  }
+  const juneCyc = tr.filter(([, e]) => issuedAt(e) >= Q3_START && issuedAt(e) < Q3_END).map(([, e]) => (issuedAt(e) - e[0].t) / DAY);
+  const m = median([...q3Issued, ...juneCyc]);
+  const cnt = juneCyc.length;
+  if (!best || (cnt === needCarry && (best.cnt !== needCarry || Math.abs(m - 21.6) < Math.abs(best.m - 21.6)))) best = { k, m, ja, tr, pj, cnt };
+  if (best.cnt === needCarry && Math.abs(best.m - 21.6) < 0.02) break;
 }
+juneAll = best.ja;
+juneTr = best.tr;
+PJ = best.pj;
+console.log("June knob", { k: best.k, issuedQ3Median: best.m.toFixed(2), count: best.cnt });
 const juneInQ3 = juneTr.filter(([, e]) => issuedAt(e) >= Q3_START).length;
 console.log("June carry-in", { needCarry, juneInQ3, june: juneAll.length, scale: PJ.sN.toFixed(3) });
 

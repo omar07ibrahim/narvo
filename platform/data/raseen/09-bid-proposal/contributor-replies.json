@@ -1,0 +1,44 @@
+[
+  {
+    "reqId": "S-04",
+    "from": "Huda Al Marzooqi",
+    "receivedAt": "2026-10-11T09:14:00+04:00",
+    "subject": "RE: 057 — Energy Manager CV (S-04)",
+    "text": "Hi Leena — attached is the CV for the dedicated Energy Manager we will name on 057. Nadia Farouk joined Raseen FM in March 2023 as Energy & Sustainability Engineer. She holds the Certified Energy Manager (CEM) credential, certificate no. CEM-21-44718, valid to 30 June 2028, and a BSc in Electrical Engineering. She has 10 years of energy management experience in the UAE, including 3 years at Raseen FM where she led the BMS optimisation and sub-metering programme at the Sidr Communities clubhouses that reduced electricity use by 11.2% against a weather-normalised 2022 baseline. Before Raseen she spent 7 years as an energy engineer with a district cooling operator in Abu Dhabi. Sanjay has confirmed in writing that Nadia will be assigned full-time and exclusively to the 057 contract from mobilisation. The CV is two pages, signed and dated 11 Oct 2026."
+  },
+  {
+    "reqId": "M-04",
+    "from": "Priya Raghavan",
+    "receivedAt": "2026-10-11T16:40:00+04:00",
+    "subject": "Public liability renewal — certificate issued",
+    "text": "Leena, the public liability policy has been renewed with Al Manara Insurance PJSC. New policy number PL-RFM-2026-0519, limit of indemnity AED 10,000,000 any one occurrence, unlimited in the aggregate for public liability, period of insurance 15 October 2026 to 14 October 2027 (both days inclusive). The broker, Crestline Insurance Brokers LLC, issued the certificate of insurance this morning; the Authority is named as additional insured as required by the RFP. Please replace the expiring certificate PL-RFM-2025-0447 in the submission pack."
+  },
+  {
+    "reqId": "M-03",
+    "from": "Ravi Shankar",
+    "receivedAt": "2026-10-11T11:05:00+04:00",
+    "subject": "ISO 45001 recertification — confirmation letter",
+    "text": "Leena — Gulf Assurance Certification Services has confirmed in writing (letter ref GACS/RFM/2026/311 dated 9 Oct 2026) that the ISO 45001:2018 recertification audit for certificate OHS-45001-1183 is scheduled for 10–12 November 2026, ahead of the 30 November 2026 expiry. The letter states that, subject to a satisfactory audit, the renewed certificate will be issued with continuous validity to 29 November 2029. We can include the letter together with a commitment to provide the renewed certificate to MNDA immediately on issue."
+  },
+  {
+    "reqId": "T-04",
+    "from": "Mohammed Rafiq",
+    "receivedAt": "2026-10-11T13:22:00+04:00",
+    "subject": "057 — summer resilience plan for chilled water (T-04)",
+    "text": "Revised HVAC summer resilience plan for 057: from 1 June to 30 September every year, condenser coils on CH-01 and CH-02 at Al Ghaf and on all air-cooled units at the four satellite facilities will be cleaned monthly (four additional cleans per chiller per season on top of the quarterly PPM), with water-pressure washing and approved coil cleaner. Chiller performance (discharge pressure, condenser approach, kW/TR) will be trended weekly from the BMS and reviewed by me every Monday. Any high-discharge-pressure trip is raised automatically as a P2 job in RFM Connect with a technician on site within 2 hours, root-cause analysis within 48 hours and a report to the MNDA facility manager. Pre-summer readiness checks in May remain in place."
+  },
+  {
+    "reqId": "E-02",
+    "from": "Huda Al Marzooqi",
+    "receivedAt": "2026-10-11T10:30:00+04:00",
+    "subject": "057 — Emiratisation plan (E-02)",
+    "text": "Emiratisation plan for the 057 contract workforce: the planned team is 61 staff, of whom 4 are UAE nationals today (6.6%). We will recruit two UAE nationals into the contract team — a Helpdesk & Front-of-House Coordinator in month 3 and an Assistant HSE Officer in month 9 — raising the team to 6 UAE nationals out of 61 (9.8%) by month 12, above the 8% requirement. Both roles are budgeted in the manpower schedule (Form F-6), will be filled through the national Emiratisation recruitment programme and include a 12-month structured training plan with a named mentor. Progress will be reported to MNDA quarterly."
+  },
+  {
+    "reqId": "H-05",
+    "from": "Ravi Shankar",
+    "receivedAt": "2026-10-11T15:48:00+04:00",
+    "subject": "057 — incident notification (H-05)",
+    "text": "For 057 we will adopt a contract-specific emergency response and incident notification procedure: any incident, near miss with high potential, fire alarm activation or service-affecting emergency at an MNDA facility will be notified to the MNDA facility manager by phone within 30 minutes and in writing through RFM Connect within 2 hours, followed by a preliminary investigation report within 24 hours and a full root-cause report within 7 days. Emergency drills will be held at each facility twice a year."
+  }
+]

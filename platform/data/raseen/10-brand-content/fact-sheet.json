@@ -1,0 +1,251 @@
+{
+  "id": "FS-PNT-TS-20",
+  "title": {
+    "en": "Raseen ThermaShield — approved launch fact sheet",
+    "ar": "رصين ثيرماشيلد — ورقة الحقائق المعتمدة للإطلاق"
+  },
+  "sku": "PNT-TS-20",
+  "version": "1.0",
+  "approvedBy": "Hana Yousef",
+  "approvedByRole": "Marketing & Brand Manager",
+  "approvedOn": "2026-09-26",
+  "launchDate": "2026-11-01",
+  "note": {
+    "en": "Single source of truth for every ThermaShield launch asset. Content may only state these facts, with their qualifiers. Changes go through Technical Services (performance, application, warranty), Sales (price) or Marketing & Brand (launch, CTA).",
+    "ar": "المرجع الوحيد لكل مواد إطلاق ثيرماشيلد. لا يجوز للمحتوى أن يذكر إلا هذه الحقائق مع شروطها. تمر أي تعديلات عبر الخدمات الفنية (الأداء والتطبيق والضمان) أو المبيعات (السعر) أو التسويق والعلامة التجارية (الإطلاق ودعوة الإجراء)."
+  },
+  "sources": [
+    {
+      "id": "RBM-LAB-26-112",
+      "title": { "en": "Laboratory report — solar reflectance, SRI and roof-surface temperature", "ar": "تقرير مختبر — الانعكاسية الشمسية ومؤشر الانعكاس الشمسي وحرارة سطح السقف" },
+      "issuer": "Coastal Coatings Industries LLC — Dr. Rami Khalil, Technical Director",
+      "date": "2026-09-15"
+    },
+    {
+      "id": "RBM-TDS-PNT-TS-20 rev. B",
+      "title": { "en": "Raseen ThermaShield — Technical Data Sheet (approved for launch)", "ar": "رصين ثيرماشيلد — نشرة البيانات الفنية (معتمدة للإطلاق)" },
+      "issuer": "Technical Services, RBM / Marketing & Brand",
+      "date": "2026-09-24"
+    },
+    {
+      "id": "PL-2026-Q4",
+      "title": { "en": "RBM trade price list Q4 2026 (effective 1 Oct 2026)", "ar": "قائمة أسعار رصين للتجارة — الربع الرابع 2026 (سارية من 1 أكتوبر 2026)" },
+      "issuer": "Sales, RBM — Fadi Khoury",
+      "date": "2026-10-01"
+    },
+    {
+      "id": "RG-MKT-BG-2026 v3.1",
+      "title": { "en": "Raseen Brand & Content Guidelines v3.1", "ar": "دليل العلامة التجارية والمحتوى لمجموعة رصين — الإصدار 3.1" },
+      "issuer": "Marketing & Brand — Hana Yousef",
+      "date": "2026-09-01"
+    }
+  ],
+  "facts": [
+    {
+      "id": "TS-F01",
+      "kind": "product",
+      "label": { "en": "Product name & type", "ar": "اسم المنتج ونوعه" },
+      "value": "Raseen ThermaShield heat-reflective roof coating (PNT-TS-20)",
+      "valueAr": "رصين ثيرماشيلد (Raseen ThermaShield) — طلاء عاكس للحرارة للأسطح (PNT-TS-20)",
+      "qualifier": "First mention must read \"Raseen ThermaShield\"",
+      "qualifierAr": "يجب أن يرد الاسم في أول ذكر بصيغة \"رصين ثيرماشيلد (Raseen ThermaShield)\"",
+      "source": "RBM-TDS-PNT-TS-20 rev. B",
+      "approvedBy": "Hana Yousef",
+      "approvedOn": "2026-09-26",
+      "version": 1
+    },
+    {
+      "id": "TS-F02",
+      "kind": "chemistry",
+      "label": { "en": "Chemistry & finish", "ar": "التركيبة واللمسة النهائية" },
+      "value": "Water-based acrylic coating with a bright white finish that reflects solar energy",
+      "valueAr": "طلاء أكريليك مائي الأساس بلمسة نهائية بيضاء ناصعة تعكس الطاقة الشمسية",
+      "source": "RBM-TDS-PNT-TS-20 rev. B",
+      "approvedBy": "Tariq Nasser",
+      "approvedOn": "2026-09-24",
+      "version": 1
+    },
+    {
+      "id": "TS-F03",
+      "kind": "solar_reflectance",
+      "label": { "en": "Solar reflectance", "ar": "الانعكاسية الشمسية" },
+      "value": "0.88 (ASTM C1549)",
+      "valueAr": "0.88 (وفق ASTM C1549)",
+      "numeric": 0.88,
+      "qualifier": "State the test basis on first mention (ASTM C1549, lab report RBM-LAB-26-112)",
+      "qualifierAr": "يُذكر أساس الاختبار عند أول ذكر (ASTM C1549، تقرير المختبر RBM-LAB-26-112)",
+      "source": "RBM-LAB-26-112",
+      "approvedBy": "Tariq Nasser",
+      "approvedOn": "2026-09-24",
+      "version": 1
+    },
+    {
+      "id": "TS-F04",
+      "kind": "sri",
+      "label": { "en": "Solar Reflectance Index (SRI)", "ar": "مؤشر الانعكاس الشمسي (SRI)" },
+      "value": "SRI 110 (ASTM E1980)",
+      "valueAr": "مؤشر الانعكاس الشمسي (SRI) 110 (وفق ASTM E1980)",
+      "numeric": 110,
+      "qualifier": "State the test basis on first mention (ASTM E1980, lab report RBM-LAB-26-112)",
+      "qualifierAr": "يُذكر أساس الاختبار عند أول ذكر (ASTM E1980، تقرير المختبر RBM-LAB-26-112)",
+      "source": "RBM-LAB-26-112",
+      "approvedBy": "Tariq Nasser",
+      "approvedOn": "2026-09-24",
+      "version": 1
+    },
+    {
+      "id": "TS-F05",
+      "kind": "temp_reduction",
+      "label": { "en": "Roof-surface temperature reduction", "ar": "خفض حرارة سطح السقف" },
+      "value": "Up to 18 °C cooler roof surface than uncoated grey concrete",
+      "valueAr": "سطح سقف أبرد بما يصل إلى 18 °C مقارنةً بالخرسانة الرمادية غير المطلية",
+      "numeric": 18,
+      "unit": "°C",
+      "qualifier": "Always \"up to\", always the roof surface (never rooms or indoors), with the test basis on first mention: lab report RBM-LAB-26-112, 46 °C ambient",
+      "qualifierAr": "دائماً \"بما يصل إلى\"، وعلى سطح السقف فقط (وليس الغرف أو داخل المبنى)، مع أساس الاختبار عند أول ذكر: تقرير المختبر RBM-LAB-26-112 عند حرارة محيطة 46 °C",
+      "source": "RBM-LAB-26-112",
+      "approvedBy": "Tariq Nasser",
+      "approvedOn": "2026-09-24",
+      "version": 1
+    },
+    {
+      "id": "TS-F06",
+      "kind": "test_basis",
+      "label": { "en": "Test basis", "ar": "أساس الاختبار" },
+      "value": "Laboratory report RBM-LAB-26-112: tested at 46 °C ambient per ASTM C1549 and ASTM E1980",
+      "valueAr": "تقرير المختبر RBM-LAB-26-112: اختبار عند حرارة محيطة 46 °C وفق ASTM C1549 وASTM E1980",
+      "numeric": 46,
+      "unit": "°C",
+      "source": "RBM-LAB-26-112",
+      "approvedBy": "Tariq Nasser",
+      "approvedOn": "2026-09-24",
+      "version": 1
+    },
+    {
+      "id": "TS-F07",
+      "kind": "coats",
+      "label": { "en": "Number of coats", "ar": "عدد الطبقات" },
+      "value": "2 coats",
+      "valueAr": "طبقتان (2)",
+      "numeric": 2,
+      "unit": "coats",
+      "source": "RBM-TDS-PNT-TS-20 rev. B",
+      "approvedBy": "Tariq Nasser",
+      "approvedOn": "2026-09-24",
+      "version": 1
+    },
+    {
+      "id": "TS-F08",
+      "kind": "coverage",
+      "label": { "en": "Coverage", "ar": "معدل التغطية" },
+      "value": "1.2–1.5 m² per litre per coat, depending on substrate porosity",
+      "valueAr": "1.2–1.5 م² لكل لتر لكل طبقة، حسب مسامية السطح",
+      "numeric": [1.2, 1.5],
+      "unit": "m²/L",
+      "source": "RBM-TDS-PNT-TS-20 rev. B",
+      "approvedBy": "Tariq Nasser",
+      "approvedOn": "2026-09-24",
+      "version": 1
+    },
+    {
+      "id": "TS-F09",
+      "kind": "warranty",
+      "label": { "en": "Warranty", "ar": "الضمان" },
+      "value": "10-year warranty",
+      "valueAr": "ضمان لمدة 10 سنوات",
+      "numeric": 10,
+      "unit": "years",
+      "qualifier": "when applied by a Raseen-certified applicator and registered within 30 days of completion",
+      "qualifierAr": "عند التطبيق بواسطة مقاول تطبيق معتمد من رصين وتسجيل المشروع خلال 30 يوماً من الإنجاز",
+      "source": "RBM-TDS-PNT-TS-20 rev. B",
+      "approvedBy": "Tariq Nasser",
+      "approvedOn": "2026-09-24",
+      "version": 1
+    },
+    {
+      "id": "TS-F10",
+      "kind": "price",
+      "label": { "en": "Trade price & pack", "ar": "السعر التجاري والعبوة" },
+      "value": "AED {price} per 20 L pail (excl. VAT)",
+      "valueAr": "{price} درهم للسطل سعة 20 لتر (غير شامل ضريبة القيمة المضافة)",
+      "masterRef": { "sku": "PNT-TS-20", "field": "listPrice" },
+      "unit": "AED",
+      "pack": 20,
+      "qualifier": "Always \"per 20 L pail (excl. VAT)\"; never \"from AED …\" and no discounts not approved by Sales",
+      "qualifierAr": "دائماً \"للسطل سعة 20 لتر (غير شامل ضريبة القيمة المضافة)\"؛ لا يُستخدم \"ابتداءً من\" ولا خصومات غير معتمدة من المبيعات",
+      "source": "PL-2026-Q4",
+      "approvedBy": "Fadi Khoury",
+      "approvedOn": "2026-09-22",
+      "version": 1
+    },
+    {
+      "id": "TS-F11",
+      "kind": "launch_date",
+      "label": { "en": "Launch date", "ar": "تاريخ الإطلاق" },
+      "value": "1 November 2026",
+      "valueAr": "1 نوفمبر 2026",
+      "date": "2026-11-01",
+      "source": "RBM-TDS-PNT-TS-20 rev. B",
+      "approvedBy": "Hana Yousef",
+      "approvedOn": "2026-09-26",
+      "version": 1
+    },
+    {
+      "id": "TS-F12",
+      "kind": "substrates",
+      "label": { "en": "Suitable substrates", "ar": "الأسطح المناسبة" },
+      "value": "Concrete roofs, metal roofs and bitumen membranes",
+      "valueAr": "الأسطح الخرسانية والأسطح المعدنية وأغشية البيتومين",
+      "source": "RBM-TDS-PNT-TS-20 rev. B",
+      "approvedBy": "Tariq Nasser",
+      "approvedOn": "2026-09-24",
+      "version": 1
+    },
+    {
+      "id": "TS-F13",
+      "kind": "application",
+      "label": { "en": "Application conditions", "ar": "شروط التطبيق" },
+      "value": "Surface clean, dry and sound; prime porous concrete per the Raseen application guide. Do not apply below 10 °C or above 45 °C surface temperature, or when rain is expected within 6 hours",
+      "valueAr": "يجب أن يكون السطح نظيفاً وجافاً وسليماً، مع تأسيس الخرسانة المسامية وفق دليل التطبيق من رصين. لا يُطبَّق عند حرارة سطح أقل من 10 °C أو أعلى من 45 °C، أو عند توقع هطول أمطار خلال 6 ساعات",
+      "numeric": [10, 45],
+      "unit": "°C",
+      "source": "RBM-TDS-PNT-TS-20 rev. B",
+      "approvedBy": "Tariq Nasser",
+      "approvedOn": "2026-09-24",
+      "version": 1
+    },
+    {
+      "id": "TS-F14",
+      "kind": "availability",
+      "label": { "en": "Availability", "ar": "التوفر" },
+      "value": "From 1 November 2026 at RBM warehouses in Jebel Ali and Ras Al Marsa Industrial (MN-05), through Raseen key account managers and raseen.ae",
+      "valueAr": "اعتباراً من 1 نوفمبر 2026 في مستودعات رصين لمواد البناء في جبل علي ورأس المرسى الصناعية (MN-05)، وعبر مديري الحسابات الرئيسية في رصين وموقع raseen.ae",
+      "source": "RBM-TDS-PNT-TS-20 rev. B",
+      "approvedBy": "Hana Yousef",
+      "approvedOn": "2026-09-26",
+      "version": 1
+    },
+    {
+      "id": "TS-F15",
+      "kind": "cta",
+      "label": { "en": "Call to action", "ar": "دعوة الإجراء" },
+      "value": "Request a technical visit — at raseen.ae or through your Raseen key account manager",
+      "valueAr": "اطلب زيارة فنية — عبر raseen.ae أو من خلال مدير حسابك في رصين",
+      "source": "RG-MKT-BG-2026 v3.1",
+      "approvedBy": "Hana Yousef",
+      "approvedOn": "2026-09-26",
+      "version": 1
+    },
+    {
+      "id": "TS-F16",
+      "kind": "not_claimed",
+      "label": { "en": "Not claimed", "ar": "ما لا يُدّعى" },
+      "value": "ThermaShield does not replace air conditioning, is not a waterproofing membrane on its own and holds no government certification",
+      "valueAr": "ثيرماشيلد لا يحل محل التكييف، وليس غشاء عزل مائي بمفرده، ولا يحمل أي شهادة أو اعتماد حكومي",
+      "source": "RBM-TDS-PNT-TS-20 rev. B",
+      "approvedBy": "Hana Yousef",
+      "approvedOn": "2026-09-26",
+      "version": 1
+    }
+  ]
+}

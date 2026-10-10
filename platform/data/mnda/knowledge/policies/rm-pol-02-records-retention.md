@@ -54,7 +54,7 @@ the Authority regardless of where they are stored.
 
 ## 3. Retention schedule
 
-### 3.1 Operational records
+### 3.1 Retention schedule — operational records
 
 | Record class | Retention | Trigger | Final action |
 |---|---|---|---|
@@ -65,7 +65,7 @@ the Authority regardless of where they are stored.
 | CCTV footage (MNDA buildings and CHCs) | **90 days** | Recording | Automatic overwrite, unless on legal hold |
 | AI audit logs (runs, retrievals, tool calls, approvals) | **5 years** | Log entry | Secure deletion |
 
-### 3.2 Corporate records
+### 3.2 Retention schedule — corporate records
 
 | Record class | Retention | Trigger | Final action |
 |---|---|---|---|

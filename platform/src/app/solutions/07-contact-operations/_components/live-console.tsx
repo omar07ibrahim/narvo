@@ -98,10 +98,12 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
   const messagesRef = useRef<Msg[]>([]);
   const scroller = useRef<HTMLDivElement>(null);
   const handledRun = useRef<number | undefined>(undefined);
+  const handoffRef = useRef<Handoff | null>(null);
   useTick(1000);
 
   contactRef.current = contact;
   messagesRef.current = messages;
+  handoffRef.current = handoff;
 
   useEffect(() => {
     scroller.current?.scrollTo({ top: scroller.current.scrollHeight, behavior: "smooth" });
@@ -202,7 +204,8 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
       } catch {}
     }, 2500);
     return () => clearInterval(t);
-  }, [handoff?.id, handoff?.status, refresh, handoff]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [handoff?.id, handoff?.status, refresh]);
 
   /* ── Sending ── */
   const send = useCallback(
@@ -217,8 +220,9 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
       setMessages(next);
       setDraft("");
 
-      if (handoff && handoff.status !== "resolved") {
-        await fetch(`/api/solutions/07-contact-operations/handoffs/${handoff.id}`, {
+      const ho = handoffRef.current;
+      if (ho && ho.status !== "resolved") {
+        await fetch(`/api/solutions/07-contact-operations/handoffs/${ho.id}`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ action: "customer", text: body }),
@@ -230,7 +234,7 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
         .map((m) => ({ role: m.role, text: m.text, at: new Date(m.at).toISOString(), channel: m.channel, author: m.author }));
       run.start("/api/solutions/07-contact-operations/chat", { sessionId: c.sessionId, channel: c.channel, ani: c.ani, transcript });
     },
-    [handoff, run],
+    [run],
   );
 
   function begin(opts: { channel: "voice" | "chat"; ani: string | null; inbound?: InboundContact }) {
@@ -239,6 +243,7 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
     const c: Contact = { sessionId: `S-${Date.now().toString(36)}-${uid()}`, channel: opts.channel, ani: opts.ani, inboundId: opts.inbound?.id, startedAt: Date.now() };
     contactRef.current = c;
     messagesRef.current = [];
+    handoffRef.current = null;
     setContact(c);
     setChannel(opts.channel);
     setMessages([]);

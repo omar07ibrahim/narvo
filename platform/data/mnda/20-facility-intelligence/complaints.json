@@ -1,0 +1,262 @@
+[
+  {
+    "id": "CHC-2026-110189",
+    "receivedAt": "2026-08-04T15:42:00+04:00",
+    "site": "AGC",
+    "zone": "Z-LF",
+    "channel": "MNDA Smart app",
+    "lang": "ar",
+    "category": "Comfort — too hot",
+    "text": "النادي الرياضي للسيدات حار جداً اليوم العصر، المكيف ما يبرد أبداً والمدربة اضطرت توقف الكلاس. لو سمحتوا شوفوا الموضوع."
+  },
+  {
+    "id": "CHC-2026-113787",
+    "receivedAt": "2026-08-11T16:05:00+04:00",
+    "site": "AGC",
+    "zone": "Z-MPH",
+    "channel": "800 6632",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Caller attending the summer camp closing ceremony reports the multipurpose hall is very hot, children uncomfortable. Asked for the AC to be checked."
+  },
+  {
+    "id": "CHC-2026-114786",
+    "receivedAt": "2026-08-13T14:50:00+04:00",
+    "site": "AGC",
+    "zone": "Z-LF",
+    "channel": "WhatsApp",
+    "lang": "ar",
+    "category": "Comfort — too hot",
+    "text": "مرة ثانية الصالة حارة، درجة الحرارة على الجهاز ٢٨. شو صار على البلاغ السابق؟"
+  },
+  {
+    "id": "CHC-2026-117362",
+    "receivedAt": "2026-08-18T15:20:00+04:00",
+    "site": "AGC",
+    "zone": "Z-MPH",
+    "channel": "On-site feedback kiosk",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Hall too hot during the afternoon session. Fans brought in but not enough."
+  },
+  {
+    "id": "CHC-2026-118357",
+    "receivedAt": "2026-08-20T13:55:00+04:00",
+    "site": "AGC",
+    "zone": "Z-LF",
+    "channel": "MNDA Smart app",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Ladies gym is not cooling at all between 2 and 4 pm. Third time this month. Please fix before September classes start."
+  },
+  {
+    "id": "CHC-2026-120980",
+    "receivedAt": "2026-08-25T16:40:00+04:00",
+    "site": "AGC",
+    "zone": "Z-MPH",
+    "channel": "Email",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "As organiser of the Marsa Al Noor Volunteers meeting on 25 Aug I would like to log a complaint: the hall was uncomfortably warm (I would estimate above 27 °C) for most of the event."
+  },
+  {
+    "id": "CHC-2026-121974",
+    "receivedAt": "2026-08-27T15:10:00+04:00",
+    "site": "AGC",
+    "zone": "Z-LF",
+    "channel": "WhatsApp",
+    "lang": "ar",
+    "category": "Comfort — too hot",
+    "text": "المكيف في النادي النسائي ضعيف جداً وقت الظهر. أبا أعرف متى بيتصلح؟ مشكورين."
+  },
+  {
+    "id": "CHC-2026-125315",
+    "receivedAt": "2026-09-02T15:08:00+04:00",
+    "site": "AGC",
+    "zone": "Z-MPH",
+    "channel": "800 6632",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Back-to-school fair visitor: the hall is extremely hot, several elderly visitors left early. Please send someone urgently."
+  },
+  {
+    "id": "CHC-2026-125336",
+    "receivedAt": "2026-09-02T15:51:00+04:00",
+    "site": "AGC",
+    "zone": "Z-LF",
+    "channel": "MNDA Smart app",
+    "lang": "ar",
+    "category": "Comfort — too hot",
+    "text": "الحرارة في النادي الرياضي للسيدات لا تُحتمل اليوم، والمكيف يطلع هوا حار."
+  },
+  {
+    "id": "CHC-2026-126026",
+    "receivedAt": "2026-09-03T15:45:00+04:00",
+    "site": "AGC",
+    "zone": "Z-MPH",
+    "channel": "WhatsApp",
+    "lang": "ar",
+    "category": "Comfort — too hot",
+    "text": "ثاني يوم على التوالي القاعة حارة في المعرض. الأطفال تعبوا من الحر. لو سمحتوا حلّوا المشكلة."
+  },
+  {
+    "id": "CHC-2026-129449",
+    "receivedAt": "2026-09-08T14:15:00+04:00",
+    "site": "AGC",
+    "zone": "Z-MPH",
+    "channel": "On-site feedback kiosk",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Table-tennis tournament — players complaining about heat and sweat on the tables. Hall temperature display shows 28."
+  },
+  {
+    "id": "CHC-2026-130140",
+    "receivedAt": "2026-09-09T14:09:00+04:00",
+    "site": "AGC",
+    "zone": "Z-MPH",
+    "channel": "800 6632",
+    "lang": "ar",
+    "category": "Comfort — too hot",
+    "text": "أنا من أولياء أمور المشاركين في مسابقة حفظ القرآن، القاعة حارة جداً والأولاد ما يقدرون يركزون. نرجو الإسراع."
+  },
+  {
+    "id": "CHC-2026-130162",
+    "receivedAt": "2026-09-09T14:54:00+04:00",
+    "site": "AGC",
+    "zone": "Z-LF",
+    "channel": "MNDA Smart app",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Ladies fitness AC off again?? It's half past two and the room is like an oven."
+  },
+  {
+    "id": "CHC-2026-130851",
+    "receivedAt": "2026-09-10T14:45:00+04:00",
+    "site": "AGC",
+    "zone": "Z-LF",
+    "channel": "MNDA Smart app",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Hot again in the ladies' gym this afternoon — this keeps happening on the hottest days. Is anyone looking at the root cause?"
+  },
+  {
+    "id": "CHC-2026-133494",
+    "receivedAt": "2026-09-14T10:15:00+04:00",
+    "site": "HQ",
+    "zone": "Z-L14",
+    "channel": "IT/FM self-service portal",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Meeting room 14.03 is warm all morning, thermostat set to 22 but reads 26."
+  },
+  {
+    "id": "CHC-2026-133637",
+    "receivedAt": "2026-09-14T15:13:00+04:00",
+    "site": "AGC",
+    "zone": "Z-LF",
+    "channel": "WhatsApp",
+    "lang": "ar",
+    "category": "Comfort — too hot",
+    "text": "الصالة النسائية حارة من بعد الظهر. نفس المشكلة كل أسبوع تقريباً."
+  },
+  {
+    "id": "CHC-2026-134286",
+    "receivedAt": "2026-09-15T13:40:00+04:00",
+    "site": "HQ",
+    "zone": "Z-L14",
+    "channel": "IT/FM self-service portal",
+    "lang": "ar",
+    "category": "Comfort — too hot",
+    "text": "الطابق 14 الجهة الشمالية حار منذ يومين، نرجو المعالجة."
+  },
+  {
+    "id": "CHC-2026-134334",
+    "receivedAt": "2026-09-15T15:20:00+04:00",
+    "site": "AGC",
+    "zone": "Z-MPH",
+    "channel": "800 6632",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Heritage workshop instructor reports the hall is too hot for the participants; asked whether the session should be moved."
+  },
+  {
+    "id": "CHC-2026-134847",
+    "receivedAt": "2026-09-16T09:05:00+04:00",
+    "site": "HQ",
+    "zone": "Z-L14",
+    "channel": "IT/FM self-service portal",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Still hot on 14th floor open office (north side)."
+  },
+  {
+    "id": "CHC-2026-134883",
+    "receivedAt": "2026-09-16T10:20:00+04:00",
+    "site": "AGC",
+    "zone": "Z-LIB",
+    "channel": "MNDA Smart app",
+    "lang": "en",
+    "category": "Comfort — too cold",
+    "text": "Library study room is far too cold in the morning, students wearing jackets. Can the temperature be raised a bit?"
+  },
+  {
+    "id": "CHC-2026-135815",
+    "receivedAt": "2026-09-17T18:35:00+04:00",
+    "site": "AGC",
+    "zone": "Z-CLS",
+    "channel": "On-site feedback kiosk",
+    "lang": "ar",
+    "category": "Comfort — stuffy / ventilation",
+    "text": "قاعة الورش رقم ٢ خانقة والتهوية ضعيفة أثناء الدورة المسائية."
+  },
+  {
+    "id": "CHC-2026-138504",
+    "receivedAt": "2026-09-21T15:40:00+04:00",
+    "site": "AGC",
+    "zone": "Z-MPH",
+    "channel": "On-site feedback kiosk",
+    "lang": "ar",
+    "category": "Comfort — too hot",
+    "text": "القاعة حارة جداً أثناء المحاضرة الصحية، ونحتاج تكييف أفضل."
+  },
+  {
+    "id": "CHC-2026-138525",
+    "receivedAt": "2026-09-21T16:25:00+04:00",
+    "site": "AGC",
+    "zone": "Z-LF",
+    "channel": "MNDA Smart app",
+    "lang": "ar",
+    "category": "Comfort — too hot",
+    "text": "للمرة الرابعة هذا الشهر النادي الرياضي للسيدات بدون تبريد وقت العصر. نرجو حل جذري للمشكلة."
+  },
+  {
+    "id": "CHC-2026-139183",
+    "receivedAt": "2026-09-22T15:10:00+04:00",
+    "site": "AGC",
+    "zone": "Z-LF",
+    "channel": "WhatsApp",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Ladies gym hot again, AC blowing warm air."
+  },
+  {
+    "id": "CHC-2026-140451",
+    "receivedAt": "2026-09-24T11:05:00+04:00",
+    "site": "AGC",
+    "zone": "Z-MAJ",
+    "channel": "800 6632",
+    "lang": "en",
+    "category": "Comfort — stuffy / ventilation",
+    "text": "Majlis: stuffy and warm this morning, smell of damp near the AC grille."
+  },
+  {
+    "id": "CHC-2026-143323",
+    "receivedAt": "2026-09-28T14:29:00+04:00",
+    "site": "AGC",
+    "zone": "Z-MPH",
+    "channel": "Email",
+    "lang": "en",
+    "category": "Comfort — too hot",
+    "text": "Volunteer induction on 28 Sep: the hall became very warm from around 3 pm and we had to shorten the programme. Please treat as a formal complaint."
+  }
+]

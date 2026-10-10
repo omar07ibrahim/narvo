@@ -1,0 +1,314 @@
+{
+  "id": "BR-THERMASHIELD-2026",
+  "derivedFrom": "RG-MKT-BG-2026 v3.1",
+  "owner": "Hana Yousef, Marketing & Brand Manager",
+  "updatedOn": "2026-09-26",
+  "note": "Machine-checkable rules derived from the Raseen Brand & Content Guidelines v3.1 for the ThermaShield launch. Regexes are applied per sentence; English patterns are case-insensitive. Negated statements (\"does not replace air conditioning\") are excluded by look-behinds.",
+  "patternRules": [
+    {
+      "id": "BR-F01",
+      "kind": "forbidden",
+      "severity": "critical",
+      "label": { "en": "No-AC claim", "ar": "ادعاء الاستغناء عن التكييف" },
+      "reason": {
+        "en": "Forbidden claim: implies air conditioning is no longer needed. ThermaShield does not replace air conditioning (TS-F16).",
+        "ar": "ادعاء محظور: يوحي بعدم الحاجة إلى التكييف. ثيرماشيلد لا يحل محل التكييف (TS-F16)."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Forbidden 1",
+      "factIds": ["TS-F16"],
+      "patterns": {
+        "en": [
+          "(?<!(not|n't|never)\\s)(eliminat\\w*|remov\\w*|replac\\w*|does away with|do away with)\\s+(the\\s+)?(need\\s+for\\s+)?(air[\\s-]?condition\\w*|a/c|ac\\b|aircon|cooling\\s+units?)",
+          "(without|no more|no need for|forget( about)?|switch off|turn off|say goodbye to|ditch)\\s+(the\\s+|your\\s+)?(air[\\s-]?con\\w*|a/c|ac\\b|aircon)",
+          "(never|won't|will not|don't|do not)\\s+need\\s+(the\\s+|your\\s+|an?\\s+)?(air[\\s-]?con\\w*|a/c|ac\\b|aircon|cooling)"
+        ],
+        "ar": [
+          "(بدون|بلا|من غير|من دون)\\s*(ال)?(مكيف|مكيّف|تكييف|مكيفات)",
+          "(تستغني|يستغني|تستغنى|استغن|الاستغناء|استغناء|تستغنون)[\\u0600-\\u06FF]*\\s*عن\\s*(ال)?(مكيف|تكييف|مكيفات)",
+          "(يغني|تغني|يغنيك|يغنيكم|بيغنيك)\\s*عن\\s*(ال)?(مكيف|تكييف|مكيفات)",
+          "(لا|ما|مب|مو)\\s*(حاجة|داعي|تحتاج|بتحتاج|يحتاج|تحتاجون)\\s*(إلى|الى|ل|لل)?\\s*(ال)?(مكيف|تكييف|مكيفات)",
+          "(?<!(لا|ليس|ولا|وليس)\\s)(بدال|بديل|بديلاً عن|بديلا عن|بدلاً من|بدلا من|يحل محل)\\s*(ال)?(مكيف|تكييف|مكيفات)"
+        ]
+      }
+    },
+    {
+      "id": "BR-F02",
+      "kind": "forbidden",
+      "severity": "critical",
+      "label": { "en": "Leak-proof claim", "ar": "ادعاء منع التسرب" },
+      "reason": {
+        "en": "Forbidden claim: \"100% leak-proof\" / waterproof forever. ThermaShield is not a waterproofing membrane on its own (TS-F16).",
+        "ar": "ادعاء محظور: \"مقاوم للتسرب 100%\" أو عزل مائي دائم. ثيرماشيلد ليس غشاء عزل مائي بمفرده (TS-F16)."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Forbidden 2",
+      "factIds": ["TS-F16"],
+      "patterns": {
+        "en": [
+          "100\\s?%\\s*(leak[\\s-]?proof|waterproof\\w*|watertight|leak[\\s-]?free)",
+          "(?<!(not|n't|never|no)\\s)(?<!not\\s(a|fully)\\s)\\bleak[\\s-]?proof",
+          "waterproof(ing)?\\s+(forever|for life|for good)",
+          "never\\s+leaks?",
+          "(?<!(not|n't|never)\\s)(replaces?|eliminates?)\\s+(the\\s+need\\s+for\\s+)?(a\\s+|your\\s+)?waterproofing"
+        ],
+        "ar": [
+          "(مقاوم|عازل|ضد)\\s*(لل|ل)?(تسرب|تسريب|ماء|مياه|التسرب|التسريب)\\s*(بنسبة\\s*)?100\\s?%",
+          "100\\s?%\\s*(ضد|مقاوم|عازل|عزل)",
+          "(لن|لا|ما)\\s*(يسرب|يتسرب|تسرب|يخر)\\s*(أبداً|أبدا|ابد|أبد)",
+          "(عزل|عازل)\\s*(مائي|للماء|للمياه)\\s*(مدى الحياة|للأبد|دائم)",
+          "(يمنع|يوقف)\\s*(ال)?(تسرب|تسريب)\\s*(نهائياً|نهائيا|تماماً|تماما|100)"
+        ]
+      }
+    },
+    {
+      "id": "BR-F03",
+      "kind": "forbidden",
+      "severity": "critical",
+      "label": { "en": "Government certification claim", "ar": "ادعاء اعتماد حكومي" },
+      "reason": {
+        "en": "Forbidden claim: ThermaShield holds no government certification, approval or endorsement (TS-F16).",
+        "ar": "ادعاء محظور: ثيرماشيلد لا يحمل أي شهادة أو اعتماد أو تأييد حكومي (TS-F16)."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Forbidden 3",
+      "factIds": ["TS-F16"],
+      "patterns": {
+        "en": [
+          "(approved|certified|endorsed|accredited|recogni[sz]ed|licensed|registered)\\s+(by|with)\\s+(the\\s+)?(municipality|municipal\\w*|government|ministry|authority|authorities|civil\\s+defen[cs]e|esma|mnda|state)",
+          "(?<!(no|not|any|without)\\s)(government|municipality|municipal|ministry|civil[\\s-]defen[cs]e)[\\s-]+(approved|certified|endorsed|accredited|approval|certification|certificate|endorsement)",
+          "(holds?|has|with|carries)\\s+(a\\s+|full\\s+)?(government|municipal|ministry)\\s+(approval|certification|certificate|endorsement)"
+        ],
+        "ar": [
+          "(معتمد|معتمدة|مصدق|مصادق عليه|موافق عليه|مرخص)\\s*(من\\s*)?(قبل\\s*)?(البلدية|بلدية|البلديه|الجهات الحكومية|جهات حكومية|الحكومة|الوزارة|وزارة|الهيئة|هيئة|الدفاع المدني)",
+          "(?<!(أي|أو|لا|ليس|دون|بدون|بلا)\\s)(اعتماد|شهادة|موافقة|ترخيص)\\s*(من\\s*)?(ال)?(بلدية|حكومي|حكومية|الحكومة|وزارة|الدفاع المدني)",
+          "(معتمد|معتمدة)\\s*(حكومياً|حكوميا|رسمياً|رسميا)"
+        ]
+      }
+    },
+    {
+      "id": "BR-F04",
+      "kind": "forbidden",
+      "severity": "critical",
+      "label": { "en": "Savings figure", "ar": "رقم توفير" },
+      "reason": {
+        "en": "Forbidden claim: energy or bill savings as a fixed percentage or amount — no approved savings figure exists.",
+        "ar": "ادعاء محظور: توفير في الطاقة أو الفواتير بنسبة أو مبلغ محدد — لا يوجد رقم توفير معتمد."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Forbidden 4",
+      "factIds": [],
+      "patterns": {
+        "en": [
+          "(sav(e|es|ing|ings)|cut(s|ting)?|reduc(e|es|ing)|lower(s|ing)?|slash(es|ing)?|drops?)\\s+(up\\s+to\\s+)?(your\\s+|the\\s+)?(energy|electricity|power|cooling|ac|a/c|utility|dewa)?\\s*(bills?|costs?|consumption|use|usage|load)?\\s*(by\\s+)?(up\\s+to\\s+|as\\s+much\\s+as\\s+)?\\d+(\\.\\d+)?\\s?%",
+          "sav\\w*\\s+(up\\s+to\\s+)?(aed|dhs?)\\s?\\d",
+          "\\d+(\\.\\d+)?\\s?%\\s+(lower|less|reduction\\s+in|savings?\\s+on|off)\\s+(your\\s+)?(energy|electricity|cooling|power|ac|utility)?\\s*(bills?|costs?|consumption)",
+          "(energy|electricity|cooling|utility)\\s+(bills?|costs?)\\s+(down|lower|cut|reduced)\\s+(by\\s+)?(up\\s+to\\s+)?\\d+\\s?%"
+        ],
+        "ar": [
+          "(توفير|توفر|يوفر|يوفّر|وفّر|وفر|خفض|تخفيض|يخفض|يخفّض|يقلل|يقلّل|تقليل)\\s*[^.،\\n]{0,30}(فاتورة|فواتير|الكهرباء|الطاقة|استهلاك|التبريد)[^.،\\n]{0,25}\\d+\\s?%",
+          "\\d+\\s?%\\s*[^.،\\n]{0,20}(من\\s*)?(فاتورة|فواتير|الكهرباء|استهلاك الطاقة|الطاقة)"
+        ]
+      }
+    },
+    {
+      "id": "BR-F05",
+      "kind": "forbidden",
+      "severity": "critical",
+      "label": { "en": "Health claim", "ar": "ادعاء صحي" },
+      "reason": {
+        "en": "Forbidden claim: health claims of any kind are not permitted.",
+        "ar": "ادعاء محظور: لا يُسمح بأي ادعاءات صحية."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Forbidden 5",
+      "factIds": [],
+      "patterns": {
+        "en": [
+          "\\b(healthier|health(y)?\\s+(home|benefits?|family|living)|protects?\\s+(your\\s+)?(family'?s?\\s+)?health|prevents?\\s+(heat[\\s-]?stroke|heat\\s+exhaustion|illness|disease)|heat[\\s-]?stroke|asthma|allerg\\w+|non[\\s-]?toxic|safe\\s+for\\s+(your\\s+)?(health|children|kids|family))"
+        ],
+        "ar": [
+          "(أكثر صحة|صحي(ة)?\\s*(لعائلتك|للعائلة|لأطفالك)|يحمي\\s*صحة|يحمي\\s*(عائلتك|أطفالك)\\s*من|ضرب(ة|ات)\\s*الشمس|الإجهاد الحراري|الربو|الحساسية|غير سام|آمن على\\s*(صحة|الأطفال|صحتك))"
+        ]
+      }
+    },
+    {
+      "id": "BR-R01",
+      "kind": "forbidden",
+      "severity": "critical",
+      "label": { "en": "Indoor temperature claim", "ar": "ادعاء حرارة داخلية" },
+      "reason": {
+        "en": "Restricted claim misused: the reduction applies to the roof surface only — never \"cooler rooms\" or indoor temperatures (TS-F05).",
+        "ar": "استخدام خاطئ لادعاء مقيّد: الانخفاض يخص سطح السقف فقط — وليس \"غرفاً أبرد\" أو حرارة داخلية (TS-F05)."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Restricted (temperature)",
+      "factIds": ["TS-F05"],
+      "patterns": {
+        "en": [
+          "\\d+(\\.\\d+)?\\s?(°\\s?c?|º\\s?c?|degrees?(\\s+celsius)?)\\s+(cooler|lower|less|drop|reduction)\\s+(in\\s+|inside\\s+)?(the\\s+|your\\s+)?(rooms?|indoors?|inside|interiors?|homes?|houses?|villas?|buildings?|spaces?|living)",
+          "(rooms?|indoors?|interiors?|homes?|villas?|houses?)\\s+(stay\\s+|are\\s+|up\\s+to\\s+|feel\\s+|run\\s+)*\\d+(\\.\\d+)?\\s?(°|º|degrees)",
+          "keeps?\\s+(your\\s+|the\\s+)?(villa|home|house|rooms?|interiors?|family)\\s+cool"
+        ],
+        "ar": [
+          "(الغرف|غرف|داخل|الداخل|المنزل|البيت|الفيلا|بيتك|منزلك)\\s*[^.،\\n]{0,20}(أبرد|برودة|بارد)\\s*[^.،\\n]{0,15}\\d+\\s?(°|درجة|درجات)",
+          "\\d+\\s?(°\\s?C?|درجة|درجات)\\s*[^.،\\n]{0,12}(داخل|في الغرف|بالغرف|في البيت|في المنزل|في الفيلا)",
+          "(يخلي|تخلي|يجعل|يبقي|يحافظ على)\\s*(ال)?(بيت|بيتك|منزل|منزلك|فيلا|الفيلا|فيلتك|غرف|الغرف)\\s*(بارد|بارداً|أبرد|بارده)"
+        ]
+      }
+    },
+    {
+      "id": "BR-R02",
+      "kind": "restricted",
+      "severity": "major",
+      "label": { "en": "Price phrasing", "ar": "صياغة السعر" },
+      "reason": {
+        "en": "Restricted: price must read \"AED 385 per 20 L pail (excl. VAT)\" — never \"from AED …\" and no discounts not approved by Sales (TS-F10).",
+        "ar": "مقيّد: يُكتب السعر \"385 درهم للسطل سعة 20 لتر (غير شامل الضريبة)\" — دون \"ابتداءً من\" ودون خصومات غير معتمدة من المبيعات (TS-F10)."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Restricted (price)",
+      "factIds": ["TS-F10"],
+      "patterns": {
+        "en": [
+          "\\b(from|starting\\s+(at|from)|as\\s+low\\s+as|only)\\s+aed\\s?\\d",
+          "\\b(discount\\w*|\\d+\\s?%\\s+off|special\\s+offer|launch\\s+offer|introductory\\s+price|promo(tion(al)?)?\\s+price|sale\\s+price)\\b"
+        ],
+        "ar": [
+          "(ابتداءً|ابتداء|ابتداءا|بدءاً|بدءا|يبدأ|تبدأ)\\s*(من\\s*)?\\d+\\s*(درهم|aed)",
+          "\\d+\\s*درهم\\s*(بس|فقط)",
+          "(خصم|عرض خاص|عرض الإطلاق|عرض إطلاق|سعر تمهيدي|تخفيضات)"
+        ]
+      }
+    },
+    {
+      "id": "BR-V01",
+      "kind": "voice",
+      "severity": "major",
+      "label": { "en": "Unprovable superlative", "ar": "صيغة تفضيل غير مثبتة" },
+      "reason": {
+        "en": "Voice rule: no superlatives we cannot prove (\"best\", \"No. 1\", \"unbeatable\", \"revolutionary\", \"guaranteed savings\").",
+        "ar": "قاعدة الأسلوب: لا صيغ تفضيل لا يمكن إثباتها (\"الأفضل\"، \"رقم 1\"، \"لا يُضاهى\"، \"ثوري\"، \"توفير مضمون\")."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Voice",
+      "factIds": [],
+      "patterns": {
+        "en": [
+          "\\b(best|no\\.?\\s?1|number\\s+one|unbeatable|revolutionary|ultimate|world[\\s-]class|unmatched|guaranteed\\s+savings|game[\\s-]changer)\\b",
+          "(^|\\s)#1\\b"
+        ],
+        "ar": [
+          "(الأفضل|أفضل\\s+(طلاء|منتج|حل)|رقم\\s?(1|واحد)|لا\\s?(يُضاهى|يضاهى|مثيل له)|ثوري|ثورة في|الأول من نوعه|توفير مضمون|الأقوى)"
+        ]
+      }
+    },
+    {
+      "id": "BR-V02",
+      "kind": "voice",
+      "severity": "major",
+      "label": { "en": "Competitor comparison", "ar": "مقارنة بالمنافسين" },
+      "reason": {
+        "en": "Voice rule: never name or disparage competitors or \"other\" products.",
+        "ar": "قاعدة الأسلوب: لا تسمية للمنافسين ولا انتقاص من المنتجات \"الأخرى\"."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Voice",
+      "factIds": [],
+      "patterns": {
+        "en": [
+          "\\b(unlike|better\\s+than|outperforms?|superior\\s+to|beats?)\\s+(other|competing|competitor'?s?|cheap(er)?|ordinary|conventional|traditional|regular|standard)\\s+(brands?|coatings?|paints?|products?|roof\\s+paints?|solutions?)",
+          "\\bcompetitors?\\b"
+        ],
+        "ar": [
+          "(أفضل من|يتفوق على|بخلاف|عكس)\\s*(ال)?(منتجات|دهانات|طلاءات|أنواع|العلامات|الشركات)\\s*(ال)?(أخرى|الأخرى|المنافسة|التقليدية|العادية|الرخيصة)"
+        ]
+      }
+    },
+    {
+      "id": "BR-T01",
+      "kind": "terminology",
+      "severity": "minor",
+      "label": { "en": "Product name spelling", "ar": "تهجئة اسم المنتج" },
+      "reason": {
+        "en": "Terminology: the product is \"Raseen ThermaShield\" / \"رصين ثيرماشيلد\".",
+        "ar": "المصطلحات: اسم المنتج \"رصين ثيرماشيلد\" / \"Raseen ThermaShield\"."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Terminology",
+      "factIds": ["TS-F01"],
+      "caseSensitive": true,
+      "patterns": {
+        "en": ["\\b(Thermo\\s?[Ss]hield|Therma\\s+Shield|Thermashield|THERMASHIELD|Thermoshield)\\b"],
+        "ar": ["(ثيرموشيلد|ثرماشيلد|ترماشيلد|ثيرمو شيلد|ثيرما شيلد|تيرماشيلد|ثرموشيلد|ثيرموشيلد)"]
+      }
+    },
+    {
+      "id": "BR-T02",
+      "kind": "terminology",
+      "severity": "minor",
+      "label": { "en": "\"دهان\" in formal copy", "ar": "استخدام \"دهان\" في نص رسمي" },
+      "reason": {
+        "en": "Terminology: formal Arabic copy uses \"طلاء عاكس للحرارة للأسطح\", not \"دهان\".",
+        "ar": "المصطلحات: يُستخدم \"طلاء عاكس للحرارة للأسطح\" في النصوص الرسمية وليس \"دهان\"."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Terminology",
+      "factIds": ["TS-F01"],
+      "channels": ["web", "brochure", "email", "linkedin"],
+      "patterns": { "en": [], "ar": ["دهان"] }
+    },
+    {
+      "id": "BR-T03",
+      "kind": "terminology",
+      "severity": "minor",
+      "label": { "en": "Arabic-Indic digits", "ar": "أرقام هندية" },
+      "reason": {
+        "en": "Arabic style: use Latin digits (0.88، 18 °C، 20 لتر) so specifications read identically in both languages.",
+        "ar": "أسلوب الكتابة العربية: تُستخدم الأرقام اللاتينية (0.88، 18 °C، 20 لتر) لتتطابق المواصفات في اللغتين."
+      },
+      "ref": "RG-MKT-BG-2026 v3.1 · Arabic style",
+      "factIds": [],
+      "patterns": { "en": [], "ar": ["[٠-٩]+"] }
+    }
+  ],
+  "qualifiers": {
+    "upTo": { "en": ["up to"], "ar": ["بما يصل إلى", "يصل إلى", "تصل إلى", "يصل الى", "حتى", "لغاية", "بحد أقصى", "إلى حدود"] },
+    "vat": {
+      "en": ["excl. vat", "excluding vat", "ex. vat", "ex vat", "+ vat", "plus vat", "before vat", "exclusive of vat", "vat excluded", "excl vat"],
+      "ar": ["غير شامل", "غير شاملة", "لا يشمل", "دون ضريبة", "بدون ضريبة", "قبل ضريبة", "قبل الضريبة", "باستثناء ضريبة", "+ ضريبة", "دون احتساب"]
+    },
+    "applicator": {
+      "en": ["raseen-certified applicator", "raseen certified applicator", "certified applicator"],
+      "ar": ["مقاول تطبيق معتمد من رصين", "مقاولي تطبيق معتمدين من رصين", "مقاول معتمد من رصين", "معتمد من رصين", "معتمدين من رصين", "مقاولي التطبيق المعتمدين", "مقاول تطبيق معتمد"]
+    },
+    "testBasis": {
+      "solar_reflectance": ["ASTM C1549", "RBM-LAB-26-112"],
+      "sri": ["ASTM E1980", "RBM-LAB-26-112"],
+      "temp_reduction": ["RBM-LAB-26-112", "46 °C", "46°C", "46 درجة", "46 ºC"]
+    }
+  },
+  "terminology": [
+    { "en": "Raseen ThermaShield", "ar": "رصين ثيرماشيلد", "note": "First mention must include \"Raseen\"; Arabic first mention \"رصين ثيرماشيلد (Raseen ThermaShield)\"" },
+    { "en": "heat-reflective roof coating", "ar": "طلاء عاكس للحرارة للأسطح", "note": "not \"دهان\" in formal copy" },
+    { "en": "solar reflectance", "ar": "الانعكاسية الشمسية" },
+    { "en": "Solar Reflectance Index (SRI)", "ar": "مؤشر الانعكاس الشمسي (SRI)" },
+    { "en": "Raseen-certified applicator", "ar": "مقاول تطبيق معتمد من رصين", "note": "required with any warranty mention" },
+    { "en": "pail", "ar": "سطل" },
+    { "en": "coverage", "ar": "معدل التغطية" }
+  ],
+  "channelLimits": {
+    "web": { "maxExclamation": 0, "maxEmoji": 0, "maxHashtags": 0 },
+    "linkedin": { "maxExclamation": 1, "maxEmoji": 0, "maxHashtags": 3 },
+    "instagram": { "maxExclamation": 1, "maxEmoji": 2, "maxHashtags": 5, "requiredHashtags": ["#RaseenThermaShield"] },
+    "whatsapp": { "maxExclamation": 1, "maxEmoji": null, "maxHashtags": null, "allowedLinkDomains": ["raseen.ae"] },
+    "brochure": { "maxExclamation": 0, "maxEmoji": 0, "maxHashtags": 0 },
+    "email": { "maxExclamation": 0, "maxEmoji": 0, "maxHashtags": 0 }
+  },
+  "mandatoryHashtags": ["#RaseenThermaShield", "#رصين"],
+  "allowedLinkDomains": ["raseen.ae"],
+  "voice": {
+    "en": [
+      "Clear, technical, confident — never hype. Write like an experienced site engineer explaining to a peer.",
+      "Lead with the customer's problem (heat load on roofs, site downtime, cost certainty), then the evidence.",
+      "Every performance number carries its test basis the first time it appears in an asset.",
+      "Prefer short sentences. No exclamation marks in web, brochure or email copy; at most one in social posts.",
+      "Never name or disparage competitors."
+    ],
+    "ar": [
+      "Modern Standard Arabic for web, brochures, LinkedIn and emails; a lighter Gulf-friendly register is acceptable for WhatsApp and Instagram, but never slang in technical claims.",
+      "Write Arabic natively — do not translate English word for word.",
+      "Use Latin digits for numbers and units (0.88، 18 °C، 20 لتر).",
+      "First mention of the product in Arabic: \"رصين ثيرماشيلد (Raseen ThermaShield)\"."
+    ]
+  }
+}

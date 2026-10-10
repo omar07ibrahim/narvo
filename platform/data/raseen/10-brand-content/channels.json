@@ -1,0 +1,111 @@
+[
+  {
+    "id": "web",
+    "name": { "en": "Web product page", "ar": "صفحة المنتج على الموقع" },
+    "short": { "en": "Web page", "ar": "الموقع" },
+    "words": [120, 220],
+    "headline": { "label": { "en": "Headline", "ar": "العنوان" }, "max": 60 },
+    "hashtags": false,
+    "cta": { "en": "Request a technical visit", "ar": "اطلب زيارة فنية" },
+    "ctaRequired": true,
+    "register": "MSA",
+    "voice": "second person to the reader is fine; clear, technical, confident",
+    "audience": { "en": "Villa owners, facility managers and contractors researching cool-roof options on raseen.ae", "ar": "ملاك الفلل ومديرو المرافق والمقاولون الذين يبحثون عن حلول الأسطح الباردة على raseen.ae" },
+    "rules": {
+      "en": ["120–220 words", "Headline ≤ 60 characters", "Include a specification list", "State the test basis", "CTA \"Request a technical visit\"", "No exclamation marks"],
+      "ar": ["120–220 كلمة", "العنوان ≤ 60 حرفاً", "قائمة مواصفات", "ذكر أساس الاختبار", "دعوة الإجراء \"اطلب زيارة فنية\"", "دون علامات تعجب"]
+    },
+    "ref": "RG-MKT-BG-2026 v3.1 · Channel rules"
+  },
+  {
+    "id": "linkedin",
+    "name": { "en": "LinkedIn post", "ar": "منشور لينكدإن" },
+    "short": { "en": "LinkedIn", "ar": "لينكدإن" },
+    "words": [80, 160],
+    "headline": null,
+    "hashtags": true,
+    "cta": { "en": "Request a technical visit at raseen.ae", "ar": "اطلب زيارة فنية عبر raseen.ae" },
+    "ctaRequired": false,
+    "register": "MSA",
+    "voice": "professional, peer-to-peer, aimed at contractors, consultants and facility managers",
+    "audience": { "en": "Contractors, MEP consultants and facility managers in the UAE", "ar": "المقاولون والاستشاريون ومديرو المرافق في الإمارات" },
+    "rules": {
+      "en": ["80–160 words", "Professional tone", "Max 3 hashtags incl. #RaseenThermaShield and #رصين", "No emoji", "At most one exclamation mark"],
+      "ar": ["80–160 كلمة", "نبرة مهنية", "3 وسوم كحد أقصى تشمل #RaseenThermaShield و#رصين", "دون رموز تعبيرية", "علامة تعجب واحدة كحد أقصى"]
+    },
+    "ref": "RG-MKT-BG-2026 v3.1 · Channel rules"
+  },
+  {
+    "id": "instagram",
+    "name": { "en": "Instagram caption", "ar": "تعليق إنستغرام" },
+    "short": { "en": "Instagram", "ar": "إنستغرام" },
+    "words": [40, 90],
+    "headline": null,
+    "hashtags": true,
+    "cta": { "en": "Request a technical visit at raseen.ae", "ar": "اطلب زيارة فنية عبر raseen.ae" },
+    "ctaRequired": false,
+    "register": "Gulf-friendly",
+    "voice": "lighter and visual, but technical claims stay precise",
+    "audience": { "en": "Villa owners and small contractors following Raseen", "ar": "ملاك الفلل والمقاولون الصغار من متابعي رصين" },
+    "rules": {
+      "en": ["40–90 words", "Max 2 emoji", "Max 5 hashtags incl. #RaseenThermaShield (and #رصين)", "At most one exclamation mark"],
+      "ar": ["40–90 كلمة", "رمزان تعبيريان كحد أقصى", "5 وسوم كحد أقصى تشمل #RaseenThermaShield و#رصين", "علامة تعجب واحدة كحد أقصى"]
+    },
+    "ref": "RG-MKT-BG-2026 v3.1 · Channel rules"
+  },
+  {
+    "id": "whatsapp",
+    "name": { "en": "WhatsApp broadcast", "ar": "رسالة واتساب جماعية" },
+    "short": { "en": "WhatsApp", "ar": "واتساب" },
+    "words": [30, 70],
+    "headline": null,
+    "hashtags": false,
+    "cta": { "en": "Request a technical visit at raseen.ae", "ar": "اطلب زيارة فنية عبر raseen.ae" },
+    "ctaRequired": false,
+    "register": "Gulf-friendly",
+    "voice": "short, direct, friendly; sent to opt-in trade customers only",
+    "audience": { "en": "Opt-in trade customers of the Jebel Ali and MN-05 counters", "ar": "عملاء التجارة المشتركون في قوائم مستودعي جبل علي وMN-05" },
+    "rules": {
+      "en": ["30–70 words", "Opt-in lists only", "Exactly one CTA", "No links other than raseen.ae", "At most one exclamation mark"],
+      "ar": ["30–70 كلمة", "للقوائم المشتركة فقط", "دعوة إجراء واحدة", "لا روابط سوى raseen.ae", "علامة تعجب واحدة كحد أقصى"]
+    },
+    "ref": "RG-MKT-BG-2026 v3.1 · Channel rules"
+  },
+  {
+    "id": "brochure",
+    "name": { "en": "Trade brochure blurb", "ar": "فقرة الكتيّب التجاري" },
+    "short": { "en": "Brochure", "ar": "الكتيّب" },
+    "words": [60, 110],
+    "headline": null,
+    "hashtags": false,
+    "cta": null,
+    "ctaRequired": false,
+    "register": "MSA",
+    "voice": "third person, specification-led; no \"you\" or \"we\"",
+    "audience": { "en": "Trade counter customers, consultants and procurement teams", "ar": "عملاء نقاط البيع التجارية والاستشاريون وفرق المشتريات" },
+    "rules": {
+      "en": ["60–110 words", "Third person", "Specification-led", "No exclamation marks"],
+      "ar": ["60–110 كلمة", "بصيغة الغائب", "يقوده عرض المواصفات", "دون علامات تعجب"]
+    },
+    "ref": "RG-MKT-BG-2026 v3.1 · Channel rules"
+  },
+  {
+    "id": "email",
+    "name": { "en": "Contractor email", "ar": "بريد إلكتروني للمقاولين" },
+    "short": { "en": "Email", "ar": "البريد" },
+    "words": [120, 200],
+    "headline": { "label": { "en": "Subject", "ar": "الموضوع" }, "max": 70 },
+    "hashtags": false,
+    "cta": { "en": "Reply to book a technical visit", "ar": "يسعدنا ترتيب زيارة فنية لموقعكم" },
+    "ctaRequired": false,
+    "register": "MSA",
+    "voice": "personal greeting, one CTA, sign-off from the key account manager",
+    "signoff": { "name": "Rania Mansour", "nameAr": "رانيا منصور", "role": "Key Account Manager — Building Contractors desk", "roleAr": "مديرة حسابات رئيسية — مكتب مقاولي المباني", "email": "rania.m@raseen.ae", "mobile": "+971 50 773 2091" },
+    "audience": { "en": "Building and roofing contractors on the Building Contractors desk", "ar": "مقاولو المباني والأسطح ضمن مكتب مقاولي المباني" },
+    "rules": {
+      "en": ["120–200 words", "Subject ≤ 70 characters", "Personal greeting", "One CTA", "Sign-off from the KAM", "No exclamation marks"],
+      "ar": ["120–200 كلمة", "الموضوع ≤ 70 حرفاً", "تحية شخصية", "دعوة إجراء واحدة", "توقيع مديرة الحسابات", "دون علامات تعجب"]
+    },
+    "ref": "RG-MKT-BG-2026 v3.1 · Channel rules"
+  }
+]

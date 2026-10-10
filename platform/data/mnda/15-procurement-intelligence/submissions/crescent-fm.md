@@ -26,7 +26,7 @@ Our team walked all four locations during the tender site visit on 2 September 2
 
 | Site | GFA | What matters most |
 |---|---|---|
-| MNDA Tower, MN-01 | 38,600 m², 22 floors | 4 × 600 TR water-cooled centrifugal chillers: at summer peak two to three run, leaving N+1 redundancy. The value lies in sequencing, condenser water optimisation and tube fouling control. 14 lifts carry the full staff population. |
+| MNDA Tower, MN-01 | 38,600 m², 22 floors | 4 × 600 TR water-cooled centrifugal chillers: at summer peak two to three run, leaving N+1 redundancy. The value lies in sequencing, condenser water optimisation and tube fouling control. |
 | CHC Downtown (Tower podium) | 2,900 m² | Highest footfall; comfort, cleanliness and queue-area presentation are judged by customers every minute. |
 | CHC Al Murjan, MN-02 | 1,650 m² | Rooftop packaged units showing visible coil corrosion; lifecycle risk within the contract term. |
 | CHC Al Waha, MN-04 | 1,820 m² | VRF system; newer building, lower risk. |
@@ -64,7 +64,7 @@ Shadowing means the Authority does not experience a service gap at handover, and
 
 Each Annex B asset is given a criticality score (consequence of failure × likelihood) during mobilisation, following ISO 55000 asset management principles. PPM routines are drawn from OEM manuals and ASHRAE Standard 180, then tuned to criticality and condition data from CrescentOne. Critical assets — chillers, fire pumps, main LV switchboards, standby generator, lifts — follow fixed schedules that cannot be deferred without the Authority's written approval.
 
-Across our portfolio, PPM compliance in 2025 was **98.4%** (target 95%), measured automatically from CrescentOne work order closures with photo evidence.
+Across our portfolio, PPM compliance in 2025 was **98.4%** (target 95%), measured automatically from CrescentOne work order closures.
 
 ### 2.2 Predictive maintenance for the chiller plant
 
@@ -90,7 +90,7 @@ A dedicated mobile technician van covers the Al Murjan and Al Waha CHCs during o
 
 ### 2.4 Lifts and escalators through OEM subcontract
 
-Lift and escalator maintenance is subcontracted to the original equipment manufacturer's authorised UAE service branch, with monthly preventive visits, 30-minute entrapment response 24/7 and coordination of annual third-party inspections. The OEM's remote monitoring alarms are integrated into CrescentOne, so every lift fault appears in the Authority's dashboard alongside all other work orders. Crescent audits the subcontractor monthly and is fully accountable for its performance.
+Lift and escalator maintenance is subcontracted to the original equipment manufacturer's authorised UAE service branch, with monthly preventive visits and 30-minute entrapment response 24/7. The OEM's remote monitoring alarms are integrated into CrescentOne, so every lift fault appears in the Authority's dashboard alongside all other work orders. Crescent audits the subcontractor monthly and is fully accountable for its performance.
 
 ## 3. Helpdesk, CAFM & Reporting
 
@@ -107,7 +107,7 @@ CrescentOne is Crescent's own CAFM and analytics platform:
 - **UAE-hosted:** primary data centre in Abu Dhabi, disaster recovery in Dubai; all MNDA data stays in the UAE
 - **Data ownership:** all data belongs to MNDA; full export at any time and at contract end
 - **Integration:** BMS via BACnet/IP, OEM lift monitoring, IoT sensors
-- **Mobile app** for technicians and a **client portal** with live dashboards, single sign-on and role-based access
+- **Mobile app** for technicians and a **client portal** with live dashboards
 - **Analytics:** predictive maintenance models, energy dashboards and automated KPI calculation
 
 ### 3.3 Reporting and performance governance
@@ -155,7 +155,7 @@ Full CVs are in Appendix 4.
 
 ### 4.3 Training and competency
 
-All staff complete a four-day induction, including MNDA customer happiness standards, before deployment. Technicians receive at least 48 training hours per year at the Crescent Academy in Abu Dhabi, including OEM chiller training for the plant team. Competency is verified through a skills matrix in CrescentOne; work orders for critical assets can only be assigned to technicians certified for that asset type.
+All staff complete a four-day induction, including MNDA customer happiness standards, before deployment. Technicians receive at least 48 training hours per year at the Crescent Academy in Abu Dhabi. Competency is verified through a skills matrix in CrescentOne; work orders for critical assets can only be assigned to technicians certified for that asset type.
 
 ## 5. HSE Management
 
@@ -166,11 +166,11 @@ Crescent's HSE system is certified to ISO 45001 and ISO 14001. On the MNDA sites
 - Digital permit-to-work in CrescentOne for hot work, electrical isolation (lock-out/tag-out), work at height and confined spaces
 - A water safety plan for the cooling towers, with weekly treatment checks and monthly Legionella sampling
 - Heat stress management, including the summer midday work ban (15 June – 15 September, 12:30–15:00)
-- Contractor control for the OEM lift subcontractor, including joint inspections
+- Contractor control for the OEM lift subcontractor
 
 ### 5.2 HSE performance record
 
-In 2025 Crescent recorded an LTIFR of 0.09 per million man-hours across 5.94 million man-hours, with no fatalities for the third consecutive year. Staff raised 2,318 safety observations through the CrescentOne app. Incidents on MNDA premises will be notified to the Authority within one hour, with a full investigation report within five working days.
+In 2025 Crescent recorded an LTIFR of 0.09 per million man-hours across 5.94 million man-hours, with no fatalities for the third consecutive year. Incidents on MNDA premises will be notified to the Authority within one hour, with a full investigation report within five working days.
 
 ## 6. Energy & Sustainability
 
@@ -196,7 +196,7 @@ As an option for the Authority, Crescent offers a shared-savings mechanism: veri
 
 ### 6.4 Wider sustainability commitments
 
-Under ISO 14001 we will target 55% waste diversion from landfill by month 24, use eco-certified cleaning products, raise cooling tower cycles of concentration to reduce make-up water, and convert podium irrigation to drip with soil-moisture sensors. A quarterly sustainability report will support the Authority's own sustainability reporting.
+Under ISO 14001 we will target 55% waste diversion from landfill by month 24, use eco-certified cleaning products, raise cooling tower cycles of concentration to reduce make-up water, and convert podium irrigation to drip with soil-moisture sensors.
 
 ## 7. Relevant Experience & References
 

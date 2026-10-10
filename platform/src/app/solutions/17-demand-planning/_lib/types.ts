@@ -27,6 +27,8 @@ export interface WarehouseMeta {
   palletPositions: number;
   otherPallets: number;
   rebarYardT: number;
+  /** Rebar sizes outside the planned range (8/10/32 mm, mesh) occupying the yard */
+  otherYardT?: number;
   storagePerPalletWeek: number;
   storagePerTonneWeek: number;
 }
@@ -39,6 +41,7 @@ export interface PlanSpec {
   summary_ar: string;
   policy: "weeks" | "service";
   prebuildWeeks: number;
+  prebuildFamilies: string[];
   catchUp: boolean;
   capacityAware: boolean;
   transfers: boolean;
