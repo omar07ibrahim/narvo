@@ -1,0 +1,27 @@
+[
+  { "id": "PPM-AGC-CH02-CCC", "site": "AGC", "asset": "CH-02", "task": "Condenser coil chemical cleaning", "taskAr": "تنظيف كيميائي لملفات المكثف", "frequency": "Quarterly", "lastDone": "2026-05-14", "due": "2026-08-15", "status": "Overdue", "history": [
+    { "date": "2026-08-17", "event": "Deferred by contractor — alkaline coil cleaner out of stock at the Raseen MN-05 store. No written MNDA approval on file." },
+    { "date": "2026-08-31", "event": "Rescheduled to 7 Sep 2026." },
+    { "date": "2026-09-07", "event": "Not done — technician reassigned to an emergency call at Al Waha Family Centre." },
+    { "date": "2026-09-22", "event": "Technician note on reactive job: coils visibly dusty, lower rows partly blocked with sand — cleaning recommended." }
+  ] },
+  { "id": "PPM-AGC-CH01-CCC", "site": "AGC", "asset": "CH-01", "task": "Condenser coil chemical cleaning", "taskAr": "تنظيف كيميائي لملفات المكثف", "frequency": "Quarterly", "lastDone": "2026-05-14", "due": "2026-08-15", "status": "Overdue", "history": [
+    { "date": "2026-08-17", "event": "Deferred by contractor together with CH-02 (chemical stock-out)." }
+  ] },
+  { "id": "PPM-AGC-CH02-MON", "site": "AGC", "asset": "CH-02", "task": "Monthly chiller inspection (pressures, oil, vibration, controls)", "taskAr": "فحص شهري للمبرد", "frequency": "Monthly", "lastDone": "2026-09-08", "due": "2026-10-08", "status": "Due", "history": [
+    { "date": "2026-09-08", "event": "Completed. Remark: head pressure high at full load; condenser fan 3 slightly noisy." }
+  ] },
+  { "id": "PPM-AGC-CH01-MON", "site": "AGC", "asset": "CH-01", "task": "Monthly chiller inspection", "taskAr": "فحص شهري للمبرد", "frequency": "Monthly", "lastDone": "2026-09-08", "due": "2026-10-08", "status": "Due", "history": [] },
+  { "id": "PPM-AGC-HPS-CAL", "site": "AGC", "asset": "CH-02", "task": "High-pressure switch and transducer calibration check", "taskAr": "معايرة مفتاح الضغط العالي والحساس", "frequency": "Annual", "lastDone": "2025-11-20", "due": "2026-11-20", "status": "Scheduled", "history": [] },
+  { "id": "PPM-AGC-AHU-FLT", "site": "AGC", "asset": "AHU-01..08", "task": "AHU filter replacement", "taskAr": "تغيير فلاتر وحدات مناولة الهواء", "frequency": "Monthly", "lastDone": "2026-09-19", "due": "2026-10-19", "status": "On schedule", "history": [] },
+  { "id": "PPM-AGC-FAHU", "site": "AGC", "asset": "FAHU-01", "task": "FAHU quarterly service", "taskAr": "صيانة ربع سنوية لوحدة الهواء النقي", "frequency": "Quarterly", "lastDone": "2026-09-19", "due": "2026-12-19", "status": "On schedule", "history": [] },
+  { "id": "PPM-AGC-PMP-VIB", "site": "AGC", "asset": "P-01/P-02", "task": "CHW pump vibration and seal check", "taskAr": "فحص الاهتزاز وموانع التسرب للمضخات", "frequency": "Quarterly", "lastDone": "2026-07-02", "due": "2026-10-02", "status": "Overdue", "history": [
+    { "date": "2026-10-02", "event": "P-02 seal weeping found during reactive job; vibration check rescheduled." }
+  ] },
+  { "id": "PPM-AGC-BMS-CAL", "site": "AGC", "asset": "BMS", "task": "BMS sensor calibration (zone and CHW sensors)", "taskAr": "معايرة حساسات نظام إدارة المبنى", "frequency": "Semi-annual", "lastDone": "2026-09-28", "due": "2027-03-28", "status": "On schedule", "history": [] },
+  { "id": "PPM-HQ-CHT-ANN", "site": "HQ", "asset": "CH-T2", "task": "Annual chiller service (OEM)", "taskAr": "صيانة سنوية للمبرد", "frequency": "Annual", "lastDone": "2026-09-22", "due": "2027-09-22", "status": "On schedule", "history": [
+    { "date": "2026-09-22", "event": "Completed 07:00–15:00; CH-T3 carried the load." }
+  ] },
+  { "id": "PPM-HQ-CT-CLN", "site": "HQ", "asset": "CT-1..3", "task": "Cooling-tower cleaning and water treatment check", "taskAr": "تنظيف أبراج التبريد وفحص معالجة المياه", "frequency": "Quarterly", "lastDone": "2026-08-12", "due": "2026-11-12", "status": "On schedule", "history": [] },
+  { "id": "PPM-HQ-VAV", "site": "HQ", "asset": "VAV boxes", "task": "VAV damper and actuator inspection (sample 25%)", "taskAr": "فحص مخمدات ومحركات صناديق الهواء المتغير", "frequency": "Quarterly", "lastDone": "2026-07-20", "due": "2026-10-20", "status": "On schedule", "history": [] }
+]

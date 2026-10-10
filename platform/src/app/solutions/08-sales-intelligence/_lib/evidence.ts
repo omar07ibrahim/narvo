@@ -1,7 +1,7 @@
 import "server-only";
 import { search } from "@/lib/retrieval";
 import type { Citation } from "@/lib/ai/events";
-import { detectConflicts, oppHealth, type ConflictReport } from "./compute";
+import { detectConflicts, oppHealth, type ConflictReport } from "./calc";
 import type { Interaction, Opportunity, SalesData } from "./types";
 
 /**
@@ -129,12 +129,24 @@ export function buildSourcePack(
   return { citations, context, report };
 }
 
+const WD = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+function calendar(today: string, days: number) {
+  const out: string[] = [];
+  const base = Date.UTC(+today.slice(0, 4), +today.slice(5, 7) - 1, +today.slice(8, 10));
+  for (let i = 0; i <= days; i++) {
+    const d = new Date(base + i * 86_400_000);
+    out.push(`${WD[d.getUTCDay()]} ${d.toISOString().slice(0, 10)}`);
+  }
+  return out.join(", ");
+}
+
 /** Computed facts the model must treat as authoritative. */
 export function computedFacts(data: SalesData, opp: Opportunity, report: ConflictReport): string {
   const account = data.accounts.find((a) => a.id === opp.accountId)!;
   const h = oppHealth(opp, data.interactions, data.today);
   const lines: string[] = [
     `Today: ${data.today} (Sunday). UAE work week Mon–Fri.`,
+    `Calendar (use these weekdays exactly): ${calendar(data.today, 14)}.`,
     `Opportunity ${opp.id} "${opp.title}" — ${account.name}, value AED ${money(opp.value)}, stage ${opp.stage} for ${h.daysInStage} days (stall threshold ${h.threshold}) → ${h.stalled ? "STALLED" : "moving"}. Probability ${opp.probability}%. Expected close ${opp.expectedClose}.`,
     `Owner ${opp.owner}${opp.previousOwner ? ` (took over from ${opp.previousOwner} on ${opp.ownerChangedAt})` : ""}. Next step in CRM: "${opp.nextStep}" due ${opp.nextStepDate ?? "—"}${h.nextStepOverdue && h.nextStepInDays != null ? ` (overdue by ${-h.nextStepInDays} days)` : ""}.`,
     `Last customer-facing contact: ${h.lastTouch ? `${h.lastTouch.at.slice(0, 10)} (${h.daysSinceTouch} days ago, ${h.lastTouch.type}, ${h.lastTouch.direction})` : "none"}.`,

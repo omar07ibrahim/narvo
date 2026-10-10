@@ -38,6 +38,15 @@ export function addDays(date: string, days: number): string {
 
 export const round2 = (n: number) => Math.round(n * 100) / 100;
 
+/** Arabic day count with correct number agreement: 1 يوم واحد, 2 يومان, 3–10 أيام, 11+ يوماً. */
+export function arDays(n: number) {
+  const a = Math.abs(n);
+  if (a === 1) return "يوم واحد";
+  if (a === 2) return "يومان";
+  if (a >= 3 && a <= 10) return `${a} أيام`;
+  return `${a} يوماً`;
+}
+
 /* ───────────────────────── Pipeline health ───────────────────────── */
 
 /** Days an opportunity may sit in a stage before it is considered stalled. */
@@ -77,15 +86,15 @@ export function oppHealth(opp: Opportunity, interactions: Interaction[], today: 
   if (overThreshold)
     reasons.push({
       en: `${daysInStage} days in ${opp.stage} (threshold ${threshold})`,
-      ar: `${daysInStage} يوماً في مرحلة ${STAGE_AR[opp.stage]} (الحد ${threshold})`,
+      ar: `${arDays(daysInStage)} في مرحلة ${STAGE_AR[opp.stage]} (الحد ${threshold})`,
     });
   if (nextStepOverdue && nextStepInDays != null)
-    reasons.push({ en: `Next step overdue by ${-nextStepInDays} days`, ar: `الخطوة التالية متأخرة ${-nextStepInDays} يوماً` });
+    reasons.push({ en: `Next step overdue by ${-nextStepInDays} days`, ar: `الخطوة التالية متأخرة ${arDays(-nextStepInDays)}` });
   if (nextStepOverdue && nextStepInDays == null) reasons.push({ en: "No next step scheduled", ar: "لا توجد خطوة تالية مجدولة" });
   if (open && (daysSinceTouch ?? 99) > 7)
     reasons.push({
       en: daysSinceTouch == null ? "No customer contact logged" : `No customer contact for ${daysSinceTouch} days`,
-      ar: daysSinceTouch == null ? "لا يوجد تواصل مسجل مع المتعامل" : `لا تواصل مع المتعامل منذ ${daysSinceTouch} يوماً`,
+      ar: daysSinceTouch == null ? "لا يوجد تواصل مسجل مع المتعامل" : `لا تواصل مع المتعامل منذ ${arDays(daysSinceTouch)}`,
     });
   return { open, daysInStage, threshold, overThreshold, lastTouch, daysSinceTouch, nextStepOverdue, nextStepInDays, stalled, reasons };
 }
@@ -353,7 +362,7 @@ export function detectConflicts(data: SalesData, opp: Opportunity): ConflictRepo
       referenceLabel: { en: "Status", ar: "الحالة" },
       detail: {
         en: `${quote.id} expired ${ago} days ago${doc ? `; the customer's document was issued ${dayDiff(quote.validUntil, doc.issuedAt)} days after expiry` : ""}. Steel prices in an expired quote are not binding — a fresh offer is needed.`,
-        ar: `انتهت صلاحية ${quote.id} منذ ${ago} يوماً${doc ? `، وصدر مستند المتعامل بعد ${dayDiff(quote.validUntil, doc.issuedAt)} أيام من انتهائها` : ""}. أسعار الحديد في عرض منتهٍ غير ملزمة — يلزم عرض جديد.`,
+        ar: `انتهت صلاحية ${quote.id} منذ ${arDays(ago)}${doc ? `، وصدر مستند المتعامل بعد ${dayDiff(quote.validUntil, doc.issuedAt)} أيام من انتهائها` : ""}. أسعار الحديد في عرض منتهٍ غير ملزمة — يلزم عرض جديد.`,
       },
       impactAed: null,
       severity: "medium",
@@ -572,12 +581,22 @@ export function pipelineKpis(data: SalesData): PipelineKpis {
 export function checkDraft(text: string, report: ConflictReport | null, tierMaxTerms: number): GuardrailFlag[] {
   const flags: GuardrailFlag[] = [];
   const t = text.replace(/[٠-٩]/g, (d) => String("٠١٢٣٤٥٦٧٨٩".indexOf(d)));
-  const numbers = Array.from(t.matchAll(/(\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?/g)).map((m) => ({ raw: m[0], v: Number(m[0].replace(/,/g, "")) }));
+  // Drop phone numbers and times before looking for prices.
+  const clean = t.replace(/\+?\d[\d\s-]{7,}\d/g, " ").replace(/(^|[^\d,.])\d{1,2}:\d{2}(?!\d)/g, "$1 ");
+  const numbers = Array.from(clean.matchAll(/(\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?/g))
+    .filter((m) => {
+      const i = m.index ?? 0;
+      const before = clean.slice(Math.max(0, i - 14), i);
+      const after = clean.slice(i + m[0].length, i + m[0].length + 12);
+      return m[0].includes(",") || /AED|درهم|@/i.test(before) || /^\s*(\/\s*t(?![a-z])|per\s+t|\/\s*طن|للطن|درهم|AED)/i.test(after);
+    })
+    .map((m) => ({ raw: m[0], v: Number(m[0].replace(/,/g, "")) }));
   if (report?.lines.length) {
     const steel = report.lines.filter((l) => l.contractPrice != null && l.contractPrice > 1000);
     const minFrame = Math.min(...steel.map((l) => l.contractPrice!));
     for (const n of numbers) {
       if (n.v < 1500 || n.v > 4000 || !steel.length) continue;
+      if (n.v >= 2020 && n.v <= 2035 && !n.raw.includes(",")) continue; // a year, not a price
       const exact = steel.find((l) => l.contractPrice === n.v);
       if (exact) continue;
       if (n.v < minFrame) {

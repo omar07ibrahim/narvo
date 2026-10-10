@@ -4,6 +4,7 @@ import { Fragment, type ReactNode } from "react";
 import { motion } from "motion/react";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { cn } from "@/lib/utils";
+import { useL } from "@/lib/i18n";
 
 /**
  * Criteria × options comparison matrix with evidence on hover.
@@ -50,21 +51,31 @@ export function ComparisonMatrix({
   className,
   statusLabels,
   footer,
+  criterionLabel,
+  weightLabel,
 }: {
   columns: Array<{ id: string; label: ReactNode; sub?: ReactNode }>;
   rows: MatrixRow[];
   className?: string;
   statusLabels?: Partial<Record<CellStatus, string>>;
   footer?: ReactNode;
+  /** Header of the first column (default: "Criterion" / "المعيار") */
+  criterionLabel?: string;
+  /** Formats a row weight (default: "weight N%" / "الوزن N%") */
+  weightLabel?: (w: number) => string;
 }) {
-  const labels = { ...LABEL, ...statusLabels };
+  const L = useL();
+  const AR_LABEL: Record<CellStatus, string> = { met: "مستوفى", partial: "جزئي", missing: "مفقود", clarify: "للاستيضاح", na: "لا ينطبق" };
+  const labels = { ...LABEL, ...Object.fromEntries(Object.entries(AR_LABEL).map(([k, v]) => [k, L({ en: LABEL[k as CellStatus], ar: v })])), ...statusLabels } as Record<CellStatus, string>;
   const groups = Array.from(new Set(rows.map((r) => r.group ?? "")));
   return (
     <div className={cn("overflow-auto rounded-md border border-border scrollbar-thin", className)}>
       <table className="w-full min-w-[560px] border-collapse text-[12.5px]">
         <thead className="sticky top-0 z-10 bg-card">
           <tr className="border-b border-border-strong">
-            <th className="label-caps !text-[9.5px] w-[34%] px-3 py-2.5 text-start font-medium">Criterion</th>
+            <th className="label-caps !text-[9.5px] w-[34%] px-3 py-2.5 text-start font-medium">
+              {criterionLabel ?? L({ en: "Criterion", ar: "المعيار" })}
+            </th>
             {columns.map((c) => (
               <th key={c.id} className="px-3 py-2.5 text-start align-bottom">
                 <div className="text-[12.5px] font-medium leading-tight">{c.label}</div>
@@ -95,7 +106,11 @@ export function ComparisonMatrix({
                   >
                     <td className="px-3 py-2 align-top">
                       <div className="leading-snug" dir="auto">{r.label}</div>
-                      {r.weight != null && <div className="num mt-0.5 text-[10.5px] text-muted-foreground">weight {r.weight}%</div>}
+                      {r.weight != null && (
+                        <div className="num mt-0.5 text-[10.5px] text-muted-foreground">
+                          {weightLabel ? weightLabel(r.weight) : L({ en: `weight ${r.weight}%`, ar: `الوزن ${r.weight}%` })}
+                        </div>
+                      )}
                     </td>
                     {columns.map((c) => {
                       const cell = r.cells[c.id];

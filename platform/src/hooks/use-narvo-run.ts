@@ -97,6 +97,8 @@ export function useNarvoRun() {
         }
         case "text":
           return { ...s, text: { ...s.text, [e.channel]: (s.text[e.channel] ?? "") + e.delta } };
+        case "text-reset":
+          return { ...s, text: { ...s.text, [e.channel]: "" } };
         case "reasoning":
           return { ...s, reasoning: s.reasoning + e.delta };
         case "data":
@@ -132,8 +134,13 @@ export function useNarvoRun() {
           signal: ctrl.signal,
         });
         if (!res.ok || !res.body) {
-          const msg = await res.text().catch(() => res.statusText);
-          apply({ type: "error", message: msg || `Request failed (${res.status})` });
+          const raw = await res.text().catch(() => res.statusText);
+          let msg = raw;
+          try {
+            const j = JSON.parse(raw);
+            msg = j.error?.message ?? j.error ?? j.message ?? raw;
+          } catch {}
+          apply({ type: "error", message: String(msg || `Request failed (${res.status})`) });
           return;
         }
         const reader = res.body.getReader();
@@ -192,7 +199,15 @@ export function useNarvoFetch() {
         headers: body ? { "Content-Type": "application/json" } : undefined,
         body: body ? JSON.stringify({ ...body, modelKey, lang }) : undefined,
       });
-      if (!res.ok) throw new Error((await res.text()) || res.statusText);
+      if (!res.ok) {
+        const raw = await res.text().catch(() => res.statusText);
+        let msg = raw;
+        try {
+          const j = JSON.parse(raw);
+          msg = j.error?.message ?? j.error ?? j.message ?? raw;
+        } catch {}
+        throw new Error(String(msg || res.statusText));
+      }
       return (await res.json()) as T;
     },
     [modelKey, lang],

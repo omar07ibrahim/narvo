@@ -23,6 +23,7 @@ interface Body {
   employeeId?: string;
   message?: string;
   history?: Array<{ role: "user" | "assistant"; content: string }>;
+  draftId?: string;
 }
 
 const TYPES = ["salary_certificate", "hr_letter", "annual_leave", "remote_work", "it_equipment", "system_access"] as const;
@@ -49,7 +50,8 @@ export async function POST(req: Request) {
         const existing = registry.find((c) => c.docId === h.docId && c.section === h.section);
         if (existing) return existing.n;
         const n = registry.length + 1;
-        registry.push({ n, docId: h.docId, title: h.title, ref: h.ref, section: h.section, quote: h.text.length > 420 ? h.text.slice(0, 420) + "…" : h.text });
+        const plain = h.text.replace(/\*\*|__/g, "");
+        registry.push({ n, docId: h.docId, title: h.title, ref: h.ref, section: h.section, quote: plain.length > 420 ? plain.slice(0, 420) + "…" : plain });
         emit.data("citations", [...registry]);
         return n;
       };
@@ -106,7 +108,7 @@ export async function POST(req: Request) {
         parameters: z.object({
           type: z.enum(TYPES),
           addressee: z.string().optional().describe("salary_certificate / hr_letter: who the letter is addressed to"),
-          purpose: z.string().optional().describe("salary_certificate / hr_letter: purpose, e.g. 'Housing grant application'"),
+          purpose: z.string().optional().describe("salary_certificate / hr_letter: what the document is for, e.g. 'تقديم طلب منحة سكنية' / 'Housing grant application' — always set it"),
           language: z.enum(["ar", "en"]).optional().describe("Language of the certificate/letter"),
           letterType: z.enum(["salary_transfer", "experience", "noc", "employment_verification"]).optional(),
           leaveType: z.enum(["annual", "sick", "compassionate", "paternity", "hajj"]).optional(),
@@ -117,7 +119,7 @@ export async function POST(req: Request) {
           item: z.enum(["laptop_replacement", "second_monitor", "mobile_device", "vpn"]).optional(),
           system: z.string().optional().describe("system_access: Tamkeen CMS | MNDA ePermits | MNDA Finance | Marsa Atlas GIS | MNDA Records (EDRMS)"),
           accessLevel: z.enum(["read", "contributor", "admin"]).optional(),
-          justification: z.string().optional(),
+          justification: z.string().optional().describe("it_equipment / system_access / remote_work only: business reason"),
         }),
         label: (a) => (ar ? `تجهيز نموذج الطلب (${a.type})` : `Preparing the ${String(a.type).replace(/_/g, " ")} form`),
         execute: async (a) => {
@@ -151,6 +153,8 @@ export async function POST(req: Request) {
         },
       });
 
+      const found = body.draftId ? getDraft(body.draftId) : undefined;
+      const openDraft = found && found.employeeId === employee.id ? found : undefined;
       const history: ChatMessage[] = (body.history ?? [])
         .filter((h) => h && (h.role === "user" || h.role === "assistant") && typeof h.content === "string")
         .slice(-8)
@@ -161,7 +165,7 @@ export async function POST(req: Request) {
         `You are talking to ${employee.name} (${employee.nameAr}), ${employee.title}, ${employee.department}, employee ${employee.id}. Line manager: ${employee.manager.name}.`,
         "Today is Sunday 11 October 2026. The working week is Monday–Friday (Friday half-day). 'Next week' means 12–16 October 2026.",
         "How to work:",
-        "- Before stating ANY rule, limit, validity period, entitlement or service level, call search_policy (even if you think you know it) and cite with the numeric marker [n] of the passage, right after the claim. Only numeric markers like [2] — never names like [Circular 9/2026]. Never invent policy.",
+        "- Before stating ANY rule, limit, validity period, entitlement or service level, call search_policy (even if you think you know it) and cite with the numeric marker [n] of the passage, right after the claim. Only numeric markers like [2] returned by search_policy in THIS turn — never names like [Circular 9/2026], and no markers at all if you did not search in this turn. Never invent policy.",
         "- When balances, eligibility, devices or the housing case matter: call get_my_profile. For status questions: get_my_requests.",
         "- When the employee wants something done: call prepare_request with every field you can infer (dates as YYYY-MM-DD). Write addressee and purpose in the language of the certificate/letter — for a housing application in Arabic use addressee 'هيئة مرسى النور للتطوير — قسم الطلبات السكنية' and purpose 'تقديم طلب منحة سكنية'; in English 'Marsa Al Noor Development Authority — Housing Applications Section' and 'Housing grant application'. Ask only for information that is genuinely missing. Then tell them the form is ready on the right to review and submit, who approves it and the service level.",
         "- If a check fails, explain why in one or two sentences and suggest the right alternative (e.g. a fault ticket instead of a replacement).",
@@ -169,6 +173,11 @@ export async function POST(req: Request) {
         "- Never reveal other employees' data. Salary amounts are not needed: HR prints them on the certificate from payroll.",
         "Arabic vocabulary to use exactly: the Authority = «هيئة مرسى النور للتطوير»; circular = «تعميم» (e.g. «التعميم رقم 9/2026»); salary certificate = «شهادة راتب»; working day = «يوم عمل». Use approverArabicName from tool results for names in Arabic replies.",
         "Style: short and warm, like a helpful colleague; 2–6 sentences or a few bullets; no headings.",
+        openDraft
+          ? openDraft.submittedRequestId
+            ? `The form ${openDraft.id} (${openDraft.title.en}) was already submitted as ${openDraft.submittedRequestId}.`
+            : `A request form is open on the employee's screen: draftId=${openDraft.id}, ${openDraft.title.en}, eligible=${openDraft.eligible}. If the employee confirms, call submit_request with this draftId; if they want changes, call prepare_request again.`
+          : "",
         `Language: reply in the language of the employee's latest message. If they write Arabic (including Gulf dialect such as "أبا" / "شو" / "لو سمحت"), answer in clear, friendly Arabic — light Gulf phrasing is welcome (e.g. "أبشر"). Default: ${ar ? "Arabic" : "English"}.`,
       ].join("\n");
 

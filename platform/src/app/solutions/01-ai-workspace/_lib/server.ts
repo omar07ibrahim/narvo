@@ -148,14 +148,10 @@ export function toCitations(
   passages: Array<{ docId: string; title: string; ref?: string; section?: string; text: string }>,
   start = 1,
 ): Citation[] {
-  return passages.map((p, i) => ({
-    n: start + i,
-    docId: p.docId,
-    title: p.title,
-    ref: p.ref,
-    section: p.section,
-    quote: p.text.length > 420 ? p.text.slice(0, 420) + "…" : p.text,
-  }));
+  return passages.map((p, i) => {
+    const plain = p.text.replace(/\*\*|__/g, "");
+    return { n: start + i, docId: p.docId, title: p.title, ref: p.ref, section: p.section, quote: plain.length > 420 ? plain.slice(0, 420) + "…" : plain };
+  });
 }
 
 /* ───────────── MNDA directory (task owners, email recipients) ───────────── */

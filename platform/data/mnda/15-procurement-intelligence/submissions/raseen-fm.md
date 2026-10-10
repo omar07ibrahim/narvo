@@ -15,7 +15,7 @@ lang: en
 **Integrated Facilities Management Services — MNDA Headquarters & Customer Happiness Centres (36 months)**
 
 Envelope A (Technical) · Submitted via the MNDA Supplier Portal on 29 September 2026
-Raseen Facilities Management LLC · Raseen Building, Al Quoz Industrial 3, Dubai · Trade licence CN-1873520
+Raseen Facilities Management LLC · Raseen Building, Al Quoz Industrial 3, Dubai · Trade licence CN-2207815
 Bid contact: Leena Mattar, Bid Manager · leena.m@raseen.ae · +971 55 207 3418
 
 ## 1. Understanding of Scope & Mobilisation
@@ -204,7 +204,7 @@ Raseen FM currently employs 71 UAE nationals out of 1,096 staff (6.48%). We are 
 
 ### 8.2 In-Country Value
 
-Raseen FM's current ICV certificate (no. ICV-RFM-2026-11637, valid until 14 May 2027) shows a score of **31.4%**, above the tender minimum of 25%. Our ICV is supported by UAE-based operations, a UAE-hosted CAFM, local recruitment, and procurement of spares and consumables from UAE suppliers, including Raseen Building Materials Trading LLC within our own group.
+Raseen FM's current ICV certificate (no. ICV-2026-0418772, valid until 2 February 2027) shows a score of **31.4%**, above the tender minimum of 25%. Our ICV is supported by UAE-based operations, a UAE-hosted CAFM, local recruitment, and procurement of spares and consumables from UAE suppliers, including Raseen Building Materials Trading LLC within our own group.
 
 ## 9. Certifications, Assumptions & Exclusions
 
@@ -214,9 +214,9 @@ Raseen FM's current ICV certificate (no. ICV-RFM-2026-11637, valid until 14 May 
 |---|---|---|
 | ISO 41001:2018 Facility management systems | FMS-41001-2207 | 11 March 2028 |
 | ISO 45001:2018 Occupational health & safety | OHS-45001-1183 | 30 November 2026 |
-| ISO 9001:2015 Quality management | QMS-9001-4416 | 19 June 2027 |
+| ISO 9001:2015 Quality management | QMS-9001-0954 | 18 June 2027 |
 
-The ISO 45001 recertification audit is scheduled for 26–28 October 2026, ahead of expiry. Copies of all certificates are provided in Appendix 9.
+The ISO 45001 recertification audit is scheduled for 10–12 November 2026, ahead of expiry. Copies of all certificates are provided in Appendix 9.
 
 ### 9.2 Assumptions
 

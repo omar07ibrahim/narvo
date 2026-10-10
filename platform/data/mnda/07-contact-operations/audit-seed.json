@@ -1,0 +1,146 @@
+[
+  {
+    "id": "AUD-SEED-07-01",
+    "ts": "2026-09-01T07:12:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "Sara Ahmed Al Blooshi", "role": "Manager, Customer Happiness Centre", "kind": "human" },
+    "action": "published knowledge article",
+    "subject": "FAQ — Housing Grant & Loan Programme (Circular 9/2026), English and Arabic, v1.0",
+    "detail": "Published to the assistant knowledge base and agent desktop on the circular's effective date. Superseded 90-day salary-certificate wording removed from 4 WhatsApp quick replies."
+  },
+  {
+    "id": "AUD-SEED-07-02",
+    "ts": "2026-09-07T08:00:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "Hessa Abdulla Al Suwaidi", "role": "Director, Digital Transformation Office", "kind": "human" },
+    "action": "approved channel go-live",
+    "subject": "MNDA virtual assistant — WhatsApp pilot (+971 50 663 2000)",
+    "detail": "WhatsApp switched from agent-only to assistant-first with human handoff. Pilot scope: housing and permit status, document requirements, appointments, maintenance requests. Review after 4 weeks."
+  },
+  {
+    "id": "AUD-SEED-07-03",
+    "ts": "2026-09-07T08:04:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "MNDA Contact Platform", "role": "Channel orchestration", "kind": "system" },
+    "action": "enabled routing rule",
+    "subject": "Handoff triggers: customer request, 2 failed attempts, negative sentiment ≤ -0.5, staff-conduct complaint, refund/waiver request",
+    "detail": "Rules aligned with Customer Happiness Charter section 6. Handoffs carry transcript, verification status and AI summary to the agent desktop."
+  },
+  {
+    "id": "AUD-SEED-07-04",
+    "ts": "2026-09-14T06:30:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "MNDA Contact Platform", "role": "Channel orchestration", "kind": "system" },
+    "action": "enabled channel",
+    "subject": "Voice assistant on hotline 800 6632 — 24/7 with agent transfer during centre hours",
+    "detail": "Arabic and English speech recognition; Emirati dialect model v2. Outside agent hours, handoffs are queued for call-back next working day."
+  },
+  {
+    "id": "AUD-SEED-07-05",
+    "ts": "2026-09-17T15:40:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "Sara Ahmed Al Blooshi", "role": "Manager, Customer Happiness Centre", "kind": "human" },
+    "action": "updated knowledge article",
+    "subject": "FAQ — Housing Grant & Loan Programme v1.3",
+    "detail": "Added Q&A on Land Registry consent (Circular 9/2026, 6.3) after 'where do I get the no-property certificate' became the 3rd most frequent housing question."
+  },
+  {
+    "id": "AUD-SEED-07-06",
+    "ts": "2026-09-21T12:10:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "Sara Ahmed Al Blooshi", "role": "Manager, Customer Happiness Centre", "kind": "human" },
+    "action": "completed weekly quality review",
+    "subject": "Assistant conversations 14–18 Sep (sample of 40)",
+    "detail": "37 of 40 rated accurate and compliant. 2 corrections: one reply cited the 90-day salary-certificate rule from an outdated template; one handoff summary omitted the case number. No identity-verification lapses found."
+  },
+  {
+    "id": "AUD-SEED-07-07",
+    "ts": "2026-09-24T10:35:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "Faisal Mohammed Al Junaibi", "role": "Customer Happiness Agent", "kind": "human" },
+    "action": "resolved handoff",
+    "subject": "HO-2609-0187 — housing applicant disputing incomplete status",
+    "detail": "Customer had uploaded the spouse's Emirates ID under the wrong document type; agent re-tagged it with the case officer and the case returned to Under review."
+  },
+  {
+    "id": "AUD-SEED-07-08",
+    "ts": "2026-09-30T13:05:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "Sara Ahmed Al Blooshi", "role": "Manager, Customer Happiness Centre", "kind": "human" },
+    "action": "approved refund",
+    "subject": "Duplicate payment AED 800 — fit-out permit MNDA-BP-2026-01692",
+    "detail": "Duplicate card payment caused by payment-gateway timeout on 18 Sep. Refund to original card within 10 working days (Charter section 9). Gateway incident raised with Finance."
+  },
+  {
+    "id": "AUD-SEED-07-09",
+    "ts": "2026-10-02T08:30:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "MNDA Contact Platform", "role": "Reporting", "kind": "system" },
+    "action": "published monthly report",
+    "subject": "Customer Happiness Centre — September 2026 volume report",
+    "detail": "28,940 contacts (+31% vs August 22,090): phone 61%, WhatsApp 24%, app chat 11%, email 4%. Intents: housing status 34%, permit status 18%, documents 14%, appointments 9%, complaints 8%, maintenance 7%, other 10%. Phone wait 6:40, abandonment 14.2%, FCR 61%, repeat within 7 days 34%, cost per contact AED 18.40."
+  },
+  {
+    "id": "AUD-SEED-07-10",
+    "ts": "2026-10-05T07:45:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "Sara Ahmed Al Blooshi", "role": "Manager, Customer Happiness Centre", "kind": "human" },
+    "action": "completed weekly quality review",
+    "subject": "Assistant conversations 28 Sep – 2 Oct (sample of 40)",
+    "detail": "38 of 40 accurate. Noted rising repeat contacts from housing applicants asked for a new salary certificate; requested Housing to confirm deadlines in every clarification message."
+  },
+  {
+    "id": "AUD-SEED-07-11",
+    "ts": "2026-10-06T11:49:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "MNDA Virtual Assistant", "role": "AI customer assistant (WhatsApp)", "kind": "agent" },
+    "action": "logged complaint",
+    "subject": "CHC-2026-118204 — housing case handling, documents requested twice (MNDA-HG-2026-004817)",
+    "detail": "Customer verified by registered WhatsApp number and Emirates ID. Priority high (repeat contact). Assigned to Housing & Community Services; SLA 2 working days."
+  },
+  {
+    "id": "AUD-SEED-07-12",
+    "ts": "2026-10-07T10:22:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "MNDA Virtual Assistant", "role": "AI customer assistant (voice)", "kind": "agent" },
+    "action": "booked appointment",
+    "subject": "APT-26-41022 — Al Waha centre, Tue 13 Oct 10:00, housing documents",
+    "detail": "No Al Waha slots left 7–9 Oct; customer accepted next available slot. SMS confirmation sent to registered mobile."
+  },
+  {
+    "id": "AUD-SEED-07-13",
+    "ts": "2026-10-07T14:10:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "Asma Khamis Al Hantoubi", "role": "Customer Happiness Agent", "kind": "human" },
+    "action": "resolved handoff",
+    "subject": "HO-2610-0019 — housing application past 12-day SLA (MNDA-HG-2026-004856)",
+    "detail": "Agent confirmed with case officer Khalfan Mohammed Al Ali that the eligibility check will complete by 13 Oct and informed the customer on WhatsApp."
+  },
+  {
+    "id": "AUD-SEED-07-14",
+    "ts": "2026-10-08T12:30:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "Khawla Rashid Al Mazmi", "role": "Team Leader, Customer Happiness Centre", "kind": "human" },
+    "action": "updated knowledge article",
+    "subject": "Appointment policy — temporary capacity notice for Al Waha centre",
+    "detail": "Al Waha Gardens Service Centre runs 3 of 5 counters until 15 Oct 2026 (hall refurbishment); assistant instructed to offer Al Murjan or Downtown when no Al Waha slot is available."
+  },
+  {
+    "id": "AUD-SEED-07-15",
+    "ts": "2026-10-09T11:26:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "MNDA Virtual Assistant", "role": "AI customer assistant (WhatsApp)", "kind": "agent" },
+    "action": "created handoff",
+    "subject": "HO-2610-0033 — refund request, fit-out fee paid twice (MNDA-BP-2026-01977)",
+    "detail": "Refunds require CHC Manager approval; assistant did not promise an outcome. Two card-statement screenshots attached."
+  },
+  {
+    "id": "AUD-SEED-07-16",
+    "ts": "2026-10-09T12:05:00+04:00",
+    "solution": "07-contact-operations",
+    "actor": { "name": "MNDA Contact Platform", "role": "Reporting", "kind": "system" },
+    "action": "generated weekly snapshot",
+    "subject": "Contacts 5–9 Oct 2026",
+    "detail": "6,874 contacts; resolved by assistant 69.8%, handed over 17.6%, abandoned 4.9%. 3 handoffs waiting at close of Friday shift (HO-2610-0031, HO-2610-0032, HO-2610-0033)."
+  }
+]

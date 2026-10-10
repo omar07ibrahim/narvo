@@ -10,8 +10,7 @@ import { ChannelIcon, RecordStatus, SentimentMeter, initials, langLabel } from "
 const FACTORS: Array<{ key: string; en: string; ar: string }> = [
   { key: "registered_mobile", en: "Registered mobile (caller ID / WhatsApp)", ar: "الرقم المسجّل (هوية المتصل / واتساب)" },
   { key: "emirates_id", en: "Emirates ID number", ar: "رقم الهوية الإماراتية" },
-  { key: "reference", en: "Case / permit reference", ar: "رقم الطلب أو الرخصة" },
-  { key: "date_of_birth", en: "Date of birth", ar: "تاريخ الميلاد" },
+  { key: "reference_dob", en: "Case / permit number + date of birth", ar: "رقم الطلب أو الرخصة مع تاريخ الميلاد" },
 ];
 
 export function VerificationBadge({ level }: { level: SessionState["level"] }) {
@@ -99,7 +98,7 @@ export function CustomerCard({
 
       {session && !compact && (
         <div className="rounded-md border border-border bg-surface p-2.5">
-          <div className="label-caps !text-[9.5px] mb-1.5">{L({ en: "Identity verification — enforced by tools", ar: "التحقق من الهوية — تفرضه الأدوات" })}</div>
+          <div className="label-caps !text-[9.5px] mb-1.5">{L({ en: "Identity verification · Charter §4 — enforced by tools", ar: "التحقق من الهوية · الميثاق §4 — تفرضه الأدوات" })}</div>
           <ul className="space-y-1">
             {FACTORS.map((fx) => {
               const ok = factors.includes(fx.key);

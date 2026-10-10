@@ -3,10 +3,9 @@ import { eventStream, readBody } from "@/lib/ai/stream";
 import { getPrefs } from "@/lib/ai/request";
 import { generateObject } from "@/lib/ai/json";
 import type { Citation } from "@/lib/ai/events";
-import { search } from "@/lib/retrieval";
 import { normalizeArabic } from "@/lib/retrieval/arabic";
 import { createApproval, kvGet, kvSet } from "@/lib/store/db";
-import { CHC_MANAGER, COL, SLUG, loadConversations } from "@/app/solutions/07-contact-operations/_lib/data";
+import { CHC_MANAGER, COL, SLUG, loadConversations, searchPublic } from "@/app/solutions/07-contact-operations/_lib/data";
 
 export const maxDuration = 180;
 const KV = `${SLUG}:themes`;
@@ -124,7 +123,7 @@ export async function POST(req: Request) {
       if (!target) throw new Error("No themes found");
 
       const s3 = emit.step("ground", lang === "ar" ? "البحث عن السياسة المرجعية" : "Finding the governing policy");
-      const hits = search("mnda/knowledge", [target.title, target.description, target.rootCause, target.titleAr], 6);
+      const hits = searchPublic([target.title, target.description, target.rootCause, target.titleAr], 6);
       const citations: Citation[] = hits.map((h, i) => ({
         n: i + 1,
         docId: h.docId,
@@ -142,7 +141,8 @@ export async function POST(req: Request) {
         name: "faq_update",
         system: [
           "You write customer-facing knowledge for MNDA's Customer Happiness Centre (UAE government authority). Plain, precise, friendly; Arabic in formal but simple MSA (UAE government register).",
-          "Write ONE new FAQ entry that would have prevented the contacts in the theme. Use ONLY facts from the numbered policy passages and cite them [n]. Include concrete numbers, dates, document names and how to act (MNDA Smart path, centres, hotline).",
+          "Write ONE new FAQ entry that would have prevented the contacts in the theme. Use ONLY facts from the numbered policy passages (all are public documents) and cite them [n]. Include concrete numbers, dates, document names and how to act (MNDA Smart path, centres, hotline).",
+          "Arabic terminology: «التعميم رقم 9 لسنة 2026» (never «الدائرة»), «شهادة الراتب»، «شهادة عدم ملكية عقار»، «دائرة الأراضي في مرسى النور»، «مراكز إسعاد المتعاملين»، «تطبيق MNDA Smart ← طلباتي ← تحميل المستندات الناقصة»، «رخصة البناء»، «شهادة عدم ممانعة المطور الرئيسي».",
         ].join("\n"),
         user: [
           `THEME: ${target.title} — ${target.description}\nRoot cause: ${target.rootCause}\nEvidence: ${target.count} of ${convs.length} recent conversations (${target.handoffs} needed a human agent, ${target.negative} negative). Example quotes: ${target.quotes.map((q) => `"${q.quote}"`).join(" | ")}`,

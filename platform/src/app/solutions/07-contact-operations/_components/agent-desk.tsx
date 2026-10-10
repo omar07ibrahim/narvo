@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect, react-hooks/purity -- effects follow the polled handoff and the streamed suggestion run; Date.now() renders waiting times. */
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -23,6 +24,10 @@ import { CustomerCard } from "./customer-card";
 import { ChannelIcon, channelLabel, fmtDuration } from "./bits";
 
 const AGENT_NAME = "Aisha Salem Al Rumaithi";
+
+/** Measured score (per-turn classifier) wins over the label written in the handoff. */
+const sentimentOf = (h: Handoff) =>
+  h.sentimentScore == null ? h.sentiment : h.sentimentScore <= -0.25 ? "negative" : h.sentimentScore >= 0.3 ? "positive" : "neutral";
 
 export function AgentDesk({ data, refresh }: { data: ConsoleData; refresh: () => void }) {
   const L = useL();
@@ -68,7 +73,8 @@ export function AgentDesk({ data, refresh }: { data: ConsoleData; refresh: () =>
   }, [current?.transcript.length]);
 
   useEffect(() => {
-    if (suggest.status === "done" && suggest.text.suggest) setDraft(suggest.text.suggest.trim());
+    // Citation markers stay in the agent's view (with sources); the customer receives clean text.
+    if (suggest.status === "done" && suggest.text.suggest) setDraft(suggest.text.suggest.replace(/\s*\[\d+\]/g, "").trim());
   }, [suggest.status, suggest.text.suggest]);
 
   async function act(action: "take" | "reply" | "resolve", extra: Record<string, unknown> = {}) {
@@ -179,8 +185,8 @@ export function AgentDesk({ data, refresh }: { data: ConsoleData; refresh: () =>
               <div className="flex items-center gap-2">
                 <Sparkles className="size-3.5 text-ai" />
                 <span className="label-caps !text-ai">{L({ en: "Context from the AI assistant", ar: "السياق من المساعد الذكي" })}</span>
-                <StatusPill tone={current.sentiment === "negative" ? "danger" : current.sentiment === "positive" ? "success" : "neutral"} className="ms-auto">
-                  {current.sentiment}
+                <StatusPill tone={sentimentOf(current) === "negative" ? "danger" : sentimentOf(current) === "positive" ? "success" : "neutral"} className="ms-auto">
+                  {sentimentOf(current)}
                   {current.sentimentScore != null && <span className="num opacity-70">{current.sentimentScore.toFixed(2)}</span>}
                 </StatusPill>
               </div>

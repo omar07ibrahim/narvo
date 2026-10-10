@@ -2,6 +2,7 @@ import { z } from "zod";
 import { eventStream, readBody } from "@/lib/ai/stream";
 import { getPrefs } from "@/lib/ai/request";
 import { runAgent, defineTool, type AgentTool } from "@/lib/ai/agent";
+import { listApprovals } from "@/lib/store/db";
 import type { ChatMessage } from "@/lib/ai/client";
 import type { Citation } from "@/lib/ai/events";
 import { personaSystem } from "@/app/solutions/01-ai-workspace/_lib/ask";
@@ -12,6 +13,7 @@ import {
   classOf,
   directoryForPrompt,
   findPerson,
+  loadTasks,
   OUTBOX,
   resolveRole,
   searchFiltered,
@@ -56,7 +58,8 @@ export async function POST(req: Request) {
         const existing = registry.find((c) => c.docId === p.docId && c.section === p.section);
         if (existing) return existing.n;
         const n = registry.length + 1;
-        registry.push({ n, docId: p.docId, title: p.title, ref: p.ref, section: p.section, quote: p.text.length > 420 ? p.text.slice(0, 420) + "…" : p.text });
+        const plain = p.text.replace(/\*\*|__/g, "");
+        registry.push({ n, docId: p.docId, title: p.title, ref: p.ref, section: p.section, quote: plain.length > 420 ? plain.slice(0, 420) + "…" : plain });
         emit.data("citations", [...registry]);
         return n;
       };
@@ -129,7 +132,10 @@ export async function POST(req: Request) {
             .map((id) => docs.find((d) => d.id === id))
             .filter((d): d is NonNullable<typeof d> => !!d && canRead(role, d))
             .map((d) => ({ docId: d.id, ref: d.ref, title: d.title }));
-          const id = `TSK-2026-${String(Date.now()).slice(-5)}${Math.floor(Math.random() * 10)}`;
+          // Sequential, collision-safe id: existing tasks + tasks still awaiting approval.
+          const num = (x: unknown) => Number(String(x ?? "").replace(/^TSK-2026-/, "")) || 0;
+          const pendingIds = listApprovals({ solution: SOLUTION, status: "pending" }).map((ap) => num((ap.payload as { taskId?: string } | undefined)?.taskId));
+          const id = `TSK-2026-${String(Math.max(4249, ...loadTasks().map((t) => num(t.id)), ...pendingIds) + 1).padStart(5, "0")}`;
           created.push({ kind: "task", title: a.title });
           return {
             title: `${ar ? "إنشاء مهمة" : "Create task"} — ${a.title}`,
@@ -204,6 +210,7 @@ export async function POST(req: Request) {
         },
       });
 
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any -- matches runAgent's tool list type
       const tools: AgentTool<any>[] = r.canAct ? [searchKnowledge, getDocument, createTask, draftEmail] : [searchKnowledge, getDocument];
 
       const system = [
@@ -213,7 +220,7 @@ export async function POST(req: Request) {
         r.canAct
           ? "Actions: use create_task for each follow-up (2–4 tasks max, distinct owners where sensible) and draft_email only if the user asks for an email. Owners must come from the directory below. Due dates are working days (Mon–Fri) after 11 Oct 2026, realistic for the effort (2–10 working days). Pass sourceDocIds."
           : "This user is external: you cannot create tasks or send emails. If asked, explain politely that internal actions are only available to MNDA staff, and point to public channels (permits@mnda.gov.ae, 800 6632).",
-        "Cite every fact with the [n] numbers returned by the tools — only those numbers. Do not mention tool names in the final answer.",
+        "Do not write any text before or between tool calls — work silently, then write only the final answer. Cite every fact with the [n] numbers returned by the tools — only those numbers. Do not mention tool names.",
         "Never claim a task was created or an email was sent: they are awaiting human approval (name the approver).",
         "Final answer format (markdown): '## Summary' (2–3 sentences), '## Key facts' (bullets with citations), '## What it means' (implications for the user's request), and if you proposed actions '## Proposed actions' (one line each: task — owner — due date — awaiting approval by …). Keep it under 380 words.",
         `Write the final answer in ${ar ? "formal Modern Standard Arabic" : "English"}; task titles and descriptions in the same language.`,

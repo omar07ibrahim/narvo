@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { useFormat, useL } from "@/lib/i18n";
 import { StatusPill } from "@/components/narvo/status";
 import { Avatar, STAGE_LABEL, useMoney } from "./bits";
-import type { OppHealth } from "../_lib/compute";
+import { arDays, type OppHealth } from "../_lib/calc";
 import type { Account, Opportunity, Quote } from "../_lib/types";
 
 export function OppHeader({ opp, account, health, quote }: { opp: Opportunity; account: Account; health: OppHealth; quote: Quote | null }) {
@@ -35,7 +35,7 @@ export function OppHeader({ opp, account, health, quote }: { opp: Opportunity; a
           {health.open && (
             <StatusPill tone={health.stalled ? "warning" : "neutral"} dot={false}>
               <span className="num">
-                {L({ en: `${health.daysInStage} d in stage`, ar: `${health.daysInStage} يوماً في المرحلة` })}
+                {L({ en: `${health.daysInStage} d in stage`, ar: `${arDays(health.daysInStage)} في المرحلة` })}
                 {health.stalled ? L({ en: " · stalled", ar: " · متعثرة" }) : ""}
               </span>
             </StatusPill>

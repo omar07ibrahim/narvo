@@ -24,7 +24,7 @@ export async function POST(req: Request) {
         .filter((r) => cov[r.id] && cov[r.id].status !== "met" && !openFor.has(r.id) && (!body.only?.length || body.only.includes(r.id)))
         .map((r) => ({ req: r, cov: cov[r.id] }))
         .sort((a, b) => rank(a.cov.status, a.req.mandatory) - rank(b.cov.status, b.req.mandatory))
-        .slice(0, 16);
+        .slice(0, 36);
       const s0 = emit.step("gaps", lang === "ar" ? "تحديد الفجوات المفتوحة" : "Collecting open gaps");
       s0.done(lang === "ar" ? `${gaps.length} فجوة بدون مهمة مفتوحة` : `${gaps.length} gaps without an open task`);
       if (!gaps.length) {

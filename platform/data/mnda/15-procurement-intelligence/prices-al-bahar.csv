@@ -1,0 +1,15 @@
+item,description,category,scope_key,year1,year2,year3,total,note
+PS-01,"Mobilisation, asset verification & transition",mobilisation,,268900,0,0,268900,
+PS-02,"HVAC & chilled-water plant (4 x 600 TR chillers, AHUs, FCUs)",hard,hvac,1207500,1232600,1258100,3698200,
+PS-03,Electrical systems & BMS,hard,electrical,457900,467500,477200,1402600,
+PS-04,"Plumbing, drainage & water systems",hard,plumbing,199600,203700,208000,611300,
+PS-05,Fire & life safety systems (civil-defence-approved subcontractor),hard,fire,191800,195800,199800,587400,
+PS-06,"Lifts & escalators (OEM subcontract, 14 lifts)",hard,lifts,349000,356300,363600,1068900,
+PS-07,Cleaning & hygiene (HQ + 3 CHCs),soft,cleaning,1179400,1204000,1229000,3612400,
+PS-08,Pest control & vector management,soft,pest,0,0,0,0,Excluded — see Technical Proposal §9.3
+PS-09,Waste management & segregation,soft,waste,104100,106200,108400,318700,
+PS-10,Landscaping — podium & forecourt,soft,landscaping,96700,98700,100700,296100,
+PS-11,"Helpdesk, CAFM & front-of-house",management,helpdesk,312900,319400,326000,958300,
+PS-12,Energy management & M&V,management,energy,70100,71500,73000,214600,
+PS-13,"Contract management, supervision & overheads",management,,951000,970800,991000,2912800,
+PS-14,Consumables & minor materials allowance,allowance,,250800,256000,261400,768200,

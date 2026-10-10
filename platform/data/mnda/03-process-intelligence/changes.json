@@ -1,0 +1,22 @@
+[
+  {
+    "id": "CHG-2026-014",
+    "title": "Intake pilot — NOC validity check at intake and automatic NOC request at submission (Downtown CHC counter and MNDA Smart)",
+    "interventions": ["intakeNoc", "parallelNoc"],
+    "status": "pilot",
+    "approvedBy": "Eng. Omar Yousef Al Hammadi",
+    "approvedAt": "2026-09-21",
+    "measurement": "Compare applications submitted from 1 Oct 2026 with the Q3 2026 baseline: share returned to applicant, NOC-related returns, days to accepted file, NOC turnaround; cycle time once 60 pilot cases are issued.",
+    "createdAt": "2026-09-21"
+  },
+  {
+    "id": "CHG-2026-011",
+    "title": "Circular 14/2026 — master-developer NOC mandatory for permits in MN-03, MN-06 and MN-08",
+    "interventions": [],
+    "status": "standard",
+    "approvedBy": "Eng. Omar Yousef Al Hammadi",
+    "approvedAt": "2026-07-02",
+    "measurement": "Effective 15 Jul 2026. No baseline measurement was agreed at the time.",
+    "createdAt": "2026-07-02"
+  }
+]

@@ -1,0 +1,384 @@
+{
+  "asset": "AGCC-CH-02",
+  "source": "AGCC BMS trend export (RFM Connect integration)",
+  "daily": [
+    {
+      "date": "2026-09-01",
+      "maxAmbientC": 43.7,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-02",
+      "maxAmbientC": 47.4,
+      "trips": 1
+    },
+    {
+      "date": "2026-09-03",
+      "maxAmbientC": 46.5,
+      "trips": 1
+    },
+    {
+      "date": "2026-09-04",
+      "maxAmbientC": 47.5,
+      "trips": 1
+    },
+    {
+      "date": "2026-09-05",
+      "maxAmbientC": 43.5,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-06",
+      "maxAmbientC": 44.1,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-07",
+      "maxAmbientC": 43.6,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-08",
+      "maxAmbientC": 46.8,
+      "trips": 1
+    },
+    {
+      "date": "2026-09-09",
+      "maxAmbientC": 45.4,
+      "trips": 1
+    },
+    {
+      "date": "2026-09-10",
+      "maxAmbientC": 43.9,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-11",
+      "maxAmbientC": 46.7,
+      "trips": 1
+    },
+    {
+      "date": "2026-09-12",
+      "maxAmbientC": 43.5,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-13",
+      "maxAmbientC": 43.5,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-14",
+      "maxAmbientC": 44.2,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-15",
+      "maxAmbientC": 45.9,
+      "trips": 1
+    },
+    {
+      "date": "2026-09-16",
+      "maxAmbientC": 43.8,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-17",
+      "maxAmbientC": 46.9,
+      "trips": 1
+    },
+    {
+      "date": "2026-09-18",
+      "maxAmbientC": 45.5,
+      "trips": 1
+    },
+    {
+      "date": "2026-09-19",
+      "maxAmbientC": 43.6,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-20",
+      "maxAmbientC": 43.6,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-21",
+      "maxAmbientC": 42.3,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-22",
+      "maxAmbientC": 42.9,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-23",
+      "maxAmbientC": 43.7,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-24",
+      "maxAmbientC": 45.9,
+      "trips": 2
+    },
+    {
+      "date": "2026-09-25",
+      "maxAmbientC": 41.9,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-26",
+      "maxAmbientC": 43.9,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-27",
+      "maxAmbientC": 41.7,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-28",
+      "maxAmbientC": 43.7,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-29",
+      "maxAmbientC": 42.5,
+      "trips": 0
+    },
+    {
+      "date": "2026-09-30",
+      "maxAmbientC": 44,
+      "trips": 0
+    },
+    {
+      "date": "2026-10-01",
+      "maxAmbientC": 44.9,
+      "trips": 1
+    },
+    {
+      "date": "2026-10-02",
+      "maxAmbientC": 42.4,
+      "trips": 0
+    },
+    {
+      "date": "2026-10-03",
+      "maxAmbientC": 42.2,
+      "trips": 0
+    },
+    {
+      "date": "2026-10-04",
+      "maxAmbientC": 41,
+      "trips": 0
+    },
+    {
+      "date": "2026-10-05",
+      "maxAmbientC": 41.5,
+      "trips": 0
+    },
+    {
+      "date": "2026-10-06",
+      "maxAmbientC": 44.5,
+      "trips": 1
+    },
+    {
+      "date": "2026-10-07",
+      "maxAmbientC": 41.5,
+      "trips": 0
+    },
+    {
+      "date": "2026-10-08",
+      "maxAmbientC": 41.7,
+      "trips": 0
+    },
+    {
+      "date": "2026-10-09",
+      "maxAmbientC": 44.4,
+      "trips": 3
+    },
+    {
+      "date": "2026-10-10",
+      "maxAmbientC": 41.6,
+      "trips": 0
+    }
+  ],
+  "trips": [
+    {
+      "id": "A21-20260902-1412",
+      "date": "2026-09-02",
+      "time": "14:12",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 46.1,
+      "dischargeKpa": 1906,
+      "loadPct": 81,
+      "lockout": false
+    },
+    {
+      "id": "A21-20260903-1348",
+      "date": "2026-09-03",
+      "time": "13:48",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 45.7,
+      "dischargeKpa": 1904,
+      "loadPct": 90,
+      "lockout": false
+    },
+    {
+      "id": "A21-20260904-1506",
+      "date": "2026-09-04",
+      "time": "15:06",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 46.8,
+      "dischargeKpa": 1892,
+      "loadPct": 93,
+      "lockout": false
+    },
+    {
+      "id": "A21-20260908-1431",
+      "date": "2026-09-08",
+      "time": "14:31",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 45.2,
+      "dischargeKpa": 1897,
+      "loadPct": 91,
+      "lockout": false
+    },
+    {
+      "id": "A21-20260909-1322",
+      "date": "2026-09-09",
+      "time": "13:22",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 44.6,
+      "dischargeKpa": 1909,
+      "loadPct": 81,
+      "lockout": false
+    },
+    {
+      "id": "A21-20260911-1455",
+      "date": "2026-09-11",
+      "time": "14:55",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 45.9,
+      "dischargeKpa": 1894,
+      "loadPct": 93,
+      "lockout": false
+    },
+    {
+      "id": "A21-20260915-1540",
+      "date": "2026-09-15",
+      "time": "15:40",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 44.4,
+      "dischargeKpa": 1897,
+      "loadPct": 80,
+      "lockout": false
+    },
+    {
+      "id": "A21-20260917-1448",
+      "date": "2026-09-17",
+      "time": "14:48",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 46.1,
+      "dischargeKpa": 1905,
+      "loadPct": 86,
+      "lockout": false
+    },
+    {
+      "id": "A21-20260918-1357",
+      "date": "2026-09-18",
+      "time": "13:57",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 45,
+      "dischargeKpa": 1914,
+      "loadPct": 82,
+      "lockout": false
+    },
+    {
+      "id": "A21-20260924-1403",
+      "date": "2026-09-24",
+      "time": "14:03",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 45.2,
+      "dischargeKpa": 1908,
+      "loadPct": 80,
+      "lockout": false
+    },
+    {
+      "id": "A21-20260924-1419",
+      "date": "2026-09-24",
+      "time": "14:19",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 45.3,
+      "dischargeKpa": 1894,
+      "loadPct": 92,
+      "lockout": true
+    },
+    {
+      "id": "A21-20261001-1426",
+      "date": "2026-10-01",
+      "time": "14:26",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 44.2,
+      "dischargeKpa": 1893,
+      "loadPct": 87,
+      "lockout": false
+    },
+    {
+      "id": "A21-20261006-1511",
+      "date": "2026-10-06",
+      "time": "15:11",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 43.9,
+      "dischargeKpa": 1907,
+      "loadPct": 79,
+      "lockout": false
+    },
+    {
+      "id": "A21-20261009-1405",
+      "date": "2026-10-09",
+      "time": "14:05",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 43.8,
+      "dischargeKpa": 1915,
+      "loadPct": 94,
+      "lockout": false
+    },
+    {
+      "id": "A21-20261009-1421",
+      "date": "2026-10-09",
+      "time": "14:21",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 43.7,
+      "dischargeKpa": 1908,
+      "loadPct": 84,
+      "lockout": false
+    },
+    {
+      "id": "A21-20261009-1437",
+      "date": "2026-10-09",
+      "time": "14:37",
+      "alarm": "A21 High discharge pressure — transducer trip",
+      "circuit": "B",
+      "ambientC": 43.6,
+      "dischargeKpa": 1891,
+      "loadPct": 85,
+      "lockout": true
+    }
+  ]
+}

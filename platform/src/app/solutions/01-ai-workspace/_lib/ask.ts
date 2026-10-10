@@ -54,6 +54,7 @@ export function personaSystem(role: RoleKey, lang: "en" | "ar") {
       ? "This user is EXTERNAL (contractor portal). Only public information may be shared. Never reveal internal processes, staff workload, performance figures or internal opinions."
       : "",
     "Today is Sunday 11 October 2026; operational data runs to Friday 9 October 2026. The UAE working week is Monday–Friday (Friday half-day).",
+    `The user's interface language is ${lang === "ar" ? "Arabic" : "English"}.`,
   ]
     .filter(Boolean)
     .join("\n");
@@ -116,6 +117,8 @@ export async function runAsk(
     "Answer ONLY from the numbered sources provided. Cite every factual statement with its marker, e.g. [2] or [1][3], right after the claim. Never invent markers.",
     "Be exact with numbers, dates, fees, service levels, reference numbers and names. Prefer a one-sentence direct answer first, then short bullets or numbered steps. Use a small markdown table only when comparing items. Keep it under 260 words unless the user asks for detail.",
     "If the sources do not contain the answer, say so plainly and name the department or person who owns the topic if the sources show it.",
+    "Never make or pre-empt a decision (approve, reject, grant an exception or extension): state exactly what the rules say — including where they are silent ('the circular does not provide for…') — and who decides. Under MNDA's Responsible AI Policy decisions rest with the responsible officer.",
+    "Never add facts that are not in the sources, even if plausible (e.g. about compensation, liability, penalties or timelines). When the user's own document makes a claim, compare it with the rules and point out any mismatch.",
     withheld.length
       ? `Note: ${withheld.length} potentially relevant document(s) exist above this user's access level and were withheld. Do not guess their content. If the question needs them, say that further detail is restricted to staff with higher access.`
       : "",

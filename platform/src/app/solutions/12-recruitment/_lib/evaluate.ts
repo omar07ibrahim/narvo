@@ -67,7 +67,7 @@ export async function evaluateGuardedCv(opts: {
       "The CV has been redacted of protected attributes. Never infer, guess or consider name, nationality, gender, age, marital status, religion, photo or place of birth — not even from writing style, language or institutions.",
       `Rating scale:\n${SCALE}`,
       "Rules: rate only what the text evidences; reward specifics (scale, numbers, codes applied, outcomes, roles) not adjectives; years alone are not quality; consultant-side submission work counts partially for authority review criteria. The evidence field MUST be copied verbatim from the CV (same language as the CV), max 35 words — never paraphrase; use an empty string when there is no evidence (rating 0).",
-      `Return one rating per criterion id: ${criteria.map((c) => c.id).join(", ")}. Write summary, gaps, strengths, risks and interview questions in ${lang === "ar" ? "Arabic (formal MSA)" : "English"}.`,
+      `Return one rating per criterion id: ${criteria.map((c) => c.id).join(", ")}. Write summary, gaps, strengths, risks and interview questions in ${lang === "ar" ? "Arabic (formal MSA, MNDA terminology: «رخص البناء» for building permits, «شهادة عدم ممانعة المطور الرئيسي» for master-developer NOC, «المجتمعات المسوّرة» for gated communities)" : "English"}.`,
     ].join("\n\n"),
     user: `CRITERIA\n${criteriaBlock(criteria)}\n\nREDACTED CV\n"""\n${cv}\n"""`,
     modelKey: opts.modelKey,
@@ -89,12 +89,19 @@ export async function evaluateGuardedCv(opts: {
         found = true;
       }
     }
+    let rating = x ? Math.max(0, Math.min(4, Math.round(x.rating))) : 0;
+    let gaps = x?.gaps ?? (lang === "ar" ? "لم يُقيَّم" : "Not assessed");
+    // No quotable evidence, no credit: a positive rating must point to the CV.
+    if (rating > 0 && !evidence) {
+      rating = 0;
+      gaps = `${lang === "ar" ? "لا يوجد نص قابل للاستشهاد في السيرة." : "No quotable evidence in the CV."} ${gaps}`;
+    }
     return {
       criterionId: c.id,
-      rating: x ? Math.max(0, Math.min(4, Math.round(x.rating))) : 0,
+      rating,
       evidence,
       evidenceFound: found,
-      gaps: x?.gaps ?? (lang === "ar" ? "لم يُقيَّم" : "Not assessed"),
+      gaps,
       confidence: x?.confidence,
     };
   });

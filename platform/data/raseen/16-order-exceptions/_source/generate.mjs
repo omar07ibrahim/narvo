@@ -23,7 +23,7 @@ const DXB = "Dubai sites";
 // Contacts per customer (site / procurement) used for notifications.
 const CONTACTS = {
   "RBM-C-10021": { name: "Mohammed Bin Hilal", role: "Managing Partner", email: "m.binhilal@binhilalcontracting.ae", mobile: "+971 50 337 1180", channel: "email" },
-  "RBM-C-10034": { name: "Imran Qureshi", role: "Procurement Manager", email: "imran.q@gulfcrestbuilders.ae", mobile: "+971 55 208 6634", channel: "email" },
+  "RBM-C-10034": { name: "Imran Qureshi", role: "Procurement Manager", email: "imran.qureshi@gulfcrest.ae", mobile: "+971 50 336 7182", channel: "email" },
   "RBM-C-10047": { name: "Eng. Hisham Darwish", role: "Procurement Director", email: "h.darwish@apcc.ae", mobile: "+971 50 662 9047", channel: "email" },
   "RBM-C-10052": { name: "Eng. Salem Al Marri", role: "Projects Manager", email: "salem.almarri@almarsa-eng.ae", mobile: "+971 50 118 4426", channel: "email" },
   "RBM-C-10068": { name: "Deepa Varghese", role: "Commercial Manager", email: "deepa.v@emeraldline.ae", mobile: "+971 52 774 0193", channel: "email" },
@@ -64,7 +64,7 @@ const ORDERS = [
   ["SO-26-11795", "2026-09-27T09:41", "RBM-C-10052", "AME-PO-26-0592", "Al Waha Gardens — 14 citizens' villas", "Plots MN-04-117-0021 to 0034", "MN-04 Al Waha Gardens", OTHER, "MN05", "2026-10-13T07:30", "2026-10-13", [l("BLK-HOL-20", 21600, 3.92, 10800), l("CEM-OPC-50", 1200, 16.7)], "partially_delivered", "Blocks in two drops; second drop with cement."],
   ["SO-26-11799", "2026-09-28T14:18", "RBM-C-10183", "ARR-2609-44", "Al Murjan villas — roof waterproofing (housing maintenance grants)", "Al Murjan, sector 2 villas", "MN-02 Al Murjan", OTHER, "MN05", "2026-10-14T07:00", "2026-10-14", [l("WPF-BIT-4", 140, 93.5)], "open", ""],
   ["SO-26-11801", "2026-09-29T08:33", "RBM-C-10139", "RAMPI-PO-7731", "Precast plant — stair & parapet units", "Ras Al Marsa Precast, plant gate B", "MN-05 Ras Al Marsa Industrial", OTHER, "MN05", "2026-10-12T07:00", "2026-10-12", [l("RB-B500-16", 24, 2760)], "ready", ""],
-  ["SO-26-11806", "2026-09-30T09:20", "RBM-C-10034", "GCB-PO-26-0911", "Marina Quarter Tower A — podium slab L2", "Marina Quarter Tower A, gate 3", "MN-08 Marina Quarter", MQ, "MN05", "2026-10-12T10:00", "2026-10-12", [l("CEM-OPC-50", 420, 16.4)], "ready", "Rides with the rebar delivery on gate permit MQP-GP-26-18842."],
+  ["SO-26-11806", "2026-09-30T09:20", "RBM-C-10118", "CMW/PO/2026/0342", "Marina Quarter — pontoon abutments (first pour)", "Marina Quarter breakwater, gate 2", "MN-08 Marina Quarter", MQ, "MN05", "2026-10-12T10:00", "2026-10-12", [l("CEM-OPC-50", 420, 17.1)], "ready", "Gate permit MQP-GP-26-18837 booked by dispatch."],
   ["SO-26-11809", "2026-09-30T16:05", "RBM-C-10144", "DRV-118", "Al Barsha South — villa G+1 (plot 673-0412)", "Plot 673-0412, Al Barsha South 3", "Al Barsha South, Dubai", DXB, "JA", "2026-10-14T07:00", "2026-10-14", [l("BLK-HOL-20", 7200, 4.07), l("CEM-OPC-50", 480, 17.25)], "open", ""],
   ["SO-26-11813", "2026-10-01T08:47", "RBM-C-10021", "BHC-PO-2026-1203", "Jebel Ali labour accommodation — Block D", "Jebel Ali Industrial 1, plot 597-0718", "Jebel Ali, Dubai", DXB, "JA", "2026-10-13T07:00", "2026-10-13", [l("RB-B500-16", 52, 2735), l("RB-B500-12", 20, 2780)], "ready", ""],
   ["SO-26-11815", "2026-10-01T11:02", "RBM-C-10047", "APCC/PO/26/3318", "Ring Road Interchange 4 — pier caps", "Interchange 4, pier caps P7–P12", "MN-07 Al Ghaf Community", OTHER, "MN05", "2026-10-15T07:00", "2026-10-15", [l("RB-B500-12", 30, 2730), l("CEM-OPC-50", 900, 16.05)], "open", "Entered from APCC PO — rebar rate copied from PO."],
@@ -82,7 +82,7 @@ const ORDERS = [
   ["SO-26-11848", "2026-10-07T08:30", "RBM-C-10021", "BHC-PO-2026-1219", "Al Quoz Logistics Park — Warehouse W5", "Plot 368-1143, Al Quoz Industrial 4", "Al Quoz Industrial 4, Dubai", DXB, "JA", "2026-10-19T07:00", "2026-10-19", [l("CEM-OPC-50", 2400, 16.2), l("TIL-CER-3060", 600, 28.6)], "open", ""],
   ["SO-26-11850", "2026-10-07T10:05", "RBM-C-10167", "HRM-PO-0388", "Marina Quarter Residences Tower C — washrooms L5–L12", "Marina Quarter Residences, Tower C service gate", "MN-08 Marina Quarter", MQ, "MN05", "2026-10-18T08:00", "2026-10-18", [l("SAN-WC-WH", 64, 1215)], "open", "Customer wants delivery while installers are on site."],
   ["SO-26-11853", "2026-10-07T13:22", "RBM-C-10052", "AME-PO-26-0618", "Al Waha Gardens — boundary walls & majlis", "Plots MN-04-117-0021 to 0034", "MN-04 Al Waha Gardens", OTHER, "MN05", "2026-10-15T07:00", "2026-10-15", [l("CEM-SRC-50", 800, 18.95), l("TIL-CER-3060", 240, 29.4)], "open", ""],
-  ["SO-26-11856", "2026-10-07T16:40", "RBM-C-10126", "NAS-0710", "Al Warqa — G+1 villa (plot 412-0388)", "Plot 412-0388, Al Warqa 4", "Al Warqa, Dubai", DXB, "JA", "2026-10-14T07:00", "2026-10-14", [l("BLK-HOL-20", 5400, 4.15), l("CEM-OPC-50", 300, 17.6)], "credit_hold", "Auto credit hold. Overdue AED 52,300 (31–60 days)."],
+  ["SO-26-11856", "2026-10-07T16:40", "RBM-C-10126", "NAS-0710", "Al Warqa — G+1 villa (plot 412-0388)", "Plot 412-0388, Al Warqa 4", "Al Warqa, Dubai", DXB, "JA", "2026-10-13T07:00", "2026-10-13", [l("BLK-HOL-20", 5400, 4.15), l("CEM-OPC-50", 300, 17.6)], "credit_hold", "Auto credit hold. Overdue AED 52,300 (31–60 days)."],
   ["SO-26-11859", "2026-10-08T08:10", "RBM-C-10118", "CMW/PO/2026/0351", "Marina Quarter — pontoon abutments", "Marina Quarter breakwater, gate 2", "MN-08 Marina Quarter", MQ, "MN05", "2026-10-20T09:30", "2026-10-20", [l("CEM-SRC-50", 900, 19.3)], "open", ""],
   ["SO-26-11861", "2026-10-08T09:35", "RBM-C-10152", "BAR-2610", "Al Murjan — citizens' villa extension", "Plot MN-02-044-0016, Al Murjan", "MN-02 Al Murjan", OTHER, "MN05", "2026-10-14T07:00", "2026-10-14", [l("RB-B500-16", 14, 2790), l("CEM-OPC-50", 240, 17.6)], "open", "Ground-floor slab pour planned Thu 15 Oct."],
   ["SO-26-11864", "2026-10-08T11:50", "RBM-C-10242", "SAND/PO/26/0447", "Marsa Al Noor Ring Road — Package 2 headwalls", "Ring Road Package 2, chainage 4+300", "MN-05 Ras Al Marsa Industrial", OTHER, "MN05", "2026-10-16T07:00", "2026-10-16", [l("RB-B500-25", 20, 2775), l("CEM-SRC-50", 1200, 19.1)], "open", ""],
@@ -97,7 +97,7 @@ const ORDERS = [
 
 const CITY_CENTRE = new Set(["Business Bay, Dubai"]);
 const GATE_PERMITS = {
-  "SO-26-11806": { ref: "MQP-GP-26-18842", date: "2026-10-12", bookedOn: "2026-10-08" },
+  "SO-26-11806": { ref: "MQP-GP-26-18837", date: "2026-10-12", bookedOn: "2026-10-07" },
   "SO-26-11842": { ref: "MQP-GP-26-18842", date: "2026-10-12", bookedOn: "2026-10-08" },
 };
 
@@ -127,11 +127,12 @@ const orders = ORDERS.map(([id, createdAt, customerId, customerPo, project, site
   };
 });
 
-// Gulf Crest's site engineer is the WhatsApp contact for the Tower A site.
+// Gulf Crest's project director sends the Tower A call-offs by WhatsApp (contacts aligned with solution 08).
 orders.find((o) => o.id === "SO-26-11842").siteContact = {
-  name: "Eng. Saif Al Mheiri",
-  role: "Site Engineer, Tower A",
-  mobile: "+971 50 912 4471",
+  name: "Eng. Sultan Al Mehairi",
+  role: "Project Director, Marina Quarter Towers",
+  email: "sultan.almehairi@gulfcrest.ae",
+  mobile: "+971 50 128 4406",
   channel: "whatsapp",
 };
 
@@ -322,20 +323,20 @@ const exceptionHistory = effort.map((mins, i) => {
 const customerDocs = [
   {
     id: "DOC-GCB-WA-1010",
-    title: { en: "WhatsApp — Gulf Crest site engineer (Tower A)", ar: "واتساب — مهندس موقع جلف كريست (البرج A)" },
+    title: { en: "WhatsApp — Gulf Crest project director (Tower A)", ar: "واتساب — مدير مشاريع جلف كريست (البرج A)" },
     channel: "whatsapp",
     lang: "mixed",
-    from: "Eng. Saif Al Mheiri, Site Engineer — Gulf Crest Builders",
+    from: "Eng. Sultan Al Mehairi, Project Director Marina Quarter Towers — Gulf Crest Builders",
     receivedAt: "2026-10-10T18:50:00+04:00",
     orderHint: "SO-26-11842",
     text: [
-      "[10/10/2026, 6:42 PM] Saif Al Mheiri - GCB Site: السلام عليكم رانيا",
-      "[10/10/2026, 6:43 PM] Saif Al Mheiri - GCB Site: بخصوص الطلبية SO 11842 حق تاور A .. الكونسلتنت قدم صبة البوديوم L2 ليوم الثلاثاء الصبح، فنبا الحديد 16mm يوصلنا باجر الأحد الساعة 7 الصبح لو سمحتي",
-      "[10/10/2026, 6:44 PM] Saif Al Mheiri - GCB Site: واذا الأحد ما يمديكم خلوها الاثنين 9:30 بالكثير، الحدادين جاهزين من الصبح",
-      "[10/10/2026, 6:46 PM] Saif Al Mheiri - GCB Site: ادري ان صحارى عندهم صيانة .. اذا ما عندكم ال120 طن كاملة ارسلوا اللي عندكم الاثنين بس مب اقل من 60 طن عشان نخلص L2، والباقي قبل 22 اكتوبر ok",
-      "[10/10/2026, 6:47 PM] Saif Al Mheiri - GCB Site: وزيدوا على نفس الطلبية 6 طن 12mm حق الستارتر بارز",
-      "[10/10/2026, 6:49 PM] Saif Al Mheiri - GCB Site: and pls the invoice as per our PO price 2,690/t as agreed with Ahmed before .. procurment will not aprove any other price",
-      "[10/10/2026, 6:50 PM] Saif Al Mheiri - GCB Site: gate permit for monday already with us MQP-GP-26-18842, any change coordinate with me 050 912 4471 مشكورة",
+      "[10/10/2026, 6:42 PM] Sultan Al Mehairi - GCB: السلام عليكم رانيا",
+      "[10/10/2026, 6:43 PM] Sultan Al Mehairi - GCB: بخصوص الطلبية SO 11842 حق تاور A .. الكونسلتنت قدم صبة البوديوم L2 ليوم الثلاثاء الصبح، فنبا الحديد 16mm يوصلنا باجر الأحد الساعة 7 الصبح لو سمحتي",
+      "[10/10/2026, 6:44 PM] Sultan Al Mehairi - GCB: واذا الأحد ما يمديكم خلوها الاثنين 9:30 بالكثير، الحدادين جاهزين من الصبح",
+      "[10/10/2026, 6:46 PM] Sultan Al Mehairi - GCB: ادري ان صحارى عندهم صيانة .. اذا ما عندكم ال120 طن كاملة ارسلوا اللي عندكم الاثنين بس مب اقل من 60 طن عشان نخلص L2، والباقي قبل 22 اكتوبر ok",
+      "[10/10/2026, 6:47 PM] Sultan Al Mehairi - GCB: وزيدوا على نفس الطلبية 6 طن 12mm حق الستارتر بارز",
+      "[10/10/2026, 6:49 PM] Sultan Al Mehairi - GCB: and pls the invoice as per our PO price 2,690/t as agreed with Ahmed before .. procurment will not aprove any other price",
+      "[10/10/2026, 6:50 PM] Sultan Al Mehairi - GCB: gate permit for monday already with us MQP-GP-26-18842, any change coordinate with me 050 128 4406 مشكورة",
     ].join("\n"),
   },
   {
@@ -454,15 +455,38 @@ const auditSeed = [
   A(6, "2026-10-01T09:30:00+04:00", fadi, "Changed key account manager", "Gulf Crest Builders LLC (RBM-C-10034)", "Ahmed Soliman → Rania Mansour (handover of open orders and opportunity OPP-2026-0418)."),
   A(7, "2026-10-02T13:55:00+04:00", nadia, "Sent overdue reminder", "Gulf Crest Builders LLC", "Overdue AED 148,320 (31–60 days). Reminder +21 days per RBM-FIN-POL-04."),
   A(8, "2026-10-05T07:45:00+04:00", erp, "Applied allocation rule", "RB-B500-16 / RB-B500-20", "Sahara shutdown started — available-to-promise switched to order-by-order allocation by promise date."),
-  A(9, "2026-10-06T10:41:00+04:00", erp, "Placed order on automatic credit hold", "SO-26-11842", "Exposure AED 2,109,582 vs limit AED 2,000,000 (AR + open orders incl. 5% VAT)."),
+  A(9, "2026-10-06T10:41:00+04:00", erp, "Placed order on automatic credit hold", "SO-26-11842", "Exposure AED 2,102,350 vs limit AED 2,000,000 (AR AED 1,763,410 + this order AED 338,940 incl. 5% VAT)."),
   A(10, "2026-10-06T10:44:00+04:00", rania, "Entered sales order", "SO-26-11842", "Gulf Crest — RB-B500-16 120 t at customer PO price AED 2,690/t; requested Mon 12 Oct 07:00."),
   A(11, "2026-10-07T16:44:00+04:00", erp, "Placed order on automatic credit hold", "SO-26-11856", "Najm Al Sahil — exposure AED 271,035 vs limit AED 250,000."),
-  A(12, "2026-10-08T08:52:00+04:00", marwan, "Booked gate permit", "MQP-GP-26-18842", "Marina Quarter Properties — Tower A gate 3, Mon 12 Oct (SO-26-11806 / SO-26-11842)."),
+  A(12, "2026-10-08T08:52:00+04:00", marwan, "Booked gate permit", "MQP-GP-26-18842", "Marina Quarter Properties — Tower A gate 3, Mon 12 Oct (SO-26-11842)."),
   A(13, "2026-10-08T16:06:00+04:00", erp, "Placed order on automatic credit hold", "SO-26-11869", "Saqr Al Noor — exposure AED 762,995 vs limit AED 750,000."),
   A(14, "2026-10-09T10:15:00+04:00", rania, "Requested stock check", "SO-26-11842", "Only 64 t RB-B500-16 available to promise at MN-05 after earlier orders; JA free stock 38 t."),
   A(15, "2026-10-09T12:30:00+04:00", agent, "Ran exception sweep", "Open sales orders (40)", "Nightly check: stock, contract price, site window and credit exposure."),
-  A(16, "2026-10-09T17:20:00+04:00", nadia, "Requested payment commitment", "Gulf Crest Builders LLC", "Asked GCB for dated payment of AED 148,320 before any temporary release."),
+  A(16, "2026-10-08T11:05:00+04:00", nadia, "Requested payment commitment", "Gulf Crest Builders LLC", "Asked GCB for a dated payment covering the overdue AED 148,320 before any temporary release."),
+  A(17, "2026-10-09T17:20:00+04:00", nadia, "Recorded payment commitment", "Gulf Crest Builders LLC — PC-26-0187", "Faris Al Kindi (Finance Manager, GCB) committed AED 412,000 by transfer on Thu 15 Oct 2026 — covers the overdue AED 148,320 and invoices due by 15 Oct."),
 ];
+
+/* ───────────── Payment commitments recorded by Credit Control ───────────── */
+const paymentCommitments = {
+  asOf: "2026-10-09",
+  source: "Group Finance — Credit Control (RBM-FIN-POL-04: dated payment commitment required before a temporary release)",
+  items: [
+    {
+      id: "PC-26-0187",
+      customerId: "RBM-C-10034",
+      amount: 412000,
+      date: "2026-10-15",
+      method: "Bank transfer",
+      committedBy: "Faris Al Kindi",
+      role: "Finance Manager, Gulf Crest Builders LLC",
+      email: "faris.alkindi@gulfcrest.ae",
+      mobile: "+971 50 662 1953",
+      recordedOn: "2026-10-09",
+      recordedBy: "Nadia Rahimi",
+      note: "Covers the overdue AED 148,320 (31–60 days) and invoices falling due by 15 Oct 2026.",
+    },
+  ],
+};
 
 /* ───────────── Consistency checks ───────────── */
 const VAT = master.vatRate;
@@ -526,5 +550,6 @@ w("delivery-history.json", { period: "2026-08-01/2026-09-30", definition: "Order
 w("exception-history.json", { period: "2026-08-01/2026-09-30", note: "Resolved order exceptions — effortMinutes is hands-on time logged by planners (manual process).", items: exceptionHistory });
 w("customer-docs.json", customerDocs);
 w("audit-seed.json", auditSeed);
+w("payment-commitments.json", paymentCommitments);
 console.log(warnings.join("\n"));
 console.log(`orders: ${orders.length}`);

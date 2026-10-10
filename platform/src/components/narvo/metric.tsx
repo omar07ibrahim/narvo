@@ -3,7 +3,7 @@
 import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { useL } from "@/lib/i18n";
+import { useL, usePrefs } from "@/lib/i18n";
 import type { Measure } from "@/lib/solutions/registry";
 
 export function MetricTile({
@@ -58,15 +58,20 @@ export function MetricTile({
 /** Catalogue "Measures to agree" — baseline vs. pilot target. */
 export function MeasureStrip({ measures, className }: { measures: Measure[]; className?: string }) {
   const L = useL();
+  const { lang } = usePrefs();
   return (
     <div className={cn("grid grid-cols-3 divide-x divide-border overflow-hidden rounded-lg border border-border bg-card rtl:divide-x-reverse max-md:grid-cols-1 max-md:divide-x-0 max-md:divide-y", className)}>
       {measures.map((m) => (
         <div key={m.label.en} className="px-4 py-3">
           <div className="label-caps">{L(m.label)}</div>
           <div className="mt-1.5 flex items-baseline gap-2">
-            <span className="num text-[13px] text-muted-foreground line-through decoration-faint/60">{m.baseline}</span>
-            <span className="text-faint">→</span>
-            <span className="num text-[17px] font-light tracking-tight">{m.target}</span>
+            <span dir="ltr" className="num text-[13px] text-muted-foreground line-through decoration-faint/60">
+              {m.baseline}
+            </span>
+            <span className="text-faint">{lang === "ar" ? "←" : "→"}</span>
+            <span dir="ltr" className="num text-[17px] font-light tracking-tight">
+              {m.target}
+            </span>
           </div>
         </div>
       ))}

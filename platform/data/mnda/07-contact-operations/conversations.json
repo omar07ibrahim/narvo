@@ -1,0 +1,2510 @@
+[
+  {
+    "id": "CNV-2610-0104",
+    "startedAt": "2026-10-05T07:36:00+04:00",
+    "channel": "email",
+    "language": "en",
+    "customerId": "CUS-292318",
+    "intent": "complaint",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 214,
+    "csat": null,
+    "sentiment": "negative",
+    "summary": "Customer complained about concrete pouring at 05:40 on a Saturday opposite her house in Al Ghaf; complaint logged for Field Operations & Inspection.",
+    "actions": [
+      "Logged complaint CHC-2026-118191 (Construction noise) — Field Operations & Inspection, SLA 2 working days"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "Subject: Construction noise at 5:40am - Al Ghaf\n\nGood morning, I want to complain about the construction site opposite my house (Street 21, Al Ghaf). On Saturday 3 Oct they started a concrete pour at 5:40am with a pump and 4 mixers, and last Thursday they were working after 10pm. My kids couldnt sleep. Aren't there permitted hours?? Please do something.\nFatima Al Ali\n055 471 9028"
+      },
+      {
+        "role": "assistant",
+        "text": "Dear Ms Fatima,\n\nThank you for contacting the Marsa Al Noor Development Authority, and we are sorry for the disturbance to your family. Your complaint has been registered as CHC-2026-118191 and assigned to the Field Operations & Inspection Department, which will respond within 2 working days (by 7 October 2026). An inspector will check the site's permitted working hours and act on any works carried out outside them.\n\nYou can follow the complaint in MNDA Smart → My Requests, or reply to this email quoting the reference.\n\nKind regards,\nMNDA Virtual Assistant — Customer Happiness Centre\n(This reply was prepared by MNDA's AI assistant. Reply 'agent' to reach a member of staff.)"
+      },
+      {
+        "role": "customer",
+        "text": "Thanks. Will someone tell me what they find? Its the site with the blue hoarding, there is no project board on it which is also strange"
+      },
+      {
+        "role": "assistant",
+        "text": "Dear Ms Fatima,\n\nYes — the inspector's findings and any action taken will be sent to you by email under CHC-2026-118191. I have added your note about the blue hoarding and the missing project board to the complaint, as a project board is required on every permitted site.\n\nKind regards,\nMNDA Virtual Assistant — Customer Happiness Centre"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0107",
+    "startedAt": "2026-10-05T07:46:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-233049",
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 268,
+    "csat": 2,
+    "sentiment": "negative",
+    "summary": "Applicant frustrated at being asked again for the family book; told the children's pages are missing, deadline 20 Oct, and how to upload in MNDA Smart.",
+    "actions": [
+      "Added note to MNDA-HG-2026-004733: customer will upload children's family book pages via MNDA Smart today"
+    ],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم ابا اعرف شو صار على طلب الاسكان انا رافع خلاصة القيد من زمان وكل مرة يقولون ناقص"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. أرى أنك تتصل من رقمك المسجّل لدينا. للتحقق من هويتك، يُرجى ذكر آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "ثمانية اثنين خمسة اربعة صفر"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. طلبك رقم MNDA-HG-2026-004733 بحالة «غير مكتمل — بانتظار المتعامل». المطلوب نسخة كاملة من خلاصة القيد تشمل صفحات الأبناء، إذ إن النسخة المرفوعة تتضمن صفحة رب الأسرة والزوجة فقط. آخر موعد للاستيفاء 20 أكتوبر 2026."
+      },
+      {
+        "role": "customer",
+        "text": "يعني الحين لازم اروح المركز مرة ثانية؟ انا ما لحقت على الموعد يوم الجمعة... والله تعبت من هالسالفة"
+      },
+      {
+        "role": "assistant",
+        "text": "نعتذر عن الإزعاج. لا حاجة لزيارة المركز: يمكنك تصوير جميع صفحات خلاصة القيد ورفعها عبر تطبيق MNDA Smart ← طلباتي ← رفع المستندات الناقصة. وإن فضّلت الحضور، يمكنني حجز موعد لك."
+      },
+      {
+        "role": "customer",
+        "text": "خلاص برفعها من التطبيق الليلة. بس لو سمحت قول لهم يشوفونها بسرعة"
+      },
+      {
+        "role": "assistant",
+        "text": "أضفت ملاحظة على طلبك بأنك سترفع الصفحات اليوم. يُستأنف احتساب مدة الإنجاز (12 يوم عمل) فور اكتمال الملف. هل من شيء آخر؟"
+      },
+      {
+        "role": "customer",
+        "text": "لا مشكور"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0109",
+    "startedAt": "2026-10-05T07:58:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-219460",
+    "intent": "maintenance",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 197,
+    "csat": 5,
+    "sentiment": "neutral",
+    "summary": "Customer reported a deep unmarked pothole on Al Murjan Street 4 that burst a neighbour's tyre; maintenance request logged with high priority.",
+    "actions": [
+      "Logged maintenance request CHC-2026-118187 (Road & pavement), priority high — Field Operations & Inspection"
+    ],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم ابا ابلغ عن حفرة في الشارع شارع اربعة في المرجان قبل دوار المسجد. سيارة جاري انفجر التاير مالها امس"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام، سلامات. هل يمكنك تحديد موقع الحفرة بدقة، مثلاً في أي حارة وكم تبعد عن الدوار؟ وهل توجد عندها أي إشارة تحذيرية حالياً؟"
+      },
+      {
+        "role": "customer",
+        "text": "الحارة اليمين تقريبا اربعين متر قبل الدوار. لا ما عليها شي بالليل ما تبين ابد"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً. سجّلت طلب صيانة برقم CHC-2026-118187 (طرق وأرصفة) بأولوية عالية نظراً للخطورة، وأُحيل إلى إدارة العمليات الميدانية والتفتيش. مدة الإنجاز 3 أيام عمل كحد أقصى، وسيُطلب وضع حواجز تحذيرية في أقرب وقت. ستصلك رسالة نصية بأي تحديث."
+      },
+      {
+        "role": "customer",
+        "text": "زين مشكور"
+      },
+      {
+        "role": "assistant",
+        "text": "العفو، ونتمنى السلامة لجارك. هل تحتاج إلى شيء آخر؟"
+      },
+      {
+        "role": "customer",
+        "text": "لا تسلم"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0118",
+    "startedAt": "2026-10-05T08:52:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-287406",
+    "intent": "documents",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 231,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Prospective applicant asked where to get the Certificate of No Property Ownership; told it comes from the Land Registry (valid 60 days) or can be retrieved by the officer with her consent.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "مرحبا انا بقدم على منحة سكنية يوم الاربعاء في مركز المرجان وقالوا لي لازم شهادة عدم ملكية. من وين اطلعها؟"
+      },
+      {
+        "role": "assistant",
+        "text": "أهلاً بك. شهادة عدم ملكية العقار مطلوبة وفق التعميم رقم 9/2026 (البند 4.5)، وتصدر عن سجل الأراضي في مرسى النور، ويجب أن تكون صادرة خلال آخر 60 يوماً. ولديك خيار آخر: أن تمنحي موافقتك في نموذج الطلب ليستخرجها موظف الحالة مباشرة من سجل الأراضي، وعندها لا يلزم إرفاقها (البند 6.3)."
+      },
+      {
+        "role": "customer",
+        "text": "يعني اذا وافقت ما يحتاج اروح سجل الاراضي؟"
+      },
+      {
+        "role": "assistant",
+        "text": "صحيح. أما إن رغبتِ في استخراجها بنفسك، فيمكن طلبها من سجل الأراضي، مع التأكد من أن تاريخها لا يتجاوز 60 يوماً عند تقديم الطلب."
+      },
+      {
+        "role": "customer",
+        "text": "لا انا بطلعها بنفسي احسن، ابا اقدم الملف كامل. ومشكورة"
+      },
+      {
+        "role": "assistant",
+        "text": "بالتوفيق. للتذكير، يُرجى إحضار هوية الزوج أيضاً، ونسخة كاملة من خلاصة القيد تشمل صفحات الأبناء، وشهادة راتب صادرة خلال آخر 30 يوماً لكل من يعمل من الزوجين."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0126",
+    "startedAt": "2026-10-05T09:31:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-162580",
+    "intent": "appointment",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 174,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Approved loan applicant booked an appointment at Downtown to sign the housing loan agreement.",
+    "actions": [
+      "Booked APT-26-40719 at Downtown, 14 Oct 09:00 (loan agreement signing)"
+    ],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم وصلني مسج ان القرض انوافق عليه الحمدلله وقالوا احجز موعد لتوقيع الاتفاقية"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام، مبارك. للتحقق من هويتك، يُرجى ذكر رقم الطلب وتاريخ ميلادك."
+      },
+      {
+        "role": "customer",
+        "text": "الطلب MNDA HG 2026 004655 ومواليد ثمانية خمسة اربعة وثمانين"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. تمت الموافقة على قرضك بتاريخ 1 أكتوبر 2026. أقرب المواعيد المتاحة لتوقيع الاتفاقية: مركز وسط المدينة الأربعاء 14 أكتوبر الساعة 9:00 أو 11:30، أو مركز الواحة الخميس 15 أكتوبر الساعة 8:30. أيها يناسبك؟"
+      },
+      {
+        "role": "customer",
+        "text": "وسط المدينة الساعة تسع"
+      },
+      {
+        "role": "assistant",
+        "text": "تم الحجز: الموعد رقم APT-26-40719 في مركز إسعاد المتعاملين — وسط المدينة (برج الهيئة، الطابق الأرضي، شارع الكورنيش) يوم الأربعاء 14 أكتوبر 2026 الساعة 9:00 صباحاً. يُرجى إحضار بطاقة الهوية الأصلية. ستصلك رسالة تأكيد."
+      },
+      {
+        "role": "customer",
+        "text": "تمام يزاك الله خير"
+      },
+      {
+        "role": "assistant",
+        "text": "وإياك، ومبارك مرة أخرى."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0131",
+    "startedAt": "2026-10-05T10:37:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-226584",
+    "intent": "documents",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 312,
+    "csat": 2,
+    "sentiment": "negative",
+    "summary": "Applicant asked why his salary certificate dated 19 Aug was rejected; told it was 38 days old at submission and the limit is now 30 days, deadline 20 Oct.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم وصلتني رسالة ان طلبي ناقص شهادة راتب. انا رافع شهادة الراتب! ليش ترفضونها؟"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. أرى أنك تتصل من رقمك المسجّل. للتحقق، يُرجى ذكر آخر خمسة أرقام من رقم هويتك الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "صفر ثلاثة تسعة ثمانية اثنين"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. طلبك MNDA-HG-2026-004987 قُدِّم في 26 سبتمبر، وشهادة الراتب المرفقة مؤرخة في 19 أغسطس 2026، أي أن عمرها كان 38 يوماً عند التقديم. وفق التعميم رقم 9/2026 (البند 4.4) يجب أن تكون شهادة الراتب صادرة خلال آخر 30 يوماً، وتُعامَل الشهادة الأقدم معاملة المستند الناقص (البند 6.1)."
+      },
+      {
+        "role": "customer",
+        "text": "ثلاثين يوم؟ قبل كانت ثلاث شهور! محد قال لنا"
+      },
+      {
+        "role": "assistant",
+        "text": "صحيح، كانت المدة 90 يوماً وخُفِّضت إلى 30 يوماً لجميع الطلبات المقدمة منذ 1 سبتمبر 2026، حتى يعكس الدخل المصرّح به الوضع الحالي للأسرة. لديك مهلة حتى 20 أكتوبر 2026 لرفع شهادة جديدة عبر MNDA Smart ← طلباتي ← رفع المستندات الناقصة."
+      },
+      {
+        "role": "customer",
+        "text": "الـ HR عندنا ياخذون اسبوع... ان شاء الله. خلاص"
+      },
+      {
+        "role": "assistant",
+        "text": "إن شاء الله. فور رفع الشهادة يُستأنف احتساب مدة الإنجاز. هل أستطيع مساعدتك في شيء آخر؟"
+      },
+      {
+        "role": "customer",
+        "text": "لا"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0139",
+    "startedAt": "2026-10-05T11:06:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-318862",
+    "intent": "permit_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 356,
+    "csat": 3,
+    "sentiment": "neutral",
+    "summary": "Owner checked three permits: two awaiting master-developer NOCs (Lulu Island since 18 Sep, Al Sidr since 28 Sep) and one returned for unstamped structural calculations.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم عندي ثلاث طلبات رخص بناء ابا اعرف وين وصلت"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. رقمك مسجّل لدينا. للتحقق، يُرجى ذكر رقم أحد الطلبات وتاريخ ميلادك."
+      },
+      {
+        "role": "customer",
+        "text": "واحد منهم صفر واحد تسعة ثلاثة اثنين ومواليد واحد وعشرين عشرة تسعة وسبعين"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. لديك ثلاثة طلبات: الأول MNDA-BP-2026-01932 في جزيرة اللؤلؤ، بانتظار شهادة عدم ممانعة المطور الرئيسي Lulu Island Developments منذ 18 سبتمبر. الثاني MNDA-BP-2026-02031 في السدر السكنية، بانتظار شهادة عدم ممانعة Sidr Communities منذ 28 سبتمبر. الثالث MNDA-BP-2026-01861 في جزيرة اللؤلؤ، أُعيد إليكم في 1 أكتوبر لأن الحسابات الإنشائية غير مختومة إلا في الصفحة الأولى."
+      },
+      {
+        "role": "customer",
+        "text": "ليش اللؤلؤ كل هالتأخير؟ المطور يقول ارسلنا لكم"
+      },
+      {
+        "role": "assistant",
+        "text": "وفق التعميم رقم 14/2026، يصدر المطور الرئيسي شهادة عدم الممانعة للاستشاري، ثم يرفعها الاستشاري على الطلب. حتى اليوم لم تُرفع أي شهادة على الطلب 01932. يُطلب من المطورين إصدارها خلال 7 أيام عمل، ويمكن إبقاء الطلب في هذه الحالة حتى 20 يوم عمل مع إيقاف احتساب مدة الخدمة. أنصح بأن يتابع الاستشاري مع قسم شهادات عدم الممانعة لدى المطور ويتأكد من وصول الشهادة إليه."
+      },
+      {
+        "role": "customer",
+        "text": "زين. والثالث الختم هذا شغل الاستشاري؟"
+      },
+      {
+        "role": "assistant",
+        "text": "نعم. المطلوب رفع تقرير الحسابات الإنشائية مختوماً وموقّعاً من مهندس إنشائي مسجّل في جميع الصفحات، ثم إعادة التقديم دون رسوم جديدة. وشهادة عدم الممانعة الخاصة بهذا الطلب سارية حتى 22 ديسمبر 2026."
+      },
+      {
+        "role": "customer",
+        "text": "تمام بكلم راجيش. مشكور"
+      },
+      {
+        "role": "assistant",
+        "text": "العفو، يومك سعيد."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0144",
+    "startedAt": "2026-10-05T12:44:00+04:00",
+    "channel": "phone",
+    "language": "en",
+    "customerId": "CUS-198334",
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 162,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Loan applicant checked status (under review, income verification) and confirmed her stamped 6-month bank statement was accepted.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "Welcome to the Marsa Al Noor Development Authority. I'm the virtual assistant. How can I help you today?"
+      },
+      {
+        "role": "customer",
+        "text": "hi I want to check my housing loan application please"
+      },
+      {
+        "role": "assistant",
+        "text": "Of course. I can see you're calling from your registered number. To verify your identity, please tell me the last five digits of your Emirates ID."
+      },
+      {
+        "role": "customer",
+        "text": "two zero six eight one"
+      },
+      {
+        "role": "assistant",
+        "text": "Thank you, you're verified. Your loan application MNDA-HG-2026-004902 is Under review: the file is complete and your case officer is verifying your income. No documents are outstanding."
+      },
+      {
+        "role": "customer",
+        "text": "ok good. I uploaded the bank statement as a PDF from the bank app but it has the stamp on it, is that fine? my friend said hers got rejected"
+      },
+      {
+        "role": "assistant",
+        "text": "For the loan track, Circular 9/2026, section 4.6, requires a statement covering the last 6 months and stamped by the bank. Yours passed the completeness check, so there's nothing more to send. Statements without a bank stamp, or covering fewer than 6 months, are the ones usually returned."
+      },
+      {
+        "role": "customer",
+        "text": "great. and I have an appointment on thursday at downtown for this, do I still need it?"
+      },
+      {
+        "role": "assistant",
+        "text": "If it was only to submit the bank statement, you don't need it. You can cancel it in MNDA Smart under My Appointments, or I can cancel it for you now."
+      },
+      {
+        "role": "customer",
+        "text": "leave it for now I'll check with my husband. thanks"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0147",
+    "startedAt": "2026-10-05T13:40:00+04:00",
+    "channel": "phone",
+    "language": "mixed",
+    "customerId": "CUS-344871",
+    "intent": "permit_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 143,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Owner asked how to download his issued building permit with QR code for the contractor; guided to MNDA Smart and reminded of site registration.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم الرخصة مالتي طلعت الحمدلله بس المقاول يبا الـ permit مع الـ QR code من وين اطلعه"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام، مبارك. للتحقق، يُرجى ذكر رقم الطلب وتاريخ ميلادك."
+      },
+      {
+        "role": "customer",
+        "text": "MNDA BP 2026 01741 ومواليد اثنين ثلاثة ثمانين"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. صدرت رخصة البناء MNDA-BP-2026-01741 بتاريخ 30 سبتمبر 2026. يمكنك تنزيل الرخصة الرقمية مع رمز QR من تطبيق MNDA Smart ← رخصي ← عرض الرخصة ← تنزيل PDF، ومشاركتها مع المقاول مباشرة."
+      },
+      {
+        "role": "customer",
+        "text": "اوكي، وهل لازم يسوي شي قبل ما يبدا الشغل؟"
+      },
+      {
+        "role": "assistant",
+        "text": "نعم، يجب على المقاول تسجيل الموقع لدى إدارة العمليات الميدانية والتفتيش قبل بدء الأعمال، وتركيب لوحة المشروع وسياج الموقع."
+      },
+      {
+        "role": "customer",
+        "text": "تمام thank you"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0152",
+    "startedAt": "2026-10-05T14:11:00+04:00",
+    "channel": "phone",
+    "language": "en",
+    "customerId": "CUS-268825",
+    "intent": "documents",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 189,
+    "csat": 4,
+    "sentiment": "neutral",
+    "summary": "Loan applicant in Verification asked whether anything is missing from her bank statement review; told nothing is outstanding.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "Welcome to the Marsa Al Noor Development Authority. I'm the virtual assistant. How can I help you today?"
+      },
+      {
+        "role": "customer",
+        "text": "Hello, I got a message that my loan application is in verification and they are reviewing my bank statement. Is anything missing?"
+      },
+      {
+        "role": "assistant",
+        "text": "I can help with that. You're calling from your registered number; to complete verification, please tell me your case number and date of birth."
+      },
+      {
+        "role": "customer",
+        "text": "case zero zero four seven nine zero, born twenty fourth October ninety one"
+      },
+      {
+        "role": "assistant",
+        "text": "Thank you, you're verified. MNDA-HG-2026-004790 is in Verification. Your stamped 6-month bank statement (April to September 2026) was received and the case officer is reviewing it. Nothing is missing at this stage."
+      },
+      {
+        "role": "customer",
+        "text": "Ok. Does it matter that my salary goes to a different account than the one in the statement?"
+      },
+      {
+        "role": "assistant",
+        "text": "The circular doesn't specify which account, but the statement is used to confirm income and commitments for the loan instalment, which can't exceed 25% of household income. If the officer needs another statement, you'll receive one clarification listing everything required and you'll have 15 working days to respond."
+      },
+      {
+        "role": "customer",
+        "text": "it's the same bank actually, I just wanted to be sure. Thanks"
+      },
+      {
+        "role": "assistant",
+        "text": "You're welcome. You'll be notified by SMS as soon as the status changes."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0158",
+    "startedAt": "2026-10-05T16:22:00+04:00",
+    "channel": "whatsapp",
+    "language": "ar",
+    "customerId": "CUS-276051",
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 286,
+    "csat": null,
+    "sentiment": "neutral",
+    "summary": "Applicant asked what is missing; told the spouse's Emirates ID is required (Circular 9/2026, 4.2), deadline 22 Oct; card is being renewed.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "السلام عليكم ابا اعرف طلبي شو ناقصه، وصلني مسج غير مكتمل"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام، أهلاً بك. للتحقق من هويتك، يُرجى إرسال آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "01864"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. طلبك MNDA-HG-2026-005011 بحالة «غير مكتمل — بانتظار المتعامل». الناقص: بطاقة الهوية الإماراتية للزوجة (الوجهان)، وهي مطلوبة للمتقدمين المتزوجين وفق التعميم رقم 9/2026 (البند 4.2). آخر موعد للاستيفاء 22 أكتوبر 2026."
+      },
+      {
+        "role": "customer",
+        "text": "هويتها انتهت وجددناها الشهر اللي طاف، البطاقة الجديدة للحين ما وصلت مع البريد"
+      },
+      {
+        "role": "assistant",
+        "text": "يمكنك رفع صورة البطاقة الجديدة فور استلامها عبر MNDA Smart ← طلباتي ← رفع المستندات الناقصة، أو إحضارها إلى أي مركز لإسعاد المتعاملين. وإذا توقعت تأخرها إلى ما بعد الموعد النهائي، يُرجى التواصل معنا قبل 22 أكتوبر."
+      },
+      {
+        "role": "customer",
+        "text": "ان شاء الله توصل هالاسبوع. مشكور"
+      },
+      {
+        "role": "assistant",
+        "text": "العفو، بالتوفيق."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0166",
+    "startedAt": "2026-10-05T19:40:00+04:00",
+    "channel": "whatsapp",
+    "language": "ar",
+    "customerId": null,
+    "intent": "appointment",
+    "handledBy": "ai",
+    "outcome": "abandoned",
+    "durationSec": 341,
+    "csat": null,
+    "sentiment": "negative",
+    "summary": "Unregistered number asked for an Al Waha appointment this week; none available until 13 Oct, offered Al Murjan or Downtown; customer did not reply.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "مساء الخير، ابا موعد في مركز الواحة هالاسبوع لو سمحت عشان اسلم اوراق"
+      },
+      {
+        "role": "assistant",
+        "text": "مساء النور، أهلاً بك. للأسف لا توجد مواعيد متاحة في مركز الواحة حتى نهاية هذا الأسبوع. أقرب موعد هناك يوم الثلاثاء 13 أكتوبر الساعة 8:30 صباحاً. وتتوفر مواعيد هذا الأسبوع في مركز المرجان يوم الأربعاء 7 أكتوبر الساعة 9:30، أو مركز وسط المدينة يوم الخميس 8 أكتوبر الساعة 12:00. أيها يناسبك؟"
+      },
+      {
+        "role": "customer",
+        "text": "المرجان بعيد علي. ليش الواحة ما فيها؟ كل مرة نفس الشي"
+      },
+      {
+        "role": "assistant",
+        "text": "نعتذر، الطلب على مركز الواحة مرتفع هذه الفترة. يمكنك أيضاً الحضور دون موعد، ويُخدَم الحضور المباشر بعد أصحاب المواعيد. ولحجز موعد 13 أكتوبر، يُرجى تزويدي بالاسم الكامل ورقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "خلني اشوف وارد عليك"
+      },
+      {
+        "role": "assistant",
+        "text": "على راحتك. سيبقى الموعد متاحاً للحجز حتى يحجزه متعامل آخر. يمكنك الرد على هذه المحادثة في أي وقت."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0171",
+    "startedAt": "2026-10-06T07:52:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": null,
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "abandoned",
+    "durationSec": 96,
+    "csat": null,
+    "sentiment": "negative",
+    "summary": "Caller from an unregistered work phone asked about a housing application but could not provide two verification factors; assistant declined to disclose details and offered SMS status link; caller hung up.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم ابا اعرف شو صار على طلبي طلب منحة سكنية"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. الرقم الذي تتصل منه غير مسجّل لدينا، لذلك أحتاج إلى عاملَي تحقق: رقم الهوية الإماراتية كاملاً، ورقم الطلب مع تاريخ الميلاد."
+      },
+      {
+        "role": "customer",
+        "text": "انا متصل من تلفون الدوام. رقم الطلب ما اذكره كامل والهوية مب معاي"
+      },
+      {
+        "role": "assistant",
+        "text": "أتفهم ذلك. حفاظاً على خصوصية بياناتك لا يمكنني الإفصاح عن تفاصيل الطلب قبل التحقق. يمكنك الاطلاع على الحالة في تطبيق MNDA Smart ← طلباتي، أو الاتصال بنا من رقمك المسجّل."
+      },
+      {
+        "role": "customer",
+        "text": "لا خلاص بتصل بعدين من تلفوني"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0176",
+    "startedAt": "2026-10-06T08:40:00+04:00",
+    "channel": "phone",
+    "language": "en",
+    "customerId": null,
+    "intent": "appointment",
+    "handledBy": "ai",
+    "outcome": "abandoned",
+    "durationSec": 118,
+    "csat": null,
+    "sentiment": "neutral",
+    "summary": "Unidentified caller wanted an Al Waha appointment this week; none available until 13 Oct; alternatives at Al Murjan and Downtown offered; call dropped.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "Welcome to the Marsa Al Noor Development Authority. I'm the virtual assistant. How can I help you today?"
+      },
+      {
+        "role": "customer",
+        "text": "hi I need an appointment at al waha centre this week to submit original documents"
+      },
+      {
+        "role": "assistant",
+        "text": "I can help with that. There are no slots left at the Al Waha centre this week; the next available ones there are Tuesday 13 October at 8:30 or 11:00. This week I can offer Al Murjan on Wednesday 7 October at 9:30 or 13:00, or Downtown on Thursday 8 October at 12:00. Which would you prefer?"
+      },
+      {
+        "role": "customer",
+        "text": "no it has to be al waha my file is there... ok wait let me check my calendar"
+      },
+      {
+        "role": "assistant",
+        "text": "Of course. Just so you know, documents can be submitted at any of the three centres — they are added to the same digital file."
+      },
+      {
+        "role": "customer",
+        "text": "sorry I'm driving I'll call back"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0180",
+    "startedAt": "2026-10-06T09:48:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-259713",
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 151,
+    "csat": 4,
+    "sentiment": "neutral",
+    "summary": "Grant applicant checked status; all checks passed and the file is with the Section Head for decision; reminded of her Al Waha appointment on 7 Oct.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "صباح الخير ابا اعرف وين وصل طلب المنحة"
+      },
+      {
+        "role": "assistant",
+        "text": "صباح النور. أرى أنك تتصلين من رقمك المسجّل. للتحقق، يُرجى ذكر آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "ثلاثة تسعة واحد سبعة خمسة"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. طلبك MNDA-HG-2026-004701 بحالة «بانتظار القرار»: اجتاز جميع عمليات التحقق وهو الآن لدى رئيسة قسم الطلبات السكنية لاتخاذ القرار. لا يُطلب منك أي مستند إضافي."
+      },
+      {
+        "role": "customer",
+        "text": "متى بيطلع القرار تقريبا؟ لي شهر انتظر"
+      },
+      {
+        "role": "assistant",
+        "text": "لا أستطيع تحديد تاريخ القرار، فهو يصدر عن رئيسة القسم، وستصلك رسالة نصية فور صدوره. ولديك موعد في مركز الواحة غداً الأربعاء 7 أكتوبر الساعة 12:30 إن رغبتِ في مناقشة الطلب مع الموظف."
+      },
+      {
+        "role": "customer",
+        "text": "زين مشكورة بمر عليهم باجر"
+      },
+      {
+        "role": "assistant",
+        "text": "العفو، بالتوفيق."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0184",
+    "startedAt": "2026-10-06T10:02:00+04:00",
+    "channel": "phone",
+    "language": "mixed",
+    "customerId": "CUS-349306",
+    "intent": "permit_status",
+    "handledBy": "ai_agent",
+    "outcome": "handoff_resolved",
+    "durationSec": 604,
+    "csat": 4,
+    "sentiment": "neutral",
+    "summary": "Owner did not understand the 'site plan revision mismatch' return; agent explained the affection plan moved from Rev B to Rev C (northern setback 4.5 m) and that resubmission is free.",
+    "actions": [
+      "Transferred to agent with summary",
+      "Agent explained required drawing revision; no fee on resubmission"
+    ],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم الرخصة مالي رجعوها وكاتبين site plan revision mismatch شو يعني هالكلام"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. رقمك مسجّل لدينا. للتحقق، يُرجى ذكر رقم الطلب وتاريخ ميلادك."
+      },
+      {
+        "role": "customer",
+        "text": "MNDA BP 2026 02062 مواليد تسعطعش ثمانية ستة وسبعين"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. أُعيد الطلب MNDA-BP-2026-02062 في 2 أكتوبر بسبب عدم تطابق نسخة مخطط الموقع: المخططات المقدّمة مبنية على مخطط الأرض (Affection Plan) النسخة B، بينما النسخة السارية في سجل الأراضي هي النسخة C الصادرة في 3 أغسطس 2026."
+      },
+      {
+        "role": "customer",
+        "text": "بس الاستشاري يقول عنده اخر نسخة. وانا ما فهمت ليش غيروا المخطط اصلا. ابا اكلم موظف"
+      },
+      {
+        "role": "assistant",
+        "text": "بالتأكيد، سأحوّلك الآن إلى أحد الموظفين مع ملخص المكالمة حتى لا تحتاج إلى إعادة الشرح."
+      },
+      {
+        "role": "agent",
+        "text": "صباح الخير أخوي إبراهيم، معك فيصل من مركز إسعاد المتعاملين. شفت الملخص. النسخة C من مخطط الأرض زادت الارتداد من الجهة الشمالية من 3 متر إلى 4.5 متر، فالمخططات لازم تتعدل على هالأساس. الاستشاري يقدر ينزل النسخة C من سجل الأراضي."
+      },
+      {
+        "role": "customer",
+        "text": "يعني لازم يغير التصميم؟ والرسوم ندفعها مرة ثانية؟"
+      },
+      {
+        "role": "agent",
+        "text": "يعدّل الجهة الشمالية بس حسب الارتداد الجديد، وإعادة التقديم بدون رسوم إضافية. وإذا يبا توضيح من سجل الأراضي عن سبب التعديل أرسل لك رقم التواصل."
+      },
+      {
+        "role": "customer",
+        "text": "تمام بكلم الاستشاري اليوم. مشكور فيصل"
+      },
+      {
+        "role": "agent",
+        "text": "العفو، وأي شي ثاني تواصل معنا."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0190",
+    "startedAt": "2026-10-06T11:41:00+04:00",
+    "channel": "whatsapp",
+    "language": "ar",
+    "customerId": "CUS-204817",
+    "intent": "complaint",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 522,
+    "csat": 2,
+    "sentiment": "negative",
+    "summary": "Applicant upset at being asked again for documents he had emailed; told the 12 Jul salary certificate is outside 30 days, emailed files are not attached to cases, and the no-property certificate can be retrieved with consent; complaint logged.",
+    "actions": [
+      "Logged complaint CHC-2026-118204 (Housing case handling), priority high — Housing & Community Services, call-back requested",
+      "Sent MNDA Smart upload and Land Registry consent steps"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "السلام عليكم. انا قدمت طلب المنحة من 21 سبتمبر ورسلت كل الاوراق، وبعدين رجعوا طلبوا شهادة الراتب مرة ثانية وشهادة عدم ملكية. انا رسلتهم على الايميل من زمان! كل مرة اتصل يقولون ناقص"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام، ونعتذر عن هذه التجربة. للتحقق من هويتك، يُرجى إرسال آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "74153"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. طلبك MNDA-HG-2026-004817 بحالة «غير مكتمل — بانتظار المتعامل» منذ 24 سبتمبر، وينقصه بندان:\n1) شهادة راتب صادرة خلال آخر 30 يوماً، إذ إن الشهادة المرفقة مؤرخة في 12 يوليو 2026 (التعميم رقم 9/2026، البند 4.4).\n2) شهادة عدم ملكية العقار، ويمكنك بدلاً من إرفاقها منح موافقتك ليستخرجها موظف الحالة من سجل الأراضي (البند 6.3).\nالمستندات المرسلة بالبريد الإلكتروني لا تُضاف إلى الطلب تلقائياً، ويجب رفعها عبر MNDA Smart ← طلباتي ← رفع المستندات الناقصة."
+      },
+      {
+        "role": "customer",
+        "text": "يعني الايميل اللي رسلته راح على الفاضي؟؟ محد قال لي. وشهادة الراتب اللي في يوليو هي اخر وحدة عطوني اياها الشركة. ليش ما قلتوا من البداية ان لازم 30 يوم"
+      },
+      {
+        "role": "assistant",
+        "text": "أتفهم انزعاجك تماماً. هل تودّ أن أسجّل شكوى رسمية بشأن طريقة التعامل مع طلبك، لتراجعها إدارة الإسكان وخدمات المجتمع وترد عليك خلال يومي عمل؟"
+      },
+      {
+        "role": "customer",
+        "text": "ايه سجلها. وابا حد يتصل فيني مب رسايل"
+      },
+      {
+        "role": "assistant",
+        "text": "تم تسجيل الشكوى برقم CHC-2026-118204 بأولوية عالية، مع طلب اتصال هاتفي من موظف الحالة. تنبيه مهم: آخر موعد لاستيفاء المستندات هو 15 أكتوبر 2026، وبعده يُغلق الطلب ويجوز إعادة تقديمه (البند 5.3). هل أرسل لك الآن خطوات رفع المستندات ومنح موافقة سجل الأراضي؟"
+      },
+      {
+        "role": "customer",
+        "text": "ارسلها"
+      },
+      {
+        "role": "assistant",
+        "text": "الخطوات:\n1) افتح MNDA Smart ← طلباتي ← MNDA-HG-2026-004817.\n2) اضغط «رفع المستندات الناقصة» وارفع شهادة راتب صادرة خلال آخر 30 يوماً.\n3) في بند شهادة عدم ملكية العقار اختر «أوافق على استخراجها من سجل الأراضي».\nسيصلك إشعار فور استلامها."
+      },
+      {
+        "role": "customer",
+        "text": "اوكي"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0193",
+    "startedAt": "2026-10-06T12:05:00+04:00",
+    "channel": "phone",
+    "language": "en",
+    "customerId": null,
+    "intent": "other",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 207,
+    "csat": null,
+    "sentiment": "positive",
+    "summary": "Caller asked about support for repairs to his elderly father's house; explained the Housing Maintenance Grant (MNDA-SVC-202), priority service for senior citizens, and sent the document checklist by SMS.",
+    "actions": [
+      "Sent SMS with MNDA-SVC-202 document checklist"
+    ],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "Welcome to the Marsa Al Noor Development Authority. I'm the virtual assistant. How can I help you today?"
+      },
+      {
+        "role": "customer",
+        "text": "Hi, my father's house in Al Murjan needs repairs, the roof leaks and the AC ducts are old. Is there any support from MNDA for this?"
+      },
+      {
+        "role": "assistant",
+        "text": "Yes. The Housing Maintenance Grant, service MNDA-SVC-202, supports UAE national families with maintenance of their existing home in Marsa Al Noor. There is no fee, and a decision is made within 15 working days. The owner applies through MNDA Smart or at any Customer Happiness Centre."
+      },
+      {
+        "role": "customer",
+        "text": "He's 74 and doesn't use the app. Can I apply for him?"
+      },
+      {
+        "role": "assistant",
+        "text": "You can accompany him to a centre, or apply on his behalf with a valid power of attorney. Senior citizens receive priority service at all three centres, so he won't need to wait in the queue. I can't access his details without his consent, but I can send you the document checklist by SMS."
+      },
+      {
+        "role": "customer",
+        "text": "yes please send it"
+      },
+      {
+        "role": "assistant",
+        "text": "Done — it has been sent to the number you're calling from. Is there anything else I can help with?"
+      },
+      {
+        "role": "customer",
+        "text": "no that's very helpful thanks"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0197",
+    "startedAt": "2026-10-06T13:12:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-309754",
+    "intent": "complaint",
+    "handledBy": "ai_agent",
+    "outcome": "handoff_resolved",
+    "durationSec": 788,
+    "csat": 3,
+    "sentiment": "negative",
+    "summary": "Owner complained that her Lulu Island permit has waited 14 working days for the master-developer NOC; agent logged a service-delay complaint for Planning & Building Permits and booked a completion-certificate appointment.",
+    "actions": [
+      "Transferred to agent with summary",
+      "Agent logged complaint CHC-2026-118236 (Service delay) — Planning & Building Permits",
+      "Agent booked APT-26-40871 at Downtown, 13 Oct 11:00"
+    ],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم ابا اسجل شكوى. طلب رخصة البناء مالي في جزيرة اللؤلؤ صار له اكثر من ثلاث اسابيع بانتظار عدم الممانعة"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. رقمك مسجّل لدينا. للتحقق، يُرجى ذكر رقم الطلب وتاريخ ميلادك."
+      },
+      {
+        "role": "customer",
+        "text": "MNDA BP 2026 01788 مواليد احدعش اربعة ثلاثة وثمانين"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. الطلب MNDA-BP-2026-01788 بحالة «بانتظار شهادة عدم ممانعة المطور الرئيسي» منذ 16 سبتمبر، أي 14 يوم عمل حتى اليوم، وكان الاستشاري قد طلب الشهادة من Lulu Island Developments في 10 سبتمبر. يتوقف احتساب مدة الخدمة خلال هذه الحالة، ويمكن إبقاء الطلب فيها حتى 20 يوم عمل (التعميم رقم 14/2026، البند 5.2)."
+      },
+      {
+        "role": "customer",
+        "text": "المطور يقول الموضوع عندكم والهيئة تقول عند المطور. المقاول واقف وانا ادفع ايجار. ابا اكلم موظف الحين"
+      },
+      {
+        "role": "assistant",
+        "text": "حاضر، أحوّلك الآن إلى أحد الموظفين مع ملخص كامل للمكالمة."
+      },
+      {
+        "role": "agent",
+        "text": "مساء الخير أستاذة ريم، معك أسماء من مركز إسعاد المتعاملين. اطلعت على الملخص ونعتذر عن التأخير. سجلت لج شكوى برقم CHC-2026-118236 وأحلتها لإدارة التخطيط ورخص البناء عشان يتواصلون مع المطور مباشرة، والرد خلال يومين عمل."
+      },
+      {
+        "role": "customer",
+        "text": "زين. وعندي بعد شهادة انجاز لمبنى في وسط المدينة، ابا موعد اسلم فيه الاوراق قبل التفتيش"
+      },
+      {
+        "role": "agent",
+        "text": "حجزت لج موعد في مركز وسط المدينة يوم الثلاثاء 13 أكتوبر الساعة 11:00 للطلب MNDA-BP-2026-02119، ورقم الموعد APT-26-40871. بتوصلج رسالة تأكيد."
+      },
+      {
+        "role": "customer",
+        "text": "مشكورة اسماء. بس الله يخليج تابعوا موضوع اللؤلؤ"
+      },
+      {
+        "role": "agent",
+        "text": "أكيد، وبيتصلون فيج أول ما يوصلنا رد من المطور."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0199",
+    "startedAt": "2026-10-06T13:55:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-314480",
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 133,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Applicant confirmed her grant application was received; under review since assignment on 5 Oct, no documents outstanding.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم ابا اتأكد ان طلبي وصل وشو حالته"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. رقمك مسجّل لدينا. للتحقق، يُرجى ذكر آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "تسعة اثنين ستة اربعة صفر"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. طلبك MNDA-HG-2026-005152 بحالة «قيد المراجعة»: أُسند إلى موظف حالة في 5 أكتوبر والتحقق من الأهلية جارٍ. ملفك مكتمل ولا يُطلب منك أي مستند حالياً، ومدة الإنجاز 12 يوم عمل من اكتمال الطلب."
+      },
+      {
+        "role": "customer",
+        "text": "الحمدلله يعني ما في شي ناقص؟"
+      },
+      {
+        "role": "assistant",
+        "text": "لا يوجد أي نقص حالياً. وإن احتاج موظف الحالة إلى توضيح، فسيصلك طلب واحد يتضمن جميع البنود عبر التطبيق والرسائل النصية."
+      },
+      {
+        "role": "customer",
+        "text": "تمام مشكورين"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0204",
+    "startedAt": "2026-10-06T15:29:00+04:00",
+    "channel": "whatsapp",
+    "language": "en",
+    "customerId": "CUS-336218",
+    "intent": "permit_status",
+    "handledBy": "ai_agent",
+    "outcome": "handoff_resolved",
+    "durationSec": 846,
+    "csat": 2,
+    "sentiment": "negative",
+    "summary": "Owner asked MNDA to accept a NOC that expired four days before submission; assistant could not make an exception and handed over; agent explained the 90-day rule and free resubmission once the renewed Sidr Communities NOC arrives.",
+    "actions": [
+      "Transferred to agent with summary",
+      "Agent advised follow-up if renewed NOC not received by 9 Oct"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "Hi. My permit application MNDA-BP-2026-02047 was returned because the NOC expired?? It expired 4 days before I submitted. The consultant has been chasing Sidr Communities for a renewal for a week. Can't you just accept it, nothing has changed in the design"
+      },
+      {
+        "role": "assistant",
+        "text": "Hello, I'm MNDA's virtual assistant. To verify your identity, please send your date of birth."
+      },
+      {
+        "role": "customer",
+        "text": "18/06/1985"
+      },
+      {
+        "role": "assistant",
+        "text": "Thank you, you're verified. MNDA-BP-2026-02047 was returned on 29 September because NOC SC/NOC/26/0412, issued on 26 June 2026, expired on 24 September. Under Circular 14/2026, section 4.2, a NOC is valid for 90 days and an expired NOC is treated as missing, even when the design is unchanged. I'm not able to accept an expired NOC or make an exception."
+      },
+      {
+        "role": "customer",
+        "text": "This is ridiculous. 4 days. Who can I talk to?"
+      },
+      {
+        "role": "assistant",
+        "text": "I understand your frustration. I'm connecting you with a member of staff now and sharing this conversation so you don't need to repeat anything."
+      },
+      {
+        "role": "agent",
+        "text": "Good afternoon Ms Haddad, this is Faisal from the Customer Happiness Centre. I've read the conversation and I'm sorry for the inconvenience. The 90-day validity is applied to every application, so we can't accept the expired NOC. The good news is that once your consultant uploads the renewed NOC you can resubmit the same application without paying a new fee, and it goes straight back into review."
+      },
+      {
+        "role": "customer",
+        "text": "And how long will Sidr take? They told my consultant next week, last week."
+      },
+      {
+        "role": "agent",
+        "text": "Master developers are asked to issue NOCs within 7 working days of a complete request. Your consultant requested the renewal on 30 September, so if it hasn't arrived by Friday 9 October please contact us and we'll log a formal follow-up with Planning & Building Permits."
+      },
+      {
+        "role": "customer",
+        "text": "ok. fine. thanks I guess"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0211",
+    "startedAt": "2026-10-06T20:33:00+04:00",
+    "channel": "whatsapp",
+    "language": "ar",
+    "customerId": "CUS-301276",
+    "intent": "documents",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 403,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Applicant did not know how to obtain the no-property certificate; assistant explained the Land Registry consent option in MNDA Smart (deadline 13 Oct); she will discuss with her husband first.",
+    "actions": [
+      "Sent MNDA Smart steps for Land Registry consent"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "مساء الخير، بغيت اسأل عن شهادة عدم الملكية. رحت المركز الاسبوع اللي طاف وقالوا لي اطلعها من سجل الاراضي بس ما عرفت شلون"
+      },
+      {
+        "role": "assistant",
+        "text": "مساء النور، أهلاً بك. للتحقق من هويتك، يُرجى إرسال آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "77831"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. طلبك MNDA-HG-2026-004871 ينقصه شهادة عدم ملكية العقار فقط، وأمامك خياران:\n1) الأسهل: منح موافقتك ليستخرجها موظف الحالة مباشرة من سجل الأراضي، دون الحاجة إلى رفع أي مستند (التعميم رقم 9/2026، البند 6.3).\n2) استخراجها بنفسك من سجل الأراضي في مرسى النور، على أن تكون صادرة خلال آخر 60 يوماً، ثم رفعها في التطبيق."
+      },
+      {
+        "role": "customer",
+        "text": "الموافقة شلون اعطيها؟ ما شفت هالخيار"
+      },
+      {
+        "role": "assistant",
+        "text": "من تطبيق MNDA Smart: طلباتي ← MNDA-HG-2026-004871 ← المستندات الناقصة ← شهادة عدم ملكية عقار ← «أوافق على استخراجها من سجل الأراضي» ← تأكيد برمز التحقق المرسل إلى هاتفك. بعدها يتحول البند إلى «قيد الاستخراج»."
+      },
+      {
+        "role": "customer",
+        "text": "اوكي بس بشاور زوجي اول لان السالفة فيها بياناته بعد"
+      },
+      {
+        "role": "assistant",
+        "text": "صحيح، يشمل التحقق من سجل الأراضي المتقدمة والزوج معاً. تذكير مهم: آخر موعد لاستيفاء المستند هو 13 أكتوبر 2026."
+      },
+      {
+        "role": "customer",
+        "text": "مشكورين وايد"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0215",
+    "startedAt": "2026-10-06T22:08:00+04:00",
+    "channel": "app_chat",
+    "language": "en",
+    "customerId": "CUS-305118",
+    "intent": "documents",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 245,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Prospective loan applicant asked whether a banking-app e-statement with only a QR code is acceptable; told the 6-month statement must carry the bank's stamp, and briefed on the most common gaps.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "Hi, I'm about to apply for the housing loan. For the 6 month bank statement can I use the e-statement I download from my banking app?"
+      },
+      {
+        "role": "assistant",
+        "text": "Hi Salama. Yes, provided it meets Circular 9/2026, section 4.6: it must cover the last 6 months and carry the bank's stamp. Many banks add a digital stamp to e-statements; if yours doesn't, ask the bank for a stamped statement."
+      },
+      {
+        "role": "customer",
+        "text": "Mine has a QR verification code but no stamp... does that count?"
+      },
+      {
+        "role": "assistant",
+        "text": "A QR code on its own isn't listed as acceptable — the requirement is a bank stamp. To avoid your application being marked incomplete, I'd recommend getting a stamped version. The statement is needed for the loan track only, not for grants."
+      },
+      {
+        "role": "customer",
+        "text": "ok I'll get it stamped tomorrow. anything else people usually miss?"
+      },
+      {
+        "role": "assistant",
+        "text": "In September the most common gaps were: salary certificate older than 30 days (39% of incomplete files), Certificate of No Property Ownership missing (31%), spouse's Emirates ID missing (17%) and family book pages missing (13%). Make sure your salary certificate — and your husband's, if he works — is dated within 30 days of the day you submit. You can tick the Land Registry consent box instead of uploading the no-property certificate."
+      },
+      {
+        "role": "customer",
+        "text": "super helpful, thank you!"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0219",
+    "startedAt": "2026-10-07T07:12:00+04:00",
+    "channel": "whatsapp",
+    "language": "ar",
+    "customerId": "CUS-349306",
+    "intent": "maintenance",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 233,
+    "csat": 4,
+    "sentiment": "neutral",
+    "summary": "Customer reported a burst irrigation line flooding Al Murjan Street 23 since the previous afternoon; maintenance request logged with photo and location.",
+    "actions": [
+      "Logged maintenance request CHC-2026-118288 (Irrigation), priority high — Field Operations & Inspection"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "صباح الخير، في ماي طالع من خط الري جدام بيتنا في شارع 23 بالمرجان من امس العصر، الشارع كله ماي وطين"
+      },
+      {
+        "role": "assistant",
+        "text": "صباح النور، وشكراً على الإبلاغ. هل يمكنك تحديد الموقع بدقة (رقم الفيلا أو مشاركة الموقع) وإرسال صورة إن أمكن؟"
+      },
+      {
+        "role": "customer",
+        "text": "جدام فيلا 41. هذي الصورة [صورة] [موقع]"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً. سجّلت طلب صيانة برقم CHC-2026-118288 (شبكة الري) بأولوية عالية بسبب تسرب المياه إلى الطريق، وأُحيل إلى إدارة العمليات الميدانية والتفتيش. الحد الأقصى لإنجاز الطلب 3 أيام عمل، وستصلك التحديثات في هذه المحادثة."
+      },
+      {
+        "role": "customer",
+        "text": "لو سمحت ترسلون حد اليوم قبل لا يخرب الشارع"
+      },
+      {
+        "role": "assistant",
+        "text": "أضفت ملاحظتك على الطلب. تُعطى حالات التسرب المستمر إلى الطريق أولوية في جدولة فرق الري."
+      },
+      {
+        "role": "customer",
+        "text": "مشكور"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0222",
+    "startedAt": "2026-10-07T07:58:00+04:00",
+    "channel": "app_chat",
+    "language": "en",
+    "customerId": "CUS-198334",
+    "intent": "appointment",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 88,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Customer cancelled her Downtown appointment of 8 Oct as no documents are outstanding.",
+    "actions": [
+      "Cancelled APT-26-40569 (Downtown, 8 Oct 13:00)"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "Hi, please cancel my appointment tomorrow at Downtown. Not needed anymore"
+      },
+      {
+        "role": "assistant",
+        "text": "Good morning Aisha. You have APT-26-40569 at the Downtown centre on Thursday 8 October at 13:00 (submit stamped bank statement). Shall I cancel it?"
+      },
+      {
+        "role": "customer",
+        "text": "yes"
+      },
+      {
+        "role": "assistant",
+        "text": "Done — APT-26-40569 is cancelled and a confirmation SMS is on its way. Your loan application MNDA-HG-2026-004902 has no documents outstanding."
+      },
+      {
+        "role": "customer",
+        "text": "thanks!"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0226",
+    "startedAt": "2026-10-07T08:31:00+04:00",
+    "channel": "email",
+    "language": "en",
+    "customerId": "CUS-340592",
+    "intent": "permit_status",
+    "handledBy": "agent",
+    "outcome": "resolved",
+    "durationSec": 540,
+    "csat": null,
+    "sentiment": "neutral",
+    "summary": "Business asked why its showroom fit-out permit in Marina Quarter needs a master-developer NOC; agent explained the shopfront and signage works trigger Circular 14/2026 and gave the 23 Oct hold-limit date.",
+    "actions": [
+      "Agent replied with Circular 14/2026 section 3 explanation and hold-limit date"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "Subject: Fit-out permit MNDA-BP-2026-02016 - why NOC??\n\nDear Sir/Madam,\nOur fit-out permit for the showroom in Marina Quarter has been on 'Awaiting master-developer NOC' since 25 Sept. Our interior consultant says the NOC is only for new buildings. It's an internal fit-out. Please clarify and expedite, our opening is planned for 1 Nov.\n\nBest regards,\nKhaled Nabil Hamdan\nManaging Partner, Bayan Creative Events LLC\nCN-2287416"
+      },
+      {
+        "role": "agent",
+        "text": "Dear Mr Hamdan,\n\nThank you for your email. Under Circular No. 14/2026, section 3, fit-out permits (MNDA-SVC-102) in Al Lulu Island, Al Sidr Residential and Marina Quarter require a master-developer NOC where façade, roof or external works are affected. Your drawings include a new ground-floor shopfront and external signage, so a NOC from Marina Quarter Properties LLC is required.\n\nYour application is held in 'Awaiting master-developer NOC' and the service-level clock is suspended. Master developers are asked to issue NOCs within 7 working days of a complete request; we recommend that your consultant follows up with Marina Quarter Properties LLC directly. If the shopfront works were removed from the scope, the application could be revised as internal-only.\n\nKind regards,\nAsma Khamis Al Hantoubi\nCustomer Happiness Centre — Marsa Al Noor Development Authority\n800 6632"
+      },
+      {
+        "role": "customer",
+        "text": "Thanks Asma. Removing the shopfront is not an option. We'll chase MQP.\nRegards, Khaled"
+      },
+      {
+        "role": "agent",
+        "text": "Noted, Mr Hamdan. For your planning: the application can stay in this status for up to 20 working days, i.e. until 23 October 2026. If the NOC has not been issued by Friday 9 October (10 working days in this status), please contact us and we will request an escalation to Planning & Building Permits.\n\nKind regards,\nAsma"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0229",
+    "startedAt": "2026-10-07T09:12:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-147702",
+    "intent": "complaint",
+    "handledBy": "ai_agent",
+    "outcome": "handoff_resolved",
+    "durationSec": 731,
+    "csat": 3,
+    "sentiment": "negative",
+    "summary": "Applicant disputed a not-approved decision based on a villa registered to him in the Land Registry; says it was transferred to his brother; agent forwarded a reconsideration request with an upload link for the transfer deed.",
+    "actions": [
+      "Transferred to agent with summary",
+      "Agent forwarded reconsideration request to Housing Applications Section and sent transfer-deed upload link"
+    ],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم طلبي انرفض وانا ما عندي بيت. ابا اعترض"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. رقمك مسجّل لدينا. للتحقق، يُرجى ذكر آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "ستة اثنين ثلاثة صفر سبعة"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. صدر قرار بعدم الموافقة على الطلب MNDA-HG-2026-004934 بتاريخ 3 أكتوبر 2026، والسبب المسجّل أن سجل الأراضي يُظهر عقاراً سكنياً مسجّلاً باسمك منذ 2019 (التعميم رقم 9/2026، البند 3.4). لا أملك صلاحية تغيير القرارات، فهي تصدر عن رئيسة قسم الطلبات السكنية."
+      },
+      {
+        "role": "customer",
+        "text": "هذي الفيلا حولتها لاخوي من سنتين! عندي عقد التنازل. ليش ما سألوني؟ ابا اكلم احد"
+      },
+      {
+        "role": "assistant",
+        "text": "أتفهم ذلك. سأحوّلك الآن إلى أحد الموظفين مع ملخص المكالمة."
+      },
+      {
+        "role": "agent",
+        "text": "صباح الخير أخوي راشد، معك أسماء من مركز إسعاد المتعاملين. شفت الملخص. إذا عندك عقد التنازل والفيلا انتقلت لأخوك، تقدر تقدم طلب إعادة نظر مع المستند ونرفعه لقسم الطلبات السكنية. ممكن سجل الأراضي ما تحدّث عنده النقل."
+      },
+      {
+        "role": "customer",
+        "text": "وين ارسل العقد؟"
+      },
+      {
+        "role": "agent",
+        "text": "أرسلت لك الحين رابط رفع المستند على الواتساب، وضفت طلب إعادة النظر على ملفك وحولته لرئيسة القسم. بيتواصلون معك بعد المراجعة."
+      },
+      {
+        "role": "customer",
+        "text": "زين بس الله يخليكم لا تطولون. ابا ابني بيت لعيالي"
+      },
+      {
+        "role": "agent",
+        "text": "إن شاء الله خير. وأي شي تحتاجه تواصل معنا على نفس الرقم."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0231",
+    "startedAt": "2026-10-07T09:17:00+04:00",
+    "channel": "app_chat",
+    "language": "en",
+    "customerId": "CUS-322916",
+    "intent": "permit_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 274,
+    "csat": 3,
+    "sentiment": "neutral",
+    "summary": "Consultant checked two permits awaiting master-developer NOCs (Lulu Island 13 working days, Al Sidr 7); explained the 20-working-day hold limit (16 Oct), free resubmission and NOC revision matching; customer declined an escalation for now.",
+    "actions": [
+      "Added follow-up note to MNDA-BP-2026-01932"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "Good morning. Status of MNDA-BP-2026-01932 and MNDA-BP-2026-02031 please. Any movement from the developers?"
+      },
+      {
+        "role": "assistant",
+        "text": "Good morning Mr Iyer. Both applications are still in 'Awaiting master-developer NOC':\n• MNDA-BP-2026-01932 (Al Lulu Island) since 18 September — 13 working days; request LID-NOC-26-0877 to Lulu Island Developments PJSC is pending.\n• MNDA-BP-2026-02031 (Al Sidr Residential) since 28 September — 7 working days; NOC from Sidr Communities LLC pending."
+      },
+      {
+        "role": "customer",
+        "text": "What happens if Lulu doesn't issue before the 20 days? We've already lost 3 weeks"
+      },
+      {
+        "role": "assistant",
+        "text": "Under Circular 14/2026, section 5.2, an application can be held in this status for up to 20 working days — for MNDA-BP-2026-01932 that is 16 October 2026. If no NOC has been uploaded by then, the application is returned with the status 'Returned — NOC required' (section 5.1) and can be resubmitted once the NOC is issued."
+      },
+      {
+        "role": "customer",
+        "text": "Resubmit = new fee?"
+      },
+      {
+        "role": "assistant",
+        "text": "No, resubmitting a returned application doesn't carry a new fee. One tip: make sure the NOC references drawing revision R3, the revision submitted to MNDA — a revision mismatch requires a new NOC (section 4.3)."
+      },
+      {
+        "role": "customer",
+        "text": "Ok noted. Lulu Island's NOC desk isn't answering. Can MNDA push them?"
+      },
+      {
+        "role": "assistant",
+        "text": "I can't contact the developer from this chat, but I've added a note to the file that you've raised the delay. As the file has been waiting more than 10 working days, you can ask for an escalation to Planning & Building Permits — escalations are handled by an agent. Shall I hand you over now?"
+      },
+      {
+        "role": "customer",
+        "text": "Not now, Lulu promised my colleague an answer this week. If nothing by Friday I'll call."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0236",
+    "startedAt": "2026-10-07T10:19:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-276051",
+    "intent": "appointment",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 205,
+    "csat": 4,
+    "sentiment": "neutral",
+    "summary": "Applicant wanted an Al Waha appointment this week to hand in his wife's renewed Emirates ID; none available, booked the next Al Waha slot on 13 Oct.",
+    "actions": [
+      "Booked APT-26-41022 at Al Waha, 13 Oct 10:00"
+    ],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم ابا موعد في مركز الواحة هالاسبوع اسلم هوية زوجتي الجديدة"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. رقمك مسجّل لدينا. للتحقق، يُرجى ذكر آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "صفر واحد ثمانية ستة اربعة"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. للأسف لا توجد مواعيد متاحة في مركز الواحة حتى نهاية هذا الأسبوع. أقرب موعد هناك الثلاثاء 13 أكتوبر الساعة 10:00 أو 14:30، وتتوفر هذا الأسبوع مواعيد في مركز المرجان الخميس 8 أكتوبر الساعة 8:00 و10:30. علماً بأنه يمكنك رفع صورة الهوية مباشرة عبر تطبيق MNDA Smart دون موعد."
+      },
+      {
+        "role": "customer",
+        "text": "البطاقة ما وصلت للحين. الثلاثاء الساعة عشر زين"
+      },
+      {
+        "role": "assistant",
+        "text": "تم الحجز: الموعد رقم APT-26-41022 في مركز إسعاد المتعاملين — الواحة (مركز خدمات حدائق الواحة) يوم الثلاثاء 13 أكتوبر 2026 الساعة 10:00. يُرجى إحضار بطاقة هوية الزوجة الجديدة الأصلية. تذكير: آخر موعد لاستيفاء المستند 22 أكتوبر 2026."
+      },
+      {
+        "role": "customer",
+        "text": "تمام مشكور"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0240",
+    "startedAt": "2026-10-07T11:24:00+04:00",
+    "channel": "phone",
+    "language": "mixed",
+    "customerId": null,
+    "intent": "documents",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 176,
+    "csat": 4,
+    "sentiment": "neutral",
+    "summary": "Unidentified caller asked why a salary certificate from August was rejected; assistant explained the 30-day rule (previously 90), that age is measured on the submission date, and that both employed spouses need one.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. Welcome to MNDA, how can I help?"
+      },
+      {
+        "role": "customer",
+        "text": "hello السلام عليكم I have a question about the housing application. شهادة الراتب حقتي من August why they rejected it"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. I can explain the general rule without opening your file. Under Circular 9/2026, section 4.4, for applications submitted from 1 September 2026 the salary certificate must be issued within the 30 days before you submit — previously it was 90 days. A certificate older than 30 days on the submission date is treated as missing (section 6.1)."
+      },
+      {
+        "role": "customer",
+        "text": "يعني لازم اطلع وحدة جديدة كل شهر؟ what if the application takes long"
+      },
+      {
+        "role": "assistant",
+        "text": "No. What counts is the certificate's age on the day you submit it. You don't need a new one every month while the application is being processed."
+      },
+      {
+        "role": "customer",
+        "text": "ok and my wife also works she needs one too?"
+      },
+      {
+        "role": "assistant",
+        "text": "Yes — if both spouses are employed, both salary certificates are required, each issued within the last 30 days and showing basic salary and total allowances."
+      },
+      {
+        "role": "customer",
+        "text": "ok thank you شكرا"
+      },
+      {
+        "role": "assistant",
+        "text": "العفو. If you'd like me to check your own application, I'll just need to verify your identity first."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0243",
+    "startedAt": "2026-10-07T12:16:00+04:00",
+    "channel": "whatsapp",
+    "language": "ar",
+    "customerId": "CUS-219460",
+    "intent": "housing_status",
+    "handledBy": "ai_agent",
+    "outcome": "handoff_resolved",
+    "durationSec": 880,
+    "csat": 4,
+    "sentiment": "negative",
+    "summary": "Applicant frustrated that his complete application has exceeded the 12-working-day SLA without contact; agent obtained an expected completion date of 13 Oct from the case officer.",
+    "actions": [
+      "Transferred to agent with summary (HO-2610-0019)",
+      "Agent obtained expected completion date (13 Oct) from case officer Khalfan Mohammed Al Ali"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "السلام عليكم، طلبي قيد المراجعة من 22 سبتمبر ومحد كلمني. الخدمة 12 يوم والحين صار اكثر. ليش؟"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. للتحقق من هويتك، يُرجى إرسال آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "50163"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. طلبك MNDA-HG-2026-004856 قُدِّم في 18 سبتمبر وأُسند إلى موظف حالة في 22 سبتمبر، وحالته «قيد المراجعة» والتحقق من الأهلية جارٍ. ملفك مكتمل ولم يُطلب منك أي مستند. مدة الإنجاز المعتمدة 12 يوم عمل وقد تجاوزها طلبك، ونعتذر عن ذلك."
+      },
+      {
+        "role": "customer",
+        "text": "يعني شو الحل؟ كل مرة نفس الكلام. ابا اعرف متى بالضبط"
+      },
+      {
+        "role": "assistant",
+        "text": "لا أستطيع تحديد موعد القرار من جهتي. سأحوّلك إلى أحد الموظفين ليتواصل مع موظف الحالة ويزوّدك بموعد متوقع."
+      },
+      {
+        "role": "agent",
+        "text": "مرحبا أخوي سلطان، معك أسماء من مركز إسعاد المتعاملين. تواصلت مع موظف الحالة، وأكد إن التحقق من الأهلية يخلص قبل 13 أكتوبر، وبعدها يروح الطلب لرئيسة القسم للقرار. نعتذر عن التأخير، الطلبات وايد هالشهر."
+      },
+      {
+        "role": "customer",
+        "text": "يعني بعد اسبوع بعد؟ الله المستعان"
+      },
+      {
+        "role": "agent",
+        "text": "أفهمك. سجلت ملاحظة على الطلب بتجاوز المدة، وإذا ما وصلك تحديث يوم 13 أكتوبر راسلني على نفس المحادثة."
+      },
+      {
+        "role": "customer",
+        "text": "اوكي مشكورة"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0247",
+    "startedAt": "2026-10-07T13:26:00+04:00",
+    "channel": "whatsapp",
+    "language": "mixed",
+    "customerId": "CUS-311592",
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "abandoned",
+    "durationSec": 154,
+    "csat": null,
+    "sentiment": "neutral",
+    "summary": "Applicant asked whether his application from the previous day was received and whether his wife's salary certificate is needed; answered the general question, customer stopped replying before verification.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "السلام عليكم، قدمت امس application للمنحة من التطبيق بس ابا اتاكد انه وصل. وهل لازم salary certificate حق الزوجة بعد؟"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام، أهلاً بك. بالنسبة لسؤالك العام: إذا كانت الزوجة تعمل، فتلزم شهادة راتب لكل من الزوجين صادرة خلال آخر 30 يوماً (التعميم رقم 9/2026، البند 4.4). وللاطلاع على حالة طلبك، يُرجى إرسال آخر خمسة أرقام من رقم الهوية الإماراتية للتحقق."
+      },
+      {
+        "role": "customer",
+        "text": "زوجتي ما تشتغل الحين. اوكي دقيقة"
+      },
+      {
+        "role": "assistant",
+        "text": "في هذه الحالة تكفي شهادة راتبك. بانتظار الأرقام الخمسة للتحقق."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0250",
+    "startedAt": "2026-10-07T14:48:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": null,
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 191,
+    "csat": null,
+    "sentiment": "neutral",
+    "summary": "Caller asked on behalf of his sister why a six-week-old salary certificate was rejected; assistant declined to discuss the file without her verification and explained the 30-day rule.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم اختي مقدمة على منحة سكنية وطلبوا منها شهادة راتب جديدة تقول شهادتها عمرها شهر ونص. ابا افهم ليش"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. لا يمكنني الاطلاع على طلب شقيقتك أو الإفصاح عن تفاصيله دون التحقق من هويتها، لكن يمكنني توضيح القاعدة العامة: وفق التعميم رقم 9/2026 (البند 4.4) يجب أن تكون شهادة الراتب صادرة خلال آخر 30 يوماً من تاريخ تقديمها، بعد أن كانت المدة 90 يوماً قبل 1 سبتمبر 2026. والشهادة التي يزيد عمرها على 30 يوماً تُعامَل معاملة المستند الناقص."
+      },
+      {
+        "role": "customer",
+        "text": "طيب هي تقدر تخليني اتابع عنها؟"
+      },
+      {
+        "role": "assistant",
+        "text": "يمكنها التواصل معنا بنفسها من رقمها المسجّل، أو زيارة أحد المراكز برفقتك، أو تفويضك بتوكيل ساري المفعول."
+      },
+      {
+        "role": "customer",
+        "text": "اوكي بقول لها تطلع شهادة جديدة وترفعها"
+      },
+      {
+        "role": "assistant",
+        "text": "ممتاز. يمكنها رفعها عبر MNDA Smart ← طلباتي ← رفع المستندات الناقصة، خلال 15 يوم عمل من تاريخ إشعار الاستيفاء."
+      },
+      {
+        "role": "customer",
+        "text": "مشكور"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0258",
+    "startedAt": "2026-10-08T08:17:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-204817",
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 247,
+    "csat": 1,
+    "sentiment": "negative",
+    "summary": "Repeat caller asked for an update on his case and complaint; no new documents since 24 Sep, complaint response due today; declined the offer of an agent.",
+    "actions": [
+      "Re-confirmed call-back request on CHC-2026-118204"
+    ],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم انا سعيد الرميثي. ابا اعرف شو صار على الشكوى وعلى الطلب. محد اتصل فيني"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. رقمك مسجّل لدينا. للتحقق، يُرجى ذكر آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "سبعة اربعة واحد خمسة ثلاثة"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. طلبك MNDA-HG-2026-004817 ما زال بحالة «غير مكتمل — بانتظار المتعامل»، ولم تُرفع عليه مستندات جديدة منذ 24 سبتمبر. الناقص: شهادة راتب صادرة خلال آخر 30 يوماً، وشهادة عدم ملكية العقار أو موافقتك على استخراجها من سجل الأراضي. أما الشكوى CHC-2026-118204 فهي قيد المعالجة لدى إدارة الإسكان وخدمات المجتمع، وموعد الرد عليها اليوم."
+      },
+      {
+        "role": "customer",
+        "text": "يعني لين الحين نفس الشي؟ انا قلت لكم الشركة ما تعطيني شهادة كل شهر. ليش ما تقبلون اللي عندي"
+      },
+      {
+        "role": "assistant",
+        "text": "أتفهم إحباطك. اشتراط الثلاثين يوماً يسري على جميع الطلبات منذ 1 سبتمبر 2026، ولا أستطيع استثناء أي طلب منه. وتذكير مهم: آخر موعد لاستيفاء المستندات هو 15 أكتوبر 2026."
+      },
+      {
+        "role": "customer",
+        "text": "خلاص خلاص. بس قول لهم يتصلون"
+      },
+      {
+        "role": "assistant",
+        "text": "أكّدتُ طلب الاتصال الهاتفي في الشكوى. هل تودّ التحدث إلى أحد الموظفين الآن؟"
+      },
+      {
+        "role": "customer",
+        "text": "لا ما عندي وقت الحين"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0263",
+    "startedAt": "2026-10-08T10:26:00+04:00",
+    "channel": "phone",
+    "language": "en",
+    "customerId": "CUS-340592",
+    "intent": "other",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 198,
+    "csat": null,
+    "sentiment": "positive",
+    "summary": "Event organiser asked when to apply for the Community Event Permit for 23–24 Oct and its fee; told AED 300, 3 working days, apply by 16 Oct, with typical documents.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "Welcome to the Marsa Al Noor Development Authority. I'm the virtual assistant. How can I help you today?"
+      },
+      {
+        "role": "customer",
+        "text": "Hi, this is Khaled from Bayan Creative Events. We're organising a family market at Al Ghaf Community Centre on the 23rd and 24th. When should we apply for the event permit and how much is it?"
+      },
+      {
+        "role": "assistant",
+        "text": "That's the Community Event Permit, MNDA-SVC-301. The fee is AED 300 and the service time is 3 working days from a complete application. For an event on 23 October, apply by Friday 16 October at the latest — earlier if the layout might still change."
+      },
+      {
+        "role": "customer",
+        "text": "What documents do we need?"
+      },
+      {
+        "role": "assistant",
+        "text": "Usually: your trade licence, the venue booking confirmation from Al Ghaf Community Centre, a site layout showing stalls, food trucks and the clear fire lane, the vendor list, and your security and first-aid plan. Each food truck also needs its own valid licence, as our team confirmed by email on 5 October."
+      },
+      {
+        "role": "customer",
+        "text": "Perfect, thanks. We'll apply on Monday"
+      },
+      {
+        "role": "assistant",
+        "text": "You're welcome. You can apply in MNDA Smart → Services → Community Event Permit. Good luck with the market."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0266",
+    "startedAt": "2026-10-08T11:03:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-240977",
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 164,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Applicant asked about the Verification stage; told the officer requested her no-property record directly from the Land Registry on 5 Oct and no action is needed from her.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم ابا اعرف طلبي وين وصل. وصلني مسج انه في مرحلة التحقق"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. رقمك مسجّل لدينا. للتحقق، يُرجى ذكر آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "ستة سبعة سبعة واحد اثنين"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. طلبك MNDA-HG-2026-005126 بحالة «التحقق»: طلب موظف الحالة في 5 أكتوبر شهادة عدم ملكية العقار مباشرة من سجل الأراضي، ولا يلزمك أي إجراء."
+      },
+      {
+        "role": "customer",
+        "text": "يعني ما احتاج اروح سجل الاراضي؟"
+      },
+      {
+        "role": "assistant",
+        "text": "لا حاجة لذلك. بعد وصول نتيجة سجل الأراضي واستكمال التحقق، يُحال الطلب لاتخاذ القرار، وستصلك رسالة نصية عند كل تغيير في الحالة."
+      },
+      {
+        "role": "customer",
+        "text": "الحمدلله. الله يعطيكم العافية"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0272",
+    "startedAt": "2026-10-08T15:02:00+04:00",
+    "channel": "phone",
+    "language": "en",
+    "customerId": "CUS-292318",
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 142,
+    "csat": 4,
+    "sentiment": "neutral",
+    "summary": "Loan applicant checked status (under review, complete file, target decision 13 Oct) and confirmed her noise complaint had been resolved.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "Welcome to the Marsa Al Noor Development Authority. I'm the virtual assistant. How can I help you today?"
+      },
+      {
+        "role": "customer",
+        "text": "hi, just checking on my housing loan application"
+      },
+      {
+        "role": "assistant",
+        "text": "Sure. You're calling from your registered number; please tell me the last five digits of your Emirates ID."
+      },
+      {
+        "role": "customer",
+        "text": "four four one five six"
+      },
+      {
+        "role": "assistant",
+        "text": "Thank you, you're verified. MNDA-HG-2026-004958 is Under review — it was assigned to a case officer on 28 September and the eligibility check is in progress. Your file is complete; nothing is outstanding."
+      },
+      {
+        "role": "customer",
+        "text": "ok. it's been two weeks, how much longer?"
+      },
+      {
+        "role": "assistant",
+        "text": "The service level is 12 working days from a complete application to a decision. Your application was submitted on 25 September, so the target date is 13 October. You'll receive an SMS as soon as the status changes."
+      },
+      {
+        "role": "customer",
+        "text": "ok. and by the way the noise complaint, they fined the contractor, thanks for that"
+      },
+      {
+        "role": "assistant",
+        "text": "Thank you for letting us know — I'm glad it was resolved. Is there anything else I can help with?"
+      },
+      {
+        "role": "customer",
+        "text": "no thanks bye"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0277",
+    "startedAt": "2026-10-08T16:47:00+04:00",
+    "channel": "app_chat",
+    "language": "en",
+    "customerId": "CUS-327405",
+    "intent": "permit_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 431,
+    "csat": 4,
+    "sentiment": "neutral",
+    "summary": "Owner told by Lulu Island Developments that his NOC is 'with MNDA'; assistant confirmed no NOC has been uploaded and the request is pending with the developer, and booked a meeting with the permits desk.",
+    "actions": [
+      "Added note to MNDA-BP-2026-02003",
+      "Booked APT-26-41108 at Downtown, 12 Oct 10:30 (permits desk)"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "Hello again. Permit MNDA-BP-2026-02003 still says awaiting NOC. Lulu Island Developments told my architect today it's 'with MNDA'. Which is it??"
+      },
+      {
+        "role": "assistant",
+        "text": "Hello Mr Harrow. I've checked the file: MNDA-BP-2026-02003 has been in 'Awaiting master-developer NOC' since 24 September (10 working days). No NOC has been uploaded, and request LID-NOC-26-0902, sent by Northshore Architects on 22 September, is still shown as pending. Under Circular 14/2026 the NOC is issued by Lulu Island Developments PJSC to your consultant, who then uploads it to MNDA."
+      },
+      {
+        "role": "customer",
+        "text": "So it's on their side. Our contractor is on standby and charging us AED 1,800 a day. Is there anything MNDA can do??"
+      },
+      {
+        "role": "assistant",
+        "text": "I understand how costly this is. Master developers are asked to issue NOCs within 7 working days of a complete request, but MNDA can't issue the NOC on their behalf. I can add a note to your file and book you a meeting with the permits desk at the Downtown centre to review the file and the hold timeline. The application can stay in this status until 22 October 2026."
+      },
+      {
+        "role": "customer",
+        "text": "Book the meeting please. Monday morning if possible."
+      },
+      {
+        "role": "assistant",
+        "text": "Booked: APT-26-41108 at the Downtown Customer Happiness Centre (MNDA Tower, ground floor, Corniche Road) on Monday 12 October 2026 at 10:30, with the permits desk. Please bring your Emirates ID and any correspondence from Lulu Island Developments. A confirmation SMS is on its way."
+      },
+      {
+        "role": "customer",
+        "text": "Thanks. Appreciate it."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0283",
+    "startedAt": "2026-10-08T19:40:00+04:00",
+    "channel": "whatsapp",
+    "language": "ar",
+    "customerId": "CUS-287406",
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 118,
+    "csat": null,
+    "sentiment": "positive",
+    "summary": "Applicant confirmed that the grant application she submitted at Al Murjan centre on 7 Oct was received; status Submitted, completeness check in progress.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "مساء الخير، قدمت طلب المنحة امس في مركز المرجان، ابا اتاكد انه وصل"
+      },
+      {
+        "role": "assistant",
+        "text": "مساء النور. للتحقق من هويتك، يُرجى إرسال آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "59036"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. وصل طلبك MNDA-HG-2026-005219 بتاريخ 7 أكتوبر، وحالته «مقدَّم»: جارٍ التحقق من اكتمال المستندات، ثم يُسند إلى موظف حالة. ستصلك رسالة نصية عند كل تغيير."
+      },
+      {
+        "role": "customer",
+        "text": "زين الحمدلله. مشكورين"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0284",
+    "startedAt": "2026-10-08T19:52:00+04:00",
+    "channel": "app_chat",
+    "language": "ar",
+    "customerId": "CUS-314480",
+    "intent": "maintenance",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 196,
+    "csat": 4,
+    "sentiment": "neutral",
+    "summary": "Customer reported all street lights off on Street 14 near Al Ghaf Community Centre gate 2; maintenance request logged with high priority.",
+    "actions": [
+      "Logged maintenance request CHC-2026-118377 (Street lighting), priority high — Field Operations & Inspection"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "ليتات شارع 14 كلها طافية الليلة، من عند بوابة 2 حق مركز الغاف لين الدوار. الشارع ظلام والعيال يمشون من المركز للبيوت"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً على الإبلاغ. هل الإنارة مطفأة في جهة واحدة من الشارع أم في الجهتين؟ وهل لاحظتِ أي عمود متضرر أو أسلاك مكشوفة؟"
+      },
+      {
+        "role": "customer",
+        "text": "الجهتين. ما شفت شي مكسور بس كلها طافية"
+      },
+      {
+        "role": "assistant",
+        "text": "تم تسجيل طلب صيانة برقم CHC-2026-118377 (إنارة الشوارع) بأولوية عالية لدواعي السلامة، وأُحيل إلى إدارة العمليات الميدانية والتفتيش. الحد الأقصى للإنجاز 3 أيام عمل، وننصح بالحذر في الشارع ليلاً حتى إعادة التشغيل."
+      },
+      {
+        "role": "customer",
+        "text": "ان شاء الله يصلحونها بسرعة. مشكورين"
+      },
+      {
+        "role": "assistant",
+        "text": "العفو، وستصلك التحديثات في التطبيق."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0290",
+    "startedAt": "2026-10-08T21:14:00+04:00",
+    "channel": "app_chat",
+    "language": "mixed",
+    "customerId": "CUS-298143",
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 301,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Applicant asked why his application is still 'Submitted' and whether his salary certificate dated 9 Sep is valid; told it was 26 days old at submission and that processing time does not age it out.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "مساء الخير، الطلب مالي من 5 اكتوبر للحين status Submitted، عادي؟ وشهادة الراتب مالي مؤرخة 9 سبتمبر، بتنقبل ولا لا؟ خايف يرفضونها مثل ربعي"
+      },
+      {
+        "role": "assistant",
+        "text": "مساء النور أخ محمد. طلبك MNDA-HG-2026-005177 بحالة «مقدَّم» وهو في قائمة التحقق من الاكتمال، ونعتذر عن تأخر هذه المرحلة بسبب ارتفاع عدد الطلبات هذا الشهر. أما شهادة الراتب: قدّمت طلبك في 5 أكتوبر وشهادتك مؤرخة في 9 سبتمبر، أي أن عمرها كان 26 يوماً عند التقديم، وهي ضمن مدة الثلاثين يوماً المحددة في التعميم رقم 9/2026 (البند 4.4). يبقى التأكيد النهائي لاكتمال الملف لدى موظف الحالة."
+      },
+      {
+        "role": "customer",
+        "text": "زين. بس لو تاخروا في المراجعة وصارت الشهادة اقدم من 30 يوم، بيطلبون وحدة جديدة؟"
+      },
+      {
+        "role": "assistant",
+        "text": "لا، العبرة بعمر الشهادة في تاريخ تقديم الطلب (البند 6.1)، ولا يُطلب تجديدها بسبب مدة المعالجة."
+      },
+      {
+        "role": "customer",
+        "text": "perfect، مشكور"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0297",
+    "startedAt": "2026-10-09T07:41:00+04:00",
+    "channel": "phone",
+    "language": "mixed",
+    "customerId": null,
+    "intent": "other",
+    "handledBy": "agent",
+    "outcome": "resolved",
+    "durationSec": 236,
+    "csat": 4,
+    "sentiment": "neutral",
+    "summary": "Caller asked an agent about the status of his application for the Senior Planning Engineer vacancy; told the requisition closed on 28 Sep and Human Capital contacts shortlisted candidates directly.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "agent",
+        "text": "صباح الخير، مركز إسعاد المتعاملين، معك فيصل. كيف أقدر أساعدك؟"
+      },
+      {
+        "role": "customer",
+        "text": "صباح النور. I applied for the Senior Planning Engineer job in MNDA, it closed end of September I think. ابا اعرف وين وصل"
+      },
+      {
+        "role": "agent",
+        "text": "The vacancy MNDA-HR-REQ-2026-077 closed on 28 September. The Human Capital department is shortlisting now and contacts shortlisted candidates directly by email. We in the contact centre can't see candidate status."
+      },
+      {
+        "role": "customer",
+        "text": "اوكي، is there an email for HR?"
+      },
+      {
+        "role": "agent",
+        "text": "Yes, you can write to careers@mnda.gov.ae quoting the requisition number. Please don't resend your documents unless they ask for them."
+      },
+      {
+        "role": "customer",
+        "text": "تمام thank you"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0301",
+    "startedAt": "2026-10-09T08:21:00+04:00",
+    "channel": "whatsapp",
+    "language": "ar",
+    "customerId": "CUS-283907",
+    "intent": "documents",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 97,
+    "csat": null,
+    "sentiment": "positive",
+    "summary": "Applicant worried she had not uploaded a no-property certificate; told it was already retrieved from the Land Registry with her consent and nothing is outstanding.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "صباح الخير، اختي قالت لازم ارفع شهادة عدم ملكية من سجل الاراضي، بس انا ما رفعتها. بيرفضون طلبي؟"
+      },
+      {
+        "role": "assistant",
+        "text": "صباح النور. للتحقق من هويتك، يُرجى إرسال آخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "18464"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. لا داعي للقلق: طلبك MNDA-HG-2026-005044 تضمّن موافقتك على استخراج الشهادة من سجل الأراضي، وقد استخرجها موظف الحالة بالفعل (التعميم رقم 9/2026، البند 6.3). الطلب الآن في مرحلة «التحقق» من الدخل، ولا يلزمك رفع أي مستند."
+      },
+      {
+        "role": "customer",
+        "text": "الحمدلله، مشكورة وايد"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0304",
+    "startedAt": "2026-10-09T08:51:00+04:00",
+    "channel": "phone",
+    "language": "en",
+    "customerId": "CUS-322916",
+    "intent": "permit_status",
+    "handledBy": "ai_agent",
+    "outcome": "handoff_open",
+    "durationSec": 664,
+    "csat": null,
+    "sentiment": "negative",
+    "summary": "Consultant asked for escalation of a Lulu Island NOC delay (15 working days, hold limit 16 Oct) on MNDA-BP-2026-01932 plus the Al Sidr file; handed over for call-back.",
+    "actions": [
+      "Added follow-up note to MNDA-BP-2026-01932",
+      "Created handoff HO-2610-0032 (high priority)"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "Hi good morning, this is Rajesh from Bayt Al Handasa, calling about permit MNDA BP 2026 01932, Lulu Island."
+      },
+      {
+        "role": "assistant",
+        "text": "Good morning, Mr Iyer. I'm MNDA's virtual assistant. I can see you're calling from your registered number. To confirm your identity, please tell me your date of birth."
+      },
+      {
+        "role": "customer",
+        "text": "Seventeen February nineteen eighty one."
+      },
+      {
+        "role": "assistant",
+        "text": "Thank you, you're verified. MNDA-BP-2026-01932 has been in 'Awaiting master-developer NOC' since 18 September — 15 working days. The NOC request to Lulu Island Developments PJSC is still pending. Under Circular 14/2026, section 5.2, an application can be held in this status for up to 20 working days, which for this file ends on 16 October."
+      },
+      {
+        "role": "customer",
+        "text": "Exactly, that's my problem. Fifteen working days and Lulu Island is not even replying to emails. The circular says seven working days for the developer. If you return the file on the sixteenth we lose another month. I want this escalated honestly."
+      },
+      {
+        "role": "assistant",
+        "text": "I understand. Master developers are asked to issue NOCs within 7 working days, but the timing is controlled by the developer, not by MNDA. I've added a follow-up note to the file. Escalating to the permits department, or deciding how the hold limit applies, needs a member of staff. Shall I hand you over with a full summary?"
+      },
+      {
+        "role": "customer",
+        "text": "Yes please. And also the Al Sidr one, zero two zero three one, same story, nine days now."
+      },
+      {
+        "role": "assistant",
+        "text": "Noted — MNDA-BP-2026-02031 has been awaiting the NOC from Sidr Communities LLC since 28 September. I've included both permits in the summary. All agents are busy right now, so I've created handoff HO-2610-0032 with high priority and an agent will call you back on this number."
+      },
+      {
+        "role": "customer",
+        "text": "Okay, thanks. Please make sure someone actually calls."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0308",
+    "startedAt": "2026-10-09T09:26:00+04:00",
+    "channel": "whatsapp",
+    "language": "mixed",
+    "customerId": "CUS-352740",
+    "intent": "permit_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 141,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Owner asked whether his Al Waha Gardens permit needs a master-developer NOC; told MN-04 is not gated and the file is in technical review with a target date of 22 Oct.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "السلام عليكم، الـ permit حقي في حدائق الواحة MNDA-BP-2026-02104 يحتاج NOC من developer؟ الاستشاري قال يمكن"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. للتحقق من هويتك، يُرجى إرسال تاريخ ميلادك."
+      },
+      {
+        "role": "customer",
+        "text": "26/1/1988"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. لا يحتاج طلبك إلى شهادة عدم ممانعة؛ فالتعميم رقم 14/2026 يقتصر على جزيرة اللؤلؤ (MN-03) والسدر السكنية (MN-06) وحي المارينا (MN-08)، وحدائق الواحة (MN-04) ليست منها. طلبك حالياً «قيد المراجعة الفنية» منذ 2 أكتوبر: التدقيق التخطيطي جارٍ ثم الإنشائي، والموعد المستهدف للقرار 22 أكتوبر 2026."
+      },
+      {
+        "role": "customer",
+        "text": "ممتاز، thanks"
+      },
+      {
+        "role": "assistant",
+        "text": "العفو. ستصلك رسالة عند أي ملاحظة من المدقق."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0311",
+    "startedAt": "2026-10-09T09:44:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-171265",
+    "intent": "housing_status",
+    "handledBy": "agent",
+    "outcome": "resolved",
+    "durationSec": 212,
+    "csat": 5,
+    "sentiment": "positive",
+    "summary": "Customer asked an agent directly for his loan status; verified and told the file is with the Section Head for decision, within the service level.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "agent",
+        "text": "صباح الخير، مركز إسعاد المتعاملين، معك أسماء. تفضل."
+      },
+      {
+        "role": "customer",
+        "text": "صباح النور، انا يوسف القبيسي، ابا اعرف طلب القرض وين وصل"
+      },
+      {
+        "role": "agent",
+        "text": "حياك الله أخوي يوسف. رقمك مسجل عندنا، ممكن تأكد لي رقم الطلب وتاريخ ميلادك؟"
+      },
+      {
+        "role": "customer",
+        "text": "الطلب 005078، ومواليد 13 اغسطس 85"
+      },
+      {
+        "role": "agent",
+        "text": "شكراً، تم التحقق. طلبك MNDA-HG-2026-005078 حالته «بانتظار القرار»، يعني خلص التحقق وهو الحين عند رئيسة قسم الطلبات السكنية. ما عليك أي مستند ناقص."
+      },
+      {
+        "role": "customer",
+        "text": "زين، متى تقريبا القرار؟"
+      },
+      {
+        "role": "agent",
+        "text": "ما أقدر أعطيك تاريخ دقيق لأن القرار عند رئيسة القسم، بس الطلب داخل المدة المحددة، وأول ما يصدر القرار بتوصلك رسالة."
+      },
+      {
+        "role": "customer",
+        "text": "تمام، يعطيج العافية"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0315",
+    "startedAt": "2026-10-09T10:04:00+04:00",
+    "channel": "whatsapp",
+    "language": "ar",
+    "customerId": "CUS-226584",
+    "intent": "housing_status",
+    "handledBy": "ai_agent",
+    "outcome": "handoff_open",
+    "durationSec": 840,
+    "csat": null,
+    "sentiment": "negative",
+    "summary": "Repeat contact: applicant upset at being asked for a new salary certificate when his salary is unchanged; asked for a manager and an exception; handed over with high priority.",
+    "actions": [
+      "Created handoff HO-2610-0031 (high priority)"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "السلام عليكم، أبا أعرف شو صار على طلب الإسكان. الأسبوع اللي طاف قلتولي الشهادة قديمة"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام ورحمة الله، أهلاً بك. أنا المساعد الافتراضي لهيئة مرسى النور للتطوير. للتحقق من هويتك، يُرجى تزويدي بآخر خمسة أرقام من رقم الهوية الإماراتية."
+      },
+      {
+        "role": "customer",
+        "text": "03982"
+      },
+      {
+        "role": "assistant",
+        "text": "شكراً، تم التحقق. طلبك رقم MNDA-HG-2026-004987 بحالة «غير مكتمل — بانتظار المتعامل». المستند المطلوب: شهادة راتب صادرة خلال آخر 30 يوماً، إذ إن الشهادة المرفقة مؤرخة في 19 أغسطس 2026 وكان عمرها 38 يوماً عند تقديم الطلب في 26 سبتمبر (التعميم رقم 9/2026، البند 4.4). آخر موعد لاستيفائها هو 20 أكتوبر 2026."
+      },
+      {
+        "role": "customer",
+        "text": "يا أخي الراتب نفسه ما تغير! نفس الشركة ونفس المعاش. ليش أطلع شهادة جديدة؟ الـ HR عندنا ياخذون خمس أيام دوام. هذي ثاني مرة أكلمكم على نفس السالفة"
+      },
+      {
+        "role": "assistant",
+        "text": "أتفهم انزعاجك، ونعتذر عن تكرار التواصل. يُطبَّق اشتراط الثلاثين يوماً على جميع الطلبات المقدمة منذ 1 سبتمبر 2026 بصرف النظر عن تغيّر الراتب، ولا أملك صلاحية استثناء أي طلب منه. يمكنني تسجيل أن الشهادة الجديدة متوقعة بتاريخ 12 أكتوبر ليطّلع عليها موظف الحالة فور رفعها، وإرسال خطوات الرفع عبر تطبيق MNDA Smart. هل يناسبك ذلك؟"
+      },
+      {
+        "role": "customer",
+        "text": "لا ما يناسبني. أبا أكلم مسؤول. اقبلوا الشهادة اللي عندكم وخلصونا"
+      },
+      {
+        "role": "assistant",
+        "text": "مفهوم. لا يمكنني قبول الشهادة الحالية، لكنني سأحوّلك الآن إلى أحد موظفي مركز إسعاد المتعاملين مع ملخص كامل لطلبك، فلن تحتاج إلى إعادة الشرح."
+      },
+      {
+        "role": "customer",
+        "text": "اوكي. بس لو سمحت لا تخلوني أنتظر أسبوع"
+      },
+      {
+        "role": "assistant",
+        "text": "تم تحويل طلبك برقم HO-2610-0031 بأولوية عالية. سيتواصل معك أحد الموظفين عبر هذه المحادثة أو على رقمك المسجّل. شكراً لصبرك."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0318",
+    "startedAt": "2026-10-09T10:31:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": "CUS-298143",
+    "intent": "maintenance",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 187,
+    "csat": 4,
+    "sentiment": "neutral",
+    "summary": "Customer reported a torn shade and loose swing chain at the Al Waha Gardens neighbourhood park; maintenance request logged with high priority for child safety.",
+    "actions": [
+      "Logged maintenance request CHC-2026-118415 (Parks), priority high — Facilities & Assets"
+    ],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم ابا ابلغ عن الحديقة اللي في حدائق الواحة جنب شارع 122. المظلة اللي فوق الالعاب مشقوقة وطايحة من طرف وسلسلة المرجيحة مفكوكة. خطر على اليهال"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام، وشكراً على الإبلاغ. هل يستخدم أحد الألعاب حالياً؟ وهل يمكنك تحديد المرجيحة بالضبط؟"
+      },
+      {
+        "role": "customer",
+        "text": "المرجيحة اللي على اليمين من صوب المواقف. الحين ما في احد بس العصر تزحم"
+      },
+      {
+        "role": "assistant",
+        "text": "سجّلت طلب صيانة برقم CHC-2026-118415 (الحدائق) بأولوية عالية حفاظاً على سلامة الأطفال، وأُحيل إلى إدارة المرافق والأصول مع طلب عزل المرجيحة حتى إصلاحها. الحد الأقصى للإنجاز 3 أيام عمل."
+      },
+      {
+        "role": "customer",
+        "text": "زين مشكور"
+      },
+      {
+        "role": "assistant",
+        "text": "العفو، وستصلك رسالة نصية بالتحديثات."
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0322",
+    "startedAt": "2026-10-09T11:14:00+04:00",
+    "channel": "whatsapp",
+    "language": "mixed",
+    "customerId": "CUS-331047",
+    "intent": "other",
+    "handledBy": "ai_agent",
+    "outcome": "handoff_open",
+    "durationSec": 732,
+    "csat": null,
+    "sentiment": "neutral",
+    "summary": "Customer requested a refund of an AED 800 fit-out permit fee paid twice on 22 Sep; refund needs CHC Manager approval, so the request was handed over with card screenshots attached.",
+    "actions": [
+      "Attached 2 card-statement screenshots",
+      "Created handoff HO-2610-0033 (refund — CHC Manager approval)"
+    ],
+    "transcript": [
+      {
+        "role": "customer",
+        "text": "Hello, السلام عليكم. I paid the fit-out permit fee twice last month, عايز أسترجع الفلوس"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام، welcome. I'm MNDA's virtual assistant. To verify your identity, please send the permit number and your date of birth."
+      },
+      {
+        "role": "customer",
+        "text": "MNDA-BP-2026-01977 , 5/12/1978"
+      },
+      {
+        "role": "assistant",
+        "text": "Thank you, you're verified. I can see two payments of AED 800 on 22 September for this permit: 12:18 (MNDA-PAY-26-0583417) and 12:31 (MNDA-PAY-26-0583429). The fit-out permit itself was approved on 29 September."
+      },
+      {
+        "role": "customer",
+        "text": "أيوه بالظبط, the page was stuck so I paid again. ممكن ترجعوا التانية على الكارت؟"
+      },
+      {
+        "role": "assistant",
+        "text": "Duplicate payments are refunded to the original payment method within 10 working days, but each refund must first be approved by the Customer Happiness Centre Manager — I can't approve it myself. Could you send a screenshot of the two card transactions? I'll attach it to the request."
+      },
+      {
+        "role": "customer",
+        "text": "[2 images] أهم دول"
+      },
+      {
+        "role": "assistant",
+        "text": "Received, thank you. I've passed your request to a colleague with all the details (reference HO-2610-0033). You'll get a WhatsApp update once the Manager has approved the refund — there's no need to repeat anything."
+      },
+      {
+        "role": "customer",
+        "text": "Thanks a lot, مشكورين"
+      }
+    ]
+  },
+  {
+    "id": "CNV-2610-0327",
+    "startedAt": "2026-10-09T11:47:00+04:00",
+    "channel": "phone",
+    "language": "ar",
+    "customerId": null,
+    "intent": "housing_status",
+    "handledBy": "ai",
+    "outcome": "resolved",
+    "durationSec": 203,
+    "csat": 3,
+    "sentiment": "neutral",
+    "summary": "Caller asked why a two-month-old salary certificate is not accepted; assistant explained the change from 90 to 30 days, its purpose, and the 15-working-day response window.",
+    "actions": [],
+    "transcript": [
+      {
+        "role": "assistant",
+        "text": "مرحباً بك في هيئة مرسى النور للتطوير، معك المساعد الافتراضي. كيف يمكنني مساعدتك؟"
+      },
+      {
+        "role": "customer",
+        "text": "السلام عليكم الشهادة عمرها شهرين ليش ما تنقبل؟ قبل كانوا يقبلون لين ثلاث شهور"
+      },
+      {
+        "role": "assistant",
+        "text": "وعليكم السلام. إن كنت تقصد شهادة الراتب في طلب المنحة أو القرض السكني: منذ 1 سبتمبر 2026، وبموجب التعميم رقم 9/2026 (البند 4.4)، يجب أن تكون شهادة الراتب صادرة خلال آخر 30 يوماً بدلاً من 90 يوماً، وتُعامَل الشهادة الأقدم معاملة المستند الناقص."
+      },
+      {
+        "role": "customer",
+        "text": "طيب ليش غيروها؟ هذا تعب على الناس"
+      },
+      {
+        "role": "assistant",
+        "text": "الهدف أن يعكس الدخل المصرّح به الوضع الحالي للأسرة، لأن الأهلية مرتبطة بسقف الدخل: 30,000 درهم شهرياً للمنحة و60,000 درهم للقرض. ونعتذر عن أي إزعاج."
+      },
+      {
+        "role": "customer",
+        "text": "اوكي. وكم عندي وقت ارفعها؟"
+      },
+      {
+        "role": "assistant",
+        "text": "لديك 15 يوم عمل من تاريخ إشعار الاستيفاء، ويتوقف احتساب مدة الخدمة خلال هذه الفترة. وإن رغبت في معرفة الموعد الدقيق لطلبك، يمكنني التحقق من هويتك الآن."
+      },
+      {
+        "role": "customer",
+        "text": "لا خلاص اعرفه. مشكور"
+      }
+    ]
+  }
+]

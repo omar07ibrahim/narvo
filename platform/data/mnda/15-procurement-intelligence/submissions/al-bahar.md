@@ -43,15 +43,15 @@ Al Bahar will deliver the following services, subject to the assumptions and exc
 | Phase 2 | 16–30 | Asset verification, PPM planning, staff induction and training |
 | Phase 3 | 31–45 | Handover from the outgoing contractor, trial operation, full go-live |
 
-A dedicated Mobilisation Manager will coordinate all activities and report progress to the Authority every two weeks.
+A dedicated Mobilisation Manager will coordinate all activities and report progress to the Authority every two weeks. During Phase 2 every asset in the tender asset register (6,212 assets) will be physically verified, QR-tagged and condition-rated on a 1–5 scale; missing or unrecorded assets will be reported to the Authority within 10 working days. A transition risk register covering critical plant, open defects, warranties and statutory certificates will be maintained from day 1, and our supervisors will shadow the outgoing contractor for the last 10 days of Phase 3.
 
 ## 2. Maintenance Methodology (PPM & Reactive)
 
 ### 2.1 Planned preventive maintenance approach
 
-Our PPM programme will follow the OEM recommendations and international best practice. During mobilisation we will review the asset register provided in the tender documents and prepare annual, quarterly and monthly PPM schedules for all equipment. PPM will be scheduled in ServiceGrid, and technicians will close each job on the mobile app with photographs.
+Our PPM schedules are built from the SFG20 maintenance specification, separating statutory and mandatory tasks from optimal tasks, and supplemented by OEM recommendations for the centrifugal chillers, lifts and fire systems. During mobilisation we will review the asset register provided in the tender documents and prepare annual, quarterly and monthly PPM schedules for all equipment. PPM will be scheduled in ServiceGrid, and technicians will close each job on the mobile app with photographs and readings.
 
-We will target PPM compliance of 95% or better, reported monthly to the Authority.
+Condition-based maintenance will be applied to critical plant: quarterly vibration and oil analysis on chiller compressors and AHU fan sets, and thermographic surveys of main LV panels twice a year. We will target PPM compliance of 95% or better, reported monthly to the Authority.
 
 ### 2.2 Reactive maintenance and response times
 
@@ -62,7 +62,7 @@ We will target PPM compliance of 95% or better, reported monthly to the Authorit
 | Normal | Routine defects | 24 hours |
 | Low | Minor or cosmetic works | 3 working days |
 
-Rectification times will be agreed with the Authority during mobilisation in line with the KPIs in the tender documents.
+Emergency faults will be made safe within 4 hours and urgent faults rectified within 24 hours; other rectification times will be agreed with the Authority during mobilisation in line with the KPIs in the tender documents.
 
 ### 2.3 Chilled water plant and lifts
 
@@ -108,7 +108,7 @@ We will submit a monthly report to the Authority covering PPM completion, reacti
 
 ### 4.2 Key personnel
 
-- **Mahmoud Fathy Abdelaziz — Contract Manager.** 11 years in facilities management; B.Sc. Electrical Engineering. Currently Operations Manager for our school campuses contract.
+- **Mahmoud Fathy Abdelaziz — Contract Manager.** 11 years in facilities management; B.Sc. Electrical Engineering; Associate member of IWFM (AIWFM). Currently Operations Manager for our seven-campus schools integrated FM contract.
 - **Eng. Saravanan Krishnan — MEP Lead.** 9 years in MEP maintenance of commercial buildings.
 - **Imran Shaikh — HSE Officer.** 6 years; NEBOSH International General Certificate.
 - **Lalaine Reyes — Soft Services Manager.** 16 years in cleaning and hospitality operations.
@@ -117,7 +117,7 @@ Summary CVs are provided in Appendix C.
 
 ### 4.3 Training
 
-All staff complete an induction before deployment covering site rules, HSE and customer service. Technicians receive on-the-job training and annual refresher courses, and cleaning staff are trained in our cleaning standards and correct use of chemicals and equipment.
+All staff complete an induction before deployment covering site rules, HSE and customer service. Technicians receive at least 32 hours of training per year, including refrigerant handling and electrical safety refreshers, and a competency matrix in ServiceGrid ensures that critical work orders are assigned only to certified technicians. Cleaning staff are trained in our cleaning standards and correct use of chemicals and equipment.
 
 ## 5. HSE Management
 
@@ -127,13 +127,13 @@ Al Bahar operates an occupational health and safety management system certified 
 
 ### 5.2 HSE performance
 
-Al Bahar has recorded zero lost-time incidents across its contracts in the last 24 months. All incidents and near misses will be reported to the Authority and investigated by our HSE Officer.
+Al Bahar has recorded zero lost-time incidents across its contracts in the last 24 months (LTIFR 0.00 in 2025 over 1,286,400 man-hours; TRIR 0.62). All incidents and near misses will be reported to the Authority within 24 hours and investigated by our HSE Officer.
 
 ## 6. Energy & Sustainability
 
 ### 6.1 Energy monitoring and sustainability practices
 
-Our technical team will monitor energy consumption using the existing BMS and include monthly utility consumption in the monthly report. We will identify energy-saving opportunities, such as optimising operating schedules and set-points, and recommend them to the Authority for approval. Al Bahar supports sustainability through the use of environmentally friendly cleaning products, waste segregation and responsible water use in landscaping.
+Our technical team will monitor energy consumption using the existing BMS and include monthly utility consumption by sub-meter in the monthly report. We commit to a **5% reduction in electricity consumption over the 36-month term** against the 2025 consumption in Annex F, through chiller sequencing optimisation, set-point and operating-schedule reviews and LED retrofit proposals submitted to the Authority for approval. Al Bahar supports sustainability through the use of environmentally friendly cleaning products, waste segregation and responsible water use in landscaping.
 
 ## 7. Relevant Experience & References
 
@@ -160,7 +160,7 @@ Al Bahar holds a valid ICV certificate (no. ICV-ABI-2026-07282) with a score of 
 
 ### 8.2 Emiratisation plan
 
-Al Bahar is committed to supporting the UAE's Emiratisation objectives. We will give priority to UAE nationals in recruitment for administrative, helpdesk, front-of-house and supervisory positions on this contract, and will work with national employment programmes to attract and train Emirati talent. Progress on Emiratisation will be included in our reports to the Authority.
+Al Bahar is committed to supporting the UAE's Emiratisation objectives. Of the 78-person contract team, three positions will be filled by UAE nationals at mobilisation (helpdesk coordinator and two front-of-house officers — 3.8%). We will recruit three further UAE nationals by month 12 (administration officer, HSE assistant and assistant supervisor), reaching 6 nationals (7.7%), and 7 nationals (9.0%) by month 24, working with national employment programmes to attract and train Emirati talent. Progress will be included in our quarterly reports to the Authority.
 
 ## 9. Certifications, Assumptions & Exclusions
 

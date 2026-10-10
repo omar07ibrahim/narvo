@@ -1,0 +1,258 @@
+[
+  {
+    "id": "CHC-2026-117936",
+    "customerId": "CUS-276051",
+    "type": "complaint",
+    "service": "MNDA-SVC-501",
+    "category": "Facilities — air-conditioning",
+    "subject": "Multipurpose Hall too hot during wedding reception",
+    "description": "حضرنا عرس يوم السبت 26 سبتمبر في القاعة متعددة الأغراض في مركز الغاف المجتمعي، والمكيفات ما كانت تبرد أبداً. الحر وايد والشياب طلعوا قبل العشا. هذي مب أول مرة، الشهر اللي طاف نفس السالفة. نبا حل لو سمحتوا.",
+    "district": "MN-07 Al Ghaf Community",
+    "location": "Al Ghaf Community Centre — Multipurpose Hall",
+    "priority": "high",
+    "status": "in_progress",
+    "createdAt": "2026-09-28T10:14:00+04:00",
+    "slaDue": "2026-09-30T10:14:00+04:00",
+    "assignedTo": "Facilities & Assets",
+    "channel": "phone",
+    "updates": [
+      { "at": "2026-09-28T13:40:00+04:00", "note": "Assigned to Facilities & Assets. Linked to 22 earlier comfort complaints at Al Ghaf Community Centre since August (Multipurpose Hall, Ladies' Fitness)." },
+      { "at": "2026-09-29T09:15:00+04:00", "note": "Facilities & Assets: chiller CH-02 trips on high discharge pressure during afternoon peaks (11 trips in September). FM contractor job JOB-RFM-26-04471 raised. Interim: CH-01 prioritised for the Multipurpose Hall during bookings." },
+      { "at": "2026-09-29T11:02:00+04:00", "note": "Customer called back and informed of the interim measure (response within SLA)." },
+      { "at": "2026-10-08T14:30:00+04:00", "note": "Condenser-coil cleaning on CH-02 (PPM overdue since 15 Aug) scheduled for 13 Oct. Ticket stays open until hall temperature is confirmed at set point during an evening booking." }
+    ]
+  },
+  {
+    "id": "CHC-2026-118003",
+    "customerId": "CUS-198334",
+    "type": "suggestion",
+    "service": "MNDA-SVC-501",
+    "category": "Digital services",
+    "subject": "Show the list of missing documents in MNDA Smart",
+    "description": "Hi, a suggestion: when my application was incomplete I only got an SMS saying 'additional documents required' and had to call 800 6632 to find out which ones. Pls show the full list of missing docs on the application screen with an upload button next to each item. Would save everyone a phone call :)",
+    "district": "MN-04 Al Waha Gardens",
+    "location": "MNDA Smart app — My Applications",
+    "priority": "normal",
+    "status": "closed",
+    "createdAt": "2026-09-29T21:37:00+04:00",
+    "slaDue": "2026-10-01T21:37:00+04:00",
+    "assignedTo": "Customer Happiness Centre",
+    "channel": "app_chat",
+    "updates": [
+      { "at": "2026-09-30T09:10:00+04:00", "note": "Forwarded to the Digital Transformation Office (MNDA Smart product owner)." },
+      { "at": "2026-10-01T12:25:00+04:00", "note": "DTO: added to MNDA Smart backlog as 'missing-documents checklist with per-item upload', target release 4.12 (November 2026). Customer thanked by email; closed." }
+    ]
+  },
+  {
+    "id": "CHC-2026-118071",
+    "customerId": "CUS-233049",
+    "type": "complaint",
+    "service": "MNDA-SVC-501",
+    "category": "Housing case handling",
+    "subject": "Family book requested twice",
+    "description": "قدمت خلاصة القيد من أول مرة يوم 12 سبتمبر، ورجعوا طلبوها مني مرتين. أول مرة قالوا خلاصة القيد ورفعتها، والحين يقولون صفحات العيال ناقصة. ليش ما قالوا من البداية؟ كل مرة أتصل وأنتظر نص ساعة.",
+    "district": "MN-07 Al Ghaf Community",
+    "location": "Housing case MNDA-HG-2026-004733",
+    "priority": "normal",
+    "status": "resolved",
+    "createdAt": "2026-10-01T09:26:00+04:00",
+    "slaDue": "2026-10-05T09:26:00+04:00",
+    "assignedTo": "Housing & Community Services",
+    "channel": "phone",
+    "updates": [
+      { "at": "2026-10-01T11:40:00+04:00", "note": "Assigned to Housing Applications Section (case officer Badr Salem Al Marri)." },
+      { "at": "2026-10-02T10:05:00+04:00", "note": "Housing: the first clarification (16 Sep) asked for the family book without specifying the children's pages; the second request (29 Sep) lists them. Apology given. Deadline for the missing pages is 20 Oct. Reminder sent to case officers to request all items in one clarification (Circular 9/2026, 5.4)." },
+      { "at": "2026-10-02T10:20:00+04:00", "note": "Customer informed by phone; resolved." }
+    ]
+  },
+  {
+    "id": "CHC-2026-118142",
+    "customerId": "CUS-340592",
+    "type": "enquiry",
+    "service": "MNDA-SVC-501",
+    "category": "Community events",
+    "subject": "Food trucks at Al Ghaf Autumn Family Market (23–24 Oct)",
+    "description": "Dear MNDA team, we are organising the Al Ghaf Autumn Family Market on 23-24 Oct at the Al Ghaf Community Centre car park, 6 food trucks + 22 stalls. Does the Community Event Permit cover the food trucks or do they need a separate approval? Kindly advise urgently as vendors are waiting for confirmation. Regards, Khaled Hamdan — Bayan Creative Events",
+    "district": "MN-07 Al Ghaf Community",
+    "location": "Al Ghaf Community Centre — north car park",
+    "priority": "normal",
+    "status": "resolved",
+    "createdAt": "2026-10-02T10:05:00+04:00",
+    "slaDue": "2026-10-06T10:05:00+04:00",
+    "assignedTo": "Housing & Community Services",
+    "channel": "email",
+    "updates": [
+      { "at": "2026-10-02T11:30:00+04:00", "note": "Assigned to Community Services events desk." },
+      { "at": "2026-10-05T13:15:00+04:00", "note": "Replied: the Community Event Permit (MNDA-SVC-301, AED 300, 3 working days) covers the event layout; each food truck needs its own valid food-truck licence and an on-board fire extinguisher; the east-side fire lane must stay clear. Apply by 16 Oct. Resolved." }
+    ]
+  },
+  {
+    "id": "CHC-2026-118187",
+    "customerId": "CUS-219460",
+    "type": "maintenance",
+    "service": "MNDA-SVC-502",
+    "category": "Road & pavement",
+    "subject": "Deep pothole before Al Murjan mosque roundabout",
+    "description": "في حفرة كبيرة في شارع 4 بالمرجان قبل دوار المسجد بشوي، الحارة اليمين. أمس بالليل سيارة جاري طاحت فيها وانفجر التاير. ما عليها أي علامة، خطيرة وايد بالليل.",
+    "district": "MN-02 Al Murjan",
+    "location": "Al Murjan Street 4, about 40 m before the mosque roundabout, right lane",
+    "priority": "high",
+    "status": "resolved",
+    "createdAt": "2026-10-05T07:58:00+04:00",
+    "slaDue": "2026-10-08T07:58:00+04:00",
+    "assignedTo": "Field Operations & Inspection",
+    "channel": "phone",
+    "updates": [
+      { "at": "2026-10-05T09:20:00+04:00", "note": "Field Operations crew placed cones and a warning sign." },
+      { "at": "2026-10-07T13:35:00+04:00", "note": "Pothole (approx. 1.1 m × 0.8 m, 12 cm deep) patched with hot asphalt; site cleared. Resolved." }
+    ]
+  },
+  {
+    "id": "CHC-2026-118191",
+    "customerId": "CUS-292318",
+    "type": "complaint",
+    "service": "MNDA-SVC-501",
+    "category": "Construction noise",
+    "subject": "Concrete pouring at 5:40 am on Saturday",
+    "description": "Good morning, I want to complain about the construction site opposite my house (Street 21, Al Ghaf). On Saturday 3 Oct they started a concrete pour at 5:40am with a pump and 4 mixers, and last Thursday they were working after 10pm. My kids couldnt sleep. Aren't there permitted hours?? Please do something. Fatima",
+    "district": "MN-07 Al Ghaf Community",
+    "location": "Al Ghaf Community, Street 21 — construction site opposite villa 17",
+    "priority": "normal",
+    "status": "resolved",
+    "createdAt": "2026-10-05T08:03:00+04:00",
+    "slaDue": "2026-10-07T08:03:00+04:00",
+    "assignedTo": "Field Operations & Inspection",
+    "channel": "email",
+    "updates": [
+      { "at": "2026-10-05T10:40:00+04:00", "note": "Assigned to Al Ghaf inspection team." },
+      { "at": "2026-10-06T09:55:00+04:00", "note": "Inspector visited the site. Permitted working hours are 07:00–19:00 Monday–Friday and 07:00–14:00 Saturday with prior approval. Violation notice issued to the contractor for out-of-hours works; future out-of-hours pours need 48-hour prior approval." },
+      { "at": "2026-10-06T15:10:00+04:00", "note": "Customer informed by email; resolved." }
+    ]
+  },
+  {
+    "id": "CHC-2026-118204",
+    "customerId": "CUS-204817",
+    "type": "complaint",
+    "service": "MNDA-SVC-501",
+    "category": "Housing case handling",
+    "subject": "Asked for the same documents twice — no update",
+    "description": "السلام عليكم. قدمت طلب المنحة من 21 سبتمبر ورسلت كل الأوراق، وبعدين رجعوا طلبوا مني شهادة الراتب مرة ثانية وشهادة عدم ملكية. أنا رسلتهم على الإيميل من زمان! كل مرة أتصل يقولون ناقص. محد يرد علي ولا حد يتصل. أبا أعرف شو المطلوب بالضبط مرة وحدة.",
+    "district": "MN-02 Al Murjan",
+    "location": "Housing case MNDA-HG-2026-004817",
+    "priority": "high",
+    "status": "in_progress",
+    "createdAt": "2026-10-06T11:47:00+04:00",
+    "slaDue": "2026-10-08T11:47:00+04:00",
+    "assignedTo": "Housing & Community Services",
+    "channel": "whatsapp",
+    "updates": [
+      { "at": "2026-10-06T13:05:00+04:00", "note": "Assigned to Housing Applications Section; case officer Khalfan Mohammed Al Ali." },
+      { "at": "2026-10-08T10:42:00+04:00", "note": "Housing: documents emailed on 28 Sep were not attached to the case (the email inbox is not linked to case files). The salary certificate dated 12 Jul 2026 does not meet the 30-day rule. Officer to call the customer, explain upload via MNDA Smart and offer Land Registry consent for the no-property certificate. Response sent within SLA." },
+      { "at": "2026-10-08T15:20:00+04:00", "note": "Case officer call attempt — no answer. Second attempt scheduled for Mon 12 Oct. Note: 15-working-day window ends 15 Oct." }
+    ]
+  },
+  {
+    "id": "CHC-2026-118236",
+    "customerId": "CUS-309754",
+    "type": "complaint",
+    "service": "MNDA-SVC-501",
+    "category": "Service delay",
+    "subject": "Lulu Island permit waiting for master-developer NOC for over three weeks",
+    "description": "طلب رخصة البناء حقي في جزيرة اللؤلؤ صار له أكثر من ثلاث أسابيع على \"بانتظار عدم ممانعة المطور الرئيسي\". المطور يقول الموضوع عندكم والهيئة تقول عند المطور. المقاول واقف وأنا أدفع إيجار. أبا حد يتابع الموضوع بجدية.",
+    "district": "MN-03 Al Lulu Island",
+    "location": "Permit MNDA-BP-2026-01788 — plot MN-03-014-0062",
+    "priority": "normal",
+    "status": "in_progress",
+    "createdAt": "2026-10-06T13:20:00+04:00",
+    "slaDue": "2026-10-08T13:20:00+04:00",
+    "assignedTo": "Planning & Building Permits",
+    "channel": "phone",
+    "updates": [
+      { "at": "2026-10-06T15:00:00+04:00", "note": "Assigned to the permits desk (Eng. Dana Waleed Al Saadi)." },
+      { "at": "2026-10-08T10:12:00+04:00", "note": "Planning & Building Permits contacted Lulu Island Developments PJSC: NOC LID-NOC-26-0812 is in final sign-off, expected 13 Oct. Customer informed by phone. Hold limit on the application ends 14 Oct." }
+    ]
+  },
+  {
+    "id": "CHC-2026-118288",
+    "customerId": "CUS-349306",
+    "type": "maintenance",
+    "service": "MNDA-SVC-502",
+    "category": "Irrigation",
+    "subject": "Burst irrigation line flooding Street 23",
+    "description": "صباح الخير، في ماي طالع من خط الري جدام بيتنا في شارع 23 بالمرجان من أمس العصر، الشارع كله ماي وطين. لو سمحتوا ترسلون حد اليوم قبل لا يخرب الشارع.",
+    "district": "MN-02 Al Murjan",
+    "location": "Al Murjan Street 23, opposite villa 41 — roadside planting strip",
+    "priority": "high",
+    "status": "in_progress",
+    "createdAt": "2026-10-07T07:12:00+04:00",
+    "slaDue": "2026-10-12T07:12:00+04:00",
+    "assignedTo": "Field Operations & Inspection",
+    "channel": "whatsapp",
+    "updates": [
+      { "at": "2026-10-07T09:05:00+04:00", "note": "Crew isolated the irrigation valve; flow stopped." },
+      { "at": "2026-10-07T14:30:00+04:00", "note": "Damaged 63 mm HDPE line found under the pavement edge. Excavation and repair scheduled for Mon 12 Oct; customer informed by WhatsApp." }
+    ]
+  },
+  {
+    "id": "CHC-2026-118341",
+    "customerId": "CUS-259713",
+    "type": "maintenance",
+    "service": "MNDA-SVC-502",
+    "category": "Waste",
+    "subject": "Overflowing communal bins on Street 117",
+    "description": "الحاويات في شارع 117 بحدائق الواحة مترسة من ثلاث أيام والقطاوة ناثرين الزبالة في الشارع. الريحة وايد قوية مع الحر.",
+    "district": "MN-04 Al Waha Gardens",
+    "location": "Al Waha Gardens, Street 117 — bins next to plot MN-04-117-0012",
+    "priority": "normal",
+    "status": "resolved",
+    "createdAt": "2026-10-07T16:40:00+04:00",
+    "slaDue": "2026-10-12T16:40:00+04:00",
+    "assignedTo": "Field Operations & Inspection",
+    "channel": "app_chat",
+    "updates": [
+      { "at": "2026-10-08T07:20:00+04:00", "note": "Bins emptied and area cleaned." },
+      { "at": "2026-10-08T11:05:00+04:00", "note": "Collection on Street 117 increased from 3 to 6 times a week while new plots are being occupied. Resolved." }
+    ]
+  },
+  {
+    "id": "CHC-2026-118377",
+    "customerId": "CUS-314480",
+    "type": "maintenance",
+    "service": "MNDA-SVC-502",
+    "category": "Street lighting",
+    "subject": "Street lights off on Street 14 near Al Ghaf Community Centre",
+    "description": "ليتات شارع 14 كلها طافية الليلة، من عند بوابة 2 حق مركز الغاف لين الدوار. الشارع ظلام والعيال يمشون من المركز للبيوت.",
+    "district": "MN-07 Al Ghaf Community",
+    "location": "Street 14, near Al Ghaf Community Centre gate 2, up to roundabout R7",
+    "priority": "high",
+    "status": "in_progress",
+    "createdAt": "2026-10-08T19:52:00+04:00",
+    "slaDue": "2026-10-13T19:52:00+04:00",
+    "assignedTo": "Field Operations & Inspection",
+    "channel": "app_chat",
+    "updates": [
+      { "at": "2026-10-09T07:45:00+04:00", "note": "Assigned to street-lighting crew; 14 poles on one circuit affected." },
+      { "at": "2026-10-09T11:20:00+04:00", "note": "Feeder pillar FP-07-14 tripped; reset failed — suspected underground cable fault. Cable-fault locator and repair crew booked for Mon 12 Oct." }
+    ]
+  },
+  {
+    "id": "CHC-2026-118415",
+    "customerId": "CUS-298143",
+    "type": "maintenance",
+    "service": "MNDA-SVC-502",
+    "category": "Parks",
+    "subject": "Torn shade and loose swing chain at neighbourhood park",
+    "description": "في الحديقة اللي في حدائق الواحة جنب شارع 122، المظلة اللي فوق الألعاب مشقوقة وطايحة من طرف، وسلسلة المرجيحة مفكوكة. خطر على اليهال لو سمحتوا.",
+    "district": "MN-04 Al Waha Gardens",
+    "location": "Al Waha Gardens neighbourhood park, Street 122 — children's play area",
+    "priority": "high",
+    "status": "open",
+    "createdAt": "2026-10-09T10:31:00+04:00",
+    "slaDue": "2026-10-14T10:31:00+04:00",
+    "assignedTo": "Facilities & Assets",
+    "channel": "phone",
+    "updates": [
+      { "at": "2026-10-09T11:02:00+04:00", "note": "Assigned to Facilities & Assets — parks maintenance. Request to tape off the swing passed to the area supervisor." }
+    ]
+  }
+]

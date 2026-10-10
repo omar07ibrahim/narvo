@@ -1242,6 +1242,33 @@
     "netAmount": 7448
   },
   {
+    "id": "RBM-PO-26-04476",
+    "supplierId": "SUP-ACT",
+    "date": "2026-09-22",
+    "buyer": "Anitha Varghese",
+    "kind": "goods",
+    "deliveryTerms": "delivered",
+    "deliveryPoint": "DAP RBM Ras Al Marsa Industrial (MN-05) warehouse",
+    "warehouse": "MN05",
+    "currency": "AED",
+    "priceBasis": "Andalus Ceramics price agreement 2026",
+    "discountPct": 0,
+    "note": "Bathroom sets for MN-05 showroom replenishment",
+    "status": "received",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "SAN-WC-WH",
+        "description": "Wall-hung WC set with concealed cistern",
+        "qty": 36,
+        "unit": "set",
+        "unitPrice": 905,
+        "amount": 32580
+      }
+    ],
+    "netAmount": 32580
+  },
+  {
     "id": "RBM-PO-26-04481",
     "supplierId": "SUP-CCI",
     "date": "2026-09-23",

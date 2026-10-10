@@ -1,0 +1,69 @@
+{
+  "site": "AGC",
+  "unit": "kWh (chillers CH-01 + CH-02)",
+  "tariffAedPerKwh": 0.32,
+  "months": [
+    {
+      "month": "Jan",
+      "y2025": 66434,
+      "y2026": 68427
+    },
+    {
+      "month": "Feb",
+      "y2025": 70518,
+      "y2026": 71928
+    },
+    {
+      "month": "Mar",
+      "y2025": 88375,
+      "y2026": 91910
+    },
+    {
+      "month": "Apr",
+      "y2025": 114659,
+      "y2026": 118099
+    },
+    {
+      "month": "May",
+      "y2025": 150467,
+      "y2026": 156486
+    },
+    {
+      "month": "Jun",
+      "y2025": 173419,
+      "y2026": 182090
+    },
+    {
+      "month": "Jul",
+      "y2025": 188484,
+      "y2026": 196023
+    },
+    {
+      "month": "Aug",
+      "y2025": 191734,
+      "y2026": 208990
+    },
+    {
+      "month": "Sep",
+      "y2025": 168353,
+      "y2026": 196970
+    },
+    {
+      "month": "Oct",
+      "y2025": 130786,
+      "y2026": null
+    },
+    {
+      "month": "Nov",
+      "y2025": 93710,
+      "y2026": null
+    },
+    {
+      "month": "Dec",
+      "y2025": 71965,
+      "y2026": null
+    }
+  ],
+  "oct2026PartialKwh": 53045,
+  "note": "September 2026 is the sum of the hourly BMS series; September 2025 is the sum of the daily 2025 export."
+}

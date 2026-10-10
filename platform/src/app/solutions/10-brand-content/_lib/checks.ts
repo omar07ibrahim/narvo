@@ -196,7 +196,8 @@ export function extractNumbers(raw: string): Extracted {
   );
   const percents = all(/(\d+(?:\.\d+)?)\s?[%٪]/g, t, (m) => ({ value: Number(m[1]), match: m[0], index: m.index }));
 
-  const warrantyContext = /warrant|guarantee|ضمان|كفالة|مضمون/i.test(raw);
+  // Arabic "لضمان" / "ولضمان" means "to ensure", not "warranty" — ignore it
+  const warrantyContext = /warrant|guarantee|ضمان|كفالة|مضمون/i.test(raw.replace(/(?<![؀-ۿ])و?لضمان/g, " "));
   let warrantyYears: Hit[] = [];
   if (warrantyContext) {
     warrantyYears = [
@@ -483,7 +484,7 @@ export function runComputedChecks(
         }
       }
       if (!includesAny(withNext, [...rules.qualifiers.applicator.en, ...rules.qualifiers.applicator.ar])) {
-        const m = seg.text.match(/warrant\w*|guarantee\w*|ضمان|كفالة/i);
+        const m = seg.text.match(/warrant\w*|guarantee\w*|(?<![؀-ۿ])(?:وبال|بال|وال|ال|وب|ب|و)?ضمان[؀-ۿ]*|كفالة/i);
         add({
           rule: "qual.applicator",
           category: "qualifier",
@@ -646,7 +647,8 @@ export function runComputedChecks(
     const segId = firstMention[key];
     if (!segId || !fact) return;
     const seg = segments.find((s) => s.id === segId)!;
-    const near = seg.text + " " + nextText(seg);
+    const before = segments[segIndex(seg.id) - 1];
+    const near = (before && before.part === "body" ? before.text + " " : "") + seg.text + " " + nextText(seg);
     if (!includesAny(near, basis[kind] ?? [])) {
       add({
         rule: "qual.basis",
@@ -910,6 +912,26 @@ export function runComputedChecks(
         factIds: ["TS-F15"],
         ref: channel.ref,
         fix: { type: "regenerate", instruction: `End the copy with the CTA "${ctx.lang === "ar" ? channel.cta.ar : channel.cta.en}".` },
+      });
+    }
+  }
+  // web: specification list
+  if (channel.id === "web") {
+    const items = parts.body.split(/\n/).filter((l) => /^\s*[-•·–]\s+\S/.test(l)).length;
+    if (items < 3) {
+      add({
+        rule: "limit.specList",
+        category: "channel",
+        severity: "major",
+        label: bi("Specification list missing", "قائمة المواصفات غير موجودة"),
+        reason: bi(
+          `Web product pages need a specification list (found ${items} list line(s); expect at least 3 lines starting with "- ").`,
+          `صفحات المنتج تحتاج قائمة مواصفات (وُجد ${items} سطر؛ المطلوب 3 أسطر على الأقل تبدأ بـ"- ").`,
+        ),
+        segmentId: null,
+        factIds: [],
+        ref: channel.ref,
+        fix: { type: "regenerate", instruction: "Present the specifications as a list: one item per line starting with \"- \" (solar reflectance, SRI, temperature reduction, coats & coverage, substrates)." },
       });
     }
   }
@@ -1198,6 +1220,7 @@ export function deriveStatus(v: Variant): VariantStatus {
   if (!ver) return "draft";
   if (openFlags(v).length) return "flagged";
   if (ver.mode !== "full") return "draft";
+  if (ver.results.some((r) => r.verdict === "pending")) return "draft"; // a sentence the model did not judge — re-verify
   return "ready";
 }
 

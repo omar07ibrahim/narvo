@@ -234,11 +234,22 @@ export function buildDraft(e: Employee, type: RequestType, input: Fields, id?: s
   const facts = profileFacts(e);
 
   if (type === "salary_certificate") {
-    f.addressee = s(input.addressee) || "To whom it may concern";
-    f.purpose = s(input.purpose) || "General";
     f.language = input.language === "en" ? "en" : "ar";
+    const ar = f.language === "ar";
+    // Models sometimes put the purpose in "justification" — accept either.
+    const purpose = s(input.purpose) || s(input.justification);
+    const housing = /hous|سكن|إسكان|اسكان|منح|loan|grant/i.test(`${purpose} ${s(input.addressee)}`);
+    f.addressee =
+      s(input.addressee) ||
+      (housing
+        ? ar
+          ? "هيئة مرسى النور للتطوير — قسم الطلبات السكنية"
+          : "Marsa Al Noor Development Authority — Housing Applications Section"
+        : ar
+          ? "إلى من يهمه الأمر"
+          : "To whom it may concern");
+    f.purpose = purpose || (ar ? "لأغراض عامة" : "General purposes");
     f.includeBreakdown = input.includeBreakdown !== false;
-    const housing = /hous|سكن|إسكان|اسكان|منح|loan|grant/i.test(`${f.purpose} ${f.addressee}`);
     checks.push(chk("employment", true, { en: "Active employee record", ar: "سجل وظيفي نشط" }, { en: `${e.grade} · since ${e.joined}`, ar: `${e.grade} · منذ ${e.joined}` }));
     if (housing) {
       f.includeBreakdown = true;
@@ -267,9 +278,9 @@ export function buildDraft(e: Employee, type: RequestType, input: Fields, id?: s
   if (type === "hr_letter") {
     const lt = OPTIONS.letterType.some((o) => o.value === input.letterType) ? String(input.letterType) : "employment_verification";
     f.letterType = lt;
-    f.addressee = s(input.addressee) || (lt === "salary_transfer" ? "" : "To whom it may concern");
-    f.purpose = s(input.purpose);
     f.language = input.language === "en" ? "en" : "ar";
+    f.addressee = s(input.addressee) || (lt === "salary_transfer" ? "" : f.language === "ar" ? "إلى من يهمه الأمر" : "To whom it may concern");
+    f.purpose = s(input.purpose) || s(input.justification);
     slaKey = `hr_letter:${lt}`;
     checks.push(
       chk(

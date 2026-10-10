@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect -- effects react to streamed AI runs and server refreshes (external sources). */
 "use client";
 
 import { useEffect, useState } from "react";

@@ -4,7 +4,7 @@ title: Clarification Response — Raseen Facilities Management LLC (CLR-01)
 title_ar: الرد على طلب الاستيضاح — رصين لإدارة المرافق ذ.م.م
 type: Clarification response
 ref: MNDA/PRC/2026/041
-date: 2026-10-07
+date: 2026-10-11
 owner: Raseen Facilities Management LLC
 classification: Confidential — Tender
 lang: en
@@ -13,12 +13,12 @@ lang: en
 # Response to Clarification Request MNDA/PRC/2026/041/CLR-01
 
 **Our ref:** RFM/BID/041/C-01
-**Date:** 7 October 2026
+**Date:** 11 October 2026
 **Submitted via:** MNDA Supplier Portal — clarification module
 
 **To:** Mr Rashed Ali Al Dhaheri, Director, Procurement & Contracts, Chair of the Tender Committee, Marsa Al Noor Development Authority
 
-**Subject:** Tender MNDA/PRC/2026/041 — Integrated Facilities Management Services, MNDA Headquarters & Customer Happiness Centres (36 months) — response to clarification request ref MNDA/PRC/2026/041/CLR-01 dated 1 October 2026
+**Subject:** Tender MNDA/PRC/2026/041 — Integrated Facilities Management Services, MNDA Headquarters & Customer Happiness Centres (36 months) — response to clarification request ref MNDA/PRC/2026/041/CLR-01
 
 Dear Mr Al Dhaheri,
 

@@ -2,9 +2,9 @@ import { eventStream, readBody } from "@/lib/ai/stream";
 import { getPrefs } from "@/lib/ai/request";
 import { chatStream } from "@/lib/ai/client";
 import { addAudit, kvSet } from "@/lib/store/db";
-import { cacheKey, findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/data";
-import { buildSourcePack, computedFacts, POLICY_QUERIES } from "@/app/solutions/08-sales-intelligence/_lib/context";
-import { oppHealth } from "@/app/solutions/08-sales-intelligence/_lib/compute";
+import { cacheKey, findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/records";
+import { buildSourcePack, computedFacts, POLICY_QUERIES } from "@/app/solutions/08-sales-intelligence/_lib/evidence";
+import { oppHealth } from "@/app/solutions/08-sales-intelligence/_lib/calc";
 
 export const dynamic = "force-dynamic";
 
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
         "You are NARVO, the private AI assistant of Raseen Building Materials Trading LLC (RBM), a UAE building-materials distributor.",
         `You prepare account briefs for Key Account Managers. The reader is ${opp.owner}, the KAM now responsible for this opportunity${opp.previousOwner ? ` (took over from ${opp.previousOwner} on ${opp.ownerChangedAt})` : ""}.`,
         "Use ONLY the numbered sources and the computed facts. Cite every factual statement with its marker, e.g. [3] or [2][7], right after the claim. Never invent prices, dates, people or commitments.",
-        "Computed facts (days in stage, totals, exposure, conflicts) come from code and are authoritative — do not recalculate them.",
+        "Computed facts (days in stage, totals, exposure, conflicts) come from code and are authoritative — do not recalculate them, and do not put any marker after them (only numbered sources get [n]). Use the calendar given for weekdays.",
         "Distinguish clearly between what was documented/approved and what someone claims was agreed verbally.",
         `Write in ${ar ? "Arabic (Modern Standard Arabic, professional business register; keep SKU codes, reference numbers and AED amounts in Latin digits)" : "English"}.`,
         "Format (Markdown, ~350–450 words): a one-paragraph **Situation**; then ### headings: " +

@@ -4,8 +4,8 @@ import { getPrefs } from "@/lib/ai/request";
 import { generateObject } from "@/lib/ai/json";
 import { chatStream } from "@/lib/ai/client";
 import { addAudit, kvSet } from "@/lib/store/db";
-import { cacheKey, findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/data";
-import { buildSourcePack, computedFacts, POLICY_QUERIES } from "@/app/solutions/08-sales-intelligence/_lib/context";
+import { cacheKey, findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/records";
+import { buildSourcePack, computedFacts, POLICY_QUERIES } from "@/app/solutions/08-sales-intelligence/_lib/evidence";
 
 export const dynamic = "force-dynamic";
 
@@ -85,7 +85,7 @@ export async function POST(req: Request) {
             content: [
               "You are NARVO, the private AI assistant of Raseen Building Materials (RBM).",
               `Write a handover pack for ${to}, who takes over ${account.name} from ${from}. It must let her act confidently in her first conversation with the customer.`,
-              "Use ONLY the sources and the extracted analysis; cite facts with [n] markers. Computed numbers are authoritative.",
+              "Use ONLY the sources and the extracted analysis; cite facts with [n] markers (numbered sources only — never invent other markers). Computed numbers are authoritative. Use the calendar given for weekdays.",
               `Write in ${ar ? "Arabic (Modern Standard Arabic, professional; keep codes, references and AED amounts in Latin digits)" : "English"}.`,
               "Markdown, ~300–400 words, ### headings: " +
                 (ar

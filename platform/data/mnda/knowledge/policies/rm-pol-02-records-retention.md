@@ -69,8 +69,8 @@ the Authority regardless of where they are stored.
 
 | Record class | Retention | Trigger | Final action |
 |---|---|---|---|
-| Procurement and tender files (incl. bids and evaluation) | **10 years** | Contract end | Secure destruction |
-| Contracts and amendments | **10 years** | Contract expiry | Secure destruction |
+| Procurement and tender files (incl. bids, evaluation and scoring sheets) | **7 years** | Contract completion or cancellation (Procurement Manual v3.2, Art. 41) | Secure destruction after Legal Affairs approval |
+| Contracts and amendments | **7 years** | Contract completion (Procurement Manual v3.2, Art. 41) | Secure destruction after Legal Affairs approval |
 | HR personnel files | **50 years** | Separation | Secure destruction |
 | Salary certificates and HR letters (copies) | **2 years** | Issue date | Automatic deletion |
 | Financial transactions and payment vouchers | 10 years | End of financial year | Secure destruction |

@@ -447,29 +447,29 @@
     {
       "id": "SO-26-11806",
       "createdAt": "2026-09-30T09:20:00+04:00",
-      "customerId": "RBM-C-10034",
-      "customerName": "Gulf Crest Builders LLC",
-      "customerPo": "GCB-PO-26-0911",
-      "project": "Marina Quarter Tower A — podium slab L2",
-      "site": "Marina Quarter Tower A, gate 3",
+      "customerId": "RBM-C-10118",
+      "customerName": "Coastline Marine Works LLC",
+      "customerPo": "CMW/PO/2026/0342",
+      "project": "Marina Quarter — pontoon abutments (first pour)",
+      "site": "Marina Quarter breakwater, gate 2",
       "district": "MN-08 Marina Quarter",
       "zone": "MN-08 Marina Quarter",
       "shipFrom": "MN05",
       "requestedDelivery": "2026-10-12T10:00",
       "promiseDate": "2026-10-12",
       "status": "ready",
-      "kam": "Rania Mansour",
+      "kam": "Ahmed Soliman",
       "contact": {
-        "name": "Imran Qureshi",
-        "role": "Procurement Manager",
-        "email": "imran.q@gulfcrestbuilders.ae",
-        "mobile": "+971 55 208 6634",
+        "name": "Capt. Rakesh Nair",
+        "role": "Site Manager",
+        "email": "rakesh.n@coastlinemarine.ae",
+        "mobile": "+971 50 845 3361",
         "channel": "email"
       },
       "gatePermit": {
-        "ref": "MQP-GP-26-18842",
+        "ref": "MQP-GP-26-18837",
         "date": "2026-10-12",
-        "bookedOn": "2026-10-08"
+        "bookedOn": "2026-10-07"
       },
       "lines": [
         {
@@ -477,11 +477,11 @@
           "sku": "CEM-OPC-50",
           "qty": 420,
           "unit": "bag",
-          "unitPrice": 16.4,
+          "unitPrice": 17.1,
           "deliveredQty": 0
         }
       ],
-      "notes": "Rides with the rebar delivery on gate permit MQP-GP-26-18842."
+      "notes": "Gate permit MQP-GP-26-18837 booked by dispatch."
     },
     {
       "id": "SO-26-11809",
@@ -1009,8 +1009,8 @@
       "contact": {
         "name": "Imran Qureshi",
         "role": "Procurement Manager",
-        "email": "imran.q@gulfcrestbuilders.ae",
-        "mobile": "+971 55 208 6634",
+        "email": "imran.qureshi@gulfcrest.ae",
+        "mobile": "+971 50 336 7182",
         "channel": "email"
       },
       "gatePermit": {
@@ -1030,9 +1030,10 @@
       ],
       "notes": "Entered at customer PO price AED 2,690/t. ERP auto credit hold on entry. Pour of podium slab L2 planned Tue 13 Oct.",
       "siteContact": {
-        "name": "Eng. Saif Al Mheiri",
-        "role": "Site Engineer, Tower A",
-        "mobile": "+971 50 912 4471",
+        "name": "Eng. Sultan Al Mehairi",
+        "role": "Project Director, Marina Quarter Towers",
+        "email": "sultan.almehairi@gulfcrest.ae",
+        "mobile": "+971 50 128 4406",
         "channel": "whatsapp"
       }
     },
@@ -1203,8 +1204,8 @@
       "district": "Al Warqa, Dubai",
       "zone": "Dubai sites",
       "shipFrom": "JA",
-      "requestedDelivery": "2026-10-14T07:00",
-      "promiseDate": "2026-10-14",
+      "requestedDelivery": "2026-10-13T07:00",
+      "promiseDate": "2026-10-13",
       "status": "credit_hold",
       "kam": "Rania Mansour",
       "contact": {

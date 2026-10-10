@@ -2,6 +2,7 @@ import "server-only";
 import { readJson, readText } from "@/lib/world/data";
 import { parseFrontMatter, listDocs } from "@/lib/retrieval";
 import { kvGet, kvSet, withOverlay, listApprovals } from "@/lib/store/db";
+import { mergeStatus, requirementCheck } from "./compliance";
 import type {
   BidRecord,
   BidSeed,
@@ -94,11 +95,23 @@ export function setByo(v: ByoState) {
   kvSet(K.byo, v);
 }
 
+/** Coverage with computed checks re-applied against the current certificate and forms registers. */
+export function effectiveCoverage(seed = loadSeed()): Record<string, Coverage> {
+  const certs = getCertificates(seed);
+  const forms = getForms(seed);
+  const out: Record<string, Coverage> = {};
+  for (const [id, c] of Object.entries(getCoverage())) {
+    const check = requirementCheck(seed, id, certs, forms);
+    out[id] = { ...c, check, status: mergeStatus(c.aiStatus, check) };
+  }
+  return out;
+}
+
 export function loadState(): BidState {
   const seed = loadSeed();
   return {
     requirements: getRequirements(),
-    coverage: getCoverage(),
+    coverage: effectiveCoverage(seed),
     sections: getSections(seed),
     tasks: getTasks(),
     forms: getForms(seed),
@@ -145,4 +158,18 @@ export function verifyQuote(quote: string, text: string) {
 export function excerpt(text: string, n = 240) {
   const t = text.replace(/\s+/g, " ").trim();
   return t.length > n ? t.slice(0, n).replace(/\s\S*$/, "") + "…" : t;
+}
+
+/** Retry a model call once (transient provider errors / truncated JSON). */
+export async function retry<T>(fn: () => Promise<T>, attempts = 2): Promise<T> {
+  let last: unknown;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return await fn();
+    } catch (e) {
+      last = e;
+      if ((e as Error).name === "AbortError") throw e;
+    }
+  }
+  throw last;
 }

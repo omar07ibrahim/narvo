@@ -1,0 +1,22 @@
+{
+  "contractors": [
+    { "name": "Gulf Crest Builders LLC", "name_ar": "جلف كريست للمقاولات ذ.م.م", "licence": "CN-2146093", "email": "hse@gulfcrestbuilders.ae", "siteManager": "Eng. Sameer Haddad" },
+    { "name": "Bin Hilal Contracting LLC", "name_ar": "بن هلال للمقاولات ذ.م.م", "licence": "CN-1873350", "email": "safety@binhilal-contracting.ae", "siteManager": "Mohammed Saif Bin Hilal" },
+    { "name": "Arabian Peninsula Construction Co. (APCC)", "name_ar": "شركة شبه الجزيرة العربية للإنشاءات", "licence": "CN-1302284", "email": "hse.marsa@apcc-construction.ae", "siteManager": "Eng. Ravi Shankar Iyer" },
+    { "name": "Al Marsa Engineering & Contracting LLC", "name_ar": "المرسى للهندسة والمقاولات ذ.م.م", "licence": "CN-2207815", "email": "projects@almarsa-eng.ae", "siteManager": "Eng. Khaled Mustafa Odeh" },
+    { "name": "Emerald Line Construction LLC", "name_ar": "إميرالد لاين للإنشاءات ذ.م.م", "licence": "CN-2318841", "email": "site.safety@emeraldline.ae", "siteManager": "Joseph Varghese" },
+    { "name": "Saqr Al Noor Contracting LLC", "name_ar": "صقر النور للمقاولات ذ.م.م", "licence": "CN-2054417", "email": "info@saqralnoor.ae", "siteManager": "Saqr Obaid Al Mheiri" }
+  ],
+  "inspectors": [
+    { "name": "Eng. Badr Saleh Al Marri", "name_ar": "م. بدر صالح المري", "id": "FOI-AI-0219", "title": "Authorised Site Inspector" },
+    { "name": "Reem Salem Al Marzooqi", "name_ar": "ريم سالم المرزوقي", "id": "FOI-AI-0231", "title": "Authorised Site Inspector" },
+    { "name": "Abdullah Hamdan Al Shehhi", "name_ar": "عبدالله حمدان الشحي", "id": "FOI-AI-0187", "title": "Authorised Site Inspector" },
+    { "name": "Sanjay Nair", "name_ar": "سانجاي ناير", "id": "FOI-AI-0142", "title": "Senior Site Inspector" }
+  ],
+  "consultants": [
+    "Meridian Gulf Engineering Consultants",
+    "Dar Al Sahel Consulting Engineers",
+    "Al Noor Engineering Consultancy",
+    "Coastline Design & Supervision LLC"
+  ]
+}

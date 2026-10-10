@@ -357,11 +357,11 @@
     "source": "Recurring alarm — raised by Raseen FM supervisor",
     "raisedAt": "2026-09-30T08:35:00+04:00",
     "respondedAt": "2026-09-30T10:05:00+04:00",
-    "completedAt": null,
-    "status": "Open — contractor diagnosis",
+    "completedAt": "2026-10-06T11:40:00+04:00",
+    "status": "Completed by contractor — awaiting MNDA verification",
     "technician": "Arun Pillai",
     "supervisor": "Mohammed Rafiq",
-    "resolution": "Diagnosis 30 Sep: condenser coils fouled with sand/dust (lower third of coil face blocked); condenser fan 3 vibration slightly high. Recommended chemical coil cleaning on both chillers. CH-02 coil clean planned for Tue 6 Oct 06:30 (low load window)."
+    "resolution": "Diagnosis 30 Sep: condenser coils fouled with sand/dust (lower third of coil face blocked); condenser fan 3 vibration slightly high. Recommended chemical coil cleaning on both chillers. CH-02 coil clean planned for Tue 6 Oct 06:30 (low load window). 6 Oct: CH-02 coils chemically cleaned 06:30–11:40, chiller back in service (completion report in RFM Connect). CH-01 coil clean not yet scheduled."
   },
   {
     "id": "JOB-RFM-26-03930",

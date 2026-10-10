@@ -221,7 +221,8 @@ function ForecastChart({
     return out;
   }, [weeks, calendar]);
   const today = series.forecast.weeks[0];
-  const fmtW = (w: string) => f.date(w, { day: "numeric", month: "short" });
+  const fmtW = (w: string) => f.date(w, { day: "numeric", month: "short", year: "numeric" });
+  const fmtTick = (w: string) => f.date(w, { month: "short", year: "2-digit" });
   const fmtV = (v: number | string) => (typeof v === "number" ? f.number(v, { maximumFractionDigits: series.key.startsWith("RB-") ? 1 : 0 }) : String(v));
 
   return (
@@ -240,7 +241,7 @@ function ForecastChart({
               ifOverflow="hidden"
             />
           ))}
-          <XAxis dataKey="w" {...axisProps} tickFormatter={fmtW} interval={12} minTickGap={24} />
+          <XAxis dataKey="w" {...axisProps} tickFormatter={fmtTick} interval={12} minTickGap={24} />
           <YAxis {...axisProps} width={56} tickFormatter={(v) => (v >= 10000 ? `${Math.round(v / 1000)}k` : String(v))} />
           <Tooltip
             content={({ active, payload, label }) => (

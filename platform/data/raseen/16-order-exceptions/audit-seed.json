@@ -114,7 +114,7 @@
     },
     "action": "Placed order on automatic credit hold",
     "subject": "SO-26-11842",
-    "detail": "Exposure AED 2,109,582 vs limit AED 2,000,000 (AR + open orders incl. 5% VAT)."
+    "detail": "Exposure AED 2,102,350 vs limit AED 2,000,000 (AR AED 1,763,410 + this order AED 338,940 incl. 5% VAT)."
   },
   {
     "id": "AUD-16-0010",
@@ -153,7 +153,7 @@
     },
     "action": "Booked gate permit",
     "subject": "MQP-GP-26-18842",
-    "detail": "Marina Quarter Properties — Tower A gate 3, Mon 12 Oct (SO-26-11806 / SO-26-11842)."
+    "detail": "Marina Quarter Properties — Tower A gate 3, Mon 12 Oct (SO-26-11842)."
   },
   {
     "id": "AUD-16-0013",
@@ -196,7 +196,7 @@
   },
   {
     "id": "AUD-16-0016",
-    "ts": "2026-10-09T17:20:00+04:00",
+    "ts": "2026-10-08T11:05:00+04:00",
     "solution": "16-order-exceptions",
     "actor": {
       "name": "Nadia Rahimi",
@@ -205,6 +205,19 @@
     },
     "action": "Requested payment commitment",
     "subject": "Gulf Crest Builders LLC",
-    "detail": "Asked GCB for dated payment of AED 148,320 before any temporary release."
+    "detail": "Asked GCB for a dated payment covering the overdue AED 148,320 before any temporary release."
+  },
+  {
+    "id": "AUD-16-0017",
+    "ts": "2026-10-09T17:20:00+04:00",
+    "solution": "16-order-exceptions",
+    "actor": {
+      "name": "Nadia Rahimi",
+      "role": "Credit Controller, Group Finance",
+      "kind": "human"
+    },
+    "action": "Recorded payment commitment",
+    "subject": "Gulf Crest Builders LLC — PC-26-0187",
+    "detail": "Faris Al Kindi (Finance Manager, GCB) committed AED 412,000 by transfer on Thu 15 Oct 2026 — covers the overdue AED 148,320 and invoices due by 15 Oct."
   }
 ]

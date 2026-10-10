@@ -20,7 +20,9 @@ export function SourceList({
   text?: string;
 }) {
   const L = useL();
-  const used = new Set(Array.from((text ?? "").matchAll(/\[(\d+)\]/g)).map((m) => Number(m[1])));
+  const used = new Set(
+    Array.from((text ?? "").matchAll(/\[(\d+(?:\s*,\s*\d+)*)\]/g)).flatMap((m) => m[1].split(",").map((x) => Number(x.trim()))),
+  );
   const list = usedOnly && text ? citations.filter((c) => used.has(c.n)) : citations;
   if (!list.length)
     return (

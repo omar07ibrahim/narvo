@@ -1,0 +1,344 @@
+[
+  {
+    "id": "F-S001",
+    "inspectionId": "MNDA-INS-2026-06811",
+    "photo": 0,
+    "code": "D07",
+    "title": "Open foundation trenches without barriers",
+    "description": "Network of strip-foundation trenches about 1.3 m deep with no barriers beside the access path.",
+    "bbox": [
+      0,
+      0.25,
+      0.62,
+      0.95
+    ],
+    "confidence": 0.9,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Reem Salem Al Marzooqi",
+    "reviewedAt": 1789718100000,
+    "createdAt": 1789712700000
+  },
+  {
+    "id": "F-S002",
+    "inspectionId": "MNDA-INS-2026-06811",
+    "photo": 0,
+    "code": "D11",
+    "title": "Bricks and spoil stacked at trench edges",
+    "description": "Bricks and loose spoil placed directly on the trench edges in the foreground.",
+    "bbox": [
+      0.44,
+      0.64,
+      0.7,
+      0.76
+    ],
+    "confidence": 0.66,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Reem Salem Al Marzooqi",
+    "reviewedAt": 1789718100000,
+    "createdAt": 1789712700000
+  },
+  {
+    "id": "F-S003",
+    "inspectionId": "MNDA-INS-2026-06862",
+    "photo": 0,
+    "code": "D04",
+    "title": "Column starters C1–C9 uncapped",
+    "description": "All column starter cages on the roof of the ground floor without caps; steel fixer working between them.",
+    "bbox": [
+      0.02,
+      0.33,
+      0.95,
+      0.93
+    ],
+    "confidence": 0.92,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Eng. Badr Saleh Al Marri",
+    "reviewedAt": 1790148000000,
+    "createdAt": 1790142600000
+  },
+  {
+    "id": "F-S004",
+    "inspectionId": "MNDA-INS-2026-06862",
+    "photo": 0,
+    "code": "D02",
+    "title": "Steel fixer without safety helmet",
+    "description": "Worker at the centre column wearing a brimmed hat instead of a safety helmet.",
+    "bbox": [
+      0.43,
+      0.74,
+      0.48,
+      0.93
+    ],
+    "confidence": 0.79,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Eng. Badr Saleh Al Marri",
+    "reviewedAt": 1790148000000,
+    "createdAt": 1790142600000
+  },
+  {
+    "id": "F-S005",
+    "inspectionId": "MNDA-INS-2026-06948",
+    "photo": 0,
+    "code": "D04",
+    "title": "Uncapped column starter bars along walkway",
+    "description": "Rows of protruding column starters in the left foreground beside the walkway to the ground-floor store, none capped.",
+    "bbox": [
+      0,
+      0.63,
+      0.35,
+      1
+    ],
+    "confidence": 0.91,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Abdullah Hamdan Al Shehhi",
+    "reviewedAt": 1790671500000,
+    "createdAt": 1790666100000
+  },
+  {
+    "id": "F-S006",
+    "inspectionId": "MNDA-INS-2026-06948",
+    "photo": 0,
+    "code": "D05",
+    "title": "Aggregate heap and debris in basement bay",
+    "description": "Loose aggregate heap, bags and offcuts under the first-floor slab, centre-bottom of the photo.",
+    "bbox": [
+      0.35,
+      0.81,
+      0.58,
+      1
+    ],
+    "confidence": 0.74,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Abdullah Hamdan Al Shehhi",
+    "reviewedAt": 1790671500000,
+    "createdAt": 1790666100000
+  },
+  {
+    "id": "F-S007",
+    "inspectionId": "MNDA-INS-2026-06948",
+    "photo": 0,
+    "code": "D01",
+    "title": "First-floor slab edge without guardrail",
+    "description": "Open edge of the first-floor slab running across the centre of the photo.",
+    "bbox": [
+      0,
+      0.5,
+      0.57,
+      0.63
+    ],
+    "confidence": 0.62,
+    "source": "ai",
+    "status": "rejected",
+    "reviewer": "Abdullah Hamdan Al Shehhi",
+    "reviewedAt": 1790671500000,
+    "createdAt": 1790666100000,
+    "rejectReason": "R1"
+  },
+  {
+    "id": "F-S008",
+    "inspectionId": "MNDA-INS-2026-07012",
+    "photo": 0,
+    "code": "D13",
+    "title": "Suspended truss guided by hand, no exclusion zone",
+    "description": "Truss suspended from the crane hook (centre) being guided by an erector reaching from the column head; no barricade or banksman visible.",
+    "bbox": [
+      0.28,
+      0.33,
+      0.66,
+      1
+    ],
+    "confidence": 0.86,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Sanjay Nair",
+    "reviewedAt": 1790946300000,
+    "createdAt": 1790940900000
+  },
+  {
+    "id": "F-S009",
+    "inspectionId": "MNDA-INS-2026-07012",
+    "photo": 0,
+    "code": "D02",
+    "title": "Erector at height without visible harness",
+    "description": "Worker standing on the column head on the right with no full-body harness or lanyard visible.",
+    "bbox": [
+      0.67,
+      0.37,
+      0.8,
+      0.62
+    ],
+    "confidence": 0.71,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Sanjay Nair",
+    "reviewedAt": 1790946300000,
+    "createdAt": 1790940900000
+  },
+  {
+    "id": "F-S010",
+    "inspectionId": "MNDA-INS-2026-07055",
+    "photo": 0,
+    "code": "D03",
+    "title": "Pole scaffold without boarding or guardrails",
+    "description": "Improvised pole scaffold across the façade: working lifts are single poles, no boarding, guardrails or toe boards; workers on the cross-poles.",
+    "bbox": [
+      0,
+      0.1,
+      1,
+      0.82
+    ],
+    "confidence": 0.93,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Reem Salem Al Marzooqi",
+    "reviewedAt": 1791190800000,
+    "createdAt": 1791185400000
+  },
+  {
+    "id": "F-S011",
+    "inspectionId": "MNDA-INS-2026-07055",
+    "photo": 0,
+    "code": "D09",
+    "title": "Ladder resting on a cross-pole, not secured",
+    "description": "Aluminium ladder (right of centre) leaning on a scaffold cross-pole without tie or footing.",
+    "bbox": [
+      0.69,
+      0.55,
+      0.78,
+      1
+    ],
+    "confidence": 0.82,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Reem Salem Al Marzooqi",
+    "reviewedAt": 1791190800000,
+    "createdAt": 1791185400000
+  },
+  {
+    "id": "F-S012",
+    "inspectionId": "MNDA-INS-2026-07055",
+    "photo": 0,
+    "code": "D05",
+    "title": "Debris near the ground-floor entrance",
+    "description": "Possible loose material by the doorway at the bottom of the photo.",
+    "bbox": [
+      0.3,
+      0.9,
+      0.52,
+      1
+    ],
+    "confidence": 0.41,
+    "source": "ai",
+    "status": "rejected",
+    "reviewer": "Reem Salem Al Marzooqi",
+    "reviewedAt": 1791190800000,
+    "createdAt": 1791185400000,
+    "rejectReason": "R3"
+  },
+  {
+    "id": "F-S013",
+    "inspectionId": "MNDA-INS-2026-07078",
+    "photo": 0,
+    "code": "D07",
+    "title": "2.1 m trench, partial shoring, no edge barriers",
+    "description": "Deep trench in the centre with timber shoring on one side only; spoil heaped at both edges and no barrier along the walkway.",
+    "bbox": [
+      0.2,
+      0.3,
+      0.72,
+      1
+    ],
+    "confidence": 0.89,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Abdullah Hamdan Al Shehhi",
+    "reviewedAt": 1791282000000,
+    "createdAt": 1791276600000
+  },
+  {
+    "id": "F-S014",
+    "inspectionId": "MNDA-INS-2026-07078",
+    "photo": 0,
+    "code": "D02",
+    "title": "Barefoot workers at the trench edge",
+    "description": "Workers on the left of the trench standing barefoot on the spoil and planks at the edge.",
+    "bbox": [
+      0,
+      0.14,
+      0.25,
+      0.65
+    ],
+    "confidence": 0.84,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Abdullah Hamdan Al Shehhi",
+    "reviewedAt": 1791282000000,
+    "createdAt": 1791276600000
+  },
+  {
+    "id": "F-S015",
+    "inspectionId": "MNDA-INS-2026-07091",
+    "photo": 0,
+    "code": "D07",
+    "title": "Flooded pile-cap excavations without barriers",
+    "description": "Two open pile-cap excavations in the centre, flooded, with no barrier or cover; workers walking along the edges.",
+    "bbox": [
+      0.34,
+      0.39,
+      0.89,
+      0.63
+    ],
+    "confidence": 0.88,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Sanjay Nair",
+    "reviewedAt": 1791441600000,
+    "createdAt": 1791436200000
+  },
+  {
+    "id": "F-S016",
+    "inspectionId": "MNDA-INS-2026-07091",
+    "photo": 0,
+    "code": "D05",
+    "title": "Waste and loose materials across the site",
+    "description": "Bags, offcuts, plastic and rubble scattered around the excavations and access route.",
+    "bbox": [
+      0.15,
+      0.17,
+      0.85,
+      0.4
+    ],
+    "confidence": 0.69,
+    "source": "ai",
+    "status": "accepted",
+    "reviewer": "Sanjay Nair",
+    "reviewedAt": 1791441600000,
+    "createdAt": 1791436200000
+  },
+  {
+    "id": "F-S017",
+    "inspectionId": "MNDA-INS-2026-07091",
+    "photo": 0,
+    "code": "D11",
+    "title": "Rebar bundles stored at the excavation edge",
+    "description": "Rebar bundles laid along the left edge of the excavation, within 1 m of the drop.",
+    "bbox": [
+      0.26,
+      0.4,
+      0.33,
+      0.76
+    ],
+    "confidence": null,
+    "source": "reviewer",
+    "status": "accepted",
+    "reviewer": "Sanjay Nair",
+    "reviewedAt": 1791441600000,
+    "createdAt": 1791436200000
+  }
+]

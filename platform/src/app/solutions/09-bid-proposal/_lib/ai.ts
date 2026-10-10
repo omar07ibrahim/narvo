@@ -6,7 +6,7 @@ import { langName } from "@/lib/ai/request";
 import type { Emitter } from "@/lib/ai/stream";
 import type { Citation } from "@/lib/ai/events";
 import { listDocs, search, type SearchHit } from "@/lib/retrieval";
-import { LIB, SOL, excerpt, pool, verifyQuote } from "./server";
+import { LIB, SOL, excerpt, pool, retry, verifyQuote } from "./server";
 import { mergeStatus, requirementCheck, validityEnd, fmt, addWorkingDays } from "./compliance";
 import { claimSentences } from "./sentences";
 import { DEMO_TODAY } from "@/lib/world/orgs";
@@ -71,16 +71,8 @@ export function chunkRfp(body: string, maxChars = 7000): string[] {
     const next = after.slice(3).search(/^##\s+\d+[\s.]/m);
     const chapter = next === -1 ? after : after.slice(0, next + 3);
     const subs = chapter.split(/(?=^###\s)/m).filter((s) => /\*\*[A-Z]-\d{2}\*\*|[A-Z]-\d{2}/.test(s));
-    if (subs.length >= 3) {
-      const groups: string[] = ["", "", ""];
-      const sizes = [0, 0, 0];
-      for (const s of subs) {
-        const g = sizes.indexOf(Math.min(...sizes));
-        groups[g] += s + "\n";
-        sizes[g] += s.length;
-      }
-      return groups.filter(Boolean);
-    }
+    // One call per requirements sub-section (4.1 … 4.8): short outputs, all in parallel.
+    if (subs.length >= 3) return subs.slice(0, 10);
   }
   // Generic: split by headings into windows of ~maxChars
   const parts = body.split(/(?=^#{1,3}\s)/m);
@@ -121,8 +113,8 @@ export async function extractRequirements(
 
   const s = emit.step("extract", lang === "ar" ? `استخراج المتطلبات (${opts.chunks.length} أجزاء بالتوازي)` : `Extracting requirements (${opts.chunks.length} parts in parallel)`);
   let doneParts = 0;
-  const results = await pool(opts.chunks, 3, async (chunk) => {
-    const { object } = await generateObject({
+  const results = await pool(opts.chunks, 8, async (chunk) => {
+    const { object } = await retry(() => generateObject({
       schema: extractSchema,
       name: "requirements",
       system,
@@ -131,7 +123,7 @@ export async function extractRequirements(
       solution: SOL,
       task: "extract-requirements",
       maxTokens: 3600,
-    });
+    }));
     doneParts++;
     s.update(lang === "ar" ? `اكتمل ${doneParts} من ${opts.chunks.length}` : `${doneParts} of ${opts.chunks.length} parts done`);
     return object.requirements;
@@ -232,7 +224,7 @@ export async function mapEvidence(
   const s2 = emit.step("judge", lang === "ar" ? `تقييم التغطية (${batches.length} دفعات)` : `Judging coverage (${batches.length} batches)`);
   const all: Coverage[] = [];
   let done = 0;
-  await pool(batches, 3, async (batch) => {
+  await pool(batches, 6, async (batch) => {
     const user = batch
       .map((r) => {
         const hs = hits.get(r.id) ?? [];
@@ -245,7 +237,7 @@ export async function mapEvidence(
         ].join("\n");
       })
       .join("\n\n---\n\n");
-    const { object } = await generateObject({
+    const { object } = await retry(() => generateObject({
       schema: judgeSchema,
       name: "coverage",
       system,
@@ -254,7 +246,7 @@ export async function mapEvidence(
       solution: SOL,
       task: "map-evidence",
       maxTokens: 2600,
-    });
+    }));
     const entries: Coverage[] = [];
     for (const r of batch) {
       const res = object.results.find((x) => x.id.replace(/\s+/g, "") === r.id);
@@ -469,16 +461,22 @@ export async function planTasks(
     "`evidenceType`: a short label such as CV, Certificate, Insurance, Method statement, Plan, Data, Signed form.",
     `Write ask and evidenceType in ${langName(lang)}.`,
   ].join("\n");
-  const user = [
-    "Roster:",
-    roster.map((t) => `- ${t.name} — ${t.role}: ${t.expertise}`).join("\n"),
-    "",
-    "Gaps:",
-    opts.gaps
-      .map(({ req, cov }) => `- ${req.id} [${cov.status}${req.mandatory ? ", mandatory" : ""}] ${req.title}: ${req.text}\n  Gap: ${cov.gap ?? cov.rationale}${cov.check && cov.check.status !== "ok" ? `\n  Computed check: ${cov.check.note}` : ""}`)
-      .join("\n"),
-  ].join("\n");
-  const { object } = await generateObject({ schema: taskSchema, name: "tasks", system, user, modelKey, solution: SOL, task: "plan-tasks", maxTokens: 2600 });
+  const batches: Array<typeof opts.gaps> = [];
+  for (let i = 0; i < opts.gaps.length; i += 12) batches.push(opts.gaps.slice(i, i + 12));
+  const results = await pool(batches, 3, async (batch) => {
+    const user = [
+      "Roster:",
+      roster.map((t) => `- ${t.name} — ${t.role}: ${t.expertise}`).join("\n"),
+      "",
+      "Gaps:",
+      batch
+        .map(({ req, cov }) => `- ${req.id} [${cov.status}${req.mandatory ? ", mandatory" : ""}] ${req.title}: ${req.text}\n  Gap: ${cov.gap ?? cov.rationale}${cov.check && cov.check.status !== "ok" ? `\n  Computed check: ${cov.check.note}` : ""}`)
+        .join("\n"),
+    ].join("\n");
+    const r = await generateObject({ schema: taskSchema, name: "tasks", system, user, modelKey, solution: SOL, task: "plan-tasks", maxTokens: 2600 });
+    return r.object.tasks;
+  });
+  const object = { tasks: results.flat() };
 
   const now = Date.now();
   const tasks: BidTask[] = [];

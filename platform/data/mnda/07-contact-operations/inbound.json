@@ -1,0 +1,74 @@
+[
+  {
+    "id": "IN-01",
+    "channel": "chat",
+    "ani": "+971 50 418 2276",
+    "label": "WhatsApp · +971 50 418 2276",
+    "customerHint": "Saeed Khalifa Al Romaithi",
+    "language": "ar",
+    "waitingSec": 74,
+    "firstMessage": "السلام عليكم، شو صار على طلب الإسكان مالي؟ رسلت الأوراق من أسبوعين وللحين ما حد رد علي",
+    "topic": "Housing application status — says documents were sent two weeks ago",
+    "topicAr": "حالة طلب الإسكان — يفيد بإرسال المستندات قبل أسبوعين"
+  },
+  {
+    "id": "IN-02",
+    "channel": "voice",
+    "ani": "+971 52 905 4417",
+    "label": "Hotline 800 6632 · +971 52 905 4417",
+    "customerHint": "Majid Ahmed Al Hammadi",
+    "language": "ar",
+    "waitingSec": 41,
+    "firstMessage": "ألو السلام عليكم، معاك ماجد الحمادي. أنا مقدم على منحة سكنية، ورجعتوا طلبتوا مني شهادة راتب جديدة، والشهادة اللي عطيتكم إياها ما صار لها إلا شهر وكم يوم. يوم الجمعة كلمتكم وقالوا بيتصلون فيني وللحين محد اتصل",
+    "topic": "Salary certificate rejected (older than 30 days) — waiting for promised call-back",
+    "topicAr": "رفض شهادة الراتب لتجاوزها 30 يوماً — بانتظار اتصال موعود"
+  },
+  {
+    "id": "IN-03",
+    "channel": "chat",
+    "ani": "+971 58 903 1147",
+    "label": "MNDA Smart chat · +971 58 903 1147",
+    "customerHint": "James Whitfield Harrow",
+    "language": "en",
+    "waitingSec": 112,
+    "firstMessage": "Hi, my building permit MNDA-BP-2026-02003 for our villa on Lulu Island has been stuck on 'Awaiting master-developer NOC' since 24 Sept. Lulu Island Developments keep telling us it's 'under review'. Is there anything MNDA can actually do?? Our contractor is on standby and charging us for it.",
+    "topic": "Permit stuck awaiting Lulu Island NOC",
+    "topicAr": "رخصة بناء متوقفة بانتظار عدم ممانعة مطوّر جزيرة اللؤلؤ"
+  },
+  {
+    "id": "IN-04",
+    "channel": "voice",
+    "ani": null,
+    "label": "Hotline 800 6632 · Number withheld",
+    "customerHint": null,
+    "language": "en",
+    "waitingSec": 23,
+    "firstMessage": "Hi, yes, hello. I need to book an appointment at the Al Waha centre to hand in some documents for my application. Tuesday or Wednesday morning if possible, I can't do afternoons.",
+    "topic": "Book appointment at Al Waha centre to submit documents",
+    "topicAr": "حجز موعد في مركز الواحة لتسليم مستندات"
+  },
+  {
+    "id": "IN-05",
+    "channel": "chat",
+    "ani": "+971 50 287 6619",
+    "label": "WhatsApp · +971 50 287 6619",
+    "customerHint": "Humaid Salem Al Zahmi",
+    "language": "ar",
+    "waitingSec": 58,
+    "firstMessage": "السلام عليكم، ليتات الشارع عندنا في الغاف طافية من ثلاث ليالي، شارع 14 جنب بوابة مركز الغاف المجتمعي. الشارع ظلام والعيال يلعبون برع بالليل، لو سمحتوا حد يشوف الموضوع",
+    "topic": "Street lights off in Al Ghaf for three nights",
+    "topicAr": "إنارة الشارع مطفأة في مجتمع الغاف منذ ثلاث ليالٍ"
+  },
+  {
+    "id": "IN-06",
+    "channel": "chat",
+    "ani": "+971 52 471 6630",
+    "label": "WhatsApp · +971 52 471 6630",
+    "customerHint": "Lina Georges Haddad",
+    "language": "en",
+    "waitingSec": 136,
+    "firstMessage": "Hello, I was charged twice for permit application MNDA-BP-2026-02047 on 28 Sept (AED 3,169.80 x2 — the payment page froze so I paid again). I have both card transactions. How do I get the second one refunded pls?",
+    "topic": "Refund of duplicate permit fee payment",
+    "topicAr": "استرداد رسوم رخصة مدفوعة مرتين"
+  }
+]

@@ -75,14 +75,14 @@ export function AskPanel({ role, scope, onAnswered }: { role: RoleKey; scope: Sc
   const [input, setInput] = useState("");
   const [active, setActive] = useState<string | null>(null);
   const [highlight, setHighlight] = useState<number | null>(null);
-  const pending = useRef<Omit<AskTurn, "answer" | "citations" | "withheld" | "followups"> | null>(null);
+  const [live, setLive] = useState<Omit<AskTurn, "answer" | "citations" | "withheld" | "followups"> | null>(null);
   const scroller = useRef<HTMLDivElement>(null);
 
   // Commit the streamed turn when the run finishes.
   useEffect(() => {
-    if (!pending.current || run.running || run.status === "idle") return;
-    const p = pending.current;
-    pending.current = null;
+    if (!live || run.running || run.status === "idle") return;
+    const p = live;
+    setLive(null);
     const turn: AskTurn = {
       ...p,
       answer: run.text.main ?? "",
@@ -96,7 +96,7 @@ export function AskPanel({ role, scope, onAnswered }: { role: RoleKey; scope: Sc
     setTurns((t) => [...t, turn]);
     setActive(turn.id);
     if (run.status === "done" && turn.answer) onAnswered(turn.ms ?? 0);
-  }, [run.running, run.status, run.text.main, run.data, run.ms, run.model, run.error, run.startedAt, onAnswered]);
+  }, [live, run.running, run.status, run.text.main, run.data, run.ms, run.model, run.error, run.startedAt, onAnswered]);
 
   useEffect(() => {
     const el = scroller.current;
@@ -114,20 +114,19 @@ export function AskPanel({ role, scope, onAnswered }: { role: RoleKey; scope: Sc
         { role: "user" as const, content: t.q },
         { role: "assistant" as const, content: t.answer },
       ]);
-    pending.current = {
+    setLive({
       id: `T${Date.now()}`,
       q: question,
       role,
       scope,
       attachmentName: att.attachment?.name,
-    };
+    });
     setActive(null);
     setHighlight(null);
     setInput("");
     run.start("/api/solutions/01-ai-workspace/ask", { question, history, role, scope, attachment: att.attachment });
   }
 
-  const live = pending.current;
   const activeTurn = active ? turns.find((t) => t.id === active) : undefined;
   const sideCitations: Citation[] = live ? ((run.data.citations as Citation[]) ?? []) : (activeTurn?.citations ?? []);
   const sideWithheld = live ? (run.data.withheld ?? []) : (activeTurn?.withheld ?? []);
@@ -151,7 +150,7 @@ export function AskPanel({ role, scope, onAnswered }: { role: RoleKey; scope: Sc
               className="text-muted-foreground"
               onClick={() => {
                 run.reset();
-                pending.current = null;
+                setLive(null);
                 setTurns([]);
                 setActive(null);
               }}

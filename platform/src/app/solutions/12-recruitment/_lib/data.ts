@@ -1,6 +1,7 @@
 import "server-only";
 import { exists, listFiles, readJsonSafe, readText } from "@/lib/world/data";
 import { kvGet, kvSet, listApprovals, withOverlay } from "@/lib/store/db";
+import { fairnessGuard, quoteFound } from "./fairness";
 import {
   screen,
   type Application,
@@ -67,6 +68,33 @@ export function getEvaluations(): Record<string, Evaluation> {
   return kvGet<Record<string, Evaluation>>(KV.evaluations) ?? {};
 }
 
+/**
+ * Evidence verification is computed, not trusted: every quote is re-checked against the guarded CV text
+ * each time the workspace loads, and a positive rating without a quote earns no credit.
+ */
+function verified(evals: Record<string, Evaluation>, apps: ReturnType<typeof loadApplications>): Record<string, Evaluation> {
+  const uploads = getUploads();
+  const out: Record<string, Evaluation> = {};
+  for (const [id, ev] of Object.entries(evals)) {
+    const app = apps.find((a) => a.id === id);
+    const raw = app ? loadCv(app) : uploads.find((u) => u.id === id)?.text;
+    if (!raw) {
+      out[id] = ev;
+      continue;
+    }
+    const g = app ? fairnessGuard(raw, { name: app.candidate.name, nameAr: app.candidate.nameAr }) : fairnessGuard(raw);
+    out[id] = {
+      ...ev,
+      ratings: ev.ratings.map((r) =>
+        r.rating > 0 && !r.evidence
+          ? { ...r, rating: 0, evidenceFound: false }
+          : { ...r, evidenceFound: r.evidence ? quoteFound(r.evidence, g.text) : false },
+      ),
+    };
+  }
+  return out;
+}
+
 export function saveEvaluation(ev: Evaluation) {
   const all = getEvaluations();
   all[ev.appId] = ev;
@@ -102,10 +130,11 @@ export function loadState(): RecruitmentState {
     createdAt: a.createdAt,
     payload: a.payload,
   }));
+  const applications = loadApplications();
   return {
     requisition: loadRequisition(),
-    applications: loadApplications(),
-    evaluations: getEvaluations(),
+    applications,
+    evaluations: verified(getEvaluations(), applications),
     interviews: getInterviews(),
     uploads: getUploads(),
     shortlist: kvGet<string[]>(KV.shortlist) ?? [],

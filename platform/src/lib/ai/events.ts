@@ -8,6 +8,7 @@ export type StepStatus = "running" | "done" | "error" | "waiting" | "skipped";
 export type NarvoEvent =
   | { type: "step"; id: string; label: string; status: StepStatus; detail?: string; ms?: number }
   | { type: "text"; channel: string; delta: string }
+  | { type: "text-reset"; channel: string }
   | { type: "reasoning"; delta: string }
   | { type: "data"; key: string; value: unknown }
   | {

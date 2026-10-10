@@ -238,8 +238,22 @@ export interface Proposal {
   changes: ProposalChange[];
 }
 
+export interface PaymentCommitment {
+  id: string;
+  customerId: string;
+  amount: number;
+  date: string;
+  method: string;
+  committedBy: string;
+  role: string;
+  recordedOn: string;
+  recordedBy: string;
+  note: string;
+}
+
 /* ─────────── World snapshot passed from server to client ─────────── */
 export interface Snapshot {
+  paymentCommitments: PaymentCommitment[];
   orders: SalesOrder[];
   stock: StockItem[];
   inbound: InboundPo[];
@@ -322,6 +336,7 @@ export interface CreditCheck {
   over: boolean;
   overAmount: number;
   ifPaidOverdue: number; // exposure if the overdue amount is paid
+  commitment: PaymentCommitment | null; // dated payment commitment on file (Credit Control)
 }
 
 export interface ExceptionItem {

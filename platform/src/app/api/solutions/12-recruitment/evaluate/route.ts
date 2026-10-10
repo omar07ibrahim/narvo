@@ -64,7 +64,7 @@ export async function POST(req: Request) {
       let done = 0;
       let failed = 0;
       emit.data("progress", { done: 0, total: guarded.length });
-      await mapLimit(guarded, 4, async ({ app, g }) => {
+      await mapLimit(guarded, 6, async ({ app, g }) => {
         const callId = `eval-${app.id}`;
         const label = `${candidateCode(app.id)} — ${lang === "ar" ? "مقارنة بالمعايير" : "rating against criteria"}`;
         emit.send({ type: "tool", id: callId, name: "evaluate_cv", label, status: "running", input: { application: app.id, redactedItems: g.removed.length } });
@@ -129,11 +129,12 @@ export async function POST(req: Request) {
           : `${ranked.length} ranked · evidence traceability ${Math.round(avgTrace * 100)}%`,
       );
 
-      if (!ranked.length) return;
+      if (ranked.length < 3) return;
 
       // 4 — Reasoned priority list (anonymised)
       const s4 = emit.step("rationale", lang === "ar" ? "صياغة قائمة أولويات معللة" : "Writing the reasoned priority list");
       const top = ranked.slice(0, 10);
+      const codes = top.map((r) => candidateCode(r.id));
       const lines = top
         .map(
           (r, i) =>
@@ -147,7 +148,8 @@ export async function POST(req: Request) {
             role: "system",
             content: [
               "You prepare a reasoned priority list for MNDA's Human Capital department and the hiring manager. You do not decide — HR selects the shortlist.",
-              "Using only the anonymised evaluation results provided (candidate codes, weighted scores 0-100, criterion ratings 0-4, summaries), write: a two-sentence overview; a 'Priority' list of 6-8 candidates in score order, one line each with the decisive job-related reason; a short 'Close calls' note where scores are within 3 points or depend on one criterion; and 'Verify at interview' (2-3 bullets). Never mention or speculate about protected attributes.",
+              `Using only the anonymised evaluation results provided (candidate codes, weighted scores 0-100, criterion ratings 0-4, summaries), write: a two-sentence overview; a 'Priority' list of up to 8 candidates in score order, one line each with the decisive job-related reason; a short 'Close calls' note where scores are within 3 points or depend on one criterion; and 'Verify at interview' (2-3 bullets). Never mention or speculate about protected attributes.`,
+              `There are exactly ${codes.length} candidates in the results: ${codes.join(", ")}. Mention no other candidate codes and never invent scores — copy each weighted score exactly as given.`,
               `Write in ${lang === "ar" ? "Arabic (formal MSA)" : "English"}, Markdown, ≤ 230 words. Refer to candidates only by their codes (e.g. Candidate 0041).`,
             ].join("\n"),
           },

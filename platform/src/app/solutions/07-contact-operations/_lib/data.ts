@@ -1,6 +1,7 @@
 import "server-only";
 import { readJsonSafe } from "@/lib/world/data";
 import { withOverlay, kvGet, kvSet, listApprovals } from "@/lib/store/db";
+import { listDocs, search, type SearchHit } from "@/lib/retrieval";
 import {
   normMobile,
   type Appointment,
@@ -204,8 +205,7 @@ export function levelFor(factors: string[]): SessionState["level"] {
 export const FACTOR_LABEL: Record<string, { en: string; ar: string }> = {
   registered_mobile: { en: "Registered mobile (caller ID / WhatsApp)", ar: "الرقم المسجّل (هوية المتصل / واتساب)" },
   emirates_id: { en: "Emirates ID number", ar: "رقم الهوية الإماراتية" },
-  reference: { en: "Case / permit reference", ar: "رقم الطلب أو الرخصة" },
-  date_of_birth: { en: "Date of birth", ar: "تاريخ الميلاد" },
+  reference_dob: { en: "Case / permit number + date of birth", ar: "رقم الطلب أو الرخصة مع تاريخ الميلاد" },
 };
 
 /* ───────────── Working days ───────────── */
@@ -247,4 +247,17 @@ export function nextAppointmentId(): string {
 export function nextHandoffId(): string {
   const n = loadHandoffs().reduce((m, h) => Math.max(m, Number(h.id.split("-").pop()) || 0), 30);
   return `HO-2610-${String(n + 1).padStart(4, "0")}`;
+}
+
+/* ───────────── Customer-facing retrieval: Public documents only ───────────── */
+
+/**
+ * Anything the assistant may say to a customer must come from documents classified Public
+ * (circulars, service guides, charter, FAQs, policies) — never Internal or Confidential material.
+ */
+export function searchPublic(queries: string[], k = 5): SearchHit[] {
+  const pub = new Set(listDocs("mnda/knowledge").filter((d) => /^public$/i.test(String(d.classification ?? ""))).map((d) => d.id));
+  return search("mnda/knowledge", queries.filter(Boolean), k * 4)
+    .filter((h) => pub.has(h.docId))
+    .slice(0, k);
 }

@@ -42,7 +42,7 @@ function parseCsv(text: string) {
     return i >= 0 ? i : fallback;
   };
   const di = find(/date|week|month|period|time|day/, 0);
-  const vi = find(/value|qty|quantity|units|sales|demand|volume|amount|tonnes|count/, di === 0 ? 1 : 0);
+  const vi = find(/value|qty|quantity|units|sales|sold|demand|volume|amount|tonnes|count/, di === 0 ? 1 : 0);
   const si = header.findIndex((h) => /sku|item|product|series|code|name/.test(h));
   const rows = (hasHeader ? lines.slice(1) : lines).map(splitLine);
   const groups = new Map<string, Array<{ t: string; v: number }>>();

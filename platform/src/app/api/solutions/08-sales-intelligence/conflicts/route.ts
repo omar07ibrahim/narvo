@@ -3,8 +3,8 @@ import { eventStream, readBody } from "@/lib/ai/stream";
 import { getPrefs } from "@/lib/ai/request";
 import { generateObject } from "@/lib/ai/json";
 import { addAudit, kvSet } from "@/lib/store/db";
-import { cacheKey, findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/data";
-import { buildSourcePack, computedFacts, POLICY_QUERIES } from "@/app/solutions/08-sales-intelligence/_lib/context";
+import { cacheKey, findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/records";
+import { buildSourcePack, computedFacts, POLICY_QUERIES } from "@/app/solutions/08-sales-intelligence/_lib/evidence";
 
 export const dynamic = "force-dynamic";
 
@@ -13,20 +13,20 @@ const schema = z.object({
   perConflict: z.array(
     z.object({
       id: z.string().describe("conflict id exactly as given"),
-      explanation: z.string().describe("Why it matters, 1–2 sentences, with [n] citations"),
-      recommendation: z.string().describe("Concrete resolution, 1 sentence"),
+      explanation: z.string().describe("Why it matters — max 35 words, with [n] citations"),
+      recommendation: z.string().describe("Concrete resolution — max 22 words"),
       approver: z.string().nullable(),
     }),
   ),
   resolution: z.object({
-    summary: z.string().describe("Recommended overall resolution, 2–4 sentences with [n] citations"),
-    proposedTerms: z.array(z.object({ term: z.string(), proposal: z.string(), rationale: z.string() })).describe("4–7 terms for the revised offer"),
+    summary: z.string().describe("Recommended overall resolution, 2–3 sentences with [n] citations"),
+    proposedTerms: z.array(z.object({ term: z.string(), proposal: z.string(), rationale: z.string() })).describe("4–6 terms for the revised offer, each field max 25 words"),
     negotiationRoom: z.string().describe("What room exists within authority limits, with the authority holder"),
-    risksIfUnresolved: z.array(z.string()),
+    risksIfUnresolved: z.array(z.string()).describe("2–4 items, max 20 words each"),
   }),
   additionalFindings: z
     .array(z.object({ finding: z.string(), sources: z.array(z.number()) }))
-    .describe("Issues found in the correspondence that the computed checks cannot see (claims, deadlines, supply constraints)"),
+    .describe("0–4 issues found in the correspondence that the computed checks cannot see (claims, deadlines, supply constraints), max 30 words each"),
 });
 
 /** Computed quote ↔ customer document ↔ contract comparison, then model explanation and recommended resolution. */
@@ -72,13 +72,13 @@ export async function POST(req: Request) {
           "You are NARVO, the private AI assistant of Raseen Building Materials Trading LLC (RBM), a UAE building-materials distributor.",
           `You support ${opp.owner}, Key Account Manager, and the Sales Director Fadi Khoury in resolving conflicting commercial terms before replying to the customer.`,
           "The conflicts and all numbers were computed by code and are authoritative — explain them, do not recompute or contradict them.",
-          "Use ONLY the numbered sources; cite with [n] markers inside explanation and summary text. Respect authority limits: prices below frame need the Sales Director; below cost+4% the GM; terms beyond tier and credit releases only the Group CFO; site windows are not negotiable.",
+          "Use ONLY the numbered sources; cite with [n] markers (numbered sources only, no other markers) inside explanation and summary text. Use the calendar given for weekdays. Respect authority limits: prices below frame need the Sales Director; below cost+4% the GM; terms beyond tier and credit releases only the Group CFO; site windows are not negotiable.",
           "Recommend a resolution that protects margin and credit while keeping the deal alive (e.g. re-issue at frame rates, offer a lever inside authority such as phased steel pricing or delivery commitments, route exceptions to the right approver).",
-          `Return one perConflict entry for EVERY conflict id given. Write all text in ${ar ? "Arabic (professional Modern Standard Arabic; keep codes, references and AED amounts in Latin digits)" : "English"}.`,
+          `Be concise — respect the word limits. Return one perConflict entry for EVERY conflict id given. Write all text in ${ar ? "Arabic (professional Modern Standard Arabic; keep codes, references and AED amounts in Latin digits)" : "English"}.`,
         ].join("\n"),
         user: `COMPUTED FACTS AND CONFLICTS:\n${computedFacts(data, opp, r)}\n\nConflict ids: ${r.conflicts.map((c) => c.id).join(", ")}\n\nSOURCES:\n\n${pack.context}`,
         modelKey,
-        maxTokens: 3000,
+        maxTokens: 6000,
         temperature: 0.2,
         solution: SLUG,
         task: "conflicts.explain",

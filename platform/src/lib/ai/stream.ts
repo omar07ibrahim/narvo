@@ -16,6 +16,8 @@ export interface Emitter {
   send(e: NarvoEvent): void;
   step(id: string, label: string, detail?: string): StepHandle;
   text(delta: string, channel?: string): void;
+  /** Clear a streamed text channel on the client (e.g. a discarded draft). */
+  resetText(channel?: string): void;
   reasoning(delta: string): void;
   data(key: string, value: unknown): void;
   signal: AbortSignal;
@@ -65,6 +67,9 @@ export function eventStream(
         },
         text(delta, channel = "main") {
           send({ type: "text", channel, delta });
+        },
+        resetText(channel = "main") {
+          send({ type: "text-reset", channel });
         },
         reasoning(delta) {
           send({ type: "reasoning", delta });

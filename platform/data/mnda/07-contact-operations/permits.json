@@ -1,0 +1,579 @@
+[
+  {
+    "id": "MNDA-BP-2026-01741",
+    "service": "MNDA-SVC-101",
+    "serviceName": "Building Permit — New Construction",
+    "serviceNameAr": "رخصة بناء جديدة",
+    "customerId": "CUS-344871",
+    "applicant": "Humaid Salem Al Zahmi",
+    "consultant": "Al Qimma Engineering Consultancy",
+    "plot": "MN-07-033-0118",
+    "district": "MN-07 Al Ghaf Community",
+    "gated": false,
+    "masterDeveloper": null,
+    "gfaM2": 811.4,
+    "feeAed": 3934.2,
+    "submittedAt": "2026-09-03T09:22:00+04:00",
+    "status": "issued",
+    "statusSince": "2026-09-30T11:46:00+04:00",
+    "nocRequestedAt": null,
+    "nocStatus": "not_required",
+    "returnReason": null,
+    "officer": "Eng. Suresh Babu Nair",
+    "nextStep": "Permit issued. Download the digital permit with QR code from MNDA Smart → My Permits; the contractor must register the site with Field Operations & Inspection before works start.",
+    "history": [
+      {
+        "at": "2026-09-03T09:22:00+04:00",
+        "event": "Application submitted; fee AED 3,934.20 paid"
+      },
+      {
+        "at": "2026-09-04T10:15:00+04:00",
+        "event": "Completeness check passed"
+      },
+      {
+        "at": "2026-09-15T13:02:00+04:00",
+        "event": "Planning review cleared after side-setback comment closed"
+      },
+      {
+        "at": "2026-09-22T11:30:00+04:00",
+        "event": "Structural review cleared"
+      },
+      {
+        "at": "2026-09-28T09:47:00+04:00",
+        "event": "Civil Defence fire & life-safety approval received"
+      },
+      {
+        "at": "2026-09-30T11:46:00+04:00",
+        "event": "Permit issued (digital permit with QR code)"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-01788",
+    "service": "MNDA-SVC-101",
+    "serviceName": "Building Permit — New Construction",
+    "serviceNameAr": "رخصة بناء جديدة",
+    "customerId": "CUS-309754",
+    "applicant": "Reem Abdulrahman Al Tunaiji",
+    "consultant": "Dar Al Murjan Engineering Consultants",
+    "plot": "MN-03-014-0062",
+    "district": "MN-03 Al Lulu Island",
+    "gated": true,
+    "masterDeveloper": "Lulu Island Developments PJSC",
+    "gfaM2": 618.0,
+    "feeAed": 3354.0,
+    "submittedAt": "2026-09-09T09:41:00+04:00",
+    "status": "awaiting_noc",
+    "statusSince": "2026-09-16T08:55:00+04:00",
+    "nocRequestedAt": "2026-09-10T12:30:00+04:00",
+    "nocStatus": "pending",
+    "returnReason": null,
+    "officer": "Eng. Dana Waleed Al Saadi",
+    "nextStep": "Lulu Island Developments PJSC confirmed on 8 Oct that the NOC is in final sign-off (expected 13 Oct). The 20-working-day hold ends 14 Oct 2026; if no NOC is uploaded by then the application is returned to the applicant.",
+    "history": [
+      {
+        "at": "2026-09-09T09:41:00+04:00",
+        "event": "Application submitted; fee AED 3,354.00 paid"
+      },
+      {
+        "at": "2026-09-10T12:30:00+04:00",
+        "event": "Consultant requested NOC from Lulu Island Developments PJSC (LID-NOC-26-0812)"
+      },
+      {
+        "at": "2026-09-15T14:20:00+04:00",
+        "event": "Completeness check: NOC missing, request receipt verified"
+      },
+      {
+        "at": "2026-09-16T08:55:00+04:00",
+        "event": "Status set to Awaiting master-developer NOC; SLA clock suspended"
+      },
+      {
+        "at": "2026-10-06T13:20:00+04:00",
+        "event": "Owner complaint CHC-2026-118236 logged (NOC delay)"
+      },
+      {
+        "at": "2026-10-08T10:12:00+04:00",
+        "event": "Lulu Island Developments confirmed NOC in final sign-off"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-01803",
+    "service": "MNDA-SVC-101",
+    "serviceName": "Building Permit — New Construction",
+    "serviceNameAr": "رخصة بناء جديدة",
+    "customerId": "CUS-162580",
+    "applicant": "Khalid Sultan Al Mheiri",
+    "consultant": "Sahil Engineering Consultants",
+    "plot": "MN-04-109-0046",
+    "district": "MN-04 Al Waha Gardens",
+    "gated": false,
+    "masterDeveloper": null,
+    "gfaM2": 702.9,
+    "feeAed": 3608.7,
+    "submittedAt": "2026-09-10T10:55:00+04:00",
+    "status": "civil_defence",
+    "statusSince": "2026-10-06T09:20:00+04:00",
+    "nocRequestedAt": null,
+    "nocStatus": "not_required",
+    "returnReason": null,
+    "officer": "Eng. Suresh Babu Nair",
+    "nextStep": "Planning and structural reviews are complete; awaiting Civil Defence fire & life-safety approval (usually 3–5 working days). The permit is issued once the approval is received.",
+    "history": [
+      {
+        "at": "2026-09-10T10:55:00+04:00",
+        "event": "Application submitted; fee AED 3,608.70 paid"
+      },
+      {
+        "at": "2026-09-11T09:10:00+04:00",
+        "event": "Completeness check passed"
+      },
+      {
+        "at": "2026-09-21T12:44:00+04:00",
+        "event": "Planning review comment: parking layout does not show 2 covered spaces"
+      },
+      {
+        "at": "2026-09-28T15:05:00+04:00",
+        "event": "Revised parking layout accepted"
+      },
+      {
+        "at": "2026-10-05T11:38:00+04:00",
+        "event": "Structural review cleared"
+      },
+      {
+        "at": "2026-10-06T09:20:00+04:00",
+        "event": "Sent to Civil Defence for fire & life-safety approval"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-01861",
+    "service": "MNDA-SVC-101",
+    "serviceName": "Building Permit — New Construction",
+    "serviceNameAr": "رخصة بناء جديدة",
+    "customerId": "CUS-318862",
+    "applicant": "Abdulla Rashed Al Ameri",
+    "consultant": "Bayt Al Handasa Engineering Consultants",
+    "plot": "MN-03-019-0088",
+    "district": "MN-03 Al Lulu Island",
+    "gated": true,
+    "masterDeveloper": "Lulu Island Developments PJSC",
+    "gfaM2": 512.3,
+    "feeAed": 3036.9,
+    "submittedAt": "2026-09-14T08:48:00+04:00",
+    "status": "returned_to_applicant",
+    "statusSince": "2026-10-01T10:05:00+04:00",
+    "nocRequestedAt": "2026-08-27T14:10:00+04:00",
+    "nocStatus": "received",
+    "returnReason": "Structural calculations not stamped: calculation report Rev 2 (148 pages) is signed on the cover page only; pages 2–148 carry no stamp of a registered structural engineer.",
+    "officer": "Eng. Ahmed Hilal Al Kindi",
+    "nextStep": "Consultant to upload the fully stamped and signed structural calculation report and resubmit (no new fee). NOC LID/NOC/26/0791 issued 23 Sep remains valid until 22 Dec 2026.",
+    "history": [
+      {
+        "at": "2026-08-27T14:10:00+04:00",
+        "event": "Consultant requested NOC from Lulu Island Developments PJSC"
+      },
+      {
+        "at": "2026-09-14T08:48:00+04:00",
+        "event": "Application submitted; fee AED 3,036.90 paid"
+      },
+      {
+        "at": "2026-09-15T09:30:00+04:00",
+        "event": "Status set to Awaiting master-developer NOC; SLA clock suspended"
+      },
+      {
+        "at": "2026-09-23T16:02:00+04:00",
+        "event": "NOC LID/NOC/26/0791 received (drawing revision R2); technical review started"
+      },
+      {
+        "at": "2026-09-29T11:15:00+04:00",
+        "event": "Planning review cleared"
+      },
+      {
+        "at": "2026-10-01T10:05:00+04:00",
+        "event": "Returned to applicant — structural calculations not stamped"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-01932",
+    "service": "MNDA-SVC-101",
+    "serviceName": "Building Permit — New Construction",
+    "serviceNameAr": "رخصة بناء جديدة",
+    "customerId": "CUS-318862",
+    "applicant": "Abdulla Rashed Al Ameri",
+    "consultant": "Bayt Al Handasa Engineering Consultants",
+    "plot": "MN-03-021-0114",
+    "district": "MN-03 Al Lulu Island",
+    "gated": true,
+    "masterDeveloper": "Lulu Island Developments PJSC",
+    "gfaM2": 742.5,
+    "feeAed": 3727.5,
+    "submittedAt": "2026-09-16T11:08:00+04:00",
+    "status": "awaiting_noc",
+    "statusSince": "2026-09-18T10:42:00+04:00",
+    "nocRequestedAt": "2026-09-17T15:20:00+04:00",
+    "nocStatus": "pending",
+    "returnReason": null,
+    "officer": "Eng. Ahmed Hilal Al Kindi",
+    "nextStep": "Waiting for Lulu Island Developments PJSC to issue the NOC for drawing revision R3 (request LID-NOC-26-0877). The 20-working-day hold ends 16 Oct 2026; consultant has asked for escalation (HO-2610-0032).",
+    "history": [
+      {
+        "at": "2026-09-16T11:08:00+04:00",
+        "event": "Application submitted; fee AED 3,727.50 paid"
+      },
+      {
+        "at": "2026-09-17T15:20:00+04:00",
+        "event": "Completeness check: NOC not attached; consultant requested NOC from Lulu Island Developments (LID-NOC-26-0877)"
+      },
+      {
+        "at": "2026-09-18T10:42:00+04:00",
+        "event": "Status set to Awaiting master-developer NOC; SLA clock suspended"
+      },
+      {
+        "at": "2026-10-01T13:45:00+04:00",
+        "event": "Consultant follow-up logged by Customer Happiness Centre"
+      },
+      {
+        "at": "2026-10-07T11:20:00+04:00",
+        "event": "Permits desk emailed Lulu Island Developments NOC team; no reply yet"
+      },
+      {
+        "at": "2026-10-09T09:02:00+04:00",
+        "event": "Consultant requested escalation (handoff HO-2610-0032)"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-01977",
+    "service": "MNDA-SVC-102",
+    "serviceName": "Fit-out Permit",
+    "serviceNameAr": "رخصة تشطيبات داخلية",
+    "customerId": "CUS-331047",
+    "applicant": "Hany Mostafa El-Sherbiny",
+    "consultant": "Studio Mezzanine Interiors LLC",
+    "plot": "MN-08-002-0317",
+    "district": "MN-08 Marina Quarter",
+    "gated": true,
+    "masterDeveloper": "Marina Quarter Properties LLC",
+    "gfaM2": null,
+    "feeAed": 800,
+    "submittedAt": "2026-09-22T12:18:00+04:00",
+    "status": "approved",
+    "statusSince": "2026-09-29T11:40:00+04:00",
+    "nocRequestedAt": null,
+    "nocStatus": "not_required",
+    "returnReason": null,
+    "officer": "Eng. Mahmoud Adel Farouk",
+    "nextStep": "Fit-out permit approved — internal works only, so no master-developer NOC was required (Circular 14/2026, section 3). Refund of the duplicate AED 800 payment is awaiting CHC Manager approval (HO-2610-0033).",
+    "history": [
+      {
+        "at": "2026-09-22T12:18:00+04:00",
+        "event": "Application submitted; fee AED 800.00 paid (MNDA-PAY-26-0583417)"
+      },
+      {
+        "at": "2026-09-22T12:31:00+04:00",
+        "event": "Second payment of AED 800.00 received for the same application (MNDA-PAY-26-0583429)"
+      },
+      {
+        "at": "2026-09-23T08:52:00+04:00",
+        "event": "Completeness check passed; internal works only, NOC not required"
+      },
+      {
+        "at": "2026-09-29T11:40:00+04:00",
+        "event": "Fit-out permit approved"
+      },
+      {
+        "at": "2026-10-09T11:26:00+04:00",
+        "event": "Refund request for duplicate payment handed to Customer Happiness Centre (HO-2610-0033)"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-02003",
+    "service": "MNDA-SVC-101",
+    "serviceName": "Building Permit — New Construction",
+    "serviceNameAr": "رخصة بناء جديدة",
+    "customerId": "CUS-327405",
+    "applicant": "James Whitfield Harrow",
+    "consultant": "Northshore Architects & Engineers LLC",
+    "plot": "MN-03-027-0009",
+    "district": "MN-03 Al Lulu Island",
+    "gated": true,
+    "masterDeveloper": "Lulu Island Developments PJSC",
+    "gfaM2": 486.4,
+    "feeAed": 2959.2,
+    "submittedAt": "2026-09-23T13:16:00+04:00",
+    "status": "awaiting_noc",
+    "statusSince": "2026-09-24T09:30:00+04:00",
+    "nocRequestedAt": "2026-09-22T16:05:00+04:00",
+    "nocStatus": "pending",
+    "returnReason": null,
+    "officer": "Eng. Dana Waleed Al Saadi",
+    "nextStep": "Waiting for Lulu Island Developments PJSC (request LID-NOC-26-0902). The 20-working-day hold ends 22 Oct 2026. Owner meets the permits desk at Downtown on 12 Oct (APT-26-41108).",
+    "history": [
+      {
+        "at": "2026-09-22T16:05:00+04:00",
+        "event": "Consultant requested NOC from Lulu Island Developments PJSC (LID-NOC-26-0902)"
+      },
+      {
+        "at": "2026-09-23T13:16:00+04:00",
+        "event": "Application submitted; fee AED 2,959.20 paid"
+      },
+      {
+        "at": "2026-09-24T09:30:00+04:00",
+        "event": "Status set to Awaiting master-developer NOC; SLA clock suspended"
+      },
+      {
+        "at": "2026-10-02T10:12:00+04:00",
+        "event": "Owner enquiry via MNDA Smart chat"
+      },
+      {
+        "at": "2026-10-08T16:51:00+04:00",
+        "event": "Owner appointment APT-26-41108 booked with permits desk"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-02016",
+    "service": "MNDA-SVC-102",
+    "serviceName": "Fit-out Permit",
+    "serviceNameAr": "رخصة تشطيبات داخلية",
+    "customerId": "CUS-340592",
+    "applicant": "Bayan Creative Events LLC",
+    "consultant": "Linea Interiors & Fit-Out Consultants",
+    "plot": "MN-08-005-0204",
+    "district": "MN-08 Marina Quarter",
+    "gated": true,
+    "masterDeveloper": "Marina Quarter Properties LLC",
+    "gfaM2": null,
+    "feeAed": 800,
+    "submittedAt": "2026-09-24T14:35:00+04:00",
+    "status": "awaiting_noc",
+    "statusSince": "2026-09-25T09:12:00+04:00",
+    "nocRequestedAt": "2026-09-24T10:00:00+04:00",
+    "nocStatus": "pending",
+    "returnReason": null,
+    "officer": "Eng. Mahmoud Adel Farouk",
+    "nextStep": "NOC required because the fit-out alters the ground-floor shopfront and external signage (Circular 14/2026, section 3). Waiting for Marina Quarter Properties LLC; the 20-working-day hold ends 23 Oct 2026.",
+    "history": [
+      {
+        "at": "2026-09-24T10:00:00+04:00",
+        "event": "Applicant requested NOC from Marina Quarter Properties LLC"
+      },
+      {
+        "at": "2026-09-24T14:35:00+04:00",
+        "event": "Application submitted; fee AED 800.00 paid"
+      },
+      {
+        "at": "2026-09-25T09:12:00+04:00",
+        "event": "Shopfront and signage works identified; status set to Awaiting master-developer NOC"
+      },
+      {
+        "at": "2026-10-07T13:05:00+04:00",
+        "event": "Applicant emailed asking why the NOC applies; Customer Happiness Centre replied"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-02031",
+    "service": "MNDA-SVC-101",
+    "serviceName": "Building Permit — New Construction",
+    "serviceNameAr": "رخصة بناء جديدة",
+    "customerId": "CUS-318862",
+    "applicant": "Abdulla Rashed Al Ameri",
+    "consultant": "Bayt Al Handasa Engineering Consultants",
+    "plot": "MN-06-008-0231",
+    "district": "MN-06 Al Sidr Residential",
+    "gated": true,
+    "masterDeveloper": "Sidr Communities LLC",
+    "gfaM2": 655.8,
+    "feeAed": 3467.4,
+    "submittedAt": "2026-09-25T10:02:00+04:00",
+    "status": "awaiting_noc",
+    "statusSince": "2026-09-28T08:47:00+04:00",
+    "nocRequestedAt": "2026-09-24T11:15:00+04:00",
+    "nocStatus": "pending",
+    "returnReason": null,
+    "officer": "Eng. Dana Waleed Al Saadi",
+    "nextStep": "Waiting for Sidr Communities LLC to issue the NOC (requested 24 Sep). The 20-working-day hold ends 26 Oct 2026.",
+    "history": [
+      {
+        "at": "2026-09-24T11:15:00+04:00",
+        "event": "Consultant requested NOC from Sidr Communities LLC"
+      },
+      {
+        "at": "2026-09-25T10:02:00+04:00",
+        "event": "Application submitted; fee AED 3,467.40 paid"
+      },
+      {
+        "at": "2026-09-28T08:47:00+04:00",
+        "event": "Status set to Awaiting master-developer NOC; SLA clock suspended"
+      },
+      {
+        "at": "2026-10-07T09:20:00+04:00",
+        "event": "Consultant status check via MNDA Smart chat"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-02047",
+    "service": "MNDA-SVC-101",
+    "serviceName": "Building Permit — New Construction",
+    "serviceNameAr": "رخصة بناء جديدة",
+    "customerId": "CUS-336218",
+    "applicant": "Lina Georges Haddad",
+    "consultant": "Greenline Consulting Engineers",
+    "plot": "MN-06-011-0078",
+    "district": "MN-06 Al Sidr Residential",
+    "gated": true,
+    "masterDeveloper": "Sidr Communities LLC",
+    "gfaM2": 556.6,
+    "feeAed": 3169.8,
+    "submittedAt": "2026-09-28T10:27:00+04:00",
+    "status": "returned_to_applicant",
+    "statusSince": "2026-09-29T14:12:00+04:00",
+    "nocRequestedAt": "2026-09-30T09:20:00+04:00",
+    "nocStatus": "expired",
+    "returnReason": "Master-developer NOC SC/NOC/26/0412 issued 26 Jun 2026 expired on 24 Sep 2026 (90-day validity, Circular 14/2026, section 4.2).",
+    "officer": "Eng. Suresh Babu Nair",
+    "nextStep": "Upload a renewed NOC from Sidr Communities LLC (renewal requested 30 Sep) and resubmit; no new fee is payable on resubmission. Customer reports the fee was charged twice on 28 Sep.",
+    "history": [
+      {
+        "at": "2026-09-28T10:27:00+04:00",
+        "event": "Application submitted; fee AED 3,169.80 paid (MNDA-PAY-26-0601184)"
+      },
+      {
+        "at": "2026-09-28T10:41:00+04:00",
+        "event": "Second payment of AED 3,169.80 received for the same application (MNDA-PAY-26-0601207)"
+      },
+      {
+        "at": "2026-09-29T14:12:00+04:00",
+        "event": "Returned to applicant — NOC expired on 24 Sep"
+      },
+      {
+        "at": "2026-09-30T09:20:00+04:00",
+        "event": "Consultant requested renewed NOC from Sidr Communities LLC"
+      },
+      {
+        "at": "2026-10-06T15:48:00+04:00",
+        "event": "Owner contacted Customer Happiness Centre about the return"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-02062",
+    "service": "MNDA-SVC-101",
+    "serviceName": "Building Permit — New Construction",
+    "serviceNameAr": "رخصة بناء جديدة",
+    "customerId": "CUS-349306",
+    "applicant": "Ebrahim Khalil Al Awadhi",
+    "consultant": "Dar Al Murjan Engineering Consultants",
+    "plot": "MN-02-044-0153",
+    "district": "MN-02 Al Murjan",
+    "gated": false,
+    "masterDeveloper": null,
+    "gfaM2": 694.2,
+    "feeAed": 3582.6,
+    "submittedAt": "2026-09-29T08:40:00+04:00",
+    "status": "returned_to_applicant",
+    "statusSince": "2026-10-02T10:15:00+04:00",
+    "nocRequestedAt": null,
+    "nocStatus": "not_required",
+    "returnReason": "Site plan revision mismatch: drawings are based on affection plan Rev B; the current Land Registry affection plan for MN-02-044-0153 is Rev C (issued 3 Aug 2026, northern setback increased from 3.0 m to 4.5 m).",
+    "officer": "Eng. Suresh Babu Nair",
+    "nextStep": "Consultant to revise the architectural drawings to affection plan Rev C and resubmit; no new fee.",
+    "history": [
+      {
+        "at": "2026-09-29T08:40:00+04:00",
+        "event": "Application submitted; fee AED 3,582.60 paid"
+      },
+      {
+        "at": "2026-09-30T10:02:00+04:00",
+        "event": "Completeness check passed"
+      },
+      {
+        "at": "2026-10-02T10:15:00+04:00",
+        "event": "Returned to applicant — site plan revision mismatch (Rev B vs Rev C)"
+      },
+      {
+        "at": "2026-10-06T10:25:00+04:00",
+        "event": "Owner call; agent explained the required revision"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-02104",
+    "service": "MNDA-SVC-101",
+    "serviceName": "Building Permit — New Construction",
+    "serviceNameAr": "رخصة بناء جديدة",
+    "customerId": "CUS-352740",
+    "applicant": "Saif Rashid Al Mehairbi",
+    "consultant": "Sahil Engineering Consultants",
+    "plot": "MN-04-126-0017",
+    "district": "MN-04 Al Waha Gardens",
+    "gated": false,
+    "masterDeveloper": null,
+    "gfaM2": 588.7,
+    "feeAed": 3266.1,
+    "submittedAt": "2026-10-01T09:05:00+04:00",
+    "status": "technical_review",
+    "statusSince": "2026-10-02T08:30:00+04:00",
+    "nocRequestedAt": null,
+    "nocStatus": "not_required",
+    "returnReason": null,
+    "officer": "Eng. Ahmed Hilal Al Kindi",
+    "nextStep": "Planning review in progress; structural review follows. Decision expected within the 15-working-day SLA (by 22 Oct 2026).",
+    "history": [
+      {
+        "at": "2026-10-01T09:05:00+04:00",
+        "event": "Application submitted; fee AED 3,266.10 paid"
+      },
+      {
+        "at": "2026-10-02T08:30:00+04:00",
+        "event": "Completeness check passed; technical review started"
+      },
+      {
+        "at": "2026-10-09T09:31:00+04:00",
+        "event": "Owner status check via WhatsApp"
+      }
+    ]
+  },
+  {
+    "id": "MNDA-BP-2026-02119",
+    "service": "MNDA-SVC-103",
+    "serviceName": "Building Completion Certificate",
+    "serviceNameAr": "شهادة إنجاز مبنى",
+    "customerId": "CUS-309754",
+    "applicant": "Reem Abdulrahman Al Tunaiji",
+    "consultant": "Dar Al Murjan Engineering Consultants",
+    "plot": "MN-01-006-0042",
+    "district": "MN-01 Downtown",
+    "gated": false,
+    "masterDeveloper": null,
+    "gfaM2": null,
+    "feeAed": 1000,
+    "submittedAt": "2026-10-05T12:10:00+04:00",
+    "status": "technical_review",
+    "statusSince": "2026-10-07T09:00:00+04:00",
+    "nocRequestedAt": null,
+    "nocStatus": "not_required",
+    "returnReason": null,
+    "officer": "Eng. Mahmoud Adel Farouk",
+    "nextStep": "Final site inspection scheduled 14 Oct 2026; owner meeting at Downtown centre on 13 Oct (APT-26-40871). Certificate expected within the 10-working-day SLA (by 19 Oct).",
+    "history": [
+      {
+        "at": "2026-10-05T12:10:00+04:00",
+        "event": "Application submitted; fee AED 1,000.00 paid"
+      },
+      {
+        "at": "2026-10-06T13:24:00+04:00",
+        "event": "Owner appointment APT-26-40871 booked"
+      },
+      {
+        "at": "2026-10-07T09:00:00+04:00",
+        "event": "Documents verified; final inspection requested from Field Operations & Inspection"
+      }
+    ]
+  }
+]

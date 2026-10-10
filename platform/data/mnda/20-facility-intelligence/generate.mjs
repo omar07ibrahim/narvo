@@ -250,8 +250,10 @@ for (let h = 0; h < HOURS; h++) {
   const kwPerTr = (amb2, f) => 0.9 + 0.0145 * Math.max(0, amb2 - 35) + 0.042 * f;
   const kw1 = tr1 * kwPerTr(amb, foul01(ms)) + gauss() * 3;
   const kw2 = tr2 > 0 ? tr2 * kwPerTr(amb, foul02(ms)) + gauss() * 3 : 0;
-  if (new Date(ms).getUTCMonth() === 8) kwh.sep += kw1 + kw2;
-  else kwh.oct += kw1 + kw2;
+  const k1 = Math.max(0, Math.round(kw1));
+  const k2 = Math.max(0, Math.round(kw2));
+  if (new Date(ms).getUTCMonth() === 8) kwh.sep += k1 + k2;
+  else kwh.oct += k1 + k2;
   // zones (first-order lag towards a target)
   const zrow = {};
   for (const [id, z] of Object.entries(zones)) {
@@ -509,12 +511,12 @@ job({
   source: "Recurring alarm — raised by Raseen FM supervisor",
   raisedAt: "2026-09-30T08:35:00+04:00",
   respondedAt: "2026-09-30T10:05:00+04:00",
-  completedAt: null,
-  status: "Open — contractor diagnosis",
+  completedAt: isoMin(CLEAN_AT),
+  status: "Completed by contractor — awaiting MNDA verification",
   technician: "Arun Pillai",
   supervisor: "Mohammed Rafiq",
   resolution:
-    "Diagnosis 30 Sep: condenser coils fouled with sand/dust (lower third of coil face blocked); condenser fan 3 vibration slightly high. Recommended chemical coil cleaning on both chillers. CH-02 coil clean planned for Tue 6 Oct 06:30 (low load window).",
+    "Diagnosis 30 Sep: condenser coils fouled with sand/dust (lower third of coil face blocked); condenser fan 3 vibration slightly high. Recommended chemical coil cleaning on both chillers. CH-02 coil clean planned for Tue 6 Oct 06:30 (low load window). 6 Oct: CH-02 coils chemically cleaned 06:30–11:40, chiller back in service (completion report in RFM Connect). CH-01 coil clean not yet scheduled.",
 });
 jobs.sort((a, b) => a.raisedAt.localeCompare(b.raisedAt));
 fs.writeFileSync(path.join(DIR, "work-orders.json"), JSON.stringify(jobs, null, 2));
@@ -543,3 +545,25 @@ fs.writeFileSync(path.join(DIR, "contractor-feed.json"), JSON.stringify(feed, nu
 fs.writeFileSync(path.join(DIR, "bookings.json"), JSON.stringify(bookings, null, 2));
 fs.writeFileSync(path.join(DIR, "trips.json"), JSON.stringify(trips.map(({ hourIndex, ...t }) => t), null, 2));
 console.log("bookings", bookings.length, "jobs", jobs.length, "kwh oct", Math.round(kwh.oct));
+
+/* ───────────── monthly chiller energy (Al Ghaf) — Sep values are the computed sums above ───────────── */
+{
+  const shape = [0.36, 0.38, 0.47, 0.62, 0.81, 0.93, 1.0, 1.02, 0.9, 0.7, 0.5, 0.39]; // relative to July
+  const jul25 = Math.round(tot25 / 0.9);
+  const m25 = shape.map((x, i) => (i === 8 ? tot25 : Math.round(jul25 * x * (1 + (r() - 0.5) * 0.03))));
+  const uplift = [1.03, 1.02, 1.04, 1.03, 1.04, 1.05, 1.04, 1.09];
+  const m26 = m25.slice(0, 8).map((v, i) => Math.round(v * uplift[i]));
+  m26.push(Math.round(kwh.sep));
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const energy = {
+    site: "AGC",
+    unit: "kWh (chillers CH-01 + CH-02)",
+    tariffAedPerKwh: 0.32,
+    months: months.map((m, i) => ({ month: m, y2025: m25[i], y2026: m26[i] ?? null })),
+    oct2026PartialKwh: Math.round(kwh.oct),
+    note: "September 2026 is the sum of the hourly BMS series; September 2025 is the sum of the daily 2025 export.",
+  };
+  fs.writeFileSync(path.join(DIR, "energy-monthly.json"), JSON.stringify(energy, null, 2));
+  console.log("energy months", energy.months.slice(6, 9));
+}
+

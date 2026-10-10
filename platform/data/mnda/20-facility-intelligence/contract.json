@@ -1,0 +1,22 @@
+{
+  "id": "MNDA/CON/2023/019",
+  "title": "Facilities Management Services — MNDA Community Centres",
+  "titleAr": "خدمات إدارة المرافق — المراكز المجتمعية التابعة للهيئة",
+  "contractor": "Raseen Facilities Management LLC",
+  "value": "AED 4,200,000 per year",
+  "term": "1 Jan 2024 – 31 Dec 2026",
+  "renewal": "One-year renewal option; renewal / non-renewal notice due 60 days before expiry — 1 Nov 2026",
+  "sites": ["Al Ghaf Community Centre (MN-07)", "Al Murjan Community Majlis (MN-02)", "Al Waha Family Centre (MN-04)", "Al Sidr Community Pavilion (MN-06)", "Ras Al Marsa Workers' Recreation Hall (MN-05)"],
+  "clauses": [
+    { "ref": "Schedule 3 §2.1", "title": "P1 — Emergency", "text": "Risk to life, building or security, or loss of more than 50% of cooling capacity to an occupied area during opening hours when ambient exceeds 40 °C. Response 1 hour; make safe / restore service 4 hours; permanent rectification 24 hours." },
+    { "ref": "Schedule 3 §2.2", "title": "P2 — Urgent", "text": "Partial loss of a building service affecting users. Response 4 hours; rectification 48 hours." },
+    { "ref": "Schedule 3 §2.3", "title": "P3 — Routine", "text": "Defect with no immediate impact on users. Response 24 hours; rectification 5 working days." },
+    { "ref": "Schedule 3 §2.4", "title": "P4 — Planned", "text": "Planned and preventive work, executed as scheduled in the agreed PPM programme." },
+    { "ref": "§3.6", "title": "Repeat faults", "text": "Where the same fault recurs three or more times within 30 days, the Contractor shall submit a written root-cause analysis and corrective action plan within 5 working days of the third occurrence." },
+    { "ref": "§4.2", "title": "PPM programme", "text": "Air-cooled condenser coils shall be chemically cleaned quarterly. Any deferral of a PPM task requires the Authority's prior written approval." },
+    { "ref": "Schedule 4", "title": "Space conditions", "text": "Occupied spaces shall be maintained at 22.5–24.5 °C dry bulb and 40–60% relative humidity during opening hours." },
+    { "ref": "Schedule 5 §1", "title": "Performance deductions", "text": "P1 response failure: AED 2,500 per instance. P2 response failure: AED 1,000 per instance. Monthly PPM compliance below 95%: 2% of the monthly fee (AED 7,000)." },
+    { "ref": "§6.3", "title": "Completion verification", "text": "Corrective work is closed only after the Authority's FM team verifies completion against agreed criteria; payment certification follows verification." },
+    { "ref": "§7.1", "title": "Safety", "text": "Work on refrigerant circuits, electrical isolation and roof plant requires a permit-to-work, lock-out / tag-out and a competent person; chemical cleaning agents require COSHH assessment and PPE. Heat-stress controls apply when ambient exceeds 38 °C." }
+  ]
+}

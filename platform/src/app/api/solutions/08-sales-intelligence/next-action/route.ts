@@ -2,9 +2,9 @@ import { z } from "zod";
 import { eventStream, readBody } from "@/lib/ai/stream";
 import { getPrefs } from "@/lib/ai/request";
 import { generateObject } from "@/lib/ai/json";
-import { findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/data";
-import { buildSourcePack, computedFacts, POLICY_QUERIES } from "@/app/solutions/08-sales-intelligence/_lib/context";
-import { addDays, checkDraft, oppHealth } from "@/app/solutions/08-sales-intelligence/_lib/compute";
+import { findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/records";
+import { buildSourcePack, computedFacts, POLICY_QUERIES } from "@/app/solutions/08-sales-intelligence/_lib/evidence";
+import { addDays, checkDraft, oppHealth } from "@/app/solutions/08-sales-intelligence/_lib/calc";
 import { ALL_STAGES, type NextAction } from "@/app/solutions/08-sales-intelligence/_lib/types";
 
 export const dynamic = "force-dynamic";
@@ -73,7 +73,9 @@ export async function POST(req: Request) {
           "Decide the single next best action to move this opportunity forward, propose the CRM update, and draft the customer follow-up.",
           "Hard rules for the draft: it may only commit to what RBM's authority allows — frame-agreement rates and terms, site delivery windows, re-issuing a valid offer, proposing a meeting/call. It must NOT offer prices below the frame rate, payment terms beyond the credit tier, retention, prices fixed beyond 31 Dec 2026, or deliveries outside the site window, unless the user's instruction explicitly asks — and then state it as 'subject to approval'.",
           "Do not repeat internal information to the customer (internal notes, the Sales Director's instructions, credit-hold details, cost prices). Be factual, short, respectful; acknowledge the change of KAM where relevant; propose a concrete time.",
-          `nextStepDate must be a working day (Mon–Fri) on or after today (${data.today}).`,
+          "Stage discipline: never move the stage backwards for a revised offer inside an ongoing negotiation — keep the current stage unless the deal is won, lost or genuinely re-scoped.",
+          "In the draft, respond to the customer's open points: acknowledge what can be done, state clearly and courteously what RBM cannot accept, and offer the compliant alternative. If the KAM changed recently, introduce the new owner in one line.",
+          `nextStepDate must be a working day (Mon–Fri) on or after today (${data.today}). Use the calendar in the computed facts for weekdays.`,
           `Write action.title, action.rationale and crmUpdate in ${ar ? "Arabic (professional MSA)" : "English"}. Write the draft (channel: ${channel}) in ${draftLangName}. ${channel === "whatsapp" ? "WhatsApp: 50–110 words, no subject (null), no emoji." : "Email: 120–220 words with a clear subject line and sign-off with name, title, company and mobile."}`,
           "Cite sources with [n] only inside action.rationale (never inside the draft).",
         ].join("\n"),

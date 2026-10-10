@@ -1,0 +1,20 @@
+{
+  "asOf": "2026-10-09",
+  "source": "Group Finance — Credit Control (RBM-FIN-POL-04: dated payment commitment required before a temporary release)",
+  "items": [
+    {
+      "id": "PC-26-0187",
+      "customerId": "RBM-C-10034",
+      "amount": 412000,
+      "date": "2026-10-15",
+      "method": "Bank transfer",
+      "committedBy": "Faris Al Kindi",
+      "role": "Finance Manager, Gulf Crest Builders LLC",
+      "email": "faris.alkindi@gulfcrest.ae",
+      "mobile": "+971 50 662 1953",
+      "recordedOn": "2026-10-09",
+      "recordedBy": "Nadia Rahimi",
+      "note": "Covers the overdue AED 148,320 (31–60 days) and invoices falling due by 15 Oct 2026."
+    }
+  ]
+}

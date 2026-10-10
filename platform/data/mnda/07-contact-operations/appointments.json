@@ -1,0 +1,101 @@
+[
+  {
+    "id": "APT-26-40188",
+    "customerId": "CUS-301276",
+    "centre": "downtown",
+    "service": "housing_consultation",
+    "start": "2026-10-01T10:00:00+04:00",
+    "status": "completed",
+    "reason": "Questions on the Certificate of No Property Ownership — MNDA-HG-2026-004871",
+    "channel": "phone",
+    "createdAt": "2026-09-29T19:25:00+04:00"
+  },
+  {
+    "id": "APT-26-40352",
+    "customerId": "CUS-233049",
+    "centre": "al-murjan",
+    "service": "housing_documents",
+    "start": "2026-10-02T08:30:00+04:00",
+    "status": "no_show",
+    "reason": "Hand in complete family book copy — MNDA-HG-2026-004733",
+    "channel": "phone",
+    "createdAt": "2026-09-30T13:05:00+04:00"
+  },
+  {
+    "id": "APT-26-40417",
+    "customerId": "CUS-259713",
+    "centre": "al-waha",
+    "service": "housing_consultation",
+    "start": "2026-10-07T12:30:00+04:00",
+    "status": "completed",
+    "reason": "Status of grant application MNDA-HG-2026-004701",
+    "channel": "phone",
+    "createdAt": "2026-10-01T08:14:00+04:00"
+  },
+  {
+    "id": "APT-26-40569",
+    "customerId": "CUS-198334",
+    "centre": "downtown",
+    "service": "housing_documents",
+    "start": "2026-10-08T13:00:00+04:00",
+    "status": "cancelled",
+    "reason": "Submit stamped bank statement — cancelled, already accepted online",
+    "channel": "app_chat",
+    "createdAt": "2026-10-03T18:22:00+04:00"
+  },
+  {
+    "id": "APT-26-40631",
+    "customerId": "CUS-287406",
+    "centre": "al-murjan",
+    "service": "housing_documents",
+    "start": "2026-10-07T11:00:00+04:00",
+    "status": "completed",
+    "reason": "Submit new housing grant application with documents",
+    "channel": "app_chat",
+    "createdAt": "2026-10-04T21:16:00+04:00"
+  },
+  {
+    "id": "APT-26-40719",
+    "customerId": "CUS-162580",
+    "centre": "downtown",
+    "service": "housing_consultation",
+    "start": "2026-10-14T09:00:00+04:00",
+    "status": "booked",
+    "reason": "Sign housing loan agreement — MNDA-HG-2026-004655",
+    "channel": "phone",
+    "createdAt": "2026-10-05T09:31:00+04:00"
+  },
+  {
+    "id": "APT-26-40871",
+    "customerId": "CUS-309754",
+    "centre": "downtown",
+    "service": "completion_certificate",
+    "start": "2026-10-13T11:00:00+04:00",
+    "status": "booked",
+    "reason": "Completion certificate documents before final inspection — MNDA-BP-2026-02119",
+    "channel": "phone",
+    "createdAt": "2026-10-06T13:24:00+04:00"
+  },
+  {
+    "id": "APT-26-41022",
+    "customerId": "CUS-276051",
+    "centre": "al-waha",
+    "service": "housing_documents",
+    "start": "2026-10-13T10:00:00+04:00",
+    "status": "booked",
+    "reason": "Submit spouse's renewed Emirates ID — MNDA-HG-2026-005011",
+    "channel": "phone",
+    "createdAt": "2026-10-07T10:22:00+04:00"
+  },
+  {
+    "id": "APT-26-41108",
+    "customerId": "CUS-327405",
+    "centre": "downtown",
+    "service": "permit_consultation",
+    "start": "2026-10-12T10:30:00+04:00",
+    "status": "booked",
+    "reason": "Meet permits desk about master-developer NOC delay — MNDA-BP-2026-02003",
+    "channel": "app_chat",
+    "createdAt": "2026-10-08T16:51:00+04:00"
+  }
+]

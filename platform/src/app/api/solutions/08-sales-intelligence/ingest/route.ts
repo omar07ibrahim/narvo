@@ -3,9 +3,9 @@ import { eventStream, readBody } from "@/lib/ai/stream";
 import { getPrefs } from "@/lib/ai/request";
 import { generateObject } from "@/lib/ai/json";
 import { addAudit } from "@/lib/store/db";
-import { findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/data";
-import { computedFacts } from "@/app/solutions/08-sales-intelligence/_lib/context";
-import { addDays, detectConflicts, findWindow, round2 } from "@/app/solutions/08-sales-intelligence/_lib/compute";
+import { findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/records";
+import { computedFacts } from "@/app/solutions/08-sales-intelligence/_lib/evidence";
+import { addDays, detectConflicts, findWindow, round2 } from "@/app/solutions/08-sales-intelligence/_lib/calc";
 import type { Bi, IngestResult } from "@/app/solutions/08-sales-intelligence/_lib/types";
 
 export const dynamic = "force-dynamic";
@@ -28,8 +28,8 @@ const schema = z.object({
   deadlines: z.array(z.object({ what: z.string(), date: z.string().nullable().describe("YYYY-MM-DD if a date is stated") })),
   claims: z.array(z.string()).describe("Claims about past agreements or promises made by RBM staff"),
   proposedCrm: z.object({
-    stage: z.enum(["Qualification", "Proposal", "Negotiation", "Closed Won", "Closed Lost"]).nullable(),
-    nextStep: z.string(),
+    stage: z.enum(["Qualification", "Proposal", "Negotiation", "Closed Won", "Closed Lost"]).nullable().describe("Keep the current stage unless the message clearly wins, loses or re-scopes the deal"),
+    nextStep: z.string().describe("Short CRM next step, max 14 words"),
     nextStepDate: z.string().nullable(),
     probability: z.number().nullable(),
     note: z.string(),
@@ -186,6 +186,8 @@ export async function POST(req: Request) {
         ...object,
         proposedCrm: {
           ...object.proposedCrm,
+          nextStep: object.proposedCrm.nextStep.length > 200 ? object.proposedCrm.nextStep.slice(0, 197).trimEnd() + "…" : object.proposedCrm.nextStep,
+          note: object.proposedCrm.note.slice(0, 590),
           nextStepDate:
             object.proposedCrm.nextStepDate && /^\d{4}-\d{2}-\d{2}$/.test(object.proposedCrm.nextStepDate) && object.proposedCrm.nextStepDate >= data.today
               ? object.proposedCrm.nextStepDate

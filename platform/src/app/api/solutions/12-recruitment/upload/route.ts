@@ -3,10 +3,19 @@ import { getPrefs } from "@/lib/ai/request";
 import { addAudit, kvSet } from "@/lib/store/db";
 import { fairnessGuard, guessName } from "@/app/solutions/12-recruitment/_lib/fairness";
 import { evaluateGuardedCv, traceability } from "@/app/solutions/12-recruitment/_lib/evaluate";
-import { KV, SLUG, getUploads, loadRequisition, saveEvaluation } from "@/app/solutions/12-recruitment/_lib/data";
+import { DIR, KV, SLUG, getUploads, loadRequisition, saveEvaluation } from "@/app/solutions/12-recruitment/_lib/data";
+import { exists, readText } from "@/lib/world/data";
 import { criteriaKey, weightedScore, type Evaluation, type Upload } from "@/app/solutions/12-recruitment/_lib/types";
 
 export const maxDuration = 120;
+
+/** GET → a late application received after closing (sample for the bring-your-own demo). */
+export async function GET() {
+  const rel = `${DIR}/samples/late-application-cv.md`;
+  if (!exists(rel)) return new Response("No sample", { status: 404 });
+  const text = readText(rel);
+  return Response.json({ text, label: "Late application — received after the 28 Sep closing" });
+}
 
 /** Bring your own CV: the same fairness guard and the same criteria, evaluated live. */
 export async function POST(req: Request) {

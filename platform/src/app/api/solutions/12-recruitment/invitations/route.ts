@@ -59,6 +59,7 @@ export async function POST(req: Request) {
           `Panel: ${panel || "Eng. Omar Yousef Al Hammadi (Director, Planning & Building Permits) and two panel members"}.`,
           `Confirm by: Tuesday 13 October 2026, 15:00, by replying to this email or calling +971 2 663 2140 (Talent Acquisition).`,
           `Recruiter: ${r.recruiter ? `${r.recruiter.name}, ${r.recruiter.title}` : "Talent Acquisition team"}, careers@mnda.gov.ae.`,
+          `Official Arabic terms (use exactly): authority «هيئة مرسى النور للتطوير»; department «إدارة رأس المال البشري»; role «${r.titleAr ?? "مهندس تخطيط أول — رخص البناء"}»; venue «برج الهيئة، شارع الكورنيش، وسط المدينة (MN-01) — الطابق الثاني عشر، قاعة الاجتماعات 12-03 بإدارة التخطيط ورخص البناء»; documents «بطاقة الهوية الإماراتية أو جواز السفر، وأصل الشهادة الجامعية، وشهادة التسجيل المهني، وملف يتضمن نموذجين من مراجعات رخص البناء»; salutation «السيد/السيدة {{name}} المحترم/المحترمة».`,
         ].join("\n"),
         modelKey,
         solution: SLUG,
@@ -105,7 +106,7 @@ export async function POST(req: Request) {
         actionLabel: "Approve & send",
         approver: HR_DIRECTOR,
         effects,
-        payload: { invitations: invitations.map((x) => x.id) },
+        payload: { invitations },
       });
       emit.send({
         type: "approval",

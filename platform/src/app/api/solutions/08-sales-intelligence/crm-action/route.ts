@@ -1,8 +1,8 @@
 import { z } from "zod";
 import { readBody } from "@/lib/ai/stream";
 import { addAudit, createApproval, type Effect } from "@/lib/store/db";
-import { COL_INTERACTIONS, COL_OPPS, findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/data";
-import { checkDraft, detectConflicts } from "@/app/solutions/08-sales-intelligence/_lib/compute";
+import { COL_INTERACTIONS, COL_OPPS, findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/records";
+import { checkDraft, detectConflicts } from "@/app/solutions/08-sales-intelligence/_lib/calc";
 import type { ApprovalSummary } from "@/lib/ai/events";
 
 export const dynamic = "force-dynamic";
@@ -14,10 +14,10 @@ const input = z.object({
   actionTitle: z.string().min(3).max(200),
   crmUpdate: z.object({
     stage: stage.nullable().optional(),
-    nextStep: z.string().min(3).max(240),
+    nextStep: z.string().min(3).max(400),
     nextStepDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     probability: z.number().min(0).max(100).nullable().optional(),
-    note: z.string().max(600).default(""),
+    note: z.string().max(1200).default(""),
   }),
   draft: z
     .object({
@@ -33,7 +33,7 @@ const input = z.object({
       from: z.string().max(200),
       subject: z.string().max(200).nullable().optional(),
       body: z.string().min(10).max(8000),
-      summary: z.string().max(800),
+      summary: z.string().max(2000),
       language: z.enum(["en", "ar", "mixed"]),
     })
     .optional(),

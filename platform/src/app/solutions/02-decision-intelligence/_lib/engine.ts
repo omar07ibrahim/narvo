@@ -496,6 +496,8 @@ export function actionStats(actions: ActionItem[], today: string) {
     overdue: overdue.length,
     open: open.length,
     dueSoon: dueSoon.length,
-    closureRate: due.length ? (closedOnTime.length / due.length) * 100 : null,
+    /** catalogue measure: actions due to date that have been closed */
+    closureRate: due.length ? ((closedOnTime.length + closedLate.length) / due.length) * 100 : null,
+    onTimeRate: due.length ? (closedOnTime.length / due.length) * 100 : null,
   };
 }

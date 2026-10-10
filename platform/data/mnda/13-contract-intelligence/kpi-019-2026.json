@@ -1,0 +1,18 @@
+{
+  "contract": "MNDA/CON/2023/019",
+  "monthlyFee": 350000,
+  "capPct": 10,
+  "source": "RFM Connect monthly reports, verified by Facilities & Assets",
+  "months": [
+    { "month": "2026-01", "ppm": 97.2, "p1Attend": 96.8, "p1MakeSafe": 98.1, "p2Rectify": 93.4, "reportOnTime": true, "complaintsAlGhaf": 1 },
+    { "month": "2026-02", "ppm": 96.8, "p1Attend": 95.9, "p1MakeSafe": 97.6, "p2Rectify": 92.8, "reportOnTime": true, "complaintsAlGhaf": 0 },
+    { "month": "2026-03", "ppm": 95.9, "p1Attend": 96.4, "p1MakeSafe": 97.2, "p2Rectify": 91.6, "reportOnTime": true, "complaintsAlGhaf": 2, "csat": 4.2, "coilCleaningDone": true },
+    { "month": "2026-04", "ppm": 96.4, "p1Attend": 97.1, "p1MakeSafe": 98.4, "p2Rectify": 92.2, "reportOnTime": true, "complaintsAlGhaf": 1 },
+    { "month": "2026-05", "ppm": 95.1, "p1Attend": 96.0, "p1MakeSafe": 96.9, "p2Rectify": 90.7, "reportOnTime": true, "complaintsAlGhaf": 3 },
+    { "month": "2026-06", "ppm": 93.7, "p1Attend": 95.6, "p1MakeSafe": 96.3, "p2Rectify": 90.2, "reportOnTime": true, "complaintsAlGhaf": 4, "csat": 4.0, "coilCleaningDone": true },
+    { "month": "2026-07", "ppm": 92.8, "p1Attend": 95.2, "p1MakeSafe": 95.8, "p2Rectify": 90.4, "reportOnTime": true, "complaintsAlGhaf": 6 },
+    { "month": "2026-08", "ppm": 88.6, "p1Attend": 95.4, "p1MakeSafe": 95.1, "p2Rectify": 90.1, "reportOnTime": true, "complaintsAlGhaf": 11 },
+    { "month": "2026-09", "ppm": 90.3, "p1Attend": 97.8, "p1MakeSafe": 96.0, "p2Rectify": 90.6, "reportOnTime": true, "complaintsAlGhaf": 12, "csat": 3.8, "coilCleaningDone": false }
+  ],
+  "alGhaf": { "ch02TripsSeptember": 11, "coilCleaningOverdueSince": "2026-08-15", "energySeptemberVsLastYearPct": 17, "job": "JOB-RFM-26-04471" }
+}

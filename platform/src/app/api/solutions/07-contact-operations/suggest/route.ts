@@ -2,7 +2,6 @@ import { eventStream, readBody } from "@/lib/ai/stream";
 import { getPrefs } from "@/lib/ai/request";
 import { chatStream } from "@/lib/ai/client";
 import type { Citation } from "@/lib/ai/events";
-import { search } from "@/lib/retrieval";
 import {
   DESK_AGENT,
   SLUG,
@@ -10,6 +9,7 @@ import {
   loadCaseMessages,
   loadCustomers,
   loadHandoffs,
+  searchPublic,
   workingDaysBetween,
 } from "@/app/solutions/07-contact-operations/_lib/data";
 import { statusMeta } from "@/app/solutions/07-contact-operations/_lib/types";
@@ -64,7 +64,7 @@ export async function POST(req: Request) {
       s1.done(`${records.length} ${lang === "ar" ? "سجلات" : "records"}`);
 
       const s2 = emit.step("knowledge", lang === "ar" ? "البحث في السياسات المنشورة" : "Searching published policy");
-      const hits = search("mnda/knowledge", [h.intent, h.reason, h.suggestedNextStep, h.summary], 5);
+      const hits = searchPublic([h.intent, h.reason, h.suggestedNextStep, h.summary], 5);
       const citations: Citation[] = hits.map((x, i) => ({
         n: i + 1,
         docId: x.docId,

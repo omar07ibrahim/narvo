@@ -43,11 +43,12 @@ function CitationChip({ n, citation, onClick }: { n: number; citation?: Citation
 function withCitations(children: ReactNode, citations?: Citation[], onCite?: (n: number) => void): ReactNode {
   return Children.map(children, (child) => {
     if (typeof child === "string") {
-      const parts = child.split(/(\[\d+\](?:\s*\[\d+\])*)/g);
+      // Matches [3], [1][4], [1] [4] and [16, 22] / [16,22]
+      const parts = child.split(/(\[\d+(?:\s*,\s*\d+)*\](?:\s*\[\d+(?:\s*,\s*\d+)*\])*)/g);
       if (parts.length === 1) return child;
       return parts.map((p, i) => {
-        const nums = Array.from(p.matchAll(/\[(\d+)\]/g)).map((m) => Number(m[1]));
-        if (nums.length && /^\[\d+\](\s*\[\d+\])*$/.test(p)) {
+        const nums = Array.from(p.matchAll(/\d+/g)).map((m) => Number(m[0]));
+        if (nums.length && /^\[\d+(?:\s*,\s*\d+)*\](?:\s*\[\d+(?:\s*,\s*\d+)*\])*$/.test(p)) {
           return (
             <span key={i} className="whitespace-nowrap">
               {nums.map((n) => (

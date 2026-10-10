@@ -95,6 +95,7 @@ const PO_SPECS = [
   ["RBM-PO-26-04468", "SUP-AWB", "2026-09-21", "anitha", "delivered", "MN05", [["BLK-HOL-20", 11700]], {}],
   ["RBM-PO-26-04470", "SUP-NEC", "2026-09-22", "anitha", "delivered", "JA", [["CEM-OPC-50", 6000]], { note: "Price per NEC supply contract — AED 14.20/bag to 31 Dec 2026; surcharge proposal NEC/SALES/2026/208 not accepted" }],
   ["RBM-PO-26-04472", "SUP-AKT", "2026-09-22", "joseph", "service", "MN05", [["FRT-JA-MN05-T", 196]], { note: "Transfers 28–30 Sep 2026" }],
+  ["RBM-PO-26-04476", "SUP-ACT", "2026-09-22", "anitha", "delivered", "MN05", [["SAN-WC-WH", 36]], { note: "Bathroom sets for MN-05 showroom replenishment" }],
   ["RBM-PO-26-04481", "SUP-CCI", "2026-09-23", "joseph", "delivered", "JA", [["PNT-TS-20", 1200]], { note: "ThermaShield launch stock — batch 3 (1 Nov 2026 launch)" }],
 ];
 
@@ -413,6 +414,8 @@ G.W5 = makeGrn("RBM-PO-26-04468", "2026-09-26");
 G.K4 = makeGrn("RBM-PO-26-04464", "2026-09-26", null, { remarks: "248.000 t moved in 11 trailer trips, 21–26 Sep (160 t rebar, 88 t palletised) — trip sheets signed at MN-05 gate." });
 G.CX6 = makeGrn("RBM-PO-26-04481", "2026-09-28", null, { remarks: "1,200 pails (50 pallets × 24) received; batch CCI-TS-2609-B3; COA received. Stored in coatings bay C-4." });
 G.K5 = makeGrn("RBM-PO-26-04472", "2026-09-30", null, { remarks: "196.000 t moved in 8 trailer trips, 28–30 Sep — trip sheets signed at MN-05 gate." });
+// October delivery — its invoice is NOT in the September batch; it is the "bring your own" sample scan.
+G.BYO = makeGrn("RBM-PO-26-04476", "2026-09-30", null, { receivedBy: "Joel D'Souza", remarks: "36 sets received on 3 pallets, cartons intact. Delivered-price PO — packing included." });
 
 /* — Documents, in order of receipt — */
 const D = [];
@@ -499,6 +502,14 @@ for (const { s } of ordered) {
   KEY[s.k] = doc;
 }
 
+/* — Bring-your-own sample (October, not registered in the batch) — */
+const sample = inv({
+  id: "SAMPLE", no: "ACT/INV/26/0791", po: "RBM-PO-26-04476", date: "2026-10-01", received: null, items: [["SAN-WC-WH", 36]],
+  grnRefs: [G.BYO.id], dns: [G.BYO.deliveryNote], image: "byo-sample-act-inv-0791",
+  charges: [{ description: "Pallet & packing charges", qty: 36, unit: "set", unitPrice: 12 }],
+});
+invoices.splice(invoices.indexOf(sample), 1);
+
 /* ───────────── Sanity checks against the storyline ───────────── */
 const assert = (cond, msg) => {
   if (!cond) {
@@ -529,6 +540,11 @@ write("invoices.json", invoices.sort((a, b) => a.id.localeCompare(b.id)));
 const srcDir = path.join(root, "scans-src");
 fs.mkdirSync(srcDir, { recursive: true });
 const rendered = [];
+{
+  const html = renderInvoiceHtml({ doc: sample, supplier: SUP[sample.supplierId], company: master.company, warehouses: master.warehouses, po: PO["RBM-PO-26-04476"], grns: [G.BYO] });
+  fs.writeFileSync(path.join(srcDir, "byo-sample-act-inv-0791.html"), html);
+  rendered.push("byo-sample-act-inv-0791 (sample, not in batch)");
+}
 for (const d of invoices) {
   if (!d.image) continue;
   const name = path.basename(d.image, ".png");

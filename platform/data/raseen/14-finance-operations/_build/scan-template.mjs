@@ -368,7 +368,7 @@ export function renderInvoiceHtml({ doc, supplier, company, warehouses, po, grns
   </div>
   <div class="sigrow">
     <div class="sigbox">${signatureSvg(st.sig)}${isFLL ? "" : stamp}<div class="line">For ${supplier.name}<br/>Authorised Signatory · التوقيع المعتمد</div></div>
-    <div class="recvbox">${receivedStamp(doc.receivedDate)}<div class="line">Received by (name, sign &amp; stamp)<br/>المستلم</div></div>
+    <div class="recvbox">${doc.receivedDate ? receivedStamp(doc.receivedDate) : ""}<div class="line">Received by (name, sign &amp; stamp)<br/>المستلم</div></div>
   </div>
   ${isFLL ? "" : `<div class="terms"><b>Terms &amp; conditions</b> — 1. Title to the goods passes on full payment. 2. Discrepancies must be notified in writing within 48 hours of delivery, quoting the delivery note. 3. Late payment may attract suspension of credit. 4. This is a tax invoice issued under UAE Federal Decree-Law No. 8 of 2017 on VAT.</div>`}
   <div class="foot">

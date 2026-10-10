@@ -1,0 +1,184 @@
+[
+  {
+    "id": "AUD-SEED-12-01",
+    "ts": "2026-08-25T14:37:12+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "Eng. Omar Yousef Al Hammadi",
+      "role": "Director, Planning & Building Permits",
+      "kind": "human"
+    },
+    "action": "Requisition raised",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "Senior Planning Engineer — Building Permits, 1 opening, Grade 11. Justification: permit cycle time has run above the 15-day target since Circular 14/2026 took effect on 15 Jul 2026; senior review capacity and master-developer NOC coordination identified as the main gaps."
+  },
+  {
+    "id": "AUD-SEED-12-02",
+    "ts": "2026-08-27T09:05:48+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "Maryam Hassan Al Shamsi",
+      "role": "Director, Human Capital",
+      "kind": "human"
+    },
+    "action": "Requisition approved",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "Approved against the 2026 workforce plan (vacant position PBP-SPE-03). Budget confirmed by Finance on 26 Aug 2026."
+  },
+  {
+    "id": "AUD-SEED-12-03",
+    "ts": "2026-09-02T11:20:03+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "Eng. Omar Yousef Al Hammadi",
+      "role": "Director, Planning & Building Permits",
+      "kind": "human"
+    },
+    "action": "Evaluation criteria and weights agreed",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "Agreed with Maryam Hassan Al Shamsi (Director, Human Capital): minimum requirements MIN-1 to MIN-5, and weighted criteria C1 Permit plan review & code compliance 25, C2 Structural & MEP review 15, C3 Planning regulations & master-developer NOC coordination 15, C4 Digital permitting & process improvement 15, C5 Communication & technical writing 10, C6 Team leadership 10, C7 Large & complex projects 10 (total 100). All criteria are job-related."
+  },
+  {
+    "id": "AUD-SEED-12-04",
+    "ts": "2026-09-03T15:48:26+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "Adv. Noura Khalifa Al Qubaisi",
+      "role": "Head of Legal Affairs",
+      "kind": "human"
+    },
+    "action": "Fairness-guard configuration reviewed",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "Reviewed with Human Capital and the Digital Transformation Office. Protected attributes excluded from AI screening and evaluation and redacted from CVs before scoring: nationality, gender, date of birth / age, marital and family status, religion, photograph. Candidate name and contact details masked in the evaluation view. Emiratisation policy HC-POL-03 is applied only by Human Capital, as a separate recorded step after the job-related evaluation."
+  },
+  {
+    "id": "AUD-SEED-12-05",
+    "ts": "2026-09-04T10:12:40+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "Maryam Hassan Al Shamsi",
+      "role": "Director, Human Capital",
+      "kind": "human"
+    },
+    "action": "Interview panel nominated",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "Panel: Eng. Omar Yousef Al Hammadi (chair), Eng. Reem Abdulrahman Al Marzooqi (Head, Plan Review Section), Ahmed Khalifa Al Romaithi (Manager, Talent Acquisition). Structured interview guide mapped to C1–C7; signed consent form HC-F-22 required before any note-taking."
+  },
+  {
+    "id": "AUD-SEED-12-06",
+    "ts": "2026-09-07T09:00:00+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "MNDA Careers portal",
+      "role": "Recruitment system",
+      "kind": "system"
+    },
+    "action": "Vacancy posted",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "Published on the MNDA Careers portal, shared to professional-network channels and two framework recruitment agencies. Closing date 28 Sep 2026, 23:59."
+  },
+  {
+    "id": "AUD-SEED-12-07",
+    "ts": "2026-09-07T09:00:31+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "MNDA Careers portal",
+      "role": "Recruitment system",
+      "kind": "system"
+    },
+    "action": "Privacy and data-retention notice published",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "Candidate privacy notice attached to the posting: application data is used only for this requisition; applications not selected are retained for 12 months after closure and then deleted; candidates may request access or correction via careers@mnda.gov.ae."
+  },
+  {
+    "id": "AUD-SEED-12-08",
+    "ts": "2026-09-28T23:59:59+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "MNDA Careers portal",
+      "role": "Recruitment system",
+      "kind": "system"
+    },
+    "action": "Application window closed",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "86 applications received. By source: MNDA Careers portal 54, Professional network 11, Employee referral 6, Graduate & national talent programme 5, Recruitment agency 10."
+  },
+  {
+    "id": "AUD-SEED-12-09",
+    "ts": "2026-09-29T08:15:22+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "Screening agent",
+      "role": "Minimum-requirements screening (rules MIN-1 to MIN-5)",
+      "kind": "agent"
+    },
+    "action": "Minimum-requirement screening run",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "24 of 86 applications meet all minimum requirements; 62 do not. Unmet requirements (an application can fail more than one): MIN-1 degree 19 (13 field of study, 6 diploma-level only), MIN-2 experience 11, MIN-3 permit-review experience 26, MIN-4 registration 14, MIN-5 incomplete attachments 10. 15 applications fail two or more requirements. Rules use declared profile data and attachments only; no protected attributes were read."
+  },
+  {
+    "id": "AUD-SEED-12-10",
+    "ts": "2026-09-29T11:41:05+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "Noof Abdullah Al Hashemi",
+      "role": "Senior Talent Acquisition Specialist",
+      "kind": "human"
+    },
+    "action": "Screening outcome reviewed and confirmed",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "Human review of all 62 screen-outs. 9 near-miss cases checked against source documents (including a building-surveying degree, 7.5 years' experience, and three applications with a missing degree certificate or CV). Rules applied as published; no exceptions granted."
+  },
+  {
+    "id": "AUD-SEED-12-11",
+    "ts": "2026-09-30T10:05:17+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "MNDA Careers portal",
+      "role": "Recruitment system",
+      "kind": "system"
+    },
+    "action": "Candidates notified of screening outcome",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "62 regret emails sent stating the unmet requirement(s); 24 candidates informed that their application has progressed to evaluation."
+  },
+  {
+    "id": "AUD-SEED-12-12",
+    "ts": "2026-09-30T14:22:51+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "Ahmed Khalifa Al Romaithi",
+      "role": "Manager, Talent Acquisition, Human Capital",
+      "kind": "human"
+    },
+    "action": "Panel conflict-of-interest declarations recorded",
+    "subject": "APP-077-0047",
+    "detail": "Eng. Reem Abdulrahman Al Marzooqi declared that she is the line manager of internal applicant APP-077-0047. Mitigation approved by the Director, Human Capital: a Human Capital observer attends any interview of this candidate and Eng. Reem does not score it. No other conflicts declared."
+  },
+  {
+    "id": "AUD-SEED-12-13",
+    "ts": "2026-10-01T09:30:08+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "MNDA Careers portal",
+      "role": "Recruitment system",
+      "kind": "system"
+    },
+    "action": "Data-retention schedule applied",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "Records of the 62 screened-out applicants restricted to Human Capital and scheduled for deletion on 28 Sep 2027 under the published retention period."
+  },
+  {
+    "id": "AUD-SEED-12-14",
+    "ts": "2026-10-09T16:34:40+04:00",
+    "solution": "12-recruitment",
+    "actor": {
+      "name": "Ahmed Khalifa Al Romaithi",
+      "role": "Manager, Talent Acquisition, Human Capital",
+      "kind": "human"
+    },
+    "action": "Interview notes uploaded",
+    "subject": "MNDA-HR-REQ-2026-077",
+    "detail": "Consented technical-interview notes uploaded for APP-077-0030 (6 Oct), APP-077-0041 (7 Oct) and APP-077-0072 (8 Oct), each with a signed HC-F-22 consent form."
+  }
+]

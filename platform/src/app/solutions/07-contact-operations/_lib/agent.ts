@@ -3,8 +3,7 @@ import { z } from "zod";
 import { defineTool, type AgentTool } from "@/lib/ai/agent";
 import type { Emitter } from "@/lib/ai/stream";
 import type { Citation } from "@/lib/ai/events";
-import { search } from "@/lib/retrieval";
-import { addAudit, appendRecord } from "@/lib/store/db";
+import { addAudit, appendRecord, patchRecord } from "@/lib/store/db";
 import {
   CHC_MANAGER,
   COL,
@@ -30,6 +29,7 @@ import {
   nextHandoffId,
   nextTicketId,
   saveSession,
+  searchPublic,
   workingDaysBetween,
 } from "./data";
 import {
@@ -55,6 +55,8 @@ export interface AgentCtx {
   actions: SessionAction[];
   transcript: TranscriptTurn[];
   channel: "voice" | "chat";
+  /** Customer is writing Arabic → prefer Arabic versions of bilingual sources. */
+  prefAr: boolean;
 }
 
 const AGENT_ACTOR = { name: "NARVO Contact Assistant", role: "AI agent", kind: "agent" as const };
@@ -73,6 +75,33 @@ function pushAction(ctx: AgentCtx, a: SessionAction) {
   ctx.session.actions = [...(ctx.session.actions ?? []), a];
   ctx.emit.data("actions", ctx.actions);
 }
+
+/** Search published knowledge, number new passages as session citations and return them for the model. */
+function citeSearch(ctx: AgentCtx, queries: string[], k = 5) {
+  const raw = searchPublic(queries, k * 2);
+  const isAr = (t: string) => /[؀-ۿ]/.test(t.slice(0, 240));
+  // Bilingual sources: keep the version in the customer's language when both exist.
+  const byRef = new Map<string, typeof raw>();
+  for (const h of raw) byRef.set(h.ref ?? h.docId, [...(byRef.get(h.ref ?? h.docId) ?? []), h]);
+  const hits = raw
+    .filter((h) => {
+      const group = byRef.get(h.ref ?? h.docId)!;
+      const preferred = group.filter((x) => isAr(x.text) === ctx.prefAr);
+      return preferred.length ? isAr(h.text) === ctx.prefAr : true;
+    })
+    .slice(0, k);
+  const out = hits.map((h) => {
+    const existing = ctx.citations.find((c) => c.docId === h.docId && c.section === h.section);
+    const n = existing?.n ?? ctx.citations.length + 1;
+    if (!existing)
+      ctx.citations.push({ n, docId: h.docId, title: h.title, ref: h.ref, section: h.section, quote: h.text.length > 420 ? h.text.slice(0, 420) + "…" : h.text });
+    return { n, source: `${h.title}${h.ref ? ` (${h.ref})` : ""} — ${h.section}`, text: h.text.slice(0, 900) };
+  });
+  ctx.emit.data("citations", ctx.citations);
+  return out;
+}
+
+const stripCites = (t: string) => t.replace(/\s*\[\d+\]/g, "");
 
 function fmtDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-GB", { weekday: "short", day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Dubai" });
@@ -109,11 +138,12 @@ const requireLevel = (ctx: AgentCtx, need: "partial" | "verified") => {
 
 /* ───────────────────────── Tools ───────────────────────── */
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any -- matches the shared runAgent({ tools }) signature
 export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
   const identify = defineTool({
     name: "identify_customer",
     description:
-      "Identify and verify the customer. Pass whatever the customer has given: Emirates ID number, a reference number (housing case MNDA-HG-2026-…, permit MNDA-BP-2026-…, ticket CHC-2026-…), date of birth, or a mobile number. The caller ID / WhatsApp number is already checked automatically.",
+      "Identify and verify the customer (Customer Happiness Charter §4). Pass whatever the customer has given: Emirates ID number (full, or last five digits on a registered mobile), a case/permit number together with the date of birth, or a mobile number. The caller ID / WhatsApp number is already checked automatically.",
     parameters: z.object({
       emiratesId: z.string().nullish().describe("Emirates ID as given, e.g. 784-1986-2297415-3"),
       reference: z.string().nullish().describe("Case, permit, ticket or appointment number"),
@@ -146,19 +176,25 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
         target = byEid;
         s.factors = [];
       }
+      // Factors exactly as published in the Customer Happiness Charter §4 (MNDA/CHC/CHARTER/2026).
       const matched: string[] = [];
       const mismatched: string[] = [];
+      const notes: string[] = [];
+      const onRegistered = s.factors.includes("registered_mobile") && target.id === current?.id;
       if (a.emiratesId) {
-        if (digits(a.emiratesId) === digits(target.emiratesId)) matched.push("emirates_id");
-        else mismatched.push("emirates_id");
+        const given = digits(a.emiratesId);
+        const actual = digits(target.emiratesId);
+        if (given.length === 15) (given === actual ? matched : mismatched).push("emirates_id");
+        else if (given.length >= 5 && onRegistered) (actual.endsWith(given.slice(-5)) ? matched : mismatched).push("emirates_id");
+        else notes.push(onRegistered ? "Ask for at least the last five digits of the Emirates ID." : "On an unregistered or withheld number the FULL Emirates ID number is required (Charter §4.1).");
       }
       if (a.reference) {
-        if (byRef.customer?.id === target.id) matched.push("reference");
-        else mismatched.push("reference");
-      }
-      if (a.dateOfBirth && target.dateOfBirth) {
-        if (a.dateOfBirth.slice(0, 10) === target.dateOfBirth) matched.push("date_of_birth");
-        else mismatched.push("date_of_birth");
+        if (byRef.customer?.id !== target.id) mismatched.push("reference_dob");
+        else if (!a.dateOfBirth) notes.push("A case/permit number counts as a factor only together with the date of birth (Charter §4.1) — ask for the date of birth.");
+        else if (target.dateOfBirth && a.dateOfBirth.slice(0, 10) === target.dateOfBirth) matched.push("reference_dob");
+        else mismatched.push("reference_dob");
+      } else if (a.dateOfBirth) {
+        notes.push("Date of birth counts only together with a case or permit number (Charter §4.1).");
       }
       s.customerId = target.id;
       s.factors = Array.from(new Set([...s.factors, ...matched]));
@@ -188,10 +224,13 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
                 flags: target.flags ?? [],
               }
             : { firstName: target.name.split(" ")[0] },
+        notes,
         next:
           s.level === "verified"
             ? "Identity verified. You may now discuss this customer's own references."
-            : "One more factor is needed before disclosing any case details (Emirates ID, reference number or date of birth).",
+            : s.factors.includes("registered_mobile")
+              ? "One more factor is needed: the Emirates ID number (last five digits are enough on a registered mobile) or the case/permit number with date of birth."
+              : "Two factors are needed on an unregistered number: the full Emirates ID number AND the case/permit number with date of birth.",
       };
     },
   });
@@ -235,6 +274,10 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
           latestOfficerMessage: latest?.body ?? null,
           decision: k.decision ?? null,
           today: DEMO_TODAY,
+          policy: missing.length
+            ? citeSearch(ctx, [...missing, "incomplete application 15 working days missing documents", "salary certificate issued within the last 30 days"], 3)
+            : undefined,
+          instruction: missing.length ? "Explain each missing item and cite the policy passages with their [n] markers." : undefined,
         };
       }
       if (found.kind === "permit") {
@@ -264,6 +307,11 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
           feeAed: p.feeAed,
           nextStep: p.nextStep,
           recentHistory: p.history.slice(-4),
+          policy:
+            p.gated || p.returnReason
+              ? citeSearch(ctx, ["master-developer NOC gated community awaiting 20 working days", p.returnReason ?? "", "NOC valid 90 days drawing revision"], 3)
+              : undefined,
+          instruction: p.gated || p.returnReason ? "Cite the policy passages with their [n] markers." : undefined,
         };
       }
       if (found.kind === "ticket") {
@@ -303,23 +351,10 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
     }),
     label: (a) => `Searching knowledge: “${a.query}”`,
     execute: async (a) => {
-      const hits = search("mnda/knowledge", [a.query, a.queryAr ?? ""].filter(Boolean), 5);
-      const out = hits.map((h) => {
-        const existing = ctx.citations.find((c) => c.docId === h.docId && c.section === h.section);
-        if (existing) return { n: existing.n, title: h.title, ref: h.ref, section: h.section, text: h.text.slice(0, 900) };
-        const n = ctx.citations.length + 1;
-        ctx.citations.push({
-          n,
-          docId: h.docId,
-          title: h.title,
-          ref: h.ref,
-          section: h.section,
-          quote: h.text.length > 420 ? h.text.slice(0, 420) + "…" : h.text,
-        });
-        return { n, title: h.title, ref: h.ref, section: h.section, text: h.text.slice(0, 900) };
-      });
-      ctx.emit.data("citations", ctx.citations);
-      return out.length ? { passages: out, instruction: "Cite the passages you rely on with their [n] marker." } : { passages: [], note: "Nothing found." };
+      const passages = citeSearch(ctx, [a.query, a.queryAr ?? ""], 5);
+      return passages.length
+        ? { passages, instruction: "Cite the passages you rely on with their [n] marker right after the claim." }
+        : { passages: [], note: "Nothing found." };
     },
   });
 
@@ -349,7 +384,11 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
       const picks = (a.centre === "any" ? (["downtown", "al-murjan", "al-waha"] as CentreId[]) : [a.centre as CentreId]).flatMap((c) =>
         filtered.filter((s) => s.centre === c).slice(0, a.centre === "any" ? 3 : 6),
       );
+      ctx.session.offeredSlots = picks.map((s) => ({ slotId: s.id, centre: s.centre, date: s.date, time: s.time }));
+      saveSession(ctx.session);
+      const policy = citeSearch(ctx, ["appointment booking 30-minute slots reschedule cancel two hours maximum active bookings"], 2);
       return {
+        policyPassages: policy,
         slots: picks.map((s) => ({
           slotId: s.id,
           centre: CENTRES[s.centre].en,
@@ -358,7 +397,7 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
           freeCounters: s.capacity - s.booked,
         })),
         availabilityThisWeek: perCentre,
-        policy: "30-minute slots; max 2 active bookings per customer; reschedule or cancel up to 2 hours before.",
+        note: "Cite appointment rules with the policyPassages [n] markers.",
       };
     },
   });
@@ -366,17 +405,22 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
   const book = defineTool({
     name: "book_appointment",
     description:
-      "Book an appointment for the identified customer in a free slot (permitted action — executes immediately). Use a slotId returned by list_available_slots.",
+      "Book an appointment for the identified customer in a free slot (permitted action — executes immediately and returns the APT-26-… confirmation number). Identify the slot by slotId from list_available_slots, or by centre + date + time.",
     parameters: z.object({
-      slotId: z.string(),
+      slotId: z.string().nullish(),
+      centre: z.enum(["downtown", "al-murjan", "al-waha"]).nullish(),
+      date: z.string().nullish().describe("YYYY-MM-DD"),
+      time: z.string().nullish().describe("HH:MM, 24h"),
       service: z.enum(["housing_documents", "housing_consultation", "permit_consultation", "completion_certificate", "general"]),
       reason: z.string().describe("Short reason, e.g. 'Submit new salary certificate for MNDA-HG-2026-004817'"),
     }),
-    label: (a) => `Booking appointment ${a.slotId}`,
+    label: (a) => `Booking appointment ${a.slotId ?? `${a.centre ?? ""} ${a.date ?? ""} ${a.time ?? ""}`.trim()}`,
     execute: async (a) => {
       const blocked = requireLevel(ctx, "partial");
       if (blocked) return blocked;
-      const slot = loadSlots().find((s) => s.id === a.slotId);
+      const hhmm = (a.time ?? "").replace(/^(\d):/, "0$1:").slice(0, 5);
+      const slots = loadSlots();
+      const slot = (a.slotId && slots.find((s) => s.id === a.slotId)) || slots.find((s) => s.centre === a.centre && s.date === a.date && s.time === hhmm);
       if (!slot) return { error: "unknown_slot", message: "That slot does not exist — call list_available_slots again." };
       if (slot.booked >= slot.capacity) return { error: "slot_full", message: "The slot was just taken. Offer the next free slot." };
       const active = loadAppointments().filter(
@@ -442,6 +486,37 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
     execute: async (a) => {
       if (ctx.session.level === "none" && !ctx.session.ani)
         return requireLevel(ctx, "partial");
+      // Duplicate guard: an open ticket for the same issue (same customer, or same district + category) is updated
+      // with the new report instead of creating a second ticket.
+      const words = (t: string) => new Set(t.toLowerCase().split(/[^a-z0-9؀-ۿ]+/).filter((w) => w.length > 3));
+      const catWords = words(`${a.category} ${a.subject}`);
+      const dup = loadTickets().find((t) => {
+        if (t.status !== "open" && t.status !== "in_progress") return false;
+        if (t.type !== a.type) return false;
+        const sameCustomer = !!ctx.session.customerId && t.customerId === ctx.session.customerId;
+        const sameDistrict = !!a.district && !!t.district && t.district.slice(0, 5) === a.district.slice(0, 5);
+        const overlap = [...words(`${t.category} ${t.subject}`)].filter((w) => catWords.has(w)).length;
+        return (sameCustomer || sameDistrict) && overlap >= 1;
+      });
+      if (dup) {
+        const at = new Date().toISOString();
+        patchRecord(COL.tickets, dup.id, {
+          updates: [...dup.updates, { at, note: `Reported again via ${ctx.channel === "voice" ? "hotline" : "WhatsApp"} (AI assistant): ${a.description.slice(0, 220)}` }],
+          priority: dup.priority === "normal" && a.priority !== "normal" ? a.priority : dup.priority,
+        });
+        addAudit({ solution: SLUG, actor: AGENT_ACTOR, action: "Linked repeat report to existing ticket", subject: `${dup.id} · ${dup.subject}`, detail: a.description.slice(0, 200) });
+        pushAction(ctx, { kind: "ticket", id: dup.id, label: `Linked to existing ${dup.type} · ${dup.subject}`, at, status: "done" });
+        return {
+          status: "existing_ticket_updated",
+          ticket: dup.id,
+          subject: dup.subject,
+          ticketStatus: statusMeta(dup.status).en,
+          assignedTo: dup.assignedTo,
+          responseDue: fmtDate(dup.slaDue),
+          lastUpdate: dup.updates.at(-1) ?? null,
+          note: "No new ticket was created: this issue is already logged. Tell the customer the existing reference, its status and that their report was added to it.",
+        };
+      }
       const id = nextTicketId();
       const now = new Date();
       const days = a.type === "maintenance" ? 3 : a.type === "complaint" ? 2 : a.type === "enquiry" ? 1 : 5;
@@ -512,12 +587,12 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
       pushAction(ctx, {
         kind: "exception",
         id,
-        label: `${kindLabel}${a.amountAed ? ` AED ${a.amountAed.toLocaleString("en-US")}` : ""} — ${a.reference}`,
+        label: `${kindLabel}${a.amountAed ? ` AED ${a.amountAed.toLocaleString("en-US", { minimumFractionDigits: Number.isInteger(a.amountAed) ? 0 : 2, maximumFractionDigits: 2 })}` : ""} — ${a.reference}`,
         at: new Date().toISOString(),
         status: "awaiting_approval",
       });
       return {
-        title: `${kindLabel} — ${a.reference}${a.amountAed ? ` · AED ${a.amountAed.toLocaleString("en-US")}` : ""}`,
+        title: `${kindLabel} — ${a.reference}${a.amountAed ? ` · AED ${a.amountAed.toLocaleString("en-US", { minimumFractionDigits: Number.isInteger(a.amountAed) ? 0 : 2, maximumFractionDigits: 2 })}` : ""}`,
         summary: `${c?.name ?? "Customer"} (${ctx.session.factors.length} factors verified). ${a.justification}`,
         actionLabel: a.kind === "fee_refund" ? "Approve refund" : "Approve exception",
         approver: CHC_MANAGER,
@@ -581,12 +656,12 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
             ? ctx.session.factors.map((f) => FACTOR_LABEL[f]?.en ?? f).join(" + ")
             : "Not verified",
         intent: a.intent,
-        reason: a.reason,
-        summary: a.summary,
-        whatTried: a.whatTried,
+        reason: stripCites(a.reason),
+        summary: stripCites(a.summary),
+        whatTried: a.whatTried.map(stripCites),
         sentiment: a.sentiment,
         sentimentScore: ctx.session.sentiments?.at(-1),
-        suggestedNextStep: a.suggestedNextStep,
+        suggestedNextStep: stripCites(a.suggestedNextStep),
         references: a.references ?? [],
         transcript: ctx.transcript,
         assignedTo: null,
@@ -621,6 +696,23 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
 
 /* ───────────────────────── System prompt ───────────────────────── */
 
+/** Conversation memory carried across turns (tool results are not part of the chat history). */
+function memory(ctx: AgentCtx): string[] {
+  const s = ctx.session;
+  const done = (s.actions ?? []).filter((a) => a.kind !== "verification");
+  const offered = s.offeredSlots ?? [];
+  const out: string[] = [];
+  if (done.length)
+    out.push(`ALREADY DONE IN THIS CONVERSATION (real references — never invent others): ${done.map((a) => `${a.kind} ${a.id} — ${a.label} (${a.status})`).join("; ")}.`);
+  if (offered.length)
+    out.push(
+      `SLOTS YOU OFFERED EARLIER: ${offered.map((o) => `${o.slotId} = ${CENTRES[o.centre as CentreId]?.en ?? o.centre} ${o.date} ${o.time}`).join("; ")}. When the customer chooses one, call book_appointment with its slotId — a booking only exists once the tool returns a confirmation number.`,
+    );
+  if (ctx.citations.length)
+    out.push(`SOURCES ALREADY CITED (reuse these numbers): ${ctx.citations.map((c) => `[${c.n}] ${c.title} — ${c.section}`).join("; ")}.`);
+  return out;
+}
+
 export function systemPrompt(ctx: AgentCtx): string {
   const c = customerOf(ctx.session);
   const s = ctx.session;
@@ -628,27 +720,29 @@ export function systemPrompt(ctx: AgentCtx): string {
     s.level === "verified" && c
       ? `VERIFIED customer: ${c.name}${c.nameAr ? ` (${c.nameAr})` : ""} — factors: ${s.factors.join(" + ")}. Their references: ${JSON.stringify(referenceSummary(c))}.`
       : s.level === "partial" && c
-        ? `PARTIALLY verified (1 factor: ${s.factors.join(", ")}). The record found belongs to "${c.name.split(" ")[0]} …". Do NOT disclose any case or account details yet — ask for the Emirates ID number (or the reference number) and call identify_customer.`
+        ? `PARTIALLY verified (1 factor: ${s.factors.join(", ")}). The record found belongs to "${c.name.split(" ")[0]} …". Do NOT disclose any case or account details yet — ask for the Emirates ID number (the last five digits are enough on a registered mobile) or the case/permit number with date of birth, then call identify_customer.`
         : s.ani
-          ? `The ${ctx.channel === "voice" ? "caller ID" : "WhatsApp number"} ${s.ani} is not registered. Customer unidentified: to discuss their records ask for two of: Emirates ID number, reference number, date of birth.`
-          : "Withheld/unknown number. Customer unidentified: to discuss their records ask for two of: Emirates ID number, reference number, date of birth.";
+          ? `The ${ctx.channel === "voice" ? "caller ID" : "WhatsApp number"} ${s.ani} is not registered. Customer unidentified: to discuss their records two factors are required — the FULL Emirates ID number AND the case/permit number with date of birth (Charter §4.2). General information can be given without verification.`
+          : "Withheld/unknown number. Customer unidentified: to discuss their records two factors are required — the FULL Emirates ID number AND the case/permit number with date of birth (Charter §4.2). General information can be given without verification.";
 
   return [
     "You are the AI assistant of the Customer Happiness Centre of the Marsa Al Noor Development Authority (MNDA, هيئة مرسى النور للتطوير) — a UAE government authority for housing, building permits, community services and municipal maintenance. You run privately on MNDA's own infrastructure (NARVO platform).",
     "Your purpose: help customers finish what they came to do — interpret the request, find the answer, and carry out permitted service actions. Be warm, precise and brief.",
     "",
     `TODAY: Sunday 11 October 2026. Customer Happiness Centres (Downtown, Al Murjan, Al Waha) are closed today and reopen Monday 12 October at 07:30 (Mon–Thu 07:30–15:30, Fri 07:30–12:00). You are available 24/7. Hotline 800 6632, WhatsApp +971 50 663 2000.`,
-    `CHANNEL: ${ctx.channel === "voice" ? "VOICE CALL — your reply is read aloud by speech synthesis. Max 3 short sentences (≈60 words). No markdown, no bullet lists, no headings, no emoji. Say dates and times naturally. You may keep [n] citation markers (they are not spoken)." : "WHATSAPP-STYLE CHAT — concise (≤ 120 words), short paragraphs; a short bullet list is fine for missing documents or options; no headings; no emoji."}`,
+    `CHANNEL: ${ctx.channel === "voice" ? "VOICE CALL — your reply is read aloud by speech synthesis. STRICT: at most 3 short sentences (≈50 words) — the essential answer and one question. No markdown, no lists, no headings, no emoji. Say dates and times naturally. Keep [n] citation markers (they are not spoken)." : "WHATSAPP-STYLE CHAT — concise (≤ 120 words), short paragraphs; a short bullet list is fine for missing documents or options; no headings; no emoji."}`,
     `IDENTITY: ${identity}`,
+    ...memory(ctx),
     "",
     "RULES",
-    "1. Language: reply in the language of the customer's last message. If they write Arabic (including Emirati dialect such as «شو صار على طلبي», «أبا», «مالي»), answer in clear, warm Arabic — Modern Standard Arabic with light Gulf courtesy («حيّاك الله»، «أبشر»، «إن شاء الله») — never stiff, never slang-heavy. If English, answer in English.",
+    "1. Language: reply in the language of the customer's last message. Customers often write Emirati dialect («شو صار على طلبي», «أبا», «مالي») — understand it fully, but ANSWER in clear, simple Modern Standard Arabic (فصحى مبسّطة) with a warm Gulf courtesy opener such as «حيّاك الله» or «أبشر». Do not imitate dialect (no «وش»، «خلني»، «أشيك»، «اللي»). If English, answer in English.",
+    "   Arabic terminology: مراكز إسعاد المتعاملين · تعميم رقم 9 لسنة 2026 · شهادة راتب صادرة خلال آخر 30 يوماً · شهادة عدم ملكية عقار من دائرة الأراضي في مرسى النور · طلب استكمال مستندات · رخصة بناء · شهادة عدم ممانعة من المطور الرئيسي · تطبيق MNDA Smart ← طلباتي ← تحميل المستندات الناقصة.",
     "2. Verification is enforced by the tools. Never reveal status, names, amounts or documents of any record before get_case_status succeeds. Never read out full Emirates ID or financial account numbers.",
-    "3. Use tools for facts — never guess a status, date, fee or rule. For any rule, document requirement, fee or deadline call search_knowledge and cite the passage as [n] right after the claim (e.g. «salary certificate must be issued within the last 30 days [2]»).",
+    "3. Use tools for facts — never guess a status, date, fee or rule. Every rule, document requirement, fee or deadline you state must be cited with the numeric marker [n] of a passage returned by a tool (get_case_status returns `policy` passages; otherwise call search_knowledge first), e.g. «salary certificate must be issued within the last 30 days [2]». Never write source names in brackets yourself.",
     "4. Missing documents: name each missing item precisely, give the exact rule and its source (e.g. Circular No. 9/2026 §4.4: salary certificate issued within the last 30 days — previously 90), say how to submit (MNDA Smart → My Applications → Upload missing documents, or at a centre — offer to book), and mention the 15-working-day response window.",
-    "5. Permitted actions you EXECUTE directly: book_appointment (after list_available_slots and the customer agreeing to a slot), create_ticket (complaints, maintenance, suggestions). Confirm with the returned reference number.",
+    "5. Permitted actions you EXECUTE directly: book_appointment (after list_available_slots and the customer agreeing to a slot), create_ticket (complaints, maintenance, suggestions). When the customer agrees, CALL the tool in that same turn — a booking or ticket exists only once the tool returns its APT-26-… / CHC-2026-… number; quote that number exactly. Before logging a complaint or maintenance request, check the customer's existing open tickets (from identify_customer) to avoid duplicates.",
     "6. You may NOT approve/reject applications, waive or refund fees, or extend deadlines — use request_exception (approval by Sara Ahmed Al Blooshi, CHC Manager) and tell the customer it is pending her approval, typical decision within 1 working day.",
     "7. Hand over (handoff_to_agent) when the customer asks for a person, is upset after your attempt, the issue needs judgement or escalation outside permitted actions (e.g. chasing a master developer about a late NOC, complaints about staff), or after two failed attempts. Write a complete summary so the agent can continue without asking again.",
-    "8. Never claim an action happened unless the tool returned success. One question at a time. End with a clear next step.",
+    "8. Never claim an action happened unless the tool returned success. Do not narrate tool use («let me check», «دعني أتحقق») — call the tools first, then write one reply. Never invent reasons or excuses (e.g. why a promised call-back did not happen); apologise, and offer a concrete fix or a handover. One question at a time. End with a clear next step.",
   ].join("\n");
 }

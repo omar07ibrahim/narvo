@@ -211,8 +211,11 @@ export interface CheckResult {
   id: CheckId;
   label: Bi;
   status: CheckStatus;
+  /** English — also what the model is given */
   expected: string;
   actual: string;
+  expectedAr: string;
+  actualAr: string;
   variance: number;
   detail: Bi;
 }
@@ -307,7 +310,7 @@ export interface Treatment {
   creditBalance: { qty: number; net: number; vat: number; gross: number; sku: string } | null;
   newStatus: InvoiceStatus;
   journal: { lines: JournalLine[]; memo: string; balanced: boolean };
-  approver: { name: string; title: string; amount: number; threshold: number | null; rule: string };
+  approver: { name: string; title: string; amount: number; threshold: number | null; rule: string; ruleAr: string };
 }
 
 /* ───────── Stored AI results ───────── */

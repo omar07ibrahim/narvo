@@ -7,7 +7,7 @@ import { useL, useFormat } from "@/lib/i18n";
 import { Input } from "@/components/ui/input";
 import { StatusPill } from "@/components/narvo/status";
 import { Avatar, STAGE_LABEL, useMoney } from "./bits";
-import { detectConflicts, oppHealth, type OppHealth } from "../_lib/compute";
+import { arDays, detectConflicts, oppHealth, type OppHealth } from "../_lib/calc";
 import type { Opportunity, SalesData, Stage } from "../_lib/types";
 
 export interface PipelineFilter {
@@ -113,7 +113,7 @@ function DaysBar({ h }: { h: OppHealth }) {
         <div className={cn("absolute inset-y-0 start-0 rounded-full", h.stalled ? "bg-warning" : h.overThreshold ? "bg-warning/60" : "bg-foreground/35")} style={{ width: `${pct}%` }} />
       </div>
       <span className={cn("num shrink-0 text-[11px]", h.stalled ? "font-medium text-warning" : "text-muted-foreground")}>
-        {L({ en: `${h.daysInStage} d in stage`, ar: `${h.daysInStage} يوماً في المرحلة` })}
+        {L({ en: `${h.daysInStage} d in stage`, ar: `${arDays(h.daysInStage)} في المرحلة` })}
       </span>
     </div>
   );
@@ -253,7 +253,7 @@ export function PipelineList({ rows, selectedId, onOpen }: { rows: OppRow[]; sel
                 </span>
                 {r.health.open ? (
                   <span className={cn("num shrink-0", r.health.stalled && "font-medium text-warning")}>
-                    {r.health.stalled ? L({ en: `stalled ${r.health.daysInStage} d`, ar: `متعثرة ${r.health.daysInStage} يوماً` }) : L({ en: `${r.health.daysInStage} d`, ar: `${r.health.daysInStage} يوماً` })}
+                    {r.health.stalled ? L({ en: `stalled ${r.health.daysInStage} d`, ar: `متعثرة ${arDays(r.health.daysInStage)}` }) : L({ en: `${r.health.daysInStage} d`, ar: arDays(r.health.daysInStage) })}
                   </span>
                 ) : (
                   <span className="shrink-0">{r.opp.stage === "Closed Won" ? L({ en: "won", ar: "فوز" }) : L({ en: "lost", ar: "خسارة" })}</span>

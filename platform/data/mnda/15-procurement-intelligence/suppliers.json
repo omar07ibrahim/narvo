@@ -1,0 +1,68 @@
+[
+  {
+    "id": "SUP-00417",
+    "name": "Raseen Facilities Management LLC",
+    "name_ar": "رصين لإدارة المرافق ذ.م.م",
+    "short": "Raseen FM",
+    "licence": "CN-2207815",
+    "trn": "100457218300003",
+    "address": "Raseen Building, Al Quoz Industrial 3, Dubai",
+    "registration": { "no": "MNDA-SUP-00417", "status": "Active", "since": "2019-04-07", "expiry": "2027-03-31", "category": "Facilities management — integrated (hard & soft)" },
+    "contact": { "name": "Leena Mattar", "role": "Bid Manager", "email": "leena.m@raseen.ae" },
+    "staff": 1096,
+    "icv": { "score": 31.4, "certificate": "ICV-2026-0418772", "expiry": "2027-02-02" },
+    "certificates": [
+      { "standard": "ISO 41001", "number": "FMS-41001-2207", "expiry": "2028-03-11" },
+      { "standard": "ISO 45001", "number": "OHS-45001-1183", "expiry": "2026-11-30" },
+      { "standard": "ISO 9001", "number": "QMS-9001-0954", "expiry": "2027-06-18" }
+    ],
+    "pastPerformance": [
+      { "contract": "MNDA/CON/2023/019", "title": { "en": "FM services — MNDA community centres", "ar": "خدمات إدارة المرافق — المراكز المجتمعية" }, "value": 4200000, "period": "Jan 2024 – Dec 2026", "rating": 3.4, "note": { "en": "2024 rated 4.1/5 (PPM 96.9%). 2026: PPM compliance below 95% since June (Aug 88.6%); condenser-coil cleaning at Al Ghaf overdue since 15 Aug 2026; 23 comfort complaints Aug–Sep. Performance memo MNDA/FA/MEMO/118/2026.", "ar": "تقييم 2024: 4.1/5 (الصيانة الوقائية 96.9%). 2026: امتثال الصيانة الوقائية دون 95% منذ يونيو (أغسطس 88.6%)؛ تنظيف ملفات المكثفات في الغاف متأخر منذ 15 أغسطس 2026؛ 23 شكوى راحة حرارية في أغسطس وسبتمبر." } }
+    ],
+    "submission": { "file": "raseen-fm.md", "price": "prices-raseen-fm.csv", "submittedAt": "2026-09-29T11:42:00+04:00", "teamSize": 92, "mobilisationDays": 30 }
+  },
+  {
+    "id": "SUP-00562",
+    "name": "Al Bahar Integrated Services LLC",
+    "name_ar": "البحر للخدمات المتكاملة ذ.م.م",
+    "short": "Al Bahar",
+    "licence": "CN-2650914",
+    "trn": "100583117400003",
+    "address": "Mussafah Industrial Area M-26, Abu Dhabi",
+    "registration": { "no": "MNDA-SUP-00562", "status": "Active", "since": "2021-11-15", "expiry": "2027-01-14", "category": "Facilities management — soft services; hard services (added 2024)" },
+    "contact": { "name": "Ziad Kanaan", "role": "Tender Manager", "email": "tenders@albaharis.ae" },
+    "staff": 640,
+    "icv": { "score": 27.9, "certificate": "ICV-ABI-2026-07282", "expiry": "2027-04-30" },
+    "certificates": [
+      { "standard": "ISO 41001", "number": "FM-41001-3390", "expiry": "2026-08-14" },
+      { "standard": "ISO 45001", "number": "OHS-45001-7741", "expiry": "2028-05-03" },
+      { "standard": "ISO 9001", "number": "QMS-9001-2264", "expiry": "2028-02-01" }
+    ],
+    "pastPerformance": [
+      { "contract": "MNDA/CON/2022/027", "title": { "en": "Cleaning services — Customer Happiness Centres", "ar": "خدمات النظافة — مراكز سعادة المتعاملين" }, "value": 612000, "period": "Mar 2022 – Feb 2024", "rating": 3.9, "note": { "en": "Completed without penalties; two staffing shortfalls during Ramadan 2023 resolved within the cure period.", "ar": "أُنجز دون غرامات؛ نقصان في العمالة خلال رمضان 2023 عولجا ضمن مهلة التصحيح." } }
+    ],
+    "submission": { "file": "al-bahar.md", "price": "prices-al-bahar.csv", "submittedAt": "2026-09-30T12:18:00+04:00", "teamSize": 78, "mobilisationDays": 45 }
+  },
+  {
+    "id": "SUP-00238",
+    "name": "Crescent FM Solutions LLC",
+    "name_ar": "كريسنت لحلول إدارة المرافق ذ.م.م",
+    "short": "Crescent FM",
+    "licence": "CN-1129486",
+    "trn": "100219874600003",
+    "address": "Head office Abu Dhabi; regional offices Dubai and Sharjah",
+    "registration": { "no": "MNDA-SUP-00238", "status": "Active", "since": "2025-02-20", "expiry": "2027-02-19", "category": "Facilities management — integrated (hard & soft)" },
+    "contact": { "name": "Dana Al Khatib", "role": "Head of Bids & Proposals", "email": "bids@crescentfm.ae" },
+    "staff": 2306,
+    "icv": { "score": 36.2, "certificate": "ICV-CFM-2026-04518", "expiry": "2027-03-31" },
+    "certificates": [
+      { "standard": "ISO 41001", "number": "IFMS-41001-0614", "expiry": "2028-06-22" },
+      { "standard": "ISO 45001", "number": "OHS-45001-2930", "expiry": "2028-01-09" },
+      { "standard": "ISO 14001", "number": "EMS-14001-1755", "expiry": "2028-01-09" },
+      { "standard": "ISO 50001", "number": "EnMS-50001-0347", "expiry": "2027-04-30" },
+      { "standard": "ISO 9001", "number": "QMS-9001-3082", "expiry": "2028-01-09" }
+    ],
+    "pastPerformance": [],
+    "submission": { "file": "crescent-fm.md", "price": "prices-crescent-fm.csv", "submittedAt": "2026-09-28T15:10:00+04:00", "teamSize": 104, "mobilisationDays": 30 }
+  }
+]

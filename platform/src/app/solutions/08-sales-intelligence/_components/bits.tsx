@@ -5,7 +5,7 @@ import { Mail, MessageCircle, Phone, StickyNote, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useL, usePrefs } from "@/lib/i18n";
 import { StatusPill, type Tone } from "@/components/narvo/status";
-import { initials } from "../_lib/compute";
+import { initials } from "../_lib/calc";
 import type { Bi, InteractionType } from "../_lib/types";
 
 export function Avatar({ name, className, tone = "ink" }: { name: string; className?: string; tone?: "ink" | "muted" | "ai" }) {
@@ -133,4 +133,14 @@ export function timeAgoLabel(ts: number, lang: "en" | "ar") {
   if (h < 24) return lang === "ar" ? `قبل ${h} ساعة` : `${h} h ago`;
   const d = Math.round(h / 24);
   return lang === "ar" ? `قبل ${d} يوم` : `${d} d ago`;
+}
+
+/** "[16, 22]" or "[16،22]" → "[16][22]" so the shared Markdown renderer shows hover chips. */
+export function normCites(text: string) {
+  return text.replace(/\[(\d+(?:\s*[,،]\s*\d+)+)\]/g, (_m, inner: string) =>
+    inner
+      .split(/\s*[,،]\s*/)
+      .map((n) => `[${n}]`)
+      .join(""),
+  );
 }

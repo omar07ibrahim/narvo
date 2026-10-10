@@ -1,0 +1,63 @@
+{
+  "id": "MNDA-PRC-2026-041",
+  "ref": "MNDA/PRC/2026/041",
+  "title": {
+    "en": "Integrated Facilities Management Services — MNDA Headquarters & Customer Happiness Centres (36 months)",
+    "ar": "خدمات إدارة المرافق المتكاملة — المقر الرئيسي للهيئة ومراكز سعادة المتعاملين (36 شهراً)"
+  },
+  "method": { "en": "Public tender — two-envelope", "ar": "مناقصة عامة — مظروفان" },
+  "estimate": 18600000,
+  "published": "2026-08-18",
+  "siteVisit": "2026-09-02",
+  "closing": "2026-09-30",
+  "closingTime": "14:00",
+  "opened": "2026-10-01",
+  "durationMonths": 36,
+  "weights": { "technical": 70, "commercial": 30 },
+  "passMark": 60,
+  "icvMin": 25,
+  "status": "technical_evaluation",
+  "committee": [
+    { "name": "Rashed Ali Al Dhaheri", "name_ar": "راشد علي الظاهري", "role": { "en": "Chair — Director, Procurement & Contracts", "ar": "الرئيس — مدير إدارة المشتريات والعقود" } },
+    { "name": "Eng. Tariq Mahmoud Saleh", "name_ar": "م. طارق محمود صالح", "role": { "en": "Technical evaluator — Director, Facilities & Assets", "ar": "مقيّم فني — مدير المرافق والأصول" } },
+    { "name": "Shamma Khalid Al Mansoori", "name_ar": "شما خالد المنصوري", "role": { "en": "Secretary — Senior Contracts Officer", "ar": "أمينة السر — مسؤولة عقود أولى" } },
+    { "name": "Vikram Menon", "name_ar": "فيكرام مينون", "role": { "en": "Commercial evaluator — Chief Financial Officer", "ar": "مقيّم مالي — المدير المالي" } }
+  ],
+  "sites": [
+    { "name": "MNDA Tower, Corniche Road (MN-01)", "gfa": 38600, "note": "22 floors · 4 × 600 TR water-cooled centrifugal chillers · 14 lifts" },
+    { "name": "Customer Happiness Centre — Downtown (MNDA Tower podium)", "gfa": 2900 },
+    { "name": "Customer Happiness Centre — Al Murjan (MN-02)", "gfa": 1650 },
+    { "name": "Customer Happiness Centre — Al Waha (MN-04)", "gfa": 1820 }
+  ],
+  "gates": [
+    { "id": "G1", "label": { "en": "ISO 41001 valid at closing", "ar": "شهادة الأيزو 41001 سارية عند الإغلاق" }, "kind": "certificate", "standard": "ISO 41001" },
+    { "id": "G2", "label": { "en": "ISO 45001 valid at closing", "ar": "شهادة الأيزو 45001 سارية عند الإغلاق" }, "kind": "certificate", "standard": "ISO 45001" },
+    { "id": "G3", "label": { "en": "CAFM system (UAE-hosted data)", "ar": "نظام إدارة المرافق المحوسب (بيانات مستضافة في الدولة)" }, "kind": "ai", "guidance": "A CAFM system is offered with technician mobile app and client access; MNDA data must be hosted in the UAE." },
+    { "id": "G4", "label": { "en": "24/7 helpdesk", "ar": "مكتب خدمة على مدار الساعة" }, "kind": "ai", "guidance": "A helpdesk staffed 24 hours a day, 7 days a week, bilingual Arabic/English, operated by or under direct control of the bidder." },
+    { "id": "G5", "label": { "en": "Emiratisation plan", "ar": "خطة التوطين" }, "kind": "ai", "guidance": "A contract-specific Emiratisation plan with numeric targets and timeline." },
+    { "id": "G6", "label": { "en": "ICV score ≥ 25%", "ar": "القيمة الوطنية المضافة ≥ 25%" }, "kind": "icv" }
+  ],
+  "criteria": [
+    { "id": "TC1", "section": "1", "weight": 10, "label": { "en": "Understanding of scope & mobilisation", "ar": "فهم النطاق والتعبئة" }, "guidance": "Understanding of the four sites and their critical assets; mobilisation within 30 days; asset verification and transition risk control." },
+    { "id": "TC2", "section": "2", "weight": 20, "label": { "en": "Maintenance methodology (PPM & reactive)", "ar": "منهجية الصيانة (الوقائية والطارئة)" }, "guidance": "SFG20-aligned PPM; P1–P4 response times; chilled-water plant and lift maintenance; predictive or condition-based approaches." },
+    { "id": "TC3", "section": "3", "weight": 15, "label": { "en": "Helpdesk, CAFM & reporting", "ar": "مكتب الخدمة ونظام إدارة المرافق والتقارير" }, "guidance": "24/7 bilingual helpdesk under the bidder's control; CAFM capability, client portal, UAE data hosting; monthly reporting." },
+    { "id": "TC4", "section": "4", "weight": 15, "label": { "en": "Staffing, key personnel & training", "ar": "التوظيف والكوادر الرئيسية والتدريب" }, "guidance": "Adequate on-site team for 44,970 m²; qualified Contract Manager (CFM/IWFM); training and competency." },
+    { "id": "TC5", "section": "5", "weight": 10, "label": { "en": "HSE management", "ar": "إدارة الصحة والسلامة والبيئة" }, "guidance": "ISO 45001 system, site controls, HSE record (LTIFR/TRIR), heat stress." },
+    { "id": "TC6", "section": "6", "weight": 10, "label": { "en": "Energy & sustainability", "ar": "الطاقة والاستدامة" }, "guidance": "Committed energy reduction target with weather-normalised baseline and M&V; sustainability practices." },
+    { "id": "TC7", "section": "7", "weight": 10, "label": { "en": "Relevant experience & references", "ar": "الخبرة ذات الصلة والمراجع" }, "guidance": "Comparable HQ / multi-site public-facing contracts in the UAE in the last five years with references." },
+    { "id": "TC8", "section": "8", "weight": 10, "label": { "en": "Emiratisation & ICV plan", "ar": "خطة التوطين والقيمة الوطنية" }, "guidance": "ICV score and improvement; contract Emiratisation plan with month-by-month numbers." }
+  ],
+  "scope": [
+    { "id": "SC01", "key": "hvac", "label": { "en": "HVAC & chilled water", "ar": "التكييف والمياه المبردة" } },
+    { "id": "SC02", "key": "electrical", "label": { "en": "Electrical & BMS", "ar": "الكهرباء وإدارة المباني" } },
+    { "id": "SC03", "key": "plumbing", "label": { "en": "Plumbing & drainage", "ar": "السباكة والصرف" } },
+    { "id": "SC04", "key": "fire", "label": { "en": "Fire & life safety", "ar": "الحماية من الحريق وسلامة الأرواح" } },
+    { "id": "SC05", "key": "lifts", "label": { "en": "Lifts & escalators", "ar": "المصاعد والسلالم المتحركة" } },
+    { "id": "SC06", "key": "cleaning", "label": { "en": "Cleaning & hygiene", "ar": "النظافة والتعقيم" } },
+    { "id": "SC07", "key": "pest", "label": { "en": "Pest control & vector management", "ar": "مكافحة الآفات ونواقل الأمراض" } },
+    { "id": "SC08", "key": "waste", "label": { "en": "Waste management", "ar": "إدارة النفايات" } },
+    { "id": "SC09", "key": "landscaping", "label": { "en": "Landscaping (podium & forecourt)", "ar": "تنسيق المواقع (المنصة والساحة الأمامية)" } },
+    { "id": "SC10", "key": "helpdesk", "label": { "en": "Helpdesk & front-of-house", "ar": "مكتب الخدمة والاستقبال" } },
+    { "id": "SC11", "key": "energy", "label": { "en": "Energy management", "ar": "إدارة الطاقة" } }
+  ]
+}

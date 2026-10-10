@@ -42,6 +42,7 @@ export async function POST(req: Request) {
         ar ? "### عدم اليقين — what the P10 fill rate and cost range mean; the most exposed SKUs." : "### Uncertainty — what the P10 fill rate and cost range mean; the most exposed SKUs.",
         ar ? "### ما الذي يغيّر القرار — conditions under which another plan would be better." : "### What would change the decision — conditions under which another plan would be better.",
         ar ? "### الخطوات التالية — 3 concrete actions with dates where the facts give them." : "### Next steps — 3 concrete actions with dates where the facts give them.",
+        "The what-if assumptions listed in the limits block are ALREADY applied to every figure — treat them as the current case, not as a hypothetical.",
         "Use the section headings in the output language. 220–330 words. Cite every number.",
         body.focus ? `The user's focus: ${body.focus}` : "",
       ]

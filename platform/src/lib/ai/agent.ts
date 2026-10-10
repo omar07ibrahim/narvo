@@ -52,6 +52,8 @@ export interface RunAgentOptions {
   maxSteps?: number;
   channel?: string;
   temperature?: number;
+  /** Tool choice for the first step ("required" forces a tool call); later steps use "auto". */
+  toolChoice?: "auto" | "none" | "required";
 }
 
 export interface RunAgentResult {
@@ -81,6 +83,7 @@ export async function runAgent(opts: RunAgentOptions): Promise<RunAgentResult> {
     const gen = chatStream({
       messages,
       tools: specs,
+      toolChoice: step === 0 ? (opts.toolChoice ?? "auto") : "auto",
       modelKey: opts.modelKey,
       temperature: opts.temperature ?? 0.2,
       maxTokens: 2048,

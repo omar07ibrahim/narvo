@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect, react-hooks/purity -- effects mirror the streamed agent run (an external SSE source); Date.now() drives live wait/handle-time clocks re-rendered by useTick. */
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -78,7 +79,6 @@ function useTick(ms = 1000) {
 
 export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () => void }) {
   const L = useL();
-  const f = useFormat();
   const { lang } = usePrefs();
   const run = useNarvoRun();
   const [contact, setContact] = useState<Contact | null>(null);
@@ -101,13 +101,16 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
   const handoffRef = useRef<Handoff | null>(null);
   useTick(1000);
 
-  contactRef.current = contact;
-  messagesRef.current = messages;
-  handoffRef.current = handoff;
+  // Latest-value refs for callbacks fired from timers and streamed events.
+  useEffect(() => {
+    contactRef.current = contact;
+    messagesRef.current = messages;
+    handoffRef.current = handoff;
+  }, [contact, messages, handoff]);
 
   useEffect(() => {
     scroller.current?.scrollTo({ top: scroller.current.scrollHeight, behavior: "smooth" });
-  }, [messages.length, run.text.main, handoff?.status]);
+  }, [messages.length, run.text.main, run.text.retry, handoff?.status]);
 
   /* ── Streamed data from the agent route ── */
   useEffect(() => {
@@ -150,7 +153,7 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
       return;
     }
     const turn = run.data.turn as { final?: string; citations?: Citation[] } | undefined;
-    const text = (turn?.final || run.text.main || "").trim();
+    const text = (turn?.final || run.text.retry || run.text.main || "").trim();
     const cites = (run.data.citations as Citation[] | undefined) ?? turn?.citations ?? [];
     setLastCitations(cites);
     if (text) {
@@ -313,18 +316,33 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
   /* Presenter hints: what the customer might say next (they play the customer). */
   const hints = useMemo(() => {
     if (!contact) return [] as string[];
-    const target = customer ?? aniCustomer;
-    const arabic = (target?.preferredLanguage ?? (messages.find((m) => m.role === "customer")?.text.match(/[؀-ۿ]/) ? "ar" : "en")) === "ar";
+    const firstText = messages.find((m) => m.role === "customer")?.text ?? "";
+    const convAr = /[؀-ۿ]/.test(firstText);
+    // Withheld number: the presenter plays a registered customer (an Al Waha housing applicant in the caller's language).
+    const fallback = !contact.ani
+      ? data.customers.find((c) => c.housingCaseIds.length && c.district?.startsWith("MN-04") && c.preferredLanguage === (convAr ? "ar" : "en"))
+      : undefined;
+    const target = customer ?? aniCustomer ?? fallback;
+    const arabic = (target?.preferredLanguage ?? (convAr ? "ar" : "en")) === "ar";
     const out: string[] = [];
-    if (target && session?.level !== "verified")
-      out.push(arabic ? `رقم هويتي ${target.emiratesId}` : `My Emirates ID is ${target.emiratesId}`);
+    if (target && session?.level !== "verified") {
+      if (!contact.ani && target.dateOfBirth && session?.level !== "partial") {
+        const dob = new Date(`${target.dateOfBirth}T00:00:00Z`).toLocaleDateString(arabic ? "ar-AE-u-nu-latn" : "en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+        const ref = target.housingCaseIds[0] ?? target.permitIds[0] ?? "";
+        out.push(
+          arabic
+            ? `رقم هويتي ${target.emiratesId}، ورقم الطلب ${ref}، وتاريخ ميلادي ${dob}`
+            : `My Emirates ID is ${target.emiratesId}, application ${ref}, date of birth ${dob}`,
+        );
+      } else out.push(arabic ? `رقم هويتي ${target.emiratesId}` : `My Emirates ID is ${target.emiratesId}`);
+    }
     if (session?.level === "verified") {
       out.push(arabic ? "أبا أحجز موعد عشان أسلّم الأوراق" : "Can you book me an appointment to hand in the documents?");
       out.push(arabic ? "أبا أكلم موظف لو سمحت" : "I'd like to speak to a person, please");
     }
     if (!messages.length) out.push(lang === "ar" ? "شو صار على طلب الإسكان مالي؟" : "What documents do I need for a housing loan?");
     return out.slice(0, 3);
-  }, [contact, customer, aniCustomer, session?.level, messages, lang]);
+  }, [contact, customer, aniCustomer, session?.level, messages, lang, data.customers]);
 
   return (
     <Workbench cols="272px minmax(0,1fr) 352px">
@@ -445,9 +463,9 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
                       <Sparkles className="size-3" />
                       {L({ en: "AI assistant", ar: "المساعد الذكي" })}
                     </div>
-                    {run.text.main ? (
+                    {run.text.retry || run.text.main ? (
                       <Markdown citations={run.data.citations as Citation[] | undefined} streaming>
-                        {run.text.main}
+                        {run.text.retry || run.text.main}
                       </Markdown>
                     ) : (
                       <ThinkingLines lines={2} />

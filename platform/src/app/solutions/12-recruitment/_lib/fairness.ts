@@ -22,7 +22,7 @@ export interface GuardResult {
 const LABELS: Array<{ kind: string; re: RegExp }> = [
   { kind: "nationality", re: /(nationality|citizenship|الجنسية)/i },
   { kind: "date of birth / age", re: /(date of birth|d\.o\.b|\bdob\b|\bage\b|birth ?date|تاريخ الميلاد|العمر|مواليد)/i },
-  { kind: "gender", re: /(gender|\bsex\b|الجنس\b|النوع)/i },
+  { kind: "gender", re: /(gender|\bsex\b|الجنس(?!ية)|النوع)/i },
   { kind: "marital status", re: /(marital|family status|dependents|الحالة الاجتماعية|الحالة العائلية)/i },
   { kind: "religion", re: /(religion|الديانة|الدين)/i },
   { kind: "photo", re: /(\bphoto(graph)?\b|\bpicture\b|الصورة)/i },
@@ -46,7 +46,7 @@ const RELIGIONS = ["Muslim", "Christian", "Hindu", "Buddhist", "Sikh", "Catholic
 const GENDER_WORDS = ["Male", "Female", "ذكر", "أنثى", "Mr.", "Mrs.", "Ms.", "Miss"];
 
 /** Demonyms inside institution / standard / place names are not personal attributes ("American University", "Saudi Arabia"). */
-const NOT_INSTITUTION = "(?!\\s+(Institute|University|College|Society|Ocean|Standards?|Council|Arabia|Gulf))";
+const NOT_INSTITUTION = "(?!\\s+(Institute|University|College|Society|Ocean|Standards?|Council|Arabia|Gulf|Code|Building Code))";
 
 const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const wordRe = (w: string, ar = false) =>
@@ -63,19 +63,28 @@ function nameParts(name: string) {
 /** Guess the candidate's name from a CV heading when none is supplied (bring-your-own CV). */
 export function guessName(text: string): string | undefined {
   const m = text.match(/^#\s+(.+)$/m);
-  return m?.[1]?.trim();
+  const h = m?.[1]?.trim();
+  if (!h) return undefined;
+  const words = h.split(/\s+/);
+  if (words.length < 2 || words.length > 6 || /\d/.test(h)) return undefined;
+  if (/(curriculum|resume|résumé|\bcv\b|profile|interview|record|السيرة|الذاتية|مقابلة)/i.test(h)) return undefined;
+  return /^[\p{L} .'’-]+$/u.test(h) ? h : undefined;
 }
 
 export function fairnessGuard(raw: string, identity: { name?: string; nameAr?: string; extra?: string[] } = {}): GuardResult {
   const removed: Redaction[] = [];
-  const names = [identity.name, identity.nameAr, guessName(raw), ...(identity.extra ?? [])].filter(Boolean) as string[];
+  const known = [identity.name, identity.nameAr, ...(identity.extra ?? [])].filter(Boolean) as string[];
+  const names = known.length ? known : ([guessName(raw)].filter(Boolean) as string[]);
 
   // 1. Line-level: protected attribute fields (EN/AR labels) → replaced by a neutral marker.
   const lines = raw.replace(/\r/g, "").split("\n");
   const out = lines.map((line, i) => {
     if (i < 3 && /^#\s+/.test(line)) {
-      removed.push({ kind: "name", original: line.replace(/^#\s+/, "") });
-      return "# [Candidate]";
+      const h = line.replace(/^#\s+/, "").trim();
+      if (names.some((n) => h.includes(n) || n.includes(h))) {
+        removed.push({ kind: "name", original: h });
+        return "# [Candidate]";
+      }
     }
     const isField = /^\s*([-*•]\s*)?(\*\*)?[^:：\n]{1,40}(\*\*)?\s*[:：]/.test(line) && line.length < 220;
     if (!isField) return line;
@@ -88,7 +97,7 @@ export function fairnessGuard(raw: string, identity: { name?: string; nameAr?: s
       if (!hit) return seg;
       changed = true;
       removed.push({ kind: hit.kind, original: seg.replace(/^\s*[-*•]\s*/, "").replace(/\*\*/g, "").trim() });
-      return seg.replace(/([:：]\s*(?:\*\*)?).*$/, `$1[REDACTED — ${hit.kind}]`);
+      return seg.replace(/([:：]\s*(?:\*\*)?)\s*.*$/, `$1 [REDACTED — ${hit.kind}]`);
     });
     return changed ? segOut.join(" · ") : line;
   });
@@ -116,6 +125,22 @@ export function fairnessGuard(raw: string, identity: { name?: string; nameAr?: s
   inline("marital status", /\b(married|divorced|widowed)( with [a-z0-9 ]{1,20} (children|kids|child))?\b/gi);
   inline("marital status", /(^|[\s،,.:؛(])((?:متزوج|متزوجة|مطلق|مطلقة|أرمل|أرملة)(?:\s+و?لدي[^،.\n]{0,20})?)(?=$|[\s،,.:؛)])/g, true);
   inline("gender", /\b(Mr|Mrs|Ms|Miss)\.?\s(?=[A-Z[])/g);
+  // Gendered pronouns (interview notes are written in the third person) → neutral forms.
+  const OBJ_NEXT = /^(?:about|to|for|with|at|on|in|from|by|and|or|if|whether|again|directly|later|that|whether|[.,;:!?)—-]|$)/i;
+  text = text.replace(/\b(she|he|her|his|him|hers|herself|himself)\b(\s*)(\S*)/gi, (m, w: string, sp: string, next: string) => {
+    const lw = w.toLowerCase();
+    const cap = (s: string) => (w[0] === w[0].toUpperCase() ? s[0].toUpperCase() + s.slice(1) : s);
+    let rep: string;
+    if (lw === "she" || lw === "he") rep = "they";
+    else if (lw === "his" || lw === "hers") rep = "their";
+    else if (lw === "him") rep = "them";
+    else if (lw === "herself" || lw === "himself") rep = "themselves";
+    else rep = OBJ_NEXT.test(next) ? "them" : "their";
+    removed.push({ kind: "gender (pronoun)", original: w });
+    const AGREE: Record<string, string> = { is: "are", was: "were", has: "have", does: "do", "isn't": "aren't", "wasn't": "weren't", "hasn't": "haven't", "doesn't": "don't" };
+    const fixed = rep === "they" && AGREE[next.toLowerCase()] ? AGREE[next.toLowerCase()] : next;
+    return `${cap(rep)}${sp}${fixed}`;
+  });
 
   // 3. Leak scan — anything still present is reported and removed.
   const leaks: string[] = [];
@@ -158,9 +183,16 @@ export function normForMatch(s: string) {
 }
 
 export function quoteFound(quote: string, source: string) {
-  const q = normForMatch(quote.replace(/\[REDACTED[^\]]*\]/g, " ").replace(/…|\.\.\./g, " "));
-  if (q.length < 8) return false;
+  const cleaned = quote.replace(/\[REDACTED[^\]]*\]/g, " ");
   const src = normForMatch(source);
+  // Excerpts joined with an ellipsis (or across adjacent bullets) are verified fragment by fragment.
+  const fragments = cleaned
+    .split(/\s*(?:\.{3}|…)\s*|(?<=[.;؛])\s+/)
+    .map((f) => normForMatch(f))
+    .filter((f) => f.split(" ").length >= 3);
+  if (fragments.length > 1 && fragments.every((f) => src.includes(f))) return true;
+  const q = normForMatch(cleaned.replace(/…|\.\.\./g, " "));
+  if (q.length < 8) return false;
   if (src.includes(q)) return true;
   // Allow light ellipsis use: every fragment of ≥ 4 words must appear in order.
   const words = q.split(" ");

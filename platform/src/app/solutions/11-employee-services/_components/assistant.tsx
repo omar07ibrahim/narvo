@@ -132,7 +132,7 @@ export function Assistant({
     setInput("");
     setHighlight(null);
     pending.current = true;
-    run.start("/api/solutions/11-employee-services/chat", { employeeId: employee.id, message, history });
+    run.start("/api/solutions/11-employee-services/chat", { employeeId: employee.id, message, history, draftId: draft?.employeeId === employee.id ? draft.id : undefined });
   }
 
   const starters = STARTERS[employee.id] ?? [];

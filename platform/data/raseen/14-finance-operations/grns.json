@@ -1745,5 +1745,31 @@
     ],
     "weighbridge": null,
     "remarks": "196.000 t moved in 8 trailer trips, 28–30 Sep — trip sheets signed at MN-05 gate."
+  },
+  {
+    "id": "GRN-26-08524",
+    "poId": "RBM-PO-26-04476",
+    "supplierId": "SUP-ACT",
+    "kind": "goods",
+    "warehouse": "MN05",
+    "date": "2026-09-30",
+    "deliveryNote": "ACT-DO-26-2296",
+    "receivedBy": "Joel D'Souza",
+    "lines": [
+      {
+        "lineNo": 1,
+        "sku": "SAN-WC-WH",
+        "description": "Wall-hung WC set with concealed cistern",
+        "unit": "set",
+        "orderedQty": 36,
+        "deliveredQty": 36,
+        "receivedQty": 36,
+        "acceptedQty": 36,
+        "rejectedQty": 0,
+        "rejectReason": null
+      }
+    ],
+    "weighbridge": null,
+    "remarks": "36 sets received on 3 pallets, cartons intact. Delivered-price PO — packing included."
   }
 ]

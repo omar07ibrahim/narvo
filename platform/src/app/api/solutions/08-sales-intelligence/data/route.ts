@@ -1,4 +1,4 @@
-import { loadSalesData } from "@/app/solutions/08-sales-intelligence/_lib/data";
+import { loadSalesData } from "@/app/solutions/08-sales-intelligence/_lib/records";
 
 export const dynamic = "force-dynamic";
 

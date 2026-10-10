@@ -7,7 +7,7 @@ import type { ChatMessage } from "@/lib/ai/client";
 import type { Citation } from "@/lib/ai/events";
 import { appendRecord, patchRecord } from "@/lib/store/db";
 import { buildTools, publishSession, systemPrompt, type AgentCtx } from "@/app/solutions/07-contact-operations/_lib/agent";
-import { COL, SLUG, findByMobile, getSession, levelFor, loadConversations } from "@/app/solutions/07-contact-operations/_lib/data";
+import { COL, SLUG, findByMobile, findByReference, getSession, levelFor, loadConversations } from "@/app/solutions/07-contact-operations/_lib/data";
 import type { Conversation, Intent, SessionState, Signals, TranscriptTurn } from "@/app/solutions/07-contact-operations/_lib/types";
 
 export const maxDuration = 120;
@@ -61,14 +61,25 @@ export async function POST(req: Request) {
 
       // Capture exactly what the customer sees (preambles + final answer) for the transcript.
       let streamed = "";
+      let retried = "";
       const out: Emitter = {
         ...emit,
         text: (delta: string, ch?: string) => {
           if ((ch ?? "main") === "main") streamed += delta;
+          if (ch === "retry") retried += delta;
           emit.text(delta, ch);
         },
       };
-      const ctx: AgentCtx = { session, emit: out, citations: [], actions: [], transcript: body.transcript, channel };
+      const lastText = [...body.transcript].reverse().find((t) => t.role === "customer")?.text ?? "";
+      const ctx: AgentCtx = {
+        session,
+        emit: out,
+        citations: [...(session.citations ?? [])],
+        actions: [],
+        transcript: body.transcript,
+        channel,
+        prefAr: /[؀-ۿ]/.test(lastText),
+      };
       publishSession(ctx);
       const s0 = emit.step(
         "channel",
@@ -105,15 +116,18 @@ export async function POST(req: Request) {
         .catch(() => null);
 
       // ── Agent
-      const messages: ChatMessage[] = body.transcript
-        .filter((t) => t.role !== "system")
-        .map((t) =>
-          t.role === "customer"
-            ? { role: "user" as const, content: t.text }
-            : { role: "assistant" as const, content: t.role === "agent" ? `[Human agent ${t.author ?? ""}] ${t.text}` : t.text },
-        );
+      const turns = body.transcript.filter((t) => t.role !== "system");
+      const messages: ChatMessage[] = turns.map((t, i) =>
+        t.role === "customer"
+          ? {
+              role: "user" as const,
+              // Register reminder for Arabic turns (the customer may write dialect; replies stay in simple MSA).
+              content: i === turns.length - 1 && ctx.prefAr ? `${t.text}\n\n[للمساعد: أجب بالعربية الفصحى المبسّطة، دون لهجة.]` : t.text,
+            }
+          : { role: "assistant" as const, content: t.role === "agent" ? `[Human agent ${t.author ?? ""}] ${t.text}` : t.text },
+      );
 
-      const result = await runAgent({
+      let result = await runAgent({
         system: systemPrompt(ctx),
         messages,
         tools: buildTools(ctx),
@@ -124,12 +138,48 @@ export async function POST(req: Request) {
         temperature: 0.25,
       });
 
+      // ── Integrity guard: any reference number in the reply must exist (created by a tool or on record).
+      const draft = streamed.trim() || result.final.trim();
+      const mentioned = Array.from(new Set(draft.match(/(APT-26-\d{4,7}|CHC-2026-\d{5,7}|HO-\d{4}-\d{3,5}|EXC-26-\d{3,6})/g) ?? []));
+      const real = new Set([...(session.actions ?? []).map((a) => a.id), ...ctx.actions.map((a) => a.id)]);
+      const invented = mentioned.filter((id) => !real.has(id) && !findByReference(id).id && !id.startsWith("HO-") && !id.startsWith("EXC-"));
+      if (invented.length) {
+        const g = emit.step("integrity", lang === "ar" ? "فحص النزاهة: رقم مرجعي غير موجود" : "Integrity check: unknown reference in reply", invented.join(", "));
+        // Remove the discarded draft from the screen before the corrected reply streams in.
+        emit.resetText("main");
+        result = await runAgent({
+          system:
+            systemPrompt(ctx) +
+            `\n\nINTEGRITY CHECK: your previous draft mentioned ${invented.join(", ")}, which no tool created and which does not exist. That draft was discarded — the customer never saw it, so do not apologise or mention it. If the customer asked for a booking, call book_appointment now with the offered slot and confirm using the number the tool returns; otherwise answer without inventing references.`,
+          messages,
+          tools: buildTools(ctx),
+          emit: out,
+          solution: SLUG,
+          modelKey,
+          maxSteps: 5,
+          temperature: 0.1,
+          channel: "retry",
+        });
+        g.done(lang === "ar" ? "أعيدت صياغة الرد بعد تنفيذ الأداة" : "Reply regenerated with real tool results");
+      }
+      session.citations = ctx.citations;
+
       const signals = await signalsP;
       if (signals) session.sentiments = [...(session.sentiments ?? []), signals.sentiment].slice(-12);
       publishSession(ctx);
 
       // ── Persist the conversation record (Supervisor log + KPIs)
-      const final = (streamed.trim() || result.final.trim()).replace(/\n{3,}/g, "\n\n");
+      // Models sometimes repeat a short preamble before each tool step — keep each paragraph once.
+      const seen = new Set<string>();
+      const final = (invented.length ? retried.trim() || result.final.trim() : streamed.trim() || result.final.trim())
+        .split(/\n{2,}/)
+        .filter((p) => {
+          const k = p.trim();
+          if (!k || seen.has(k)) return false;
+          seen.add(k);
+          return true;
+        })
+        .join("\n\n");
       const full: TranscriptTurn[] = [
         ...body.transcript,
         { role: "assistant", text: final, at: new Date().toISOString(), channel },
@@ -155,7 +205,7 @@ export async function POST(req: Request) {
         durationSec: Math.max(5, Math.round((Date.now() - Date.parse(existing?.startedAt ?? session.startedAt)) / 1000)),
         csat: null,
         sentiment: sentimentAvg <= -0.25 ? "negative" : sentimentAvg >= 0.3 ? "positive" : "neutral",
-        summary: lastCustomer.slice(0, 160),
+        summary: (body.transcript.find((t) => t.role === "customer")?.text ?? lastCustomer).slice(0, 160),
         actions: allActions.map((a) => `${a.kind === "appointment" ? "Booked" : a.kind === "ticket" ? "Logged" : a.kind === "handoff" ? "Handoff" : "Requested"} ${a.id} — ${a.label}`),
         transcript: full,
         live: true,

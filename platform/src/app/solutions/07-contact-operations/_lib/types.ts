@@ -236,6 +236,10 @@ export interface SessionState {
   conversationId?: string;
   actions?: SessionAction[];
   sentiments?: number[];
+  /** Slots the assistant has offered (so a later "book the first one" can be executed). */
+  offeredSlots?: Array<{ slotId: string; centre: string; date: string; time: string }>;
+  /** Session-scoped citation list so [n] markers stay valid across turns. */
+  citations?: Array<{ n: number; docId: string; title: string; ref?: string; section?: string; quote: string }>;
 }
 
 export interface SessionAction {

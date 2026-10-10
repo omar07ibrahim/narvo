@@ -58,6 +58,9 @@ export interface SearchHit {
   section: string;
   text: string;
   score: number;
+  classification?: string;
+  lang?: string;
+  type?: string;
 }
 
 const DATA_DIR = path.join(process.cwd(), "data");
@@ -191,7 +194,20 @@ export function search(relDir: string, queries: string | string[], k = 8): Searc
     .filter((x) => x.s > 0)
     .sort((a, b) => b.s - a.s)
     .slice(0, k)
-    .map(({ c, s }) => ({ docId: c.docId, title: c.title, ref: c.ref, section: c.section, text: c.text, score: Number(s.toFixed(3)) }));
+    .map(({ c, s }) => {
+      const meta = idx.docs.find((d) => d.id === c.docId);
+      return {
+        docId: c.docId,
+        title: c.title,
+        ref: c.ref,
+        section: c.section,
+        text: c.text,
+        score: Number(s.toFixed(3)),
+        classification: meta?.classification,
+        lang: meta?.lang,
+        type: meta?.type,
+      };
+    });
 }
 
 export function getDoc(relDir: string, docId: string): Doc | undefined {

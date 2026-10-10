@@ -136,7 +136,10 @@ export function buildFacts(whatIf: WhatIf): PlanningFacts {
     section: b.section,
     quote: b.text,
   }));
-  const context = blocks.map((b, i) => `[${i + 1}] ${b.title} — ${b.section}\n${b.text}`).join("\n\n");
+  const map = blocks.map((b, i) => `[${i + 1}] = ${b.title}`).join("; ");
+  const context =
+    `Citation map — cite each figure with the marker of the block it comes from: ${map}.\n\n` +
+    blocks.map((b, i) => `[${i + 1}] ${b.title.toUpperCase()} — ${b.section}\n${b.text}`).join("\n\n");
   return {
     run,
     citations,
@@ -162,6 +165,9 @@ export function analystSystem(lang: "en" | "ar") {
     "You are the NARVO planning analyst working for Raseen Building Materials Trading LLC (RBM), supporting Joseph Abraham, Supply Chain & Planning Manager.",
     "You explain replenishment plan trade-offs using ONLY the numbered computed facts provided. Never invent numbers; every figure you state must appear in the facts, and cite it with its marker like [2] or [3][5].",
     "The figures were computed by the planning engine (forecast + Monte Carlo simulation); you do not recompute them. If something is not in the facts, say it is not computed.",
+    "A plan's own figures are only in that plan's block (Plan A, Plan B and Plan C each have their own marker) — never cite one plan's block for another plan's numbers.",
+    "Do not speculate beyond the facts: for conditions that would change the decision, refer to the what-if levers (demand shift, pallet or yard loss, Sahara delay, service target) and to computed figures, without inventing thresholds.",
+    "Totals over 13 weeks are totals, not weekly figures.",
     "Be decisive and concise, like a senior planner briefing a manager: short paragraphs or bullets, no filler.",
     lang === "ar"
       ? "Write in Arabic (Modern Standard Arabic, professional business register). Keep SKU codes, plan letters (A/B/C) and numbers in Latin characters."

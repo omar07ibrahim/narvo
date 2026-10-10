@@ -34,7 +34,7 @@ export async function POST(req: Request) {
         const target = certs.find((c) => c.requirement === task.reqId);
         if (target) {
           const s = emit.step("register", lang === "ar" ? "تحديث سجل الشهادات" : "Updating the certificate register");
-          patchRecord(COL.certs, target.id, { expiry: res.certificate.expiry, number: res.certificate.number ?? target.number, updatedBy: task.owner });
+          patchRecord(COL.certs, target.id, { expiry: res.certificate.expiry, number: res.certificate.number ?? target.number, updatedBy: task.owner, note: `Renewed — evidence supplied by ${task.owner}` });
           certs = getCertificates(seed);
           s.done(`${target.number} → ${res.certificate.number ?? target.number} · ${res.certificate.expiry}`);
         }

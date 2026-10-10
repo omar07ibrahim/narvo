@@ -1,0 +1,1194 @@
+[
+  {
+    "id": "CUS-204817",
+    "name": "Saeed Khalifa Al Romaithi",
+    "nameAr": "سعيد خليفة الرميثي",
+    "emiratesId": "784-1986-2297415-3",
+    "mobile": "+971 50 418 2276",
+    "email": "saeed.romaithi86@gmail.com",
+    "dateOfBirth": "1986-03-14",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "whatsapp",
+    "district": "MN-02 Al Murjan",
+    "housingCaseIds": [
+      "MNDA-HG-2026-004817"
+    ],
+    "permitIds": [],
+    "ticketIds": [
+      "CHC-2026-118204"
+    ],
+    "flags": [
+      "Repeat contact — 4 contacts in 12 days",
+      "Open complaint CHC-2026-118204"
+    ],
+    "notes": "Believes he already sent the documents: on 28 Sep he emailed scans to housing@mnda.gov.ae instead of uploading them to the case. Clarification of 24 Sep still open — 15-working-day window ends Thu 15 Oct 2026.",
+    "history": [
+      {
+        "at": "2026-09-27T20:14:00+04:00",
+        "channel": "phone",
+        "intent": "documents",
+        "summary": "Asked why a new salary certificate was requested when he had already uploaded one; voice assistant explained the 30-day validity rule (Circular 9/2026, 4.4) — his certificate is dated 12 Jul 2026.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-09-28T09:02:00+04:00",
+        "channel": "email",
+        "intent": "documents",
+        "summary": "Emailed photos of a salary certificate and family book pages to housing@mnda.gov.ae; auto-reply sent with instructions to upload through MNDA Smart → My Applications.",
+        "outcome": "unresolved"
+      },
+      {
+        "at": "2026-10-06T11:41:00+04:00",
+        "channel": "whatsapp",
+        "intent": "complaint",
+        "summary": "Complained that he was asked for the same documents twice and nobody updated him; complaint CHC-2026-118204 logged for Housing & Community Services.",
+        "outcome": "handoff"
+      },
+      {
+        "at": "2026-10-08T08:17:00+04:00",
+        "channel": "phone",
+        "intent": "housing_status",
+        "summary": "Called again for an update; case still Incomplete — awaiting applicant (salary certificate within 30 days and Certificate of No Property Ownership outstanding).",
+        "outcome": "unresolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-311592",
+    "name": "Obaid Hamad Al Ketbi",
+    "nameAr": "عبيد حمد الكتبي",
+    "emiratesId": "784-1991-6630417-2",
+    "mobile": "+971 52 338 6104",
+    "email": "obaid.alketbi91@gmail.com",
+    "dateOfBirth": "1991-06-27",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "app",
+    "district": "MN-04 Al Waha Gardens",
+    "housingCaseIds": [
+      "MNDA-HG-2026-005203"
+    ],
+    "permitIds": [],
+    "ticketIds": [],
+    "flags": [],
+    "notes": "MNDA employee — building inspector, Field Operations & Inspection.",
+    "history": [
+      {
+        "at": "2026-10-07T13:26:00+04:00",
+        "channel": "whatsapp",
+        "intent": "housing_status",
+        "summary": "Asked whether his application submitted on 6 Oct was received and if his wife's salary certificate is also needed; stopped replying before verification was completed.",
+        "outcome": "unresolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-287406",
+    "name": "Latifa Ali Al Zaabi",
+    "nameAr": "لطيفة علي الزعابي",
+    "emiratesId": "784-1987-1185903-6",
+    "mobile": "+971 54 660 2871",
+    "email": "latifa.alzaabi@outlook.com",
+    "dateOfBirth": "1987-01-19",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "phone",
+    "district": "MN-02 Al Murjan",
+    "housingCaseIds": [
+      "MNDA-HG-2026-005219"
+    ],
+    "permitIds": [],
+    "ticketIds": [],
+    "flags": [],
+    "notes": "Chose to obtain the no-property certificate herself rather than give Land Registry consent.",
+    "history": [
+      {
+        "at": "2026-10-04T21:16:00+04:00",
+        "channel": "app_chat",
+        "intent": "appointment",
+        "summary": "Booked APT-26-40631 at Al Murjan centre for 7 Oct 11:00 to submit a new housing grant application.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-05T08:52:00+04:00",
+        "channel": "phone",
+        "intent": "documents",
+        "summary": "Asked where to obtain the Certificate of No Property Ownership; told it is issued by the Marsa Al Noor Land Registry (valid 60 days) or can be retrieved by the case officer with her consent.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-07T11:00:00+04:00",
+        "channel": "centre",
+        "intent": "documents",
+        "summary": "Submitted grant application MNDA-HG-2026-005219 at Al Murjan centre with all documents including the no-property certificate.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-08T19:40:00+04:00",
+        "channel": "whatsapp",
+        "intent": "housing_status",
+        "summary": "Checked that the application submitted at the centre was received; status Submitted, completeness check in progress.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-305118",
+    "name": "Salama Juma Al Neyadi",
+    "nameAr": "سلامة جمعة النيادي",
+    "emiratesId": "784-1993-4418820-7",
+    "mobile": "+971 50 239 7718",
+    "email": "salama.alneyadi@gmail.com",
+    "dateOfBirth": "1993-08-05",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "en",
+    "preferredChannel": "app",
+    "district": "MN-04 Al Waha Gardens",
+    "housingCaseIds": [
+      "MNDA-HG-2026-005231"
+    ],
+    "permitIds": [],
+    "ticketIds": [],
+    "flags": [],
+    "notes": "",
+    "history": [
+      {
+        "at": "2026-10-06T22:08:00+04:00",
+        "channel": "app_chat",
+        "intent": "documents",
+        "summary": "Asked whether a downloaded e-statement is acceptable for the loan-track 6-month bank statement; told it must cover the last 6 months and carry the bank's stamp.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-198334",
+    "name": "Aisha Mohammed Al Marzooqi",
+    "nameAr": "عائشة محمد المرزوقي",
+    "emiratesId": "784-1990-5512068-1",
+    "mobile": "+971 55 902 3417",
+    "email": "aisha.marzooqi@outlook.com",
+    "dateOfBirth": "1990-04-22",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "en",
+    "preferredChannel": "app",
+    "district": "MN-04 Al Waha Gardens",
+    "housingCaseIds": [
+      "MNDA-HG-2026-004902"
+    ],
+    "permitIds": [],
+    "ticketIds": [
+      "CHC-2026-118003"
+    ],
+    "flags": [],
+    "notes": "Suggested that MNDA Smart show the full missing-documents list on the application screen.",
+    "history": [
+      {
+        "at": "2026-09-29T21:37:00+04:00",
+        "channel": "app_chat",
+        "intent": "other",
+        "summary": "Suggested that the app should list missing documents on the application screen instead of only in the SMS; suggestion CHC-2026-118003 logged.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-05T12:44:00+04:00",
+        "channel": "phone",
+        "intent": "housing_status",
+        "summary": "Asked for status of loan application; under review, income verification in progress; confirmed her stamped bank statement was accepted.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-07T07:58:00+04:00",
+        "channel": "app_chat",
+        "intent": "appointment",
+        "summary": "Cancelled APT-26-40569 (Downtown, 8 Oct 13:00) as no documents were outstanding.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-276051",
+    "name": "Hamdan Rashid Al Nuaimi",
+    "nameAr": "حمدان راشد النعيمي",
+    "emiratesId": "784-1992-7730186-4",
+    "mobile": "+971 56 207 9935",
+    "email": "hamdan.alnuaimi92@gmail.com",
+    "dateOfBirth": "1992-02-11",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "phone",
+    "district": "MN-07 Al Ghaf Community",
+    "housingCaseIds": [
+      "MNDA-HG-2026-005011"
+    ],
+    "permitIds": [],
+    "ticketIds": [
+      "CHC-2026-117936"
+    ],
+    "flags": [],
+    "notes": "Spouse's Emirates ID was renewed in September; will bring the new card to Al Waha centre on 13 Oct.",
+    "history": [
+      {
+        "at": "2026-09-28T10:09:00+04:00",
+        "channel": "phone",
+        "intent": "complaint",
+        "summary": "Complained that the Multipurpose Hall at Al Ghaf Community Centre was extremely hot during a wedding reception on 26 Sep; complaint CHC-2026-117936 logged for Facilities & Assets.",
+        "outcome": "handoff"
+      },
+      {
+        "at": "2026-10-05T16:22:00+04:00",
+        "channel": "whatsapp",
+        "intent": "housing_status",
+        "summary": "Asked what is missing from his grant application; told the spouse's Emirates ID (front and back) was not attached.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-07T10:19:00+04:00",
+        "channel": "phone",
+        "intent": "appointment",
+        "summary": "Wanted an Al Waha appointment this week — none available; booked APT-26-41022 at Al Waha for Tue 13 Oct 10:00.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-240977",
+    "name": "Mouza Saif Al Shamsi",
+    "nameAr": "موزة سيف الشامسي",
+    "emiratesId": "784-1988-3046771-2",
+    "mobile": "+971 50 771 5402",
+    "email": "mouza.alshamsi88@gmail.com",
+    "dateOfBirth": "1988-09-30",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "phone",
+    "district": "MN-02 Al Murjan",
+    "housingCaseIds": [
+      "MNDA-HG-2026-005126"
+    ],
+    "permitIds": [],
+    "ticketIds": [],
+    "flags": [
+      "Widowed head of household — offer priority service at centres"
+    ],
+    "notes": "",
+    "history": [
+      {
+        "at": "2026-10-08T11:03:00+04:00",
+        "channel": "phone",
+        "intent": "housing_status",
+        "summary": "Asked for status; case in Verification, Land Registry ownership check requested 5 Oct; no action needed from her.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-162580",
+    "name": "Khalid Sultan Al Mheiri",
+    "nameAr": "خالد سلطان المهيري",
+    "emiratesId": "784-1984-9921034-8",
+    "mobile": "+971 50 116 4480",
+    "email": "khalid.almheiri84@gmail.com",
+    "dateOfBirth": "1984-05-08",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "phone",
+    "district": "MN-04 Al Waha Gardens",
+    "housingCaseIds": [
+      "MNDA-HG-2026-004655"
+    ],
+    "permitIds": [
+      "MNDA-BP-2026-01803"
+    ],
+    "ticketIds": [],
+    "flags": [],
+    "notes": "Loan approved 1 Oct 2026 — agreement signing booked 14 Oct at Downtown centre. Villa permit on the same plot is with Civil Defence.",
+    "history": [
+      {
+        "at": "2026-09-01T10:47:00+04:00",
+        "channel": "centre",
+        "intent": "documents",
+        "summary": "Asked at Downtown centre whether the loan application he was preparing needs the new 6-month bank statement; confirmed it is required for the loan track from 1 Sep.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-05T09:31:00+04:00",
+        "channel": "phone",
+        "intent": "appointment",
+        "summary": "Booked APT-26-40719 at Downtown for 14 Oct 09:00 to sign the housing loan agreement.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-259713",
+    "name": "Shamsa Obaid Al Falahi",
+    "nameAr": "شمسة عبيد الفلاحي",
+    "emiratesId": "784-1989-2203917-5",
+    "mobile": "+971 55 640 1192",
+    "email": "shamsa.alfalahi@hotmail.com",
+    "dateOfBirth": "1989-12-17",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "phone",
+    "district": "MN-04 Al Waha Gardens",
+    "housingCaseIds": [
+      "MNDA-HG-2026-004701"
+    ],
+    "permitIds": [],
+    "ticketIds": [
+      "CHC-2026-118341"
+    ],
+    "flags": [],
+    "notes": "",
+    "history": [
+      {
+        "at": "2026-10-01T08:14:00+04:00",
+        "channel": "phone",
+        "intent": "appointment",
+        "summary": "Booked APT-26-40417 at Al Waha for 7 Oct 12:30 to discuss her grant application.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-06T09:48:00+04:00",
+        "channel": "phone",
+        "intent": "housing_status",
+        "summary": "Asked for status; all checks passed and file is with the Head of Housing Applications Section for decision.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-07T12:30:00+04:00",
+        "channel": "centre",
+        "intent": "housing_status",
+        "summary": "Consultation at Al Waha centre; reconfirmed decision pending, no documents outstanding.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-07T16:40:00+04:00",
+        "channel": "app_chat",
+        "intent": "maintenance",
+        "summary": "Reported overflowing communal bins on Street 117 in Al Waha Gardens; maintenance request CHC-2026-118341 logged.",
+        "outcome": "handoff"
+      }
+    ]
+  },
+  {
+    "id": "CUS-233049",
+    "name": "Ahmed Juma Al Suwaidi",
+    "nameAr": "أحمد جمعة السويدي",
+    "emiratesId": "784-1990-6618254-0",
+    "mobile": "+971 52 784 0036",
+    "email": "ahmed.alsuwaidi.90@gmail.com",
+    "dateOfBirth": "1990-07-03",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "whatsapp",
+    "district": "MN-07 Al Ghaf Community",
+    "housingCaseIds": [
+      "MNDA-HG-2026-004733"
+    ],
+    "permitIds": [],
+    "ticketIds": [
+      "CHC-2026-118071"
+    ],
+    "flags": [
+      "No-show APT-26-40352 (2 Oct, Al Murjan)"
+    ],
+    "notes": "First clarification (16 Sep) asked for the family book generically; second request (29 Sep) specified the children's pages. MNDA employee — Facilities & Assets.",
+    "history": [
+      {
+        "at": "2026-09-30T13:05:00+04:00",
+        "channel": "phone",
+        "intent": "appointment",
+        "summary": "Booked APT-26-40352 at Al Murjan for 2 Oct 08:30 to hand in the family book.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-01T09:22:00+04:00",
+        "channel": "phone",
+        "intent": "complaint",
+        "summary": "Complained that the family book was requested twice; complaint CHC-2026-118071 logged and answered by Housing on 2 Oct.",
+        "outcome": "handoff"
+      },
+      {
+        "at": "2026-10-05T07:46:00+04:00",
+        "channel": "phone",
+        "intent": "housing_status",
+        "summary": "Called for an update after missing his appointment; told the case is still incomplete — family book pages showing the children are missing; deadline 20 Oct.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-268825",
+    "name": "Maitha Rashid Al Dhaheri",
+    "nameAr": "ميثاء راشد الظاهري",
+    "emiratesId": "784-1991-3390572-9",
+    "mobile": "+971 56 318 2240",
+    "email": "maitha.aldhaheri@outlook.com",
+    "dateOfBirth": "1991-10-24",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "en",
+    "preferredChannel": "email",
+    "district": "MN-06 Al Sidr Residential",
+    "housingCaseIds": [
+      "MNDA-HG-2026-004790"
+    ],
+    "permitIds": [],
+    "ticketIds": [],
+    "flags": [],
+    "notes": "",
+    "history": [
+      {
+        "at": "2026-10-05T14:11:00+04:00",
+        "channel": "phone",
+        "intent": "documents",
+        "summary": "Asked whether the officer reviewing her 6-month bank statement needs anything else; told the statement is stamped and complete, review in progress.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-219460",
+    "name": "Sultan Ali Al Hosani",
+    "nameAr": "سلطان علي الحوسني",
+    "emiratesId": "784-1987-4475016-3",
+    "mobile": "+971 50 932 6671",
+    "email": "sultan.alhosani87@gmail.com",
+    "dateOfBirth": "1987-03-29",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "whatsapp",
+    "district": "MN-02 Al Murjan",
+    "housingCaseIds": [
+      "MNDA-HG-2026-004856"
+    ],
+    "permitIds": [],
+    "ticketIds": [
+      "CHC-2026-118187"
+    ],
+    "flags": [],
+    "notes": "Application is past the 12-working-day SLA; agent obtained an expected date from the case officer on 7 Oct.",
+    "history": [
+      {
+        "at": "2026-10-05T07:58:00+04:00",
+        "channel": "phone",
+        "intent": "maintenance",
+        "summary": "Reported a deep pothole on Al Murjan Street 4 near the mosque roundabout; maintenance request CHC-2026-118187 logged.",
+        "outcome": "handoff"
+      },
+      {
+        "at": "2026-10-07T12:16:00+04:00",
+        "channel": "whatsapp",
+        "intent": "housing_status",
+        "summary": "Frustrated that his application has been under review since 22 Sep with no update; handed to an agent who confirmed with the case officer that the eligibility check would finish by 13 Oct.",
+        "outcome": "handoff"
+      }
+    ]
+  },
+  {
+    "id": "CUS-301276",
+    "name": "Noura Saeed Al Mansoori",
+    "nameAr": "نورة سعيد المنصوري",
+    "emiratesId": "784-1994-1027783-1",
+    "mobile": "+971 54 209 8813",
+    "email": "noura.almansoori94@gmail.com",
+    "dateOfBirth": "1994-02-16",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "whatsapp",
+    "district": "MN-04 Al Waha Gardens",
+    "housingCaseIds": [
+      "MNDA-HG-2026-004871"
+    ],
+    "permitIds": [],
+    "ticketIds": [],
+    "flags": [],
+    "notes": "Has not yet given Land Registry consent; was shown how to give it in MNDA Smart on 6 Oct.",
+    "history": [
+      {
+        "at": "2026-09-29T19:25:00+04:00",
+        "channel": "phone",
+        "intent": "appointment",
+        "summary": "Booked APT-26-40188 at Downtown for 1 Oct 10:00 to ask about the no-property certificate.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-01T10:00:00+04:00",
+        "channel": "centre",
+        "intent": "documents",
+        "summary": "Consultation at Downtown centre on the Certificate of No Property Ownership; advised to request it from the Land Registry or give consent.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-06T20:33:00+04:00",
+        "channel": "whatsapp",
+        "intent": "documents",
+        "summary": "Asked again how to submit the no-property certificate; assistant explained the consent option in MNDA Smart → My Applications so the officer can retrieve it directly.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-147702",
+    "name": "Rashid Hamad Al Kaabi",
+    "nameAr": "راشد حمد الكعبي",
+    "emiratesId": "784-1983-5546230-7",
+    "mobile": "+971 50 667 3304",
+    "email": "rashid.alkaabi83@gmail.com",
+    "dateOfBirth": "1983-01-09",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "phone",
+    "district": "MN-02 Al Murjan",
+    "housingCaseIds": [
+      "MNDA-HG-2026-004934"
+    ],
+    "permitIds": [],
+    "ticketIds": [],
+    "flags": [
+      "Disputes not-approved decision of 3 Oct 2026"
+    ],
+    "notes": "States the villa registered in 2019 was transferred to his brother in 2024; agent advised submitting the transfer deed with a reconsideration request.",
+    "history": [
+      {
+        "at": "2026-10-07T09:12:00+04:00",
+        "channel": "phone",
+        "intent": "complaint",
+        "summary": "Disputed the not-approved decision (property registered in his name); AI explained it cannot change decisions and handed over; agent forwarded a reconsideration request to the Housing Applications Section.",
+        "outcome": "handoff"
+      }
+    ]
+  },
+  {
+    "id": "CUS-292318",
+    "name": "Fatima Khalfan Al Ali",
+    "nameAr": "فاطمة خلفان العلي",
+    "emiratesId": "784-1992-8834415-6",
+    "mobile": "+971 55 471 9028",
+    "email": "fatima.k.alali@gmail.com",
+    "dateOfBirth": "1992-12-01",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "en",
+    "preferredChannel": "email",
+    "district": "MN-07 Al Ghaf Community",
+    "housingCaseIds": [
+      "MNDA-HG-2026-004958"
+    ],
+    "permitIds": [],
+    "ticketIds": [
+      "CHC-2026-118191"
+    ],
+    "flags": [],
+    "notes": "",
+    "history": [
+      {
+        "at": "2026-10-05T07:36:00+04:00",
+        "channel": "email",
+        "intent": "complaint",
+        "summary": "Complained about concrete pouring on the plot opposite her house at 05:40 on Saturday 3 Oct; complaint CHC-2026-118191 logged for Field Operations & Inspection.",
+        "outcome": "handoff"
+      },
+      {
+        "at": "2026-10-08T15:02:00+04:00",
+        "channel": "phone",
+        "intent": "housing_status",
+        "summary": "Asked for status of loan application; under review since assignment on 28 Sep, no documents outstanding.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-226584",
+    "name": "Majid Ahmed Al Hammadi",
+    "nameAr": "ماجد أحمد الحمادي",
+    "emiratesId": "784-1989-6610398-2",
+    "mobile": "+971 52 905 4417",
+    "email": "majid.alhammadi89@gmail.com",
+    "dateOfBirth": "1989-11-02",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "whatsapp",
+    "district": "MN-04 Al Waha Gardens",
+    "housingCaseIds": [
+      "MNDA-HG-2026-004987"
+    ],
+    "permitIds": [],
+    "ticketIds": [],
+    "flags": [
+      "Open handoff HO-2610-0031 — high priority",
+      "Repeat contact — 2 contacts in 5 days"
+    ],
+    "notes": "Clarification sent 29 Sep — 15-working-day window ends 20 Oct 2026. Employer HR (Marsa Al Noor Electricity & Water Company) says a new salary certificate takes about 5 working days.",
+    "history": [
+      {
+        "at": "2026-10-05T10:37:00+04:00",
+        "channel": "phone",
+        "intent": "documents",
+        "summary": "Asked why his salary certificate dated 19 Aug 2026 was rejected; voice assistant explained it was 38 days old on submission (Circular 9/2026, 4.4 and 6.1).",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-09T10:04:00+04:00",
+        "channel": "whatsapp",
+        "intent": "housing_status",
+        "summary": "Upset at being asked for a new salary certificate when his salary has not changed; asked for a manager and an exception; handed over to an agent (HO-2610-0031).",
+        "outcome": "handoff"
+      }
+    ]
+  },
+  {
+    "id": "CUS-283907",
+    "name": "Hind Mohammed Al Blooshi",
+    "nameAr": "هند محمد البلوشي",
+    "emiratesId": "784-1993-2751846-4",
+    "mobile": "+971 56 884 2265",
+    "email": "hind.alblooshi93@gmail.com",
+    "dateOfBirth": "1993-05-27",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "whatsapp",
+    "district": "MN-02 Al Murjan",
+    "housingCaseIds": [
+      "MNDA-HG-2026-005044"
+    ],
+    "permitIds": [],
+    "ticketIds": [],
+    "flags": [],
+    "notes": "",
+    "history": [
+      {
+        "at": "2026-10-09T08:21:00+04:00",
+        "channel": "whatsapp",
+        "intent": "documents",
+        "summary": "Asked whether she still needs to upload a no-property certificate; told it was already retrieved from the Land Registry with her consent.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-171265",
+    "name": "Yousef Abdulla Al Qubaisi",
+    "nameAr": "يوسف عبدالله القبيسي",
+    "emiratesId": "784-1985-3308127-9",
+    "mobile": "+971 50 541 7790",
+    "email": "yousef.alqubaisi85@gmail.com",
+    "dateOfBirth": "1985-08-13",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "phone",
+    "district": "MN-06 Al Sidr Residential",
+    "housingCaseIds": [
+      "MNDA-HG-2026-005078"
+    ],
+    "permitIds": [],
+    "ticketIds": [],
+    "flags": [],
+    "notes": "Prefers to speak to an agent directly.",
+    "history": [
+      {
+        "at": "2026-08-24T12:10:00+04:00",
+        "channel": "phone",
+        "intent": "documents",
+        "summary": "Asked which documents the new circular adds for the loan track before applying; told about the 6-month stamped bank statement and no-property certificate.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-09T09:44:00+04:00",
+        "channel": "phone",
+        "intent": "housing_status",
+        "summary": "Asked an agent for his loan status; file is with the Section Head for decision.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-314480",
+    "name": "Alya Hassan Al Shehhi",
+    "nameAr": "علياء حسن الشحي",
+    "emiratesId": "784-1995-7719264-0",
+    "mobile": "+971 54 388 1659",
+    "email": "alya.alshehhi95@gmail.com",
+    "dateOfBirth": "1995-11-08",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "app",
+    "district": "MN-07 Al Ghaf Community",
+    "housingCaseIds": [
+      "MNDA-HG-2026-005152"
+    ],
+    "permitIds": [],
+    "ticketIds": [
+      "CHC-2026-118377"
+    ],
+    "flags": [],
+    "notes": "",
+    "history": [
+      {
+        "at": "2026-10-06T13:55:00+04:00",
+        "channel": "phone",
+        "intent": "housing_status",
+        "summary": "Asked for status; application assigned to a case officer on 5 Oct, eligibility review in progress.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-08T19:52:00+04:00",
+        "channel": "app_chat",
+        "intent": "maintenance",
+        "summary": "Reported street lights off on Street 14 near Al Ghaf Community Centre gate 2; request CHC-2026-118377 logged with high priority.",
+        "outcome": "handoff"
+      }
+    ]
+  },
+  {
+    "id": "CUS-298143",
+    "name": "Mohammed Saeed Al Yammahi",
+    "nameAr": "محمد سعيد اليماحي",
+    "emiratesId": "784-1990-9024471-5",
+    "mobile": "+971 52 116 3082",
+    "email": "mohammed.alyammahi90@gmail.com",
+    "dateOfBirth": "1990-04-03",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "app",
+    "district": "MN-04 Al Waha Gardens",
+    "housingCaseIds": [
+      "MNDA-HG-2026-005177"
+    ],
+    "permitIds": [],
+    "ticketIds": [
+      "CHC-2026-118415"
+    ],
+    "flags": [],
+    "notes": "MNDA employee — Planning & Building Permits.",
+    "history": [
+      {
+        "at": "2026-10-08T21:14:00+04:00",
+        "channel": "app_chat",
+        "intent": "housing_status",
+        "summary": "Asked why his application submitted 5 Oct still shows Submitted and whether his salary certificate dated 9 Sep is valid; told it was 26 days old on submission and therefore valid.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-09T10:31:00+04:00",
+        "channel": "phone",
+        "intent": "maintenance",
+        "summary": "Reported a broken shade structure and loose swing chain at Al Waha Gardens neighbourhood park; request CHC-2026-118415 logged.",
+        "outcome": "handoff"
+      }
+    ]
+  },
+  {
+    "id": "CUS-318862",
+    "name": "Abdulla Rashed Al Ameri",
+    "nameAr": "عبدالله راشد العامري",
+    "emiratesId": "784-1979-4402817-6",
+    "mobile": "+971 50 622 9147",
+    "email": "a.r.alameri@gmail.com",
+    "dateOfBirth": "1979-10-21",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "phone",
+    "district": "MN-03 Al Lulu Island",
+    "housingCaseIds": [],
+    "permitIds": [
+      "MNDA-BP-2026-01861",
+      "MNDA-BP-2026-01932",
+      "MNDA-BP-2026-02031"
+    ],
+    "ticketIds": [],
+    "flags": [
+      "3 active permit applications — consultant Bayt Al Handasa (Rajesh Iyer)"
+    ],
+    "notes": "Private investor building villas on Lulu Island and Al Sidr. Prefers that technical questions go to his consultant.",
+    "history": [
+      {
+        "at": "2026-08-27T11:20:00+04:00",
+        "channel": "phone",
+        "intent": "permit_status",
+        "summary": "Asked whether the new master-developer NOC rule applies to his Lulu Island plots; told yes for all MN-03 plots under Circular 14/2026.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-05T11:06:00+04:00",
+        "channel": "phone",
+        "intent": "permit_status",
+        "summary": "Asked about his three permits; two awaiting master-developer NOCs (Lulu Island, Al Sidr) and one returned for unstamped structural calculations.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-322916",
+    "name": "Rajesh Narayanan Iyer",
+    "nameAr": "راجيش نارايانان آير",
+    "emiratesId": "784-1981-7745203-1",
+    "mobile": "+971 55 274 8810",
+    "email": "rajesh.iyer@baytalhandasa-eng.ae",
+    "dateOfBirth": "1981-02-17",
+    "segment": "resident",
+    "nationality": "India",
+    "preferredLanguage": "en",
+    "preferredChannel": "email",
+    "district": "MN-01 Downtown",
+    "housingCaseIds": [],
+    "permitIds": [
+      "MNDA-BP-2026-01861",
+      "MNDA-BP-2026-01932",
+      "MNDA-BP-2026-02031"
+    ],
+    "ticketIds": [],
+    "flags": [
+      "Consultant contact — acts for owner CUS-318862",
+      "Escalation requested 9 Oct — HO-2610-0032"
+    ],
+    "notes": "Senior Project Engineer, Bayt Al Handasa Engineering Consultants (MNDA-registered consultancy). Registered contact on the permit files of Abdulla Rashed Al Ameri.",
+    "history": [
+      {
+        "at": "2026-09-22T08:55:00+04:00",
+        "channel": "email",
+        "intent": "permit_status",
+        "summary": "Asked permits@ whether MNDA can accept a NOC request receipt from Lulu Island Developments PJSC instead of the NOC itself; told the NOC is mandatory and the file is held in Awaiting master-developer NOC.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-01T13:38:00+04:00",
+        "channel": "phone",
+        "intent": "permit_status",
+        "summary": "Followed up on MNDA-BP-2026-01932 (awaiting NOC since 18 Sep); follow-up note added to the permit file.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-07T09:17:00+04:00",
+        "channel": "app_chat",
+        "intent": "permit_status",
+        "summary": "Checked status of MNDA-BP-2026-01932 and MNDA-BP-2026-02031; both still awaiting master-developer NOCs; told about the 20-working-day hold limit.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-09T08:51:00+04:00",
+        "channel": "phone",
+        "intent": "permit_status",
+        "summary": "Requested escalation of the Lulu Island NOC delay on MNDA-BP-2026-01932 (15 working days); handed over to an agent (HO-2610-0032).",
+        "outcome": "handoff"
+      }
+    ]
+  },
+  {
+    "id": "CUS-327405",
+    "name": "James Whitfield Harrow",
+    "nameAr": "جيمس ويتفيلد هارو",
+    "emiratesId": "784-1972-3318460-9",
+    "mobile": "+971 58 903 1147",
+    "email": "jw.harrow@outlook.com",
+    "dateOfBirth": "1972-07-29",
+    "segment": "resident",
+    "nationality": "United Kingdom",
+    "preferredLanguage": "en",
+    "preferredChannel": "app",
+    "district": "MN-03 Al Lulu Island",
+    "housingCaseIds": [],
+    "permitIds": [
+      "MNDA-BP-2026-02003"
+    ],
+    "ticketIds": [],
+    "flags": [],
+    "notes": "Owner-occupier building a family villa; contractor on standby since late September.",
+    "history": [
+      {
+        "at": "2026-10-02T10:12:00+04:00",
+        "channel": "app_chat",
+        "intent": "permit_status",
+        "summary": "Asked why his permit shows Awaiting master-developer NOC; told the NOC from Lulu Island Developments PJSC is mandatory under Circular 14/2026.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-08T16:47:00+04:00",
+        "channel": "app_chat",
+        "intent": "permit_status",
+        "summary": "Asked whether MNDA can chase Lulu Island Developments; booked APT-26-41108 at Downtown for 12 Oct 10:30 with the permits desk.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-309754",
+    "name": "Reem Abdulrahman Al Tunaiji",
+    "nameAr": "ريم عبدالرحمن الطنيجي",
+    "emiratesId": "784-1983-6627719-4",
+    "mobile": "+971 50 334 8862",
+    "email": "reem.altunaiji@gmail.com",
+    "dateOfBirth": "1983-04-11",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "phone",
+    "district": "MN-03 Al Lulu Island",
+    "housingCaseIds": [],
+    "permitIds": [
+      "MNDA-BP-2026-01788",
+      "MNDA-BP-2026-02119"
+    ],
+    "ticketIds": [
+      "CHC-2026-118236"
+    ],
+    "flags": [
+      "Open complaint CHC-2026-118236 — NOC delay"
+    ],
+    "notes": "Owns a G+3 building in Downtown (completion certificate in progress) and is building a villa on Lulu Island.",
+    "history": [
+      {
+        "at": "2026-09-24T12:31:00+04:00",
+        "channel": "phone",
+        "intent": "permit_status",
+        "summary": "Asked about MNDA-BP-2026-01788; awaiting NOC from Lulu Island Developments PJSC since 16 Sep.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-06T13:12:00+04:00",
+        "channel": "phone",
+        "intent": "complaint",
+        "summary": "Complained that her Lulu Island permit has waited over three weeks for the NOC; agent logged CHC-2026-118236 and booked APT-26-40871 for her completion certificate.",
+        "outcome": "handoff"
+      }
+    ]
+  },
+  {
+    "id": "CUS-331047",
+    "name": "Hany Mostafa El-Sherbiny",
+    "nameAr": "هاني مصطفى الشربيني",
+    "emiratesId": "784-1978-2056391-7",
+    "mobile": "+971 56 740 2215",
+    "email": "dr.hany.sherbiny@gmail.com",
+    "dateOfBirth": "1978-12-05",
+    "segment": "resident",
+    "nationality": "Egypt",
+    "preferredLanguage": "ar",
+    "preferredChannel": "whatsapp",
+    "district": "MN-08 Marina Quarter",
+    "housingCaseIds": [],
+    "permitIds": [
+      "MNDA-BP-2026-01977"
+    ],
+    "ticketIds": [],
+    "flags": [
+      "Duplicate payment AED 800 — refund awaiting CHC Manager approval (HO-2610-0033)"
+    ],
+    "notes": "Dentist; fit-out of clinic unit in Marina Quarter. Paid the fit-out fee twice on 22 Sep (payment page timed out).",
+    "history": [
+      {
+        "at": "2026-09-29T12:05:00+04:00",
+        "channel": "app_chat",
+        "intent": "permit_status",
+        "summary": "Asked when the fit-out permit would be issued; told it was approved that day and the digital permit is available in MNDA Smart.",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-09T11:14:00+04:00",
+        "channel": "whatsapp",
+        "intent": "other",
+        "summary": "Requested a refund of the AED 800 fit-out fee charged twice on 22 Sep; refund needs CHC Manager approval, handed over (HO-2610-0033).",
+        "outcome": "handoff"
+      }
+    ]
+  },
+  {
+    "id": "CUS-336218",
+    "name": "Lina Georges Haddad",
+    "nameAr": "لينا جورج حداد",
+    "emiratesId": "784-1985-8840126-3",
+    "mobile": "+971 52 471 6630",
+    "email": "lina.g.haddad@gmail.com",
+    "dateOfBirth": "1985-06-18",
+    "segment": "resident",
+    "nationality": "Lebanon",
+    "preferredLanguage": "en",
+    "preferredChannel": "whatsapp",
+    "district": "MN-06 Al Sidr Residential",
+    "housingCaseIds": [],
+    "permitIds": [
+      "MNDA-BP-2026-02047"
+    ],
+    "ticketIds": [],
+    "flags": [
+      "Returned application — NOC expired"
+    ],
+    "notes": "",
+    "history": [
+      {
+        "at": "2026-10-06T15:29:00+04:00",
+        "channel": "whatsapp",
+        "intent": "permit_status",
+        "summary": "Unhappy that MNDA-BP-2026-02047 was returned because the Sidr Communities NOC expired on 24 Sep; asked for it to be accepted anyway; agent explained a renewed NOC is required and no new fee applies on resubmission.",
+        "outcome": "handoff"
+      }
+    ]
+  },
+  {
+    "id": "CUS-340592",
+    "name": "Bayan Creative Events LLC",
+    "nameAr": "بيان للفعاليات الإبداعية ذ.م.م",
+    "emiratesId": "784-1982-5513078-2",
+    "mobile": "+971 55 819 0472",
+    "email": "permits@bayanevents.ae",
+    "dateOfBirth": "1982-09-14",
+    "segment": "business",
+    "nationality": "Jordan",
+    "preferredLanguage": "en",
+    "preferredChannel": "email",
+    "district": "MN-08 Marina Quarter",
+    "housingCaseIds": [],
+    "permitIds": [
+      "MNDA-BP-2026-02016"
+    ],
+    "ticketIds": [
+      "CHC-2026-118142"
+    ],
+    "flags": [],
+    "notes": "Trade licence CN-2287416. Authorised signatory: Khaled Nabil Hamdan (Emirates ID and date of birth on file are his). Organiser of the Al Ghaf Autumn Family Market, 23–24 Oct 2026 (Community Event Permit MNDA-SVC-301).",
+    "history": [
+      {
+        "at": "2026-10-02T09:58:00+04:00",
+        "channel": "email",
+        "intent": "other",
+        "summary": "Asked whether food trucks at the Al Ghaf Autumn Family Market are covered by the community event permit; enquiry CHC-2026-118142 logged.",
+        "outcome": "handoff"
+      },
+      {
+        "at": "2026-10-07T08:31:00+04:00",
+        "channel": "email",
+        "intent": "permit_status",
+        "summary": "Asked why the showroom fit-out permit needs a Marina Quarter Properties NOC; agent replied that the shopfront and signage changes affect the façade (Circular 14/2026, section 3).",
+        "outcome": "resolved"
+      },
+      {
+        "at": "2026-10-08T10:26:00+04:00",
+        "channel": "phone",
+        "intent": "other",
+        "summary": "Asked about timing and fee of the community event permit for 23–24 Oct; told 3 working days and AED 300, apply by 16 Oct.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-344871",
+    "name": "Humaid Salem Al Zahmi",
+    "nameAr": "حميد سالم الزحمي",
+    "emiratesId": "784-1980-1193752-8",
+    "mobile": "+971 50 287 6619",
+    "email": "humaid.alzahmi@gmail.com",
+    "dateOfBirth": "1980-03-02",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "whatsapp",
+    "district": "MN-07 Al Ghaf Community",
+    "housingCaseIds": [],
+    "permitIds": [
+      "MNDA-BP-2026-01741"
+    ],
+    "ticketIds": [],
+    "flags": [],
+    "notes": "Lives on Street 14, Al Ghaf Community; building a second villa on plot MN-07-033-0118.",
+    "history": [
+      {
+        "at": "2026-10-05T13:40:00+04:00",
+        "channel": "phone",
+        "intent": "permit_status",
+        "summary": "Asked how to download his issued building permit with the QR code for the contractor; guided to MNDA Smart → My Permits.",
+        "outcome": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "CUS-349306",
+    "name": "Ebrahim Khalil Al Awadhi",
+    "nameAr": "إبراهيم خليل العوضي",
+    "emiratesId": "784-1976-5530948-1",
+    "mobile": "+971 50 744 1093",
+    "email": "ebrahim.alawadhi@gmail.com",
+    "dateOfBirth": "1976-08-19",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "whatsapp",
+    "district": "MN-02 Al Murjan",
+    "housingCaseIds": [],
+    "permitIds": [
+      "MNDA-BP-2026-02062"
+    ],
+    "ticketIds": [
+      "CHC-2026-118288"
+    ],
+    "flags": [],
+    "notes": "Building a villa for his son on plot MN-02-044-0153.",
+    "history": [
+      {
+        "at": "2026-10-06T10:02:00+04:00",
+        "channel": "phone",
+        "intent": "permit_status",
+        "summary": "Did not understand why the permit was returned for a site-plan revision mismatch; agent explained the drawings use affection plan Rev B while the Land Registry issued Rev C on 3 Aug.",
+        "outcome": "handoff"
+      },
+      {
+        "at": "2026-10-07T07:12:00+04:00",
+        "channel": "whatsapp",
+        "intent": "maintenance",
+        "summary": "Reported a burst irrigation line flooding Street 23 in Al Murjan; request CHC-2026-118288 logged.",
+        "outcome": "handoff"
+      }
+    ]
+  },
+  {
+    "id": "CUS-352740",
+    "name": "Saif Rashid Al Mehairbi",
+    "nameAr": "سيف راشد المهيربي",
+    "emiratesId": "784-1988-7206614-5",
+    "mobile": "+971 56 115 3390",
+    "email": "saif.almehairbi@gmail.com",
+    "dateOfBirth": "1988-01-26",
+    "segment": "citizen",
+    "nationality": "UAE",
+    "preferredLanguage": "ar",
+    "preferredChannel": "whatsapp",
+    "district": "MN-04 Al Waha Gardens",
+    "housingCaseIds": [],
+    "permitIds": [
+      "MNDA-BP-2026-02104"
+    ],
+    "ticketIds": [],
+    "flags": [],
+    "notes": "",
+    "history": [
+      {
+        "at": "2026-10-09T09:26:00+04:00",
+        "channel": "whatsapp",
+        "intent": "permit_status",
+        "summary": "Asked whether his permit needs a master-developer NOC; told Al Waha Gardens is not a gated district, application is in technical review.",
+        "outcome": "resolved"
+      }
+    ]
+  }
+]
