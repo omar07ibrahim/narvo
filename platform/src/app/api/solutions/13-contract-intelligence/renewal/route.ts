@@ -149,7 +149,8 @@ export async function POST(req: Request) {
 
       // 6. approval
       const s6 = emit.step("approval", lang === "ar" ? "إحالة الإشعار للاعتماد والتوقيع" : "Routing the notice for approval and signature");
-      const label = { renew_with_conditions: "Renew with conditions", short_extension: "Short extension", not_renew: "Do not renew" }[decision.recommendation];
+      const label = recLabel.en;
+      const labelLocal = recLabel[lang];
       const extra: Effect[] =
         decision.recommendation === "renew_with_conditions"
           ? [
@@ -212,7 +213,7 @@ export async function POST(req: Request) {
               ];
       const approval = createApproval({
         solution: SOL,
-        title: lang === "ar" ? `اعتماد وتوقيع إشعار ${c.ref} — ${label}` : `Approve & sign notice — ${c.ref} — ${label}`,
+        title: lang === "ar" ? `اعتماد وتوقيع إشعار ${c.ref} — ${labelLocal}` : `Approve & sign notice — ${c.ref} — ${label}`,
         summary: `${decision.headline} ${lang === "ar" ? "الموعد النهائي للإشعار" : "Notice deadline"} ${fmtDate(deadline)} (${daysLeft} ${lang === "ar" ? "يوماً" : "days"}).`,
         actionLabel: lang === "ar" ? "اعتماد وإصدار الإشعار" : "Approve & issue notice",
         approver: { name: "Rashed Ali Al Dhaheri", title: lang === "ar" ? "مدير إدارة المشتريات والعقود" : "Director, Procurement & Contracts" },

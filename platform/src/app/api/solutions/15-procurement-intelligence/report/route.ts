@@ -41,6 +41,7 @@ export async function POST(req: Request) {
       const lines: string[] = [];
       lines.push(`Tender ${tender.ref} — ${tender.title.en}. Estimate ${aed(tender.estimate)}. Published ${fmtDate(tender.published)}, closed ${fmtDate(tender.closing)} ${tender.closingTime}. Weighting ${tender.weights.technical}/${tender.weights.commercial}; technical pass mark ${tender.passMark}/100; ICV minimum ${tender.icvMin}%.`);
       lines.push(`Committee: ${tender.committee.map((c) => `${c.name} (${c.role.en})`).join("; ")}. All members declared no conflict of interest on ${fmtDate(tender.opened)}.`);
+      if (lang === "ar") lines.push(`Committee names in Arabic (use exactly): ${tender.committee.map((c) => `${c.name} = ${c.name_ar} (${c.role.ar})`).join("; ")}.`);
       lines.push("");
       lines.push("| Bidder | Technical /100 | Technical pts | Bid price | Normalised price | Commercial pts | Total | Rank | Status |");
       lines.push("|---|---|---|---|---|---|---|---|---|");

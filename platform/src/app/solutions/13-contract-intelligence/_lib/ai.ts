@@ -12,7 +12,7 @@ import type { Contract, ExtractedObligation, Finding, Obligation, Playbook, Trig
 type Lang = "en" | "ar";
 
 /** Official names — keeps Arabic output on the right terminology. */
-export const ORG = "MNDA = Marsa Al Noor Development Authority (Arabic: هيئة مرسى النور للتطوير; \"الهيئة\"). Contractor/Supplier = المقاول/المورد. Contract Owner = مالك العقد. Director, Procurement & Contracts = مدير إدارة المشتريات والعقود.";
+export const ORG = "MNDA = Marsa Al Noor Development Authority (Arabic: هيئة مرسى النور للتطوير; \"الهيئة\"). Raseen Facilities Management LLC = رصين لإدارة المرافق ذ.م.م. Al Ghaf Community Centre = مركز الغاف المجتمعي. Contractor/Supplier = المقاول/المورد. Contract Owner = مالك العقد. Director, Procurement & Contracts = مدير إدارة المشتريات والعقود.";
 interface Ctx {
   emit: Emitter;
   lang: Lang;

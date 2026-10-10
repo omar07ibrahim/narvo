@@ -17,14 +17,22 @@ export interface GateResult {
   value: string;
   computed: boolean;
   note: string;
+  valueAr?: string;
+  noteAr?: string;
 }
+
+const MONTHS_AR = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"];
+const fmtDateAr = (iso: string) => {
+  const [y, m, d] = iso.slice(0, 10).split("-").map(Number);
+  return `${d} ${MONTHS_AR[m - 1]} ${y}`;
+};
 
 export function gateResults(tender: Tender, supplier: Supplier, ev?: SupplierEval): Record<string, GateResult> {
   const out: Record<string, GateResult> = {};
   for (const g of tender.gates) {
     if (g.kind === "certificate") {
       const cert = supplier.certificates.find((c) => c.standard === g.standard);
-      if (!cert) out[g.id] = { status: "missing", value: "No certificate", computed: true, note: `${g.standard} certificate not provided` };
+      if (!cert) out[g.id] = { status: "missing", value: "No certificate", computed: true, note: `${g.standard} certificate not provided`, valueAr: "لا توجد شهادة", noteAr: `لم تُقدَّم شهادة ${g.standard}` };
       else {
         const valid = cert.expiry >= tender.closing;
         out[g.id] = {
@@ -34,11 +42,15 @@ export function gateResults(tender: Tender, supplier: Supplier, ev?: SupplierEva
           note: valid
             ? `Valid at closing (${fmtDate(tender.closing)})${cert.updatedBy ? ` — updated from ${cert.updatedBy}` : ""}`
             : `Expired ${fmtDate(cert.expiry)}, before the closing date ${fmtDate(tender.closing)} (Manual Art. 21)`,
+          valueAr: `${cert.number} · ${valid ? "سارية حتى" : "انتهت في"} ${fmtDateAr(cert.expiry)}`,
+          noteAr: valid
+            ? `سارية عند الإغلاق (${fmtDateAr(tender.closing)})${cert.updatedBy ? ` — حُدّثت من ${cert.updatedBy}` : ""}`
+            : `انتهت في ${fmtDateAr(cert.expiry)} قبل تاريخ الإغلاق ${fmtDateAr(tender.closing)} (المادة 21)`,
         };
       }
     } else if (g.kind === "icv") {
       const ok = supplier.icv.score >= tender.icvMin;
-      out[g.id] = { status: ok ? "met" : "missing", value: `${supplier.icv.score}%`, computed: true, note: `${supplier.icv.certificate}, minimum ${tender.icvMin}%` };
+      out[g.id] = { status: ok ? "met" : "missing", value: `${supplier.icv.score}%`, computed: true, note: `${supplier.icv.certificate}, minimum ${tender.icvMin}%`, valueAr: `${supplier.icv.score}%`, noteAr: `${supplier.icv.certificate}، الحد الأدنى ${tender.icvMin}%` };
     } else {
       const ge = ev?.gates.find((x) => x.id === g.id);
       out[g.id] = ge

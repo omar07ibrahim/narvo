@@ -73,7 +73,7 @@ export function EvaluationView({
       state.suppliers.map((s) => {
         const gr = gateResults(tender, s, state.evaluations[s.id])[g.id];
         if (gr.computed)
-          return [s.id, { status: gr.status === "pending" ? "na" : gr.status, value: gr.value, evidence: gr.note, source: L({ en: "Computed from supplier register", ar: "محسوب من سجل الموردين" }) } as MatrixCell];
+          return [s.id, { status: gr.status === "pending" ? "na" : gr.status, value: L({ en: gr.value, ar: gr.valueAr ?? gr.value }), evidence: L({ en: gr.note, ar: gr.noteAr ?? gr.note }), source: L({ en: "Computed from supplier register", ar: "محسوب من سجل الموردين" }) } as MatrixCell];
         return [
           s.id,
           cellFor(s, () => {

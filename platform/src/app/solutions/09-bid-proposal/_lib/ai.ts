@@ -216,7 +216,9 @@ export async function mapEvidence(
     "- partial: some elements are evidenced, or the evidence is weaker than required (e.g. quarterly instead of monthly, no committed target, shared rather than dedicated role).",
     "- missing: no passage evidences the requirement.",
     "Judge the substance, not the paperwork: a procedure, plan or capability described in an approved document counts as evidence of it; narrative requirements (e.g. understanding of scope) are met when the library holds the facts needed to write them. Bid-specific forms, priced schedules and bank guarantees are tracked in a separate register — judge them only on what the passages show.",
-    `Key dates: tender closing date ${fmt(seed.tender.closing)}; bid validity ends ${fmt(validityEnd(seed))}. A certificate or policy that expires before the date the requirement needs is NOT valid evidence.`,
+    opts.computeChecks
+      ? `Key dates: tender closing date ${fmt(seed.tender.closing)}; bid validity ends ${fmt(validityEnd(seed))}. A certificate or policy that expires before the date the requirement needs is NOT valid evidence.`
+      : "Key dates: use the dates stated in the requirement (today is 11 Oct 2026). A certificate or policy that expires before the date the requirement needs is NOT valid evidence.",
     "For each requirement return: id; status; confidence 0–1; passages: ids of the passages relied on (e.g. [\"P2\"]); quote: ONE sentence copied verbatim from the strongest passage (max 35 words, \"\" if missing); rationale: one sentence; gap: what is missing or weaker than required (null if met).",
     `Write rationale and gap in ${langName(lang)}.`,
   ].join("\n");

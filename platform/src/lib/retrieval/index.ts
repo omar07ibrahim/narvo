@@ -169,8 +169,18 @@ export function getIndex(relDir: string): Index {
 }
 
 /** BM25 search over a corpus folder. `queries` may contain several phrasings (e.g. Arabic + English). */
-export function search(relDir: string, queries: string | string[], k = 8): SearchHit[] {
+export function search(
+  relDir: string,
+  queries: string | string[],
+  k = 8,
+  opts: { docIds?: string[]; classifications?: string[] } = {},
+): SearchHit[] {
   const idx = getIndex(relDir);
+  const allowedDocs = opts.docIds ? new Set(opts.docIds) : null;
+  const allowedClass = opts.classifications ? new Set(opts.classifications) : null;
+  const docMeta = new Map(idx.docs.map((d) => [d.id, d]));
+  const allowed = (docId: string) =>
+    (!allowedDocs || allowedDocs.has(docId)) && (!allowedClass || allowedClass.has(String(docMeta.get(docId)?.classification ?? "Public")));
   const qTokens = (Array.isArray(queries) ? queries : [queries]).flatMap(tokenize);
   if (!qTokens.length) return [];
   const N = idx.chunks.length;
@@ -191,7 +201,7 @@ export function search(relDir: string, queries: string | string[], k = 8): Searc
   });
   return idx.chunks
     .map((c, i) => ({ c, s: scores[i] }))
-    .filter((x) => x.s > 0)
+    .filter((x) => x.s > 0 && allowed(x.c.docId))
     .sort((a, b) => b.s - a.s)
     .slice(0, k)
     .map(({ c, s }) => {

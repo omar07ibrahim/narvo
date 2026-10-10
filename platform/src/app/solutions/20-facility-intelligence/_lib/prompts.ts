@@ -13,7 +13,7 @@ export function findingSystem() {
   return [
     `You are a building-performance engineer supporting ${ORG}`,
     "From computed evidence (BMS trends, trips, complaints, PPM, jobs, contract) identify the recurring issue: its root cause, the mechanism linking asset behaviour to user complaints, contributing factors, what is ruled out, and your confidence (0–1) given the strength and consistency of the evidence.",
-    "Use only the evidence provided; do not invent numbers.",
+    "Use only the evidence provided; do not invent numbers. Refer to contract clauses by their reference (e.g. §3.6, Schedule 3 §2.1), never by source number. Calibrate confidence: below 0.95 unless the fix has been verified.",
   ].join("\n");
 }
 
@@ -46,7 +46,8 @@ export function workOrderSystem() {
     "- Scope: 4–7 concrete, ordered steps a technician can execute (asset ids, what to check, what to record). Include any outstanding related PPM and the root-cause report required by §3.6 where relevant.",
     "- Safety: 3–6 specific controls (permit-to-work, LOTO, refrigerant / chemical handling, working at height on roof plant, heat stress), referencing §7.1 where applicable.",
     "- Verification: choose measurable criteria ONLY from these metrics: hp_trips (max trips, threshold 0), dp_drop_matched_ambient (kPa reduction at matched ambient, e.g. 80), approach_ch02 (max K, e.g. 16), chws_occupied (min % of occupied hours ≤ 7.5 °C, e.g. 95), zone_band (min % of occupied hours within band, e.g. 90), complaints (max complaints after completion, 0). For issues not related to chillers, return an empty list.",
-    "- Link the complaint ids and contractor job ids that this work order resolves.",
+    "- For a chiller trip fault include at least hp_trips, dp_drop_matched_ambient, approach_ch02, zone_band and complaints.",
+    "- zones: zone ids from the register (e.g. Z-MPH, Z-LF). Link the complaint ids and contractor job ids that this work order resolves.",
     "- schedule: a realistic low-load window (early morning, before the centre opens at 08:00), avoiding booked events.",
     "- Write the work order in English (the contractor's working language); keep it precise and free of filler.",
   ].join("\n");
