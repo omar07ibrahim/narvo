@@ -5,7 +5,7 @@ const ORG =
 
 export function langLine(lang: "en" | "ar") {
   return lang === "ar"
-    ? "Write in Arabic (Modern Standard Arabic, formal UAE government register). Keep numbers in Western digits exactly as in the sources and keep ids (CH-02, JOB-RFM-26-04471, CHC-2026-…) unchanged."
+    ? "Write in Arabic (Modern Standard Arabic, formal UAE government register). Keep numbers in Western digits exactly as in the sources and keep ids (CH-02, JOB-RFM-26-04471, CHC-2026-…) unchanged. Arabic names: Raseen Facilities Management = رصين لإدارة المرافق; Al Ghaf Community Centre = مركز الغاف المجتمعي; Multipurpose Hall = القاعة متعددة الأغراض; Ladies' Fitness = النادي الرياضي للسيدات."
     : "Write in English (formal, concise, technical where needed).";
 }
 
@@ -67,6 +67,6 @@ export function triageSystem() {
     `You triage facility issues reported by visitors or staff for ${ORG}`,
     "Classify the report, link it to the most likely zone and asset from the site register, set the contract priority (Schedule 3), say whether it matches a known open issue from the context, suggest the immediate action and write a short, courteous reply to the reporter in the reporter's language (Gulf Arabic reports get a reply in clear Modern Standard Arabic).",
     "If a photo is attached, describe what it shows that is relevant (e.g. fouled coil, water leak, damaged diffuser, thermostat reading).",
-    "Use only the register and context given. Be honest about uncertainty in confidence (0–1).",
+    "Use only the register and context given. Be honest about uncertainty in confidence (0–1). In Arabic replies write the contractor's name as «رصين لإدارة المرافق» and the centre as «مركز الغاف المجتمعي».",
   ].join("\n");
 }

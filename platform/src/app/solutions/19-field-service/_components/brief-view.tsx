@@ -129,7 +129,7 @@ export function BriefView({ job, run, stored, bms, onRun }: { job: Job; run: Nar
         title={L({ en: "Job brief", ar: "ملخص المهمة" })}
         subtitle={
           stored && !live
-            ? L({ en: `Prepared ${f.relative(stored.generatedAt ?? Date.now())} in ${((stored.ms ?? 0) / 1000).toFixed(0)} s`, ar: `أُعدّ ${f.relative(stored.generatedAt ?? Date.now())} خلال ${((stored.ms ?? 0) / 1000).toFixed(0)} ث` })
+            ? L({ en: `Prepared ${f.date(stored.generatedAt ?? 0, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} in ${((stored.ms ?? 0) / 1000).toFixed(0)} s`, ar: `أُعدّ ${f.date(stored.generatedAt ?? 0, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} خلال ${((stored.ms ?? 0) / 1000).toFixed(0)} ث` })
             : L({ en: "Service history, BMS trends and approved manuals → cited brief", ar: "سجل الخدمة واتجاهات نظام المبنى والأدلة المعتمدة ← ملخص موثق" })
         }
         actions={

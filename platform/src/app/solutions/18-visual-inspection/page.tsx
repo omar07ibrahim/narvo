@@ -16,5 +16,5 @@ export default function Page() {
     createdAt: a.createdAt,
     inspectionId: (a.payload as { inspectionId?: string } | undefined)?.inspectionId,
   }));
-  return <InspectionWorkspace initialState={loadState()} tax={loadTaxonomy()} contractors={loadRegistry().contractors} initialApprovals={approvals} />;
+  return <InspectionWorkspace initialState={loadState()} tax={loadTaxonomy()} contractors={loadRegistry().contractors} initialApprovals={approvals} serverNow={Date.now()} />;
 }

@@ -43,11 +43,13 @@ export function InspectionWorkspace({
   tax,
   contractors,
   initialApprovals,
+  serverNow,
 }: {
   initialState: InspectionState;
   tax: Taxonomy;
   contractors: Contractor[];
   initialApprovals: Array<ApprovalSummary & { inspectionId?: string }>;
+  serverNow: number;
 }) {
   const L = useL();
   const f = useFormat();
@@ -75,7 +77,14 @@ export function InspectionWorkspace({
   const run = useNarvoRun();
 
   const insp = state.inspections.find((i) => i.id === selectedId) ?? state.inspections[0];
-  const kpi = useMemo(() => computeKpis(state, Date.now()), [state]);
+  // A stable "now" for SSR + hydration, refreshed on the client after mount and every minute.
+  const [now, setNow] = useState(serverNow);
+  useEffect(() => {
+    setNow(Date.now());
+    const t = setInterval(() => setNow(Date.now()), 60000);
+    return () => clearInterval(t);
+  }, []);
+  const kpi = useMemo(() => computeKpis(state, now), [state, now]);
 
   const refresh = useCallback(async () => {
     const [s, a] = await Promise.all([
@@ -350,6 +359,7 @@ export function InspectionWorkspace({
                 </Pane>
                 <Pane title={L({ en: "Notice of Violation", ar: "إشعار المخالفة" })}>
                   <NoticePanel
+                    now={now}
                     insp={insp}
                     state={state}
                     tax={tax}
@@ -370,7 +380,7 @@ export function InspectionWorkspace({
                   <Pane title={L({ en: "Corrective tasks", ar: "المهام التصحيحية" })} flush>
                     <ul className="divide-y divide-border">
                       {inspTasks.map((t) => {
-                        const od = t.status === "open" && Date.parse(t.dueAt) < Date.now();
+                        const od = t.status === "open" && Date.parse(t.dueAt) < now;
                         return (
                           <li key={t.id} className="flex items-center gap-3 px-4 py-2.5">
                             <div className="min-w-0 flex-1">
@@ -401,6 +411,7 @@ export function InspectionWorkspace({
 
         <TabsContent value="tasks" className="mt-0">
           <TaskRegister
+            now={now}
             state={state}
             onOpen={setClosureTask}
             onInspection={(id) => {

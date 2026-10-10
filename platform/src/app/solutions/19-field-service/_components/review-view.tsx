@@ -137,7 +137,7 @@ export function ReviewView({
               {L({ en: "Draft service report", ar: "مسودة تقرير الخدمة" })} · <span className="font-mono">{job.id}</span>
             </div>
             <div className="text-[11.5px] text-muted-foreground">
-              {tech.name} · {asset.id} · {L({ en: "drafted", ar: "صيغت" })} {f.relative(draft.generatedAt)} {L({ en: "from voice notes and photos", ar: "من الملاحظات الصوتية والصور" })}
+              {tech.name} · {asset.id} · {L({ en: "drafted", ar: "صيغت" })} {f.date(draft.generatedAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} {L({ en: "from voice notes and photos", ar: "من الملاحظات الصوتية والصور" })}
             </div>
           </div>
           {locked ? <StatusPill tone={job.status === "completed" ? "success" : "warning"}>{job.status === "completed" ? L({ en: "Approved", ar: "معتمد" }) : L({ en: "Awaiting approval", ar: "بانتظار الاعتماد" })}</StatusPill> : <StatusPill tone="ai">{L({ en: "Editable", ar: "قابل للتعديل" })}</StatusPill>}

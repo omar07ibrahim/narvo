@@ -22,7 +22,9 @@ export function NoticePanel({
   tax,
   onRefresh,
   pendingApproval,
+  now,
 }: {
+  now: number;
   insp: Inspection;
   state: InspectionState;
   tax: Taxonomy;
@@ -40,7 +42,7 @@ export function NoticePanel({
   const accepted = state.findings.filter((x) => x.inspectionId === insp.id && x.status === "accepted");
   const proposed = state.findings.filter((x) => x.inspectionId === insp.id && x.status === "proposed").length;
   const issued = insp.noticeId ? state.notices.find((n) => n.id === insp.noticeId) : undefined;
-  const preview = useMemo(() => accepted.map((x) => assess(x, insp, state, tax, Date.now())), [accepted, insp, state, tax]);
+  const preview = useMemo(() => accepted.map((x) => assess(x, insp, state, tax, now)), [accepted, insp, state, tax, now]);
   const total = preview.reduce((a, x) => a + x.penaltyAed, 0);
   const citations = (run.data.citations as Citation[]) ?? [];
 

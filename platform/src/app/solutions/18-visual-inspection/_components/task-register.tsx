@@ -11,11 +11,10 @@ import { cn } from "@/lib/utils";
 import type { CorrectiveTask, InspectionState } from "../_lib/types";
 import { Segmented, SeverityPill } from "./ui";
 
-export function TaskRegister({ state, onOpen, onInspection }: { state: InspectionState; onOpen: (t: CorrectiveTask) => void; onInspection: (id: string) => void }) {
+export function TaskRegister({ state, onOpen, onInspection, now }: { state: InspectionState; onOpen: (t: CorrectiveTask) => void; onInspection: (id: string) => void; now: number }) {
   const L = useL();
   const f = useFormat();
   const [filter, setFilter] = useState<"open" | "overdue" | "closed" | "all">("open");
-  const now = Date.now();
   const isOverdue = (t: CorrectiveTask) => t.status === "open" && Date.parse(t.dueAt) < now;
   const rows = state.tasks.filter((t) =>
     filter === "all" ? true : filter === "open" ? t.status === "open" : filter === "overdue" ? isOverdue(t) : t.status === "closed",
