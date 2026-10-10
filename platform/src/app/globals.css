@@ -1,0 +1,243 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), var(--font-arabic), ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: var(--font-arabic), var(--font-inter), sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
+  --font-heading: var(--font-inter), var(--font-arabic), sans-serif;
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-muted: var(--sidebar-muted);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-surface: var(--surface);
+  --color-faint: var(--faint);
+
+  /* NARVO semantic tokens */
+  --color-ai: var(--ai);
+  --color-ai-soft: var(--ai-soft);
+  --color-ai-foreground: var(--ai-foreground);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --animate-pulse-soft: pulse-soft 2.2s ease-in-out infinite;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Warm stone palette taken from the NARVO catalogue */
+:root {
+  --background: #f3f1ec;
+  --surface: #f8f7f4;
+  --foreground: #161513;
+  --card: #fcfbf9;
+  --card-foreground: #161513;
+  --popover: #fdfcfa;
+  --popover-foreground: #161513;
+  --primary: #161513;
+  --primary-foreground: #faf9f7;
+  --secondary: #ebe8e2;
+  --secondary-foreground: #161513;
+  --muted: #ece9e3;
+  --muted-foreground: #6c6860;
+  --faint: #9a958c;
+  --accent: #e9e6df;
+  --accent-foreground: #161513;
+  --destructive: #b4432f;
+  --border: #e2ded6;
+  --border-strong: #cfcac0;
+  --input: #dcd8cf;
+  --ring: #8f8a80;
+
+  --ai: #1f6f68;
+  --ai-soft: #e3efed;
+  --ai-foreground: #f4fbfa;
+  --success: #2f7d4f;
+  --success-soft: #e4f1e8;
+  --warning: #a8691a;
+  --warning-soft: #f7ecd9;
+  --danger: #b4432f;
+  --danger-soft: #f6e3de;
+  --info: #2f5d8a;
+  --info-soft: #e2eaf3;
+
+  --chart-1: #1f6f68;
+  --chart-2: #161513;
+  --chart-3: #a8691a;
+  --chart-4: #8f8a80;
+  --chart-5: #2f5d8a;
+
+  --radius: 0.55rem;
+
+  --sidebar: #0f0f0e;
+  --sidebar-foreground: #ece9e3;
+  --sidebar-muted: #8a867e;
+  --sidebar-primary: #faf9f7;
+  --sidebar-primary-foreground: #0f0f0e;
+  --sidebar-accent: rgba(255, 255, 255, 0.06);
+  --sidebar-accent-foreground: #faf9f7;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: rgba(255, 255, 255, 0.25);
+}
+
+.dark {
+  --background: #0e0e0d;
+  --surface: #141413;
+  --foreground: #ece9e3;
+  --card: #171716;
+  --card-foreground: #ece9e3;
+  --popover: #1a1a19;
+  --popover-foreground: #ece9e3;
+  --primary: #ece9e3;
+  --primary-foreground: #161513;
+  --secondary: #222220;
+  --secondary-foreground: #ece9e3;
+  --muted: #1f1f1d;
+  --muted-foreground: #9a958c;
+  --faint: #6c6860;
+  --accent: #232321;
+  --accent-foreground: #ece9e3;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: #6c6860;
+  --ai: #5fb8ad;
+  --ai-soft: rgba(95, 184, 173, 0.12);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  [lang="ar"],
+  .font-arabic {
+    font-family: var(--font-arabic), var(--font-inter), sans-serif;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--ai) 22%, transparent);
+  }
+}
+
+@layer components {
+  /* Catalogue-style micro label: "ENTERPRISE INTELLIGENCE & DELIVERY" */
+  .label-caps {
+    @apply text-[10.5px] font-medium uppercase tracking-[0.16em] text-muted-foreground;
+  }
+  .display-title {
+    @apply font-light tracking-[-0.025em] text-foreground;
+  }
+  .num {
+    font-variant-numeric: tabular-nums;
+  }
+  .hairline {
+    @apply border-border;
+  }
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
+  }
+  .shimmer-text {
+    background: linear-gradient(90deg, var(--muted-foreground) 0%, var(--foreground) 50%, var(--muted-foreground) 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shimmer 2.4s linear infinite;
+  }
+  .paper-grain {
+    background-image: radial-gradient(color-mix(in oklab, var(--foreground) 4%, transparent) 0.5px, transparent 0.5px);
+    background-size: 3px 3px;
+  }
+}
+
+/* Markdown produced by the models */
+.prose-narvo {
+  @apply text-[13.5px] leading-relaxed text-foreground;
+}
+.prose-narvo h1,
+.prose-narvo h2,
+.prose-narvo h3 {
+  @apply mt-4 mb-2 font-medium tracking-tight;
+}
+.prose-narvo h1 { @apply text-lg; }
+.prose-narvo h2 { @apply text-base; }
+.prose-narvo h3 { @apply text-sm; }
+.prose-narvo p { @apply my-2; }
+.prose-narvo ul { @apply my-2 list-disc ps-5; }
+.prose-narvo ol { @apply my-2 list-decimal ps-5; }
+.prose-narvo li { @apply my-0.5; }
+.prose-narvo strong { @apply font-semibold; }
+.prose-narvo table { @apply my-3 w-full border-collapse text-[12.5px]; }
+.prose-narvo th { @apply border-b border-border-strong py-1.5 pe-3 text-start font-medium text-muted-foreground; }
+.prose-narvo td { @apply border-b border-border py-1.5 pe-3 align-top; }
+.prose-narvo code { @apply rounded bg-muted px-1 py-0.5 font-mono text-[12px]; }
+.prose-narvo blockquote { @apply my-2 border-s-2 border-ai ps-3 text-muted-foreground; }
+.prose-narvo a { @apply text-ai underline underline-offset-2; }
