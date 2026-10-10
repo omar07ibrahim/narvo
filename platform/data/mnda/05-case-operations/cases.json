@@ -1,0 +1,622 @@
+[
+  {
+    "id": "MNDA-HG-2026-005203",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-10-06T09:14:00+04:00",
+    "channel": "MNDA Smart app",
+    "status": "submitted",
+    "officer": null,
+    "applicant": {
+      "name": "Obaid Hamad Al Ketbi",
+      "nameAr": "عبيد حمد الكتبي",
+      "emiratesId": "784-1991-6630417-2",
+      "mobile": "+971 52 338 6104",
+      "email": "obaid.alketbi91@gmail.com",
+      "maritalStatus": "married",
+      "spouse": "Shaikha Saeed Al Ketbi",
+      "dependents": 2,
+      "employer": "Marsa Al Noor Development Authority — Field Operations & Inspection",
+      "monthlyIncomeDeclared": 26900,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-04 Al Waha Gardens",
+    "plot": "MN-04-117-0031",
+    "landRegistryConsent": true,
+    "summary": "First-home grant to build on allocated plot MN-04-117-0031. Applicant is an MNDA building inspector.",
+    "documents": [
+      {
+        "type": "application_form",
+        "label": "Application form MNDA-HC-F01",
+        "file": "/demo/05-case-operations/005203/application-form.png"
+      },
+      {
+        "type": "emirates_id_applicant",
+        "label": "Emirates ID — applicant",
+        "file": "/demo/05-case-operations/005203/eid-applicant.png"
+      },
+      {
+        "type": "emirates_id_spouse",
+        "label": "Emirates ID — spouse",
+        "file": "/demo/05-case-operations/005203/eid-spouse.png"
+      },
+      {
+        "type": "family_book",
+        "label": "Family Book (all pages)",
+        "file": "/demo/05-case-operations/005203/family-book.png"
+      },
+      {
+        "type": "salary_certificate",
+        "label": "Salary certificate",
+        "file": "/demo/05-case-operations/005203/salary-certificate.png"
+      },
+      {
+        "type": "plot_allocation",
+        "label": "Plot allocation letter",
+        "file": "/demo/05-case-operations/005203/plot-allocation.png"
+      }
+    ],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-005219",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-10-07T11:42:00+04:00",
+    "channel": "Customer Happiness Centre — Al Murjan",
+    "status": "submitted",
+    "officer": null,
+    "applicant": {
+      "name": "Latifa Ali Al Zaabi",
+      "nameAr": "لطيفة علي الزعابي",
+      "emiratesId": "784-1987-1185903-6",
+      "mobile": "+971 54 660 2871",
+      "email": "latifa.alzaabi@outlook.com",
+      "maritalStatus": "married",
+      "spouse": "Hamad Khamis Al Zaabi",
+      "dependents": 5,
+      "employer": "Marsa Al Noor Education Council — Al Murjan Girls School",
+      "monthlyIncomeDeclared": 28500,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-02 Al Murjan",
+    "plot": "MN-02-051-0207",
+    "landRegistryConsent": false,
+    "summary": "Grant application; declared household income close to the AED 30,000 grant ceiling.",
+    "documents": [
+      {
+        "type": "application_form",
+        "label": "Application form MNDA-HC-F01",
+        "file": "/demo/05-case-operations/005219/application-form.png"
+      },
+      {
+        "type": "emirates_id_applicant",
+        "label": "Emirates ID — applicant",
+        "file": "/demo/05-case-operations/005219/eid-applicant.png"
+      },
+      {
+        "type": "emirates_id_spouse",
+        "label": "Emirates ID — spouse",
+        "file": "/demo/05-case-operations/005219/eid-spouse.png"
+      },
+      {
+        "type": "family_book",
+        "label": "Family Book (all pages)",
+        "file": "/demo/05-case-operations/005219/family-book.png"
+      },
+      {
+        "type": "salary_certificate",
+        "label": "Salary certificate — applicant",
+        "file": "/demo/05-case-operations/005219/salary-certificate.png"
+      },
+      {
+        "type": "no_property_certificate",
+        "label": "Certificate of No Property Ownership",
+        "file": "/demo/05-case-operations/005219/no-property.png"
+      }
+    ],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-005231",
+    "track": "loan",
+    "amountRequested": 780000,
+    "submittedAt": "2026-10-08T08:05:00+04:00",
+    "channel": "MNDA Smart app",
+    "status": "submitted",
+    "officer": null,
+    "applicant": {
+      "name": "Salama Juma Al Neyadi",
+      "nameAr": "سلامة جمعة النيادي",
+      "emiratesId": "784-1993-4418820-7",
+      "mobile": "+971 50 239 7718",
+      "email": "salama.alneyadi@gmail.com",
+      "maritalStatus": "married",
+      "spouse": "Rashid Mohammed Al Neyadi",
+      "dependents": 1,
+      "employer": "Marsa Al Noor Ports Company",
+      "monthlyIncomeDeclared": 38400,
+      "preferredLanguage": "en"
+    },
+    "district": "MN-04 Al Waha Gardens",
+    "plot": "MN-04-122-0009",
+    "landRegistryConsent": true,
+    "summary": "Interest-free loan to build on allocated plot; household of three.",
+    "documents": [
+      {
+        "type": "application_form",
+        "label": "Application form MNDA-HC-F01",
+        "file": "/demo/05-case-operations/005231/application-form.png"
+      },
+      {
+        "type": "emirates_id_applicant",
+        "label": "Emirates ID — applicant",
+        "file": "/demo/05-case-operations/005231/eid-applicant.png"
+      },
+      {
+        "type": "emirates_id_spouse",
+        "label": "Emirates ID — spouse",
+        "file": "/demo/05-case-operations/005231/eid-spouse.png"
+      },
+      {
+        "type": "family_book",
+        "label": "Family Book (all pages)",
+        "file": "/demo/05-case-operations/005231/family-book.png"
+      },
+      {
+        "type": "salary_certificate",
+        "label": "Salary certificate",
+        "file": "/demo/05-case-operations/005231/salary-certificate.png"
+      },
+      {
+        "type": "bank_statement",
+        "label": "Bank statement — 6 months",
+        "file": "/demo/05-case-operations/005231/bank-statement.png"
+      },
+      {
+        "type": "no_property_certificate",
+        "label": "Certificate of No Property Ownership",
+        "file": "/demo/05-case-operations/005231/no-property.png"
+      },
+      {
+        "type": "plot_allocation",
+        "label": "Plot allocation letter",
+        "file": "/demo/05-case-operations/005231/plot-allocation.png"
+      }
+    ],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-004817",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-09-21T10:31:00+04:00",
+    "channel": "MNDA Smart app",
+    "status": "incomplete",
+    "officer": "Khalfan Mohammed Al Ali",
+    "applicant": {
+      "name": "Saeed Khalifa Al Romaithi",
+      "nameAr": "سعيد خليفة الرميثي",
+      "emiratesId": "784-1986-2297415-3",
+      "mobile": "+971 50 418 2276",
+      "maritalStatus": "married",
+      "dependents": 4,
+      "employer": "Marsa Al Noor Ports Company",
+      "monthlyIncomeDeclared": 27800,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-02 Al Murjan",
+    "summary": "Clarification sent 24 Sep — awaiting documents.",
+    "documents": [],
+    "slaDays": 12,
+    "missing": [
+      "Salary certificate issued within the last 30 days (submitted certificate dated 12 Jul 2026)",
+      "Certificate of No Property Ownership"
+    ]
+  },
+  {
+    "id": "MNDA-HG-2026-004902",
+    "track": "loan",
+    "amountRequested": 850000,
+    "submittedAt": "2026-09-24T13:05:00+04:00",
+    "channel": "Website",
+    "status": "under_review",
+    "officer": "Noora Ahmed Al Muhairi",
+    "applicant": {
+      "name": "Aisha Mohammed Al Marzooqi",
+      "nameAr": "عائشة محمد المرزوقي",
+      "emiratesId": "784-1990-5512068-1",
+      "mobile": "+971 55 902 3417",
+      "maritalStatus": "married",
+      "dependents": 2,
+      "employer": "Marsa Al Noor Health Services",
+      "monthlyIncomeDeclared": 52600,
+      "preferredLanguage": "en"
+    },
+    "district": "MN-04 Al Waha Gardens",
+    "summary": "Complete file; income verification in progress.",
+    "documents": [],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-005011",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-09-29T08:47:00+04:00",
+    "channel": "Customer Happiness Centre — Downtown",
+    "status": "incomplete",
+    "officer": "Khalfan Mohammed Al Ali",
+    "applicant": {
+      "name": "Hamdan Rashid Al Nuaimi",
+      "nameAr": "حمدان راشد النعيمي",
+      "emiratesId": "784-1992-7730186-4",
+      "mobile": "+971 56 207 9935",
+      "maritalStatus": "married",
+      "dependents": 1,
+      "employer": "Marsa Al Noor Electricity & Water Company",
+      "monthlyIncomeDeclared": 23400,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-07 Al Ghaf Community",
+    "summary": "Spouse Emirates ID not attached.",
+    "documents": [],
+    "slaDays": 12,
+    "missing": [
+      "Emirates ID — spouse"
+    ]
+  },
+  {
+    "id": "MNDA-HG-2026-005126",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-10-02T12:20:00+04:00",
+    "channel": "MNDA Smart app",
+    "status": "verification",
+    "officer": "Badr Salem Al Marri",
+    "applicant": {
+      "name": "Mouza Saif Al Shamsi",
+      "nameAr": "موزة سيف الشامسي",
+      "emiratesId": "784-1988-3046771-2",
+      "mobile": "+971 50 771 5402",
+      "maritalStatus": "widowed",
+      "dependents": 3,
+      "employer": "Al Ghaf Community School",
+      "monthlyIncomeDeclared": 19600,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-02 Al Murjan",
+    "summary": "Land Registry ownership check requested 5 Oct.",
+    "documents": [],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-004655",
+    "track": "loan",
+    "amountRequested": 900000,
+    "submittedAt": "2026-09-08T09:10:00+04:00",
+    "channel": "MNDA Smart app",
+    "status": "approved",
+    "officer": "Noora Ahmed Al Muhairi",
+    "applicant": {
+      "name": "Khalid Sultan Al Mheiri",
+      "nameAr": "خالد سلطان المهيري",
+      "emiratesId": "784-1984-9921034-8",
+      "mobile": "+971 50 116 4480",
+      "maritalStatus": "married",
+      "dependents": 3,
+      "employer": "Marsa Al Noor Ports Company",
+      "monthlyIncomeDeclared": 47300,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-04 Al Waha Gardens",
+    "summary": "Loan approved 1 Oct 2026; agreement signing scheduled.",
+    "documents": [],
+    "slaDays": 12,
+    "decision": {
+      "by": "Mariam Saeed Al Kaabi",
+      "at": "2026-10-01"
+    }
+  },
+  {
+    "id": "MNDA-HG-2026-004701",
+    "track": "grant",
+    "amountRequested": 540000,
+    "submittedAt": "2026-09-10T11:55:00+04:00",
+    "channel": "Customer Happiness Centre — Al Waha",
+    "status": "decision_pending",
+    "officer": "Reem Khalid Al Jaberi",
+    "applicant": {
+      "name": "Shamsa Obaid Al Falahi",
+      "nameAr": "شمسة عبيد الفلاحي",
+      "emiratesId": "784-1989-2203917-5",
+      "mobile": "+971 55 640 1192",
+      "maritalStatus": "married",
+      "dependents": 2,
+      "employer": "Marsa Al Noor Health Services",
+      "monthlyIncomeDeclared": 21800,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-04 Al Waha Gardens",
+    "summary": "All checks passed; with Section Head for decision.",
+    "documents": [],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-004733",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-09-12T15:02:00+04:00",
+    "channel": "MNDA Smart app",
+    "status": "incomplete",
+    "officer": "Badr Salem Al Marri",
+    "applicant": {
+      "name": "Ahmed Juma Al Suwaidi",
+      "nameAr": "أحمد جمعة السويدي",
+      "emiratesId": "784-1990-6618254-0",
+      "mobile": "+971 52 784 0036",
+      "maritalStatus": "married",
+      "dependents": 3,
+      "employer": "Marsa Al Noor Development Authority — Facilities & Assets",
+      "monthlyIncomeDeclared": 25900,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-07 Al Ghaf Community",
+    "summary": "Family book copy missing children's pages.",
+    "documents": [],
+    "slaDays": 12,
+    "missing": [
+      "Family Book — complete copy including children's pages"
+    ]
+  },
+  {
+    "id": "MNDA-HG-2026-004790",
+    "track": "loan",
+    "amountRequested": 720000,
+    "submittedAt": "2026-09-15T10:18:00+04:00",
+    "channel": "Website",
+    "status": "verification",
+    "officer": "Reem Khalid Al Jaberi",
+    "applicant": {
+      "name": "Maitha Rashid Al Dhaheri",
+      "nameAr": "ميثاء راشد الظاهري",
+      "emiratesId": "784-1991-3390572-9",
+      "mobile": "+971 56 318 2240",
+      "maritalStatus": "married",
+      "dependents": 1,
+      "employer": "Emirates Islamic Finance House — Marsa Al Noor branch",
+      "monthlyIncomeDeclared": 44100,
+      "preferredLanguage": "en"
+    },
+    "district": "MN-06 Al Sidr Residential",
+    "summary": "Bank statement review in progress.",
+    "documents": [],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-004856",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-09-18T08:26:00+04:00",
+    "channel": "MNDA Smart app",
+    "status": "under_review",
+    "officer": "Khalfan Mohammed Al Ali",
+    "applicant": {
+      "name": "Sultan Ali Al Hosani",
+      "nameAr": "سلطان علي الحوسني",
+      "emiratesId": "784-1987-4475016-3",
+      "mobile": "+971 50 932 6671",
+      "maritalStatus": "married",
+      "dependents": 4,
+      "employer": "Marsa Al Noor Police Directorate",
+      "monthlyIncomeDeclared": 24750,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-02 Al Murjan",
+    "summary": "Assigned 22 Sep; eligibility check ongoing.",
+    "documents": [],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-004871",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-09-19T12:44:00+04:00",
+    "channel": "Customer Happiness Centre — Downtown",
+    "status": "incomplete",
+    "officer": "Noora Ahmed Al Muhairi",
+    "applicant": {
+      "name": "Noura Saeed Al Mansoori",
+      "nameAr": "نورة سعيد المنصوري",
+      "emiratesId": "784-1994-1027783-1",
+      "mobile": "+971 54 209 8813",
+      "maritalStatus": "married",
+      "dependents": 2,
+      "employer": "Al Murjan Private Clinic",
+      "monthlyIncomeDeclared": 22100,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-04 Al Waha Gardens",
+    "summary": "No-property certificate missing; no Land Registry consent given.",
+    "documents": [],
+    "slaDays": 12,
+    "missing": [
+      "Certificate of No Property Ownership"
+    ]
+  },
+  {
+    "id": "MNDA-HG-2026-004934",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-09-22T09:37:00+04:00",
+    "channel": "MNDA Smart app",
+    "status": "not_approved",
+    "officer": "Reem Khalid Al Jaberi",
+    "applicant": {
+      "name": "Rashid Hamad Al Kaabi",
+      "nameAr": "راشد حمد الكعبي",
+      "emiratesId": "784-1983-5546230-7",
+      "mobile": "+971 50 667 3304",
+      "maritalStatus": "married",
+      "dependents": 3,
+      "employer": "Marsa Al Noor Ports Company",
+      "monthlyIncomeDeclared": 26400,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-02 Al Murjan",
+    "summary": "Not approved 3 Oct: Land Registry shows a residential villa registered to the applicant in 2019.",
+    "documents": [],
+    "slaDays": 12,
+    "decision": {
+      "by": "Mariam Saeed Al Kaabi",
+      "at": "2026-10-03",
+      "reason": "Applicant owns residential property (Circular 9/2026 §3.4)"
+    }
+  },
+  {
+    "id": "MNDA-HG-2026-004958",
+    "track": "loan",
+    "amountRequested": 650000,
+    "submittedAt": "2026-09-25T14:12:00+04:00",
+    "channel": "Website",
+    "status": "under_review",
+    "officer": "Badr Salem Al Marri",
+    "applicant": {
+      "name": "Fatima Khalfan Al Ali",
+      "nameAr": "فاطمة خلفان العلي",
+      "emiratesId": "784-1992-8834415-6",
+      "mobile": "+971 55 471 9028",
+      "maritalStatus": "married",
+      "dependents": 2,
+      "employer": "Marsa Al Noor Education Council",
+      "monthlyIncomeDeclared": 39800,
+      "preferredLanguage": "en"
+    },
+    "district": "MN-07 Al Ghaf Community",
+    "summary": "Assigned 28 Sep.",
+    "documents": [],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-004987",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-09-26T10:03:00+04:00",
+    "channel": "MNDA Smart app",
+    "status": "incomplete",
+    "officer": "Khalfan Mohammed Al Ali",
+    "applicant": {
+      "name": "Majid Ahmed Al Hammadi",
+      "nameAr": "ماجد أحمد الحمادي",
+      "emiratesId": "784-1989-6610398-2",
+      "mobile": "+971 52 905 4417",
+      "maritalStatus": "married",
+      "dependents": 2,
+      "employer": "Marsa Al Noor Electricity & Water Company",
+      "monthlyIncomeDeclared": 27150,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-04 Al Waha Gardens",
+    "summary": "Salary certificate older than 30 days.",
+    "documents": [],
+    "slaDays": 12,
+    "missing": [
+      "Salary certificate issued within the last 30 days (submitted certificate dated 19 Aug 2026)"
+    ]
+  },
+  {
+    "id": "MNDA-HG-2026-005044",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-09-30T09:51:00+04:00",
+    "channel": "Customer Happiness Centre — Al Murjan",
+    "status": "verification",
+    "officer": "Noora Ahmed Al Muhairi",
+    "applicant": {
+      "name": "Hind Mohammed Al Blooshi",
+      "nameAr": "هند محمد البلوشي",
+      "emiratesId": "784-1993-2751846-4",
+      "mobile": "+971 56 884 2265",
+      "maritalStatus": "married",
+      "dependents": 1,
+      "employer": "Marsa Al Noor Health Services",
+      "monthlyIncomeDeclared": 20400,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-02 Al Murjan",
+    "summary": "Land Registry certificate retrieved with consent; income check pending.",
+    "documents": [],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-005078",
+    "track": "loan",
+    "amountRequested": 900000,
+    "submittedAt": "2026-10-01T11:29:00+04:00",
+    "channel": "MNDA Smart app",
+    "status": "decision_pending",
+    "officer": "Reem Khalid Al Jaberi",
+    "applicant": {
+      "name": "Yousef Abdulla Al Qubaisi",
+      "nameAr": "يوسف عبدالله القبيسي",
+      "emiratesId": "784-1985-3308127-9",
+      "mobile": "+971 50 541 7790",
+      "maritalStatus": "married",
+      "dependents": 4,
+      "employer": "Marsa Al Noor Ports Company",
+      "monthlyIncomeDeclared": 57900,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-06 Al Sidr Residential",
+    "summary": "Recommended for approval by case officer 8 Oct.",
+    "documents": [],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-005152",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-10-03T13:47:00+04:00",
+    "channel": "Website",
+    "status": "under_review",
+    "officer": "Badr Salem Al Marri",
+    "applicant": {
+      "name": "Alya Hassan Al Shehhi",
+      "nameAr": "علياء حسن الشحي",
+      "emiratesId": "784-1995-7719264-0",
+      "mobile": "+971 54 388 1659",
+      "maritalStatus": "married",
+      "dependents": 2,
+      "employer": "Al Ghaf Community School",
+      "monthlyIncomeDeclared": 18900,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-07 Al Ghaf Community",
+    "summary": "Assigned 5 Oct.",
+    "documents": [],
+    "slaDays": 12
+  },
+  {
+    "id": "MNDA-HG-2026-005177",
+    "track": "grant",
+    "amountRequested": 600000,
+    "submittedAt": "2026-10-05T10:22:00+04:00",
+    "channel": "MNDA Smart app",
+    "status": "submitted",
+    "officer": null,
+    "applicant": {
+      "name": "Mohammed Saeed Al Yammahi",
+      "nameAr": "محمد سعيد اليماحي",
+      "emiratesId": "784-1990-9024471-5",
+      "mobile": "+971 52 116 3082",
+      "maritalStatus": "married",
+      "dependents": 3,
+      "employer": "Marsa Al Noor Development Authority — Planning & Building Permits",
+      "monthlyIncomeDeclared": 24300,
+      "preferredLanguage": "ar"
+    },
+    "district": "MN-04 Al Waha Gardens",
+    "summary": "Awaiting completeness check.",
+    "documents": [],
+    "slaDays": 12
+  }
+]

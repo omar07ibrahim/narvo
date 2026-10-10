@@ -1,0 +1,81 @@
+{
+  "id": "BID-RFM-2026-057",
+  "tender": {
+    "ref": "MNDA/PRC/2026/057",
+    "title": {
+      "en": "Facilities Management Services — Al Ghaf Community Centre & Four Satellite Community Facilities (24 months)",
+      "ar": "خدمات إدارة المرافق — مركز الغاف المجتمعي وأربعة مرافق مجتمعية تابعة (24 شهراً)"
+    },
+    "client": { "en": "Marsa Al Noor Development Authority (MNDA)", "ar": "هيئة مرسى النور للتطوير" },
+    "published": "2026-09-22",
+    "clarificationsClosed": "2026-10-08",
+    "closing": "2026-10-22",
+    "closingTime": "14:00 GST",
+    "validityDays": 120,
+    "contractStart": "2027-01-01",
+    "durationMonths": 24,
+    "evaluation": "70% technical / 30% commercial · technical pass mark 70/100",
+    "portal": "MNDA Supplier Portal",
+    "contact": "Shamma Khalid Al Mansoori, Senior Contracts Officer"
+  },
+  "bidder": {
+    "name": "Raseen Facilities Management LLC",
+    "short": "Raseen FM",
+    "licence": "CN-2207815",
+    "supplierNo": "MNDA-SUP-00417"
+  },
+  "status": "in_preparation",
+  "internalReview": "2026-10-19",
+  "wordsPerPage": 500,
+  "team": [
+    { "id": "leena", "name": "Leena Mattar", "role": "Bid Manager", "role_ar": "مديرة العطاءات", "email": "leena.m@raseen.ae", "expertise": "bid strategy, compliance matrix, final approval of the submission" },
+    { "id": "sanjay", "name": "Sanjay Nair", "role": "Operations Manager, Community Facilities (proposed Contract Manager)", "role_ar": "مدير العمليات — المرافق المجتمعية", "email": "sanjay.n@raseen.ae", "expertise": "operations, mobilisation, manning schedules, PPM delivery, organisation charts, lifecycle planning" },
+    { "id": "rafiq", "name": "Mohammed Rafiq", "role": "HVAC Supervisor", "role_ar": "مشرف التكييف والتبريد", "email": "mohammed.r@raseen.ae", "expertise": "chillers, chilled-water plant, condenser coil cleaning, summer resilience, HVAC method statements" },
+    { "id": "karthik", "name": "Karthik Subramanian", "role": "MEP / BMS Engineer", "role_ar": "مهندس الأنظمة الكهروميكانيكية وإدارة المباني", "email": "karthik.s@raseen.ae", "expertise": "BMS, energy metering, energy baselines, degree-day normalisation, sustainability, water management" },
+    { "id": "ravi", "name": "Ravi Shankar", "role": "HSE Manager", "role_ar": "مدير الصحة والسلامة والبيئة", "email": "ravi.s@raseen.ae", "expertise": "HSE plans, ISO 45001, incident reporting, emergency response, HSE statistics" },
+    { "id": "huda", "name": "Huda Al Marzooqi", "role": "HR & Emiratisation Lead", "role_ar": "مسؤولة الموارد البشرية والتوطين", "email": "huda.a@raseen.ae", "expertise": "CVs, recruitment of key staff, Emiratisation plans, training and competency matrices" },
+    { "id": "george", "name": "George Thomas", "role": "CAFM & Systems Lead", "role_ar": "مسؤول أنظمة إدارة المرافق", "email": "george.t@raseen.ae", "expertise": "RFM Connect CAFM, dashboards, reporting, COBie asset registers, data hosting" },
+    { "id": "maha", "name": "Maha Saleh", "role": "Commercial & Estimation Manager", "role_ar": "مديرة الشؤون التجارية والتقدير", "email": "maha.s@raseen.ae", "expertise": "priced BoQ, commercial forms, subcontracting and SME spend, ICV, general conditions and deviations" },
+    { "id": "priya", "name": "Priya Raghavan", "role": "Group CFO", "role_ar": "المديرة المالية للمجموعة", "email": "priya.r@raseen.ae", "expertise": "insurance renewals, bank guarantees and bid security, audited financial statements" }
+  ],
+  "sections": [
+    { "id": "S1", "no": 1, "title": { "en": "Executive Summary", "ar": "الملخص التنفيذي" }, "pageLimit": 2, "requirements": ["T-01", "M-02", "M-03", "H-02", "K-01", "E-03"] },
+    { "id": "S2", "no": 2, "title": { "en": "Understanding & Mobilisation", "ar": "فهم النطاق والتعبئة" }, "pageLimit": 4, "requirements": ["T-01", "T-02", "T-06"] },
+    { "id": "S3", "no": 3, "title": { "en": "Maintenance Methodology (PPM, HVAC, Reactive)", "ar": "منهجية الصيانة (الوقائية والتكييف والطارئة)" }, "pageLimit": 8, "requirements": ["T-03", "T-04", "T-05", "T-08", "T-09", "T-10"] },
+    { "id": "S4", "no": 4, "title": { "en": "Helpdesk, CAFM & Reporting", "ar": "مكتب الخدمة ونظام إدارة المرافق والتقارير" }, "pageLimit": 5, "requirements": ["K-01", "K-02", "K-03", "K-04", "K-05", "R-01", "R-02", "R-03"] },
+    { "id": "S5", "no": 5, "title": { "en": "Energy & Sustainability", "ar": "الطاقة والاستدامة" }, "pageLimit": 4, "requirements": ["T-07", "T-12"] },
+    { "id": "S6", "no": 6, "title": { "en": "Health, Safety & Environment", "ar": "الصحة والسلامة والبيئة" }, "pageLimit": 4, "requirements": ["H-01", "H-02", "H-03", "H-04", "H-05"] },
+    { "id": "S7", "no": 7, "title": { "en": "Staffing & Key Personnel", "ar": "التوظيف والكوادر الرئيسية" }, "pageLimit": 5, "requirements": ["S-01", "S-02", "S-03", "S-04", "S-05", "S-06"] },
+    { "id": "S8", "no": 8, "title": { "en": "Emiratisation & In-Country Value", "ar": "التوطين والقيمة الوطنية المضافة" }, "pageLimit": 3, "requirements": ["E-01", "E-02", "E-03", "E-04", "M-06"] },
+    { "id": "S9", "no": 9, "title": { "en": "Quality Management", "ar": "إدارة الجودة" }, "pageLimit": 2, "requirements": ["T-11"] }
+  ],
+  "certificates": [
+    { "id": "lic", "name": "Trade licence (FM activities)", "name_ar": "الرخصة التجارية", "number": "CN-2207815", "expiry": "2027-05-19", "requirement": "M-01", "mustCover": "closing", "docId": "RFM-LIB-001" },
+    { "id": "sup", "name": "MNDA Supplier Portal registration", "name_ar": "التسجيل في بوابة موردي الهيئة", "number": "MNDA-SUP-00417", "expiry": "2027-03-31", "requirement": "M-01", "mustCover": "closing", "docId": "RFM-LIB-001" },
+    { "id": "iso41001", "name": "ISO 41001:2018 Facility management", "name_ar": "شهادة الأيزو 41001", "number": "FMS-41001-2207", "expiry": "2028-03-11", "requirement": "M-02", "mustCover": "validity", "docId": "RFM-LIB-002" },
+    { "id": "iso45001", "name": "ISO 45001:2018 Occupational health & safety", "name_ar": "شهادة الأيزو 45001", "number": "OHS-45001-1183", "expiry": "2026-11-30", "requirement": "M-03", "mustCover": "validity", "docId": "RFM-LIB-002", "note": "Recertification audit booked 10–12 Nov 2026" },
+    { "id": "iso9001", "name": "ISO 9001:2015 Quality management", "name_ar": "شهادة الأيزو 9001", "number": "QMS-9001-0954", "expiry": "2027-06-18", "requirement": "T-11", "mustCover": "closing", "docId": "RFM-LIB-002" },
+    { "id": "pl", "name": "Public liability insurance — AED 10,000,000", "name_ar": "تأمين المسؤولية تجاه الغير — 10,000,000 درهم", "number": "PL-RFM-2025-0447", "expiry": "2026-10-15", "requirement": "M-04", "mustCover": "closing", "docId": "RFM-LIB-003", "note": "Renewal quotation under review by Group Finance" },
+    { "id": "wc", "name": "Workmen's compensation & employer's liability", "name_ar": "تأمين تعويض العمال ومسؤولية صاحب العمل", "number": "WC-RFM-2026-0112", "expiry": "2027-03-31", "requirement": "M-05", "mustCover": "closing", "docId": "RFM-LIB-003" },
+    { "id": "icv", "name": "ICV certificate — score 31.4%", "name_ar": "شهادة القيمة الوطنية المضافة — 31.4%", "number": "ICV-2026-0418772", "issued": "2026-02-03", "expiry": "2027-02-02", "score": 31.4, "minScore": 25, "requirement": "M-06", "mustCover": "closing", "docId": "RFM-LIB-004" }
+  ],
+  "forms": [
+    { "id": "F-1", "name": { "en": "Form of Tender", "ar": "نموذج العطاء" }, "requirement": "M-08", "owner": "Leena Mattar", "status": "pending_signature", "note": { "en": "Prepared — awaiting signature by the General Manager", "ar": "مُعدّ — بانتظار توقيع المدير العام" } },
+    { "id": "F-2", "name": { "en": "Compliance & Deviations Statement", "ar": "بيان الامتثال والانحرافات" }, "requirement": "M-08", "owner": "Leena Mattar", "status": "in_progress", "note": { "en": "Generated from the compliance matrix at approval", "ar": "يُولَّد من مصفوفة الامتثال عند الاعتماد" } },
+    { "id": "F-3", "name": { "en": "Declaration of No Conflict of Interest", "ar": "إقرار عدم تضارب المصالح" }, "requirement": "M-08", "owner": "Leena Mattar", "status": "not_started", "note": { "en": "Not yet circulated for signature", "ar": "لم يُعمَّم للتوقيع بعد" } },
+    { "id": "F-4", "name": { "en": "Priced Bill of Quantities", "ar": "جدول الكميات المسعّر" }, "requirement": "C-01", "owner": "Maha Saleh", "status": "in_progress", "note": { "en": "Price build-up v2 under commercial review", "ar": "النسخة الثانية من التسعير قيد المراجعة التجارية" } },
+    { "id": "F-5", "name": { "en": "Bid Security — AED 100,000 bank guarantee", "ar": "ضمان العطاء — كفالة بنكية بقيمة 100,000 درهم" }, "requirement": "M-07", "owner": "Priya Raghavan", "status": "requested", "note": { "en": "Requested from bank on 7 Oct — issue expected 15 Oct", "ar": "طُلبت من البنك في 7 أكتوبر — الإصدار المتوقع 15 أكتوبر" } },
+    { "id": "F-6", "name": { "en": "Manpower Schedule", "ar": "جدول القوى العاملة" }, "requirement": "S-01", "owner": "Sanjay Nair", "status": "in_progress", "note": { "en": "Headcount by site drafted; Emiratisation line pending", "ar": "أُعدّ عدد العاملين لكل موقع؛ بند التوطين معلّق" } }
+  ],
+  "emiratisation": { "plannedTeam": 61, "plannedNationals": 4, "targetPct": 8, "targetMonth": 12, "companyPct": 6.48 },
+  "financials": { "turnover2025": 261700000, "minTurnover": 20000000 },
+  "seedDrafts": {
+    "S1": {
+      "label": "v0.3",
+      "author": "Hana Yousef · Marketing & Brand",
+      "at": "2026-10-02T15:20:00+04:00",
+      "lang": "en",
+      "text": "Raseen Facilities Management LLC is pleased to submit its technical proposal for Facilities Management Services at Al Ghaf Community Centre and four satellite community facilities under tender MNDA/PRC/2026/057.\n\nAs the Authority's facilities management partner for its community centres since January 2024, Raseen FM knows these buildings, their users and their seasonal demands better than any other provider. Our team has achieved 100% PPM compliance across all MNDA community centres since mobilisation. Our helpdesk resolves 98% of requests at first contact.\n\nRaseen FM employs 1,096 people and manages 46 sites covering 1,874,000 m² across the UAE. We hold ISO 41001, ISO 45001, ISO 9001, ISO 14001 and ISO 50001 certifications. We have recorded zero lost-time injuries in the last five years.\n\nOur in-house CAFM platform, RFM Connect, is hosted in the UAE and gives the Authority real-time visibility of every work order through a read-only client portal. The RFM Care Centre operates 24 hours a day in Arabic and English through a single toll-free number.\n\nWith an In-Country Value score of 31.4% and a structured Emiratisation programme, Raseen FM is committed to building national capability in the facilities management sector.\n\nWe propose a dedicated team led by Sanjay Nair, a Certified Facility Manager with 19 years of experience, who currently manages the Authority's community centres contract."
+    }
+  }
+}

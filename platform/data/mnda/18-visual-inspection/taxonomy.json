@@ -1,0 +1,148 @@
+{
+  "regulation": {
+    "code": "CSSR-2025",
+    "title": "MNDA Construction Site Safety Regulation",
+    "title_ar": "لائحة السلامة في مواقع البناء",
+    "ref": "MNDA/FOI/REG/03/2025",
+    "issued": "2025-01-20",
+    "effective": "2025-03-01",
+    "owner": "Field Operations & Inspection Department"
+  },
+  "severities": {
+    "critical": { "en": "Critical", "ar": "حرجة", "dueDays": 1, "dueBasis": "calendar", "rule": "Rectify within 24 hours; affected work area stopped until verified (CSSR-2025 Art. 31.2)", "rule_ar": "التصحيح خلال 24 ساعة مع إيقاف العمل في المنطقة المتأثرة لحين التحقق (المادة 31.2)", "penaltyAed": 10000 },
+    "major": { "en": "Major", "ar": "جسيمة", "dueDays": 3, "dueBasis": "working", "rule": "Rectify within 3 working days (CSSR-2025 Art. 31.3)", "rule_ar": "التصحيح خلال 3 أيام عمل (المادة 31.3)", "penaltyAed": 5000 },
+    "minor": { "en": "Minor", "ar": "بسيطة", "dueDays": 7, "dueBasis": "working", "rule": "Rectify within 7 working days (CSSR-2025 Art. 31.4)", "rule_ar": "التصحيح خلال 7 أيام عمل (المادة 31.4)", "penaltyAed": 1000 }
+  },
+  "defects": [
+    {
+      "code": "D01",
+      "name": "Missing or inadequate edge protection",
+      "name_ar": "غياب حماية الحواف المفتوحة أو عدم كفايتها",
+      "severity": "critical",
+      "article": "Art. 12.3",
+      "requirement": "Every open edge, slab perimeter, floor opening or stair void where a person could fall 2 m or more shall have guardrails: top rail 950–1,100 mm, intermediate rail, and toe board of at least 150 mm, or an equivalent barrier.",
+      "requirement_ar": "يجب تزويد كل حافة مفتوحة أو محيط بلاطة أو فتحة أرضية أو فراغ درج يمكن السقوط منه من ارتفاع 2 متر فأكثر بحاجز حماية: درابزين علوي بارتفاع 950–1,100 مم، ودرابزين أوسط، ولوح قدم لا يقل عن 150 مم، أو حاجز مكافئ.",
+      "visualCues": "slab edges, balconies, roofs or floor openings with no guardrail, missing mid-rail or toe board, workers near an unprotected drop"
+    },
+    {
+      "code": "D02",
+      "name": "PPE non-compliance",
+      "name_ar": "عدم الالتزام بمعدات الوقاية الشخصية",
+      "severity": "major",
+      "article": "Art. 8.1",
+      "requirement": "All persons on site shall wear a safety helmet, high-visibility vest or clothing, and safety footwear at all times; eye, hearing and hand protection where the task requires; a full-body harness clipped to a rated anchor when working at height without collective protection.",
+      "requirement_ar": "يجب على جميع الأشخاص في الموقع ارتداء خوذة السلامة وسترة أو ملابس عالية الوضوح وأحذية السلامة في جميع الأوقات، ووسائل حماية العين والسمع واليدين حين تتطلب المهمة ذلك، وحزام أمان كامل للجسم مثبت بنقطة تثبيت معتمدة عند العمل على ارتفاع دون حماية جماعية.",
+      "visualCues": "workers without hard hats, without hi-vis, in sandals or trainers, at height without harness"
+    },
+    {
+      "code": "D03",
+      "name": "Unsafe scaffolding",
+      "name_ar": "سقالات غير آمنة",
+      "severity": "critical",
+      "article": "Art. 15.2",
+      "requirement": "Scaffolds shall be erected by competent persons, fully boarded at working lifts, fitted with guardrails and toe boards, braced and tied to the structure, set on base plates and sole boards, and carry a valid scaffold inspection tag (green) renewed every 7 days.",
+      "requirement_ar": "يجب أن تُنصب السقالات بواسطة أشخاص مؤهلين، وأن تكون منصات العمل مكتملة الألواح، ومزودة بدرابزين وألواح قدم، ومدعّمة ومربوطة بالمنشأ، ومرتكزة على ألواح قاعدية وألواح توزيع، وتحمل بطاقة فحص سارية (خضراء) تُجدد كل 7 أيام.",
+      "visualCues": "scaffold lifts without guardrails or toe boards, partly boarded platforms, missing bracing, no base plates, ladders tied improperly, no inspection tag"
+    },
+    {
+      "code": "D04",
+      "name": "Unprotected rebar starters",
+      "name_ar": "أشاير حديد تسليح مكشوفة دون حماية",
+      "severity": "major",
+      "article": "Art. 13.6",
+      "requirement": "Protruding reinforcement bars (starter bars, dowels) that present an impalement or laceration hazard shall be capped with approved mushroom caps or covered with protective troughs.",
+      "requirement_ar": "يجب تغطية قضبان حديد التسليح البارزة (الأشاير والوصلات) التي تشكل خطر الاختراق أو الجرح بأغطية واقية معتمدة (فطرية الشكل) أو بمجارٍ واقية.",
+      "visualCues": "vertical rebar ends sticking out of columns, walls or slabs without orange/yellow caps"
+    },
+    {
+      "code": "D05",
+      "name": "Poor housekeeping",
+      "name_ar": "سوء التنظيم والنظافة في الموقع",
+      "severity": "minor",
+      "article": "Art. 21.1",
+      "requirement": "Work areas, walkways and stairs shall be kept free of debris, offcuts, packaging and waste; waste shall be removed to designated skips at least daily.",
+      "requirement_ar": "يجب إبقاء مناطق العمل والممرات والسلالم خالية من المخلفات والقصاصات ومواد التغليف، ونقل النفايات إلى الحاويات المخصصة يومياً على الأقل.",
+      "visualCues": "scattered debris, timber offcuts, loose materials in walkways, waste piles, trip hazards"
+    },
+    {
+      "code": "D06",
+      "name": "Damaged hoarding or missing site signage",
+      "name_ar": "تلف سياج الموقع أو غياب اللوحات الإرشادية",
+      "severity": "major",
+      "article": "Art. 6.2",
+      "requirement": "Sites adjoining public areas shall be enclosed by continuous, undamaged hoarding at least 2.4 m high, and display a bilingual site board (permit number, contractor, consultant, emergency contact) and mandatory safety signage at every gate.",
+      "requirement_ar": "يجب أن تُحاط المواقع المجاورة للمناطق العامة بسياج متصل وسليم لا يقل ارتفاعه عن 2.4 متر، وأن تُعرض لوحة موقع ثنائية اللغة (رقم الرخصة، المقاول، الاستشاري، رقم الطوارئ) ولوحات السلامة الإلزامية عند كل بوابة.",
+      "visualCues": "gaps or fallen panels in hoarding, open perimeter to public road, no site board, no safety signs at gate"
+    },
+    {
+      "code": "D07",
+      "name": "Open excavation without barriers",
+      "name_ar": "حفريات مكشوفة دون حواجز",
+      "severity": "critical",
+      "article": "Art. 17.4",
+      "requirement": "Excavations deeper than 1.2 m shall be shored, battered or benched; edges shall be protected by rigid barriers set at least 1 m back from the edge; spoil and materials kept at least 1 m from the edge; safe access by ladder or ramp provided.",
+      "requirement_ar": "يجب تدعيم الحفريات التي يزيد عمقها على 1.2 متر أو تشكيل جوانبها بميول أو مدرجات، وحماية حوافها بحواجز صلبة على بعد متر واحد على الأقل من الحافة، وإبعاد ناتج الحفر والمواد مسافة متر على الأقل، وتوفير وصول آمن بسلم أو منحدر.",
+      "visualCues": "open trench or pit with no barrier, spoil heaped at edge, vertical unsupported sides, no ladder"
+    },
+    {
+      "code": "D08",
+      "name": "Missing or non-compliant fire extinguisher",
+      "name_ar": "غياب طفاية الحريق أو عدم مطابقتها",
+      "severity": "major",
+      "article": "Art. 19.2",
+      "requirement": "A charged, inspected fire extinguisher of suitable type shall be within 10 m of every hot-work location, fuel or gas store, generator and site office, mounted or on a stand and visibly signed.",
+      "requirement_ar": "يجب توفير طفاية حريق مشحونة ومفحوصة ومن النوع المناسب على بعد لا يزيد عن 10 أمتار من كل موقع أعمال ساخنة ومخزن وقود أو غاز ومولد ومكتب موقع، مثبتة أو على حامل ومعلّمة بوضوح.",
+      "visualCues": "welding, cutting or generator with no extinguisher nearby, empty extinguisher stand, gas cylinders without extinguisher"
+    },
+    {
+      "code": "D09",
+      "name": "Unsafe ladder use",
+      "name_ar": "استخدام غير آمن للسلالم",
+      "severity": "major",
+      "article": "Art. 16.3",
+      "requirement": "Ladders shall be industrial grade, undamaged, set at about 75° (1:4), secured top or bottom, extend 1 m above the landing, and used for access or short-duration light work only, maintaining three points of contact.",
+      "requirement_ar": "يجب أن تكون السلالم من الفئة الصناعية وسليمة، مثبتة بزاوية 75 درجة تقريباً (1:4)، ومربوطة من الأعلى أو الأسفل، وتمتد متراً واحداً فوق منصة الوصول، وتُستخدم للوصول أو للأعمال الخفيفة القصيرة فقط مع الحفاظ على ثلاث نقاط تلامس.",
+      "visualCues": "makeshift or damaged ladder, unsecured ladder, ladder too steep or too shallow, standing on top rungs, ladder used as platform"
+    },
+    {
+      "code": "D10",
+      "name": "Exposed or unsafe electrical installation",
+      "name_ar": "تمديدات كهربائية مكشوفة أو غير آمنة",
+      "severity": "critical",
+      "article": "Art. 18.2",
+      "requirement": "Temporary electrical supplies shall be installed by a licensed electrician, protected by 30 mA RCDs, with distribution boards closed and locked; cables shall be armoured or protected, routed overhead or along edges, and kept out of water and walkways.",
+      "requirement_ar": "يجب أن تُنفذ التمديدات الكهربائية المؤقتة بواسطة كهربائي مرخّص، ومحمية بقواطع تيار متبقٍ 30 مللي أمبير، مع إغلاق لوحات التوزيع وقفلها، وأن تكون الكابلات مدرعة أو محمية وممدودة علوياً أو على الأطراف وبعيدة عن المياه والممرات.",
+      "visualCues": "loose cables across walkways or in water, damaged insulation, open distribution boards, taped joints, improvised connections"
+    },
+    {
+      "code": "D11",
+      "name": "Unsafe material stacking",
+      "name_ar": "تكديس غير آمن للمواد",
+      "severity": "major",
+      "article": "Art. 21.4",
+      "requirement": "Materials shall be stacked on firm level ground, stable and interlocked, no higher than 2 m (or 3 times the base width), kept at least 1 m from slab edges and excavations, and secured against wind.",
+      "requirement_ar": "يجب تكديس المواد على أرض ثابتة ومستوية بشكل متماسك ومتداخل، وبارتفاع لا يتجاوز 2 متر (أو ثلاثة أضعاف عرض القاعدة)، وعلى بعد متر واحد على الأقل من حواف البلاطات والحفريات، ومؤمّنة ضد الرياح.",
+      "visualCues": "leaning or tall stacks of blocks, pipes, formwork or rebar; materials stored at slab edges or excavation edges; unsecured sheets"
+    },
+    {
+      "code": "D12",
+      "name": "Blocked access or emergency egress",
+      "name_ar": "إعاقة ممرات الوصول أو مخارج الطوارئ",
+      "severity": "major",
+      "article": "Art. 20.3",
+      "requirement": "Designated pedestrian routes, stair cores, emergency exits and assembly-point routes shall be kept clear at all times, at least 1.2 m wide, and separated from vehicle routes.",
+      "requirement_ar": "يجب إبقاء ممرات المشاة المحددة وأبراج السلالم ومخارج الطوارئ ومسارات نقاط التجمع خالية في جميع الأوقات، بعرض لا يقل عن 1.2 متر، ومنفصلة عن مسارات المركبات.",
+      "visualCues": "materials or equipment blocking stairs, doorways, walkways or emergency routes; no segregated pedestrian path"
+    },
+    {
+      "code": "D13",
+      "name": "Lifting operation without exclusion zone",
+      "name_ar": "عمليات رفع دون منطقة حظر",
+      "severity": "critical",
+      "article": "Art. 22.5",
+      "requirement": "During lifting operations the area beneath and around the suspended load shall be barricaded as an exclusion zone, controlled by a certified banksman/signaller; no person shall stand or pass under a suspended load.",
+      "requirement_ar": "يجب أثناء عمليات الرفع تطويق المنطقة أسفل الحمولة المعلقة وحولها كمنطقة حظر يديرها مُرشد رفع معتمد، ويُحظر وقوف أي شخص أو مروره أسفل الحمولة المعلقة.",
+      "visualCues": "crane or hoist load suspended over workers, no barricade around lift area, no banksman visible"
+    }
+  ]
+}

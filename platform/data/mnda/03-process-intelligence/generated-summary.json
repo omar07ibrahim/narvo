@@ -1,0 +1,30 @@
+{
+  "generatedFrom": "generate.mjs (seeded)",
+  "q3Applications": 1047,
+  "q3Completed": 858,
+  "q3Open": 189,
+  "medianCycle": 21.6,
+  "medianGated": 27.9,
+  "medianNonGated": 16.8,
+  "nocHoldMean": 9.2,
+  "luluNocMean": 12.4,
+  "reworkPct": 27,
+  "returnedCases": 283,
+  "returnEvents": 307,
+  "returnMixPct": {
+    "struct": 17.9,
+    "other": 22.1,
+    "site": 14,
+    "noc": 45.9
+  },
+  "issuedByMonth": {
+    "2026-06": 175,
+    "2026-07": 306,
+    "2026-08": 282,
+    "2026-09": 348,
+    "2026-10": 100
+  },
+  "q3IssuedPerMonth": 312,
+  "pilotCases": 114,
+  "events": 8670
+}

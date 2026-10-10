@@ -1,0 +1,67 @@
+[
+  {
+    "id": "AGCC",
+    "name": "Al Ghaf Community Centre",
+    "name_ar": "مركز مجتمع الغاف",
+    "district": "MN-07",
+    "plot": "MN-07-112-0004",
+    "client": "Marsa Al Noor Development Authority (MNDA)",
+    "contract": "MNDA/CON/2023/019",
+    "built": 2019,
+    "gfaM2": 14200,
+    "access": "Roof plant deck via service stair S-2; roof access key at Security Control Room; permit-to-work issued by Raseen FM site lead.",
+    "contact": { "name": "Salem Obaid Al Remeithi", "role": "Centre Manager (MNDA)", "phone": "+971 50 337 4182" }
+  },
+  {
+    "id": "AMCC",
+    "name": "Al Murjan Community Centre",
+    "name_ar": "مركز مجتمع المرجان",
+    "district": "MN-02",
+    "plot": "MN-02-041-0017",
+    "client": "Marsa Al Noor Development Authority (MNDA)",
+    "contract": "MNDA/CON/2023/019",
+    "built": 2012,
+    "gfaM2": 6850,
+    "access": "Plant room at basement B1, key with duty security guard.",
+    "contact": { "name": "Moza Hamad Al Shamsi", "role": "Centre Supervisor (MNDA)", "phone": "+971 56 210 9937" }
+  },
+  {
+    "id": "AWFC",
+    "name": "Al Waha Gardens Family Centre",
+    "name_ar": "مركز الأسرة في حدائق الواحة",
+    "district": "MN-04",
+    "plot": "MN-04-117-0052",
+    "client": "Marsa Al Noor Development Authority (MNDA)",
+    "contract": "MNDA/CON/2023/019",
+    "built": 2021,
+    "gfaM2": 4300,
+    "access": "Ground-floor plant room PR-01 off the service yard.",
+    "contact": { "name": "Aisha Khalfan Al Ketbi", "role": "Centre Coordinator (MNDA)", "phone": "+971 50 884 2361" }
+  },
+  {
+    "id": "DYSH",
+    "name": "Downtown Youth & Sports Hall",
+    "name_ar": "قاعة الشباب والرياضة – وسط المدينة",
+    "district": "MN-01",
+    "plot": "MN-01-008-0021",
+    "client": "Marsa Al Noor Development Authority (MNDA)",
+    "contract": "MNDA/CON/2023/019",
+    "built": 2015,
+    "gfaM2": 5200,
+    "access": "Service entrance from Corniche Road service lane.",
+    "contact": { "name": "Hamdan Saeed Al Mehairbi", "role": "Facility Officer (MNDA)", "phone": "+971 52 640 1185" }
+  },
+  {
+    "id": "ASCM",
+    "name": "Al Sidr Community Majlis",
+    "name_ar": "مجلس مجتمع السدر",
+    "district": "MN-06",
+    "plot": "MN-06-023-0009",
+    "client": "Marsa Al Noor Development Authority (MNDA)",
+    "contract": "MNDA/CON/2023/019",
+    "built": 2017,
+    "gfaM2": 1650,
+    "access": "Gated community — gate pass via Sidr Communities LLC security, 24 h notice.",
+    "contact": { "name": "Obaid Rashid Al Kaabi", "role": "Majlis Caretaker (MNDA)", "phone": "+971 55 702 4419" }
+  }
+]

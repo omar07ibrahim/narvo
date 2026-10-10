@@ -1,0 +1,5263 @@
+{
+ "generated": "2026-10-09T18:00:00+04:00",
+ "slotMinutes": 30,
+ "note": "Counter capacity per 30-minute slot and bookings already made through all channels (MNDA Smart, website, hotline, centres) as of Fri 9 Oct 2026 18:00.",
+ "slots": [
+  {
+   "id": "downtown-2026-10-12-0730",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-12-0800",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-12-0830",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-12-0900",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-12-0930",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-12-1000",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-12-1030",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-12-1100",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-12-1130",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-12-1200",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-12-1230",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-12-1300",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-12-1330",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-12-1400",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-12-1430",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-12-1500",
+   "centre": "downtown",
+   "date": "2026-10-12",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-12-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-12-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-12-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-12-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-12-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-12-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-12-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-12-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-12-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-12-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-12-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-12-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-12-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-12-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-12-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-12-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-12",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-12-0730",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-0800",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-0830",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-0900",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-0930",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-1000",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-1030",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-1100",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-1130",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-12-1200",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-1230",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-1300",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-1330",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-1400",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-1430",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-12-1500",
+   "centre": "al-waha",
+   "date": "2026-10-12",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-13-0730",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-0800",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-0830",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-0900",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-0930",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-13-1000",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-1030",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-1100",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-1130",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-1200",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-1230",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-1300",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-1330",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-13-1400",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-13-1430",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-13-1500",
+   "centre": "downtown",
+   "date": "2026-10-13",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "al-murjan-2026-10-13-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-13-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-13-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-13-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-13-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-13-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-13-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-13-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-13-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-13-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-13-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-13-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-13-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-13-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-13-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-13-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-13",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-0730",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-0800",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-0830",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-0900",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-0930",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-1000",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-1030",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-1100",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-1130",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-1200",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-1230",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-1300",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-1330",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-1400",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-1430",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-13-1500",
+   "centre": "al-waha",
+   "date": "2026-10-13",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-14-0730",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-14-0800",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-14-0830",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-14-0900",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-14-0930",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-14-1000",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-14-1030",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-14-1100",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-14-1130",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-14-1200",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-14-1230",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-14-1300",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-14-1330",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-14-1400",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-14-1430",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-14-1500",
+   "centre": "downtown",
+   "date": "2026-10-14",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "al-murjan-2026-10-14-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-14-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-14-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-14-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-14-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-14-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-14-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-14-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-14-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-14-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-14-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-14-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-14-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-14-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-14-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-14-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-14",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-0730",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-0800",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-0830",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-0900",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-0930",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-1000",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-1030",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-1100",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-1130",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-1200",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-1230",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-1300",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-1330",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-1400",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-14-1430",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-14-1500",
+   "centre": "al-waha",
+   "date": "2026-10-14",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-15-0730",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-15-0800",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-15-0830",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-15-0900",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-15-0930",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-15-1000",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-15-1030",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-15-1100",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-15-1130",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-15-1200",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-15-1230",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-15-1300",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-15-1330",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-15-1400",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-15-1430",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-15-1500",
+   "centre": "downtown",
+   "date": "2026-10-15",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "al-murjan-2026-10-15-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-15-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-15-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-15-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-15-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-15-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-15-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-15-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-15-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-15-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-15-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-15-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-15-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-15-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-15-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-15-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-15",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-15-0730",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-0800",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-0830",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-0900",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-0930",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-1000",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-1030",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-1100",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-1130",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-1200",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-1230",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-1300",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-1330",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-1400",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-15-1430",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-15-1500",
+   "centre": "al-waha",
+   "date": "2026-10-15",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-16-0730",
+   "centre": "downtown",
+   "date": "2026-10-16",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-16-0800",
+   "centre": "downtown",
+   "date": "2026-10-16",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-16-0830",
+   "centre": "downtown",
+   "date": "2026-10-16",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-16-0900",
+   "centre": "downtown",
+   "date": "2026-10-16",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-16-0930",
+   "centre": "downtown",
+   "date": "2026-10-16",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-16-1000",
+   "centre": "downtown",
+   "date": "2026-10-16",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-16-1030",
+   "centre": "downtown",
+   "date": "2026-10-16",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-16-1100",
+   "centre": "downtown",
+   "date": "2026-10-16",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-16-1130",
+   "centre": "downtown",
+   "date": "2026-10-16",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "al-murjan-2026-10-16-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-16",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-16-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-16",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-16-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-16",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-16-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-16",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-16-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-16",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-16-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-16",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-16-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-16",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-16-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-16",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-16-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-16",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-waha-2026-10-16-0730",
+   "centre": "al-waha",
+   "date": "2026-10-16",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-16-0800",
+   "centre": "al-waha",
+   "date": "2026-10-16",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-16-0830",
+   "centre": "al-waha",
+   "date": "2026-10-16",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-16-0900",
+   "centre": "al-waha",
+   "date": "2026-10-16",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-16-0930",
+   "centre": "al-waha",
+   "date": "2026-10-16",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-16-1000",
+   "centre": "al-waha",
+   "date": "2026-10-16",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-16-1030",
+   "centre": "al-waha",
+   "date": "2026-10-16",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-16-1100",
+   "centre": "al-waha",
+   "date": "2026-10-16",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-16-1130",
+   "centre": "al-waha",
+   "date": "2026-10-16",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-19-0730",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-19-0800",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-19-0830",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-19-0900",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-19-0930",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-19-1000",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-19-1030",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-19-1100",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-19-1130",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-19-1200",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-19-1230",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-19-1300",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-19-1330",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-19-1400",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-19-1430",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-19-1500",
+   "centre": "downtown",
+   "date": "2026-10-19",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-19-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-19-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-19-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-19-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-19-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-19-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-19-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-19-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-19-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-19-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-19-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-19-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-19-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-19-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-19-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-19-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-19",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-19-0730",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-19-0800",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-19-0830",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-19-0900",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-19-0930",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-19-1000",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-19-1030",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-19-1100",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-19-1130",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-19-1200",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-19-1230",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-19-1300",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-19-1330",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-19-1400",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-19-1430",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-19-1500",
+   "centre": "al-waha",
+   "date": "2026-10-19",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-20-0730",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-20-0800",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-20-0830",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-20-0900",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-20-0930",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-20-1000",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-20-1030",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-20-1100",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-20-1130",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-20-1200",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-20-1230",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-20-1300",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-20-1330",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-20-1400",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-20-1430",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-20-1500",
+   "centre": "downtown",
+   "date": "2026-10-20",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-20-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-20-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-20-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-20-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-20-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-20-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-20-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-20-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-20-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-20-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-20-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-20-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-20-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-20-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-20-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-20-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-20",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-waha-2026-10-20-0730",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-20-0800",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-20-0830",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-20-0900",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-20-0930",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-20-1000",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-20-1030",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-20-1100",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-20-1130",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-20-1200",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-20-1230",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-20-1300",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-20-1330",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-20-1400",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-20-1430",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-20-1500",
+   "centre": "al-waha",
+   "date": "2026-10-20",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-21-0730",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-21-0800",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-21-0830",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-21-0900",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-21-0930",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-21-1000",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-21-1030",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-21-1100",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-21-1130",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-21-1200",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-21-1230",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-21-1300",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-21-1330",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-21-1400",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-21-1430",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-21-1500",
+   "centre": "downtown",
+   "date": "2026-10-21",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-21-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-21-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-21-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-21-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-21-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-21-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-21-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-21-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-21-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-21-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-21-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-21-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-21-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-21-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-21-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-21-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-21",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-21-0730",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-21-0800",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-21-0830",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-21-0900",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-21-0930",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-21-1000",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-21-1030",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-21-1100",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-21-1130",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-21-1200",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-21-1230",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-21-1300",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-21-1330",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-21-1400",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-21-1430",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-21-1500",
+   "centre": "al-waha",
+   "date": "2026-10-21",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-22-0730",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-22-0800",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-22-0830",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-22-0900",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-22-0930",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-22-1000",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-22-1030",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-22-1100",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-22-1130",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-22-1200",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-22-1230",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-22-1300",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-22-1330",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-22-1400",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-22-1430",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-22-1500",
+   "centre": "downtown",
+   "date": "2026-10-22",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-22-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-22-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-22-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-22-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-22-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-22-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-22-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-22-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-22-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-22-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-22-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-22-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-22-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-22-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-22-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-22-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-22",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-22-0730",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-22-0800",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-22-0830",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-22-0900",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-22-0930",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-22-1000",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-22-1030",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-22-1100",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-22-1130",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-22-1200",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-22-1230",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-22-1300",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-22-1330",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-22-1400",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-22-1430",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-22-1500",
+   "centre": "al-waha",
+   "date": "2026-10-22",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-23-0730",
+   "centre": "downtown",
+   "date": "2026-10-23",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-23-0800",
+   "centre": "downtown",
+   "date": "2026-10-23",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-23-0830",
+   "centre": "downtown",
+   "date": "2026-10-23",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-23-0900",
+   "centre": "downtown",
+   "date": "2026-10-23",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-23-0930",
+   "centre": "downtown",
+   "date": "2026-10-23",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-23-1000",
+   "centre": "downtown",
+   "date": "2026-10-23",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-23-1030",
+   "centre": "downtown",
+   "date": "2026-10-23",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-23-1100",
+   "centre": "downtown",
+   "date": "2026-10-23",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-23-1130",
+   "centre": "downtown",
+   "date": "2026-10-23",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-23-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-23",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-23-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-23",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-23-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-23",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-23-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-23",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-23-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-23",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-23-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-23",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-23-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-23",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-23-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-23",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-23-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-23",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-23-0730",
+   "centre": "al-waha",
+   "date": "2026-10-23",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-23-0800",
+   "centre": "al-waha",
+   "date": "2026-10-23",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-23-0830",
+   "centre": "al-waha",
+   "date": "2026-10-23",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-23-0900",
+   "centre": "al-waha",
+   "date": "2026-10-23",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-23-0930",
+   "centre": "al-waha",
+   "date": "2026-10-23",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-23-1000",
+   "centre": "al-waha",
+   "date": "2026-10-23",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-23-1030",
+   "centre": "al-waha",
+   "date": "2026-10-23",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-23-1100",
+   "centre": "al-waha",
+   "date": "2026-10-23",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-23-1130",
+   "centre": "al-waha",
+   "date": "2026-10-23",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-26-0730",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-26-0800",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-26-0830",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-26-0900",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-26-0930",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-26-1000",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-26-1030",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-26-1100",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-26-1130",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-26-1200",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-26-1230",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-26-1300",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-26-1330",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-26-1400",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-26-1430",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-26-1500",
+   "centre": "downtown",
+   "date": "2026-10-26",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-26-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-26-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-26-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-26-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-26-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-26-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-26-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-26-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-26-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-26-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-26-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-26-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-26-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-26-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-26-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-26-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-26",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-waha-2026-10-26-0730",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-26-0800",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-26-0830",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-26-0900",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-26-0930",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-26-1000",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-26-1030",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-26-1100",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-26-1130",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-26-1200",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-26-1230",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-26-1300",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-26-1330",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-26-1400",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-26-1430",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-26-1500",
+   "centre": "al-waha",
+   "date": "2026-10-26",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-27-0730",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-27-0800",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-27-0830",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-27-0900",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-27-0930",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-27-1000",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-27-1030",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-27-1100",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-27-1130",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-27-1200",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-27-1230",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-27-1300",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-27-1330",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-27-1400",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-27-1430",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-27-1500",
+   "centre": "downtown",
+   "date": "2026-10-27",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-27-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-27-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-27-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-27-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-27-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-27-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-27-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-27-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-27-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-27-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-27-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-27-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-27-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-27-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-27-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-27-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-27",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-27-0730",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-27-0800",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-27-0830",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-27-0900",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-27-0930",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-27-1000",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-27-1030",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-27-1100",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-27-1130",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-27-1200",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-27-1230",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-27-1300",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-27-1330",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-27-1400",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-27-1430",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-27-1500",
+   "centre": "al-waha",
+   "date": "2026-10-27",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-28-0730",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-28-0800",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-28-0830",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-28-0900",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-28-0930",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-28-1000",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-28-1030",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-28-1100",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-28-1130",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-28-1200",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-28-1230",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-28-1300",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-28-1330",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-28-1400",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-28-1430",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-28-1500",
+   "centre": "downtown",
+   "date": "2026-10-28",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-28-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-28-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-28-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-28-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-28-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-28-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-28-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-28-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-28-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-28-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-28-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-28-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-28-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-28-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-28-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-28-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-28",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-28-0730",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-28-0800",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-28-0830",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-28-0900",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-28-0930",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-28-1000",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-28-1030",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-28-1100",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-28-1130",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-28-1200",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-28-1230",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-28-1300",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-28-1330",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-28-1400",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-28-1430",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-28-1500",
+   "centre": "al-waha",
+   "date": "2026-10-28",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-29-0730",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-29-0800",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-29-0830",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-29-0900",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-29-0930",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-29-1000",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-29-1030",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-29-1100",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-29-1130",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-29-1200",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "12:00",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-29-1230",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "12:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-29-1300",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "13:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-29-1330",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "13:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-29-1400",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "14:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-29-1430",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "14:30",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-29-1500",
+   "centre": "downtown",
+   "date": "2026-10-29",
+   "time": "15:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-29-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-29-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-29-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 3
+  },
+  {
+   "id": "al-murjan-2026-10-29-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-29-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-29-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-29-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-29-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-29-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-29-1200",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "12:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-29-1230",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "12:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-29-1300",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "13:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-29-1330",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "13:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-29-1400",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "14:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-29-1430",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "14:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-29-1500",
+   "centre": "al-murjan",
+   "date": "2026-10-29",
+   "time": "15:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-29-0730",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-29-0800",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-29-0830",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-29-0900",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-29-0930",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-29-1000",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-29-1030",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-29-1100",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-29-1130",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-29-1200",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "12:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-29-1230",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "12:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-29-1300",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "13:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-29-1330",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "13:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-29-1400",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "14:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-29-1430",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "14:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-29-1500",
+   "centre": "al-waha",
+   "date": "2026-10-29",
+   "time": "15:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-30-0730",
+   "centre": "downtown",
+   "date": "2026-10-30",
+   "time": "07:30",
+   "capacity": 4,
+   "booked": 4
+  },
+  {
+   "id": "downtown-2026-10-30-0800",
+   "centre": "downtown",
+   "date": "2026-10-30",
+   "time": "08:00",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-30-0830",
+   "centre": "downtown",
+   "date": "2026-10-30",
+   "time": "08:30",
+   "capacity": 4,
+   "booked": 3
+  },
+  {
+   "id": "downtown-2026-10-30-0900",
+   "centre": "downtown",
+   "date": "2026-10-30",
+   "time": "09:00",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "downtown-2026-10-30-0930",
+   "centre": "downtown",
+   "date": "2026-10-30",
+   "time": "09:30",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-30-1000",
+   "centre": "downtown",
+   "date": "2026-10-30",
+   "time": "10:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-30-1030",
+   "centre": "downtown",
+   "date": "2026-10-30",
+   "time": "10:30",
+   "capacity": 4,
+   "booked": 2
+  },
+  {
+   "id": "downtown-2026-10-30-1100",
+   "centre": "downtown",
+   "date": "2026-10-30",
+   "time": "11:00",
+   "capacity": 4,
+   "booked": 1
+  },
+  {
+   "id": "downtown-2026-10-30-1130",
+   "centre": "downtown",
+   "date": "2026-10-30",
+   "time": "11:30",
+   "capacity": 4,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-30-0730",
+   "centre": "al-murjan",
+   "date": "2026-10-30",
+   "time": "07:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-30-0800",
+   "centre": "al-murjan",
+   "date": "2026-10-30",
+   "time": "08:00",
+   "capacity": 3,
+   "booked": 0
+  },
+  {
+   "id": "al-murjan-2026-10-30-0830",
+   "centre": "al-murjan",
+   "date": "2026-10-30",
+   "time": "08:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-30-0900",
+   "centre": "al-murjan",
+   "date": "2026-10-30",
+   "time": "09:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-30-0930",
+   "centre": "al-murjan",
+   "date": "2026-10-30",
+   "time": "09:30",
+   "capacity": 3,
+   "booked": 2
+  },
+  {
+   "id": "al-murjan-2026-10-30-1000",
+   "centre": "al-murjan",
+   "date": "2026-10-30",
+   "time": "10:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-30-1030",
+   "centre": "al-murjan",
+   "date": "2026-10-30",
+   "time": "10:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-30-1100",
+   "centre": "al-murjan",
+   "date": "2026-10-30",
+   "time": "11:00",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-murjan-2026-10-30-1130",
+   "centre": "al-murjan",
+   "date": "2026-10-30",
+   "time": "11:30",
+   "capacity": 3,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-30-0730",
+   "centre": "al-waha",
+   "date": "2026-10-30",
+   "time": "07:30",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-30-0800",
+   "centre": "al-waha",
+   "date": "2026-10-30",
+   "time": "08:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-30-0830",
+   "centre": "al-waha",
+   "date": "2026-10-30",
+   "time": "08:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-30-0900",
+   "centre": "al-waha",
+   "date": "2026-10-30",
+   "time": "09:00",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-30-0930",
+   "centre": "al-waha",
+   "date": "2026-10-30",
+   "time": "09:30",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-30-1000",
+   "centre": "al-waha",
+   "date": "2026-10-30",
+   "time": "10:00",
+   "capacity": 2,
+   "booked": 0
+  },
+  {
+   "id": "al-waha-2026-10-30-1030",
+   "centre": "al-waha",
+   "date": "2026-10-30",
+   "time": "10:30",
+   "capacity": 2,
+   "booked": 1
+  },
+  {
+   "id": "al-waha-2026-10-30-1100",
+   "centre": "al-waha",
+   "date": "2026-10-30",
+   "time": "11:00",
+   "capacity": 2,
+   "booked": 2
+  },
+  {
+   "id": "al-waha-2026-10-30-1130",
+   "centre": "al-waha",
+   "date": "2026-10-30",
+   "time": "11:30",
+   "capacity": 2,
+   "booked": 2
+  }
+ ]
+}

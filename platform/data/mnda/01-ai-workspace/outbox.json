@@ -1,0 +1,20 @@
+[
+  {
+    "id": "MAIL-427511",
+    "to": ["layla.almarzooqi@mnda.gov.ae", "faisal.almuhairi@mnda.gov.ae"],
+    "subject": "NOC turnaround data for the Q3 operations review",
+    "body": "Dear Layla, dear Faisal,\n\nFor the Q3 operations performance review, please share the NOC request and issue dates per master developer for all gated-community applications (MN-03, MN-06, MN-08) by Tuesday 6 October. Circular 14/2026 asks master developers to issue NOCs within 7 working days; we need to show where we stand against that.\n\nThank you,\nHessa Abdulla Al Suwaidi\nDirector, Digital Transformation Office",
+    "from": "Hessa Abdulla Al Suwaidi <hessa.alsuwaidi@mnda.gov.ae>",
+    "sentAt": "2026-10-01T11:12:00+04:00",
+    "sources": [{ "docId": "MNDA-CIR-2026-14-EN", "ref": "MNDA/PBP/CIR/14/2026" }]
+  },
+  {
+    "id": "MAIL-418820",
+    "to": ["sara.alblooshi@mnda.gov.ae"],
+    "subject": "Salary certificate validity — talking points for CHC agents",
+    "body": "Dear Sara,\n\nSince 1 September, salary certificates for housing applications must be issued within the last 30 days (Circular 9/2026, item 4.4). Older certificates are treated as missing and stop the file. Could the agents remind callers of this before they upload documents?\n\nRegards,\nKhalfan Mohammed Al Ali\nSenior Case Officer, Housing",
+    "from": "Khalfan Mohammed Al Ali <khalfan.alali@mnda.gov.ae>",
+    "sentAt": "2026-09-07T10:41:00+04:00",
+    "sources": [{ "docId": "MNDA-CIR-2026-09-EN", "ref": "MNDA/HCS/CIR/09/2026" }]
+  }
+]

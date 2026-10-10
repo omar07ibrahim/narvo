@@ -1,0 +1,118 @@
+{
+  "company": "Raseen Building Materials Trading LLC (RBM)",
+  "planner": { "name": "Joseph Abraham", "title": "Supply Chain & Planning Manager", "title_ar": "مدير سلسلة الإمداد والتخطيط" },
+  "historyFrom": "2023-10-02",
+  "historyTo": "2026-10-05",
+  "planStart": "2026-10-12",
+  "planWeeks": 13,
+  "forecastWeeks": 26,
+  "backtestWeeks": 12,
+  "warehouses": [
+    { "id": "JA", "name": "Jebel Ali", "name_ar": "جبل علي", "palletPositions": 18000, "otherPallets": 2140, "rebarYardT": 4200, "storagePerPalletWeek": 4.1, "storagePerTonneWeek": 1.9 },
+    { "id": "MN", "name": "Ras Al Marsa Industrial MN-05", "name_ar": "رأس المرسى الصناعية MN-05", "palletPositions": 6500, "otherPallets": 2520, "rebarYardT": 900, "storagePerPalletWeek": 3.6, "storagePerTonneWeek": 1.7 }
+  ],
+  "families": {
+    "cement": { "en": "Cement", "ar": "الإسمنت", "structural": true },
+    "rebar": { "en": "Rebar", "ar": "حديد التسليح", "structural": true },
+    "blocks": { "en": "Blocks", "ar": "الطابوق", "structural": true },
+    "tiles": { "en": "Tiles", "ar": "البلاط", "structural": false },
+    "sanitary": { "en": "Sanitaryware", "ar": "الأدوات الصحية", "structural": false },
+    "roofing": { "en": "Roofing & waterproofing", "ar": "العزل والأسطح", "structural": false }
+  },
+  "skus": [
+    { "sku": "CEM-OPC-50", "name": "OPC 42.5N cement, 50 kg bag", "name_ar": "إسمنت بورتلاندي 42.5N كيس 50 كغ", "family": "cement", "unit": "bag", "unit_ar": "كيس", "perPallet": 40, "price": 14.2, "cost": 12.1, "supplier": "Northern Emirates Cement Co.", "leadWeeks": 1, "batch": 40, "currentSsWeeks": 0.6 },
+    { "sku": "CEM-SRC-50", "name": "Sulphate-resisting cement, 50 kg bag", "name_ar": "إسمنت مقاوم للكبريتات كيس 50 كغ", "family": "cement", "unit": "bag", "unit_ar": "كيس", "perPallet": 40, "price": 16.8, "cost": 14.35, "supplier": "Northern Emirates Cement Co.", "leadWeeks": 1, "batch": 40, "currentSsWeeks": 0.9 },
+    { "sku": "RB-B500-12", "name": "Rebar B500B Ø12 mm", "name_ar": "حديد تسليح B500B قطر 12 مم", "family": "rebar", "unit": "t", "unit_ar": "طن", "tonnes": true, "price": 2690, "cost": 2410, "supplier": "Sahara Rebar Mills LLC", "leadWeeks": 1, "batch": 0.1, "currentSsWeeks": 0.7 },
+    { "sku": "RB-B500-16", "name": "Rebar B500B Ø16 mm", "name_ar": "حديد تسليح B500B قطر 16 مم", "family": "rebar", "unit": "t", "unit_ar": "طن", "tonnes": true, "price": 2780, "cost": 2480, "supplier": "Sahara Rebar Mills LLC", "leadWeeks": 1, "batch": 0.1, "currentSsWeeks": 0.7 },
+    { "sku": "RB-B500-20", "name": "Rebar B500B Ø20 mm", "name_ar": "حديد تسليح B500B قطر 20 مم", "family": "rebar", "unit": "t", "unit_ar": "طن", "tonnes": true, "price": 2760, "cost": 2470, "supplier": "Sahara Rebar Mills LLC", "leadWeeks": 1, "batch": 0.1, "currentSsWeeks": 0.7 },
+    { "sku": "RB-B500-25", "name": "Rebar B500B Ø25 mm", "name_ar": "حديد تسليح B500B قطر 25 مم", "family": "rebar", "unit": "t", "unit_ar": "طن", "tonnes": true, "price": 2745, "cost": 2455, "supplier": "Sahara Rebar Mills LLC", "leadWeeks": 1, "batch": 0.1, "currentSsWeeks": 0.9 },
+    { "sku": "BLK-HOL-20", "name": "Hollow concrete block 20 cm", "name_ar": "طابوق إسمنتي مفرغ 20 سم", "family": "blocks", "unit": "pc", "unit_ar": "حبة", "perPallet": 60, "price": 3.35, "cost": 2.62, "supplier": "Al Waha Blocks Factory LLC", "leadWeeks": 1, "batch": 60, "currentSsWeeks": 0.45 },
+    { "sku": "TIL-POR-60120", "name": "Porcelain tile 60×120 matt", "name_ar": "بلاط بورسلان 60×120 مطفي", "family": "tiles", "unit": "m²", "unit_ar": "م²", "perPallet": 46.08, "price": 52, "cost": 37, "supplier": "Andalus Ceramics Trading LLC", "leadWeeks": 3, "batch": 46.08, "currentSsWeeks": 2.0 },
+    { "sku": "TIL-CER-3060", "name": "Ceramic wall tile 30×60", "name_ar": "بلاط جدران سيراميك 30×60", "family": "tiles", "unit": "m²", "unit_ar": "م²", "perPallet": 86.4, "price": 27.5, "cost": 18.9, "supplier": "Andalus Ceramics Trading LLC", "leadWeeks": 3, "batch": 86.4, "currentSsWeeks": 2.0 },
+    { "sku": "SAN-WC-WH", "name": "Wall-hung WC set", "name_ar": "طقم مرحاض معلّق", "family": "sanitary", "unit": "set", "unit_ar": "طقم", "perPallet": 8, "price": 640, "cost": 455, "supplier": "Andalus Ceramics Trading LLC", "leadWeeks": 4, "batch": 8, "currentSsWeeks": 3.0 },
+    { "sku": "WPF-BIT-4", "name": "Bitumen membrane 4 mm (roll)", "name_ar": "لفائف عزل بيتومينية 4 مم", "family": "roofing", "unit": "roll", "unit_ar": "لفة", "perPallet": 25, "price": 96, "cost": 71, "supplier": "Gulf Bitumen Products FZCO", "leadWeeks": 2, "batch": 25, "currentSsWeeks": 1.5 },
+    { "sku": "PNT-TS-20", "name": "Raseen ThermaShield heat-reflective roof coating 20 L", "name_ar": "طلاء رصين ثيرماشيلد العاكس للحرارة 20 لتر", "family": "roofing", "unit": "pail", "unit_ar": "دلو", "perPallet": 32, "price": 385, "cost": 241, "supplier": "Raseen toll filler (Ras Al Marsa)", "leadWeeks": 3, "batch": 32, "currentSsWeeks": 2.0, "newProduct": true }
+  ],
+  "launch": {
+    "sku": "PNT-TS-20",
+    "date": "2026-11-02",
+    "analogue": "WPF-BIT-4",
+    "runRate": { "JA": 410, "MN": 146 },
+    "rampWeeks": 8,
+    "preOrders": { "JA": 820, "MN": 320 },
+    "preOrderAccounts": 38,
+    "levelCv": 0.28,
+    "weeklyCv": 0.22,
+    "openingStock": { "JA": 0, "MN": 0 },
+    "pipeline": { "JA": [0, 0, 1600], "MN": [0, 0, 640] },
+    "note": "Launch stock of 2,240 pails arrives week commencing 26 Oct 2026 from the toll filler."
+  },
+  "suppliers": {
+    "sahara": {
+      "name": "Sahara Rebar Mills LLC",
+      "maintenance": "Planned mill maintenance 5–19 Oct 2026",
+      "weeklyAllocationT": [0, 420, 1350, 1350, 1350, 1350, 1350, 1350, 1350, 1350, 1350, 1350, 1350],
+      "catchUpAllocationT": 1750,
+      "catchUpWeeks": [2, 3, 4, 5],
+      "catchUpNote": "Sahara confirmed (email 7 Oct 2026) it can allocate up to 1,750 t/week for four weeks after restart if RBM commits by 14 Oct."
+    }
+  },
+  "costs": {
+    "holdingRateAnnual": 0.18,
+    "stockoutGoodwillPctOfPrice": 0.12,
+    "transferPerPallet": 38,
+    "transferPerTonne": 46,
+    "overflowPerPalletWeek": 12.5,
+    "overflowHandlingPerPallet": 38,
+    "overflowPerTonneWeek": 9,
+    "overflowHandlingPerTonne": 30
+  },
+  "plans": [
+    {
+      "id": "A",
+      "name": "Current policy",
+      "name_ar": "السياسة الحالية",
+      "summary": "Keep today's safety-stock weeks; order up to lead-time cover; no pre-build, no Sahara catch-up, no transfers.",
+      "summary_ar": "الإبقاء على أسابيع مخزون الأمان الحالية؛ الطلب حتى تغطية مدة التوريد؛ دون بناء مسبق أو كميات تعويضية من صحارى أو تحويلات.",
+      "policy": "weeks",
+      "prebuildWeeks": 0,
+      "catchUp": false,
+      "capacityAware": false,
+      "transfers": false
+    },
+    {
+      "id": "B",
+      "name": "Q4 pre-build",
+      "name_ar": "البناء المسبق للربع الرابع",
+      "summary": "Service-target safety stock from forecast uncertainty, pre-build two weeks of peak demand for structural SKUs, take Sahara's 1,750 t/week catch-up allocation.",
+      "summary_ar": "مخزون أمان مبني على مستوى الخدمة المستهدف وعدم يقين التوقعات، وبناء مسبق لطلب أسبوعين من ذروة المواد الإنشائية، والاستفادة من الكمية التعويضية لصحارى 1,750 طن أسبوعياً.",
+      "policy": "service",
+      "prebuildWeeks": 2,
+      "catchUp": true,
+      "capacityAware": false,
+      "transfers": false
+    },
+    {
+      "id": "C",
+      "name": "Pre-build within limits + rebalance",
+      "name_ar": "بناء مسبق ضمن حدود السعة مع إعادة التوازن",
+      "summary": "As plan B, but orders are clipped to storage limits, overflow is received at the other warehouse, and rebar is rebalanced weekly between Jebel Ali and MN-05.",
+      "summary_ar": "مثل الخطة (ب) مع تقييد الطلبيات بحدود التخزين، واستلام الفائض في المستودع الآخر، وإعادة توزيع حديد التسليح أسبوعياً بين جبل علي وMN-05.",
+      "policy": "service",
+      "prebuildWeeks": 2,
+      "catchUp": true,
+      "capacityAware": true,
+      "transfers": true
+    }
+  ],
+  "history": {
+    "overrideRateByCycle": [
+      { "cycle": "2026-06", "rate": 0.46 },
+      { "cycle": "2026-07", "rate": 0.43 },
+      { "cycle": "2026-08", "rate": 0.44 },
+      { "cycle": "2026-09", "rate": 0.41 }
+    ],
+    "legacyMape": 0.24,
+    "legacyMethod": "Spreadsheet: 8-week moving average × manual seasonal uplift"
+  }
+}

@@ -36,6 +36,7 @@ export function ApprovalCard({
   const [status, setStatus] = useState(approval.status);
   const [comment, setComment] = useState("");
   const [showComment, setShowComment] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   async function decide(decision: "approved" | "rejected") {
     setBusy(decision);
@@ -98,7 +99,21 @@ export function ApprovalCard({
             <span className="font-mono text-[10px] text-faint">{approval.id}</span>
           </div>
           <div className="mt-1 text-[13px] font-medium leading-snug">{approval.title}</div>
-          {!compact && <p className="mt-1 text-[12px] leading-relaxed text-muted-foreground" dir="auto">{approval.summary}</p>}
+          {!compact && (
+            <>
+              <p
+                className={cn("mt-1 text-[12px] leading-relaxed whitespace-pre-line text-muted-foreground", !expanded && "line-clamp-5")}
+                dir="auto"
+              >
+                {approval.summary}
+              </p>
+              {approval.summary.length > 260 && (
+                <button type="button" onClick={() => setExpanded((e) => !e)} className="mt-1 text-[11px] text-ai hover:underline">
+                  {expanded ? L({ en: "Show less", ar: "عرض أقل" }) : L({ en: "Read in full", ar: "قراءة كاملة" })}
+                </button>
+              )}
+            </>
+          )}
           <div className="mt-2.5 flex items-center gap-2">
             <span className="flex size-6 items-center justify-center rounded-full bg-foreground text-[9.5px] font-medium text-background">
               {initials(approval.approver.name)}

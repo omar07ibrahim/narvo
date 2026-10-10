@@ -1,0 +1,37 @@
+{
+  "locations": {
+    "VAN-117": "Van RFM-VAN-117 (Arun Pillai)",
+    "VAN-122": "Van RFM-VAN-122 (Ramesh Kumar)",
+    "STORE": "RFM Central Store, Al Quoz Industrial 3",
+    "SITE-AGCC": "Al Ghaf Community Centre site store (room B1-07)"
+  },
+  "parts": [
+    { "partNo": "RFM-CHM-0112", "desc": "pH-neutral foaming coil cleaner, 20 L (approved for epoxy-coated coils, pH 7–8)", "unit": "can", "kind": "consumable", "stock": { "VAN-117": 0, "VAN-122": 1, "STORE": 6, "SITE-AGCC": 2 }, "leadDays": 2, "unitCostAed": 286, "note": "Released to AGCC site store on 6 Oct 2026 after HSE chemical approval CA-26-118" },
+    { "partNo": "RFM-CHM-0109", "desc": "Alkaline coil cleaner pH 11.5, 20 L (NOT for coated coils)", "unit": "can", "kind": "consumable", "stock": { "VAN-117": 1, "VAN-122": 1, "STORE": 11, "SITE-AGCC": 0 }, "leadDays": 2, "unitCostAed": 198 },
+    { "partNo": "RFM-TL-0310", "desc": "Low-pressure coil wash pump with 25 m hose and flat-fan nozzle (max 6 bar)", "unit": "set", "kind": "tool", "stock": { "VAN-117": 1, "VAN-122": 0, "STORE": 2, "SITE-AGCC": 0 }, "leadDays": 0, "unitCostAed": 0 },
+    { "partNo": "RFM-TL-0301", "desc": "Fin comb set (8–18 fins per inch)", "unit": "set", "kind": "tool", "stock": { "VAN-117": 1, "VAN-122": 1, "STORE": 4, "SITE-AGCC": 0 }, "leadDays": 0, "unitCostAed": 0 },
+    { "partNo": "RFM-TL-0405", "desc": "Digital refrigerant manifold with 2 clamp temperature probes (R-134a/R-410A)", "unit": "set", "kind": "tool", "stock": { "VAN-117": 1, "VAN-122": 1, "STORE": 2, "SITE-AGCC": 0 }, "leadDays": 0, "unitCostAed": 0 },
+    { "partNo": "RFM-TL-0420", "desc": "Infrared thermometer and anemometer kit", "unit": "set", "kind": "tool", "stock": { "VAN-117": 1, "VAN-122": 0, "STORE": 3, "SITE-AGCC": 0 }, "leadDays": 0, "unitCostAed": 0 },
+    { "partNo": "RFM-TL-0433", "desc": "Vibration pen / bearing condition meter", "unit": "set", "kind": "tool", "stock": { "VAN-117": 0, "VAN-122": 0, "STORE": 1, "SITE-AGCC": 0 }, "leadDays": 0, "unitCostAed": 0 },
+    { "partNo": "RFM-ELE-0701", "desc": "Personal LOTO kit (padlocks, hasps, tags, voltage tester 1,000 V CAT IV)", "unit": "kit", "kind": "tool", "stock": { "VAN-117": 1, "VAN-122": 1, "STORE": 5, "SITE-AGCC": 0 }, "leadDays": 0, "unitCostAed": 0 },
+    { "partNo": "RFM-PPE-0215", "desc": "Chemical splash goggles + nitrile gauntlets", "unit": "set", "kind": "ppe", "stock": { "VAN-117": 2, "VAN-122": 2, "STORE": 30, "SITE-AGCC": 4 }, "leadDays": 0, "unitCostAed": 46 },
+    { "partNo": "RFM-PPE-0230", "desc": "Half-face respirator with A2P3 cartridges", "unit": "set", "kind": "ppe", "stock": { "VAN-117": 1, "VAN-122": 1, "STORE": 12, "SITE-AGCC": 0 }, "leadDays": 0, "unitCostAed": 128 },
+    { "partNo": "ACX-PT-3000", "desc": "Discharge pressure transducer 0–3,000 kPa, 4–20 mA (ACX-350)", "unit": "pc", "kind": "spare", "stock": { "VAN-117": 0, "VAN-122": 0, "STORE": 3, "SITE-AGCC": 0 }, "leadDays": 7, "unitCostAed": 1140 },
+    { "partNo": "ACX-SW-1930", "desc": "High-pressure safety switch, manual reset, 1,930 kPa (ACX-350)", "unit": "pc", "kind": "spare", "stock": { "VAN-117": 0, "VAN-122": 0, "STORE": 2, "SITE-AGCC": 0 }, "leadDays": 7, "unitCostAed": 690 },
+    { "partNo": "ACX-FM-0922", "desc": "Condenser fan motor 2.2 kW, 6-pole, 950 rpm, IP55, with mounting bracket (ACX-350)", "unit": "pc", "kind": "spare", "stock": { "VAN-117": 0, "VAN-122": 0, "STORE": 0, "SITE-AGCC": 0 }, "leadDays": 6, "supplier": "Gulf HVAC Spares FZE", "unitCostAed": 3480 },
+    { "partNo": "ACX-FB-0910", "desc": "Condenser fan blade 910 mm, 5-blade, composite (ACX-350)", "unit": "pc", "kind": "spare", "stock": { "VAN-117": 0, "VAN-122": 0, "STORE": 1, "SITE-AGCC": 0 }, "leadDays": 10, "supplier": "Gulf HVAC Spares FZE", "unitCostAed": 1260 },
+    { "partNo": "ACX-FG-0910", "desc": "Fan guard 910 mm (ACX-350)", "unit": "pc", "kind": "spare", "stock": { "VAN-117": 0, "VAN-122": 0, "STORE": 2, "SITE-AGCC": 0 }, "leadDays": 10, "unitCostAed": 340 },
+    { "partNo": "RFM-ELE-0318", "desc": "Contactor 3-pole 18 A, 230 V coil (condenser fan)", "unit": "pc", "kind": "spare", "stock": { "VAN-117": 3, "VAN-122": 2, "STORE": 24, "SITE-AGCC": 0 }, "leadDays": 1, "unitCostAed": 112 },
+    { "partNo": "RFM-ELE-0325", "desc": "Motor protection circuit breaker 4–6.3 A", "unit": "pc", "kind": "spare", "stock": { "VAN-117": 2, "VAN-122": 1, "STORE": 15, "SITE-AGCC": 0 }, "leadDays": 1, "unitCostAed": 164 },
+    { "partNo": "RFM-REF-0134", "desc": "R-134a refrigerant, 13.6 kg cylinder", "unit": "cyl", "kind": "consumable", "stock": { "VAN-117": 1, "VAN-122": 0, "STORE": 9, "SITE-AGCC": 0 }, "leadDays": 1, "unitCostAed": 720 },
+    { "partNo": "RFM-REF-0410", "desc": "R-410A refrigerant, 11.3 kg cylinder", "unit": "cyl", "kind": "consumable", "stock": { "VAN-117": 1, "VAN-122": 1, "STORE": 7, "SITE-AGCC": 0 }, "leadDays": 1, "unitCostAed": 640 },
+    { "partNo": "RFM-TL-0480", "desc": "Refrigerant recovery unit + 22 kg recovery cylinder", "unit": "set", "kind": "tool", "stock": { "VAN-117": 0, "VAN-122": 1, "STORE": 2, "SITE-AGCC": 0 }, "leadDays": 0, "unitCostAed": 0 },
+    { "partNo": "ACX-FD-0048", "desc": "Filter-drier core 48 cu.in (ACX-350)", "unit": "pc", "kind": "spare", "stock": { "VAN-117": 2, "VAN-122": 0, "STORE": 6, "SITE-AGCC": 0 }, "leadDays": 5, "unitCostAed": 210 },
+    { "partNo": "VEN-FLT-G4-592", "desc": "G4 panel filter 592×592×48", "unit": "pc", "kind": "consumable", "stock": { "VAN-117": 0, "VAN-122": 6, "STORE": 140, "SITE-AGCC": 32 }, "leadDays": 3, "unitCostAed": 38 },
+    { "partNo": "VEN-FLT-F7-592", "desc": "F7 bag filter 592×592×600", "unit": "pc", "kind": "consumable", "stock": { "VAN-117": 0, "VAN-122": 0, "STORE": 64, "SITE-AGCC": 16 }, "leadDays": 5, "unitCostAed": 96 },
+    { "partNo": "VEN-BLT-SPB2120", "desc": "V-belt SPB 2120 (matched set of 3) — AHU-02/03", "unit": "set", "kind": "spare", "stock": { "VAN-117": 0, "VAN-122": 1, "STORE": 4, "SITE-AGCC": 0 }, "leadDays": 3, "unitCostAed": 174 },
+    { "partNo": "HYD-MS-0035", "desc": "Mechanical seal 35 mm (Hydrova EN 80-200)", "unit": "pc", "kind": "spare", "stock": { "VAN-117": 0, "VAN-122": 0, "STORE": 2, "SITE-AGCC": 0 }, "leadDays": 8, "unitCostAed": 860 },
+    { "partNo": "PYR-PSW-JP", "desc": "Jockey pump pressure switch 6–12 bar", "unit": "pc", "kind": "spare", "stock": { "VAN-117": 0, "VAN-122": 0, "STORE": 1, "SITE-AGCC": 0 }, "leadDays": 5, "unitCostAed": 420 },
+    { "partNo": "LUM-BAT-3H", "desc": "Emergency luminaire battery pack 3.6 V NiCd 3 h", "unit": "pc", "kind": "spare", "stock": { "VAN-117": 0, "VAN-122": 0, "STORE": 18, "SITE-AGCC": 0 }, "leadDays": 3, "unitCostAed": 64 }
+  ]
+}

@@ -1,0 +1,1010 @@
+[
+  {
+    "id": "NOTE-001",
+    "caseId": "MNDA-BP-2026-02007",
+    "date": "2026-07-06T10:33:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "struct",
+    "lang": "en",
+    "text": "Structural calculations not stamped by a licensed structural engineer. Atlas Structural Consultants outsourced the calcs and the stamp page is missing. Returned."
+  },
+  {
+    "id": "NOTE-002",
+    "caseId": "MNDA-BP-2026-01995",
+    "date": "2026-07-06T12:01:00+04:00",
+    "author": "Latifa Obaid Al Shamsi",
+    "theme": "site",
+    "lang": "en",
+    "text": "Site plan rev C submitted but the NOC refers to rev B. New NOC required (§4.3). Developer will not turn it round inside 7 working days."
+  },
+  {
+    "id": "NOTE-003",
+    "caseId": "MNDA-BP-2026-02121",
+    "date": "2026-07-13T09:18:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "other",
+    "lang": "en",
+    "text": "Returned — consultant registration expired. Applicant resubmitted within 5 days."
+  },
+  {
+    "id": "NOTE-004",
+    "caseId": "MNDA-BP-2026-02128",
+    "date": "2026-07-13T10:32:00+04:00",
+    "author": "Latifa Obaid Al Shamsi",
+    "theme": "other",
+    "lang": "ar",
+    "text": "أُعيد الطلب بسبب: عدم إرفاق سند الملكية. أعاد المتعامل التقديم خلال 5 أيام."
+  },
+  {
+    "id": "NOTE-005",
+    "caseId": "MNDA-BP-2026-02127",
+    "date": "2026-07-13T10:47:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "struct",
+    "lang": "ar",
+    "text": "الحسابات الإنشائية غير مختومة من مهندس إنشائي مرخّص. تم إبلاغ Atlas Structural Consultants بإعادة التقديم بعد استكمال الختم."
+  },
+  {
+    "id": "NOTE-006",
+    "caseId": "MNDA-BP-2026-02131",
+    "date": "2026-07-13T14:42:00+04:00",
+    "author": "Khaled Mansour Haddad",
+    "theme": "site",
+    "lang": "en",
+    "text": "Drawing set mixes rev C and rev D sheets — setback dimension differs on the site plan. Returned for a consistent set."
+  },
+  {
+    "id": "NOTE-007",
+    "caseId": "MNDA-BP-2026-02182",
+    "date": "2026-07-16T11:44:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "site",
+    "lang": "en",
+    "text": "Drawing set mixes rev D and rev E sheets — setback dimension differs on the site plan. Returned for a consistent set."
+  },
+  {
+    "id": "NOTE-008",
+    "caseId": "MNDA-BP-2026-02189",
+    "date": "2026-07-16T12:17:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "struct",
+    "lang": "ar",
+    "text": "تكرر من نفس المكتب الاستشاري تقديم حسابات إنشائية دون ختم. نقترح فحصاً آلياً للختم عند التقديم."
+  },
+  {
+    "id": "NOTE-009",
+    "caseId": "MNDA-BP-2026-02196",
+    "date": "2026-07-17T08:26:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "struct",
+    "lang": "en",
+    "text": "Returned — structural report stamped by an engineer whose registration is not linked to Coastline Architects & Engineers's licence."
+  },
+  {
+    "id": "NOTE-010",
+    "caseId": "MNDA-BP-2026-02200",
+    "date": "2026-07-20T10:07:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "other",
+    "lang": "en",
+    "text": "Returned — soil investigation report missing. Applicant resubmitted within 7 days."
+  },
+  {
+    "id": "NOTE-011",
+    "caseId": "MNDA-BP-2026-02208",
+    "date": "2026-07-20T10:48:00+04:00",
+    "author": "Mohammed Ali Al Hosani",
+    "theme": "other",
+    "lang": "en",
+    "text": "Returned — gfa calculation sheet missing. Applicant resubmitted within 4 days."
+  },
+  {
+    "id": "NOTE-012",
+    "caseId": "MNDA-BP-2026-02221",
+    "date": "2026-07-22T09:20:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "Returned — no NOC attached. Applicant believed the NOC only applies to Marina Quarter towers, not villas on Al Lulu Island. Explained Circular 14/2026 §2."
+  },
+  {
+    "id": "NOTE-013",
+    "caseId": "MNDA-BP-2026-02232",
+    "date": "2026-07-23T10:11:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "nocReturn",
+    "lang": "ar",
+    "text": "أُعيد الطلب: الشهادة المرفقة لا تتضمن رقم المخطط بالصيغة المعتمدة ولا رقم مراجعة المخططات."
+  },
+  {
+    "id": "NOTE-014",
+    "caseId": "MNDA-BP-2026-02238",
+    "date": "2026-07-23T10:17:00+04:00",
+    "author": "Khaled Mansour Haddad",
+    "theme": "struct",
+    "lang": "ar",
+    "text": "الحسابات الإنشائية غير مختومة من مهندس إنشائي مرخّص. تم إبلاغ Arabesque Design Consultants بإعادة التقديم بعد استكمال الختم."
+  },
+  {
+    "id": "NOTE-015",
+    "caseId": "MNDA-BP-2026-02251",
+    "date": "2026-07-24T09:14:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "Returned: NOC issued for plot MN-06-221-0012 instead of MN-06-221-0002. Consultant to request a corrected NOC from Sidr Communities LLC."
+  },
+  {
+    "id": "NOTE-016",
+    "caseId": "MNDA-BP-2026-02279",
+    "date": "2026-07-27T11:09:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "nocReturn",
+    "lang": "ar",
+    "text": "الـ NOC المرفق صادر بتاريخ 19 مارس 2026 ومنتهي الصلاحية (أكثر من 90 يوماً)، ويُعامل كأنه غير مرفق وفق البند 4.2. تمت الإعادة."
+  },
+  {
+    "id": "NOTE-017",
+    "caseId": "MNDA-BP-2026-02217",
+    "date": "2026-07-29T07:17:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "Escalated to Eng. Omar: 9 days on NOC hold for plot MN-03-171-0159. Lulu Island Developments PJSC says the NOC team is two people and handles all community requests."
+  },
+  {
+    "id": "NOTE-018",
+    "caseId": "MNDA-BP-2026-02215",
+    "date": "2026-07-30T08:48:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "بانتظار شهادة عدم الممانعة من شركة جزيرة اللؤلؤ للتطوير ش.م.ع منذ 10 أيام. تواصل المكتب الاستشاري مع المطور أكثر من مرة وأفاد بأن الطلب ما زال قيد المراجعة لدى قسم التصاميم."
+  },
+  {
+    "id": "NOTE-019",
+    "caseId": "MNDA-BP-2026-02312",
+    "date": "2026-07-30T08:57:00+04:00",
+    "author": "Priya Nair",
+    "theme": "site",
+    "lang": "ar",
+    "text": "المخططات المقدمة بمراجعة rev D بينما شهادة عدم الممانعة تشير إلى rev C؛ يلزم الحصول على شهادة جديدة وفق البند 4.3 من التعميم."
+  },
+  {
+    "id": "NOTE-020",
+    "caseId": "MNDA-BP-2026-02073",
+    "date": "2026-08-03T07:57:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "cd",
+    "lang": "en",
+    "text": "Civil Defence coordination meeting held — basement sprinkler layout requested. Expect 3–4 days."
+  },
+  {
+    "id": "NOTE-021",
+    "caseId": "MNDA-BP-2026-02225",
+    "date": "2026-08-03T08:16:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "اتصل المتعامل بمركز إسعاد المتعاملين يسأل عن سبب التأخير؛ تم إبلاغه أن الطلب بانتظار موافقة شركة جزيرة اللؤلؤ للتطوير ش.م.ع على المخططات (13 يوماً حتى الآن)."
+  },
+  {
+    "id": "NOTE-022",
+    "caseId": "MNDA-BP-2026-02327",
+    "date": "2026-08-03T08:39:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "other",
+    "lang": "ar",
+    "text": "أُعيد الطلب بسبب: عدم إرفاق تقرير فحص التربة. أعاد المتعامل التقديم خلال 4 أيام."
+  },
+  {
+    "id": "NOTE-023",
+    "caseId": "MNDA-BP-2026-02333",
+    "date": "2026-08-03T11:02:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "struct",
+    "lang": "ar",
+    "text": "الحسابات الإنشائية غير مختومة من مهندس إنشائي مرخّص. تم إبلاغ Qasr Al Bahr Consulting Engineers بإعادة التقديم بعد استكمال الختم."
+  },
+  {
+    "id": "NOTE-024",
+    "caseId": "MNDA-BP-2026-02246",
+    "date": "2026-08-04T07:02:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "وصلت شهادة عدم الممانعة بعد 8 أيام، مع ملاحظة من المطور بتعديل ارتفاع السور الخارجي إلى 2.1 م. تم تحويل الطلب للتدقيق التخطيطي."
+  },
+  {
+    "id": "NOTE-025",
+    "caseId": "MNDA-BP-2026-02194",
+    "date": "2026-08-05T05:51:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "cd",
+    "lang": "en",
+    "text": "Civil Defence coordination meeting held — basement sprinkler layout requested. Expect 3–4 days."
+  },
+  {
+    "id": "NOTE-026",
+    "caseId": "MNDA-BP-2026-02364",
+    "date": "2026-08-05T08:23:00+04:00",
+    "author": "Khaled Mansour Haddad",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "Returned: NOC issued for plot MN-08-106-0017 instead of MN-08-106-0055. Consultant to request a corrected NOC from Marina Quarter Properties LLC."
+  },
+  {
+    "id": "NOTE-027",
+    "caseId": "MNDA-BP-2026-02369",
+    "date": "2026-08-05T09:57:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "other",
+    "lang": "ar",
+    "text": "أُعيد الطلب بسبب: عدم إرفاق سند الملكية. أعاد المتعامل التقديم خلال 9 أيام."
+  },
+  {
+    "id": "NOTE-028",
+    "caseId": "MNDA-BP-2026-02223",
+    "date": "2026-08-06T07:09:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "Application complete since 21 Jul, held only for the master-developer NOC. Lulu Island Developments PJSC acknowledged the request but no issue date given. SLA clock suspended per Circular 14/2026 §5.2."
+  },
+  {
+    "id": "NOTE-029",
+    "caseId": "MNDA-BP-2026-02180",
+    "date": "2026-08-10T06:06:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "cd",
+    "lang": "en",
+    "text": "Civil Defence comments: escape-stair width on typical floors below requirement; consultant revising. GFA 19,790 m²."
+  },
+  {
+    "id": "NOTE-030",
+    "caseId": "MNDA-BP-2026-02408",
+    "date": "2026-08-10T09:33:00+04:00",
+    "author": "Mohammed Ali Al Hosani",
+    "theme": "site",
+    "lang": "en",
+    "text": "Site plan rev E submitted but the NOC refers to rev D. New NOC required (§4.3). Developer will not turn it round inside 7 working days."
+  },
+  {
+    "id": "NOTE-031",
+    "caseId": "MNDA-BP-2026-02397",
+    "date": "2026-08-10T09:47:00+04:00",
+    "author": "Priya Nair",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "NOC attached is dated 5 Mar 2026, older than 90 days (§4.2) — treated as missing. Returned to applicant."
+  },
+  {
+    "id": "NOTE-032",
+    "caseId": "MNDA-BP-2026-02345",
+    "date": "2026-08-11T07:29:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "اتصل المتعامل بمركز إسعاد المتعاملين يسأل عن سبب التأخير؛ تم إبلاغه أن الطلب بانتظار موافقة شركة جزيرة اللؤلؤ للتطوير ش.م.ع على المخططات (8 أيام حتى الآن)."
+  },
+  {
+    "id": "NOTE-033",
+    "caseId": "MNDA-BP-2026-02419",
+    "date": "2026-08-11T08:40:00+04:00",
+    "author": "Latifa Obaid Al Shamsi",
+    "theme": "nocReturn",
+    "lang": "ar",
+    "text": "الـ NOC المرفق صادر بتاريخ 21 أبريل 2026 ومنتهي الصلاحية (أكثر من 90 يوماً)، ويُعامل كأنه غير مرفق وفق البند 4.2. تمت الإعادة."
+  },
+  {
+    "id": "NOTE-034",
+    "caseId": "MNDA-BP-2026-02423",
+    "date": "2026-08-11T09:01:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "nocReturn",
+    "lang": "ar",
+    "text": "الـ NOC المرفق صادر بتاريخ 23 أبريل 2026 ومنتهي الصلاحية (أكثر من 90 يوماً)، ويُعامل كأنه غير مرفق وفق البند 4.2. تمت الإعادة."
+  },
+  {
+    "id": "NOTE-035",
+    "caseId": "MNDA-BP-2026-02314",
+    "date": "2026-08-11T10:48:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "بانتظار شهادة عدم الممانعة من شركة حي المارينا العقارية ذ.م.م منذ 12 يوماً. تواصل المكتب الاستشاري مع المطور أكثر من مرة وأفاد بأن الطلب ما زال قيد المراجعة لدى قسم التصاميم."
+  },
+  {
+    "id": "NOTE-036",
+    "caseId": "MNDA-BP-2026-02318",
+    "date": "2026-08-12T08:42:00+04:00",
+    "author": "Khaled Mansour Haddad",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "Application complete since 31 Jul, held only for the master-developer NOC. Sidr Communities LLC acknowledged the request but no issue date given. SLA clock suspended per Circular 14/2026 §5.2."
+  },
+  {
+    "id": "NOTE-037",
+    "caseId": "MNDA-BP-2026-02438",
+    "date": "2026-08-12T09:03:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "site",
+    "lang": "ar",
+    "text": "المخططات المقدمة بمراجعة rev E بينما شهادة عدم الممانعة تشير إلى rev D؛ يلزم الحصول على شهادة جديدة وفق البند 4.3 من التعميم."
+  },
+  {
+    "id": "NOTE-038",
+    "caseId": "MNDA-BP-2026-02441",
+    "date": "2026-08-12T10:34:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "nocReturn",
+    "lang": "ar",
+    "text": "تمت إعادة الطلب للمتعامل لعدم إرفاق شهادة عدم ممانعة من المطور الرئيسي، علماً بأن المخطط يقع ضمن منطقة مسوّرة (السدر السكنية)."
+  },
+  {
+    "id": "NOTE-039",
+    "caseId": "MNDA-BP-2026-02337",
+    "date": "2026-08-14T07:52:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "بانتظار شهادة عدم الممانعة من شركة السدر للمجتمعات ذ.م.م منذ 11 يوماً. تواصل المكتب الاستشاري مع المطور أكثر من مرة وأفاد بأن الطلب ما زال قيد المراجعة لدى قسم التصاميم."
+  },
+  {
+    "id": "NOTE-040",
+    "caseId": "MNDA-BP-2026-02342",
+    "date": "2026-08-17T08:44:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "اتصل المتعامل بمركز إسعاد المتعاملين يسأل عن سبب التأخير؛ تم إبلاغه أن الطلب بانتظار موافقة شركة جزيرة اللؤلؤ للتطوير ش.م.ع على المخططات (14 يوماً حتى الآن)."
+  },
+  {
+    "id": "NOTE-041",
+    "caseId": "MNDA-BP-2026-02388",
+    "date": "2026-08-17T09:12:00+04:00",
+    "author": "Priya Nair",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "Day 10 awaiting NOC from Sidr Communities LLC. Consultant (Gulf Horizon Consulting Engineers) has chased twice; developer's design-review team says the request is \"in queue\". Nothing outstanding on our side."
+  },
+  {
+    "id": "NOTE-042",
+    "caseId": "MNDA-BP-2026-02491",
+    "date": "2026-08-17T11:06:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "struct",
+    "lang": "ar",
+    "text": "الحسابات الإنشائية غير مختومة من مهندس إنشائي مرخّص. تم إبلاغ Gulf Horizon Consulting Engineers بإعادة التقديم بعد استكمال الختم."
+  },
+  {
+    "id": "NOTE-043",
+    "caseId": "MNDA-BP-2026-02340",
+    "date": "2026-08-18T08:18:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "وصلت شهادة عدم الممانعة بعد 15 يوماً، مع ملاحظة من المطور بتعديل ارتفاع السور الخارجي إلى 2.1 م. تم تحويل الطلب للتدقيق التخطيطي."
+  },
+  {
+    "id": "NOTE-044",
+    "caseId": "MNDA-BP-2026-02500",
+    "date": "2026-08-18T10:33:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "Returned: NOC issued for plot MN-08-154-0188 instead of MN-08-154-0140. Consultant to request a corrected NOC from Marina Quarter Properties LLC."
+  },
+  {
+    "id": "NOTE-045",
+    "caseId": "MNDA-BP-2026-02355",
+    "date": "2026-08-20T09:02:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "وصلت شهادة عدم الممانعة بعد 9 أيام، مع ملاحظة من المطور بتعديل ارتفاع السور الخارجي إلى 2.1 م. تم تحويل الطلب للتدقيق التخطيطي."
+  },
+  {
+    "id": "NOTE-046",
+    "caseId": "MNDA-BP-2026-02428",
+    "date": "2026-08-21T08:19:00+04:00",
+    "author": "Mohammed Ali Al Hosani",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "الملف مكتمل منذ 11 أغسطس ومتوقف فقط على الـ NOC من المطور الرئيسي. تم تعليق احتساب مدة الخدمة وفق البند 5.2 من التعميم 14/2026."
+  },
+  {
+    "id": "NOTE-047",
+    "caseId": "MNDA-BP-2026-02556",
+    "date": "2026-08-24T09:22:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "nocReturn",
+    "lang": "ar",
+    "text": "تمت إعادة الطلب للمتعامل لعدم إرفاق شهادة عدم ممانعة من المطور الرئيسي، علماً بأن المخطط يقع ضمن منطقة مسوّرة (جزيرة اللؤلؤ)."
+  },
+  {
+    "id": "NOTE-048",
+    "caseId": "MNDA-BP-2026-02542",
+    "date": "2026-08-24T10:13:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "nocReturn",
+    "lang": "ar",
+    "text": "تمت إعادة الطلب للمتعامل لعدم إرفاق شهادة عدم ممانعة من المطور الرئيسي، علماً بأن المخطط يقع ضمن منطقة مسوّرة (حي المارينا)."
+  },
+  {
+    "id": "NOTE-049",
+    "caseId": "MNDA-BP-2026-02571",
+    "date": "2026-08-24T11:11:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "Returned — no NOC attached. Applicant believed the NOC only applies to Marina Quarter towers, not villas on Al Lulu Island. Explained Circular 14/2026 §2."
+  },
+  {
+    "id": "NOTE-050",
+    "caseId": "MNDA-BP-2026-02570",
+    "date": "2026-08-26T11:02:00+04:00",
+    "author": "Latifa Obaid Al Shamsi",
+    "theme": "site",
+    "lang": "en",
+    "text": "Site plan rev C submitted but the NOC refers to rev B. New NOC required (§4.3). Developer will not turn it round inside 7 working days."
+  },
+  {
+    "id": "NOTE-051",
+    "caseId": "MNDA-BP-2026-02275",
+    "date": "2026-08-27T13:08:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "cd",
+    "lang": "en",
+    "text": "Civil Defence coordination meeting held — basement sprinkler layout requested. Expect 3–4 days."
+  },
+  {
+    "id": "NOTE-052",
+    "caseId": "MNDA-BP-2026-02512",
+    "date": "2026-08-28T06:43:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "capacity",
+    "lang": "ar",
+    "text": "تأخر التدقيق التخطيطي بسبب إجازة المهندس المختص وشغور وظيفة مهندس تخطيط أول؛ أعيد توزيع الملف على Aisha Khalfan Al Marri."
+  },
+  {
+    "id": "NOTE-053",
+    "caseId": "MNDA-BP-2026-02508",
+    "date": "2026-08-31T07:52:00+04:00",
+    "author": "Mohammed Ali Al Hosani",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "Application complete since 18 Aug, held only for the master-developer NOC. Lulu Island Developments PJSC acknowledged the request but no issue date given. SLA clock suspended per Circular 14/2026 §5.2."
+  },
+  {
+    "id": "NOTE-054",
+    "caseId": "MNDA-BP-2026-02638",
+    "date": "2026-08-31T09:37:00+04:00",
+    "author": "Khaled Mansour Haddad",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "Second return on this file — renewed NOC still references drawing rev B, submission is rev C. Applicant frustrated; advised to request NOC only after final revision."
+  },
+  {
+    "id": "NOTE-055",
+    "caseId": "MNDA-BP-2026-02484",
+    "date": "2026-09-01T06:25:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "capacity",
+    "lang": "en",
+    "text": "Planning review delayed ~3 days — two engineers on annual leave and the Senior Planning Engineer post still vacant. Re-assigned to Saeed Rashid Al Nuaimi."
+  },
+  {
+    "id": "NOTE-056",
+    "caseId": "MNDA-BP-2026-02302",
+    "date": "2026-09-01T09:45:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "cd",
+    "lang": "ar",
+    "text": "ملاحظات الدفاع المدني على عرض مخارج الطوارئ في الطابق الأرضي، والاستشاري يعمل على تعديل المخططات."
+  },
+  {
+    "id": "NOTE-057",
+    "caseId": "MNDA-BP-2026-02649",
+    "date": "2026-09-02T10:01:00+04:00",
+    "author": "Mohammed Ali Al Hosani",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "NOC attached is dated 1 May 2026, older than 90 days (§4.2) — treated as missing. Returned to applicant."
+  },
+  {
+    "id": "NOTE-058",
+    "caseId": "MNDA-BP-2026-02660",
+    "date": "2026-09-03T09:57:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "other",
+    "lang": "en",
+    "text": "Returned — fee payment pending. Applicant resubmitted within 4 days."
+  },
+  {
+    "id": "NOTE-059",
+    "caseId": "MNDA-BP-2026-02655",
+    "date": "2026-09-03T10:56:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "struct",
+    "lang": "en",
+    "text": "Structural calculations not stamped by a licensed structural engineer. Al Noor Engineering Consultants outsourced the calcs and the stamp page is missing. Returned."
+  },
+  {
+    "id": "NOTE-060",
+    "caseId": "MNDA-BP-2026-02562",
+    "date": "2026-09-04T05:13:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "capacity",
+    "lang": "en",
+    "text": "Queue at planning review is 61 files this morning. Prioritising files already past 15 working days."
+  },
+  {
+    "id": "NOTE-061",
+    "caseId": "MNDA-BP-2026-02696",
+    "date": "2026-09-07T08:57:00+04:00",
+    "author": "Latifa Obaid Al Shamsi",
+    "theme": "nocReturn",
+    "lang": "ar",
+    "text": "تمت إعادة الطلب للمتعامل لعدم إرفاق شهادة عدم ممانعة من المطور الرئيسي، علماً بأن المخطط يقع ضمن منطقة مسوّرة (جزيرة اللؤلؤ)."
+  },
+  {
+    "id": "NOTE-062",
+    "caseId": "MNDA-BP-2026-02710",
+    "date": "2026-09-07T09:23:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "nocReturn",
+    "lang": "ar",
+    "text": "تمت إعادة الطلب للمتعامل لعدم إرفاق شهادة عدم ممانعة من المطور الرئيسي، علماً بأن المخطط يقع ضمن منطقة مسوّرة (جزيرة اللؤلؤ)."
+  },
+  {
+    "id": "NOTE-063",
+    "caseId": "MNDA-BP-2026-02712",
+    "date": "2026-09-07T10:17:00+04:00",
+    "author": "Priya Nair",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "NOC attached is dated 2 May 2026, older than 90 days (§4.2) — treated as missing. Returned to applicant."
+  },
+  {
+    "id": "NOTE-064",
+    "caseId": "MNDA-BP-2026-02752",
+    "date": "2026-09-09T09:45:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "struct",
+    "lang": "en",
+    "text": "Calc package unsigned (third time this month from Mizan Engineering Consultants). Suggest we flag this at the consultants' forum."
+  },
+  {
+    "id": "NOTE-065",
+    "caseId": "MNDA-BP-2026-02745",
+    "date": "2026-09-10T09:05:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "nocReturn",
+    "lang": "ar",
+    "text": "أُعيد الطلب: الشهادة المرفقة لا تتضمن رقم المخطط بالصيغة المعتمدة ولا رقم مراجعة المخططات."
+  },
+  {
+    "id": "NOTE-066",
+    "caseId": "MNDA-BP-2026-02759",
+    "date": "2026-09-10T10:03:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "site",
+    "lang": "en",
+    "text": "Drawing set mixes rev C and rev D sheets — setback dimension differs on the site plan. Returned for a consistent set."
+  },
+  {
+    "id": "NOTE-067",
+    "caseId": "MNDA-BP-2026-02631",
+    "date": "2026-09-10T11:16:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "capacity",
+    "lang": "ar",
+    "text": "تأخر التدقيق التخطيطي بسبب إجازة المهندس المختص وشغور وظيفة مهندس تخطيط أول؛ أعيد توزيع الملف على Hamdan Saif Al Ketbi."
+  },
+  {
+    "id": "NOTE-068",
+    "caseId": "MNDA-BP-2026-02761",
+    "date": "2026-09-11T11:36:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "Returned: NOC issued for plot MN-08-235-0178 instead of MN-08-235-0108. Consultant to request a corrected NOC from Marina Quarter Properties LLC."
+  },
+  {
+    "id": "NOTE-069",
+    "caseId": "MNDA-BP-2026-02637",
+    "date": "2026-09-14T07:48:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "وصلت شهادة عدم الممانعة بعد 13 يوماً، مع ملاحظة من المطور بتعديل ارتفاع السور الخارجي إلى 2.1 م. تم تحويل الطلب للتدقيق التخطيطي."
+  },
+  {
+    "id": "NOTE-070",
+    "caseId": "MNDA-BP-2026-02807",
+    "date": "2026-09-16T08:05:00+04:00",
+    "author": "Khaled Mansour Haddad",
+    "theme": "site",
+    "lang": "ar",
+    "text": "اختلاف في أبعاد الارتداد بين مخطط الموقع والمخطط المعماري (rev B مقابل rev C). أُعيد الطلب لتوحيد النسخ."
+  },
+  {
+    "id": "NOTE-071",
+    "caseId": "MNDA-BP-2026-02725",
+    "date": "2026-09-17T04:27:00+04:00",
+    "author": "Latifa Obaid Al Shamsi",
+    "theme": "capacity",
+    "lang": "en",
+    "text": "Planning review delayed ~3 days — two engineers on annual leave and the Senior Planning Engineer post still vacant. Re-assigned to Latifa Obaid Al Shamsi."
+  },
+  {
+    "id": "NOTE-072",
+    "caseId": "MNDA-BP-2026-02705",
+    "date": "2026-09-17T08:38:00+04:00",
+    "author": "Priya Nair",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "اتصل المتعامل بمركز إسعاد المتعاملين يسأل عن سبب التأخير؛ تم إبلاغه أن الطلب بانتظار موافقة شركة السدر للمجتمعات ذ.م.م على المخططات (10 أيام حتى الآن)."
+  },
+  {
+    "id": "NOTE-073",
+    "caseId": "MNDA-BP-2026-02848",
+    "date": "2026-09-17T10:49:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "struct",
+    "lang": "en",
+    "text": "Structural calculations not stamped by a licensed structural engineer. Dune Architects outsourced the calcs and the stamp page is missing. Returned."
+  },
+  {
+    "id": "NOTE-074",
+    "caseId": "MNDA-BP-2026-02857",
+    "date": "2026-09-18T11:30:00+04:00",
+    "author": "Mohammed Ali Al Hosani",
+    "theme": "struct",
+    "lang": "en",
+    "text": "Returned — structural report stamped by an engineer whose registration is not linked to Dune Architects's licence."
+  },
+  {
+    "id": "NOTE-075",
+    "caseId": "MNDA-BP-2026-02437",
+    "date": "2026-09-21T06:56:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "cd",
+    "lang": "en",
+    "text": "Civil Defence coordination meeting held — basement sprinkler layout requested. Expect 3–4 days."
+  },
+  {
+    "id": "NOTE-076",
+    "caseId": "MNDA-BP-2026-02874",
+    "date": "2026-09-21T08:09:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "site",
+    "lang": "ar",
+    "text": "اختلاف في أبعاد الارتداد بين مخطط الموقع والمخطط المعماري (rev B مقابل rev C). أُعيد الطلب لتوحيد النسخ."
+  },
+  {
+    "id": "NOTE-077",
+    "caseId": "MNDA-BP-2026-02879",
+    "date": "2026-09-21T08:27:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "site",
+    "lang": "en",
+    "text": "Site plan rev C submitted but the NOC refers to rev B. New NOC required (§4.3). Developer will not turn it round inside 7 working days."
+  },
+  {
+    "id": "NOTE-078",
+    "caseId": "MNDA-BP-2026-02757",
+    "date": "2026-09-21T09:36:00+04:00",
+    "author": "Latifa Obaid Al Shamsi",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "NOC finally received after 10 days. Developer asked for façade colour change before issuing (RAL 9010 instead of sand beige). Planning review can start."
+  },
+  {
+    "id": "NOTE-079",
+    "caseId": "MNDA-BP-2026-02867",
+    "date": "2026-09-21T10:52:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "struct",
+    "lang": "en",
+    "text": "Returned — structural report stamped by an engineer whose registration is not linked to Dar Al Marsa Engineering Consultancy's licence."
+  },
+  {
+    "id": "NOTE-080",
+    "caseId": "MNDA-BP-2026-02773",
+    "date": "2026-09-21T13:09:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "NOC finally received after 7 days. Developer asked for façade colour change before issuing (RAL 9010 instead of sand beige). Planning review can start."
+  },
+  {
+    "id": "NOTE-081",
+    "caseId": "MNDA-BP-2026-02881",
+    "date": "2026-09-22T07:47:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "site",
+    "lang": "ar",
+    "text": "المخططات المقدمة بمراجعة rev C بينما شهادة عدم الممانعة تشير إلى rev B؛ يلزم الحصول على شهادة جديدة وفق البند 4.3 من التعميم."
+  },
+  {
+    "id": "NOTE-082",
+    "caseId": "MNDA-BP-2026-02897",
+    "date": "2026-09-22T14:37:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "Second return on this file — renewed NOC still references drawing rev B, submission is rev C. Applicant frustrated; advised to request NOC only after final revision."
+  },
+  {
+    "id": "NOTE-083",
+    "caseId": "MNDA-BP-2026-02901",
+    "date": "2026-09-23T10:06:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "struct",
+    "lang": "ar",
+    "text": "الحسابات الإنشائية غير مختومة من مهندس إنشائي مرخّص. تم إبلاغ Coastline Architects & Engineers بإعادة التقديم بعد استكمال الختم."
+  },
+  {
+    "id": "NOTE-084",
+    "caseId": "MNDA-BP-2026-02852",
+    "date": "2026-09-24T04:52:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "capacity",
+    "lang": "en",
+    "text": "Planning review delayed ~3 days — two engineers on annual leave and the Senior Planning Engineer post still vacant. Re-assigned to Ahmed Fathy Abdelrahman."
+  },
+  {
+    "id": "NOTE-085",
+    "caseId": "MNDA-BP-2026-02697",
+    "date": "2026-09-25T07:08:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "الملف مكتمل منذ 4 سبتمبر ومتوقف فقط على الـ NOC من المطور الرئيسي. تم تعليق احتساب مدة الخدمة وفق البند 5.2 من التعميم 14/2026."
+  },
+  {
+    "id": "NOTE-086",
+    "caseId": "MNDA-BP-2026-02931",
+    "date": "2026-09-25T10:02:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "nocReturn",
+    "lang": "en",
+    "text": "Returned: NOC issued for plot MN-06-132-0183 instead of MN-06-132-0136. Consultant to request a corrected NOC from Sidr Communities LLC."
+  },
+  {
+    "id": "NOTE-087",
+    "caseId": "MNDA-BP-2026-02794",
+    "date": "2026-09-28T05:45:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "capacity",
+    "lang": "ar",
+    "text": "تأخر التدقيق التخطيطي بسبب إجازة المهندس المختص وشغور وظيفة مهندس تخطيط أول؛ أعيد توزيع الملف على Hamdan Saif Al Ketbi."
+  },
+  {
+    "id": "NOTE-088",
+    "caseId": "MNDA-BP-2026-02862",
+    "date": "2026-09-28T05:55:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "cd",
+    "lang": "en",
+    "text": "Civil Defence comments: escape-stair width on typical floors below requirement; consultant revising. GFA 4,405 m²."
+  },
+  {
+    "id": "NOTE-089",
+    "caseId": "MNDA-BP-2026-02728",
+    "date": "2026-09-28T07:27:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "وصلت شهادة عدم الممانعة بعد 19 يوماً، مع ملاحظة من المطور بتعديل ارتفاع السور الخارجي إلى 2.1 م. تم تحويل الطلب للتدقيق التخطيطي."
+  },
+  {
+    "id": "NOTE-090",
+    "caseId": "MNDA-BP-2026-02749",
+    "date": "2026-09-28T08:30:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "Still no NOC (18 days). Applicant called the hotline twice asking why the permit is late — explained the hold. Lulu Island Developments PJSC portal shows \"under technical review\"."
+  },
+  {
+    "id": "NOTE-091",
+    "caseId": "MNDA-BP-2026-02946",
+    "date": "2026-09-28T11:14:00+04:00",
+    "author": "Priya Nair",
+    "theme": "other",
+    "lang": "en",
+    "text": "Applicant unreachable for 4 days (mobile switched off). Fee voucher still unpaid."
+  },
+  {
+    "id": "NOTE-092",
+    "caseId": "MNDA-BP-2026-02964",
+    "date": "2026-09-29T10:45:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "struct",
+    "lang": "en",
+    "text": "Returned — structural report stamped by an engineer whose registration is not linked to Atlas Structural Consultants's licence."
+  },
+  {
+    "id": "NOTE-093",
+    "caseId": "MNDA-BP-2026-02919",
+    "date": "2026-10-01T07:48:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "cd",
+    "lang": "en",
+    "text": "Civil Defence comments: escape-stair width on typical floors below requirement; consultant revising. GFA 25,465 m²."
+  },
+  {
+    "id": "NOTE-094",
+    "caseId": "MNDA-BP-2026-02747",
+    "date": "2026-10-01T09:37:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "Still no NOC (11 days). Applicant called the hotline twice asking why the permit is late — explained the hold. Lulu Island Developments PJSC portal shows \"under technical review\"."
+  },
+  {
+    "id": "NOTE-095",
+    "caseId": "MNDA-BP-2026-03013",
+    "date": "2026-10-01T12:10:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "pilot",
+    "lang": "en",
+    "text": "Pilot: NOC validity checked at intake — expiry flagged before acceptance, applicant uploaded the renewed NOC the same afternoon. No return needed."
+  },
+  {
+    "id": "NOTE-096",
+    "caseId": "MNDA-BP-2026-03020",
+    "date": "2026-10-01T17:14:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "pilot",
+    "lang": "ar",
+    "text": "ضمن التجربة: تم التحقق من صلاحية الـ NOC عند الاستلام، وطُلب من المتعامل تحديثه قبل قبول الطلب، فتم الرفع في اليوم نفسه دون إعادة."
+  },
+  {
+    "id": "NOTE-097",
+    "caseId": "MNDA-BP-2026-03029",
+    "date": "2026-10-02T12:15:00+04:00",
+    "author": "Mohammed Ali Al Hosani",
+    "theme": "pilot",
+    "lang": "ar",
+    "text": "ضمن التجربة: أُرسل طلب شهادة عدم الممانعة إلى شركة جزيرة اللؤلؤ للتطوير ش.م.ع آلياً عند التقديم، وبدأ التدقيق التخطيطي بالتوازي."
+  },
+  {
+    "id": "NOTE-098",
+    "caseId": "MNDA-BP-2026-02891",
+    "date": "2026-10-02T15:13:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "بانتظار شهادة عدم الممانعة من شركة جزيرة اللؤلؤ للتطوير ش.م.ع منذ 11 يوماً. تواصل المكتب الاستشاري مع المطور أكثر من مرة وأفاد بأن الطلب ما زال قيد المراجعة لدى قسم التصاميم."
+  },
+  {
+    "id": "NOTE-099",
+    "caseId": "MNDA-BP-2026-03041",
+    "date": "2026-10-03T20:24:00+04:00",
+    "author": "Mohammed Ali Al Hosani",
+    "theme": "pilot",
+    "lang": "en",
+    "text": "Pilot: intake checklist caught plot number mismatch on the NOC before acceptance. 20 minutes at the counter instead of a full return cycle."
+  },
+  {
+    "id": "NOTE-100",
+    "caseId": "MNDA-BP-2026-02956",
+    "date": "2026-10-05T08:06:00+04:00",
+    "author": "Khaled Mansour Haddad",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "Day 7 awaiting NOC from Lulu Island Developments PJSC. Consultant (Al Waha Engineering Bureau) has chased twice; developer's design-review team says the request is \"in queue\". Nothing outstanding on our side."
+  },
+  {
+    "id": "NOTE-101",
+    "caseId": "MNDA-BP-2026-03061",
+    "date": "2026-10-05T16:50:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "pilot",
+    "lang": "ar",
+    "text": "ضمن التجربة: تم التحقق من صلاحية الـ NOC عند الاستلام، وطُلب من المتعامل تحديثه قبل قبول الطلب، فتم الرفع في اليوم نفسه دون إعادة."
+  },
+  {
+    "id": "NOTE-102",
+    "caseId": "MNDA-BP-2026-03067",
+    "date": "2026-10-06T09:34:00+04:00",
+    "author": "Priya Nair",
+    "theme": "pilot",
+    "lang": "en",
+    "text": "Pilot: NOC validity checked at intake — expiry flagged before acceptance, applicant uploaded the renewed NOC the same afternoon. No return needed."
+  },
+  {
+    "id": "NOTE-103",
+    "caseId": "MNDA-BP-2026-02928",
+    "date": "2026-10-06T09:35:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "NOC finally received after 8 days. Developer asked for façade colour change before issuing (RAL 9010 instead of sand beige). Planning review can start."
+  },
+  {
+    "id": "NOTE-104",
+    "caseId": "MNDA-BP-2026-02882",
+    "date": "2026-10-06T09:49:00+04:00",
+    "author": "Reem Abdulla Al Zaabi",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "Escalated to Eng. Omar: 15 days on NOC hold for plot MN-03-114-0193. Lulu Island Developments PJSC says the NOC team is two people and handles all community requests."
+  },
+  {
+    "id": "NOTE-105",
+    "caseId": "MNDA-BP-2026-03094",
+    "date": "2026-10-07T14:28:00+04:00",
+    "author": "Aisha Khalfan Al Marri",
+    "theme": "pilot",
+    "lang": "en",
+    "text": "Pilot: NOC request sent to Lulu Island Developments PJSC automatically at submission; planning review started in parallel while the NOC is pending."
+  },
+  {
+    "id": "NOTE-106",
+    "caseId": "MNDA-BP-2026-03097",
+    "date": "2026-10-07T16:27:00+04:00",
+    "author": "Khaled Mansour Haddad",
+    "theme": "pilot",
+    "lang": "en",
+    "text": "Pilot: intake checklist caught plot number mismatch on the NOC before acceptance. 20 minutes at the counter instead of a full return cycle."
+  },
+  {
+    "id": "NOTE-107",
+    "caseId": "MNDA-BP-2026-02903",
+    "date": "2026-10-08T09:02:00+04:00",
+    "author": "Latifa Obaid Al Shamsi",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "وصلت شهادة عدم الممانعة بعد 15 يوماً، مع ملاحظة من المطور بتعديل ارتفاع السور الخارجي إلى 2.1 م. تم تحويل الطلب للتدقيق التخطيطي."
+  },
+  {
+    "id": "NOTE-108",
+    "caseId": "MNDA-BP-2026-02954",
+    "date": "2026-10-08T11:33:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "nocWait",
+    "lang": "en",
+    "text": "Still no NOC (11 days). Applicant called the hotline twice asking why the permit is late — explained the hold. Lulu Island Developments PJSC portal shows \"under technical review\"."
+  },
+  {
+    "id": "NOTE-109",
+    "caseId": "MNDA-BP-2026-03105",
+    "date": "2026-10-08T14:47:00+04:00",
+    "author": "Ahmed Fathy Abdelrahman",
+    "theme": "pilot",
+    "lang": "en",
+    "text": "Pilot: NOC request sent to Sidr Communities LLC automatically at submission; planning review started in parallel while the NOC is pending."
+  },
+  {
+    "id": "NOTE-110",
+    "caseId": "MNDA-BP-2026-02633",
+    "date": "2026-10-09T06:19:00+04:00",
+    "author": "Mohammed Ali Al Hosani",
+    "theme": "cd",
+    "lang": "en",
+    "text": "Civil Defence comments: escape-stair width on typical floors below requirement; consultant revising. GFA 25,325 m²."
+  },
+  {
+    "id": "NOTE-111",
+    "caseId": "MNDA-BP-2026-03115",
+    "date": "2026-10-09T11:47:00+04:00",
+    "author": "Hamdan Saif Al Ketbi",
+    "theme": "pilot",
+    "lang": "en",
+    "text": "Pilot: NOC validity checked at intake — expiry flagged before acceptance, applicant uploaded the renewed NOC the same afternoon. No return needed."
+  },
+  {
+    "id": "NOTE-112",
+    "caseId": "MNDA-BP-2026-02980",
+    "date": "2026-10-09T14:27:00+04:00",
+    "author": "Saeed Rashid Al Nuaimi",
+    "theme": "nocWait",
+    "lang": "ar",
+    "text": "اتصل المتعامل بمركز إسعاد المتعاملين يسأل عن سبب التأخير؛ تم إبلاغه أن الطلب بانتظار موافقة شركة جزيرة اللؤلؤ للتطوير ش.م.ع على المخططات (10 أيام حتى الآن)."
+  }
+]

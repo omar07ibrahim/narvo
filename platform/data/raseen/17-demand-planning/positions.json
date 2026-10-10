@@ -1,0 +1,176 @@
+{
+  "asOf": "2026-10-11",
+  "note": "Opening on-hand at start of week commencing 12 Oct 2026 (generated, seed 20261011)",
+  "positions": {
+    "CEM-OPC-50|JA": {
+      "onHand": 56840,
+      "avgLast4": 42567.5,
+      "pipeline": [
+        44240
+      ]
+    },
+    "CEM-OPC-50|MN": {
+      "onHand": 26120,
+      "avgLast4": 16542.3,
+      "pipeline": [
+        17160
+      ]
+    },
+    "CEM-SRC-50|JA": {
+      "onHand": 22240,
+      "avgLast4": 9704,
+      "pipeline": [
+        9760
+      ]
+    },
+    "CEM-SRC-50|MN": {
+      "onHand": 9560,
+      "avgLast4": 3704.5,
+      "pipeline": [
+        3720
+      ]
+    },
+    "RB-B500-12|JA": {
+      "onHand": 252.1,
+      "avgLast4": 194.9,
+      "pipeline": [
+        0
+      ]
+    },
+    "RB-B500-12|MN": {
+      "onHand": 120.3,
+      "avgLast4": 85.7,
+      "pipeline": [
+        0
+      ]
+    },
+    "RB-B500-16|JA": {
+      "onHand": 267.3,
+      "avgLast4": 312.9,
+      "pipeline": [
+        0
+      ]
+    },
+    "RB-B500-16|MN": {
+      "onHand": 64,
+      "avgLast4": 108.6,
+      "pipeline": [
+        0
+      ]
+    },
+    "RB-B500-20|JA": {
+      "onHand": 349,
+      "avgLast4": 257.6,
+      "pipeline": [
+        0
+      ]
+    },
+    "RB-B500-20|MN": {
+      "onHand": 107,
+      "avgLast4": 90.5,
+      "pipeline": [
+        0
+      ]
+    },
+    "RB-B500-25|JA": {
+      "onHand": 286.7,
+      "avgLast4": 147.8,
+      "pipeline": [
+        0
+      ]
+    },
+    "RB-B500-25|MN": {
+      "onHand": 71.8,
+      "avgLast4": 42.1,
+      "pipeline": [
+        0
+      ]
+    },
+    "BLK-HOL-20|JA": {
+      "onHand": 122940,
+      "avgLast4": 106479,
+      "pipeline": [
+        102060
+      ]
+    },
+    "BLK-HOL-20|MN": {
+      "onHand": 62520,
+      "avgLast4": 45668,
+      "pipeline": [
+        42660
+      ]
+    },
+    "TIL-POR-60120|JA": {
+      "onHand": 55646,
+      "avgLast4": 9728.5,
+      "pipeline": [
+        10058,
+        9587,
+        9498
+      ]
+    },
+    "TIL-POR-60120|MN": {
+      "onHand": 12386,
+      "avgLast4": 2062.8,
+      "pipeline": [
+        1859,
+        2216,
+        2213
+      ]
+    },
+    "TIL-CER-3060|JA": {
+      "onHand": 45727,
+      "avgLast4": 6367.3,
+      "pipeline": [
+        6414,
+        5742,
+        6889
+      ]
+    },
+    "TIL-CER-3060|MN": {
+      "onHand": 11245,
+      "avgLast4": 1607.8,
+      "pipeline": [
+        1741,
+        1627,
+        1624
+      ]
+    },
+    "SAN-WC-WH|JA": {
+      "onHand": 1595,
+      "avgLast4": 185.8,
+      "pipeline": [
+        200,
+        201,
+        181,
+        202
+      ]
+    },
+    "SAN-WC-WH|MN": {
+      "onHand": 477,
+      "avgLast4": 53.8,
+      "pipeline": [
+        49,
+        50,
+        52,
+        49
+      ]
+    },
+    "WPF-BIT-4|JA": {
+      "onHand": 3870,
+      "avgLast4": 1185.8,
+      "pipeline": [
+        1113,
+        1222
+      ]
+    },
+    "WPF-BIT-4|MN": {
+      "onHand": 2381,
+      "avgLast4": 581.8,
+      "pipeline": [
+        551,
+        571
+      ]
+    }
+  }
+}

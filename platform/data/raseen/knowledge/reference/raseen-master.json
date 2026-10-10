@@ -1,0 +1,179 @@
+{
+  "_about": "Raseen Building Materials Trading LLC (RBM) — structured master data, single source of truth for solutions 08, 10, 14, 16 (and any other Raseen module). Prices in AED excluding 5% VAT. Data as of Friday 9 October 2026. Knowledge documents in data/raseen/knowledge/**/*.md describe the same numbers in prose.",
+  "asOf": "2026-10-09",
+  "demoToday": "2026-10-11",
+  "vatRate": 0.05,
+  "company": {
+    "name": "Raseen Building Materials Trading LLC",
+    "nameAr": "رصين لتجارة مواد البناء ذ.م.م",
+    "short": "RBM",
+    "group": "Raseen Group",
+    "trn": "100274910600003",
+    "tradeLicence": "CN-1187342",
+    "address": "Raseen Building, Al Quoz Industrial 3, Dubai, UAE",
+    "addressAr": "مبنى رصين، القوز الصناعية 3، دبي، الإمارات العربية المتحدة",
+    "phone": "+971 4 339 8120",
+    "web": "raseen.ae",
+    "priceList": "PL-2026-Q4",
+    "priceListEffective": "2026-10-01"
+  },
+  "warehouses": [
+    { "id": "JA", "name": "Jebel Ali", "nameAr": "جبل علي", "palletPositions": 18000, "rebarYardT": 4200, "address": "Plot S30214, Jebel Ali Industrial, Dubai" },
+    { "id": "MN05", "name": "Ras Al Marsa Industrial (MN-05)", "nameAr": "رأس المرسى الصناعية (MN-05)", "palletPositions": 6500, "rebarYardT": 900, "address": "Plot MN-05-031-0007, Ras Al Marsa Industrial, Marsa Al Noor" }
+  ],
+  "people": [
+    { "name": "Saeed Abdulrahman Al Falasi", "nameAr": "سعيد عبدالرحمن الفلاسي", "role": "Chairman", "roleAr": "رئيس مجلس الإدارة", "email": "saeed.a@raseen.ae" },
+    { "name": "Abdulrahman Saeed Al Falasi", "nameAr": "عبدالرحمن سعيد الفلاسي", "role": "Group CEO", "roleAr": "الرئيس التنفيذي للمجموعة", "email": "abdulrahman.a@raseen.ae" },
+    { "name": "Karim Haddad", "nameAr": "كريم حداد", "role": "Chief Operating Officer", "roleAr": "الرئيس التنفيذي للعمليات", "email": "karim.h@raseen.ae" },
+    { "name": "Priya Raghavan", "nameAr": "بريا راغافان", "role": "Group CFO", "roleAr": "المدير المالي للمجموعة", "email": "priya.r@raseen.ae" },
+    { "name": "Tariq Nasser", "nameAr": "طارق ناصر", "role": "General Manager, Raseen Building Materials", "roleAr": "المدير العام، رصين لمواد البناء", "email": "tariq.n@raseen.ae" },
+    { "name": "Fadi Khoury", "nameAr": "فادي خوري", "role": "Sales Director, RBM", "roleAr": "مدير المبيعات، رصين لمواد البناء", "email": "fadi.k@raseen.ae", "mobile": "+971 50 284 7713" },
+    { "name": "Ahmed Soliman", "nameAr": "أحمد سليمان", "role": "Key Account Manager — Infrastructure & Government Projects desk (from 1 Oct 2026)", "roleAr": "مدير حسابات رئيسية — مكتب مشاريع البنية التحتية والمشاريع الحكومية", "email": "ahmed.s@raseen.ae", "mobile": "+971 55 610 4428" },
+    { "name": "Rania Mansour", "nameAr": "رانيا منصور", "role": "Key Account Manager — Building Contractors desk", "roleAr": "مديرة حسابات رئيسية — مكتب مقاولي المباني", "email": "rania.m@raseen.ae", "mobile": "+971 50 773 2091" },
+    { "name": "Vishal Kapoor", "nameAr": "فيشال كابور", "role": "Key Account Manager — Fit-out & MEP desk", "roleAr": "مدير حسابات رئيسية — مكتب التشطيبات والأعمال الكهروميكانيكية", "email": "vishal.k@raseen.ae", "mobile": "+971 52 905 3364" },
+    { "name": "Hana Yousef", "nameAr": "هناء يوسف", "role": "Marketing & Brand Manager", "roleAr": "مديرة التسويق والعلامة التجارية", "email": "hana.y@raseen.ae" },
+    { "name": "Deepak Menon", "nameAr": "ديباك مينون", "role": "AP Supervisor, Group Finance", "roleAr": "مشرف الحسابات الدائنة، المالية للمجموعة", "email": "deepak.m@raseen.ae" },
+    { "name": "Joseph Abraham", "nameAr": "جوزيف أبراهام", "role": "Supply Chain & Planning Manager", "roleAr": "مدير سلسلة الإمداد والتخطيط", "email": "joseph.a@raseen.ae" },
+    { "name": "Nadia Rahimi", "nameAr": "نادية رحيمي", "role": "Credit Controller, Group Finance", "roleAr": "مراقبة الائتمان، المالية للمجموعة", "email": "nadia.r@raseen.ae" },
+    { "name": "Sunil Thomas", "nameAr": "سونيل توماس", "role": "Warehouse Manager, Jebel Ali", "roleAr": "مدير مستودع جبل علي", "email": "sunil.t@raseen.ae" },
+    { "name": "Marwan Qasim", "nameAr": "مروان قاسم", "role": "Logistics & Dispatch Supervisor, MN-05", "roleAr": "مشرف الخدمات اللوجستية والإرسال، MN-05", "email": "marwan.q@raseen.ae" },
+    { "name": "Leena Mattar", "nameAr": "لينا مطر", "role": "Bid Manager, Raseen FM", "roleAr": "مديرة العطاءات، رصين لإدارة المرافق", "email": "leena.m@raseen.ae" }
+  ],
+  "products": [
+    { "sku": "CEM-OPC-50", "name": "OPC 42.5N cement, 50 kg bag", "nameAr": "إسمنت بورتلاندي عادي 42.5N، كيس 50 كغ", "category": "Cement", "unit": "bag", "unitAr": "كيس", "spec": "BS EN 197-1 CEM I 42.5N; 40 bags/pallet; 600 bags per 30 t truck", "listPrice": 17.60, "stdCost": 14.20, "supplierId": "SUP-NEC", "leadTimeDays": 2 },
+    { "sku": "CEM-SRC-50", "name": "Sulphate-resisting cement, 50 kg bag", "nameAr": "إسمنت مقاوم للكبريتات، كيس 50 كغ", "category": "Cement", "unit": "bag", "unitAr": "كيس", "spec": "BS EN 197-1 CEM I 42.5N-SR3 (C3A ≤ 3%); 40 bags/pallet", "listPrice": 19.90, "stdCost": 16.35, "supplierId": "SUP-NEC", "leadTimeDays": 3 },
+    { "sku": "RB-B500-12", "name": "Rebar B500B 12 mm, 12 m bars", "nameAr": "حديد تسليح B500B قطر 12 مم، قضبان 12 م", "category": "Steel", "unit": "t", "unitAr": "طن", "spec": "BS 4449:2005+A3:2016 grade B500B; mill certificate per heat", "listPrice": 2895, "stdCost": 2575, "supplierId": "SUP-SRM", "leadTimeDays": 3 },
+    { "sku": "RB-B500-16", "name": "Rebar B500B 16 mm, 12 m bars", "nameAr": "حديد تسليح B500B قطر 16 مم، قضبان 12 م", "category": "Steel", "unit": "t", "unitAr": "طن", "spec": "BS 4449:2005+A3:2016 grade B500B; mill certificate per heat", "listPrice": 2845, "stdCost": 2530, "supplierId": "SUP-SRM", "leadTimeDays": 3 },
+    { "sku": "RB-B500-20", "name": "Rebar B500B 20 mm, 12 m bars", "nameAr": "حديد تسليح B500B قطر 20 مم، قضبان 12 م", "category": "Steel", "unit": "t", "unitAr": "طن", "spec": "BS 4449:2005+A3:2016 grade B500B; mill certificate per heat", "listPrice": 2830, "stdCost": 2520, "supplierId": "SUP-SRM", "leadTimeDays": 3 },
+    { "sku": "RB-B500-25", "name": "Rebar B500B 25 mm, 12 m bars", "nameAr": "حديد تسليح B500B قطر 25 مم، قضبان 12 م", "category": "Steel", "unit": "t", "unitAr": "طن", "spec": "BS 4449:2005+A3:2016 grade B500B; mill certificate per heat", "listPrice": 2860, "stdCost": 2545, "supplierId": "SUP-SRM", "leadTimeDays": 3 },
+    { "sku": "BLK-HOL-20", "name": "Hollow concrete block 20 cm (400×200×200)", "nameAr": "طابوق إسمنتي مفرغ 20 سم (400×200×200)", "category": "Blocks", "unit": "pc", "unitAr": "حبة", "spec": "7 N/mm² compressive strength; 90 pcs/pallet", "listPrice": 4.15, "stdCost": 3.05, "supplierId": "SUP-AWB", "leadTimeDays": 2 },
+    { "sku": "TIL-POR-60120", "name": "Porcelain tile 60×120 cm, matt, rectified", "nameAr": "بلاط بورسلان 60×120 سم، مطفي، محدد الحواف", "category": "Tiles", "unit": "m²", "unitAr": "م²", "spec": "ISO 13006 BIa; R10 slip rating; 1.44 m²/box", "listPrice": 64.00, "stdCost": 46.80, "supplierId": "SUP-ACT", "leadTimeDays": 5 },
+    { "sku": "TIL-CER-3060", "name": "Ceramic wall tile 30×60 cm, gloss white", "nameAr": "بلاط جدران سيراميك 30×60 سم، أبيض لامع", "category": "Tiles", "unit": "m²", "unitAr": "م²", "spec": "ISO 13006 BIII; 1.44 m²/box", "listPrice": 31.50, "stdCost": 22.40, "supplierId": "SUP-ACT", "leadTimeDays": 5 },
+    { "sku": "SAN-WC-WH", "name": "Wall-hung WC set with concealed cistern", "nameAr": "طقم مرحاض معلق مع خزان مخفي", "category": "Sanitaryware", "unit": "set", "unitAr": "طقم", "spec": "Vitreous china pan, soft-close seat, 3/6 L dual flush frame", "listPrice": 1240, "stdCost": 905, "supplierId": "SUP-ACT", "leadTimeDays": 7 },
+    { "sku": "WPF-BIT-4", "name": "APP-modified bitumen membrane 4 mm, 1×10 m roll", "nameAr": "رول عزل بيتوميني معدّل APP سماكة 4 مم، 1×10 م", "category": "Waterproofing", "unit": "roll", "unitAr": "رول", "spec": "Polyester reinforced, torch-applied; ASTM D6222", "listPrice": 96.00, "stdCost": 71.50, "supplierId": "SUP-GBP", "leadTimeDays": 4 },
+    { "sku": "PNT-TS-20", "name": "Raseen ThermaShield heat-reflective roof coating, 20 L pail", "nameAr": "رصين ثيرماشيلد — طلاء عاكس للحرارة للأسطح، سطل 20 لتر", "category": "Coatings", "unit": "pail", "unitAr": "سطل", "spec": "Water-based acrylic; solar reflectance 0.88; SRI 110; launch 1 Nov 2026", "listPrice": 385.00, "stdCost": 231.00, "supplierId": "SUP-CCI", "leadTimeDays": 5 }
+  ],
+  "suppliers": [
+    { "id": "SUP-NEC", "name": "Northern Emirates Cement Co.", "nameAr": "شركة إسمنت الإمارات الشمالية", "trn": "100318274500003", "paymentTermsDays": 60, "contact": "Faisal Al Naqbi, Sales Manager", "email": "sales@ne-cement.ae", "categories": ["Cement"], "invoicePrefix": "NEC/INV/26/" },
+    { "id": "SUP-SRM", "name": "Sahara Rebar Mills LLC", "nameAr": "مصانع صحارى لحديد التسليح ذ.م.م", "trn": "100427615900003", "paymentTermsDays": 45, "contact": "Venkatesh Rao, Commercial Manager", "email": "commercial@sahararebar.ae", "categories": ["Steel"], "invoicePrefix": "SRM-", "note": "Planned mill maintenance 5–19 Oct 2026 (rolling mill + reheating furnace). Dispatches resume 20 Oct 2026." },
+    { "id": "SUP-ACT", "name": "Andalus Ceramics Trading LLC", "nameAr": "الأندلس لتجارة السيراميك ذ.م.م", "trn": "100259038400003", "paymentTermsDays": 60, "contact": "Omar Bitar, Key Accounts", "email": "accounts@andalusceramics.ae", "categories": ["Tiles", "Sanitaryware"], "invoicePrefix": "ACT/INV/26/" },
+    { "id": "SUP-GBP", "name": "Gulf Bitumen Products FZCO", "nameAr": "منتجات الخليج للبيتومين م.م.ح", "trn": "100392716800003", "paymentTermsDays": 45, "contact": "Ravi Shankar, Finance", "email": "finance@gulfbitumen.ae", "categories": ["Waterproofing"], "invoicePrefix": "GBP-TI-" },
+    { "id": "SUP-AWB", "name": "Al Waha Blocks Factory LLC", "nameAr": "مصنع الواحة للطابوق ذ.م.م", "trn": "100186452700003", "paymentTermsDays": 30, "contact": "Hamdan Al Shehhi, Plant Manager", "email": "accounts@alwahablocks.ae", "categories": ["Blocks"], "invoicePrefix": "AWB-" },
+    { "id": "SUP-CCI", "name": "Coastal Coatings Industries LLC", "nameAr": "الساحل للصناعات الطلائية ذ.م.م", "trn": "100447281600003", "paymentTermsDays": 60, "contact": "Dr. Rami Khalil, Technical Director", "email": "orders@coastalcoatings.ae", "categories": ["Coatings"], "invoicePrefix": "CCI-INV-", "note": "Contract manufacturer of Raseen ThermaShield (PNT-TS-20)." },
+    { "id": "SUP-AKT", "name": "Al Khaleej Heavy Transport LLC", "nameAr": "الخليج للنقل الثقيل ذ.م.م", "trn": "100512839400003", "paymentTermsDays": 30, "contact": "Shahid Mehmood, Operations", "email": "billing@khaleejheavy.ae", "categories": ["Freight"], "invoicePrefix": "AKHT/" },
+    { "id": "SUP-FLL", "name": "Fast Lane Logistics Services", "nameAr": "فاست لين للخدمات اللوجستية", "trn": null, "paymentTermsDays": 30, "contact": "Arif Hussain, Owner", "email": "fastlane.logistics.uae@gmail.com", "categories": ["Freight"], "invoicePrefix": "FLL-", "note": "Sub-contracted haulier onboarded Aug 2026 for MN-05 shuttle runs. VAT registration certificate not on file." }
+  ],
+  "customers": [
+    { "id": "RBM-C-10021", "name": "Bin Hilal Contracting LLC", "nameAr": "بن هلال للمقاولات ذ.م.م", "tier": "A", "segment": "Building contractor", "emirate": "Dubai", "trn": "100215873600003", "creditLimit": 2500000, "paymentTermsDays": 60, "arOutstanding": 1684250, "overdue30": 0, "kam": "Vishal Kapoor", "contractId": "FA-BHC-2026" },
+    { "id": "RBM-C-10034", "name": "Gulf Crest Builders LLC", "nameAr": "جلف كريست للبناء ذ.م.م", "tier": "A", "segment": "High-rise building contractor", "emirate": "Dubai / Marsa Al Noor", "trn": "100338417200003", "creditLimit": 2000000, "paymentTermsDays": 60, "arOutstanding": 1763410, "overdue30": 148320, "kam": "Rania Mansour", "previousKam": "Ahmed Soliman", "kamChangedOn": "2026-10-01", "contractId": "FA-GCB-2026" },
+    { "id": "RBM-C-10047", "name": "Arabian Peninsula Construction Co. (APCC)", "nameAr": "شركة شبه الجزيرة العربية للإنشاءات", "tier": "A", "segment": "Infrastructure contractor", "emirate": "Abu Dhabi / Marsa Al Noor", "trn": "100147295300003", "creditLimit": 3500000, "paymentTermsDays": 60, "arOutstanding": 2918760, "overdue30": 0, "kam": "Ahmed Soliman", "contractId": "FA-APCC-2026" },
+    { "id": "RBM-C-10052", "name": "Al Marsa Engineering & Contracting LLC", "nameAr": "المرسى للهندسة والمقاولات ذ.م.م", "tier": "B", "segment": "Villa & low-rise contractor", "emirate": "Marsa Al Noor", "trn": "100361548900003", "creditLimit": 1200000, "paymentTermsDays": 45, "arOutstanding": 846130, "overdue30": 61450, "kam": "Rania Mansour", "contractId": "FA-AME-2026" },
+    { "id": "RBM-C-10068", "name": "Emerald Line Construction LLC", "nameAr": "إميرالد لاين للإنشاءات ذ.م.م", "tier": "B", "segment": "Fit-out & residential contractor", "emirate": "Dubai", "trn": "100294716500003", "creditLimit": 900000, "paymentTermsDays": 45, "arOutstanding": 512890, "overdue30": 0, "kam": "Vishal Kapoor", "contractId": "FA-ELC-2026" },
+    { "id": "RBM-C-10073", "name": "Saqr Al Noor Contracting LLC", "nameAr": "صقر النور للمقاولات ذ.م.م", "tier": "B", "segment": "Civil & roads contractor", "emirate": "Marsa Al Noor / Ras Al Khaimah", "trn": "100403627100003", "creditLimit": 750000, "paymentTermsDays": 30, "arOutstanding": 698420, "overdue30": 37800, "kam": "Ahmed Soliman", "contractId": "FA-SANC-2026" },
+    { "id": "RBM-C-10105", "name": "Al Fayha Fit-Out & Interiors LLC", "nameAr": "الفيحاء للتشطيبات والديكور ذ.م.م", "tier": "C", "segment": "Fit-out", "emirate": "Dubai", "trn": "100517284600003", "creditLimit": 400000, "paymentTermsDays": 30, "arOutstanding": 188240, "overdue30": 0, "kam": "Vishal Kapoor" },
+    { "id": "RBM-C-10118", "name": "Coastline Marine Works LLC", "nameAr": "كوستلاين للأعمال البحرية ذ.م.م", "tier": "B", "segment": "Marine & coastal works", "emirate": "Marsa Al Noor", "trn": "100286349100003", "creditLimit": 650000, "paymentTermsDays": 45, "arOutstanding": 302115, "overdue30": 0, "kam": "Ahmed Soliman" },
+    { "id": "RBM-C-10126", "name": "Najm Al Sahil Building Contracting LLC", "nameAr": "نجم الساحل لمقاولات البناء ذ.م.م", "tier": "C", "segment": "Villa contractor", "emirate": "Sharjah", "trn": "100458127300003", "creditLimit": 250000, "paymentTermsDays": 30, "arOutstanding": 241960, "overdue30": 52300, "kam": "Rania Mansour" },
+    { "id": "RBM-C-10139", "name": "Ras Al Marsa Precast Industries LLC", "nameAr": "رأس المرسى للخرسانة الجاهزة مسبقة الصب ذ.م.م", "tier": "B", "segment": "Precast manufacturer", "emirate": "Marsa Al Noor", "trn": "100372951800003", "creditLimit": 900000, "paymentTermsDays": 45, "arOutstanding": 455780, "overdue30": 0, "kam": "Ahmed Soliman" },
+    { "id": "RBM-C-10144", "name": "Desert Rose Villas Contracting LLC", "nameAr": "وردة الصحراء لمقاولات الفلل ذ.م.م", "tier": "C", "segment": "Villa contractor", "emirate": "Dubai", "trn": "100194638200003", "creditLimit": 180000, "paymentTermsDays": 30, "arOutstanding": 96410, "overdue30": 0, "kam": "Rania Mansour" },
+    { "id": "RBM-C-10152", "name": "Bayt Al Reef Building Contracting LLC", "nameAr": "بيت الريف لمقاولات البناء ذ.م.م", "tier": "C", "segment": "Citizens' housing contractor", "emirate": "Marsa Al Noor", "trn": "100539216400003", "creditLimit": 220000, "paymentTermsDays": 30, "arOutstanding": 143870, "overdue30": 0, "kam": "Rania Mansour" },
+    { "id": "RBM-C-10167", "name": "Horizon Ridge MEP Contracting LLC", "nameAr": "هورايزن ريدج للمقاولات الكهروميكانيكية ذ.م.م", "tier": "B", "segment": "MEP contractor", "emirate": "Dubai", "trn": "100265873900003", "creditLimit": 500000, "paymentTermsDays": 45, "arOutstanding": 219650, "overdue30": 0, "kam": "Vishal Kapoor" },
+    { "id": "RBM-C-10171", "name": "Sidra Line Interiors LLC", "nameAr": "سدرة لاين للتصميم الداخلي ذ.م.م", "tier": "C", "segment": "Fit-out", "emirate": "Abu Dhabi", "trn": "100318760500003", "creditLimit": 150000, "paymentTermsDays": 30, "arOutstanding": 74220, "overdue30": 0, "kam": "Vishal Kapoor" },
+    { "id": "RBM-C-10183", "name": "Al Ruwais Roofing & Waterproofing LLC", "nameAr": "الرويس للأسقف والعزل المائي ذ.م.م", "tier": "B", "segment": "Roofing & waterproofing applicator", "emirate": "Dubai / Marsa Al Noor", "trn": "100427381600003", "creditLimit": 380000, "paymentTermsDays": 45, "arOutstanding": 167340, "overdue30": 0, "kam": "Vishal Kapoor" },
+    { "id": "RBM-C-10196", "name": "Al Seef Engineering Works LLC", "nameAr": "السيف للأعمال الهندسية ذ.م.م", "tier": "B", "segment": "Industrial contractor", "emirate": "Ajman", "trn": "100274185300003", "creditLimit": 600000, "paymentTermsDays": 45, "arOutstanding": 389510, "overdue30": 24600, "kam": "Ahmed Soliman" },
+    { "id": "RBM-C-10204", "name": "Noor Al Waha General Contracting LLC", "nameAr": "نور الواحة للمقاولات العامة ذ.م.م", "tier": "C", "segment": "Citizens' housing contractor", "emirate": "Marsa Al Noor", "trn": "100362714800003", "creditLimit": 300000, "paymentTermsDays": 30, "arOutstanding": 207930, "overdue30": 0, "kam": "Rania Mansour" },
+    { "id": "RBM-C-10219", "name": "Al Barsha Building Materials Trading LLC", "nameAr": "البرشاء لتجارة مواد البناء ذ.م.م", "tier": "B", "segment": "Reseller", "emirate": "Dubai", "trn": "100195427600003", "creditLimit": 450000, "paymentTermsDays": 30, "arOutstanding": 318260, "overdue30": 0, "kam": "Vishal Kapoor" },
+    { "id": "RBM-C-10227", "name": "Qasr Al Sahra Contracting LLC", "nameAr": "قصر الصحراء للمقاولات ذ.م.م", "tier": "C", "segment": "Villa contractor", "emirate": "Abu Dhabi", "trn": "100481936500003", "creditLimit": 200000, "paymentTermsDays": 30, "arOutstanding": 118640, "overdue30": 0, "kam": "Rania Mansour" },
+    { "id": "RBM-C-10235", "name": "Al Jazira Roofing Solutions LLC", "nameAr": "الجزيرة لحلول الأسقف ذ.م.م", "tier": "C", "segment": "Roofing applicator", "emirate": "Sharjah", "trn": "100236518700003", "creditLimit": 160000, "paymentTermsDays": 30, "arOutstanding": 58370, "overdue30": 0, "kam": "Vishal Kapoor" },
+    { "id": "RBM-C-10242", "name": "Sandstone Infrastructure LLC", "nameAr": "ساندستون للبنية التحتية ذ.م.م", "tier": "A", "segment": "Infrastructure contractor", "emirate": "Abu Dhabi", "trn": "100308462900003", "creditLimit": 1500000, "paymentTermsDays": 60, "arOutstanding": 1102480, "overdue30": 0, "kam": "Ahmed Soliman" },
+    { "id": "RBM-C-10258", "name": "Two Seas Marine Contracting LLC", "nameAr": "البحرين للمقاولات البحرية ذ.م.م", "tier": "B", "segment": "Marine & coastal works", "emirate": "Marsa Al Noor", "trn": "100417295600003", "creditLimit": 700000, "paymentTermsDays": 45, "arOutstanding": 281930, "overdue30": 0, "kam": "Ahmed Soliman" },
+    { "id": "RBM-C-10263", "name": "Sharq Al Emarat Contracting LLC", "nameAr": "شرق الإمارات للمقاولات ذ.م.م", "tier": "B", "segment": "Building contractor", "emirate": "Fujairah", "trn": "100359184200003", "creditLimit": 550000, "paymentTermsDays": 45, "arOutstanding": 403670, "overdue30": 41200, "kam": "Rania Mansour" },
+    { "id": "RBM-C-10271", "name": "Al Hamra Tiling & Stone LLC", "nameAr": "الحمراء للبلاط والحجر ذ.م.م", "tier": "C", "segment": "Tiling sub-contractor", "emirate": "Ras Al Khaimah", "trn": "100248613700003", "creditLimit": 140000, "paymentTermsDays": 30, "arOutstanding": 92310, "overdue30": 0, "kam": "Vishal Kapoor" }
+  ],
+  "contracts": [
+    {
+      "id": "FA-GCB-2026", "customerId": "RBM-C-10034", "title": "Supply Frame Agreement 2026 — Gulf Crest Builders LLC",
+      "validFrom": "2026-01-01", "validTo": "2026-12-31", "paymentTermsDays": 60, "paymentBasis": "from invoice date",
+      "delivery": "DAP site (Dubai and Marsa Al Noor); delivery windows per site-access rules; minimum rebar drop 10 t",
+      "priceAdjustment": "Rebar rates indexed quarterly to the mill base price; other items fixed for the calendar year. Project-specific quotations may not exceed frame rates without written customer acceptance.",
+      "retention": "None", "signedBy": "Fadi Khoury (RBM) / Imran Qureshi (GCB)", "signedOn": "2025-12-18",
+      "rates": { "RB-B500-12": 2790, "RB-B500-16": 2745, "RB-B500-20": 2735, "RB-B500-25": 2765, "CEM-OPC-50": 16.40, "CEM-SRC-50": 18.60, "BLK-HOL-20": 3.85, "TIL-POR-60120": 58.90, "WPF-BIT-4": 92.50 },
+      "ratesQ3": { "RB-B500-12": 2750, "RB-B500-16": 2705, "RB-B500-20": 2695, "RB-B500-25": 2725 }
+    },
+    {
+      "id": "FA-BHC-2026", "customerId": "RBM-C-10021", "title": "Supply Frame Agreement 2026 — Bin Hilal Contracting LLC",
+      "validFrom": "2026-01-01", "validTo": "2026-12-31", "paymentTermsDays": 60, "paymentBasis": "from invoice date",
+      "delivery": "DAP site, Dubai", "priceAdjustment": "Rebar indexed quarterly; others fixed.", "retention": "None", "signedBy": "Fadi Khoury / Mohammed Bin Hilal", "signedOn": "2025-12-22",
+      "rates": { "RB-B500-12": 2780, "RB-B500-16": 2735, "RB-B500-20": 2725, "RB-B500-25": 2755, "CEM-OPC-50": 16.20, "CEM-SRC-50": 18.45, "BLK-HOL-20": 3.80, "TIL-POR-60120": 58.20, "TIL-CER-3060": 28.60, "SAN-WC-WH": 1120, "WPF-BIT-4": 91.80 },
+      "ratesQ3": { "RB-B500-12": 2740, "RB-B500-16": 2695, "RB-B500-20": 2685, "RB-B500-25": 2715 }
+    },
+    {
+      "id": "FA-APCC-2026", "customerId": "RBM-C-10047", "title": "Supply Frame Agreement 2026 — Arabian Peninsula Construction Co.",
+      "validFrom": "2026-01-01", "validTo": "2026-12-31", "paymentTermsDays": 60, "paymentBasis": "from invoice date",
+      "delivery": "DAP site, Abu Dhabi and Marsa Al Noor", "priceAdjustment": "Rebar indexed quarterly; others fixed.", "retention": "None", "signedBy": "Tariq Nasser / Eng. Hisham Darwish", "signedOn": "2025-12-15",
+      "rates": { "RB-B500-12": 2770, "RB-B500-16": 2725, "RB-B500-20": 2715, "RB-B500-25": 2745, "CEM-OPC-50": 16.05, "CEM-SRC-50": 18.30, "BLK-HOL-20": 3.78, "WPF-BIT-4": 91.00 },
+      "ratesQ3": { "RB-B500-12": 2730, "RB-B500-16": 2685, "RB-B500-20": 2675, "RB-B500-25": 2705 }
+    },
+    {
+      "id": "FA-AME-2026", "customerId": "RBM-C-10052", "title": "Supply Frame Agreement 2026 — Al Marsa Engineering & Contracting LLC",
+      "validFrom": "2026-02-01", "validTo": "2027-01-31", "paymentTermsDays": 45, "paymentBasis": "from invoice date",
+      "delivery": "DAP site, Marsa Al Noor", "priceAdjustment": "Rebar indexed quarterly; others fixed.", "retention": "None", "signedBy": "Fadi Khoury / Eng. Salem Al Marri", "signedOn": "2026-01-27",
+      "rates": { "RB-B500-12": 2815, "RB-B500-16": 2770, "RB-B500-20": 2760, "CEM-OPC-50": 16.70, "CEM-SRC-50": 18.95, "BLK-HOL-20": 3.92, "TIL-POR-60120": 60.40, "TIL-CER-3060": 29.40, "SAN-WC-WH": 1165 },
+      "ratesQ3": { "RB-B500-12": 2775, "RB-B500-16": 2730, "RB-B500-20": 2720 }
+    },
+    {
+      "id": "FA-ELC-2026", "customerId": "RBM-C-10068", "title": "Supply Frame Agreement 2026 — Emerald Line Construction LLC",
+      "validFrom": "2026-01-01", "validTo": "2026-12-31", "paymentTermsDays": 45, "paymentBasis": "from invoice date",
+      "delivery": "DAP site, Dubai", "priceAdjustment": "Rebar indexed quarterly; others fixed.", "retention": "None", "signedBy": "Fadi Khoury / Deepa Varghese", "signedOn": "2025-12-29",
+      "rates": { "RB-B500-16": 2780, "RB-B500-20": 2770, "CEM-OPC-50": 16.85, "BLK-HOL-20": 3.95, "TIL-POR-60120": 61.00, "TIL-CER-3060": 29.80, "SAN-WC-WH": 1180, "WPF-BIT-4": 93.40 },
+      "ratesQ3": { "RB-B500-16": 2740, "RB-B500-20": 2730 }
+    },
+    {
+      "id": "FA-SANC-2026", "customerId": "RBM-C-10073", "title": "Supply Frame Agreement 2026 — Saqr Al Noor Contracting LLC",
+      "validFrom": "2026-01-01", "validTo": "2026-12-31", "paymentTermsDays": 30, "paymentBasis": "from invoice date",
+      "delivery": "DAP site, Marsa Al Noor and Ras Al Khaimah", "priceAdjustment": "Rebar indexed quarterly; others fixed.", "retention": "None", "signedBy": "Tariq Nasser / Saqr Rashid Al Noori", "signedOn": "2026-01-08",
+      "rates": { "RB-B500-16": 2790, "RB-B500-20": 2780, "RB-B500-25": 2805, "CEM-OPC-50": 16.90, "CEM-SRC-50": 19.10, "BLK-HOL-20": 3.98, "WPF-BIT-4": 94.00 },
+      "ratesQ3": { "RB-B500-16": 2750, "RB-B500-20": 2740, "RB-B500-25": 2765 }
+    }
+  ],
+  "creditPolicy": {
+    "ref": "RBM-FIN-POL-04 rev. 6",
+    "tiers": {
+      "A": { "minLimit": 1500000, "maxTermsDays": 60 },
+      "B": { "minLimit": 500000, "maxTermsDays": 45 },
+      "C": { "minLimit": 0, "maxTermsDays": 30 }
+    },
+    "exposureDefinition": "AR outstanding + open sales orders not yet invoiced (incl. 5% VAT)",
+    "autoHoldWhenExposureOverLimit": true,
+    "temporaryReleaseMaxPct": 15,
+    "temporaryReleaseValidityDays": 30,
+    "temporaryReleaseApprover": "Group CFO (Priya Raghavan)",
+    "extendedTermsApprover": "Group CFO (Priya Raghavan), with credit-insurance cover or bank guarantee",
+    "overdueBlockDays": 60
+  },
+  "deliveryRules": {
+    "ref": "RBM-OPS-POL-11 rev. 3",
+    "siteWindows": [
+      { "zone": "MN-08 Marina Quarter", "days": "Mon–Sat", "from": "09:00", "to": "16:00", "gate": "Marina Quarter Properties LLC gate permit, booked 48 h ahead", "maxVehicle": "12 m flatbed" },
+      { "zone": "MN-03 Al Lulu Island", "days": "Mon–Fri", "from": "08:00", "to": "17:00", "gate": "Lulu Island Developments PJSC gate pass, 24 h ahead", "maxVehicle": "12 m flatbed" },
+      { "zone": "MN-06 Al Sidr Residential", "days": "Mon–Sat", "from": "08:00", "to": "18:00", "gate": "Sidr Communities LLC contractor pass", "maxVehicle": "Any" },
+      { "zone": "Other Marsa Al Noor districts", "days": "Mon–Sat", "from": "07:00", "to": "18:00", "gate": "None", "maxVehicle": "Any" },
+      { "zone": "Dubai sites", "days": "Mon–Sat", "from": "07:00", "to": "18:00", "gate": "Per main contractor", "maxVehicle": "Any; city-centre truck restrictions 06:30–09:00 and 17:00–20:00" }
+    ],
+    "transferJAtoMN05": { "costPerTonne": 38, "leadDays": 1 },
+    "minRebarDropT": 10,
+    "truckCapacityT": 25,
+    "stockLeadTimeHours": 48
+  },
+  "apPolicy": {
+    "ref": "RG-FIN-POL-09 rev. 4",
+    "qtyTolerancePct": 0,
+    "priceTolerancePct": 0.5,
+    "totalToleranceAed": 50,
+    "vatToleranceAed": 1,
+    "approvalMatrix": [
+      { "upToAed": 50000, "approver": "Deepak Menon", "title": "AP Supervisor, Group Finance" },
+      { "upToAed": null, "approver": "Priya Raghavan", "title": "Group CFO" }
+    ],
+    "accounts": { "apControl": "2100", "grir": "2110", "inputVat": "1410", "ppv": "5120", "freightIn": "5130", "suspense": "2190" }
+  }
+}

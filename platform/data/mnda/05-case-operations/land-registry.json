@@ -1,0 +1,21 @@
+{
+  "registry": "Marsa Al Noor Land Registry — Department of Real Estate Records",
+  "note": "Fictional demo dataset. Ownership look-ups are only performed with the applicant's recorded consent (Circular 9/2026 §6.3).",
+  "records": {
+    "784-1991-6630417-2": { "residentialProperties": [], "plotsAllocated": ["MN-04-117-0031"] },
+    "784-1994-2081736-9": { "residentialProperties": [], "plotsAllocated": [] },
+    "784-1987-1185903-6": { "residentialProperties": [], "plotsAllocated": [] },
+    "784-1983-7720154-3": { "residentialProperties": [], "plotsAllocated": ["MN-02-051-0207"] },
+    "784-1993-4418820-7": { "residentialProperties": [], "plotsAllocated": ["MN-04-122-0009"] },
+    "784-1990-3302917-5": { "residentialProperties": [], "plotsAllocated": [] },
+    "784-1986-2297415-3": { "residentialProperties": [], "plotsAllocated": ["MN-02-044-0118"] },
+    "784-1983-5546230-7": {
+      "residentialProperties": [
+        { "titleDeed": "MN-TD-2019-004417", "plot": "MN-02-039-0042", "type": "Residential villa (G+1)", "registered": "2019-06-12", "share": "100%" }
+      ],
+      "plotsAllocated": []
+    },
+    "784-1988-3046771-2": { "residentialProperties": [], "plotsAllocated": ["MN-02-047-0310"] },
+    "784-1993-2751846-4": { "residentialProperties": [], "plotsAllocated": [] }
+  }
+}

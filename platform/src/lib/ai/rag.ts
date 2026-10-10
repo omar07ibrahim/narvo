@@ -4,7 +4,7 @@ import { chatStream } from "./client";
 import { generateObject } from "./json";
 import type { Emitter } from "./stream";
 import type { Citation } from "./events";
-import { search, getIndex, type SearchHit } from "@/lib/retrieval";
+import { search, getIndex, cleanQuote, type SearchHit } from "@/lib/retrieval";
 
 /**
  * Retrieval-augmented answer with live trace and numbered citations.
@@ -79,7 +79,7 @@ export async function answerWithCitations(o: RagOptions): Promise<RagResult> {
     title: h.title,
     ref: h.ref,
     section: h.section,
-    quote: h.text.length > 420 ? h.text.slice(0, 420) + "…" : h.text,
+    quote: cleanQuote(h.text, 460),
   }));
   emit.data("citations", citations);
   s2.done(

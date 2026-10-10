@@ -1,0 +1,33 @@
+[
+  {
+    "id": "GCB-PO-0412-A",
+    "type": "Customer draft purchase order",
+    "ref": "GCB/PRC/MQ-TB/PO-0412 rev. A (draft)",
+    "opportunityId": "OPP-2026-0418",
+    "accountId": "RBM-C-10034",
+    "issuedAt": "2026-10-06",
+    "issuedBy": "Imran Qureshi, Procurement Manager, Gulf Crest Builders LLC",
+    "referenceQuote": "Q-2026-0918",
+    "paymentTerms": "90 days from date of delivery",
+    "paymentDays": 90,
+    "paymentBasis": "delivery",
+    "priceBasis": "Prices fixed and firm for the full project duration until 30 June 2027; no escalation.",
+    "fixedPriceUntil": "2027-06-30",
+    "delivery": "Delivery to site 07:00–18:00, seven days a week including Sundays, against 24-hour call-off by site logistics.",
+    "deliveryDays": "Mon–Sun",
+    "deliveryFrom": "07:00",
+    "deliveryTo": "18:00",
+    "retentionPct": 5,
+    "retentionText": "5% retention on each invoice, released at project handover (Tower B practical completion).",
+    "commitmentClaim": "Prices as agreed with Mr. Ahmed Soliman (Raseen) in our meeting of 24 September 2026.",
+    "lines": [
+      { "sku": "RB-B500-16", "qty": 520, "unit": "t", "unitPrice": 2690 },
+      { "sku": "RB-B500-20", "qty": 310, "unit": "t", "unitPrice": 2680 },
+      { "sku": "RB-B500-25", "qty": 180, "unit": "t", "unitPrice": 2710 },
+      { "sku": "RB-B500-12", "qty": 95, "unit": "t", "unitPrice": 2735 },
+      { "sku": "CEM-SRC-50", "qty": 14500, "unit": "bag", "unitPrice": 18.2 },
+      { "sku": "WPF-BIT-4", "qty": 760, "unit": "roll", "unitPrice": 92.5 }
+    ],
+    "text": "GULF CREST BUILDERS LLC — PURCHASE ORDER (DRAFT, rev. A)\nPO No.: GCB/PRC/MQ-TB/PO-0412  ·  Date: 06/10/2026\nSupplier: Raseen Building Materials Trading LLC, Al Quoz Industrial 3, Dubai\nProject: Marina Quarter Tower B (plot MN-08-204-0019)\nRef.: your quotation Q-2026-0918 dated 18/09/2026 and meeting 24/09/2026\n\n1. RB-B500-16 rebar B500B 16 mm — 520 t @ AED 2,690/t\n2. RB-B500-20 rebar B500B 20 mm — 310 t @ AED 2,680/t\n3. RB-B500-25 rebar B500B 25 mm — 180 t @ AED 2,710/t\n4. RB-B500-12 rebar B500B 12 mm — 95 t @ AED 2,735/t\n5. CEM-SRC-50 sulphate-resisting cement — 14,500 bags @ AED 18.20\n6. WPF-BIT-4 bitumen membrane 4 mm — 760 rolls @ AED 92.50\n\nPrices as agreed with Mr. Ahmed Soliman (Raseen) in our meeting of 24 September 2026, exclusive of VAT.\nPrices fixed and firm for the full project duration until 30 June 2027; no escalation.\nPayment: 90 days from date of delivery.\nRetention: 5% on each invoice, released at Tower B practical completion.\nDelivery: to site 07:00–18:00, seven days a week incl. Sundays, against 24-hour call-off by site logistics.\nThis draft is issued for supplier confirmation and is not binding until signed by both parties."
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "note": "Trading calendar used by the generator and by the forecasting engine (calendar regressors). Weeks start Monday; RBM trades Monday–Saturday.",
+  "ramadan": [
+    { "from": "2024-03-11", "to": "2024-04-09" },
+    { "from": "2025-03-01", "to": "2025-03-30" },
+    { "from": "2026-02-18", "to": "2026-03-19" },
+    { "from": "2027-02-08", "to": "2027-03-09" }
+  ],
+  "eid": [
+    { "name": "Eid Al Fitr", "from": "2024-04-08", "to": "2024-04-12" },
+    { "name": "Eid Al Adha", "from": "2024-06-15", "to": "2024-06-18" },
+    { "name": "Eid Al Fitr", "from": "2025-03-30", "to": "2025-04-01" },
+    { "name": "Eid Al Adha", "from": "2025-06-05", "to": "2025-06-08" },
+    { "name": "Eid Al Fitr", "from": "2026-03-19", "to": "2026-03-22" },
+    { "name": "Eid Al Adha", "from": "2026-05-26", "to": "2026-05-29" },
+    { "name": "Eid Al Fitr", "from": "2027-03-10", "to": "2027-03-12" },
+    { "name": "Eid Al Adha", "from": "2027-05-16", "to": "2027-05-19" }
+  ],
+  "summerBan": { "fromMonthDay": "06-15", "toMonthDay": "09-15", "label": "Midday outdoor work ban 12:30–15:00" },
+  "promotions": [
+    { "family": "cement", "week": "2024-01-15", "name": "Contractor Rewards Q1" },
+    { "family": "cement", "week": "2024-05-06", "name": "Contractor Rewards Q2" },
+    { "family": "cement", "week": "2024-10-21", "name": "Contractor Rewards Q4" },
+    { "family": "cement", "week": "2025-01-13", "name": "Contractor Rewards Q1" },
+    { "family": "cement", "week": "2025-05-12", "name": "Contractor Rewards Q2" },
+    { "family": "cement", "week": "2025-10-20", "name": "Contractor Rewards Q4" },
+    { "family": "cement", "week": "2026-01-12", "name": "Contractor Rewards Q1" },
+    { "family": "cement", "week": "2026-05-04", "name": "Contractor Rewards Q2" },
+    { "family": "cement", "week": "2026-10-19", "name": "Contractor Rewards Q4" },
+    { "family": "tiles", "week": "2024-02-19", "name": "Tile Week" },
+    { "family": "tiles", "week": "2024-11-11", "name": "Tile Week" },
+    { "family": "tiles", "week": "2025-02-17", "name": "Tile Week" },
+    { "family": "tiles", "week": "2025-11-10", "name": "Tile Week" },
+    { "family": "tiles", "week": "2026-02-09", "name": "Tile Week" },
+    { "family": "tiles", "week": "2026-11-09", "name": "Tile Week" },
+    { "family": "roofing", "week": "2024-04-15", "name": "Pre-summer roofing offer" },
+    { "family": "roofing", "week": "2025-04-14", "name": "Pre-summer roofing offer" },
+    { "family": "roofing", "week": "2026-04-13", "name": "Pre-summer roofing offer" },
+    { "family": "roofing", "week": "2026-11-02", "name": "ThermaShield launch bundle" }
+  ],
+  "fixedHolidays": [
+    { "name": "Commemoration & National Day", "monthDay": "12-01", "days": 3 },
+    { "name": "New Year", "monthDay": "01-01", "days": 1 }
+  ]
+}
