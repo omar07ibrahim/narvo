@@ -13,8 +13,8 @@ type Filter = "new" | "open" | "waiting" | "all";
 
 const FILTERS: Array<{ id: Filter; en: string; ar: string }> = [
   { id: "new", en: "New", ar: "جديد" },
-  { id: "open", en: "In progress", ar: "قيد العمل" },
-  { id: "waiting", en: "Awaiting applicant", ar: "بانتظار المتعامل" },
+  { id: "open", en: "Active", ar: "قيد العمل" },
+  { id: "waiting", en: "Waiting", ar: "بانتظار" },
   { id: "all", en: "All", ar: "الكل" },
 ];
 

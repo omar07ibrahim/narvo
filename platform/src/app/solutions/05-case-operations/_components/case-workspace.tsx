@@ -222,7 +222,7 @@ export function CaseWorkspace({ initialCases }: { initialCases: HousingCase[] })
       </div>
 
       <Workbench cols="330px minmax(0,1fr) 370px" className="min-h-[760px]">
-        <Pane title={L({ en: "Housing applications", ar: "الطلبات السكنية" })} actions={<SweepSheet onChanged={refresh} />} flush>
+        <Pane title={L({ en: "Applications", ar: "الطلبات" })} actions={<SweepSheet onChanged={refresh} />} flush>
           <CaseList cases={cases} selected={selected} onSelect={setSelected} />
         </Pane>
 
@@ -259,7 +259,13 @@ export function CaseWorkspace({ initialCases }: { initialCases: HousingCase[] })
                     v={c.clockStopped ? L({ en: "Paused — awaiting applicant", ar: "متوقف — بانتظار المتعامل" }) : due ? f.date(due) : "—"}
                   />
                   <Fact k={L({ en: "Channel", ar: "القناة" })} v={c.channel} />
-                  <Fact k={L({ en: "Household", ar: "الأسرة" })} v={`${c.applicant.maritalStatus} · ${c.applicant.dependents} ${L({ en: "dependents", ar: "معالين" })}`} />
+                  <Fact
+                    k={L({ en: "Household", ar: "الأسرة" })}
+                    v={`${L({
+                      en: c.applicant.maritalStatus.charAt(0).toUpperCase() + c.applicant.maritalStatus.slice(1),
+                      ar: ({ married: "متزوج", widowed: "أرمل", divorced: "مطلق", single: "أعزب" } as Record<string, string>)[c.applicant.maritalStatus] ?? c.applicant.maritalStatus,
+                    })} · ${c.applicant.dependents} ${L({ en: c.applicant.dependents === 1 ? "child" : "children", ar: "أبناء" })}`}
+                  />
                   <Fact k={L({ en: "Declared income", ar: "الدخل المصرّح" })} v={<span className="num">{f.aed(c.applicant.monthlyIncomeDeclared)}</span>} />
                   <Fact k={L({ en: "Officer", ar: "الموظف" })} v={c.officer ?? L({ en: "Unassigned", ar: "غير مسند" })} />
                 </div>

@@ -79,7 +79,7 @@ function Row({ item }: { item: TraceItem }) {
             </p>
           )}
         </div>
-        <span className="num shrink-0 pt-px text-[10.5px] text-faint">{fmtMs(item.ms)}</span>
+        <span dir="ltr" className="num shrink-0 pt-px text-[10.5px] text-faint">{fmtMs(item.ms)}</span>
         {expandable && (
           <ChevronRight
             className={cn("mt-0.5 size-3.5 shrink-0 text-faint transition-transform rtl:rotate-180", open && "rotate-90 rtl:rotate-90")}
@@ -124,7 +124,7 @@ function Elapsed({ startedAt, running, ms }: { startedAt?: number; running: bool
   }, [running]);
   const value = running && startedAt ? Date.now() - startedAt : ms;
   if (value == null) return null;
-  return <span className="num">{(value / 1000).toFixed(1)} s</span>;
+  return <span dir="ltr" className="num">{(value / 1000).toFixed(1)} s</span>;
 }
 
 export function AgentTrace({
@@ -148,7 +148,7 @@ export function AgentTrace({
       <div className="mb-3 flex items-center justify-between gap-2">
         <span className="label-caps">{title ?? L({ en: "Agent trace", ar: "مسار عمل الوكيل" })}</span>
         <span className="flex items-center gap-2 text-[10.5px] text-muted-foreground">
-          {run.model && <span className="font-mono">{run.model.split("/").pop()}</span>}
+          {run.model && <span dir="ltr" className="font-mono">{run.model.split("/").pop()}</span>}
           <Elapsed startedAt={run.startedAt} running={run.running} ms={run.ms} />
         </span>
       </div>

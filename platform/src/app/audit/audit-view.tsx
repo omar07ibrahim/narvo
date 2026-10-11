@@ -178,7 +178,7 @@ export function AuditView() {
                   <td className="px-4 py-2.5 whitespace-nowrap text-muted-foreground">
                     {s ? (
                       <Link href={solutionPath(s)} className="hover:text-foreground">
-                        <span className="num">{pad2(s.n)}</span> {L(s.title).split(" ").slice(0, 3).join(" ")}
+                        <span className="num">{pad2(s.n)}</span> {L(s.nav)}
                       </Link>
                     ) : (
                       r.solution

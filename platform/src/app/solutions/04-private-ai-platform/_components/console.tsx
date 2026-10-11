@@ -145,7 +145,7 @@ export function PlatformConsole() {
     return Array.from(m.entries())
       .map(([k, v]) => {
         const s = SOLUTIONS.find((x) => x.slug === k);
-        return { name: s ? pad2(s.n) : k, full: s ? L(s.title) : k, ...v };
+        return { name: s ? pad2(s.n) : k, full: s ? L(s.nav) : k, ...v };
       })
       .sort((a, b) => b.calls - a.calls)
       .slice(0, 14);
@@ -261,7 +261,7 @@ export function PlatformConsole() {
                     return (
                       <tr key={c.id}>
                         <td className="num px-4 py-1.5 text-muted-foreground">{f.time(c.ts)}</td>
-                        <td className="px-4 py-1.5">{s ? `${pad2(s.n)} ${L(s.title).split(" ").slice(0, 3).join(" ")}` : c.solution}</td>
+                        <td className="px-4 py-1.5">{s ? `${pad2(s.n)} ${L(s.nav)}` : c.solution}</td>
                         <td className="px-4 py-1.5 font-mono text-[11px] text-muted-foreground">{c.task}</td>
                         <td className="px-4 py-1.5 font-mono text-[11px]">{c.model.split("/").pop()}</td>
                         <td className="num px-4 py-1.5">

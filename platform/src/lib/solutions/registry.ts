@@ -23,6 +23,8 @@ export interface AreaMeta {
   id: number;
   key: string;
   title: Bilingual;
+  /** Short label for chips, tiles and navigation */
+  short: Bilingual;
 }
 
 export interface SolutionMeta {
@@ -31,6 +33,8 @@ export interface SolutionMeta {
   area: number;
   org: OrgId;
   title: Bilingual;
+  /** One-line navigation label */
+  nav: Bilingual;
   promise: Bilingual;
   summary: Bilingual;
   measures: [Measure, Measure, Measure];
@@ -44,12 +48,12 @@ export interface SolutionMeta {
 }
 
 export const AREAS: AreaMeta[] = [
-  { id: 1, key: "enterprise", title: { en: "Enterprise intelligence & delivery", ar: "ذكاء المؤسسة والتنفيذ" } },
-  { id: 2, key: "documents", title: { en: "Documents & language", ar: "المستندات واللغة" } },
-  { id: 3, key: "customers", title: { en: "Customers & commercial work", ar: "العملاء والأعمال التجارية" } },
-  { id: 4, key: "people", title: { en: "People & internal services", ar: "الموظفون والخدمات الداخلية" } },
-  { id: 5, key: "operations", title: { en: "Business operations", ar: "عمليات الأعمال" } },
-  { id: 6, key: "sites", title: { en: "Sites & field operations", ar: "المواقع والعمليات الميدانية" } },
+  { id: 1, key: "enterprise", title: { en: "Enterprise intelligence & delivery", ar: "ذكاء المؤسسة والتنفيذ" }, short: { en: "Enterprise", ar: "المؤسسة" } },
+  { id: 2, key: "documents", title: { en: "Documents & language", ar: "المستندات واللغة" }, short: { en: "Documents", ar: "المستندات" } },
+  { id: 3, key: "customers", title: { en: "Customers & commercial work", ar: "العملاء والأعمال التجارية" }, short: { en: "Customers", ar: "العملاء" } },
+  { id: 4, key: "people", title: { en: "People & internal services", ar: "الموظفون والخدمات الداخلية" }, short: { en: "People", ar: "الموظفون" } },
+  { id: 5, key: "operations", title: { en: "Business operations", ar: "عمليات الأعمال" }, short: { en: "Operations", ar: "العمليات" } },
+  { id: 6, key: "sites", title: { en: "Sites & field operations", ar: "المواقع والعمليات الميدانية" }, short: { en: "Sites & field", ar: "المواقع والميدان" } },
 ];
 
 const m = (en: string, ar: string, baseline: string, target: string, better: "up" | "down"): Measure => ({
@@ -70,6 +74,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     pilot: "Enterprise Knowledge & Document Intelligence",
     icon: "LayoutPanelLeft",
     title: { en: "Enterprise AI Workspace", ar: "مساحة العمل الذكية للمؤسسة" },
+    nav: { en: "AI Workspace", ar: "مساحة العمل الذكية" },
     promise: { en: "Turn company knowledge into useful, completed work.", ar: "حوّل معرفة المؤسسة إلى عمل مُنجز ومفيد." },
     summary: {
       en: "Search institutional knowledge, draft sourced outputs and carry out approved tasks in connected systems.",
@@ -91,6 +96,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     pilot: "AI Executive & Operational Intelligence",
     icon: "ChartLine",
     title: { en: "Business Performance & Decision Intelligence", ar: "ذكاء الأداء واتخاذ القرار" },
+    nav: { en: "Decision Intelligence", ar: "ذكاء القرار" },
     promise: { en: "Know what changed. Bring the next decision into focus.", ar: "اعرف ما الذي تغيّر، وركّز على القرار التالي." },
     summary: {
       en: "AI combines performance figures and business updates into a sourced review briefing with open actions.",
@@ -110,6 +116,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "mnda",
     icon: "Workflow",
     title: { en: "Business Process Intelligence & Improvement", ar: "ذكاء العمليات وتحسينها" },
+    nav: { en: "Process Intelligence", ar: "ذكاء العمليات" },
     promise: { en: "Find the delay. Fix the process. Measure the change.", ar: "اكتشف التأخير، وأصلح العملية، وقِس التغيير." },
     summary: {
       en: "Process analytics maps handoffs and rework; AI interprets the notes behind the delays and tests the fix.",
@@ -129,6 +136,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "narvo",
     icon: "Server",
     title: { en: "Private AI Platform Deployment & Operations", ar: "نشر وتشغيل منصة الذكاء الاصطناعي الخاصة" },
+    nav: { en: "Private AI Platform", ar: "منصة الذكاء الخاصة" },
     promise: { en: "Run business AI in an environment shaped around you.", ar: "شغّل ذكاء الأعمال في بيئة مصممة حولك." },
     summary: {
       en: "Models, access, evaluation and costs for every AI workload — on your infrastructure, with data that never leaves.",
@@ -151,6 +159,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     pilot: "Agentic Workflow & Decision Orchestration",
     icon: "FileCheck",
     title: { en: "Document, Application & Case Operations", ar: "عمليات المستندات والطلبات والحالات" },
+    nav: { en: "Applications & Cases", ar: "الطلبات والحالات" },
     promise: { en: "Move from incoming documents to resolved cases.", ar: "من المستندات الواردة إلى حالات منجزة." },
     summary: {
       en: "AI reads incoming documents, extracts case details, flags missing information and drafts the clarification.",
@@ -170,6 +179,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "mnda",
     icon: "Languages",
     title: { en: "Arabic & Multilingual Document Operations", ar: "عمليات المستندات العربية ومتعددة اللغات" },
+    nav: { en: "Arabic Documents", ar: "المستندات العربية" },
     promise: { en: "Keep the meaning, terminology and document intact.", ar: "حافظ على المعنى والمصطلحات وبنية المستند." },
     summary: {
       en: "Translation that follows your terminology, keeps layout and tables, and routes disputed terms to specialists.",
@@ -192,6 +202,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     pilot: "AI Customer & Service Intelligence",
     icon: "Headset",
     title: { en: "Customer Service & Contact Operations", ar: "خدمة المتعاملين وعمليات الاتصال" },
+    nav: { en: "Contact Centre", ar: "مركز الاتصال" },
     promise: { en: "Help customers finish what they came to do.", ar: "ساعد المتعاملين على إنجاز ما جاؤوا من أجله." },
     summary: {
       en: "Voice and chat assistants in Arabic and English that resolve requests, act in systems and hand over with full context.",
@@ -211,6 +222,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "raseen",
     icon: "UserRoundCheck",
     title: { en: "Sales Intelligence & Execution", ar: "ذكاء المبيعات والتنفيذ" },
+    nav: { en: "Sales Intelligence", ar: "ذكاء المبيعات" },
     promise: { en: "Keep sales opportunities moving across teams.", ar: "حافظ على تقدّم فرص المبيعات بين الفرق." },
     summary: {
       en: "Account briefs from enquiries, interactions and offers; conflicts flagged, follow-ups drafted, CRM updated on approval.",
@@ -232,6 +244,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     pilot: "AI Technical & Commercial Intelligence",
     icon: "FileSpreadsheet",
     title: { en: "Bid & Proposal Intelligence", ar: "ذكاء العطاءات والعروض" },
+    nav: { en: "Bids & Proposals", ar: "العطاءات والعروض" },
     promise: { en: "Turn tender requirements into a response ready for review.", ar: "حوّل متطلبات المناقصة إلى عرض جاهز للمراجعة." },
     summary: {
       en: "Maps every tender requirement to approved evidence, drafts sourced sections and flags gaps and unsupported claims.",
@@ -251,6 +264,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "raseen",
     icon: "Sparkles",
     title: { en: "Brand Content Operations", ar: "عمليات محتوى العلامة التجارية" },
+    nav: { en: "Brand Content", ar: "محتوى العلامة" },
     promise: { en: "Create more usable content from approved facts.", ar: "أنتج محتوى أكثر قابلية للاستخدام من حقائق معتمدة." },
     summary: {
       en: "Channel and language variants generated from one approved fact sheet, checked for factual drift before release.",
@@ -270,6 +284,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "mnda",
     icon: "IdCard",
     title: { en: "Employee Services Hub", ar: "مركز خدمات الموظفين" },
+    nav: { en: "Employee Services", ar: "خدمات الموظفين" },
     promise: { en: "Connect employee questions to completed requests.", ar: "اربط أسئلة الموظفين بطلبات منجزة." },
     summary: {
       en: "Employees ask in everyday language; AI answers from policy and prepares HR or IT requests with live status.",
@@ -290,6 +305,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     featured: true,
     icon: "Users",
     title: { en: "Recruitment & Hiring Intelligence", ar: "ذكاء التوظيف والاستقطاب" },
+    nav: { en: "Recruitment", ar: "التوظيف" },
     promise: { en: "From application overload to a clear finalist comparison.", ar: "من تكدّس الطلبات إلى مقارنة واضحة للمرشحين النهائيين." },
     summary: {
       en: "Applications compared against job-related criteria with traceable evidence. HR selects; AI never decides.",
@@ -309,6 +325,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "mnda",
     icon: "ScrollText",
     title: { en: "Contract & Obligation Intelligence", ar: "ذكاء العقود والالتزامات" },
+    nav: { en: "Contracts & Obligations", ar: "العقود والالتزامات" },
     promise: { en: "Turn agreements into visible, owned commitments.", ar: "حوّل الاتفاقيات إلى التزامات واضحة ومحددة المسؤول." },
     summary: {
       en: "Clauses compared with approved positions; dates and commitments become assigned obligations with reminders.",
@@ -328,6 +345,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "raseen",
     icon: "ReceiptText",
     title: { en: "Finance Operations Intelligence", ar: "ذكاء العمليات المالية" },
+    nav: { en: "Finance Operations", ar: "العمليات المالية" },
     promise: { en: "Resolve the discrepancies holding finance work up.", ar: "عالج الفروقات التي تعطّل العمل المالي." },
     summary: {
       en: "Invoices matched against orders and receipts; mismatches assembled into resolution cases for finance approval.",
@@ -347,6 +365,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "mnda",
     icon: "ClipboardCheck",
     title: { en: "Procurement & Supplier Intelligence", ar: "ذكاء المشتريات والموردين" },
+    nav: { en: "Procurement", ar: "المشتريات" },
     promise: { en: "Make supplier decisions easier to explain and execute.", ar: "اجعل قرارات الموردين أسهل في التبرير والتنفيذ." },
     summary: {
       en: "Supplier submissions compared against tender criteria with evidence, gaps and clarification questions.",
@@ -366,6 +385,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "raseen",
     icon: "PackageSearch",
     title: { en: "Order Fulfilment & Exception Intelligence", ar: "ذكاء تنفيذ الطلبات ومعالجة الاستثناءات" },
+    nav: { en: "Order Exceptions", ar: "استثناءات الطلبات" },
     promise: { en: "Keep accepted orders moving through the business.", ar: "حافظ على تدفّق الطلبات المقبولة عبر المؤسسة." },
     summary: {
       en: "Mismatched terms, stock and delivery constraints brought into one exception view with options to approve.",
@@ -385,6 +405,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "raseen",
     icon: "ChartSpline",
     title: { en: "Demand & Resource Planning", ar: "تخطيط الطلب والموارد" },
+    nav: { en: "Demand Planning", ar: "تخطيط الطلب" },
     promise: { en: "Turn changing demand into a feasible plan.", ar: "حوّل الطلب المتغيّر إلى خطة قابلة للتنفيذ." },
     summary: {
       en: "Forecast demand with uncertainty, compare plans against real capacity limits and explain the trade-offs.",
@@ -405,6 +426,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     featured: true,
     icon: "ScanSearch",
     title: { en: "Visual Inspection & Quality Intelligence", ar: "ذكاء الفحص البصري والجودة" },
+    nav: { en: "Visual Inspection", ar: "الفحص البصري" },
     promise: { en: "Turn observable defects into corrective work.", ar: "حوّل العيوب الظاهرة إلى أعمال تصحيحية." },
     summary: {
       en: "Vision models flag defined defects in site photos; accepted findings become owned corrective tasks.",
@@ -424,6 +446,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "raseen",
     icon: "Wrench",
     title: { en: "Field Service Intelligence", ar: "ذكاء الخدمات الميدانية" },
+    nav: { en: "Field Service", ar: "الخدمات الميدانية" },
     promise: { en: "Prepare the job. Support the team. Complete the record.", ar: "جهّز المهمة، وادعم الفريق، وأكمل السجل." },
     summary: {
       en: "Job briefs from asset history and manuals; voice notes turned into structured service reports.",
@@ -443,6 +466,7 @@ export const SOLUTIONS: SolutionMeta[] = [
     org: "mnda",
     icon: "Building",
     title: { en: "Workplace & Facility Intelligence", ar: "ذكاء بيئة العمل والمرافق" },
+    nav: { en: "Facilities", ar: "المرافق" },
     promise: { en: "See the site issue. Connect the response. Check the result.", ar: "اكتشف مشكلة الموقع، واربط الاستجابة، وتحقق من النتيجة." },
     summary: {
       en: "Building signals, space records and service requests in one view; recurring issues explained and resolved.",

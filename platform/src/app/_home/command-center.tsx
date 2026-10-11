@@ -5,13 +5,13 @@ import { useEffect, useMemo, useState } from "react";
 import { motion } from "motion/react";
 import { ArrowUpRight, Bot, Cloud, Cpu, Hand, ShieldCheck, UserRound, WifiOff } from "lucide-react";
 import { NarvoMark } from "@/components/brand/logo";
-import { SolutionIcon } from "@/components/narvo/icons";
 import { StatusPill } from "@/components/narvo/status";
 import { formatBytes, usePlatformStatus } from "@/components/shell/privacy-status";
 import { useFormat, useL, usePrefs } from "@/lib/i18n";
-import { AREAS, SOLUTIONS, pad2, solutionPath } from "@/lib/solutions/registry";
+import { SOLUTIONS, pad2, solutionPath } from "@/lib/solutions/registry";
 import { ORGS } from "@/lib/world/orgs";
 import { cn } from "@/lib/utils";
+import { DemoPath, SolutionsLauncher } from "./solutions-launcher";
 
 interface AuditRow {
   id: string;
@@ -131,7 +131,7 @@ export function CommandCenter() {
             ].map((x) => (
               <div key={x.k}>
                 <div className="text-[10px] tracking-[0.14em] text-sidebar-muted uppercase">{x.k}</div>
-                <div className={cn("num mt-1 text-[24px] font-light", x.accent ? "text-[#5fb8ad]" : "text-white")}>{x.v}</div>
+                <div dir="ltr" className={cn("num mt-1 text-start text-[24px] font-light rtl:text-end", x.accent ? "text-[#5fb8ad]" : "text-white")}>{x.v}</div>
               </div>
             ))}
           </div>
@@ -162,54 +162,10 @@ export function CommandCenter() {
       </section>
 
       <section className="mt-10 grid grid-cols-[minmax(0,1fr)_400px] gap-8 max-xl:grid-cols-1">
-        {/* Solutions map */}
-        <div>
-          <div className="mb-4 flex items-end justify-between">
-            <div>
-              <div className="label-caps">{L({ en: "Find your starting point", ar: "اختر نقطة البداية" })}</div>
-              <h2 className="display-title mt-1.5 text-[26px]">{L({ en: "Twenty solutions, one private core", ar: "عشرون حلاً، نواة خاصة واحدة" })}</h2>
-            </div>
-            <Link href="/solutions" className="text-[12.5px] text-muted-foreground hover:text-foreground">
-              {L({ en: "Catalogue view →", ar: "عرض الكتالوج ←" })}
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-7 max-lg:grid-cols-1">
-            {AREAS.map((area) => (
-              <div key={area.id}>
-                <div className="flex items-baseline gap-3 border-b border-border pb-2">
-                  <span className="num text-[22px] font-light text-muted-foreground">{pad2(area.id)}</span>
-                  <span className="text-[14.5px] font-medium">{L(area.title)}</span>
-                </div>
-                <ul className="mt-1">
-                  {SOLUTIONS.filter((s) => s.area === area.id).map((s) => (
-                    <li key={s.slug}>
-                      <Link
-                        href={solutionPath(s)}
-                        className="group flex items-center gap-3 rounded-md px-2 py-2 transition-colors hover:bg-card"
-                      >
-                        <span className="num w-5 text-[11px] text-faint">{pad2(s.n)}</span>
-                        <SolutionIcon name={s.icon} className="size-4 text-muted-foreground" />
-                        <span className="min-w-0 flex-1">
-                          <span className="flex items-center gap-2 text-[13.5px] font-medium">
-                            <span className="truncate">{L(s.title)}</span>
-                            {s.hero && <span className="size-1.5 shrink-0 rounded-full bg-ai" />}
-                          </span>
-                          <span className="block truncate text-[12px] text-muted-foreground">{L(s.promise)}</span>
-                        </span>
-                        <span
-                          className="hidden rounded px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-white group-hover:inline-block"
-                          style={{ background: ORGS[s.org].color }}
-                        >
-                          {ORGS[s.org].short}
-                        </span>
-                        <ArrowUpRight className="size-3.5 text-faint opacity-0 transition-opacity group-hover:opacity-100 rtl:-scale-x-100" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+        {/* Demo path + solutions launcher */}
+        <div className="min-w-0 space-y-10">
+          <DemoPath />
+          <SolutionsLauncher />
         </div>
 
         {/* Right rail: approvals + live activity */}

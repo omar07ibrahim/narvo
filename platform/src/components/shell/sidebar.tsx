@@ -9,6 +9,7 @@ import { AREAS, SOLUTIONS, pad2, solutionPath } from "@/lib/solutions/registry";
 import { useL } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { PrivacyStatus } from "./privacy-status";
+import { SolutionIcon } from "@/components/narvo/icons";
 
 function NavLink({
   href,
@@ -22,7 +23,7 @@ function NavLink({
   badge?: number;
 }) {
   const path = usePathname();
-  const active = href === "/" ? path === "/" : path.startsWith(href);
+  const active = href === "/" || href === "/solutions" ? path === href : path.startsWith(href);
   return (
     <Link
       href={href}
@@ -99,18 +100,27 @@ export function Sidebar() {
         {AREAS.map((area) => {
           const items = SOLUTIONS.filter((s) => s.area === area.id);
           const isCollapsed = collapsed[area.id];
+          const hasActive = items.some((s) => path.startsWith(solutionPath(s)));
           return (
-            <div key={area.id} className="mb-2">
+            <div key={area.id} className="mb-3">
               <button
                 type="button"
                 onClick={() => setCollapsed((c) => ({ ...c, [area.id]: !c[area.id] }))}
-                className="flex w-full items-center gap-2 px-2.5 py-1.5 text-start"
+                className="group/area flex w-full items-center gap-2 px-2.5 pt-1 pb-1.5 text-start"
+                title={L(area.title)}
               >
-                <span className="num text-[10px] text-sidebar-muted">{pad2(area.id)}</span>
-                <span className="flex-1 truncate text-[10px] font-medium tracking-[0.14em] text-sidebar-muted uppercase">
-                  {L(area.title)}
+                <span className="flex-1 truncate text-[10px] font-medium tracking-[0.16em] text-sidebar-muted uppercase group-hover/area:text-sidebar-foreground/80">
+                  {L(area.short)}
                 </span>
-                <ChevronDown className={cn("size-3 text-sidebar-muted transition-transform", isCollapsed && "-rotate-90 rtl:rotate-90")} />
+                {isCollapsed && (
+                  <span className={cn("num text-[10px]", hasActive ? "text-[#5fb8ad]" : "text-sidebar-muted")}>{items.length}</span>
+                )}
+                <ChevronDown
+                  className={cn(
+                    "size-3 text-sidebar-muted opacity-0 transition-all group-hover/area:opacity-100",
+                    isCollapsed && "-rotate-90 opacity-100 rtl:rotate-90",
+                  )}
+                />
               </button>
               {!isCollapsed && (
                 <div className="space-y-px">
@@ -121,18 +131,22 @@ export function Sidebar() {
                       <Link
                         key={s.slug}
                         href={href}
+                        title={L(s.title)}
                         className={cn(
-                          "group flex items-start gap-2.5 rounded-md px-2.5 py-[5px] text-[12.5px] leading-snug transition-colors",
+                          "group relative flex h-8 items-center gap-2.5 rounded-md ps-2.5 pe-2 text-[12.5px] transition-colors",
                           active
                             ? "bg-sidebar-accent text-white"
-                            : "text-sidebar-foreground/70 hover:bg-sidebar-accent/60 hover:text-sidebar-foreground",
+                            : "text-sidebar-foreground/72 hover:bg-sidebar-accent/60 hover:text-sidebar-foreground",
                         )}
                       >
-                        <span className={cn("num mt-px w-4 shrink-0 text-[10.5px]", active ? "text-white/70" : "text-sidebar-muted")}>
-                          {pad2(s.n)}
-                        </span>
-                        <span className="flex-1">{L(s.title)}</span>
-                        {s.hero && <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-[#5fb8ad]" title="Hero pilot" />}
+                        {active && <span className="absolute inset-y-1.5 start-0 w-[2px] rounded-full bg-[#5fb8ad]" />}
+                        <SolutionIcon
+                          name={s.icon}
+                          className={cn("size-[15px] shrink-0", active ? "text-white" : "text-sidebar-muted group-hover:text-sidebar-foreground/80")}
+                        />
+                        <span className="min-w-0 flex-1 truncate">{L(s.nav)}</span>
+                        {s.hero && <span className="size-1.5 shrink-0 rounded-full bg-[#5fb8ad]" title={L({ en: "Pilot demo", ar: "عرض تجريبي" })} />}
+                        <span className={cn("num w-4 shrink-0 text-end text-[10px]", active ? "text-white/60" : "text-sidebar-muted/80")}>{pad2(s.n)}</span>
                       </Link>
                     );
                   })}

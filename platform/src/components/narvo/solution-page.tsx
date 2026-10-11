@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { BookOpen, ChevronLeft, ChevronRight, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -42,6 +42,9 @@ export function SolutionPage({
   const meta = getSolution(slug);
   const [guide, setGuide] = useState(false);
   const [step, setStep] = useState(0);
+  useEffect(() => {
+    if (meta) document.title = `${pad2(meta.n)} ${L(meta.nav)} — NARVO`;
+  }, [meta, L]);
   if (!meta) return <div className="p-8">Unknown solution {slug}</div>;
   const area = AREAS.find((a) => a.id === meta.area)!;
   const org = ORGS[meta.org];
