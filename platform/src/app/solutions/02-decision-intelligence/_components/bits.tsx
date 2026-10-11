@@ -1,7 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import type { Rag } from "../_lib/engine";
+import { usePrefs } from "@/lib/i18n";
+import type { MetricDef } from "../_lib/catalogue";
+import { fmtDelta, fmtValue, type Rag } from "../_lib/engine";
 
 export const RAG_TONE: Record<Rag, "success" | "warning" | "danger"> = { green: "success", amber: "warning", red: "danger" };
 
@@ -96,5 +98,52 @@ export function MiniStat({ label, value, sub, tone }: { label: string; value: Re
       </div>
       {sub && <div className="mt-1 truncate text-[11px] text-muted-foreground">{sub}</div>}
     </div>
+  );
+}
+
+/**
+ * A KPI figure whose number stays left-to-right while its unit word follows the reading direction
+ * (Arabic: «22.3 يوم», «+1.8 نقطة»). `compact` uses short English units (d, pt).
+ */
+export function Fig({
+  def,
+  value,
+  delta = false,
+  compact = false,
+  prefix = "",
+  className,
+}: {
+  def: Pick<MetricDef, "unit" | "decimals">;
+  value: number | null | undefined;
+  delta?: boolean;
+  compact?: boolean;
+  prefix?: string;
+  className?: string;
+}) {
+  const { lang } = usePrefs();
+  const ar = lang === "ar";
+  if (value == null || Number.isNaN(value)) return <span className={className}>—</span>;
+  let num: string;
+  let unit = "";
+  if (delta) {
+    num = fmtDelta(def, value).replace(/ pts$/, "");
+    if (def.unit === "pct") unit = ar ? "نقطة" : compact ? "pt" : "pts";
+  } else if (def.unit === "days") {
+    num = fmtValue(def, value, "en").replace(/ days$/, "");
+    unit = ar ? "يوم" : compact ? "d" : "days";
+  } else if (def.unit === "aed" && ar) {
+    num = fmtValue(def, value, "ar").replace(/ درهم$/, "");
+    unit = "درهم";
+  } else {
+    num = fmtValue(def, value, "en");
+  }
+  return (
+    <span className={className}>
+      <bdi dir="ltr">
+        {prefix}
+        {num}
+      </bdi>
+      {unit && ` ${unit}`}
+    </span>
   );
 }

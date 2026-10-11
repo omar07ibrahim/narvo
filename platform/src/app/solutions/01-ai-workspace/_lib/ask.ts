@@ -77,7 +77,13 @@ export async function runAsk(
   const scopeLabel = SCOPES.find((s) => s.key === o.scope)!.label;
 
   const s1 = emit.step("plan", ar ? "فهم السؤال وصياغة استعلامات البحث" : "Understanding the question");
-  const plan = await planQueries(o.question, o.history, o.modelKey);
+  // With a user document, let the planner see what it says so the searches target the rules it touches.
+  const attHint = o.attachment
+    ? "\nThe user attached their own document. Plan queries that find the MNDA rules (articles, sections, time limits, validity, exceptions) " +
+      "relevant to what the document states or requests — not the document itself. Document excerpt:\n" +
+      o.attachment.text.slice(0, 1600)
+    : "";
+  const plan = await planQueries(o.question, o.history, o.modelKey, attHint);
   s1.done(plan.queries.join(" · "));
 
   const stats = corpusStats();

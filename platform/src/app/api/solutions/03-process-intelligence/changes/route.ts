@@ -31,7 +31,11 @@ export async function POST(req: Request) {
   while (used.has(`CHG-2026-${String(k).padStart(3, "0")}`)) k++;
   const changeId = `CHG-2026-${String(k).padStart(3, "0")}`;
   const names = interventions.map((i) => INTERVENTION_LABELS[i][lang === "ar" ? "ar" : "en"]);
-  const subject = memo.match(/\*\*(.+?)\*\*/)?.[1]?.replace(/^(Subject|الموضوع)\s*[:：]\s*/i, "").slice(0, 160);
+  const subject = memo
+    .match(/\*\*(.+?)\*\*/)?.[1]
+    ?.replace(/^(Subject|الموضوع)\s*[:：]\s*/i, "")
+    .replace(/^(Approval request|Request for approval|For approval|طلب (?:ال)?اعتماد)\s*[:：—-]\s*/i, "")
+    .slice(0, 160);
   const title = subject || (lang === "ar" ? `اعتماد: ${names.join(" + ")}` : `Make standard: ${names.join(" + ")}`);
   const fmt = (x: number | null | undefined, unit = "") => (x == null ? "—" : `${x.toFixed(1)}${unit}`);
   const summary =
@@ -61,9 +65,9 @@ export async function POST(req: Request) {
           memo,
           expected: expected ?? {},
           measurement:
-            lang === "ar"
-              ? "مقارنة الطلبات المقدمة من 1 نوفمبر إلى 31 ديسمبر 2026 مع خط أساس الربع الثالث 2026 (الوسيط، المسورة وغير المسورة، إعادة العمل، الإعادات المرتبطة بالشهادة، مدة إصدار الشهادة)."
-              : "Compare applications submitted 1 Nov – 31 Dec 2026 with the Q3 2026 baseline (median, gated vs non-gated, rework, NOC-related returns, NOC turnaround, officer touches).",
+            "Compare applications submitted 1 Nov – 31 Dec 2026 with the Q3 2026 baseline (median, gated vs non-gated, rework, NOC-related returns, NOC turnaround, officer touches).",
+          measurementAr:
+            "مقارنة الطلبات المقدمة من 1 نوفمبر إلى 31 ديسمبر 2026 مع خط أساس الربع الثالث 2026 (الوسيط، المسوّرة وغير المسوّرة، إعادة العمل، الإعادات المرتبطة بالشهادة، مدة إصدار الشهادة، مرات المعالجة).",
           createdAt: "2026-10-11",
         },
       },

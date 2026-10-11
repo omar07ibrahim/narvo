@@ -21,6 +21,7 @@ export interface CaseNote {
 export interface ChangeRecord {
   id: string;
   title: string;
+  titleAr?: string;
   interventions: string[];
   status: "approved" | "pilot" | "proposed" | "standard";
   approvedBy?: string;
@@ -28,6 +29,7 @@ export interface ChangeRecord {
   memo?: string;
   expected?: Record<string, number | null>;
   measurement?: string;
+  measurementAr?: string;
   createdAt?: string;
 }
 

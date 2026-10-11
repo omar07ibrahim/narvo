@@ -10,7 +10,7 @@ import { StatusPill } from "@/components/narvo/status";
 import { EmptyState } from "@/components/narvo/empty";
 import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import { FIELD_LABELS, STATUS_META, TYPE_META, optionLabel, type Employee, type ServiceRequest } from "../_lib/shared";
+import { FIELD_LABELS, NAMES_AR, STATUS_META, TYPE_META, dayLabel, daysAr, optionLabel, type Employee, type ServiceRequest } from "../_lib/shared";
 import { RequestTimeline, slaState } from "./timeline";
 import { CertificateDialog } from "./certificate";
 import { Segmented } from "./segmented";
@@ -125,7 +125,8 @@ export function ServiceDesk({
               </thead>
               <tbody className="divide-y divide-border">
                 {list.map((x) => {
-                  const sla = slaState(x);
+                  const sla = slaState(x, Date.now(), lang);
+                  const dept = lang === "ar" ? (employees.find((e) => e.id === x.employeeId)?.departmentAr ?? x.department) : x.department;
                   return (
                     <tr
                       key={x.id}
@@ -141,7 +142,7 @@ export function ServiceDesk({
                       </td>
                       <td className="px-4 py-2.5">
                         <div className="truncate">{lang === "ar" ? (x.employeeNameAr ?? x.employeeName) : x.employeeName}</div>
-                        <div className="truncate text-[10.5px] text-muted-foreground">{x.department}</div>
+                        <div className="truncate text-[10.5px] text-muted-foreground">{dept}</div>
                       </td>
                       <td className="px-4 py-2.5">
                         <StatusPill tone={STATUS_META[x.status].tone}>{L(STATUS_META[x.status].label)}</StatusPill>
@@ -177,7 +178,8 @@ export function ServiceDesk({
                 {L(r.title)}
               </div>
               <div className="mt-1 text-[12px] text-muted-foreground">
-                {lang === "ar" ? (r.employeeNameAr ?? r.employeeName) : r.employeeName} · {r.department} · {r.channel}
+                {lang === "ar" ? (r.employeeNameAr ?? r.employeeName) : r.employeeName} · {lang === "ar" ? (employee?.departmentAr ?? r.department) : r.department} ·{" "}
+                {r.channel === "NARVO assistant" ? L({ en: "NARVO assistant", ar: "مساعد NARVO" }) : r.channel}
               </div>
             </div>
             <RequestTimeline r={r} />
@@ -190,13 +192,21 @@ export function ServiceDesk({
                     k={FIELD_LABELS[k] ? L(FIELD_LABELS[k]) : k}
                     v={
                       <span dir="auto">
-                        {typeof v === "boolean" ? (v ? L({ en: "Yes", ar: "نعم" }) : L({ en: "No", ar: "لا" })) : Array.isArray(v) ? v.join(", ") : optionLabel(k, v, lang) || String(v)}
+                        {typeof v === "boolean"
+                          ? v
+                            ? L({ en: "Yes", ar: "نعم" })
+                            : L({ en: "No", ar: "لا" })
+                          : Array.isArray(v)
+                            ? v.map((x) => (/^\d{4}-\d{2}-\d{2}$/.test(String(x)) ? dayLabel(String(x), lang) : String(x))).join(lang === "ar" ? "، " : ", ")
+                            : /^\d{4}-\d{2}-\d{2}$/.test(String(v))
+                              ? dayLabel(String(v), lang)
+                              : optionLabel(k, v, lang) || String(v)}
                       </span>
                     }
                   />
                 ))}
-              <KeyValue k={L({ en: "Approver", ar: "المعتمِد" })} v={r.approver.name} />
-              <KeyValue k={L({ en: "Service level", ar: "مستوى الخدمة" })} v={`${r.slaDays} ${L({ en: r.slaDays > 1 ? "working days" : "working day", ar: "يوم عمل" })}`} />
+              <KeyValue k={L({ en: "Approver", ar: "المعتمِد" })} v={lang === "ar" ? (NAMES_AR[r.approver.name] ?? r.approver.name) : r.approver.name} />
+              <KeyValue k={L({ en: "Service level", ar: "مستوى الخدمة" })} v={lang === "ar" ? daysAr(r.slaDays, "working") : `${r.slaDays} ${r.slaDays > 1 ? "working days" : "working day"}`} />
               {r.assignee && <KeyValue k={L({ en: "Assignee", ar: "المكلّف" })} v={r.assignee} />}
             </div>
             {r.rejectionNote && <p className="rounded-md border border-danger/25 bg-danger-soft p-2.5 text-[12px] text-danger">{r.rejectionNote}</p>}
@@ -208,7 +218,7 @@ export function ServiceDesk({
 
             {r.status === "submitted" && (
               <div className="rounded-md border border-warning/30 bg-warning-soft/50 p-2.5 text-[12px]">
-                {L({ en: `Waiting for ${r.approver.name} to approve (inline card or the Inbox).`, ar: `بانتظار اعتماد ${r.approver.name} (البطاقة المباشرة أو صندوق الوارد).` })}
+                {L({ en: `Waiting for ${r.approver.name} to approve (inline card or the Inbox).`, ar: `بانتظار اعتماد ${NAMES_AR[r.approver.name] ?? r.approver.name} (البطاقة المباشرة أو صندوق الوارد).` })}
               </div>
             )}
             {(r.status === "approved" || r.status === "in_fulfilment") && (

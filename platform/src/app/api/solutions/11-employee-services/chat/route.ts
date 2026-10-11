@@ -108,7 +108,7 @@ export async function POST(req: Request) {
         parameters: z.object({
           type: z.enum(TYPES),
           addressee: z.string().optional().describe("salary_certificate / hr_letter: who the letter is addressed to"),
-          purpose: z.string().optional().describe("salary_certificate / hr_letter: what the document is for, e.g. 'تقديم طلب منحة سكنية' / 'Housing grant application' — always set it"),
+          purpose: z.string().optional().describe("salary_certificate / hr_letter: what the document is for, e.g. 'تقديم طلب قرض سكني' / 'Housing loan application' — always set it"),
           language: z.enum(["ar", "en"]).optional().describe("Language of the certificate/letter"),
           letterType: z.enum(["salary_transfer", "experience", "noc", "employment_verification"]).optional(),
           leaveType: z.enum(["annual", "sick", "compassionate", "paternity", "hajj"]).optional(),
@@ -130,7 +130,7 @@ export async function POST(req: Request) {
             draftId: draft.id,
             eligible: draft.eligible,
             approver: `${draft.approver.name} (${draft.approver.title})`,
-            approverArabicName: NAMES_AR[draft.approver.name] ?? null,
+            approverArabicName: lang === "ar" ? (NAMES_AR[draft.approver.name] ?? null) : undefined,
             slaWorkingDays: draft.slaDays,
             fields: draft.fields,
             checks: draft.checks.map((c) => ({ check: c.label.en, ok: c.ok, blocking: !!c.blocking, detail: c.detail.en })),
@@ -167,11 +167,11 @@ export async function POST(req: Request) {
         "How to work:",
         "- Before stating ANY rule, limit, validity period, entitlement or service level, call search_policy (even if you think you know it) and cite with the numeric marker [n] of the passage, right after the claim. Only numeric markers like [2] returned by search_policy in THIS turn — never names like [Circular 9/2026], and no markers at all if you did not search in this turn. Never invent policy.",
         "- When balances, eligibility, devices or the housing case matter: call get_my_profile. For status questions: get_my_requests.",
-        "- When the employee wants something done: call prepare_request with every field you can infer (dates as YYYY-MM-DD). Write addressee and purpose in the language of the certificate/letter — for a housing application in Arabic use addressee 'هيئة مرسى النور للتطوير — قسم الطلبات السكنية' and purpose 'تقديم طلب منحة سكنية'; in English 'Marsa Al Noor Development Authority — Housing Applications Section' and 'Housing grant application'. Ask only for information that is genuinely missing. Then tell them the form is ready on the right to review and submit, who approves it and the service level.",
+        "- When the employee wants something done: call prepare_request with every field you can infer (dates as YYYY-MM-DD). Write addressee and purpose in the language of the certificate/letter — for a housing application in Arabic use addressee 'هيئة مرسى النور للتطوير — قسم الطلبات السكنية' and purpose 'تقديم طلب قرض سكني' (or 'تقديم طلب منحة سكنية' if the employee says grant); in English 'Marsa Al Noor Development Authority — Housing Applications Section' and 'Housing loan application' (or 'Housing grant application'). Ask only for information that is genuinely missing. Then tell them the form is ready on the right to review and submit, who approves it and the service level.",
         "- If a check fails, explain why in one or two sentences and suggest the right alternative (e.g. a fault ticket instead of a replacement).",
         "- Call submit_request only when the employee clearly confirms (e.g. 'yes submit', 'تمام قدّم'). Never say a request is approved — say it is with the approver.",
         "- Never reveal other employees' data. Salary amounts are not needed: HR prints them on the certificate from payroll.",
-        "Arabic vocabulary to use exactly: the Authority = «هيئة مرسى النور للتطوير»; circular = «تعميم» (e.g. «التعميم رقم 9/2026»); salary certificate = «شهادة راتب»; working day = «يوم عمل». Use approverArabicName from tool results for names in Arabic replies.",
+        "Arabic vocabulary to use exactly: the Authority = «هيئة مرسى النور للتطوير»; circular = «تعميم» (e.g. «التعميم رقم 9/2026»); salary certificate = «شهادة راتب»; working day = «يوم عمل». Use approverArabicName from tool results for names in Arabic replies only; in English replies always write names in English (e.g. Yousef Ibrahim Al Hosani), never in Arabic script.",
         "Style: short and warm, like a helpful colleague; 2–6 sentences or a few bullets; no headings.",
         openDraft
           ? openDraft.submittedRequestId

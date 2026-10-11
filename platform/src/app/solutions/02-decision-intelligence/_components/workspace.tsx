@@ -15,7 +15,7 @@ import type { Citation } from "@/lib/ai/events";
 import { useL } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { DEPTS, HEADLINE, METRICS, REVIEW, metricById, type Dept } from "../_lib/catalogue";
-import { actionStats, compute, fmtDelta, fmtValue, weekRange, addDays, type ActionItem, type Dataset } from "../_lib/engine";
+import { actionStats, compute, weekRange, addDays, type ActionItem, type Dataset } from "../_lib/engine";
 import type { FigureCheckResult } from "../_lib/check";
 import { KpiCard, useSnapshots } from "./kpi-header";
 import { BriefingTab, type SavedBriefing } from "./briefing-tab";
@@ -23,7 +23,7 @@ import { FigureTab } from "./figure-tab";
 import { AskTab, type AskEntry } from "./ask-tab";
 import { ActionsTab } from "./actions-tab";
 import { TrendsTab } from "./trends-tab";
-import { RagDot } from "./bits";
+import { Fig, RagDot } from "./bits";
 import { SCENARIO } from "./scenario";
 
 type Tab = "briefing" | "check" | "ask" | "decisions" | "trends";
@@ -197,7 +197,7 @@ export function Workspace({ dataset, initialActions, counts }: { dataset: Datase
       <div className="grid grid-cols-4 gap-3 max-md:grid-cols-2">
         <MetricTile
           label={L({ en: "Briefing preparation", ar: "إعداد الإحاطة" })}
-          value={saved?.ms ? <bdi dir="ltr">{`${Math.max(1, Math.round(saved.ms / 1000))} s`}</bdi> : "—"}
+          value={saved?.ms ? <span dir="auto">{L({ en: `${Math.max(1, Math.round(saved.ms / 1000))} s`, ar: `${Math.max(1, Math.round(saved.ms / 1000))} ث` })}</span> : "—"}
           sub={L({ en: "baseline 2.5 days · target 40 min", ar: "خط الأساس 2.5 يوم · المستهدف 40 دقيقة" })}
           tone={saved?.ms ? "ai" : "default"}
         />
@@ -225,7 +225,7 @@ export function Workspace({ dataset, initialActions, counts }: { dataset: Datase
         />
       </div>
 
-      <Workbench cols="290px minmax(0,1fr) 350px" className="items-start">
+      <Workbench cols="var(--di-cols)" className="items-start [--di-cols:290px_minmax(0,1fr)_350px] max-2xl:[--di-cols:244px_minmax(0,1fr)_320px]">
         {/* scorecard */}
         <Pane title={L({ en: "Scorecard · week 41", ar: "بطاقة الأداء · الأسبوع 41" })} flush className="max-lg:order-2">
           <div className="scrollbar-thin max-h-[860px] overflow-y-auto">
@@ -257,10 +257,8 @@ export function Workspace({ dataset, initialActions, counts }: { dataset: Datase
                               <RagDot rag={cur.rag} />
                               <span className="min-w-0 flex-1 truncate text-[12.5px]">{L(def.name)}</span>
                               <span className="flex flex-col items-end">
-                                <span className="num text-[12.5px] font-medium" dir="ltr">{fmtValue(def, cur.value).replace(" days", " d")}</span>
-                                {delta != null && Math.abs(delta) > 1e-9 && (
-                                  <span className="num text-[10.5px] text-faint" dir="ltr">{fmtDelta(def, delta)}</span>
-                                )}
+                                <Fig def={def} value={cur.value} compact className="num text-[12.5px] font-medium whitespace-nowrap" />
+                                {delta != null && Math.abs(delta) > 1e-9 && <Fig def={def} value={delta} delta className="num text-[10.5px] whitespace-nowrap text-faint" />}
                               </span>
                             </button>
                           </li>
@@ -276,25 +274,25 @@ export function Workspace({ dataset, initialActions, counts }: { dataset: Datase
         <Pane flush className="min-h-[640px]">
           <Tabs value={tab} onValueChange={(v) => setTab(v as Tab)} className="gap-0">
             <div className="scrollbar-thin overflow-x-auto border-b border-border px-3 pt-2">
-              <TabsList variant="line" className="h-9 gap-1">
-                <TabsTrigger value="briefing" className="text-[12.5px]">
-                  <FileText className="size-3.5" />
+              <TabsList variant="line" className="h-9 gap-1 max-2xl:gap-0">
+                <TabsTrigger value="briefing" className="text-[12.5px] max-2xl:!px-2">
+                  <FileText className="size-3.5 max-2xl:hidden" />
                   {L({ en: "Review briefing", ar: "إحاطة المراجعة" })}
                 </TabsTrigger>
-                <TabsTrigger value="check" className="text-[12.5px]">
-                  <ClipboardCheck className="size-3.5" />
+                <TabsTrigger value="check" className="text-[12.5px] max-2xl:!px-2">
+                  <ClipboardCheck className="size-3.5 max-2xl:hidden" />
                   {L({ en: "Figure check", ar: "فحص الأرقام" })}
                 </TabsTrigger>
-                <TabsTrigger value="ask" className="text-[12.5px]">
-                  <MessageSquareText className="size-3.5" />
+                <TabsTrigger value="ask" className="text-[12.5px] max-2xl:!px-2">
+                  <MessageSquareText className="size-3.5 max-2xl:hidden" />
                   {L({ en: "Ask the data", ar: "اسأل البيانات" })}
                 </TabsTrigger>
-                <TabsTrigger value="decisions" className="text-[12.5px]">
-                  <Gavel className="size-3.5" />
+                <TabsTrigger value="decisions" className="text-[12.5px] max-2xl:!px-2">
+                  <Gavel className="size-3.5 max-2xl:hidden" />
                   {L({ en: "Decisions & actions", ar: "القرارات والإجراءات" })}
                 </TabsTrigger>
-                <TabsTrigger value="trends" className="text-[12.5px]">
-                  <BarChart3 className="size-3.5" />
+                <TabsTrigger value="trends" className="text-[12.5px] max-2xl:!px-2">
+                  <BarChart3 className="size-3.5 max-2xl:hidden" />
                   {L({ en: "Trends", ar: "الاتجاهات" })}
                 </TabsTrigger>
               </TabsList>

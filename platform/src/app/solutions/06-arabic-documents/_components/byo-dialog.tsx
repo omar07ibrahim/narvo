@@ -116,7 +116,7 @@ export function ByoDialog({ open, onOpenChange, onAdded }: { open: boolean; onOp
             </div>
           )}
           <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-2">
-            <Textarea value={text} onChange={(e) => setText(e.target.value)} dir="auto" rows={12} className="font-mono text-[12px] leading-relaxed" placeholder={L({ en: "…or paste the text here (markdown tables are preserved)", ar: "…أو الصق النص هنا (تُحفظ جداول markdown)" })} />
+            <Textarea value={text} onChange={(e) => setText(e.target.value)} dir="auto" rows={12} className="h-[250px] resize-none overflow-y-auto font-mono text-[12px] leading-relaxed field-sizing-fixed" placeholder={L({ en: "…or paste the text here (markdown tables are preserved)", ar: "…أو الصق النص هنا (تُحفظ جداول markdown)" })} />
             {preview && (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={preview} alt="" className="h-[250px] w-[170px] rounded border border-border object-cover object-top" />

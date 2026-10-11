@@ -223,7 +223,7 @@ export function ActionsTab({
             </ToggleGroupItem>
           </ToggleGroup>
         </div>
-        <div className="mb-3 grid grid-cols-4 gap-4 rounded-lg border border-border bg-surface p-3.5 max-md:grid-cols-2">
+        <div className="mb-3 grid grid-cols-4 gap-4 rounded-lg border border-border bg-surface p-3.5 max-2xl:grid-cols-2">
           <MiniStat
             label={L({ en: "Action closure", ar: "إغلاق الإجراءات" })}
             value={stats.closureRate != null ? `${stats.closureRate.toFixed(0)}%` : "—"}
@@ -235,14 +235,12 @@ export function ActionsTab({
           <MiniStat label={L({ en: "Closed on time", ar: "أُغلقت في موعدها" })} value={stats.closedOnTime} sub={L({ en: `${stats.closedLate} closed late`, ar: `${stats.closedLate} أُغلقت متأخرة` })} />
         </div>
         <div className="overflow-hidden rounded-lg border border-border">
-          <table className="w-full text-[12.5px]">
+          <table className="w-full table-fixed text-[12.5px]">
             <thead>
               <tr className="border-b border-border bg-muted/50 text-start">
-                <th className="label-caps !text-[9.5px] w-28 px-3 py-2 text-start font-medium">{L({ en: "Action", ar: "الإجراء" })}</th>
-                <th className="label-caps !text-[9.5px] px-3 py-2 text-start font-medium" />
-                <th className="label-caps !text-[9.5px] w-44 px-3 py-2 text-start font-medium max-lg:hidden">{L({ en: "Owner", ar: "المسؤول" })}</th>
-                <th className="label-caps !text-[9.5px] w-28 px-3 py-2 text-start font-medium">{L({ en: "Due", ar: "الاستحقاق" })}</th>
-                <th className="label-caps !text-[9.5px] w-32 px-3 py-2 text-start font-medium">{L({ en: "Status", ar: "الحالة" })}</th>
+                <th className="label-caps !text-[9.5px] px-3 py-2 text-start font-medium">{L({ en: "Action", ar: "الإجراء" })}</th>
+                <th className="label-caps !text-[9.5px] w-24 px-3 py-2 text-start font-medium">{L({ en: "Due", ar: "الاستحقاق" })}</th>
+                <th className="label-caps !text-[9.5px] w-28 px-3 py-2 text-start font-medium">{L({ en: "Status", ar: "الحالة" })}</th>
                 <th className="w-24 px-3 py-2" />
               </tr>
             </thead>
@@ -252,18 +250,19 @@ export function ActionsTab({
                 const late = a.status === "done" && a.closedAt && a.closedAt.slice(0, 10) > a.due;
                 return (
                   <tr key={a.id} className={cn("align-top", a.source === "approved" && "bg-ai-soft/30")}>
-                    <td className="px-3 py-2.5 font-mono text-[11px] text-muted-foreground">{a.id}</td>
-                    <td className="px-3 py-2.5">
-                      <div className="leading-snug" dir="auto">
+                    <td className="min-w-0 px-3 py-2.5">
+                      <div className="font-mono text-[10.5px] text-faint">{a.id}</div>
+                      <div className="mt-0.5 leading-snug" dir="auto">
                         {lang === "ar" && a.titleAr ? a.titleAr : a.title}
                       </div>
                       <div className="mt-0.5 text-[11px] text-muted-foreground">
+                        <span className="text-foreground/80">{lang === "ar" ? personAr(a.owner) : a.owner}</span>
+                        {" · "}
                         {a.raisedIn.replace("DG review — week", L({ en: "DG review — week", ar: "مراجعة المدير العام — الأسبوع" }))}
                         {a.kpi ? ` · ${L(metricById(a.kpi)?.name ?? { en: a.kpi, ar: a.kpi })}` : ""}
                       </div>
                     </td>
-                    <td className="px-3 py-2.5 text-muted-foreground max-lg:hidden">{lang === "ar" ? personAr(a.owner) : a.owner}</td>
-                    <td className={cn("num px-3 py-2.5", overdue && "text-danger")}>{f.date(a.due, { day: "numeric", month: "short" })}</td>
+                    <td className={cn("num px-3 py-2.5 whitespace-nowrap", overdue && "text-danger")}>{f.date(a.due, { day: "numeric", month: "short" })}</td>
                     <td className="px-3 py-2.5">
                       {a.status === "done" ? (
                         <StatusPill tone={late ? "warning" : "success"}>{late ? L({ en: "Closed late", ar: "أُغلق متأخراً" }) : L({ en: "Closed", ar: "مغلق" })}</StatusPill>

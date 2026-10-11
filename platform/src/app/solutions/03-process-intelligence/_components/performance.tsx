@@ -6,7 +6,7 @@ import { CHART, ChartTooltip, axisProps, gridProps } from "@/components/narvo/ch
 import { SectionLabel } from "@/components/narvo/pane";
 import { useL } from "@/lib/i18n";
 import { computeStats, computeVariants, fmt0, fmt1, histogram, reasonFamily, weekly, type PCase, type PLog } from "../_lib/mining";
-import { REASON_AR, activityShort } from "./labels";
+import { REASON_AR, activityShort, developerLabel } from "./labels";
 
 const legendStyle = { fontSize: 11, color: "var(--muted-foreground)" };
 
@@ -52,9 +52,9 @@ export function Performance({ log, cases, lang }: { log: PLog; cases: PCase[]; l
         </div>
         {hasGated && (
           <p className="mt-1 text-[11.5px] text-muted-foreground">
-            {L({ en: "Median — gated", ar: "الوسيط — مسوّرة" })} <span className="num font-medium text-foreground">{fmt1(st.gatedMedian)} d</span> (n = {fmt0(st.gatedN)}) ·{" "}
-            {L({ en: "non-gated", ar: "غير مسوّرة" })} <span className="num font-medium text-foreground">{fmt1(st.nonGatedMedian)} d</span> (n = {fmt0(st.nonGatedN)}) · P90{" "}
-            <span className="num font-medium text-foreground">{fmt1(st.cycleP90)} d</span>
+            {L({ en: "Median — gated", ar: "الوسيط — مسوّرة" })} <span className="num font-medium text-foreground">{fmt1(st.gatedMedian)} {lang === "ar" ? "يوم" : "d"}</span> (n = {fmt0(st.gatedN)}) ·{" "}
+            {L({ en: "non-gated", ar: "غير مسوّرة" })} <span className="num font-medium text-foreground">{fmt1(st.nonGatedMedian)} {lang === "ar" ? "يوم" : "d"}</span> (n = {fmt0(st.nonGatedN)}) · P90{" "}
+            <span className="num font-medium text-foreground">{fmt1(st.cycleP90)} {lang === "ar" ? "يوم" : "d"}</span>
           </p>
         )}
       </section>
@@ -121,9 +121,12 @@ export function Performance({ log, cases, lang }: { log: PLog; cases: PCase[]; l
               {st.byDeveloper.map((d) => (
                 <li key={d.name}>
                   <div className="flex items-baseline justify-between gap-2 text-[12.5px]">
-                    <span className="truncate">{d.name}</span>
-                    <span className="num text-muted-foreground">
-                      <span className="font-medium text-foreground">{fmt1(d.mean)} d</span> · n {d.n}
+                    <span className="truncate">{developerLabel(d.name, lang)}</span>
+                    <span className="num shrink-0 text-muted-foreground">
+                      <span className="font-medium text-foreground">
+                        {fmt1(d.mean)} {L({ en: "d", ar: "يوم" })}
+                      </span>{" "}
+                      · n = {d.n}
                     </span>
                   </div>
                   <div className="relative mt-1 h-1.5 overflow-hidden rounded-full bg-muted">
@@ -187,7 +190,7 @@ export function VariantsTable({ log, cases, lang }: { log: PLog; cases: PCase[];
                   </div>
                   <div className="num mt-0.5 text-[10.5px] text-muted-foreground">{fmt1(v.share)}%</div>
                 </td>
-                <td className="num px-3 py-2 text-end">{v.medianDays != null ? `${fmt1(v.medianDays)} d` : <span className="text-faint">{L({ en: "open", ar: "مفتوحة" })}</span>}</td>
+                <td className="num px-3 py-2 text-end">{v.medianDays != null ? `${fmt1(v.medianDays)} ${lang === "ar" ? "يوم" : "d"}` : <span className="text-faint">{L({ en: "open", ar: "مفتوحة" })}</span>}</td>
               </tr>
             ))}
           </tbody>

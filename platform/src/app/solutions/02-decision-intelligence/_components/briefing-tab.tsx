@@ -172,7 +172,7 @@ export function BriefingTab({
           </span>
           {ms != null && (
             <span className="ms-auto text-muted-foreground">
-              {L({ en: "Prepared in", ar: "أُعدّت خلال" })} <span className="num font-medium text-foreground">{f.number(ms / 1000, { maximumFractionDigits: 0 })} s</span>
+              {L({ en: "Prepared in", ar: "أُعدّت خلال" })} <span className="num font-medium text-foreground">{f.number(ms / 1000, { maximumFractionDigits: 0 })} {L({ en: "s", ar: "ث" })}</span>
               {saved?.at && !live ? ` · ${f.date(saved.at, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}` : ""}
             </span>
           )}

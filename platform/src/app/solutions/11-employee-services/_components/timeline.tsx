@@ -1,21 +1,23 @@
 "use client";
 
 import { Check, Clock, X } from "lucide-react";
-import { useFormat, useL } from "@/lib/i18n";
+import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import type { ServiceRequest } from "../_lib/shared";
+import { NAMES_AR, durationAr, type ServiceRequest } from "../_lib/shared";
 
 /** Submitted → Approved → In fulfilment → Completed (or Rejected), with real timestamps. */
 export function RequestTimeline({ r, compact }: { r: ServiceRequest; compact?: boolean }) {
   const L = useL();
   const fmt = useFormat();
+  const { lang } = usePrefs();
+  const approverName = lang === "ar" ? (NAMES_AR[r.approver.name] ?? r.approver.name) : r.approver.name;
   const steps: Array<{ key: string; label: string; at?: string; who?: string; tone?: "danger" }> = [
     { key: "submitted", label: L({ en: "Submitted", ar: "قُدّم" }), at: r.submittedAt, who: r.channel === "NARVO assistant" ? L({ en: "via assistant", ar: "عبر المساعد" }) : r.channel },
   ];
   if (r.status === "rejected") {
-    steps.push({ key: "rejected", label: L({ en: "Rejected", ar: "رُفض" }), at: r.rejectedAt, who: r.approver.name, tone: "danger" });
+    steps.push({ key: "rejected", label: L({ en: "Rejected", ar: "رُفض" }), at: r.rejectedAt, who: approverName, tone: "danger" });
   } else {
-    steps.push({ key: "approved", label: L({ en: "Approved", ar: "اعتُمد" }), at: r.approvedAt, who: r.approver.name });
+    steps.push({ key: "approved", label: L({ en: "Approved", ar: "اعتُمد" }), at: r.approvedAt, who: approverName });
     steps.push({ key: "in_fulfilment", label: L({ en: "In fulfilment", ar: "قيد التنفيذ" }), at: r.fulfilmentAt, who: r.assignee });
     steps.push({ key: "completed", label: L({ en: "Completed", ar: "اكتمل" }), at: r.completedAt, who: r.outputRef });
   }
@@ -62,13 +64,15 @@ export function RequestTimeline({ r, compact }: { r: ServiceRequest; compact?: b
 }
 
 /** SLA countdown against the due time (end of the working day). */
-export function slaState(r: ServiceRequest, now = Date.now()) {
+export function slaState(r: ServiceRequest, now = Date.now(), lang: "en" | "ar" = "en") {
   const end = r.completedAt ? Date.parse(r.completedAt) : r.rejectedAt ? Date.parse(r.rejectedAt) : now;
   const diff = Date.parse(r.dueAt) - end;
   const closed = r.status === "completed" || r.status === "rejected";
   const abs = Math.abs(diff);
   const h = Math.floor(abs / 3600000);
   const d = Math.floor(h / 24);
-  const text = d >= 1 ? `${d}d ${h % 24}h` : `${h}h ${Math.floor((abs % 3600000) / 60000)}m`;
+  const m = Math.floor((abs % 3600000) / 60000);
+  const text =
+    lang === "ar" ? durationAr(d, d >= 1 ? h % 24 : h, d >= 1 ? 0 : m) : d >= 1 ? `${d}d ${h % 24}h` : `${h}h ${m}m`;
   return { met: diff >= 0, closed, text, diff };
 }

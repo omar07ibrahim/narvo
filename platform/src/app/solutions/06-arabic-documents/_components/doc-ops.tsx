@@ -34,8 +34,8 @@ const SCENARIO: ScenarioStep[] = [
   {
     title: { en: "Translate with the glossary", ar: "ترجم وفق المسرد" },
     body: {
-      en: "Press Translate. The trace shows segmentation (headings, lists, table rows), glossary matching, parallel glossary-constrained translation, automated checks and an AI bilingual review — in seconds, not 4 days.",
-      ar: "اضغط «ترجمة». يعرض المسار التقسيم (عناوين وقوائم وصفوف جداول) ومطابقة المسرد والترجمة المتوازية المقيدة بالمسرد والفحوص الآلية والمراجعة ثنائية اللغة — خلال ثوانٍ لا أربعة أيام.",
+      en: "Press Translate Arabic → English. The trace shows segmentation (headings, lists, table rows), glossary matching, parallel glossary-constrained translation, automated checks and an AI bilingual review — in seconds, not 4 days.",
+      ar: "اضغط «ترجمة من العربية إلى الإنجليزية». يعرض المسار التقسيم (عناوين وقوائم وصفوف جداول) ومطابقة المسرد والترجمة المتوازية المقيدة بالمسرد والفحوص الآلية والمراجعة ثنائية اللغة — خلال ثوانٍ لا أربعة أيام.",
     },
   },
   {
@@ -55,8 +55,8 @@ const SCENARIO: ScenarioStep[] = [
   {
     title: { en: "Human review", ar: "المراجعة البشرية" },
     body: {
-      en: "Click any translation to edit it — code checks re-run instantly. Accept all clean segments in one click, review the flagged ones, then Mark reviewed. Each step is audited.",
-      ar: "انقر أي ترجمة لتحريرها — تُعاد الفحوص فوراً. اقبل كل المقاطع السليمة بنقرة واحدة، وراجع المقاطع المعلّمة، ثم «اعتماد المراجعة». كل خطوة مسجلة.",
+      en: "Click any translation to edit it — code checks re-run instantly. Accept all clean segments in one click, review the flagged ones, accept or fix the flagged ones (✓ on each row), then Mark reviewed. Each step is audited.",
+      ar: "انقر أي ترجمة لتحريرها — تُعاد الفحوص فوراً. اقبل كل المقاطع السليمة بنقرة واحدة، وراجع المقاطع المعلّمة واقبلها (✓ في كل صف)، ثم «اعتماد المراجعة». كل خطوة مسجلة.",
     },
   },
   {
@@ -235,7 +235,7 @@ th,td{border:1px solid #cfcac0;padding:6px 8px;text-align:${rtl ? "right" : "lef
         />
         <MetricTile
           label={L({ en: "Turnaround", ar: "زمن الإنجاز" })}
-          value={metrics ? `${(metrics.ms / 1000).toFixed(1)} s` : live ? L({ en: "running", ar: "جارٍ" }) : "—"}
+          value={metrics ? <span dir="auto">{L({ en: `${(metrics.ms / 1000).toFixed(1)} s`, ar: `${(metrics.ms / 1000).toFixed(1)} ث` })}</span> : live ? L({ en: "running", ar: "جارٍ" }) : "—"}
           tone={metrics ? "ai" : "default"}
           sub={L({ en: "baseline 4 days per document", ar: "خط الأساس 4 أيام للمستند" })}
         />
@@ -258,7 +258,7 @@ th,td{border:1px solid #cfcac0;padding:6px 8px;text-align:${rtl ? "right" : "lef
         </div>
 
         <TabsContent value="desk">
-          <Workbench cols="320px minmax(0,1fr) 360px">
+          <Workbench cols="var(--ad-cols)" className="[--ad-cols:320px_minmax(0,1fr)_360px] max-2xl:[--ad-cols:264px_minmax(0,1fr)_296px]">
             <Pane title={L({ en: "Translation queue", ar: "قائمة الترجمة" })} subtitle={L({ en: `${docs.filter((d) => d.status !== "reviewed").length} open · MNDA glossary governs every job`, ar: `${docs.filter((d) => d.status !== "reviewed").length} مفتوحة · مسرد الهيئة يحكم كل مهمة` })} flush>
               <ul className="scrollbar-thin max-h-[780px] divide-y divide-border overflow-y-auto">
                 {docs.map((d) => {
@@ -283,7 +283,7 @@ th,td{border:1px solid #cfcac0;padding:6px 8px;text-align:${rtl ? "right" : "lef
                           {lang === "ar" ? d.title_ar : d.title}
                         </div>
                         <div className="mt-1 text-[11px] text-muted-foreground">
-                          {d.type} · {d.requestedBy}
+                          {lang === "ar" ? (d.type_ar ?? d.type) : d.type} · {lang === "ar" ? (d.requestedBy_ar ?? d.requestedBy) : d.requestedBy}
                         </div>
                         <div className="mt-1.5 flex items-center justify-between gap-2">
                           {d.status === "reviewed" ? (
@@ -369,19 +369,23 @@ th,td{border:1px solid #cfcac0;padding:6px 8px;text-align:${rtl ? "right" : "lef
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div className="min-w-0 max-w-2xl">
                         <h2 className="text-[17px] leading-snug font-light tracking-tight" dir="auto">
-                          {doc.title}
+                          {lang === "ar" ? doc.title_ar || doc.title : doc.title}
                         </h2>
-                        <p className="mt-0.5 text-[13px] text-muted-foreground" dir="rtl">
-                          {doc.title_ar}
-                        </p>
+                        {doc.title_ar && doc.title_ar !== doc.title && (
+                          <p className="mt-0.5 text-[13px] text-muted-foreground" dir={lang === "ar" ? "ltr" : "rtl"}>
+                            {lang === "ar" ? doc.title : doc.title_ar}
+                          </p>
+                        )}
                         <p className="mt-1.5 text-[11.5px] text-muted-foreground" dir="auto">
-                          {doc.requestedBy}
-                          {doc.requestedByTitle ? `, ${doc.requestedByTitle}` : ""} · {lang === "ar" ? doc.purpose_ar : doc.purpose}
+                          {lang === "ar" ? (doc.requestedBy_ar ?? doc.requestedBy) : doc.requestedBy}
+                          {doc.requestedByTitle ? (lang === "ar" ? `، ${doc.requestedByTitle_ar ?? doc.requestedByTitle}` : `, ${doc.requestedByTitle}`) : ""} · {lang === "ar" ? doc.purpose_ar || doc.purpose : doc.purpose}
                         </p>
                       </div>
-                      <RunButton running={live} onRun={translate} onStop={pipeline.abort} disabled={loading || !docText || (pipeline.running && !live)} icon={<Languages />}>
-                        {run ? L({ en: "Re-translate", ar: "إعادة الترجمة" }) : L({ en: "Translate", ar: "ترجمة" })}
-                      </RunButton>
+                      {(run || live) && (
+                        <RunButton running={live} onRun={translate} onStop={pipeline.abort} disabled={loading || !docText || (pipeline.running && !live)} icon={<Languages />}>
+                          {run ? L({ en: "Re-translate", ar: "إعادة الترجمة" }) : L({ en: "Translate", ar: "ترجمة" })}
+                        </RunButton>
+                      )}
                     </div>
                     {(run || live) && view === "review" && (
                       <div className="mt-3 flex flex-wrap items-center justify-between gap-2">

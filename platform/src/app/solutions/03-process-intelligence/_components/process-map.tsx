@@ -204,7 +204,7 @@ export function ProcessMap({ log, cases, lang }: { log: PLog; cases: PCase[]; la
                   <span className="min-w-0 truncate text-muted-foreground">
                     {activityLabel(log.activities[e.from], lang)} <span className="text-faint">{lang === "ar" ? "←" : "→"}</span> {activityLabel(log.activities[e.to], lang)}
                   </span>
-                  <span className="num shrink-0 font-medium text-warning">{fmt1(e.meanDays)} d</span>
+                  <span className="num shrink-0 font-medium text-warning">{fmt1(e.meanDays)} {lang === "ar" ? "يوم" : "d"}</span>
                 </button>
               </li>
             ))}
@@ -220,9 +220,9 @@ export function ProcessMap({ log, cases, lang }: { log: PLog; cases: PCase[]; la
               <div className="mt-1.5 grid grid-cols-4 gap-2">
                 {[
                   [L({ en: "Transitions", ar: "الانتقالات" }), fmt0(selected.count)],
-                  [L({ en: "Median", ar: "الوسيط" }), `${fmt1(selected.medianDays)} d`],
-                  [L({ en: "Mean", ar: "المتوسط" }), `${fmt1(selected.meanDays)} d`],
-                  ["P90", `${fmt1(selected.p90Days)} d`],
+                  [L({ en: "Median", ar: "الوسيط" }), `${fmt1(selected.medianDays)} ${lang === "ar" ? "يوم" : "d"}`],
+                  [L({ en: "Mean", ar: "المتوسط" }), `${fmt1(selected.meanDays)} ${lang === "ar" ? "يوم" : "d"}`],
+                  ["P90", `${fmt1(selected.p90Days)} ${lang === "ar" ? "يوم" : "d"}`],
                 ].map(([k, v]) => (
                   <div key={k}>
                     <div className="label-caps !text-[9px]">{k}</div>

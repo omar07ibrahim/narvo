@@ -4,8 +4,8 @@ export const SCENARIO: ScenarioStep[] = [
   {
     title: { en: "Find the delay", ar: "اكتشف التأخير" },
     body: {
-      en: "The process map is discovered from 8,600 events of 1,513 building-permit applications. For Q3 2026 (1,047 applications) the median is 21.6 days against a 15-day target; the orange arrows mark the longest waits — the master-developer NOC hold and the return loop.",
-      ar: "تُكتشف خريطة العملية من 8,600 حدث لـ1,513 طلب رخصة بناء. في الربع الثالث 2026 (1,047 طلباً) بلغ الوسيط 21.6 يوماً مقابل مستهدف 15 يوماً، وتشير الأسهم البرتقالية إلى أطول فترات الانتظار: انتظار شهادة المطور الرئيسي ودورة الإعادة.",
+      en: "The process map is discovered from 8,683 events of 1,513 building-permit applications. For Q3 2026 (1,047 applications) the median is 21.6 days against a 15-day target; the orange arrows mark the longest waits — the master-developer NOC hold and the return loop.",
+      ar: "تُكتشف خريطة العملية من 8,683 حدثاً لـ1,513 طلب رخصة بناء. في الربع الثالث 2026 (1,047 طلباً) بلغ الوسيط 21.6 يوماً مقابل مستهدف 15 يوماً، وتشير الأسهم البرتقالية إلى أطول فترات الانتظار: انتظار شهادة المطور الرئيسي ودورة الإعادة.",
     },
   },
   {

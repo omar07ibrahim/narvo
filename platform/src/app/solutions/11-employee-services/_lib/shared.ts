@@ -15,6 +15,8 @@ export interface Employee {
   id: string;
   name: string;
   nameAr: string;
+  /** Used only for Arabic grammatical agreement in issued documents — never shown to the model. */
+  gender?: "m" | "f";
   title: string;
   titleAr: string;
   department: string;
@@ -25,7 +27,7 @@ export interface Employee {
   extension: string;
   workPattern: "office" | "field" | "frontline";
   location: string;
-  manager: { name: string; title: string };
+  manager: { name: string; nameAr?: string; title: string };
   director: { name: string; title: string };
   probationCompleted: boolean;
   lastRating: string;
@@ -175,3 +177,43 @@ export function optionLabel(field: string, value: unknown, lang: "en" | "ar") {
 
 /** Demo "today": Sunday 11 October 2026 (UAE). */
 export const DEMO_TODAY = "2026-10-11";
+
+/** Arabic forms of approver names, so Arabic replies never transliterate badly. */
+export const NAMES_AR: Record<string, string> = {
+  "Latifa Khamis Al Romaithi": "لطيفة خميس الرميثي",
+  "Yousef Ibrahim Al Hosani": "يوسف إبراهيم الحوسني",
+  "Eng. Hamad Juma Al Kaabi": "م. حمد جمعة الكعبي",
+  "Eng. Layla Ahmed Al Marzooqi": "م. ليلى أحمد المرزوقي",
+  "Eng. Omar Yousef Al Hammadi": "م. عمر يوسف الحمادي",
+  "Hessa Abdulla Al Suwaidi": "حصة عبدالله السويدي",
+  "Sara Ahmed Al Blooshi": "سارة أحمد البلوشي",
+  "Mariam Saeed Al Kaabi": "مريم سعيد الكعبي",
+  "Fatima Obaid Al Nuaimi": "فاطمة عبيد النعيمي",
+  "Maryam Hassan Al Shamsi": "مريم حسن الشامسي",
+};
+
+/** "19 Oct 2026" / "19 أكتوبر 2026" for an ISO day (YYYY-MM-DD). */
+export function dayLabel(iso: string, lang: "en" | "ar") {
+  const d = new Date(`${iso.slice(0, 10)}T12:00:00+04:00`);
+  if (Number.isNaN(d.getTime())) return iso;
+  return d.toLocaleDateString(lang === "ar" ? "ar-AE-u-nu-latn" : "en-GB", { day: "numeric", month: lang === "ar" ? "long" : "short", year: "numeric", timeZone: "Asia/Dubai" });
+}
+
+const arCount = (n: number, one: string, two: string, few: string, many: string) => (n === 1 ? one : n === 2 ? two : n >= 3 && n <= 10 ? `${n} ${few}` : `${n} ${many}`);
+/** Arabic duration such as «يومان و3 ساعات» or «5 ساعات و20 دقيقة». */
+export function durationAr(d: number, h: number, m: number) {
+  const hrs = (x: number) => arCount(x, "ساعة", "ساعتان", "ساعات", "ساعة");
+  const mins = (x: number) => arCount(x, "دقيقة", "دقيقتان", "دقائق", "دقيقة");
+  if (d >= 1) return h ? `${daysAr(d)} و${hrs(h)}` : daysAr(d);
+  if (h >= 1) return m ? `${hrs(h)} و${mins(m)}` : hrs(h);
+  return mins(m);
+}
+
+/** Arabic count of days with the right noun form (1 يوم، 2 يومان، 3–10 أيام، 11+ يوماً). */
+export function daysAr(n: number, noun: "day" | "working" = "day") {
+  const w = noun === "working";
+  if (n === 1) return w ? "يوم عمل واحد" : "يوم واحد";
+  if (n === 2) return w ? "يوما عمل" : "يومان";
+  if (n >= 3 && n <= 10) return w ? `${n} أيام عمل` : `${n} أيام`;
+  return w ? `${n} يوم عمل` : `${n} يوماً`;
+}

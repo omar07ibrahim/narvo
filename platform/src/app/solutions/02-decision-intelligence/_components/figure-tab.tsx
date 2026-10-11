@@ -125,7 +125,7 @@ export function FigureTab({ run, saved, onRun }: { run: NarvoRun; saved: FigureC
   const unv = result.checks.filter((c) => c.status === "unverifiable");
   return (
     <div className="space-y-5">
-      <div className="grid grid-cols-4 gap-4 rounded-lg border border-border bg-surface p-4 max-md:grid-cols-2">
+      <div className="grid grid-cols-4 gap-4 rounded-lg border border-border bg-surface p-4 max-2xl:grid-cols-2">
         <MiniStat
           label={L({ en: "Figure consistency", ar: "اتساق الأرقام" })}
           value={result.rate != null ? `${result.rate.toFixed(0)}%` : "—"}

@@ -24,6 +24,7 @@ export function CertificateDialog({ open, onOpenChange, r, e }: { open: boolean;
   const validUntil = new Date(issued.getTime() + 30 * 86400000);
   const housing = /hous|سكن|إسكان|منح/i.test(`${r.fields.purpose ?? ""} ${r.fields.addressee ?? ""}`);
   const isCert = r.type === "salary_certificate";
+  const f = e.gender === "f";
 
   function print() {
     const node = document.getElementById("mnda-certificate");
@@ -72,13 +73,13 @@ export function CertificateDialog({ open, onOpenChange, r, e }: { open: boolean;
             </p>
             <p style={{ marginTop: 10 }}>
               {lang === "ar"
-                ? `تشهد هيئة مرسى النور للتطوير بأن السيد/ة ${e.nameAr}، ويعمل/تعمل لديها بوظيفة ${e.titleAr} في ${e.departmentAr}، بالدرجة الوظيفية (${e.grade.replace("Grade ", "")})، وذلك منذ ${new Date(e.joined).toLocaleDateString("ar-AE-u-nu-latn", { day: "numeric", month: "long", year: "numeric" })} ولا يزال/تزال على رأس العمل حتى تاريخه.`
+                ? `تشهد هيئة مرسى النور للتطوير بأن ${f ? "السيدة" : "السيد"} ${e.nameAr} ${f ? "تعمل" : "يعمل"} لديها بوظيفة ${e.titleAr} في ${e.departmentAr}، بالدرجة الوظيفية (${e.grade.replace("Grade ", "")})، وذلك منذ ${new Date(e.joined).toLocaleDateString("ar-AE-u-nu-latn", { day: "numeric", month: "long", year: "numeric" })} ولا ${f ? "تزال" : "يزال"} على رأس العمل حتى تاريخه.`
                 : `This is to certify that ${e.name} is employed by the Marsa Al Noor Development Authority as ${e.title}, ${e.department}, ${e.grade}, since ${new Date(e.joined).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })}, and remains in service as of the date of this certificate.`}
             </p>
             {isCert && (
               <>
                 <p style={{ marginTop: 10 }}>
-                  {lang === "ar" ? "ويتقاضى/تتقاضى راتباً شهرياً إجمالياً قدره " : "The employee receives a total monthly salary of "}
+                  {lang === "ar" ? `${f ? "وتتقاضى" : "ويتقاضى"} راتباً شهرياً إجمالياً قدره ` : "The employee receives a total monthly salary of "}
                   <strong>{lang === "ar" ? `${AED(total)} درهم` : `AED ${AED(total)}`}</strong>
                   {lang === "ar" ? "، وتفصيله كالآتي:" : ", detailed as follows:"}
                 </p>
@@ -105,7 +106,7 @@ export function CertificateDialog({ open, onOpenChange, r, e }: { open: boolean;
             )}
             <p style={{ marginTop: 12 }}>
               {lang === "ar"
-                ? `وقد أُعطيت هذه ${isCert ? "الشهادة" : "الرسالة"} بناءً على طلبه/طلبها لغرض: ${String(r.fields.purpose || "—")}، دون أدنى مسؤولية على الهيئة.`
+                ? `وقد أُعطيت هذه ${isCert ? "الشهادة" : "الرسالة"} بناءً على ${f ? "طلبها" : "طلبه"} لغرض: ${String(r.fields.purpose || "—")}، دون أدنى مسؤولية على الهيئة.`
                 : `This ${isCert ? "certificate" : "letter"} is issued at the employee's request for: ${String(r.fields.purpose || "—")}, without any liability on the Authority.`}
             </p>
             {housing && isCert && (

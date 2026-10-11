@@ -66,7 +66,7 @@ export function PrivacyStatus() {
       <div className="mt-2.5 grid grid-cols-2 gap-2 text-[10.5px]">
         <div>
           <div className="text-sidebar-muted">{L({ en: "Data egress", ar: "البيانات الخارجة" })}</div>
-          <div dir="ltr" className={cn("num text-[13px] font-medium rtl:text-end", local ? "text-[#5fb8ad]" : "text-white")}>
+          <div dir="auto" className={cn("num text-left text-[13px] font-medium rtl:text-right", local ? "text-[#5fb8ad]" : "text-white")}>
             {s ? formatBytes(s.egressBytes) : "—"}
           </div>
         </div>

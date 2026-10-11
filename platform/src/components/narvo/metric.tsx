@@ -30,9 +30,9 @@ export function MetricTile({
         {icon && <span className="text-muted-foreground">{icon}</span>}
       </div>
       <div
-        dir="ltr"
+        dir="auto"
         className={cn(
-          "num mt-2 text-start text-[26px] leading-none font-light tracking-tight rtl:text-end",
+          "num mt-2 text-left text-[26px] leading-none font-light tracking-tight rtl:text-right",
           tone === "ai" && "text-ai",
           tone === "warning" && "text-warning",
           tone === "danger" && "text-danger",

@@ -5,7 +5,7 @@ import { FlaskConical, GitCommitHorizontal } from "lucide-react";
 import { SectionLabel } from "@/components/narvo/pane";
 import { StatusPill } from "@/components/narvo/status";
 import { Markdown } from "@/components/narvo/markdown";
-import { useL } from "@/lib/i18n";
+import { useFormat, useL } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { applyFilters, cohortRead, fmt0, fmt1, type PLog } from "../_lib/mining";
 import { INTERVENTION_LABELS } from "../_lib/labels";
@@ -14,12 +14,14 @@ import type { Interventions } from "../_lib/mining";
 export interface ChangeRow {
   id: string;
   title: string;
+  titleAr?: string;
   interventions: string[];
   status: string;
   approvedBy?: string;
   approvedAt?: string;
   memo?: string;
   measurement?: string;
+  measurementAr?: string;
   expected?: Record<string, number | null>;
 }
 
@@ -27,6 +29,7 @@ const DATA_END = Date.parse("2026-10-09T23:59:00+04:00") / 60000;
 
 export function Measure({ log, changes }: { log: PLog; changes: ChangeRow[] }) {
   const L = useL();
+  const f = useFormat();
   const pilot = useMemo(() => cohortRead(log, applyFilters(log, { cohort: "Pilot (Oct 2026)" }), DATA_END), [log]);
   const base = useMemo(() => cohortRead(log, applyFilters(log, { cohort: "Q3 2026" }), DATA_END), [log]);
   const rows: Array<{ k: string; label: { en: string; ar: string }; b: string; p: string; better: boolean | null; note?: { en: string; ar: string } }> = [
@@ -70,8 +73,8 @@ export function Measure({ log, changes }: { log: PLog; changes: ChangeRow[] }) {
     {
       k: "cyc",
       label: { en: "Cycle time (median, issued)", ar: "زمن الدورة (الوسيط، الصادرة)" },
-      b: `${fmt1(base.medianCycle)} d`,
-      p: pilot.completed >= 20 ? `${fmt1(pilot.medianCycle)} d` : "—",
+      b: `${fmt1(base.medianCycle)} ${L({ en: "d", ar: "يوم" })}`,
+      p: pilot.completed >= 20 ? `${fmt1(pilot.medianCycle)} ${L({ en: "d", ar: "يوم" })}` : "—",
       better: null,
       note: { en: `too early: ${pilot.completed} of ${pilot.cases} pilot permits issued`, ar: `مبكر جداً: صدرت ${pilot.completed} من ${pilot.cases} رخصة` },
     },
@@ -138,12 +141,12 @@ export function Measure({ log, changes }: { log: PLog; changes: ChangeRow[] }) {
                 </StatusPill>
                 {c.approvedAt && (
                   <span className="text-[11px] text-faint">
-                    {c.approvedBy} · {c.approvedAt}
+                    {c.approvedBy} · {f.date(`${c.approvedAt}T12:00:00+04:00`)}
                   </span>
                 )}
               </div>
               <div className="mt-1 text-[13px] leading-snug font-medium" dir="auto">
-                {c.title}
+                {L({ en: c.title, ar: c.titleAr ?? c.title })}
               </div>
               {c.interventions.length > 0 && (
                 <div className="mt-1.5 flex flex-wrap gap-1">
@@ -155,11 +158,14 @@ export function Measure({ log, changes }: { log: PLog; changes: ChangeRow[] }) {
                 </div>
               )}
               {c.expected && Object.keys(c.expected).length > 0 && (
-                <p className="mt-1.5 text-[11.5px] text-muted-foreground" dir="ltr">
-                  median {fmt1(c.expected.medianBefore)} → {fmt1(c.expected.medianAfter)} d · rework {fmt1(c.expected.reworkBefore)}% → {fmt1(c.expected.reworkAfter)}% (simulated)
+                <p className="num mt-1.5 text-[11.5px] text-muted-foreground">
+                  {L({
+                    en: `median ${fmt1(c.expected.medianBefore)} → ${fmt1(c.expected.medianAfter)} d · rework ${fmt1(c.expected.reworkBefore)}% → ${fmt1(c.expected.reworkAfter)}% (simulated)`,
+                    ar: `الوسيط ${fmt1(c.expected.medianBefore)} ← ${fmt1(c.expected.medianAfter)} يوم · إعادة العمل ${fmt1(c.expected.reworkBefore)}% ← ${fmt1(c.expected.reworkAfter)}% (محاكاة)`,
+                  })}
                 </p>
               )}
-              {c.measurement && <p className="mt-1.5 text-[11.5px] leading-relaxed text-muted-foreground">{c.measurement}</p>}
+              {c.measurement && <p className="mt-1.5 text-[11.5px] leading-relaxed text-muted-foreground">{L({ en: c.measurement, ar: c.measurementAr ?? c.measurement })}</p>}
               {c.memo && (
                 <details className="mt-1.5">
                   <summary className="cursor-pointer text-[11.5px] text-muted-foreground">{L({ en: "Approved memo", ar: "المذكرة المعتمدة" })}</summary>

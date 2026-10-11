@@ -12,8 +12,7 @@ import {
   type Draft,
   type Employee,
   type RequestType,
-  type ServiceRequest,
-} from "./shared";
+  type ServiceRequest, NAMES_AR, dayLabel, daysAr } from "./shared";
 
 export const SOLUTION = "11-employee-services";
 export const REQUESTS = `${SOLUTION}/requests`;
@@ -22,19 +21,7 @@ const STATS_KEY = `${SOLUTION}:stats`;
 export const HR_SERVICES = { name: "Latifa Khamis Al Romaithi", title: "Senior HR Services Officer" };
 export const IT_DESK = { name: "Yousef Ibrahim Al Hosani", title: "IT Service Desk Lead" };
 
-/** Arabic forms of approver names, so Arabic replies never transliterate badly. */
-export const NAMES_AR: Record<string, string> = {
-  "Latifa Khamis Al Romaithi": "لطيفة خميس الرميثي",
-  "Yousef Ibrahim Al Hosani": "يوسف إبراهيم الحوسني",
-  "Eng. Hamad Juma Al Kaabi": "م. حمد جمعة الكعبي",
-  "Eng. Layla Ahmed Al Marzooqi": "م. ليلى أحمد المرزوقي",
-  "Eng. Omar Yousef Al Hammadi": "م. عمر يوسف الحمادي",
-  "Hessa Abdulla Al Suwaidi": "حصة عبدالله السويدي",
-  "Sara Ahmed Al Blooshi": "سارة أحمد البلوشي",
-  "Mariam Saeed Al Kaabi": "مريم سعيد الكعبي",
-  "Fatima Obaid Al Nuaimi": "فاطمة عبيد النعيمي",
-  "Maryam Hassan Al Shamsi": "مريم حسن الشامسي",
-};
+export { NAMES_AR };
 
 /* ───────────── Dates (UAE working week Mon–Fri) ───────────── */
 
@@ -250,7 +237,17 @@ export function buildDraft(e: Employee, type: RequestType, input: Fields, id?: s
           : "To whom it may concern");
     f.purpose = purpose || (ar ? "لأغراض عامة" : "General purposes");
     f.includeBreakdown = input.includeBreakdown !== false;
-    checks.push(chk("employment", true, { en: "Active employee record", ar: "سجل وظيفي نشط" }, { en: `${e.grade} · since ${e.joined}`, ar: `${e.grade} · منذ ${e.joined}` }));
+    const joined = new Date(`${e.joined}T12:00:00+04:00`);
+    const joinedEn = joined.toLocaleDateString("en-GB", { month: "short", year: "numeric", timeZone: "Asia/Dubai" });
+    const joinedAr = joined.toLocaleDateString("ar-AE-u-nu-latn", { month: "long", year: "numeric", timeZone: "Asia/Dubai" });
+    checks.push(
+      chk(
+        "employment",
+        true,
+        { en: "Active employee record", ar: "سجل وظيفي نشط" },
+        { en: `${e.grade} · since ${joinedEn}`, ar: `${e.grade.replace(/^Grade\s*/i, "الدرجة ")} · منذ ${joinedAr}` },
+      ),
+    );
     if (housing) {
       f.includeBreakdown = true;
       checks.push(
@@ -348,7 +345,10 @@ export function buildDraft(e: Employee, type: RequestType, input: Fields, id?: s
     if (lt === "sick" && days > 1)
       checks.push(chk("medical", false, { en: "Medical certificate", ar: "شهادة طبية" }, { en: "Upload a certificate from a licensed UAE facility within 2 working days.", ar: "ارفع شهادة من منشأة صحية مرخصة في الدولة خلال يومي عمل." }));
     const lbl = OPTIONS.leaveType.find((o) => o.value === lt)!.label;
-    title = { en: `${lbl.en} — ${days} day${days === 1 ? "" : "s"} from ${f.startDate || "?"}`, ar: `${lbl.ar} — ${days} يوم اعتباراً من ${f.startDate || "؟"}` };
+    title = {
+      en: `${lbl.en} — ${days} day${days === 1 ? "" : "s"} from ${f.startDate ? dayLabel(String(f.startDate), "en") : "?"}`,
+      ar: `${lbl.ar} — ${daysAr(days)} اعتباراً من ${f.startDate ? dayLabel(String(f.startDate), "ar") : "؟"}`,
+    };
   }
 
   if (type === "remote_work") {
@@ -515,7 +515,7 @@ function nextId(queue: "HR" | "IT") {
 }
 
 /** Create the request (status "submitted") and return the approval for the responsible approver. */
-export function submitDraft(draft: Draft, editedFields?: Fields): { request: ServiceRequest; spec: ApprovalSpec } {
+export function submitDraft(draft: Draft, editedFields?: Fields, lang: "en" | "ar" = "en"): { request: ServiceRequest; spec: ApprovalSpec } {
   const e = getEmployee(draft.employeeId);
   if (!e) throw new Error("Employee not found");
   if (draft.submittedRequestId) throw new Error(`This form was already submitted as ${draft.submittedRequestId}`);
@@ -556,9 +556,9 @@ export function submitDraft(draft: Draft, editedFields?: Fields): { request: Ser
     .map(([k, v]) => `${k}: ${Array.isArray(v) ? v.join(", ") : String(v)}`)
     .join(" · ");
   const spec: ApprovalSpec = {
-    title: `${request.id} — ${d.title.en} (${e.name})`,
-    summary: `${e.name}, ${e.title} — ${fieldsSummary}`.slice(0, 380),
-    actionLabel: "Approve request",
+    title: lang === "ar" ? `${request.id} — ${d.title.ar} (${e.nameAr})` : `${request.id} — ${d.title.en} (${e.name})`,
+    summary: (lang === "ar" ? `${e.nameAr}، ${e.titleAr} — ${fieldsSummary}` : `${e.name}, ${e.title} — ${fieldsSummary}`).slice(0, 380),
+    actionLabel: lang === "ar" ? "اعتماد الطلب" : "Approve request",
     approver: d.approver,
     effects: [
       { type: "patch", collection: REQUESTS, id: request.id, patch: { status: "approved" } },

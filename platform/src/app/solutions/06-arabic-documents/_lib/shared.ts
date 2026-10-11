@@ -14,13 +14,16 @@ export interface QueueDoc {
   title: string;
   title_ar: string;
   type: string;
+  type_ar?: string;
   ref?: string;
   source: Lang;
   target: Lang;
   file?: string;
   text?: string;
   requestedBy: string;
+  requestedBy_ar?: string;
   requestedByTitle?: string;
+  requestedByTitle_ar?: string;
   purpose?: string;
   purpose_ar?: string;
   received: string;
@@ -146,3 +149,16 @@ export function assemble(segments: Segment[], which: "target" | "source" = "targ
 export function wordCount(text: string) {
   return text.split(/[\s|]+/).filter((w) => /[\p{L}\p{N}]/u.test(w)).length;
 }
+
+/** Glossary domains in both languages (the glossary stores the English name). */
+export const DOMAIN_LABEL: Record<string, { en: string; ar: string }> = {
+  "Customer service": { en: "Customer service", ar: "خدمة المتعاملين" },
+  "Facilities & engineering": { en: "Facilities & engineering", ar: "المرافق والهندسة" },
+  "HR & administration": { en: "HR & administration", ar: "الموارد البشرية والإدارة" },
+  Housing: { en: "Housing", ar: "الإسكان" },
+  "Legal & governance": { en: "Legal & governance", ar: "الشؤون القانونية والحوكمة" },
+  Permits: { en: "Permits", ar: "الرخص" },
+  "Planning & building code": { en: "Planning & building code", ar: "التخطيط وكود البناء" },
+  "Procurement & contracts": { en: "Procurement & contracts", ar: "المشتريات والعقود" },
+};
+export const domainLabel = (d: string) => DOMAIN_LABEL[d] ?? { en: d, ar: d };

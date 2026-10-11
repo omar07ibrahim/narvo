@@ -9,7 +9,7 @@ import { ApprovalCard } from "@/components/narvo/approval-card";
 import { useL } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { ApprovalSummary } from "@/lib/ai/events";
-import { FLAG_LABEL, type Candidate, type FlagKind, type Lang, type Segment, type Term } from "../_lib/shared";
+import { FLAG_LABEL, domainLabel, type Candidate, type FlagKind, type Lang, type Segment, type Term } from "../_lib/shared";
 import { ResolveTerm } from "./resolve-term";
 
 export function QaSummary({ segments }: { segments: Segment[] }) {
@@ -136,7 +136,7 @@ export function TermPanel({
                         {source === "ar" ? t.ar : t.en} → {r ? (target === "ar" ? r.to.ar : r.to.en) : target === "ar" ? t.ar : t.en}
                       </span>
                       <span className="text-[10.5px] text-muted-foreground">
-                        {t.id} · {t.domain} · {found.get(id)}× {r ? `· ${L({ en: "approved", ar: "اعتُمد" })}` : ""}
+                        {t.id} · {L(domainLabel(t.domain))} · {found.get(id)}× {r ? `· ${L({ en: "approved", ar: "اعتُمد" })}` : ""}
                       </span>
                     </span>
                   </button>
@@ -209,7 +209,7 @@ export function TermPanel({
                   )}
                 </div>
                 <p className="mt-1 text-[11px] leading-snug text-muted-foreground" dir="auto">
-                  {c.domain} · {c.segmentIds.join(", ")} — {c.rationale}
+                  {L(domainLabel(c.domain))} · {c.segmentIds.join(", ")} — {c.rationale}
                 </p>
                 {proposals[c.term] && (
                   <ApprovalCard

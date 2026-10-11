@@ -1,6 +1,7 @@
 [
   {
     "id": "EMP-10482",
+    "gender": "m",
     "name": "Obaid Hamad Al Ketbi",
     "nameAr": "عبيد حمد الكتبي",
     "title": "Building Inspector",
@@ -13,7 +14,7 @@
     "extension": "6118",
     "workPattern": "field",
     "location": "Field — districts MN-02, MN-04 and MN-07",
-    "manager": { "name": "Eng. Hamad Juma Al Kaabi", "title": "Director, Field Operations & Inspection" },
+    "manager": { "name": "Eng. Hamad Juma Al Kaabi", "nameAr": "م. حمد جمعة الكعبي", "title": "Director, Field Operations & Inspection" },
     "director": { "name": "Eng. Hamad Juma Al Kaabi", "title": "Director, Field Operations & Inspection" },
     "probationCompleted": true,
     "lastRating": "Exceeds expectations (2025)",
@@ -27,13 +28,14 @@
     "housingCase": {
       "id": "MNDA-HG-2026-005118",
       "status": "Incomplete — awaiting applicant",
-      "note": "His own housing grant application is on hold: the salary certificate he uploaded was issued on 21 July 2026 — older than 30 days (Circular 9/2026).",
+      "note": "His own housing loan application is on hold: the salary certificate he uploaded was issued on 21 July 2026 — older than 30 days (Circular 9/2026).",
       "noteAr": "طلبه السكني معلّق: شهادة الراتب المرفوعة صادرة في 21 يوليو 2026 — أقدم من 30 يوماً (التعميم 9/2026)."
     },
     "salary": { "basic": 18450, "housing": 9200, "transport": 2400, "social": 3800, "other": 1500, "otherLabel": "Field allowance" }
   },
   {
     "id": "EMP-08817",
+    "gender": "f",
     "name": "Reem Abdulla Al Marri",
     "nameAr": "ريم عبدالله المري",
     "title": "Planning Engineer",
@@ -46,7 +48,7 @@
     "extension": "4231",
     "workPattern": "office",
     "location": "MNDA Tower, Corniche Road — Floor 14",
-    "manager": { "name": "Eng. Layla Ahmed Al Marzooqi", "title": "Head, Permit Review Section" },
+    "manager": { "name": "Eng. Layla Ahmed Al Marzooqi", "nameAr": "م. ليلى أحمد المرزوقي", "title": "Head, Permit Review Section" },
     "director": { "name": "Eng. Omar Yousef Al Hammadi", "title": "Director, Planning & Building Permits" },
     "probationCompleted": true,
     "lastRating": "Meets expectations (2025)",
@@ -61,6 +63,7 @@
   },
   {
     "id": "EMP-11930",
+    "gender": "m",
     "name": "Rohan Iyer",
     "nameAr": "روهان آيَر",
     "title": "Senior Systems Analyst",
@@ -73,7 +76,7 @@
     "extension": "4507",
     "workPattern": "office",
     "location": "MNDA Tower, Corniche Road — Floor 9",
-    "manager": { "name": "Hessa Abdulla Al Suwaidi", "title": "Director, Digital Transformation Office" },
+    "manager": { "name": "Hessa Abdulla Al Suwaidi", "nameAr": "حصة عبدالله السويدي", "title": "Director, Digital Transformation Office" },
     "director": { "name": "Hessa Abdulla Al Suwaidi", "title": "Director, Digital Transformation Office" },
     "probationCompleted": true,
     "lastRating": "Exceeds expectations (2025)",
@@ -88,6 +91,7 @@
   },
   {
     "id": "EMP-12207",
+    "gender": "f",
     "name": "Aisha Mohammed Al Naqbi",
     "nameAr": "عائشة محمد النقبي",
     "title": "Customer Happiness Officer",
@@ -100,7 +104,7 @@
     "extension": "7342",
     "workPattern": "frontline",
     "location": "Customer Happiness Centre, Al Murjan (MN-02) — rostered counter shifts",
-    "manager": { "name": "Sara Ahmed Al Blooshi", "title": "Manager, Customer Happiness Centre" },
+    "manager": { "name": "Sara Ahmed Al Blooshi", "nameAr": "سارة أحمد البلوشي", "title": "Manager, Customer Happiness Centre" },
     "director": { "name": "Sara Ahmed Al Blooshi", "title": "Manager, Customer Happiness Centre" },
     "probationCompleted": true,
     "lastRating": "Meets expectations (2025)",
@@ -115,6 +119,7 @@
   },
   {
     "id": "EMP-07791",
+    "gender": "m",
     "name": "Khalfan Mohammed Al Ali",
     "nameAr": "خلفان محمد العلي",
     "title": "Senior Case Officer, Housing",
@@ -127,7 +132,7 @@
     "extension": "5129",
     "workPattern": "office",
     "location": "MNDA Tower, Corniche Road — Floor 6",
-    "manager": { "name": "Mariam Saeed Al Kaabi", "title": "Head, Housing Applications Section" },
+    "manager": { "name": "Mariam Saeed Al Kaabi", "nameAr": "مريم سعيد الكعبي", "title": "Head, Housing Applications Section" },
     "director": { "name": "Fatima Obaid Al Nuaimi", "title": "Director, Housing & Community Services" },
     "probationCompleted": true,
     "lastRating": "Exceeds expectations (2025)",

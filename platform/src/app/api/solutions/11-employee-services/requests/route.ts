@@ -1,4 +1,5 @@
 import { createApproval } from "@/lib/store/db";
+import { getPrefs } from "@/lib/ai/request";
 import {
   advanceRequest,
   buildDraft,
@@ -42,7 +43,8 @@ export async function POST(req: Request) {
         const next = saveDraft({ ...buildDraft(employee, draft.type, { ...draft.fields, ...(body.fields ?? {}) }, draft.id), submittedRequestId: draft.submittedRequestId });
         return Response.json({ draft: next });
       }
-      const { request, spec } = submitDraft(draft, body.fields);
+      const { lang } = getPrefs(req, body as Record<string, unknown>);
+      const { request, spec } = submitDraft(draft, body.fields, lang);
       const approval = createApproval({
         solution: SOLUTION,
         title: spec.title,

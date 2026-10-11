@@ -16,6 +16,8 @@ export interface MetricDef {
   id: string;
   dept: Dept;
   name: Bi;
+  /** Shorter name for the narrow KPI cards */
+  short?: Bi;
   unit: Unit;
   decimals: number;
   better: "up" | "down" | "none";
@@ -172,6 +174,7 @@ export const METRICS: MetricDef[] = [
     id: "bp_rework",
     dept: "permits",
     name: { en: "Permits returned to applicant", ar: "الطلبات المعادة للمتعامل" },
+    short: { en: "Permits returned", ar: "الرخص المعادة" },
     unit: "pct",
     decimals: 1,
     better: "down",

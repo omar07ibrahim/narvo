@@ -42,22 +42,25 @@ export function ProfilePanel({ employee: e, requests }: { employee: Employee; re
         <div className="mt-3 space-y-0.5 text-[11.5px] text-muted-foreground">
           <div>{lang === "ar" ? e.departmentAr : e.department}</div>
           <div>
-            {e.grade} · {L({ en: "since", ar: "منذ" })} <span className="num">{fmt.date(e.joined, { month: "short", year: "numeric" })}</span> · <span className="font-mono">{e.id}</span>
+            {lang === "ar" ? e.grade.replace(/^Grade\s*/i, "الدرجة ") : e.grade} · {L({ en: "since", ar: "منذ" })} <span className="num">{fmt.date(e.joined, { month: "short", year: "numeric" })}</span> · <span className="font-mono">{e.id}</span>
           </div>
-          <div className="flex items-center gap-1">
-            <Mail className="size-3" /> <span className="font-mono">{e.email}</span> · ext. <span className="num">{e.extension}</span>
+          <div className="flex min-w-0 items-center gap-1">
+            <Mail className="size-3 shrink-0" /> <span className="truncate font-mono">{e.email}</span> · <span className="whitespace-nowrap">{L({ en: "ext.", ar: "تحويلة" })} <span className="num">{e.extension}</span></span>
           </div>
           <div>
-            {L({ en: "Manager", ar: "المدير المباشر" })}: <span className="text-foreground">{e.manager.name}</span>
+            {L({ en: "Manager", ar: "المدير المباشر" })}: <span className="text-foreground">{lang === "ar" ? (e.manager.nameAr ?? e.manager.name) : e.manager.name}</span>
           </div>
         </div>
       </div>
 
       {e.housingCase && (
         <div className="rounded-md border border-warning/30 bg-warning-soft/50 p-2.5">
-          <div className="flex items-center gap-1.5 text-[11.5px] font-medium">
-            <Link2 className="size-3.5 text-warning" /> {L({ en: "Linked housing case", ar: "طلب سكني مرتبط" })} · <span className="font-mono">{e.housingCase.id}</span>
+          <div className="flex items-center justify-between gap-2 text-[11.5px] font-medium">
+            <span className="flex items-center gap-1.5">
+              <Link2 className="size-3.5 text-warning" /> {L({ en: "Linked housing case", ar: "طلب سكني مرتبط" })}
+            </span>
           </div>
+          <div className="mt-0.5 font-mono text-[11px] text-foreground">{e.housingCase.id}</div>
           <p className="mt-1 text-[11.5px] leading-snug text-muted-foreground" dir="auto">
             {lang === "ar" ? e.housingCase.noteAr : e.housingCase.note}
           </p>
@@ -67,7 +70,7 @@ export function ProfilePanel({ employee: e, requests }: { employee: Employee; re
       <div className="space-y-2">
         <SectionLabel className="!mb-1">{L({ en: "Entitlements", ar: "الاستحقاقات" })}</SectionLabel>
         <div className="rounded-md border border-border p-2.5">
-          <div className="flex items-center justify-between text-[12px]">
+          <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-[12px]">
             <span className="flex items-center gap-1.5 font-medium">
               <CalendarDays className="size-3.5 text-muted-foreground" /> {L({ en: "Annual leave 2026", ar: "الإجازة السنوية 2026" })}
             </span>
@@ -94,19 +97,20 @@ export function ProfilePanel({ employee: e, requests }: { employee: Employee; re
           </div>
         </div>
         <div className="rounded-md border border-border p-2.5">
-          <div className="flex items-center justify-between text-[12px]">
-            <span className="flex items-center gap-1.5 font-medium">
-              <House className="size-3.5 text-muted-foreground" /> {L({ en: "Remote work (HC-POL-07)", ar: "العمل عن بُعد (HC-POL-07)" })}
+          <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-[12px]">
+            <span className="flex min-w-0 items-center gap-1.5 font-medium">
+              <House className="size-3.5 shrink-0 text-muted-foreground" /> <span className="truncate">{L({ en: "Remote work", ar: "العمل عن بُعد" })}</span>
             </span>
             {e.remoteEligible ? (
-              <StatusPill tone={weekUsed >= 2 ? "warning" : "success"}>
+              <StatusPill tone={weekUsed >= 2 ? "warning" : "success"} className="shrink-0">
                 {L({ en: `${2 - weekUsed} of 2 left`, ar: `متبقٍ ${2 - weekUsed} من 2` })}
               </StatusPill>
             ) : (
-              <StatusPill tone="neutral">{L({ en: "Not eligible", ar: "غير مؤهل" })}</StatusPill>
+              <StatusPill tone="neutral" className="shrink-0">{L({ en: "Not eligible", ar: "غير مؤهل" })}</StatusPill>
             )}
           </div>
           <div className="mt-1 text-[10.5px] text-muted-foreground">
+            <span className="font-mono">HC-POL-07</span> ·{" "}
             {e.remoteEligible
               ? `${L({ en: "Week of 12 Oct", ar: "أسبوع 12 أكتوبر" })}: ${e.remote.approvedDates.length ? e.remote.approvedDates.map((d) => fmt.date(d, { weekday: "short", day: "numeric" })).join(", ") : L({ en: "none approved", ar: "لا أيام معتمدة" })}`
               : e.workPattern === "field"
@@ -115,15 +119,17 @@ export function ProfilePanel({ employee: e, requests }: { employee: Employee; re
           </div>
         </div>
         <div className="rounded-md border border-border p-2.5">
-          <div className="flex items-center justify-between text-[12px]">
-            <span className="flex items-center gap-1.5 font-medium">
-              <Laptop className="size-3.5 text-muted-foreground" /> {e.laptop.model}
+          <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 text-[12px]">
+            <span className="flex min-w-0 items-center gap-1.5 font-medium">
+              <Laptop className="size-3.5 shrink-0 text-muted-foreground" /> <span>{e.laptop.model}</span>
             </span>
-            <StatusPill tone={laptopOk ? "success" : "neutral"}>{laptopOk ? L({ en: "Replacement due", ar: "مستحق الاستبدال" }) : L({ en: "In lifecycle", ar: "ضمن دورة الحياة" })}</StatusPill>
+            <StatusPill tone={laptopOk ? "success" : "neutral"} className="shrink-0">{laptopOk ? L({ en: "Replacement due", ar: "مستحق الاستبدال" }) : L({ en: "In lifecycle", ar: "ضمن دورة الحياة" })}</StatusPill>
           </div>
           <div className="mt-1 text-[10.5px] text-muted-foreground">
             <span className="font-mono">{e.laptop.assetTag}</span> · {L({ en: "bought", ar: "شُري" })} <span className="num">{fmt.date(e.laptop.purchased)}</span> ·{" "}
-            <span className="num">{ageYears.toFixed(1)}</span> {L({ en: "years", ar: "سنوات" })}
+            <span className="whitespace-nowrap">
+              <span className="num">{ageYears.toFixed(1)}</span> {L({ en: "years", ar: "سنوات" })}
+            </span>
           </div>
         </div>
       </div>

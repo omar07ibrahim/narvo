@@ -12,7 +12,7 @@ import { StatusPill } from "@/components/narvo/status";
 import { EmptyState } from "@/components/narvo/empty";
 import { useFormat, useL } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import type { Term } from "../_lib/shared";
+import { domainLabel, type Term } from "../_lib/shared";
 import { ResolveTerm } from "./resolve-term";
 
 export function GlossaryTab({ terms, onTerms }: { terms: Term[]; onTerms: (t: Term[]) => void }) {
@@ -100,7 +100,7 @@ export function GlossaryTab({ terms, onTerms }: { terms: Term[]; onTerms: (t: Te
               </SelectItem>
               {domains.map((d) => (
                 <SelectItem key={d} value={d} className="text-[12.5px]">
-                  {d}
+                  {L(domainLabel(d))}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -133,7 +133,7 @@ export function GlossaryTab({ terms, onTerms }: { terms: Term[]; onTerms: (t: Te
                   <td className="px-4 py-2 text-[13.5px]" dir="rtl">
                     {x.ar}
                   </td>
-                  <td className="px-4 py-2 text-[11.5px] text-muted-foreground">{x.domain}</td>
+                  <td className="px-4 py-2 text-[11.5px] text-muted-foreground">{L(domainLabel(x.domain))}</td>
                   <td className="px-4 py-2">
                     {x.status === "disputed" ? <StatusPill tone="warning">{L({ en: "Disputed", ar: "خلافي" })}</StatusPill> : <StatusPill tone="success">{L({ en: "Approved", ar: "معتمد" })}</StatusPill>}
                     {(x._updatedAt || x._createdAt) && <span className="ms-1.5 text-[10px] text-ai">{L({ en: "updated", ar: "محدّث" })}</span>}
@@ -157,7 +157,7 @@ export function GlossaryTab({ terms, onTerms }: { terms: Term[]; onTerms: (t: Te
                 {t.ar}
               </div>
               <div className="mt-1 text-[11px] text-muted-foreground">
-                {t.domain} · {t.source} · {L({ en: "updated", ar: "حُدّث" })} {t.updated ? fmt.date(t.updated) : "—"}
+                {L(domainLabel(t.domain))} · {t.source} · {L({ en: "updated", ar: "حُدّث" })} {t.updated ? fmt.date(t.updated) : "—"}
               </div>
             </div>
             {t.status === "disputed" && (

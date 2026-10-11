@@ -15,7 +15,7 @@ import { ActPanel } from "./act-panel";
 import { TasksTab } from "./tasks-tab";
 import { LibraryTab } from "./library-tab";
 
-const SCENARIO: ScenarioStep[] = [
+const buildScenario = (n: number): ScenarioStep[] => [
   {
     title: { en: "Ask, with sources", ar: "اسأل مع المصادر" },
     body: {
@@ -54,15 +54,15 @@ const SCENARIO: ScenarioStep[] = [
   {
     title: { en: "Work that is really done", ar: "عمل منجز فعلاً" },
     body: {
-      en: "Open Tasks: the approved tasks appear with owner, due date and evidence references. Mark one done — it is persisted and recorded in the audit trail together with the approvals.",
-      ar: "افتح «المهام»: تظهر المهام المعتمدة مع المسؤول وتاريخ الاستحقاق ومراجع الأدلة. علّم إحداها كمنجزة — يُحفظ ذلك ويُسجّل في سجل التدقيق مع الاعتمادات.",
+      en: "Open Tasks: the approved tasks appear with owner, due date and evidence references. Expand one and press Mark done — it is persisted and recorded in the audit trail together with the approvals.",
+      ar: "افتح «المهام»: تظهر المهام المعتمدة مع المسؤول وتاريخ الاستحقاق ومراجع الأدلة. افتح إحداها واضغط «تعليم كمنجزة» — يُحفظ ذلك ويُسجّل في سجل التدقيق مع الاعتمادات.",
     },
   },
   {
     title: { en: "One governed library", ar: "مكتبة واحدة محوكمة" },
     body: {
-      en: "Open Library as Case officer: browse 27 documents, search passages in Arabic, and open the Q3 performance review — it is locked for this role. All of it runs on the Authority's own infrastructure.",
-      ar: "افتح «المكتبة» بصفة موظف معالجة: تصفّح المستندات وابحث في المقاطع بالعربية، وافتح مراجعة أداء الربع الثالث — إنها مقفلة لهذا الدور. وكل ذلك يعمل على البنية التحتية الخاصة بالهيئة.",
+      en: `Open Library as Case officer: browse all ${n} documents, switch to Search passages and search in Arabic, then open the Q3 performance review — it is locked for this role. All of it runs on the Authority's own infrastructure.`,
+      ar: `افتح «المكتبة» بصفة موظف معالجة: تصفّح المستندات الـ ${n}، وانتقل إلى «بحث في المقاطع» وابحث بالعربية، ثم افتح مراجعة أداء الربع الثالث — إنها مقفلة لهذا الدور. وكل ذلك يعمل على البنية التحتية الخاصة بالهيئة.`,
     },
   },
 ];
@@ -119,9 +119,10 @@ export function Workspace({
   const created = tasks.filter((t) => t._createdAt).length;
   const open = tasks.filter((t) => t.status === "open").length;
   const avg = stats.answers ? stats.totalMs / stats.answers / 1000 : null;
+  const scenario = useMemo(() => buildScenario(docs.length), [docs.length]);
 
   return (
-    <SolutionPage slug="01-ai-workspace" scenario={SCENARIO}>
+    <SolutionPage slug="01-ai-workspace" scenario={scenario}>
       <div className="grid grid-cols-5 gap-3 max-xl:grid-cols-3 max-md:grid-cols-2">
         <MetricTile
           label={L({ en: "Documents indexed", ar: "المستندات المفهرسة" })}
@@ -137,7 +138,7 @@ export function Workspace({
         />
         <MetricTile
           label={L({ en: "Avg answer time", ar: "متوسط زمن الإجابة" })}
-          value={avg != null ? `${avg.toFixed(1)} s` : "—"}
+          value={avg != null ? <span dir="auto">{L({ en: `${avg.toFixed(1)} s`, ar: `${avg.toFixed(1)} ث` })}</span> : "—"}
           sub={L({ en: "end-to-end, incl. retrieval", ar: "من البداية للنهاية مع البحث" })}
         />
         <MetricTile

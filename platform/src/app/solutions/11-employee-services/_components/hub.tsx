@@ -123,7 +123,7 @@ export function EmployeeHub({ employees, initialRequests, initialStats }: { empl
         />
         <MetricTile
           label={L({ en: "Avg handling time", ar: "متوسط زمن المعالجة" })}
-          value={kpi.avgH >= 24 ? `${(kpi.avgH / 24).toFixed(1)} d` : `${kpi.avgH.toFixed(1)} h`}
+          value={<span dir="auto">{kpi.avgH >= 24 ? L({ en: `${(kpi.avgH / 24).toFixed(1)} d`, ar: `${(kpi.avgH / 24).toFixed(1)} يوم` }) : L({ en: `${kpi.avgH.toFixed(1)} h`, ar: `${kpi.avgH.toFixed(1)} ساعة` })}</span>}
           sub={L({ en: "submitted → completed", ar: "من التقديم إلى الإكمال" })}
         />
         <MetricTile
@@ -173,7 +173,7 @@ export function EmployeeHub({ employees, initialRequests, initialStats }: { empl
       </div>
 
       {view === "employee" && employee ? (
-        <Workbench cols="300px minmax(0,1fr) 400px">
+        <Workbench cols="var(--es-cols)" className="[--es-cols:300px_minmax(0,1fr)_400px] max-2xl:[--es-cols:272px_minmax(0,1fr)_344px]">
           <ProfilePanel employee={employee} requests={requests} />
           <Assistant employee={employee} onRequestsChanged={refresh} />
         </Workbench>

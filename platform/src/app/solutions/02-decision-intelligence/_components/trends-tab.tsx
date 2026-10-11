@@ -6,9 +6,9 @@ import { KeyValue } from "@/components/narvo/pane";
 import { useL } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { DEPTS, REVIEW, type MetricDef } from "../_lib/catalogue";
-import { compute, fmtValue, series, weekLabel, weekRange, addDays, isoWeek, type Dataset } from "../_lib/engine";
+import { compute, series, weekLabel, weekRange, addDays, isoWeek, type Dataset } from "../_lib/engine";
 import { MetricChart } from "./metric-chart";
-import { RagDot, ragLabel } from "./bits";
+import { Fig, RagDot, ragLabel } from "./bits";
 
 export function TrendsTab({ ds, def }: { ds: Dataset; def: MetricDef }) {
   const L = useL();
@@ -62,8 +62,12 @@ export function TrendsTab({ ds, def }: { ds: Dataset; def: MetricDef }) {
               {weeks.map((w, i) => (
                 <tr key={w.id} className={cn(i === 0 && "bg-surface")}>
                   <td className="px-3 py-2 text-muted-foreground">{L({ en: weekLabel(w.id), ar: weekLabel(w.id, "ar") })}</td>
-                  <td className="num px-3 py-2 text-end font-medium" dir="ltr">{fmtValue(def, w.value)}</td>
-                  <td className="num px-3 py-2 text-end text-muted-foreground" dir="ltr">{w.target != null ? `${def.better === "down" ? "≤" : "≥"} ${fmtValue(def, w.target)}` : "—"}</td>
+                  <td className="num px-3 py-2 text-end font-medium">
+                    <Fig def={def} value={w.value} />
+                  </td>
+                  <td className="num px-3 py-2 text-end text-muted-foreground">
+                    <Fig def={def} value={w.target} prefix={def.better === "down" ? "≤ " : "≥ "} />
+                  </td>
                   <td className="px-3 py-2">
                     <span className="inline-flex items-center gap-1.5 text-[11.5px] text-muted-foreground">
                       <RagDot rag={w.rag} />
@@ -76,9 +80,9 @@ export function TrendsTab({ ds, def }: { ds: Dataset; def: MetricDef }) {
           </table>
         </div>
         <div className="rounded-lg border border-border bg-surface p-3.5">
-          <KeyValue k={L({ en: "2026 to date", ar: "منذ بداية 2026" })} v={<span className="num" dir="ltr">{fmtValue(def, ytd.value)}</span>} />
-          <KeyValue k={L({ en: "H1 2026", ar: "النصف الأول 2026" })} v={<span className="num" dir="ltr">{fmtValue(def, h1.value)}</span>} />
-          <KeyValue k={L({ en: "Q3 2026", ar: "الربع الثالث 2026" })} v={<span className="num" dir="ltr">{fmtValue(def, q3.value)}</span>} />
+          <KeyValue k={L({ en: "2026 to date", ar: "منذ بداية 2026" })} v={<Fig def={def} value={ytd.value} className="num" />} />
+          <KeyValue k={L({ en: "H1 2026", ar: "النصف الأول 2026" })} v={<Fig def={def} value={h1.value} className="num" />} />
+          <KeyValue k={L({ en: "Q3 2026", ar: "الربع الثالث 2026" })} v={<Fig def={def} value={q3.value} className="num" />} />
           <div className="my-2 h-px bg-border" />
           <KeyValue k={L({ en: "Owner", ar: "المسؤول" })} v={def.owner} />
           <KeyValue k={L({ en: "Better when", ar: "الأفضل عندما" })} v={def.better === "down" ? L({ en: "lower", ar: "أقل" }) : def.better === "up" ? L({ en: "higher", ar: "أعلى" }) : "—"} />

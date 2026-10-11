@@ -131,7 +131,7 @@ export function CommandCenter() {
             ].map((x) => (
               <div key={x.k}>
                 <div className="text-[10px] tracking-[0.14em] text-sidebar-muted uppercase">{x.k}</div>
-                <div dir="ltr" className={cn("num mt-1 text-start text-[24px] font-light rtl:text-end", x.accent ? "text-[#5fb8ad]" : "text-white")}>{x.v}</div>
+                <div dir="auto" className={cn("num mt-1 text-left text-[24px] font-light rtl:text-right", x.accent ? "text-[#5fb8ad]" : "text-white")}>{x.v}</div>
               </div>
             ))}
           </div>

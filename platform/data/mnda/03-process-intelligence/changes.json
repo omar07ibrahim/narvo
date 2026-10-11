@@ -2,12 +2,17 @@
   {
     "id": "CHG-2026-014",
     "title": "Intake pilot — NOC validity check at intake and automatic NOC request at submission (Downtown CHC counter and MNDA Smart)",
-    "interventions": ["intakeNoc", "parallelNoc"],
+    "interventions": [
+      "intakeNoc",
+      "parallelNoc"
+    ],
     "status": "pilot",
     "approvedBy": "Eng. Omar Yousef Al Hammadi",
     "approvedAt": "2026-09-21",
     "measurement": "Compare applications submitted from 1 Oct 2026 with the Q3 2026 baseline: share returned to applicant, NOC-related returns, days to accepted file, NOC turnaround; cycle time once 60 pilot cases are issued.",
-    "createdAt": "2026-09-21"
+    "createdAt": "2026-09-21",
+    "titleAr": "تجربة الاستلام — التحقق من صلاحية شهادة عدم الممانعة عند الاستلام وطلبها تلقائياً عند التقديم (كاونتر مركز إسعاد المتعاملين في وسط المدينة وتطبيق MNDA Smart)",
+    "measurementAr": "مقارنة الطلبات المقدمة منذ 1 أكتوبر 2026 مع خط أساس الربع الثالث 2026: نسبة الطلبات المعادة للمتعامل، والإعادات المرتبطة بالشهادة، والأيام حتى قبول الملف، ومدة إصدار الشهادة؛ ويُقاس زمن الدورة بعد صدور 60 رخصة من طلبات التجربة."
   },
   {
     "id": "CHG-2026-011",
@@ -17,6 +22,8 @@
     "approvedBy": "Eng. Omar Yousef Al Hammadi",
     "approvedAt": "2026-07-02",
     "measurement": "Effective 15 Jul 2026. No baseline measurement was agreed at the time.",
-    "createdAt": "2026-07-02"
+    "createdAt": "2026-07-02",
+    "titleAr": "التعميم 14/2026 — إلزامية شهادة عدم الممانعة من المطور الرئيسي لرخص البناء في MN-03 وMN-06 وMN-08",
+    "measurementAr": "يُعمل به اعتباراً من 15 يوليو 2026. لم يُتفق على قياس لخط الأساس حينها."
   }
 ]

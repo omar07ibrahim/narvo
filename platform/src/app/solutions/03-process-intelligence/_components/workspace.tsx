@@ -41,7 +41,7 @@ import { ProcessMap } from "./process-map";
 import { Performance, VariantsTable } from "./performance";
 import { Simulation } from "./simulation";
 import { Measure, type ChangeRow } from "./measure";
-import { COHORTS, DISTRICTS, activityLabel } from "./labels";
+import { COHORTS, DISTRICTS, activityLabel, developerLabel } from "./labels";
 import { SCENARIO } from "./scenario";
 
 const API = "/api/solutions/03-process-intelligence";
@@ -180,9 +180,9 @@ export function Workspace({ initialLog, initialChanges }: { initialLog: CompactL
         {isMnda ? (
           <>
             <div className="flex items-center gap-2">
-              <span className="label-caps">{L({ en: "Cohort", ar: "المجموعة" })}</span>
+              <span className="label-caps max-2xl:hidden">{L({ en: "Cohort", ar: "المجموعة" })}</span>
               <Select value={filters.cohort} onValueChange={(v) => setFilters((f) => ({ ...f, cohort: v }))}>
-                <SelectTrigger size="sm" className="h-8 min-w-44 text-[12.5px]">
+                <SelectTrigger size="sm" className="h-8 min-w-44 text-[12.5px] max-2xl:min-w-40">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -268,7 +268,7 @@ export function Workspace({ initialLog, initialChanges }: { initialLog: CompactL
           <FileDrop
             compact
             accept=".csv,.txt"
-            className="w-[250px]"
+            className="w-[250px] max-2xl:w-[224px]"
             label={L({ en: "Bring your own event log", ar: "استخدم سجل أحداثك" })}
             hint={L({ en: "CSV with case id, activity, timestamp", ar: "CSV برقم الحالة والنشاط والوقت" })}
             onFiles={(fs) => fs[0]?.text && loadFile(fs[0].text, fs[0].name)}
@@ -286,14 +286,14 @@ export function Workspace({ initialLog, initialChanges }: { initialLog: CompactL
         <MetricTile label={L({ en: isMnda ? "Applications" : "Cases", ar: isMnda ? "الطلبات" : "الحالات" })} value={fmt0(st.cases)} sub={L({ en: `${fmt0(st.completed)} completed · ${fmt0(st.open)} open`, ar: `${fmt0(st.completed)} منجزة · ${fmt0(st.open)} مفتوحة` })} />
         <MetricTile
           label={L({ en: "Median cycle time", ar: "وسيط زمن الدورة" })}
-          value={<bdi dir="ltr">{`${fmt1(st.cycleMedian)} d`}</bdi>}
-          sub={isMnda ? L({ en: "target 15 d · pilot target 13 d", ar: "المستهدف 15 يوماً · مستهدف التجربة 13" }) : L({ en: `P90 ${fmt1(st.cycleP90)} d`, ar: `المئين 90: ${fmt1(st.cycleP90)} يوم` })}
+          value={<span dir="auto">{L({ en: `${fmt1(st.cycleMedian)} d`, ar: `${fmt1(st.cycleMedian)} يوم` })}</span>}
+          sub={isMnda ? L({ en: "target 15 d · pilot 13 d", ar: "المستهدف 15 يوماً · التجربة 13 يوماً" }) : L({ en: `P90 ${fmt1(st.cycleP90)} d`, ar: `المئين 90: ${fmt1(st.cycleP90)} يوم` })}
           tone={isMnda && st.cycleMedian != null && st.cycleMedian > 15 ? "danger" : "default"}
         />
         {isMnda ? (
           <MetricTile
-            label={L({ en: "Gated vs non-gated", ar: "مسوّرة / غير مسوّرة" })}
-            value={<bdi dir="ltr">{`${fmt1(st.gatedMedian)} / ${fmt1(st.nonGatedMedian)}`}</bdi>}
+            label={L({ en: "Gated / non-gated", ar: "مسوّرة / غير مسوّرة" })}
+            value={<span dir={lang === "ar" ? "rtl" : "ltr"}>{`${fmt1(st.gatedMedian)} / ${fmt1(st.nonGatedMedian)}`}</span>}
             sub={L({ en: "median days", ar: "الوسيط بالأيام" })}
           />
         ) : (
@@ -308,8 +308,8 @@ export function Workspace({ initialLog, initialChanges }: { initialLog: CompactL
         {isMnda ? (
           <MetricTile
             label={L({ en: "NOC hold (mean)", ar: "انتظار الشهادة (متوسط)" })}
-            value={<bdi dir="ltr">{`${fmt1(st.holdMean)} d`}</bdi>}
-            sub={st.byDeveloper[0] ? `${st.byDeveloper[0].name.split(" ")[0]} ${st.byDeveloper[0].name.split(" ")[1] ?? ""} ${fmt1(st.byDeveloper[0].mean)} d` : "—"}
+            value={<span dir="auto">{L({ en: `${fmt1(st.holdMean)} d`, ar: `${fmt1(st.holdMean)} يوم` })}</span>}
+            sub={st.byDeveloper[0] ? `${developerLabel(st.byDeveloper[0].name, lang, true)} ${fmt1(st.byDeveloper[0].mean)} ${lang === "ar" ? "يوم" : "d"}` : "—"}
           />
         ) : (
           <MetricTile label={L({ en: "Variants", ar: "المسارات" })} value={fmt0(computeVariants(log, cases).length)} />

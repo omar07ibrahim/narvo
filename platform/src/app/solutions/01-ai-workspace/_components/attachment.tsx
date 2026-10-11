@@ -37,7 +37,7 @@ export function useAttachment() {
           const j = (await res.json()) as { text: string; ms: number };
           setAttachment({ name: f.name, text: j.text, kind: "image" });
           toast.success(lang === "ar" ? "تمت قراءة الصفحة" : "Page read", {
-            description: `${j.text.length.toLocaleString()} ${lang === "ar" ? "حرفاً" : "characters"} · ${(j.ms / 1000).toFixed(1)} s`,
+            description: `${j.text.length.toLocaleString()} ${lang === "ar" ? "حرفاً" : "characters"} · ${(j.ms / 1000).toFixed(1)} ${lang === "ar" ? "ث" : "s"}`,
           });
         } catch (e) {
           setPreview(null);

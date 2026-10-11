@@ -32,8 +32,8 @@ export const SCENARIO: ScenarioStep[] = [
   {
     title: { en: "Bring the next decision into focus", ar: "ركّز على القرار التالي" },
     body: {
-      en: "Click Propose decisions. Each proposal names an owner, a due date and the KPI it should move, with its evidence. Submit one for approval — H.E. the Director General approves it in place (or from the Inbox) and it becomes ACT-2026-055 in the register.",
-      ar: "انقر «اقتراح القرارات». يحدد كل مقترح المسؤول والموعد والمؤشر المستهدف مع أدلته. ارفع أحدها للاعتماد — يعتمده سعادة المدير العام مباشرة (أو من صندوق الوارد) فيصبح الإجراء ACT-2026-055 في السجل.",
+      en: "Click Propose decisions. Each proposal names an owner, a due date and the KPI it should move, with its evidence. Submit one for approval — H.E. the Director General approves it in place (or from the Inbox) and it is recorded as a new action (ACT-2026-055 after a reset) in the register below.",
+      ar: "انقر «اقتراح القرارات». يحدد كل مقترح المسؤول والموعد والمؤشر المستهدف مع أدلته. ارفع أحدها للاعتماد — يعتمده سعادة المدير العام مباشرة (أو من صندوق الوارد) فيُسجَّل إجراءً جديداً في السجل أدناه (ACT-2026-055 بعد إعادة الضبط).",
     },
   },
   {

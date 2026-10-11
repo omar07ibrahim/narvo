@@ -6,8 +6,8 @@ import { motion } from "motion/react";
 import { useL } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { REVIEW, type MetricDef } from "../_lib/catalogue";
-import { addDays, compute, fmtDelta, fmtValue, isoWeek, weekRange, type Dataset } from "../_lib/engine";
-import { RagDot, Sparkline, ragLabel } from "./bits";
+import { addDays, compute, fmtValue, isoWeek, weekRange, type Dataset } from "../_lib/engine";
+import { Fig, RagDot, Sparkline, ragLabel } from "./bits";
 
 export interface KpiSnapshot {
   def: MetricDef;
@@ -60,7 +60,7 @@ export function KpiCard({ s, active, onClick, index = 0 }: { s: KpiSnapshot; act
     >
       <div className="flex items-start justify-between gap-2">
         <span className="label-caps line-clamp-2 min-h-[26px] !text-[9.5px] !leading-[1.35]" title={L(def.name)}>
-          {L(def.name)}
+          {L(def.short ?? def.name)}
         </span>
         <span className="mt-0.5 flex items-center" title={ragLabel(s.rag, L)}>
           <RagDot rag={s.rag} />
@@ -77,20 +77,16 @@ export function KpiCard({ s, active, onClick, index = 0 }: { s: KpiSnapshot; act
         {delta != null && (
           <span className={cn("inline-flex items-center gap-0.5 font-medium", flat ? "text-muted-foreground" : good ? "text-success" : "text-danger")}>
             {flat ? <Minus className="size-3" /> : delta > 0 ? <ArrowUpRight className="size-3" /> : <ArrowDownRight className="size-3" />}
-            <bdi dir="ltr">{fmtDelta(def, delta).replace(" pts", " pt")}</bdi>
+            <Fig def={def} value={delta} delta compact />
           </span>
         )}
-        <span className="truncate">
-          {L({ en: "vs W40", ar: "مقابل أ40" })}
-        </span>
+        <span className="truncate">{L({ en: "vs W40", ar: "عن الأسبوع 40" })}</span>
       </div>
       <Sparkline values={s.spark} target={s.target != null && !s.partial ? s.target : null} className="mt-2.5" tone={s.rag === "red" ? "danger" : "ink"} />
       <div className="mt-1.5 flex items-center justify-between gap-2 overflow-hidden text-[10.5px] whitespace-nowrap text-faint">
         <span>{L({ en: "13 wk", ar: "13 أسبوعاً" })}</span>
         {s.target != null && (
-          <span className="num truncate" dir="ltr">
-            {def.better === "down" ? "≤" : "≥"} {fmtValue(def, s.target, "en").replace(/ days$/, " d")}
-          </span>
+          <Fig def={def} value={s.target} compact prefix={def.better === "down" ? "≤ " : "≥ "} className="num truncate" />
         )}
       </div>
     </motion.button>

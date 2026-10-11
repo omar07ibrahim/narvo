@@ -371,7 +371,7 @@ function TurnView({
           <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-border pt-2 text-[11px] text-muted-foreground">
             <span className="num">
               {L({ en: `${used.size} of ${turn.citations.length} sources cited`, ar: `${used.size} من ${turn.citations.length} مصادر مستشهد بها` })}
-              {turn.ms ? ` · ${(turn.ms / 1000).toFixed(1)} s` : ""}
+              {turn.ms ? ` · ${(turn.ms / 1000).toFixed(1)} ${lang === "ar" ? "ث" : "s"}` : ""}
               {turn.model ? ` · ${turn.model.split("/").pop()}` : ""}
             </span>
             <button

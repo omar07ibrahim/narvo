@@ -51,3 +51,16 @@ export const REASON_AR: Record<string, string> = {
   "Site-plan version mismatch": "اختلاف نسخة مخطط الموقع",
   Other: "أسباب أخرى",
 };
+
+const DEVELOPERS: Record<string, { en: string; ar: string; shortEn: string; shortAr: string }> = {
+  "Lulu Island Developments PJSC": { en: "Lulu Island Developments PJSC", ar: "جزيرة اللؤلؤ للتطوير ش.م.ع", shortEn: "Lulu Island", shortAr: "جزيرة اللؤلؤ" },
+  "Marina Quarter Properties LLC": { en: "Marina Quarter Properties LLC", ar: "حي المارينا للعقارات ذ.م.م", shortEn: "Marina Quarter", shortAr: "حي المارينا" },
+  "Sidr Communities LLC": { en: "Sidr Communities LLC", ar: "السدر للمجتمعات ذ.م.م", shortEn: "Sidr Communities", shortAr: "السدر للمجتمعات" },
+};
+
+/** Master-developer name in the UI language (full or short form). */
+export const developerLabel = (name: string, lang: "en" | "ar", short = false) => {
+  const d = DEVELOPERS[name];
+  if (!d) return short ? name.split(" ").slice(0, 2).join(" ") : name;
+  return lang === "ar" ? (short ? d.shortAr : d.ar) : short ? d.shortEn : d.en;
+};

@@ -127,6 +127,7 @@ export async function POST(req: Request) {
           if (Number.isNaN(due.getTime()) || due <= today) due = addWorkingDays(today, 5);
           while (due.getDay() === 0 || due.getDay() === 6) due.setDate(due.getDate() + 1);
           const dueIso = due.toISOString().slice(0, 10);
+          const dueLabel = due.toLocaleDateString(ar ? "ar-AE-u-nu-latn" : "en-GB", { day: "numeric", month: ar ? "long" : "short", year: "numeric", timeZone: "Asia/Dubai" });
           const docs = allDocs();
           const sources = (a.sourceDocIds ?? [])
             .map((id) => docs.find((d) => d.id === id))
@@ -139,7 +140,7 @@ export async function POST(req: Request) {
           created.push({ kind: "task", title: a.title });
           return {
             title: `${ar ? "إنشاء مهمة" : "Create task"} — ${a.title}`,
-            summary: `${person.name} (${person.title}) · ${ar ? "الاستحقاق" : "due"} ${dueIso} · ${a.description}`.slice(0, 380),
+            summary: `${person.name} (${person.title}) · ${ar ? "الاستحقاق" : "due"} ${dueLabel} · ${a.description}`.slice(0, 380),
             actionLabel: ar ? "اعتماد وإسناد" : "Approve & assign",
             approver: person.approver,
             effects: [
