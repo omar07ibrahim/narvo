@@ -19,6 +19,7 @@ export interface Minimum {
 
 export interface Person {
   name: string;
+  nameAr?: string;
   title: string;
 }
 
@@ -29,8 +30,11 @@ export interface Requisition {
   department: string;
   departmentAr?: string;
   grade?: string;
+  gradeAr?: string;
   location?: string;
+  locationAr?: string;
   contract?: string;
+  contractAr?: string;
   postedAt: string;
   closedAt: string;
   openings?: number;

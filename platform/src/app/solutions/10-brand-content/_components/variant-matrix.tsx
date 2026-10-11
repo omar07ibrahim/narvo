@@ -130,10 +130,13 @@ function Cell({
         </span>
       ) : (
         <StatusPill tone={queued ? "ai" : STATUS_TONE[st]} pulse={queued}>
-          {queued ? L({ en: "Queued", ar: "بالانتظار" }) : L(STATUS_LABEL[st])}
+          <span dir="auto">{queued ? L({ en: "Queued", ar: "بالانتظار" }) : L(STATUS_LABEL[st])}</span>
         </StatusPill>
       )}
-      <span className={cn("num truncate text-[10.5px]", open && st === "flagged" ? "text-danger" : "text-muted-foreground")}>{meta}</span>
+      {/* Cell aligns with the variant's language; its labels read in the UI language. */}
+      <span dir="auto" className={cn("num max-w-full truncate text-[10.5px]", open && st === "flagged" ? "text-danger" : "text-muted-foreground")}>
+        {meta}
+      </span>
     </button>
   );
 }

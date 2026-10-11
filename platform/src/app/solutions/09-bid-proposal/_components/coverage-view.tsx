@@ -236,7 +236,11 @@ export function CoverageView({
                     </td>
                     <td className="px-3 py-2.5 max-md:hidden">
                       <div className="flex flex-wrap gap-1">
-                        {c?.evidence.slice(0, 2).map((e, i) => (
+                        {/* One chip per document in the table (two passages of the same document read as a duplicate). */}
+                        {c?.evidence
+                          .filter((e, i, all) => all.findIndex((x) => x.docId === e.docId) === i)
+                          .slice(0, 2)
+                          .map((e, i) => (
                           <span key={i} onClick={(ev) => ev.stopPropagation()} className="max-w-full">
                             <EvidenceChip e={e} onOpen={onOpenDoc} />
                           </span>

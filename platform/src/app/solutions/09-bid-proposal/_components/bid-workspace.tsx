@@ -16,7 +16,7 @@ import { EmptyState } from "@/components/narvo/empty";
 import { useNarvoRun, type NarvoRun } from "@/hooks/use-narvo-run";
 import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
-import { daysToClosing, readiness, fmt } from "../_lib/compliance";
+import { daysToClosing, readiness, fmt, fmtAr } from "../_lib/compliance";
 import { buildResponsePack, download } from "../_lib/export";
 import type { BidSeed, BidState, Coverage, LibraryDoc, Requirement } from "../_lib/types";
 import { CoverageView } from "./coverage-view";
@@ -197,12 +197,12 @@ export function BidWorkspace({ seed, initial, library, replies }: { seed: BidSee
         <div className="flex items-center gap-5 text-[12px]">
           <div>
             <div className="text-muted-foreground">{L({ en: "Bidder", ar: "مقدم العطاء" })}</div>
-            <div className="font-medium">{seed.bidder.short}</div>
+            <div className="font-medium">{L({ en: seed.bidder.short, ar: "رصين لإدارة المرافق" })}</div>
           </div>
           <div>
             <div className="text-muted-foreground">{L({ en: "Closing", ar: "الإغلاق" })}</div>
             <div className="num font-medium">
-              {f.date(seed.tender.closing)} · {seed.tender.closingTime}
+              {f.date(seed.tender.closing)} · <span dir="auto">{L({ en: seed.tender.closingTime, ar: seed.tender.closingTime.replace("GST", "بتوقيت الإمارات") })}</span>
             </div>
           </div>
           <StatusPill tone={approved ? "success" : "warning"}>
@@ -219,33 +219,33 @@ export function BidWorkspace({ seed, initial, library, replies }: { seed: BidSee
         <MetricTile label={L({ en: "Requirements", ar: "المتطلبات" })} value={r.cov.total || "—"} sub={r.cov.total ? `${requirements.filter((q) => q.mandatory).length} ${L({ en: "pass/fail", ar: "إلزامي" })}` : L({ en: "not extracted", ar: "لم تُستخرج" })} />
         <MetricTile label={L({ en: "Evidenced", ar: "مستوفى" })} value={r.cov.mapped ? `${r.cov.pct}%` : "—"} tone="ai" sub={r.cov.mapped ? `${r.cov.met}/${r.cov.total} · ${r.cov.weighted}% ${L({ en: "incl. partial", ar: "مع الجزئي" })}` : undefined} />
         <MetricTile label={L({ en: "Open gaps", ar: "فجوات مفتوحة" })} value={r.cov.mapped ? r.cov.partial + r.cov.missing : "—"} tone={r.cov.missing ? "warning" : "default"} sub={r.cov.mapped ? `${r.cov.mandatoryOpen} ${L({ en: "mandatory", ar: "إلزامية" })}` : undefined} />
-        <MetricTile label={L({ en: "Unsupported claims", ar: "ادعاءات غير مدعومة" })} value={r.claims.checked ? r.claims.flagged : "—"} tone={r.claims.flagged ? "danger" : "default"} sub={`${r.claims.checked}/${seed.sections.length} ${L({ en: "sections checked", ar: "أقسام مفحوصة" })}`} />
+        <MetricTile label={L({ en: "Claims flagged", ar: "ادعاءات غير مدعومة" })} value={r.claims.checked ? r.claims.flagged : "—"} tone={r.claims.flagged ? "danger" : "default"} sub={`${r.claims.checked}/${seed.sections.length} ${L({ en: "sections checked", ar: "أقسام مفحوصة" })}`} />
         <MetricTile label={L({ en: "Compliance flags", ar: "تنبيهات الامتثال" })} value={r.critical} tone={r.critical ? "danger" : "success"} sub={`${r.warnings} ${L({ en: "warnings", ar: "تحذيرات" })}`} />
-        <MetricTile label={L({ en: "Days to closing", ar: "أيام حتى الإغلاق" })} value={days} icon={<CalendarClock className="size-3.5" />} sub={fmt(seed.tender.closing)} />
+        <MetricTile label={L({ en: "Days to closing", ar: "أيام حتى الإغلاق" })} value={days} icon={<CalendarClock className="size-3.5" />} sub={L({ en: fmt(seed.tender.closing), ar: fmtAr(seed.tender.closing) })} />
       </div>
 
       <Workbench cols="minmax(0,1fr) 340px">
         <Pane flush className="min-h-[640px]">
           <Tabs value={tab} onValueChange={setTab} className="gap-0">
-            <div className="flex items-center justify-between gap-3 border-b border-border px-3 pt-2">
-              <TabsList variant="line" className="h-9">
-                <TabsTrigger value="coverage" className="px-2.5 text-[12.5px]">
+            <div className="flex items-center justify-between gap-3 overflow-x-auto border-b border-border px-3 pt-2 [scrollbar-width:none]">
+              <TabsList variant="line" className="h-9 min-w-max">
+                <TabsTrigger value="coverage" className="text-[12.5px] group-data-[variant=line]/tabs-list:px-2.5">
                   <ListChecks /> {L({ en: "Requirements & coverage", ar: "المتطلبات والتغطية" })}
                 </TabsTrigger>
-                <TabsTrigger value="draft" className="px-2.5 text-[12.5px]">
+                <TabsTrigger value="draft" className="text-[12.5px] group-data-[variant=line]/tabs-list:px-2.5">
                   <FileText /> {L({ en: "Response drafting", ar: "صياغة الرد" })}
                 </TabsTrigger>
-                <TabsTrigger value="compliance" className="px-2.5 text-[12.5px]">
+                <TabsTrigger value="compliance" className="text-[12.5px] group-data-[variant=line]/tabs-list:px-2.5">
                   <ShieldCheck /> {L({ en: "Compliance checks", ar: "فحوص الامتثال" })}
                   {r.critical > 0 && <span className="num ms-1 rounded-full bg-danger px-1.5 text-[10px] text-white">{r.critical}</span>}
                 </TabsTrigger>
-                <TabsTrigger value="tasks" className="px-2.5 text-[12.5px]">
+                <TabsTrigger value="tasks" className="text-[12.5px] group-data-[variant=line]/tabs-list:px-2.5">
                   <Layers /> {L({ en: "Contributor tasks", ar: "مهام المساهمين" })}
                   {state.tasks.filter((t) => t.status === "open").length > 0 && (
                     <span className="num ms-1 text-[11px] text-muted-foreground">{state.tasks.filter((t) => t.status === "open").length}</span>
                   )}
                 </TabsTrigger>
-                <TabsTrigger value="byo" className="px-2.5 text-[12.5px]">
+                <TabsTrigger value="byo" className="text-[12.5px] group-data-[variant=line]/tabs-list:px-2.5">
                   <Upload /> {L({ en: "Your RFP", ar: "مناقصتك" })}
                 </TabsTrigger>
               </TabsList>
@@ -254,7 +254,7 @@ export function BidWorkspace({ seed, initial, library, replies }: { seed: BidSee
             <TabsContent value="coverage" className="p-4">
               {requirements.length > 0 && (
                 <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                  <p className="text-[12.5px] text-muted-foreground">
+                  <p className="text-[12.5px] text-muted-foreground" suppressHydrationWarning>
                     {L({ en: "Extracted", ar: "استُخرجت" })} {state.requirements?.at ? f.relative(state.requirements.at) : ""} · {requirements.length}{" "}
                     {L({ en: "requirements from", ar: "متطلباً من" })} <span className="font-mono">{seed.tender.ref}</span>
                   </p>

@@ -4,7 +4,7 @@
 import { useEffect, useState } from "react";
 import { LoaderCircle, Save, ShieldCheck, Scale } from "lucide-react";
 import { toast } from "sonner";
-import { useFormat, useL } from "@/lib/i18n";
+import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { Pane, SectionLabel, KeyValue } from "@/components/narvo/pane";
 import { Markdown } from "@/components/narvo/markdown";
@@ -28,7 +28,8 @@ const PROTECTED = [
 export function RequisitionTab({ requisition, onSaved }: { requisition: Requisition; onSaved: (c: Criterion[]) => void }) {
   const L = useL();
   const f = useFormat();
-  const [jdLang, setJdLang] = useState<"en" | "ar">("en");
+  const { lang } = usePrefs();
+  const [jdLang, setJdLang] = useState<"en" | "ar">(lang === "ar" ? "ar" : "en");
   const [criteria, setCriteria] = useState<Criterion[]>(requisition.criteria);
   const [saving, setSaving] = useState(false);
   useEffect(() => setCriteria(requisition.criteria), [requisition.criteria]);
@@ -69,11 +70,11 @@ export function RequisitionTab({ requisition, onSaved }: { requisition: Requisit
       >
         <div className="grid grid-cols-2 gap-x-6 border-b border-border pb-3 max-md:grid-cols-1">
           <KeyValue k={L({ en: "Department", ar: "الإدارة" })} v={L({ en: requisition.department, ar: requisition.departmentAr ?? requisition.department })} />
-          <KeyValue k={L({ en: "Grade", ar: "الدرجة" })} v={requisition.grade ?? "—"} />
-          <KeyValue k={L({ en: "Hiring manager", ar: "مدير التوظيف" })} v={requisition.hiringManager.name} />
-          <KeyValue k={L({ en: "Human Capital", ar: "رأس المال البشري" })} v={requisition.hr.name} />
-          <KeyValue k={L({ en: "Location", ar: "الموقع" })} v={requisition.location ?? "—"} />
-          <KeyValue k={L({ en: "Contract", ar: "العقد" })} v={requisition.contract ?? "—"} />
+          <KeyValue k={L({ en: "Grade", ar: "الدرجة" })} v={L({ en: requisition.grade ?? "—", ar: requisition.gradeAr ?? requisition.grade ?? "—" })} />
+          <KeyValue k={L({ en: "Hiring manager", ar: "مدير التوظيف" })} v={L({ en: requisition.hiringManager.name, ar: requisition.hiringManager.nameAr ?? requisition.hiringManager.name })} />
+          <KeyValue k={L({ en: "Human Capital", ar: "رأس المال البشري" })} v={L({ en: requisition.hr.name, ar: requisition.hr.nameAr ?? requisition.hr.name })} />
+          <KeyValue k={L({ en: "Location", ar: "الموقع" })} v={L({ en: requisition.location ?? "—", ar: requisition.locationAr ?? requisition.location ?? "—" })} />
+          <KeyValue k={L({ en: "Contract", ar: "العقد" })} v={L({ en: requisition.contract ?? "—", ar: requisition.contractAr ?? requisition.contract ?? "—" })} />
         </div>
         <div className="scrollbar-thin mt-3 max-h-[560px] overflow-y-auto pe-1">
           <Markdown>{jdLang === "ar" ? (requisition.descriptionAr ?? requisition.descriptionEn) : requisition.descriptionEn}</Markdown>

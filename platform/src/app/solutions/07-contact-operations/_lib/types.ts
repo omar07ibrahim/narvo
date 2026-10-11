@@ -31,6 +31,7 @@ export interface Customer {
   permitIds: string[];
   ticketIds: string[];
   flags?: string[];
+  flagsAr?: string[];
   notes?: string;
   history: CustomerHistory[];
 }

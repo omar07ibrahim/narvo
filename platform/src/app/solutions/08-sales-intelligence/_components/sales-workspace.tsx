@@ -205,7 +205,8 @@ export function SalesWorkspace({ initial }: { initial: SalesData }) {
       <div className="grid grid-cols-4 gap-4 max-lg:grid-cols-2">
         <MetricTile
           label={L({ en: "Open pipeline", ar: "الفرص المفتوحة" })}
-          value={m.compact(kpis.openValue)}
+          // The tile renders its value left-to-right; "13.50 مليون درهم" must keep its own (RTL) order.
+          value={<span dir="auto">{m.compact(kpis.openValue)}</span>}
           sub={L({ en: `${kpis.openCount} opportunities · weighted ${m.compact(kpis.weightedValue)}`, ar: `${kpis.openCount} فرصة · مرجّحة ${m.compact(kpis.weightedValue)}` })}
         />
         <MetricTile
@@ -333,6 +334,7 @@ export function SalesWorkspace({ initial }: { initial: SalesData }) {
                 <div hidden={tab !== "action"}>
                   <ActionTab
                     opp={opp}
+                    today={data.today}
                     report={report}
                     run={runs.action}
                     onRun={(o) => start("action", "next-action", o)}

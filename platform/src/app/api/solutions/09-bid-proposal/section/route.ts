@@ -15,9 +15,11 @@ export async function POST(req: Request) {
   const prev = versions.at(-1);
   if (prev && prev.text === body.text) return Response.json({ id: section.id, state: sections[section.id] });
   const v = (prev?.v ?? 0) + 1;
+  // Continue the document's own numbering (Marketing's "v0.3" → "v0.4"), not a bare counter.
+  const m = prev?.label.match(/^v(\d+)\.(\d+)$/);
   const version: DraftVersion = {
     v,
-    label: `v${v}`,
+    label: m ? `v${m[1]}.${Number(m[2]) + 1}` : `v${v}`,
     author: "Leena Mattar · Bid Manager",
     kind: "edit",
     at: Date.now(),

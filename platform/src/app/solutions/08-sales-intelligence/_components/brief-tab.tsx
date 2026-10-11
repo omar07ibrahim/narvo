@@ -106,7 +106,7 @@ export function BriefTab({
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 border-t border-border px-3.5 py-2.5 text-[12.5px]">
           <span className="label-caps !text-[9.5px]">{L({ en: "Next step", ar: "الخطوة التالية" })}</span>
           <span className={cn("min-w-0", health.nextStepOverdue && "text-danger")} dir="auto">
-            {opp.nextStep}
+            {L({ en: opp.nextStep, ar: opp.nextStepAr || opp.nextStep })}
           </span>
           {opp.nextStepDate && <span className={cn("num text-[11.5px]", health.nextStepOverdue ? "text-danger" : "text-muted-foreground")}>{f.date(opp.nextStepDate, { day: "numeric", month: "short" })}</span>}
           {health.reasons.length > 0 && (

@@ -17,8 +17,8 @@ const SCENARIO: ScenarioStep[] = [
   {
     title: { en: "A customer writes in Emirati dialect", ar: "متعامل يكتب باللهجة الإماراتية" },
     body: {
-      en: "In the Contact queue, open Saeed Al Romaithi's WhatsApp message: «شو صار على طلب الإسكان مالي؟». The assistant recognises his registered number (one factor) and politely asks for his Emirates ID before disclosing anything — verification is enforced by the tools, not by the prompt.",
-      ar: "من قائمة الانتظار افتح رسالة سعيد الرميثي على واتساب: «شو صار على طلب الإسكان مالي؟». يتعرف المساعد على رقمه المسجل (عامل واحد) ويطلب رقم الهوية بلطف قبل الإفصاح عن أي معلومة — التحقق تفرضه الأدوات وليس التعليمات.",
+      en: "In the Contact queue, open Saeed Al Romaithi's WhatsApp message (+971 50 418 2276): «شو صار على طلب الإسكان مالي؟». The assistant recognises his registered number (one factor) and politely asks for his Emirates ID before disclosing anything — verification is enforced by the tools, not by the prompt.",
+      ar: "من قائمة الانتظار افتح رسالة سعيد الرميثي على واتساب (⁦+971 50 418 2276⁩): «شو صار على طلب الإسكان مالي؟». يتعرف المساعد على رقمه المسجل (عامل واحد) ويطلب رقم الهوية بلطف قبل الإفصاح عن أي معلومة — التحقق تفرضه الأدوات وليس التعليمات.",
     },
   },
   {
@@ -52,8 +52,8 @@ const SCENARIO: ScenarioStep[] = [
   {
     title: { en: "Exceptions wait for a person", ar: "الاستثناءات بيد الإنسان" },
     body: {
-      en: "Open the duplicate-payment refund chat. The assistant cannot refund on its own: it raises a request to Sara Ahmed Al Blooshi, CHC Manager. Approve it inline (or from the Inbox) — the refund record and audit entry are written only then.",
-      ar: "افتح محادثة استرداد الرسوم المدفوعة مرتين. لا يستطيع المساعد الاسترداد بنفسه: يرفع طلباً إلى سارة أحمد البلوشي، مديرة مركز إسعاد المتعاملين. اعتمده من البطاقة (أو من صندوق الوارد) — ولا يُكتب سجل الاسترداد وقيد التدقيق إلا عندها.",
+      en: "Open the duplicate-payment refund chat (+971 52 471 6630) and give the Emirates ID from the hint. The assistant cannot refund on its own: it raises a request to Sara Ahmed Al Blooshi, CHC Manager. Press Approve refund inline (or approve from Approvals) — the refund record and audit entry are written only then.",
+      ar: "افتح محادثة استرداد الرسوم المدفوعة مرتين (⁦+971 52 471 6630⁩) وأرسل رقم الهوية من الاقتراح. لا يستطيع المساعد الاسترداد بنفسه: يرفع طلباً إلى سارة أحمد البلوشي، مديرة مركز إسعاد المتعاملين. اعتمده من البطاقة (أو من صندوق الوارد) — ولا يُكتب سجل الاسترداد وقيد التدقيق إلا عندها.",
     },
   },
   {

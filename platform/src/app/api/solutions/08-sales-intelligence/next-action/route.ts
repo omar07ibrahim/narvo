@@ -9,6 +9,15 @@ import { ALL_STAGES, type NextAction } from "@/app/solutions/08-sales-intelligen
 
 export const dynamic = "force-dynamic";
 
+const STAGE_AR: Record<string, string> = {
+  Qualification: "التأهيل",
+  Proposal: "العرض",
+  Negotiation: "التفاوض",
+  "Closed Won": "مغلقة — فوز",
+  "Closed Lost": "مغلقة — خسارة",
+};
+const agoAr = (d: number) => (d === 0 ? "اليوم" : d === 1 ? "أمس" : d === 2 ? "قبل يومين" : d <= 10 ? `قبل ${d} أيام` : `قبل ${d} يوماً`);
+
 const schema = z.object({
   action: z.object({
     title: z.string().describe("The single next best action, imperative, ≤ 12 words"),
@@ -53,7 +62,7 @@ export async function POST(req: Request) {
       emit.data("citations", pack.citations);
       s1.done(
         ar
-          ? `${h.daysInStage} يوماً في ${opp.stage} · ${pack.report.conflicts.length} تعارضات · آخر تواصل قبل ${h.daysSinceTouch ?? "—"} أيام`
+          ? `${h.daysInStage} يوماً في مرحلة ${STAGE_AR[opp.stage] ?? opp.stage} · ${pack.report.conflicts.length} تعارضاً · آخر تواصل ${h.daysSinceTouch == null ? "—" : agoAr(h.daysSinceTouch)}`
           : `${h.daysInStage} days in ${opp.stage} · ${pack.report.conflicts.length} conflicts · last contact ${h.daysSinceTouch ?? "—"} days ago`,
       );
 
@@ -78,6 +87,9 @@ export async function POST(req: Request) {
           `nextStepDate must be a working day (Mon–Fri) on or after today (${data.today}). Use the calendar in the computed facts for weekdays.`,
           `Write action.title, action.rationale and crmUpdate in ${ar ? "Arabic (professional MSA)" : "English"}. Write the draft (channel: ${channel}) in ${draftLangName}. ${channel === "whatsapp" ? "WhatsApp: 50–110 words, no subject (null), no emoji." : "Email: 120–220 words with a clear subject line and sign-off with name, title, company and mobile."}`,
           "Cite sources with [n] only inside action.rationale (never inside the draft).",
+          ar
+            ? "LANGUAGE CHECK: action.title, action.rationale, crmUpdate.nextStep, crmUpdate.note and every commitmentsInDraft item MUST be written in Arabic (MSA) — the user's interface is Arabic. Only the draft follows the draft language above."
+            : "LANGUAGE CHECK: action.title, action.rationale, crmUpdate.nextStep, crmUpdate.note and commitmentsInDraft are written in English.",
         ].join("\n"),
         user: `COMPUTED FACTS:\n${computedFacts(data, opp, pack.report)}\n\n${instruction ? `USER INSTRUCTION: ${instruction}\n\n` : ""}SOURCES:\n\n${pack.context}`,
         modelKey,

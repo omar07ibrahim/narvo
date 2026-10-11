@@ -631,8 +631,13 @@ export function checkDraft(text: string, report: ConflictReport | null, tierMaxT
     [/(june|jun)\s*2027|يونيو\s*2027|2027/i, { en: "Mentions 2027 — check no price is fixed beyond the frame agreement (31 Dec 2026).", ar: "يذكر 2027 — تأكد من عدم تثبيت أي سعر بعد انتهاء الاتفاقية (31 ديسمبر 2026)." }, "fixed"],
     [/\b0?7[:.]00\b/, { en: "Mentions 07:00 — Marina Quarter gate opens at 09:00.", ar: "يذكر الساعة 07:00 — بوابة حي المارينا تفتح الساعة 09:00." }, "early"],
   ];
+  // A mention inside a refusal ("we cannot accept Sunday deliveries", «لا يمكننا قبول التسليم يوم الأحد») is compliant.
+  const negation = /\b(not|no|cannot|can't|unable|won't|excluding|except)\b|(^|\s)(لا|لن|لم|غير|ليس|دون|عدا)(\s|$)/i;
+  const sentences = t.split(/(?<=[.!?؟\n])/);
   for (const [re, message, id] of checks) {
-    const m = t.match(re);
+    const hits = sentences.filter((sn) => re.test(sn));
+    const live = id === "fixed" ? hits : hits.filter((sn) => !negation.test(sn));
+    const m = live[0]?.match(re);
     if (m) flags.push({ id, severity: "check", match: m[0], message });
   }
   const seen = new Set<string>();

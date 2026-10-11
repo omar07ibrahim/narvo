@@ -148,8 +148,8 @@ export function ComparisonTab({
                     <th className="label-caps !text-[9.5px] px-2 py-2 text-start font-medium">#</th>
                     <th className="label-caps !text-[9.5px] px-2 py-2 text-start font-medium">{L({ en: "Candidate", ar: "المرشح" })}</th>
                     <th className="label-caps !text-[9.5px] px-2 py-2 text-start font-medium">{L({ en: "Weighted score", ar: "الدرجة الموزونة" })}</th>
-                    <th className="label-caps !text-[9.5px] px-2 py-2 text-start font-medium">
-                      {criteria.map((c) => c.id.replace("C", "")).join(" · ")}
+                    <th className="label-caps !text-[9.5px] px-2 py-2 text-start font-medium whitespace-nowrap" title={L({ en: "Criteria C1–C7", ar: "المعايير C1–C7" })}>
+                      {L({ en: "Criteria", ar: "المعايير" })} <span className="num normal-case tracking-normal">1–{criteria.length}</span>
                     </th>
                     <th className="label-caps !text-[9.5px] px-2 py-2 text-start font-medium">{L({ en: "Evidence", ar: "الأدلة" })}</th>
                   </tr>

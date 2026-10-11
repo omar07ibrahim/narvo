@@ -47,7 +47,8 @@ export async function POST(req: Request) {
       const pack = buildSourcePack(data, opp, { scope: "account", policyQueries: POLICY_QUERIES.handover });
       emit.data("citations", pack.citations);
       const facts = computedFacts(data, opp, pack.report);
-      s1.done(ar ? `${pack.citations.length} مصدراً · تسليم ${from} ← ${to}` : `${pack.citations.length} sources · handover ${from} → ${to}`);
+      const arName = (n: string) => data.people.find((p) => p.name === n)?.nameAr ?? n;
+      s1.done(ar ? `${pack.citations.length} مصدراً · تسليم ${arName(from)} ← ${arName(to)}` : `${pack.citations.length} sources · handover ${from} → ${to}`);
 
       const s2 = emit.step("commitments", ar ? "استخراج الالتزامات المفتوحة وثغرات مذكرة التسليم" : "Extracting open commitments and gaps in the handover note");
       const lang1 = ar ? "Arabic (professional MSA; keep names, codes and amounts in Latin script/digits)" : "English";

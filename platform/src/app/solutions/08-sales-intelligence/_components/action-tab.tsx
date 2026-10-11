@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { CircleCheck, Compass, LoaderCircle, Send, ShieldAlert, TriangleAlert } from "lucide-react";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
-import { useL } from "@/lib/i18n";
+import { useFormat, useL } from "@/lib/i18n";
 import type { NarvoRun } from "@/hooks/use-narvo-run";
 import type { ApprovalSummary, Citation } from "@/lib/ai/events";
 import { Button } from "@/components/ui/button";
@@ -68,6 +68,7 @@ export function GuardrailList({ flags }: { flags: GuardrailFlag[] }) {
 
 export function ActionTab({
   opp,
+  today,
   report,
   run,
   onRun,
@@ -77,6 +78,7 @@ export function ActionTab({
   onDecided,
 }: {
   opp: Opportunity;
+  today: string;
   report: ConflictReport;
   run: NarvoRun;
   onRun: (opts: { channel: "email" | "whatsapp"; draftLang: "en" | "ar"; instruction: string }) => void;
@@ -86,6 +88,7 @@ export function ActionTab({
   onDecided: (id: string, status: "approved" | "rejected") => void;
 }) {
   const L = useL();
+  const f = useFormat();
   const [channel, setChannel] = useState<"email" | "whatsapp">("email");
   const [draftLang, setDraftLang] = useState<"en" | "ar">("en");
   const [instruction, setInstruction] = useState("");
@@ -231,7 +234,7 @@ export function ActionTab({
                 <tr className="border-t border-border">
                   <td className="py-1.5 text-muted-foreground">{L({ en: "Next step", ar: "الخطوة التالية" })}</td>
                   <td className="py-1.5 pe-3 text-muted-foreground line-through decoration-faint" dir="auto">
-                    {opp.nextStep}
+                    {L({ en: opp.nextStep, ar: opp.nextStepAr || opp.nextStep })}
                   </td>
                   <td className="py-1.5">
                     <Input disabled={locked} value={edit.crmUpdate.nextStep} onChange={(e) => set((d) => void (d.crmUpdate.nextStep = e.target.value))} className="h-7 text-[12px]" dir="auto" />
@@ -239,7 +242,9 @@ export function ActionTab({
                 </tr>
                 <tr className="border-t border-border">
                   <td className="py-1.5 text-muted-foreground">{L({ en: "Due", ar: "الموعد" })}</td>
-                  <td className="num py-1.5 text-danger">{opp.nextStepDate ?? "—"}</td>
+                  <td className={cn("num py-1.5", opp.nextStepDate && opp.nextStepDate < today ? "text-danger" : "text-muted-foreground")}>
+                    {opp.nextStepDate ? f.date(opp.nextStepDate, { day: "numeric", month: "short", year: "numeric" }) : "—"}
+                  </td>
                   <td className="py-1.5">
                     <Input disabled={locked} type="date" value={edit.crmUpdate.nextStepDate} onChange={(e) => set((d) => void (d.crmUpdate.nextStepDate = e.target.value))} className="num h-7 w-40 text-[12px]" />
                   </td>

@@ -41,7 +41,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import type { ConsoleData, Handoff, InboundContact, SessionAction, SessionState, Signals, TranscriptTurn } from "../_lib/types";
 import { CustomerCard } from "./customer-card";
-import { ChannelIcon, fmtDuration, langLabel } from "./bits";
+import { ChannelIcon, fmtDuration, langLabel, isolateNums, LRI, PDI, queueLabel } from "./bits";
 
 interface Msg {
   id: string;
@@ -372,7 +372,22 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
                 >
                   <div className="flex items-center gap-2">
                     <ChannelIcon channel={it.channel} className="text-muted-foreground" />
-                    <span className="min-w-0 flex-1 truncate text-[12.5px] font-medium">{it.label}</span>
+                    {(() => {
+                      const ql = queueLabel(it.label, L);
+                      return (
+                        <span className="min-w-0 flex-1 truncate text-[12.5px] font-medium">
+                          {ql.head}
+                          {ql.tail && (
+                            <>
+                              {" · "}
+                              <span dir={ql.isNumber ? "ltr" : undefined} className={ql.isNumber ? "num" : undefined}>
+                                {ql.tail}
+                              </span>
+                            </>
+                          )}
+                        </span>
+                      );
+                    })()}
                     {done ? (
                       <Check className="size-3.5 text-success" />
                     ) : (
@@ -381,7 +396,7 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
                   </div>
                   <div className="mt-1 ps-5.5 text-[11.5px] text-muted-foreground">{L({ en: it.topic, ar: it.topicAr ?? it.topic })}</div>
                   <p className="mt-1 line-clamp-2 ps-5.5 text-[12px] leading-snug text-foreground/80" dir="auto">
-                    “{it.firstMessage}”
+                    {isolateNums(it.firstMessage)}
                   </p>
                 </button>
               </li>
@@ -401,7 +416,7 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
         title={L({ en: "Live conversation", ar: "المحادثة المباشرة" })}
         subtitle={
           contact
-            ? `${contact.ani ?? L({ en: "Number withheld", ar: "رقم محجوب" })} · ${fmtDuration(elapsed)}${session?.conversationId ? ` · ${session.conversationId}` : ""}`
+            ? `${contact.ani ? `${LRI}${contact.ani}${PDI}` : L({ en: "Number withheld", ar: "رقم محجوب" })} · ${fmtDuration(elapsed)}${session?.conversationId ? ` · ${session.conversationId}` : ""}`
             : L({ en: "No active contact", ar: "لا يوجد اتصال نشط" })
         }
         bodyClassName="flex flex-col p-0"
@@ -465,7 +480,7 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
                     </div>
                     {run.text.retry || run.text.main ? (
                       <Markdown citations={run.data.citations as Citation[] | undefined} streaming>
-                        {run.text.retry || run.text.main}
+                        {isolateNums(run.text.retry || run.text.main)}
                       </Markdown>
                     ) : (
                       <ThinkingLines lines={2} />
@@ -527,7 +542,7 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
               </div>
             )}
             <div className="mt-2 flex flex-wrap items-center gap-1.5">
-              {hints.map((h) => (
+              {!humanActive && hints.map((h) => (
                 <button
                   key={h}
                   type="button"
@@ -536,7 +551,7 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
                   className="max-w-full truncate rounded-full border border-border bg-surface px-2.5 py-1 text-[11.5px] text-muted-foreground transition-colors hover:border-ai/40 hover:text-foreground disabled:opacity-50"
                   dir="auto"
                 >
-                  {h}
+                  {isolateNums(h)}
                 </button>
               ))}
               <label className="ms-auto flex items-center gap-1.5 text-[11.5px] text-muted-foreground">
@@ -671,10 +686,10 @@ function MessageBubble({ m, onApproval }: { m: Msg; onApproval: () => void }) {
           )}
           {m.role === "customer" ? (
             <p className="text-[13.5px] leading-relaxed whitespace-pre-wrap" dir="auto">
-              {m.text}
+              {isolateNums(m.text)}
             </p>
           ) : (
-            <Markdown citations={m.citations}>{m.text}</Markdown>
+            <Markdown citations={m.citations}>{isolateNums(m.text)}</Markdown>
           )}
           {!!m.actions?.length && (
             <div className="mt-2 flex flex-wrap gap-1.5">
@@ -786,7 +801,7 @@ function ActionsList({ actions, handoff }: { actions: SessionAction[]; handoff: 
             </StatusPill>
           </div>
           <div className="mt-1.5 text-[12.5px] font-medium">{handoff.intent}</div>
-          <p className="mt-1 text-[11.5px] leading-relaxed text-muted-foreground">{handoff.summary}</p>
+          <p className="mt-1 text-[11.5px] leading-relaxed text-muted-foreground" dir="auto">{isolateNums(handoff.summary)}</p>
           <div className="mt-2 text-[11.5px]">
             <span className="text-muted-foreground">{L({ en: "Suggested next step", ar: "الخطوة المقترحة" })}: </span>
             {handoff.suggestedNextStep}
@@ -832,7 +847,7 @@ function NewContact({ customers, onStart }: { customers: ConsoleData["customers"
             <SelectItem value="withheld">{L({ en: "Number withheld / unregistered", ar: "رقم محجوب / غير مسجل" })}</SelectItem>
             {customers.map((c) => (
               <SelectItem key={c.id} value={c.mobile}>
-                <span className="num">{c.mobile}</span> · {c.name.split(" ")[0]}
+                <span className="num" dir="ltr">{c.mobile}</span> · {c.name.split(" ")[0]}
               </SelectItem>
             ))}
           </SelectContent>

@@ -48,7 +48,12 @@ export function SentimentMeter({ value, label, history }: { value: number | null
     <div>
       <div className="flex items-center justify-between text-[11.5px]">
         <span className="text-muted-foreground">{L({ en: "Sentiment", ar: "المشاعر" })}</span>
-        <span className="font-medium capitalize">{value == null ? "—" : (label ?? (v <= -0.25 ? "negative" : v >= 0.3 ? "positive" : "neutral"))}</span>
+        <span className="font-medium capitalize">
+          {value == null
+            ? "—"
+            : (label ??
+              L(v <= -0.25 ? { en: "negative", ar: "سلبية" } : v >= 0.3 ? { en: "positive", ar: "إيجابية" } : { en: "neutral", ar: "محايدة" }))}
+        </span>
       </div>
       <div className="relative mt-1.5 h-1.5">
         <div className="flex h-full gap-px overflow-hidden rounded-full">
@@ -93,6 +98,39 @@ export function fmtDuration(sec: number) {
   const m = Math.floor(sec / 60);
   const s = Math.round(sec % 60);
   return `${m}:${String(s).padStart(2, "0")}`;
+}
+
+/** Unicode left-to-right isolate / pop directional isolate (invisible). */
+export const LRI = String.fromCharCode(0x2066);
+export const PDI = String.fromCharCode(0x2069);
+
+/**
+ * Keep multi-part numbers (Emirates IDs, phone numbers, reference numbers) in reading order inside Arabic text.
+ * After Arabic letters, digits become "Arabic numbers" and hyphens/spaces between them are neutral, so
+ * "784-1986-2297415-3" would render as "3-2297415-1986-784". Wrapping each run in an LTR isolate
+ * (U+2066 … U+2069) fixes it without changing the visible text.
+ */
+export function isolateNums(text: string) {
+  if (!/[؀-ۿ]/.test(text)) return text;
+  // A run of Latin/digit tokens joined by "-" (or spaces between digit groups) that contains a digit:
+  // MNDA-HG-2026-004817 · 784-1986-2297415-3 · +971 50 418 2276 · RB-B500-16 · 800 6632
+  const run = /\+?(?:[A-Za-z0-9]+-)*[A-Za-z0-9]*\d[A-Za-z0-9]*(?:[- ](?:[A-Za-z0-9]+-)*[A-Za-z0-9]*\d[A-Za-z0-9]*)*(?:-[A-Za-z0-9]+)*/g;
+  return text.replace(run, (m) => (/[- ]/.test(m) ? `${LRI}${m}${PDI}` : m));
+}
+
+/** Localised queue label: "WhatsApp · +971 …", "Hotline 800 6632 · Number withheld", "MNDA Smart chat · …". */
+export function queueLabel(label: string, L: (v: { en: string; ar: string }) => string) {
+  const [head, ...rest] = label.split(" · ");
+  const tail = rest.join(" · ");
+  const h = head.startsWith("Hotline")
+    ? L({ en: head, ar: `الخط الساخن ${head.replace("Hotline", "").trim()}` })
+    : head === "MNDA Smart chat"
+      ? L({ en: head, ar: "محادثة تطبيق MNDA Smart" })
+      : head === "WhatsApp"
+        ? L({ en: head, ar: "واتساب" })
+        : head;
+  const t = tail === "Number withheld" ? L({ en: tail, ar: "رقم محجوب" }) : tail;
+  return { head: isolateNums(h), tail: t, isNumber: /^\+?\d/.test(tail) };
 }
 
 export function langLabel(lang: string | undefined, dialect?: string | null) {

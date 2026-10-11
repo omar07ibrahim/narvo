@@ -141,7 +141,11 @@ export function RecruitmentWorkspace({ initial }: { initial: RecruitmentState })
             "application",
             a.candidate.nationality,
             a.candidate.nameAr,
-            `${(a.profile.currentRole ?? "").split(/,| — | at /)[0]} · ${a.profile.yearsExperience} ${L({ en: "yrs experience", ar: "سنة خبرة" })} · ${a.profile.yearsPermitReview} ${L({ en: "in permit review", ar: "في مراجعة الرخص" })}`,
+            // Arabic UI: figures first and the English job title last, so the line reads correctly right-to-left.
+            L({
+              en: `${(a.profile.currentRole ?? "").split(/,| — | at /)[0]} · ${a.profile.yearsExperience} yrs experience · ${a.profile.yearsPermitReview} in permit review`,
+              ar: `${a.profile.yearsExperience} سنة خبرة · ${a.profile.yearsPermitReview} في مراجعة الرخص · ${(a.profile.currentRole ?? "").split(/,| — | at /)[0]}`,
+            }),
           ),
         ),
       ...state.uploads.map((u) => mk(u.id, u.label, L({ en: "Uploaded CV — outside the application window", ar: "سيرة مرفوعة — خارج فترة التقديم" }), "upload")),
@@ -183,12 +187,12 @@ export function RecruitmentWorkspace({ initial }: { initial: RecruitmentState })
           }
         />
         <MetricTile
-          label={L({ en: "Avg evaluation time", ar: "متوسط زمن التقييم" })}
+          label={L({ en: "Time per CV", ar: "متوسط زمن التقييم" })}
           value={avgMs ? `${(avgMs / 1000).toFixed(1)} s` : "—"}
-          sub={L({ en: "per CV · 6 in parallel", ar: "لكل سيرة · 6 بالتوازي" })}
+          sub={L({ en: "average · 6 CVs in parallel", ar: "لكل سيرة · 6 بالتوازي" })}
         />
         <MetricTile
-          label={L({ en: "Evidence traceability", ar: "قابلية تتبع الأدلة" })}
+          label={L({ en: "Traceability", ar: "قابلية تتبع الأدلة" })}
           value={trace == null ? "—" : `${Math.round(trace * 100)}%`}
           tone={trace == null ? "default" : trace >= 0.98 ? "success" : "warning"}
           sub={L({ en: "ratings with a verified CV quote", ar: "تقييمات باقتباس موثّق من السيرة" })}

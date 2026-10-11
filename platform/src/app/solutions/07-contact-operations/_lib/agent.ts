@@ -57,6 +57,8 @@ export interface AgentCtx {
   channel: "voice" | "chat";
   /** Customer is writing Arabic → prefer Arabic versions of bilingual sources. */
   prefAr: boolean;
+  /** Language of the operator UI — approval cards and action labels follow it. */
+  uiLang?: "en" | "ar";
 }
 
 const AGENT_ACTOR = { name: "NARVO Contact Assistant", role: "AI agent", kind: "agent" as const };
@@ -140,6 +142,8 @@ const requireLevel = (ctx: AgentCtx, need: "partial" | "verified") => {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any -- matches the shared runAgent({ tools }) signature
 export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
+  // Text written for staff (handoff context, exception justification) follows the operator UI language.
+  const opLang = ctx.uiLang === "ar" ? "Arabic (Modern Standard)" : "English";
   const identify = defineTool({
     name: "identify_customer",
     description:
@@ -204,7 +208,10 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
         pushAction(ctx, {
           kind: "verification",
           id: s.level,
-          label: `Identity ${s.level === "verified" ? "verified" : "partially verified"} — ${s.factors.map((f) => FACTOR_LABEL[f]?.en ?? f).join(" + ")}`,
+          label:
+            ctx.uiLang === "ar"
+              ? `${s.level === "verified" ? "تم التحقق من الهوية" : "تحقق جزئي من الهوية"} — ${s.factors.map((f) => FACTOR_LABEL[f]?.ar ?? FACTOR_LABEL[f]?.en ?? f).join(" + ")}`
+              : `Identity ${s.level === "verified" ? "verified" : "partially verified"} — ${s.factors.map((f) => FACTOR_LABEL[f]?.en ?? f).join(" + ")}`,
           at: new Date().toISOString(),
           status: "done",
         });
@@ -379,6 +386,7 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
       );
       const perCentre = (["downtown", "al-murjan", "al-waha"] as CentreId[]).map((c) => ({
         centre: CENTRES[c].en,
+        centreAr: CENTRES[c].ar,
         freeSlotsThisWeek: all.filter((s) => s.centre === c && s.date <= "2026-10-16").reduce((n, s) => n + s.capacity - s.booked, 0),
       }));
       const picks = (a.centre === "any" ? (["downtown", "al-murjan", "al-waha"] as CentreId[]) : [a.centre as CentreId]).flatMap((c) =>
@@ -392,6 +400,7 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
         slots: picks.map((s) => ({
           slotId: s.id,
           centre: CENTRES[s.centre].en,
+          centreAr: CENTRES[s.centre].ar,
           date: new Date(s.date).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" }),
           time: s.time,
           freeCounters: s.capacity - s.booked,
@@ -462,7 +471,9 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
         status: "booked",
         confirmation: id,
         centre: CENTRES[slot.centre].en,
+        centreAr: CENTRES[slot.centre].ar,
         address: CENTRES[slot.centre].address,
+        addressAr: CENTRES[slot.centre].addressAr,
         when: `${new Date(slot.date).toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", timeZone: "UTC" })} at ${slot.time}`,
         reminder: "An SMS confirmation is sent to the registered mobile. Arrive 10 minutes early; 10-minute grace period.",
       };
@@ -576,7 +587,7 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
       kind: z.enum(["fee_refund", "fee_waiver", "deadline_extension"]),
       reference: z.string().describe("Related permit/case/payment reference"),
       amountAed: z.number().nullish(),
-      justification: z.string().describe("Facts supporting the request, in English"),
+      justification: z.string().describe(`Facts supporting the request, in ${opLang}`),
     }),
     label: (a) => `Requesting ${a.kind.replace(/_/g, " ")} for ${a.reference}`,
     approval: (a) => {
@@ -584,17 +595,26 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
       const c = customerOf(ctx.session);
       const id = `EXC-26-${String(Date.now()).slice(-5)}`;
       const kindLabel = a.kind === "fee_refund" ? "Fee refund" : a.kind === "fee_waiver" ? "Fee waiver" : "Deadline extension";
+      const ar = ctx.uiLang === "ar";
+      const kindLabelUi = ar ? (a.kind === "fee_refund" ? "استرداد رسوم" : a.kind === "fee_waiver" ? "إعفاء من الرسوم" : "تمديد مهلة") : kindLabel;
+      const amountUi = a.amountAed
+        ? ar
+          ? `${a.amountAed.toLocaleString("en-US", { minimumFractionDigits: Number.isInteger(a.amountAed) ? 0 : 2, maximumFractionDigits: 2 })} درهم`
+          : `AED ${a.amountAed.toLocaleString("en-US", { minimumFractionDigits: Number.isInteger(a.amountAed) ? 0 : 2, maximumFractionDigits: 2 })}`
+        : "";
       pushAction(ctx, {
         kind: "exception",
         id,
-        label: `${kindLabel}${a.amountAed ? ` AED ${a.amountAed.toLocaleString("en-US", { minimumFractionDigits: Number.isInteger(a.amountAed) ? 0 : 2, maximumFractionDigits: 2 })}` : ""} — ${a.reference}`,
+        label: `${kindLabelUi}${amountUi ? ` ${amountUi}` : ""} — ${a.reference}`,
         at: new Date().toISOString(),
         status: "awaiting_approval",
       });
       return {
-        title: `${kindLabel} — ${a.reference}${a.amountAed ? ` · AED ${a.amountAed.toLocaleString("en-US", { minimumFractionDigits: Number.isInteger(a.amountAed) ? 0 : 2, maximumFractionDigits: 2 })}` : ""}`,
-        summary: `${c?.name ?? "Customer"} (${ctx.session.factors.length} factors verified). ${a.justification}`,
-        actionLabel: a.kind === "fee_refund" ? "Approve refund" : "Approve exception",
+        title: `${kindLabelUi} — ${a.reference}${amountUi ? ` · ${amountUi}` : ""}`,
+        summary: ar
+          ? `${c?.nameAr ?? c?.name ?? "المتعامل"} (تم التحقق بعاملين). ${a.justification}`
+          : `${c?.name ?? "Customer"} (${ctx.session.factors.length} factors verified). ${a.justification}`,
+        actionLabel: ar ? (a.kind === "fee_refund" ? "اعتماد الاسترداد" : "اعتماد الاستثناء") : a.kind === "fee_refund" ? "Approve refund" : "Approve exception",
         approver: CHC_MANAGER,
         effects: [
           {
@@ -627,12 +647,12 @@ export function buildTools(ctx: AgentCtx): AgentTool<any>[] {
     description:
       "Transfer the conversation to a human Customer Happiness agent with a complete context summary, so the customer never has to repeat themselves. Use when the customer asks for a person, is upset after your attempt, or the request needs human judgement.",
     parameters: z.object({
-      reason: z.string().describe("Why a human is needed"),
-      intent: z.string().describe("Customer's goal in a few words"),
-      summary: z.string().describe("3-4 sentence English summary for the agent: who, verified identity, what they need, key facts and references"),
-      whatTried: z.array(z.string()).describe("What the assistant already checked or did"),
+      reason: z.string().describe(`Why a human is needed (${opLang})`),
+      intent: z.string().describe(`Customer's goal in a few words (${opLang})`),
+      summary: z.string().describe(`3-4 sentence ${opLang} summary for the agent: who, verified identity, what they need, key facts and references`),
+      whatTried: z.array(z.string()).describe(`What the assistant already checked or did (${opLang})`),
       sentiment: z.enum(["negative", "neutral", "positive"]),
-      suggestedNextStep: z.string().describe("Concrete next step for the agent"),
+      suggestedNextStep: z.string().describe(`Concrete next step for the agent (${opLang})`),
       priority: z.enum(["high", "normal"]),
       references: z.array(z.string()).nullish(),
     }),
@@ -736,7 +756,7 @@ export function systemPrompt(ctx: AgentCtx): string {
     "",
     "RULES",
     "1. Language: reply in the language of the customer's last message. Customers often write Emirati dialect («شو صار على طلبي», «أبا», «مالي») — understand it fully, but ANSWER in clear, simple Modern Standard Arabic (فصحى مبسّطة) with a warm Gulf courtesy opener such as «حيّاك الله» or «أبشر». Do not imitate dialect (no «وش»، «خلني»، «أشيك»، «اللي»). If English, answer in English.",
-    "   Arabic terminology: مراكز إسعاد المتعاملين · تعميم رقم 9 لسنة 2026 · شهادة راتب صادرة خلال آخر 30 يوماً · شهادة عدم ملكية عقار من دائرة الأراضي في مرسى النور · طلب استكمال مستندات · رخصة بناء · شهادة عدم ممانعة من المطور الرئيسي · تطبيق MNDA Smart ← طلباتي ← تحميل المستندات الناقصة.",
+    "   Arabic terminology: مراكز إسعاد المتعاملين · تعميم رقم 9 لسنة 2026 · شهادة راتب صادرة خلال آخر 30 يوماً · شهادة عدم ملكية عقار من دائرة الأراضي في مرسى النور · طلب استكمال مستندات · رخصة بناء · شهادة عدم ممانعة من المطور الرئيسي · تطبيق MNDA Smart ← طلباتي ← تحميل المستندات الناقصة · المراكز: وسط المدينة، المرجان، الواحة (use the tools' centreAr names).",
     "2. Verification is enforced by the tools. Never reveal status, names, amounts or documents of any record before get_case_status succeeds. Never read out full Emirates ID or financial account numbers.",
     "3. Use tools for facts — never guess a status, date, fee or rule. Every rule, document requirement, fee or deadline you state must be cited with the numeric marker [n] of a passage returned by a tool (get_case_status returns `policy` passages; otherwise call search_knowledge first), e.g. «salary certificate must be issued within the last 30 days [2]». Never write source names in brackets yourself.",
     "4. Missing documents: name each missing item precisely, give the exact rule and its source (e.g. Circular No. 9/2026 §4.4: salary certificate issued within the last 30 days — previously 90), say how to submit (MNDA Smart → My Applications → Upload missing documents, or at a centre — offer to book), and mention the 15-working-day response window.",

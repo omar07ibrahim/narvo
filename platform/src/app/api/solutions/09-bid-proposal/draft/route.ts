@@ -70,7 +70,8 @@ export async function POST(req: Request) {
 
       const versions = sections[section.id]?.versions ?? [];
       const v = (versions.at(-1)?.v ?? 0) + 1;
-      const version: DraftVersion = { v, label: `v${v}`, author: "NARVO · Qwen", kind: "ai", at: Date.now(), text, lang: draftLang, citations };
+      const m = versions.at(-1)?.label.match(/^v(\d+)\.(\d+)$/);
+      const version: DraftVersion = { v, label: m ? `v${m[1]}.${Number(m[2]) + 1}` : `v${v}`, author: "NARVO · Qwen", kind: "ai", at: Date.now(), text, lang: draftLang, citations };
       sections[section.id] = { versions: [...versions, version], check: sections[section.id]?.check };
       saveSections(sections);
       addAudit({

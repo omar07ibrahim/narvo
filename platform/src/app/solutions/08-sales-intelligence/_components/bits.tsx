@@ -42,6 +42,21 @@ export function useMoney() {
   };
 }
 
+/** Arabic names for Raseen staff that appear in the UI (WORLD.md §4). */
+const PEOPLE_AR: Record<string, string> = {
+  "Ahmed Soliman": "أحمد سليمان",
+  "Rania Mansour": "رانيا منصور",
+  "Vishal Kapoor": "فيشال كابور",
+  "Fadi Khoury": "فادي خوري",
+  "Tariq Nasser": "طارق ناصر",
+  "Karim Haddad": "كريم حداد",
+  "Priya Raghavan": "بريا راغافان",
+};
+
+export function personName(name: string, L: (v: Bi) => string) {
+  return L({ en: name, ar: PEOPLE_AR[name] ?? name });
+}
+
 export const SEVERITY_TONE: Record<string, Tone> = { high: "danger", medium: "warning", low: "neutral" };
 
 export function SeverityPill({ severity }: { severity: "high" | "medium" | "low" }) {

@@ -250,7 +250,7 @@ export function BrandWorkspace({ initial, initialSelected, initialTab }: { initi
         />
         <MetricTile
           label={L({ en: "Release time", ar: "زمن الإصدار" })}
-          value={kpis.releaseMs != null ? fmtDuration(kpis.releaseMs, ui) : "—"}
+          value={kpis.releaseMs != null ? <span dir="auto">{fmtDuration(kpis.releaseMs, ui)}</span> : "—"}
           icon={<Timer className="size-4" strokeWidth={1.5} />}
           sub={
             kpis.releaseMs != null
@@ -262,7 +262,7 @@ export function BrandWorkspace({ initial, initialSelected, initialTab }: { initi
         />
       </div>
 
-      <Workbench cols="364px minmax(0,1fr) 340px">
+      <Workbench cols="364px minmax(0,1fr) clamp(272px, 19vw, 340px)">
         {/* matrix */}
         <Pane
           title={L({ en: "Variant matrix", ar: "مصفوفة النسخ" })}

@@ -245,6 +245,11 @@ export function claimStats(sections: Record<string, SectionState>) {
     checked++;
     if (latest && s.check.version !== latest.v) {
       stale++;
+      // A newer revision has not been re-checked yet: flagged sentences that are still in the text stay flagged
+      // (e.g. after replacing one of three unsupported claims, the other two still count).
+      const norm = (t: string) => t.replace(/\s+/g, " ").trim();
+      const text = norm(latest.text);
+      flagged += s.check.claims.filter((c) => (c.verdict === "unsupported" || c.verdict === "contradicted") && text.includes(norm(c.text))).length;
       continue;
     }
     flagged += s.check.claims.filter((c) => c.verdict === "unsupported" || c.verdict === "contradicted").length;

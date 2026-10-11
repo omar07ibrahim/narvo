@@ -79,6 +79,7 @@ export async function POST(req: Request) {
         transcript: body.transcript,
         channel,
         prefAr: /[؀-ۿ]/.test(lastText),
+        uiLang: lang === "ar" ? "ar" : "en",
       };
       publishSession(ctx);
       const s0 = emit.step(
@@ -98,7 +99,8 @@ export async function POST(req: Request) {
         schema: signalSchema,
         name: "contact_signals",
         system:
-          "Classify the customer's latest message in a government contact-centre conversation (MNDA, UAE). Return language (ar/en/mixed), the dialect or variety, sentiment from -1 (very upset) to 1 (very satisfied) considering the whole conversation so far, a short sentiment label, and the main intent.",
+          "Classify the customer's latest message in a government contact-centre conversation (MNDA, UAE). Return language (ar/en/mixed), the dialect or variety, sentiment from -1 (very upset) to 1 (very satisfied) considering the whole conversation so far, a short sentiment label, and the main intent." +
+          (lang === "ar" ? " Write sentimentLabel in Arabic (one or two words, e.g. هادئ، منزعج، قلق، راضٍ)." : " Write sentimentLabel in English."),
         user: body.transcript
           .slice(-6)
           .map((t) => `${t.role}: ${t.text}`)
@@ -171,11 +173,29 @@ export async function POST(req: Request) {
       // ── Persist the conversation record (Supervisor log + KPIs)
       // Models sometimes repeat a short preamble before each tool step — keep each paragraph once.
       const seen = new Set<string>();
+      // A preamble paragraph written before a tool call ("I'll raise the refund request now…") is dropped when the
+      // final answer restates it ("Done — your refund request is submitted…"): mostly the same content words.
+      const lastFinal = result.final.trim();
+      const wordsOf = (t: string) =>
+        new Set(
+          t
+            .toLowerCase()
+            .replace(/\[\d+\]/g, " ")
+            .split(/[^\p{L}\p{N}]+/u)
+            .filter((w) => w.length >= 4 || (/[؀-ۿ]/.test(w) && w.length >= 3)),
+        );
+      const finalWords = wordsOf(lastFinal);
+      const restated = (k: string) => {
+        if (!lastFinal || lastFinal.includes(k)) return false;
+        const ws = [...wordsOf(k)];
+        return ws.length >= 6 && ws.filter((w) => finalWords.has(w)).length / ws.length >= 0.55;
+      };
       const final = (invented.length ? retried.trim() || result.final.trim() : streamed.trim() || result.final.trim())
         .split(/\n{2,}/)
         .filter((p) => {
           const k = p.trim();
-          if (!k || seen.has(k)) return false;
+          // Drop empty or ellipsis-only paragraphs ("…" placeholders some models emit before a tool call).
+          if (!k || /^[.…·\s]+$/.test(k) || seen.has(k) || restated(k)) return false;
           seen.add(k);
           return true;
         })

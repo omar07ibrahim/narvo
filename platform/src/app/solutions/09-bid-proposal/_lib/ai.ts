@@ -202,7 +202,17 @@ export async function mapEvidence(
   const { requirements, seed } = opts;
 
   const s1 = emit.step("retrieve", lang === "ar" ? "البحث في مكتبة الأدلة المعتمدة (BM25)" : "Retrieving approved evidence (BM25)");
-  const hits = new Map(requirements.map((r) => [r.id, hitsFor(r)]));
+  // Search requirement by requirement and yield between searches, so the step (and its progress) reaches the
+  // browser immediately instead of after the whole retrieval pass.
+  const hits = new Map<string, SearchHit[]>();
+  await new Promise((res) => setTimeout(res, 0));
+  for (const [i, r] of requirements.entries()) {
+    hits.set(r.id, hitsFor(r));
+    if (i % 6 === 5) {
+      s1.update(lang === "ar" ? `${i + 1} من ${requirements.length} متطلباً` : `${i + 1} of ${requirements.length} requirements`);
+      await new Promise((res) => setTimeout(res, 0));
+    }
+  }
   const docs = new Set([...hits.values()].flat().map((h) => h.docId));
   s1.done(lang === "ar" ? `${[...hits.values()].flat().length} مقطعاً من ${docs.size} مستندات لـ ${requirements.length} متطلباً` : `${[...hits.values()].flat().length} passages from ${docs.size} documents for ${requirements.length} requirements`);
 

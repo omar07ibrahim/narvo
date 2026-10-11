@@ -156,7 +156,16 @@ export function verifyQuote(quote: string, text: string) {
 }
 
 export function excerpt(text: string, n = 240) {
-  const t = text.replace(/\s+/g, " ").trim();
+  // Evidence passages are Markdown: flatten tables ("| Month | PPM |" rows → "Month · PPM") and quote markers
+  // so the excerpt reads as plain text in the UI.
+  const t = text
+    .split("\n")
+    .filter((l) => !/^\s*\|?\s*:?-{2,}/.test(l))
+    .map((l) => l.replace(/^\s*>\s?/, "").replace(/^\s*\|\s*|\s*\|\s*$/g, "").replace(/\s*\|\s*/g, " · "))
+    .join(" ")
+    .replace(/\*\*/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
   return t.length > n ? t.slice(0, n).replace(/\s\S*$/, "") + "…" : t;
 }
 

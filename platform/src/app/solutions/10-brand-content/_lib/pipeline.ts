@@ -198,6 +198,13 @@ export async function produceVariant(o: {
         : L(ui, `Writing ${label} from approved facts`, `كتابة ${label} من الحقائق المعتمدة`);
   const sGen = emit.step(`gen:${id}`, modeLabel);
   let res = await writeCopy({ channel, lang, facts: ctx.facts, rules: ctx.rules, mode, modelKey: ctx.modelKey, signal: ctx.signal });
+  // A truncated answer (e.g. an email that stops after "Dear {{FirstName}},") is never kept: write it again once.
+  const tooShort = (d: CopyDraft) => countWords(d.body) < Math.max(6, Math.round(channel.words[0] * 0.5));
+  if (tooShort(res.draft)) {
+    sGen.update(L(ui, "Draft came back truncated → writing it again", "عادت المسودة مبتورة ← إعادة الكتابة"));
+    const again = await writeCopy({ channel, lang, facts: ctx.facts, rules: ctx.rules, mode, modelKey: ctx.modelKey, signal: ctx.signal });
+    if (!tooShort(again.draft)) res = again;
+  }
   let draft = res.draft;
   let comp = runComputedChecks(draft, { channel, lang, facts: ctx.facts, rules: ctx.rules });
   let revised = false;
@@ -216,7 +223,8 @@ export async function produceVariant(o: {
     });
     const comp2 = runComputedChecks(r2.draft, { channel, lang, facts: ctx.facts, rules: ctx.rules });
     const score = (fs: typeof comp.flags) => fs.reduce((a, f) => a + (f.severity === "critical" ? 9 : f.severity === "major" ? 3 : 1), 0);
-    if (score(comp2.flags) <= score(comp.flags)) {
+    // Never trade a complete draft for a truncated "repair".
+    if (!tooShort(r2.draft) && (tooShort(draft) || score(comp2.flags) <= score(comp.flags))) {
       draft = r2.draft;
       comp = comp2;
       res = r2;

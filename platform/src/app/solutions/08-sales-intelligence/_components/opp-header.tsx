@@ -4,7 +4,7 @@ import { ArrowRight, MapPin } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useFormat, useL } from "@/lib/i18n";
 import { StatusPill } from "@/components/narvo/status";
-import { Avatar, STAGE_LABEL, useMoney } from "./bits";
+import { Avatar, STAGE_LABEL, useMoney, personName } from "./bits";
 import { arDays, type OppHealth } from "../_lib/calc";
 import type { Account, Opportunity, Quote } from "../_lib/types";
 
@@ -64,10 +64,10 @@ export function OppHeader({ opp, account, health, quote }: { opp: Opportunity; a
           )}
           <Avatar name={opp.owner} />
           <span className="text-[12px] leading-tight">
-            <span className="block font-medium">{opp.owner}</span>
+            <span className="block font-medium">{personName(opp.owner, L)}</span>
             {opp.previousOwner && opp.ownerChangedAt && (
               <span className={cn("block text-[11px] text-muted-foreground")}>
-                {L({ en: `from ${opp.previousOwner} · ${f.date(opp.ownerChangedAt, { day: "numeric", month: "short" })}`, ar: `من ${opp.previousOwner} · ${f.date(opp.ownerChangedAt, { day: "numeric", month: "short" })}` })}
+                {L({ en: `from ${opp.previousOwner} · ${f.date(opp.ownerChangedAt, { day: "numeric", month: "short" })}`, ar: `من ${personName(opp.previousOwner, L)} · ${f.date(opp.ownerChangedAt, { day: "numeric", month: "short" })}` })}
               </span>
             )}
           </span>

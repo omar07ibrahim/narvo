@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { useL, useFormat } from "@/lib/i18n";
 import { Input } from "@/components/ui/input";
 import { StatusPill } from "@/components/narvo/status";
-import { Avatar, STAGE_LABEL, useMoney } from "./bits";
+import { Avatar, personName, STAGE_LABEL, useMoney } from "./bits";
 import { arDays, detectConflicts, oppHealth, type OppHealth } from "../_lib/calc";
 import type { Opportunity, SalesData, Stage } from "../_lib/types";
 
@@ -74,7 +74,7 @@ export function FilterBar({
               filter.owner === o ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground",
             )}
           >
-            {o === "all" ? L({ en: "All owners", ar: "كل المسؤولين" }) : compact ? o.split(" ")[0] : o}
+            {o === "all" ? L({ en: "All owners", ar: "كل المسؤولين" }) : compact ? personName(o, L).split(" ")[0] : personName(o, L)}
           </button>
         ))}
       </div>
@@ -162,7 +162,7 @@ function OppCard({ row, onOpen, selected }: { row: OppRow; onOpen: (id: string) 
       {!closed && (
         <div className={cn("mt-2 line-clamp-1 text-[11.5px]", h.nextStepOverdue ? "text-danger" : "text-muted-foreground")} dir="auto">
           {opp.nextStepDate ? `${f.date(opp.nextStepDate, { day: "numeric", month: "short" })} · ` : ""}
-          {opp.nextStep}
+          {L({ en: opp.nextStep, ar: opp.nextStepAr || opp.nextStep })}
         </div>
       )}
       {(h.stalled || newOwner || row.highConflicts > 0) && !closed && (

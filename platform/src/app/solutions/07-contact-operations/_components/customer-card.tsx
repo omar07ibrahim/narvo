@@ -5,13 +5,38 @@ import { useL, useFormat } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { StatusPill } from "@/components/narvo/status";
 import { CENTRES, INTENT_LABEL, maskEid, maskMobile, type ConsoleData, type SessionState, type Signals } from "../_lib/types";
-import { ChannelIcon, RecordStatus, SentimentMeter, initials, langLabel } from "./bits";
+import { ChannelIcon, RecordStatus, SentimentMeter, initials, isolateNums, langLabel } from "./bits";
 
 const FACTORS: Array<{ key: string; en: string; ar: string }> = [
   { key: "registered_mobile", en: "Registered mobile (caller ID / WhatsApp)", ar: "الرقم المسجّل (هوية المتصل / واتساب)" },
   { key: "emirates_id", en: "Emirates ID number", ar: "رقم الهوية الإماراتية" },
   { key: "reference_dob", en: "Case / permit number + date of birth", ar: "رقم الطلب أو الرخصة مع تاريخ الميلاد" },
 ];
+
+/* Arabic rendering for record details that come from other modules' English data (districts, officers, missing items). */
+const DISTRICT_AR: Record<string, string> = {
+  "MN-01": "وسط المدينة",
+  "MN-02": "المرجان",
+  "MN-03": "جزيرة اللؤلؤ",
+  "MN-04": "حدائق الواحة",
+  "MN-05": "رأس المرسى الصناعية",
+  "MN-06": "السدر السكنية",
+  "MN-07": "مجتمع الغاف",
+  "MN-08": "حي المارينا",
+};
+const OFFICER_AR: Record<string, string> = { "Khalfan Mohammed Al Ali": "خلفان محمد العلي", "Mariam Saeed Al Kaabi": "مريم سعيد الكعبي" };
+function missingAr(item: string) {
+  const date = item.match(/dated (\d{1,2}) (\w{3})\w* (\d{4})/);
+  const months: Record<string, string> = { Jan: "يناير", Feb: "فبراير", Mar: "مارس", Apr: "أبريل", May: "مايو", Jun: "يونيو", Jul: "يوليو", Aug: "أغسطس", Sep: "سبتمبر", Oct: "أكتوبر", Nov: "نوفمبر", Dec: "ديسمبر" };
+  if (/salary certificate/i.test(item))
+    return `شهادة راتب صادرة خلال آخر 30 يوماً${date ? ` (الشهادة المقدمة بتاريخ ${date[1]} ${months[date[2]] ?? date[2]} ${date[3]})` : ""}`;
+  if (/no property/i.test(item)) return "شهادة عدم ملكية عقار من دائرة الأراضي";
+  if (/spouse/i.test(item) && /emirates id/i.test(item)) return "الهوية الإماراتية للزوج/الزوجة";
+  if (/family book/i.test(item)) return "نسخة كاملة من خلاصة القيد";
+  if (/bank statement/i.test(item)) return "كشف حساب بنكي لستة أشهر";
+  if (/marriage/i.test(item)) return "عقد الزواج";
+  return item;
+}
 
 export function VerificationBadge({ level }: { level: SessionState["level"] }) {
   const L = useL();
@@ -77,23 +102,27 @@ export function CustomerCard({
           {c ? initials(c.name) : <UserRound className="size-4" />}
         </span>
         <div className="min-w-0 flex-1">
-          <div className="truncate text-[14px] font-medium leading-tight">
+          <div className="text-[14px] font-medium leading-snug text-pretty">
             {c ? c.name : L({ en: "Unidentified caller", ar: "متصل غير معروف" })}
           </div>
           {c?.nameAr && <div className="truncate text-[12.5px] text-muted-foreground" dir="rtl">{c.nameAr}</div>}
-          <div className="mt-1 flex flex-wrap items-center gap-1.5 text-[11px] text-muted-foreground">
+          <div className="mt-1 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11px] text-muted-foreground">
             {c ? (
               <>
-                <span className="num">{maskMobile(c.mobile)}</span>
+                <span className="num whitespace-nowrap" dir="ltr">{maskMobile(c.mobile)}</span>
                 <span className="text-faint">·</span>
-                <span className="num">{maskEid(c.emiratesId)}</span>
+                <span className="num whitespace-nowrap" dir="ltr">{maskEid(c.emiratesId)}</span>
               </>
             ) : (
-              <span className="num">{ani ? maskMobile(ani) : L({ en: "Number withheld", ar: "رقم محجوب" })}</span>
+              <span className="num whitespace-nowrap" dir={ani ? "ltr" : undefined}>{ani ? maskMobile(ani) : L({ en: "Number withheld", ar: "رقم محجوب" })}</span>
             )}
           </div>
+          {session && (
+            <div className="mt-2">
+              <VerificationBadge level={level} />
+            </div>
+          )}
         </div>
-        {session && <VerificationBadge level={level} />}
       </div>
 
       {session && !compact && (
@@ -140,7 +169,11 @@ export function CustomerCard({
             </div>
             <div>
               <div className="label-caps !text-[9.5px]">{L({ en: "District", ar: "المنطقة" })}</div>
-              <div className="mt-0.5 truncate">{c.district ?? "—"}</div>
+              <div className="mt-0.5 truncate">
+                {c.district
+                  ? L({ en: c.district, ar: `${DISTRICT_AR[c.district.slice(0, 5)] ?? c.district.slice(6)} (${c.district.slice(0, 5)})` })
+                  : "—"}
+              </div>
             </div>
             <div>
               <div className="label-caps !text-[9.5px]">{L({ en: "Contacts · 7 days", ar: "الاتصالات · 7 أيام" })}</div>
@@ -149,10 +182,10 @@ export function CustomerCard({
           </div>
           {!!c.flags?.length && (
             <div className="space-y-1">
-              {c.flags.map((fl) => (
+              {c.flags.map((fl, i) => (
                 <div key={fl} className="flex items-start gap-1.5 rounded-md bg-warning-soft/70 px-2 py-1.5 text-[11.5px] text-warning">
                   <Flag className="mt-px size-3 shrink-0" />
-                  {fl}
+                  <span dir="auto">{isolateNums(L({ en: fl, ar: c.flagsAr?.[i] ?? fl }))}</span>
                 </div>
               ))}
             </div>
@@ -186,12 +219,14 @@ export function CustomerCard({
                 <div className="mt-1 text-[11.5px] text-muted-foreground">
                   {L({ en: k.track === "loan" ? "Housing loan" : "Housing grant", ar: k.track === "loan" ? "قرض سكني" : "منحة سكنية" })} ·{" "}
                   <span className="num">{f.aed(k.amountRequested)}</span>
-                  {k.officer ? ` · ${k.officer}` : ""}
+                  {k.officer ? ` · ${L({ en: k.officer, ar: OFFICER_AR[k.officer] ?? k.officer })}` : ""}
                 </div>
                 {!!(k.missing as string[] | undefined)?.length && (
                   <ul className="mt-1 space-y-0.5">
                     {(k.missing as string[]).map((m) => (
-                      <li key={m} className="text-[11px] leading-snug text-warning">— {m}</li>
+                      <li key={m} className="text-[11px] leading-snug text-warning" dir="auto">
+                        — {L({ en: m, ar: missingAr(m) })}
+                      </li>
                     ))}
                   </ul>
                 )}
@@ -255,10 +290,22 @@ export function CustomerCard({
                   <div className="flex items-center justify-between gap-2">
                     <span className="text-muted-foreground">{f.date(p.at, { day: "numeric", month: "short" })}</span>
                     <span className={cn("text-[10.5px]", p.outcome === "resolved" ? "text-success" : p.outcome.startsWith("handoff") ? "text-info" : "text-warning")}>
-                      {p.outcome.replace(/_/g, " ")}
+                      {L(
+                        (
+                          {
+                            resolved: { en: "resolved", ar: "تم الحل" },
+                            handoff: { en: "handoff", ar: "إحالة" },
+                            handoff_resolved: { en: "handoff resolved", ar: "أُحيل وحُلّ" },
+                            handoff_open: { en: "with agent", ar: "مع موظف" },
+                            unresolved: { en: "unresolved", ar: "لم يُحل" },
+                            abandoned: { en: "abandoned", ar: "متروك" },
+                            in_progress: { en: "in progress", ar: "قيد المعالجة" },
+                          } as Record<string, { en: string; ar: string }>
+                        )[p.outcome] ?? { en: p.outcome.replace(/_/g, " "), ar: p.outcome.replace(/_/g, " ") },
+                      )}
                     </span>
                   </div>
-                  <p className="line-clamp-2 leading-snug" dir="auto">{p.summary}</p>
+                  <p className="line-clamp-2 leading-snug" dir="auto">{isolateNums(p.summary)}</p>
                 </div>
               </li>
             ))}

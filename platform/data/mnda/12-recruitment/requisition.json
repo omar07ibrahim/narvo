@@ -5,17 +5,22 @@
   "department": "Planning & Building Permits",
   "departmentAr": "إدارة التخطيط ورخص البناء",
   "grade": "Grade 11 — Senior Professional",
+  "gradeAr": "الدرجة 11 — اختصاصي أول",
   "location": "MNDA Tower, Corniche Road, Downtown (MN-01)",
+  "locationAr": "برج الهيئة، شارع الكورنيش، وسط المدينة (MN-01)",
   "contract": "Full-time · permanent",
+  "contractAr": "دوام كامل · وظيفة دائمة",
   "postedAt": "2026-09-07",
   "closedAt": "2026-09-28",
   "openings": 1,
   "hiringManager": {
     "name": "Eng. Omar Yousef Al Hammadi",
+    "nameAr": "م. عمر يوسف الحمادي",
     "title": "Director, Planning & Building Permits"
   },
   "hr": {
     "name": "Maryam Hassan Al Shamsi",
+    "nameAr": "مريم حسن الشامسي",
     "title": "Director, Human Capital"
   },
   "recruiter": {

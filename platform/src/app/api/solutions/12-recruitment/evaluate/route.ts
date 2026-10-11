@@ -20,7 +20,7 @@ export const maxDuration = 300;
 
 /**
  * Evaluate every application that met the minimum requirements:
- *   fairness guard (redaction + leak scan) → per-criterion rating with verbatim evidence (4 in parallel)
+ *   fairness guard (redaction + leak scan) → per-criterion rating with verbatim evidence (6 in parallel)
  *   → computed weighted score → reasoned priority list (streamed). HR decides; the AI only prepares.
  */
 export async function POST(req: Request) {

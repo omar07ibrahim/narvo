@@ -21,7 +21,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sh
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { INTENT_LABEL, SEPTEMBER_BASELINE, type ConsoleData, type Conversation, type Intent } from "../_lib/types";
-import { ChannelIcon, channelLabel, fmtDuration } from "./bits";
+import { ChannelIcon, channelLabel, fmtDuration, isolateNums } from "./bits";
 
 interface Theme {
   title: string;
@@ -168,7 +168,7 @@ export function Supervisor({ data, refresh }: { data: ConsoleData & { approvals?
         <span>{L({ en: "Phone wait", ar: "انتظار الهاتف" })} <span className="num font-medium text-foreground">{SEPTEMBER_BASELINE.phoneWait}</span></span>
         <span>{L({ en: "Abandonment", ar: "الاتصالات المتروكة" })} <span className="num font-medium text-foreground">{SEPTEMBER_BASELINE.abandonment}%</span></span>
         <span>{L({ en: "Repeat within 7 days", ar: "التكرار خلال 7 أيام" })} <span className="num font-medium text-foreground">{SEPTEMBER_BASELINE.repeat7d}%</span></span>
-        <span>{L({ en: "Cost per contact", ar: "تكلفة الاتصال" })} <span className="num font-medium text-foreground">AED {SEPTEMBER_BASELINE.costPerContact.toFixed(2)}</span></span>
+        <span>{L({ en: "Cost per contact", ar: "تكلفة الاتصال" })} <span className="num font-medium text-foreground">{L({ en: `AED ${SEPTEMBER_BASELINE.costPerContact.toFixed(2)}`, ar: `${SEPTEMBER_BASELINE.costPerContact.toFixed(2)} درهم` })}</span></span>
       </div>
 
       <div className="grid grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] gap-4 max-lg:grid-cols-1">
@@ -264,8 +264,10 @@ export function Supervisor({ data, refresh }: { data: ConsoleData & { approvals?
                     >
                       <Quote className="mt-0.5 size-3 shrink-0 text-faint" />
                       <span className="min-w-0 flex-1" dir="auto">
-                        {qq.quote}
-                        <span className="ms-1.5 font-mono text-[10px] text-faint">{qq.conversationId}</span>
+                        {isolateNums(qq.quote)}
+                        <span className="ms-1.5 inline-block font-mono text-[10px] whitespace-nowrap text-faint" dir="ltr">
+                          {qq.conversationId}
+                        </span>
                       </span>
                     </button>
                   ))}

@@ -24,6 +24,8 @@ export interface Opportunity {
   quoteId: string | null;
   customerDocId?: string;
   nextStep: string;
+  /** Arabic rendering of the seeded next step; cleared when the next step is updated through NARVO. */
+  nextStepAr?: string | null;
   nextStepDate: string | null;
   products: string[];
   deliveryWindow?: string;
@@ -183,6 +185,7 @@ export interface Handover {
   effective: string;
   approvedBy: string;
   reason: string;
+  reasonAr?: string;
   accountIds: string[];
   handoverNoteId: string;
   dueBy: string;

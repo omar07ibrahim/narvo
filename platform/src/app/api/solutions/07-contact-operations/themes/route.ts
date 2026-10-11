@@ -73,7 +73,11 @@ export async function POST(req: Request) {
         .join("\n\n");
       s1.done(`${Math.round(corpus.length / 1000)}k ${lang === "ar" ? "حرف" : "characters"}`);
 
-      const s2 = emit.step("cluster", lang === "ar" ? "تجميع المحادثات في محاور ناشئة" : "Clustering into emerging themes");
+      const s2 = emit.step(
+        "cluster",
+        lang === "ar" ? "تجميع المحادثات في محاور ناشئة" : "Clustering into emerging themes",
+        lang === "ar" ? `${convs.length} محادثة في استدعاء واحد — عادةً نحو دقيقة` : `${convs.length} transcripts in one pass — usually about a minute`,
+      );
       const { object: found } = await generateObject({
         schema: themeSchema,
         name: "contact_themes",
@@ -160,9 +164,13 @@ export async function POST(req: Request) {
       const draftId = `KB-DRAFT-${String(Date.now()).slice(-5)}`;
       const approval = createApproval({
         solution: SLUG,
-        title: `Publish FAQ update — ${article.title}`,
-        summary: `${article.question} · Evidence: ${target.count} of ${convs.length} recent contacts. ${article.rationale}`.slice(0, 420),
-        actionLabel: "Approve & add to knowledge drafts",
+        title: lang === "ar" ? `نشر تحديث للأسئلة الشائعة — ${article.titleAr}` : `Publish FAQ update — ${article.title}`,
+        // The rationale usually restates the evidence count — only add it when it does not.
+        summary: (lang === "ar"
+          ? `${article.questionAr} · الأدلة: ${target.count} من ${convs.length} محادثة حديثة.`
+          : `${article.question} · ${article.rationale.includes(`${target.count} of`) ? article.rationale : `Evidence: ${target.count} of ${convs.length} recent contacts. ${article.rationale}`}`
+        ).slice(0, 420),
+        actionLabel: lang === "ar" ? "اعتماد وإضافة إلى مسودات المعرفة" : "Approve & add to knowledge drafts",
         approver: CHC_MANAGER,
         effects: [
           {

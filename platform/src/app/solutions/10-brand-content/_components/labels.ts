@@ -2,7 +2,7 @@ import type { Tone } from "@/components/narvo/status";
 import type { Bi, CellStatus, FlagCategory, Severity, Verdict } from "../_lib/types";
 
 export const STATUS_LABEL: Record<CellStatus, Bi> = {
-  empty: { en: "Empty", ar: "فارغة" },
+  empty: { en: "Not drafted", ar: "لم تُكتب" },
   generating: { en: "Generating", ar: "قيد الإنتاج" },
   draft: { en: "Draft", ar: "مسودة" },
   flagged: { en: "Flagged", ar: "عليها ملاحظات" },

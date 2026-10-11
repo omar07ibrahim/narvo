@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { readBody } from "@/lib/ai/stream";
+import { getPrefs } from "@/lib/ai/request";
 import { addAudit, createApproval, type Effect } from "@/lib/store/db";
 import { COL_INTERACTIONS, COL_OPPS, findOpp, loadSalesData, SLUG } from "@/app/solutions/08-sales-intelligence/_lib/records";
 import { checkDraft, detectConflicts } from "@/app/solutions/08-sales-intelligence/_lib/calc";
@@ -50,7 +51,10 @@ function demoTimestamp(today: string) {
  * On approval the CRM is updated: interaction logged + opportunity next step / stage / probability changed.
  */
 export async function POST(req: Request) {
-  const parsed = input.safeParse(await readBody(req));
+  const raw = await readBody<Record<string, unknown>>(req);
+  const { lang } = getPrefs(req, raw);
+  const ar = lang === "ar";
+  const parsed = input.safeParse(raw);
   if (!parsed.success) return Response.json({ error: parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; ") }, { status: 400 });
   const a = parsed.data;
   const data = loadSalesData();
@@ -102,6 +106,7 @@ export async function POST(req: Request) {
 
   const patch: Record<string, unknown> = {
     nextStep: a.crmUpdate.nextStep,
+    nextStepAr: null,
     nextStepDate: a.crmUpdate.nextStepDate,
     lastUpdatedBy: `${opp.owner} via NARVO`,
   };
@@ -128,8 +133,15 @@ export async function POST(req: Request) {
   ];
 
   const high = flags.filter((f) => f.severity === "high");
-  const summaryParts =
-    a.kind === "follow_up"
+  const summaryParts = ar
+    ? a.kind === "follow_up"
+      ? [
+          `${a.draft!.channel === "whatsapp" ? "واتساب" : "بريد"} إلى ${a.draft!.to}: ${a.draft!.body.replace(/\s+/g, " ").slice(0, 220)}…`,
+          `النظام: الخطوة التالية ← «${a.crmUpdate.nextStep}» (${a.crmUpdate.nextStepDate}).`,
+          high.length ? `الضوابط: ${high.map((f) => f.message.ar).join(" ")}` : "الضوابط: ضمن الاتفاقية الإطارية وسياسة الائتمان.",
+        ]
+      : [`تسجيل رسالة واردة من ${a.inbound!.from}: ${a.inbound!.summary}`, `النظام: الخطوة التالية ← «${a.crmUpdate.nextStep}» (${a.crmUpdate.nextStepDate}).`]
+    : a.kind === "follow_up"
       ? [
           `${a.draft!.channel === "whatsapp" ? "WhatsApp" : "Email"} to ${a.draft!.to} (${a.draft!.language.toUpperCase()}): ${a.draft!.body.replace(/\s+/g, " ").slice(0, 220)}…`,
           `CRM: ${changes.join("; ")}.`,
@@ -139,9 +151,21 @@ export async function POST(req: Request) {
 
   const approval = createApproval({
     solution: SLUG,
-    title: a.kind === "follow_up" ? `Send follow-up & update CRM — ${account.name} · ${opp.id}` : `Log customer message & update CRM — ${account.name} · ${opp.id}`,
+    title: ar
+      ? a.kind === "follow_up"
+        ? `إرسال متابعة وتحديث نظام العملاء — ${account.nameAr} · ${opp.id}`
+        : `تسجيل رسالة المتعامل وتحديث نظام العملاء — ${account.nameAr} · ${opp.id}`
+      : a.kind === "follow_up"
+        ? `Send follow-up & update CRM — ${account.name} · ${opp.id}`
+        : `Log customer message & update CRM — ${account.name} · ${opp.id}`,
     summary: summaryParts.join(" "),
-    actionLabel: a.kind === "follow_up" ? "Approve & send" : "Approve & update CRM",
+    actionLabel: ar
+      ? a.kind === "follow_up"
+        ? "اعتماد وإرسال"
+        : "اعتماد وتحديث النظام"
+      : a.kind === "follow_up"
+        ? "Approve & send"
+        : "Approve & update CRM",
     approver: { name: director.name, title: director.role },
     requestedBy: opp.owner,
     effects,

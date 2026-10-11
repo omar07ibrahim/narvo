@@ -21,7 +21,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import type { ConsoleData, Handoff } from "../_lib/types";
 import { CustomerCard } from "./customer-card";
-import { ChannelIcon, channelLabel, fmtDuration } from "./bits";
+import { ChannelIcon, channelLabel, fmtDuration, isolateNums } from "./bits";
 
 const AGENT_NAME = "Aisha Salem Al Rumaithi";
 
@@ -191,7 +191,7 @@ export function AgentDesk({ data, refresh }: { data: ConsoleData; refresh: () =>
                 </StatusPill>
               </div>
               <div className="mt-2 text-[14px] font-medium" dir="auto">{current.intent}</div>
-              <p className="mt-1 text-[13px] leading-relaxed text-foreground/85" dir="auto">{current.summary}</p>
+              <p className="mt-1 text-[13px] leading-relaxed text-foreground/85" dir="auto">{isolateNums(current.summary)}</p>
               <div className="mt-3 grid grid-cols-2 gap-4 text-[12px] max-md:grid-cols-1">
                 <div>
                   <SectionLabel className="!mb-1">{L({ en: "Why handed over", ar: "سبب الإحالة" })}</SectionLabel>
@@ -239,7 +239,7 @@ export function AgentDesk({ data, refresh }: { data: ConsoleData; refresh: () =>
                         {t.role === "customer" ? current.customerName.split(" ")[0] : t.role === "assistant" ? L({ en: "AI assistant", ar: "المساعد الذكي" }) : t.author}
                         {t.at && <span className="num ms-1.5 text-faint">{f.time(t.at)}</span>}
                       </div>
-                      {t.role === "customer" ? <p className="whitespace-pre-wrap" dir="auto">{t.text}</p> : <Markdown>{t.text}</Markdown>}
+                      {t.role === "customer" ? <p className="whitespace-pre-wrap" dir="auto">{isolateNums(t.text)}</p> : <Markdown>{isolateNums(t.text)}</Markdown>}
                     </div>
                   </div>
                 ),
@@ -298,7 +298,14 @@ export function AgentDesk({ data, refresh }: { data: ConsoleData; refresh: () =>
               <div className="border-t border-border bg-success-soft/50 px-4 py-3 text-[12.5px]">
                 <div className="flex items-center gap-1.5 font-medium text-success">
                   <CheckCheck className="size-4" />
-                  {L({ en: "Resolved", ar: "تم الحل" })} · {current.resolution?.outcome.replace(/_/g, " ")}
+                  {L({ en: "Resolved", ar: "تم الحل" })} ·{" "}
+                  {L(
+                    current.resolution?.outcome === "escalated"
+                      ? { en: "escalated to the service department", ar: "رُفعت إلى الإدارة المختصة" }
+                      : current.resolution?.outcome === "callback_scheduled"
+                        ? { en: "call-back scheduled", ar: "جُدول اتصال لاحق" }
+                        : { en: "with the customer", ar: "مع المتعامل" },
+                  )}
                 </div>
                 {current.resolution?.note && <p className="mt-1 text-muted-foreground" dir="auto">{current.resolution.note}</p>}
                 <div className="mt-1 text-[11px] text-muted-foreground">

@@ -23,6 +23,10 @@
       "Repeat contact — 4 contacts in 12 days",
       "Open complaint CHC-2026-118204"
     ],
+    "flagsAr": [
+      "تواصل متكرر — 4 اتصالات خلال 12 يوماً",
+      "شكوى مفتوحة CHC-2026-118204"
+    ],
     "notes": "Believes he already sent the documents: on 28 Sep he emailed scans to housing@mnda.gov.ae instead of uploading them to the case. Clarification of 24 Sep still open — 15-working-day window ends Thu 15 Oct 2026.",
     "history": [
       {
@@ -279,6 +283,9 @@
     "flags": [
       "Widowed head of household — offer priority service at centres"
     ],
+    "flagsAr": [
+      "أرملة وربة أسرة — تُقدَّم لها الخدمة ذات الأولوية في المراكز"
+    ],
     "notes": "",
     "history": [
       {
@@ -404,6 +411,9 @@
     ],
     "flags": [
       "No-show APT-26-40352 (2 Oct, Al Murjan)"
+    ],
+    "flagsAr": [
+      "لم يحضر الموعد APT-26-40352 (2 أكتوبر، المرجان)"
     ],
     "notes": "First clarification (16 Sep) asked for the family book generically; second request (29 Sep) specified the children's pages. MNDA employee — Facilities & Assets.",
     "history": [
@@ -564,6 +574,9 @@
     "flags": [
       "Disputes not-approved decision of 3 Oct 2026"
     ],
+    "flagsAr": [
+      "يعترض على قرار عدم الموافقة الصادر في 3 أكتوبر 2026"
+    ],
     "notes": "States the villa registered in 2019 was transferred to his brother in 2024; agent advised submitting the transfer deed with a reconsideration request.",
     "history": [
       {
@@ -635,6 +648,10 @@
     "flags": [
       "Open handoff HO-2610-0031 — high priority",
       "Repeat contact — 2 contacts in 5 days"
+    ],
+    "flagsAr": [
+      "إحالة مفتوحة HO-2610-0031 — أولوية عالية",
+      "تواصل متكرر — اتصالان خلال 5 أيام"
     ],
     "notes": "Clarification sent 29 Sep — 15-working-day window ends 20 Oct 2026. Employer HR (Marsa Al Noor Electricity & Water Company) says a new salary certificate takes about 5 working days.",
     "history": [
@@ -822,6 +839,9 @@
     "flags": [
       "3 active permit applications — consultant Bayt Al Handasa (Rajesh Iyer)"
     ],
+    "flagsAr": [
+      "3 طلبات رخص نشطة — الاستشاري بيت الهندسة (راجيش آيير)"
+    ],
     "notes": "Private investor building villas on Lulu Island and Al Sidr. Prefers that technical questions go to his consultant.",
     "history": [
       {
@@ -863,6 +883,10 @@
     "flags": [
       "Consultant contact — acts for owner CUS-318862",
       "Escalation requested 9 Oct — HO-2610-0032"
+    ],
+    "flagsAr": [
+      "جهة استشارية — تمثّل المالك CUS-318862",
+      "طلب تصعيد في 9 أكتوبر — HO-2610-0032"
     ],
     "notes": "Senior Project Engineer, Bayt Al Handasa Engineering Consultants (MNDA-registered consultancy). Registered contact on the permit files of Abdulla Rashed Al Ameri.",
     "history": [
@@ -957,6 +981,9 @@
     "flags": [
       "Open complaint CHC-2026-118236 — NOC delay"
     ],
+    "flagsAr": [
+      "شكوى مفتوحة CHC-2026-118236 — تأخر شهادة عدم الممانعة"
+    ],
     "notes": "Owns a G+3 building in Downtown (completion certificate in progress) and is building a villa on Lulu Island.",
     "history": [
       {
@@ -996,6 +1023,9 @@
     "flags": [
       "Duplicate payment AED 800 — refund awaiting CHC Manager approval (HO-2610-0033)"
     ],
+    "flagsAr": [
+      "دفع مكرر 800 درهم — الاسترداد بانتظار اعتماد مديرة المركز (HO-2610-0033)"
+    ],
     "notes": "Dentist; fit-out of clinic unit in Marina Quarter. Paid the fit-out fee twice on 22 Sep (payment page timed out).",
     "history": [
       {
@@ -1034,6 +1064,9 @@
     "ticketIds": [],
     "flags": [
       "Returned application — NOC expired"
+    ],
+    "flagsAr": [
+      "طلب مُعاد — انتهت صلاحية شهادة عدم الممانعة"
     ],
     "notes": "",
     "history": [

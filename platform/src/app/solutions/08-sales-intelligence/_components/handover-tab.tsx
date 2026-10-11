@@ -10,7 +10,7 @@ import { Markdown } from "@/components/narvo/markdown";
 import { RunButton } from "@/components/narvo/run-button";
 import { StatusPill, type Tone } from "@/components/narvo/status";
 import { EmptyState, ThinkingLines } from "@/components/narvo/empty";
-import { Avatar, Block, ErrorBox, normCites, SourceChips, timeAgoLabel } from "./bits";
+import { Avatar, Block, ErrorBox, normCites, SourceChips, timeAgoLabel, personName } from "./bits";
 import { shortName } from "./pipeline";
 import type { Account, CachedResult, Handover, HandoverAnalysis, Interaction, Opportunity } from "../_lib/types";
 
@@ -59,7 +59,7 @@ export function HandoverTab({
             <div className="flex items-center gap-2">
               <Avatar name={handover.from} tone="muted" className="size-8 text-[11px]" />
               <div className="text-[12.5px] leading-tight">
-                <div className="font-medium">{handover.from}</div>
+                <div className="font-medium">{personName(handover.from, L)}</div>
                 <div className="text-[11px] text-muted-foreground">{L({ en: "Outgoing KAM", ar: "المسؤول السابق" })}</div>
               </div>
             </div>
@@ -67,7 +67,7 @@ export function HandoverTab({
             <div className="flex items-center gap-2">
               <Avatar name={handover.to} className="size-8 text-[11px]" />
               <div className="text-[12.5px] leading-tight">
-                <div className="font-medium">{handover.to}</div>
+                <div className="font-medium">{personName(handover.to, L)}</div>
                 <div className="text-[11px] text-muted-foreground">{L({ en: "Incoming KAM", ar: "المسؤولة الجديدة" })}</div>
               </div>
             </div>
@@ -76,11 +76,11 @@ export function HandoverTab({
                 {L({ en: "Effective", ar: "اعتباراً من" })} <span className="num text-foreground">{f.date(handover.effective)}</span>
               </div>
               <div>
-                {L({ en: "Approved by", ar: "اعتمده" })} <span className="text-foreground">{handover.approvedBy}</span>
+                {L({ en: "Approved by", ar: "اعتمده" })} <span className="text-foreground">{personName(handover.approvedBy, L)}</span>
               </div>
             </div>
           </div>
-          <p className="mt-3 text-[12px] text-muted-foreground">{handover.reason}</p>
+          <p className="mt-3 text-[12px] text-muted-foreground">{L({ en: handover.reason, ar: handover.reasonAr ?? handover.reason })}</p>
           <div className="mt-2 flex flex-wrap gap-1">
             {moved.map((a) => (
               <span key={a.id} className={cn("rounded border border-border px-1.5 py-0.5 text-[11px]", a.id === opp.accountId ? "border-ai/40 bg-ai-soft text-ai" : "text-muted-foreground")} dir="auto">
@@ -108,7 +108,7 @@ export function HandoverTab({
           <p className="text-[12.5px] text-muted-foreground">
             {L({
               en: `No ownership change on this account — ${opp.owner} has owned it throughout. A coverage pack can still be prepared (e.g. for leave cover).`,
-              ar: `لا يوجد تغيير في المسؤول عن هذا الحساب — ${opp.owner} مسؤول عنه منذ البداية. يمكن مع ذلك إعداد حزمة تغطية (مثلاً أثناء الإجازة).`,
+              ar: `لا يوجد تغيير في المسؤول عن هذا الحساب — ${personName(opp.owner, L)} مسؤول عنه منذ البداية. يمكن مع ذلك إعداد حزمة تغطية (مثلاً أثناء الإجازة).`,
             })}
           </p>
         </Block>

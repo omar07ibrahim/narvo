@@ -1,4 +1,5 @@
 import { addAudit, createApproval, kvSet } from "@/lib/store/db";
+import { getPrefs } from "@/lib/ai/request";
 import {
   HIRING_MANAGER,
   HR_DIRECTOR,
@@ -47,12 +48,18 @@ export async function POST(req: Request) {
       subject: `MNDA-HR-REQ-2026-077 · ${shortlist.length} finalists`,
       detail: lines.join(", "),
     });
+    const ar = getPrefs(req, body as Record<string, unknown>).lang === "ar";
+    const linesAr = lines.map((l) => l.replace(/^Candidate /, "المرشح "));
     const approval = createApproval({
       solution: SLUG,
-      title: `Approve shortlist — ${req0.title} (${shortlist.length} finalists)`,
-      summary: `HR selected ${shortlist.length} of ${passing} applications that met the minimum requirements (86 received). Weighted scores: ${lines.join(", ")}. Evaluation used job-related criteria only; protected attributes were redacted before AI review.`,
-      actionLabel: "Approve shortlist",
-      approver: HIRING_MANAGER,
+      title: ar
+        ? `اعتماد القائمة المختصرة — ${req0.titleAr ?? req0.title} (${shortlist.length} مرشحين نهائيين)`
+        : `Approve shortlist — ${req0.title} (${shortlist.length} finalists)`,
+      summary: ar
+        ? `اختارت الموارد البشرية ${shortlist.length} من ${passing} طلباً استوفت الحد الأدنى (من أصل 86 طلباً). الدرجات الموزونة: ${linesAr.join("، ")}. اعتمد التقييم على معايير مرتبطة بالوظيفة فقط، وحُجبت السمات المحمية قبل مراجعة الذكاء الاصطناعي.`
+        : `HR selected ${shortlist.length} of ${passing} applications that met the minimum requirements (86 received). Weighted scores: ${lines.join(", ")}. Evaluation used job-related criteria only; protected attributes were redacted before AI review.`,
+      actionLabel: ar ? "اعتماد القائمة المختصرة" : "Approve shortlist",
+      approver: ar ? { name: "م. عمر يوسف الحمادي", title: "مدير إدارة التخطيط ورخص البناء" } : HIRING_MANAGER,
       requestedBy: HR_DIRECTOR.name,
       effects: [
         { type: "patch", collection: REQ_COL, id: req0.id, patch: { stage: "shortlist_approved", shortlist, shortlistApprovedAt: new Date().toISOString() } },

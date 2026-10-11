@@ -308,7 +308,7 @@ export function VariantDetail({
           />
           <Metric label={L({ en: "Hashtags", ar: "الوسوم" })} value={String(m.hashtags)} limit={limits.maxHashtags != null ? String(channel.hashtags ? limits.maxHashtags : 0) : undefined} bad={limits.maxHashtags != null && m.hashtags > (channel.hashtags ? limits.maxHashtags : 0)} />
           <Metric label={L({ en: "Emoji", ar: "رموز" })} value={String(m.emoji)} limit={limits.maxEmoji != null ? String(limits.maxEmoji) : undefined} bad={limits.maxEmoji != null && m.emoji > limits.maxEmoji} />
-          <Metric label="!" value={String(m.exclamations)} limit={limits.maxExclamation != null ? String(limits.maxExclamation) : undefined} bad={limits.maxExclamation != null && m.exclamations > limits.maxExclamation} />
+          <Metric label={L({ en: "Excl. marks", ar: "علامات التعجب" })} value={String(m.exclamations)} limit={limits.maxExclamation != null ? String(limits.maxExclamation) : undefined} bad={limits.maxExclamation != null && m.exclamations > limits.maxExclamation} />
         </div>
       )}
 
