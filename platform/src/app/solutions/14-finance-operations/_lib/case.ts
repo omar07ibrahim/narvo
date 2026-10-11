@@ -156,9 +156,22 @@ export function buildCitations(inv: Invoice, match: MatchResult, t: Treatment, c
     if (seen.has(key) || added >= 4) continue;
     seen.add(key);
     added++;
-    add({ docId: h.docId, title: h.title, ref: h.ref, section: h.section, quote: h.text.length > 700 ? h.text.slice(0, 700) + "…" : h.text });
+    const text = mdPlain(h.text);
+    add({ docId: h.docId, title: h.title, ref: h.ref, section: h.section, quote: text.length > 700 ? text.slice(0, 700) + "…" : text });
   }
   return out;
+}
+
+/** Policy passages are Markdown; citation cards show plain text (table rows as "cell — cell", no separator rows). */
+function mdPlain(md: string): string {
+  return md
+    .split("\n")
+    .filter((l) => !/^\s*\|?\s*:?-{3,}/.test(l))
+    .map((l) => (l.trim().startsWith("|") ? l.split("|").map((c) => c.trim()).filter(Boolean).join(" — ") : l))
+    .join("\n")
+    .replace(/\*\*/g, "")
+    .replace(/^#+\s*/gm, "")
+    .trim();
 }
 
 /** What the supplier is asked to do — computed facts the email must state. */

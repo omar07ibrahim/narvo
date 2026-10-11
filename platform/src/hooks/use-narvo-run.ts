@@ -181,7 +181,16 @@ export function useNarvoRun() {
 
   /** Update local approval status after the user decides inline. */
   const markApproval = useCallback((id: string, status: ApprovalSummary["status"]) => {
-    setState((s) => ({ ...s, approvals: s.approvals.map((a) => (a.id === id ? { ...a, status } : a)) }));
+    setState((s) => ({
+      ...s,
+      approvals: s.approvals.map((a) => (a.id === id ? { ...a, status } : a)),
+      // The tool step that requested this approval now shows the human decision.
+      trace: s.trace.map((t) =>
+        t.kind === "tool" && t.status === "awaiting_approval" && (t.output as { approvalId?: string } | undefined)?.approvalId === id
+          ? { ...t, status: status === "approved" ? "done" : status === "rejected" ? "error" : t.status }
+          : t,
+      ),
+    }));
   }, []);
 
   return { ...state, start, reset, abort, markApproval, running: state.status === "running" };

@@ -185,7 +185,7 @@ function SupplierClar({
                   </span>
                 </button>
               )}
-              <Textarea value={text} onChange={(e) => setText(e.target.value)} placeholder={L({ en: "Paste the supplier's clarification response…", ar: "الصق رد المورد على طلب الاستيضاح…" })} className="min-h-28 text-[12px]" dir="auto" />
+              <Textarea value={text} onChange={(e) => setText(e.target.value)} placeholder={L({ en: "Paste the supplier's clarification response…", ar: "الصق رد المورد على طلب الاستيضاح…" })} className="min-h-28 max-h-[280px] overflow-y-auto text-[12px]" dir="auto" />
               <div className="flex justify-end">
                 <RunButton size="sm" running={answering} disabled={text.trim().length < 40 || respRun.running} onRun={() => onResponse(text)} icon={<Send />}>
                   {L({ en: "Evaluate response & update matrix", ar: "تقييم الرد وتحديث المصفوفة" })}
@@ -211,7 +211,7 @@ function SupplierClar({
               </ul>
               {issued.responseExcerpt && (
                 <p className="line-clamp-4 border-s-2 border-border-strong ps-2 text-[11.5px] text-muted-foreground" dir="auto">
-                  {issued.responseExcerpt}
+                  {issued.responseExcerpt.replace(/[#*_`>]+/g, "").replace(/\s+/g, " ").trim()}
                 </p>
               )}
             </div>

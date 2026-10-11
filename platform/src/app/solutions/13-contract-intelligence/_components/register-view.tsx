@@ -5,10 +5,11 @@ import { FileSearch, FileText, ListChecks, MessageSquareText, ScrollText } from 
 import { Button } from "@/components/ui/button";
 import { KeyValue } from "@/components/narvo/pane";
 import { StatusPill } from "@/components/narvo/status";
-import { useFormat, useL } from "@/lib/i18n";
+import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { obligationView, recurrenceLabel } from "../_lib/dates";
 import type { Bi, Contract, ContractState } from "../_lib/types";
+import { daysLong, daysShort, flagText, person } from "./fmt";
 
 export const CATEGORY: Record<Contract["category"], Bi> = {
   facilities: { en: "Facilities", ar: "المرافق" },
@@ -45,6 +46,7 @@ export function RegisterView({
 }) {
   const L = useL();
   const f = useFormat();
+  const { lang } = usePrefs();
   const [cat, setCat] = useState<"all" | Contract["category"]>("all");
   const views = useMemo(() => state.obligations.map((o) => obligationView(o, state.contracts)), [state]);
   const nextFor = (id: string) =>
@@ -56,7 +58,8 @@ export function RegisterView({
   const obs = views.filter((v) => v.o.contractId === c.id).sort((a, b) => ((a.due ?? "9") < (b.due ?? "9") ? -1 : 1));
 
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_360px] gap-4 max-xl:grid-cols-1">
+    <div className="@container">
+    <div className="grid grid-cols-1 gap-4 @2xl:grid-cols-[minmax(0,1fr)_300px] @4xl:grid-cols-[minmax(0,1fr)_340px]">
       <div className="min-w-0">
         <div className="mb-3 inline-flex flex-wrap rounded-md border border-border bg-surface p-0.5">
           {(["all", ...Object.keys(CATEGORY)] as const).map((k) => (
@@ -67,7 +70,7 @@ export function RegisterView({
               className={cn("rounded px-2.5 py-1 text-[12px]", cat === k ? "bg-card font-medium shadow-[0_0_0_1px_var(--border)]" : "text-muted-foreground hover:text-foreground")}
             >
               {k === "all" ? L({ en: "All", ar: "الكل" }) : L(CATEGORY[k as Contract["category"]])}
-              <span className="num ms-1 text-[11px] text-faint">{k === "all" ? state.contracts.length : state.contracts.filter((x) => x.category === k).length}</span>
+              <span className="num ms-1.5 text-[11px] text-faint">{k === "all" ? state.contracts.length : state.contracts.filter((x) => x.category === k).length}</span>
             </button>
           ))}
         </div>
@@ -76,9 +79,9 @@ export function RegisterView({
             <thead>
               <tr className="border-b border-border-strong bg-surface">
                 <th className="label-caps !text-[9.5px] px-3 py-2 text-start font-medium">{L({ en: "Contract", ar: "العقد" })}</th>
-                <th className="label-caps !text-[9.5px] w-[110px] px-3 py-2 text-end font-medium">{L({ en: "Annual value", ar: "القيمة السنوية" })}</th>
-                <th className="label-caps !text-[9.5px] w-[96px] px-3 py-2 text-start font-medium">{L({ en: "Expiry", ar: "الانتهاء" })}</th>
-                <th className="label-caps !text-[9.5px] w-[180px] px-3 py-2 text-start font-medium">{L({ en: "Next deadline", ar: "الموعد التالي" })}</th>
+                <th className="label-caps !text-[9.5px] w-[112px] px-3 py-2 text-end font-medium">{L({ en: "Value / yr", ar: "القيمة السنوية" })}</th>
+                <th className="label-caps !text-[9.5px] hidden w-[92px] px-3 py-2 text-start font-medium @4xl:table-cell">{L({ en: "Expiry", ar: "الانتهاء" })}</th>
+                <th className="label-caps !text-[9.5px] w-[132px] px-3 py-2 text-start font-medium @4xl:w-[168px]">{L({ en: "Next deadline", ar: "الموعد التالي" })}</th>
               </tr>
             </thead>
             <tbody>
@@ -90,20 +93,34 @@ export function RegisterView({
                       <div className="font-mono text-[10.5px] text-muted-foreground">{x.ref}</div>
                       <div className="mt-0.5 leading-snug font-medium">{L(x.title)}</div>
                       <div className="mt-0.5 text-[11.5px] text-muted-foreground">{x.counterparty}</div>
-                      <div className="mt-1 flex flex-wrap gap-1">
-                        {x.status === "draft" && <StatusPill tone="info">{L({ en: "Draft — vendor paper", ar: "مسودة — نموذج المورد" })}</StatusPill>}
-                        {x.status === "extended" && <StatusPill tone="neutral">{L({ en: "Extended", ar: "ممدد" })}</StatusPill>}
-                        {x.renewalDecision && <StatusPill tone="success">{x.renewalDecision.decision}</StatusPill>}
-                        {x.reviewStatus && <StatusPill tone="ai">{L({ en: "Redlines sent", ar: "أُرسلت التعديلات" })}</StatusPill>}
+                      {(x.status === "draft" || x.status === "extended" || x.renewalDecision || x.reviewStatus) && (
+                        <div className="mt-1 flex flex-wrap gap-1">
+                          {x.status === "draft" && <StatusPill tone="info">{L({ en: "Draft — vendor paper", ar: "مسودة — نموذج المورد" })}</StatusPill>}
+                          {x.status === "extended" && <StatusPill tone="neutral">{L({ en: "Extended", ar: "ممدد" })}</StatusPill>}
+                          {x.renewalDecision && <StatusPill tone="success">{x.renewalDecision.decision}</StatusPill>}
+                          {x.reviewStatus && <StatusPill tone="ai">{L({ en: "Redlines sent", ar: "أُرسلت التعديلات" })}</StatusPill>}
+                        </div>
+                      )}
+                    </td>
+                    <td className="px-3 py-2.5 text-end">
+                      {x.annualValue ? (
+                        <div className="num">{f.aed(x.annualValue)}</div>
+                      ) : (
+                        <>
+                          <div className="num text-muted-foreground">{f.aed(x.totalValue)}</div>
+                          <div className="text-[10.5px] text-faint">{L({ en: "lump sum", ar: "مبلغ مقطوع" })}</div>
+                        </>
+                      )}
+                      <div className="num mt-0.5 text-[11px] text-muted-foreground @4xl:hidden">
+                        {L({ en: "to", ar: "حتى" })} {f.date(x.end, { day: "numeric", month: "short", year: "2-digit" })}
                       </div>
                     </td>
-                    <td className="num px-3 py-2.5 text-end">{x.annualValue ? f.aed(x.annualValue) : <span className="text-muted-foreground">{f.aed(x.totalValue)} LS</span>}</td>
-                    <td className="num px-3 py-2.5">{f.date(x.end, { day: "numeric", month: "short", year: "2-digit" })}</td>
+                    <td className="num hidden px-3 py-2.5 whitespace-nowrap @4xl:table-cell">{f.date(x.end, { day: "numeric", month: "short", year: "2-digit" })}</td>
                     <td className="px-3 py-2.5">
                       {n ? (
                         <div>
                           <span className={cn("num text-[12px] font-medium", n.status === "overdue" ? "text-danger" : n.status === "due_soon" ? "text-warning" : "")}>
-                            {n.days! < 0 ? `${-n.days!} ${L({ en: "days overdue", ar: "يوماً تأخير" })}` : `${n.days} ${L({ en: "days", ar: "يوماً" })}`}
+                            {n.days! < 0 ? `${daysLong(-n.days!, lang)} ${L({ en: "overdue", ar: "تأخير" })}` : daysLong(n.days!, lang)}
                           </span>
                           <div className="truncate text-[11px] text-muted-foreground" title={L(n.o.title)}>
                             {L(n.o.title)}
@@ -140,16 +157,24 @@ export function RegisterView({
                   : `${c.renewal.type === "auto" ? L({ en: "Automatic", ar: "تلقائي" }) : L({ en: "Option", ar: "خيار" })} ${c.renewal.months} ${L({ en: "mo", ar: "شهراً" })} · ${L({ en: "notice", ar: "إشعار" })} ${c.renewal.noticeDays} ${L({ en: "days", ar: "يوماً" })}`
               }
             />
-            <KeyValue k={L({ en: "Contract owner", ar: "مالك العقد" })} v={<span className="text-[12px]">{c.owner}</span>} />
+            <KeyValue k={L({ en: "Contract owner", ar: "مالك العقد" })} v={<span className="text-[12px]">{person(c.owner, lang)}</span>} />
             {c.performanceSecurity && <KeyValue k={L({ en: "Performance security", ar: "ضمان حسن التنفيذ" })} v={<span className="num text-[12px]">{f.aed(c.performanceSecurity.amount)} · {f.date(c.performanceSecurity.expiry)}</span>} />}
           </div>
           {c.flags.length > 0 && (
             <div className="flex flex-wrap gap-1">
               {c.flags.map((fl) => (
-                <span key={fl} className="rounded border border-border bg-surface px-1.5 py-0.5 text-[11px] text-muted-foreground">
-                  {fl}
+                <span key={flagText(fl, "en")} className="rounded border border-border bg-surface px-1.5 py-0.5 text-[11px] text-muted-foreground">
+                  {flagText(fl, lang)}
                 </span>
               ))}
+            </div>
+          )}
+          {(c.reviewStatus || state.reviews[c.id]) && (
+            <div className="rounded-md border border-ai/20 bg-ai-soft/40 px-2.5 py-2 text-[11.5px] leading-snug">
+              <div className="label-caps !text-[9.5px] mb-0.5 text-ai">{L({ en: "Playbook review", ar: "مراجعة الدليل" })}</div>
+              {c.reviewStatus
+                ? L({ en: c.reviewStatus, ar: `اعتُمدت التعديلات (${state.reviews[c.id]?.findings.filter((x) => x.decision === "accepted").length ?? ""}) — أُرسلت إلى الطرف الآخر` })
+                : `${state.reviews[c.id]!.findings.filter((x) => x.status !== "compliant").length} ${L({ en: "flags", ar: "ملاحظة" })} · ${state.reviews[c.id]!.findings.filter((x) => x.decision).length} ${L({ en: "decided", ar: "محسومة" })}`}
             </div>
           )}
           <div>
@@ -158,8 +183,8 @@ export function RegisterView({
               <ul className="space-y-1.5">
                 {obs.map((v) => (
                   <li key={v.o.id} className="flex items-start gap-2 text-[12px]">
-                    <StatusPill tone={STATUS_TONE[v.status]} className="mt-0.5">
-                      {v.status === "done" ? "✓" : v.days != null ? `${v.days}d` : "—"}
+                    <StatusPill tone={STATUS_TONE[v.status]} className="mt-0.5 shrink-0">
+                      {v.status === "done" ? "✓" : daysShort(v.days, lang)}
                     </StatusPill>
                     <div className="min-w-0">
                       <div className="leading-snug">{L(v.o.title)}</div>
@@ -199,6 +224,7 @@ export function RegisterView({
           )}
         </div>
       </aside>
+    </div>
     </div>
   );
 }

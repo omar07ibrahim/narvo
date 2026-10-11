@@ -56,6 +56,39 @@ export function MetricTile({
   );
 }
 
+/** Arabic rendering of catalogue measure values ("19.4 days" → "19.4 يوماً"). Numbers stay Latin. */
+const AR_PHRASES: Array<[RegExp, string]> = [
+  [/^same day$/i, "في اليوم نفسه"],
+  [/^Fully sourced$/i, "موثّق بالكامل"],
+  [/(\d+) in (\d+)/, "$1 من $2"],
+  [/^AED ([\d.,]+)(.*)$/, "$1 درهم$2"],
+  [/weekly/i, "أسبوعياً"],
+  [/eval/i, "تقييم"],
+  [/energy/i, "طاقة"],
+  [/\/ task/, "/ مهمة"],
+  [/\/ doc/, "/ مستند"],
+  [/\/ inv/, "/ فاتورة"],
+  [/\/ contract/, "/ عقد"],
+  [/\/ mo/, "/ شهرياً"],
+  [/\/ yr/, "/ سنوياً"],
+  [/1 day/, "يوم واحد"],
+  [/days/, "يوم"],
+  [/day/, "يوم"],
+  [/min/, "دقيقة"],
+  [/h/, "ساعة"],
+  [/touches/, "مرات"],
+  [/touch/, "مرة"],
+  [/rounds/, "جولات"],
+  [/round/, "جولة"],
+];
+
+export function localizeMeasure(v: string, lang: "en" | "ar") {
+  if (lang !== "ar") return v;
+  let out = v;
+  for (const [re, rep] of AR_PHRASES) out = out.replace(re, rep);
+  return out;
+}
+
 /** Catalogue "Measures to agree" — baseline vs. pilot target. */
 export function MeasureStrip({ measures, className }: { measures: Measure[]; className?: string }) {
   const L = useL();
@@ -66,12 +99,12 @@ export function MeasureStrip({ measures, className }: { measures: Measure[]; cla
         <div key={m.label.en} className="px-4 py-3">
           <div className="label-caps">{L(m.label)}</div>
           <div className="mt-1.5 flex items-baseline gap-2">
-            <span dir="ltr" className="num text-[13px] text-muted-foreground line-through decoration-faint/60">
-              {m.baseline}
+            <span dir={lang === "ar" ? "rtl" : "ltr"} className="num text-[13px] text-muted-foreground line-through decoration-faint/60">
+              {localizeMeasure(m.baseline, lang)}
             </span>
             <span className="text-faint">{lang === "ar" ? "←" : "→"}</span>
-            <span dir="ltr" className="num text-[17px] font-light tracking-tight">
-              {m.target}
+            <span dir={lang === "ar" ? "rtl" : "ltr"} className="num text-[17px] font-light tracking-tight">
+              {localizeMeasure(m.target, lang)}
             </span>
           </div>
         </div>

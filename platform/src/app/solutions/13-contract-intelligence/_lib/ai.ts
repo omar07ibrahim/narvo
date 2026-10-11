@@ -38,7 +38,8 @@ const reviewSchema = z.object({
 
 export async function reviewAgainstPlaybook(ctx: Ctx, opts: { name: string; body: string; playbook: Playbook }): Promise<{ findings: Finding[]; summary: string }> {
   const { emit, lang, modelKey } = ctx;
-  const groups = [opts.playbook.positions.slice(0, 8), opts.playbook.positions.slice(8)];
+  // Four passes of four positions each: shorter outputs return sooner and the reviewer sees progress as each pass lands.
+  const groups = Array.from({ length: Math.ceil(opts.playbook.positions.length / 4) }, (_, i) => opts.playbook.positions.slice(i * 4, i * 4 + 4));
   const system = [
     "You are a senior contracts lawyer in the Legal Affairs department of the Marsa Al Noor Development Authority (MNDA), a UAE government authority.",
     "Compare the contract with each listed MNDA playbook position. For every position return exactly one finding:",
@@ -54,8 +55,8 @@ export async function reviewAgainstPlaybook(ctx: Ctx, opts: { name: string; body
   ].join("\n");
 
   const s = emit.step("review", lang === "ar" ? `مقارنة البنود بـ ${opts.playbook.positions.length} موقفاً معتمداً` : `Comparing clauses with ${opts.playbook.positions.length} approved positions`);
-  let done = 0;
-  const results = await pool(groups, 2, async (positions) => {
+  const doneIds: string[] = [];
+  const results = await pool(groups, 4, async (positions) => {
     const user = [
       "PLAYBOOK POSITIONS:",
       positions.map((p) => `${p.id} ${p.topic.en} [severity ${p.severity}]\n  Approved position: ${p.position}\n  Acceptable fallback: ${p.fallback}`).join("\n"),
@@ -63,9 +64,10 @@ export async function reviewAgainstPlaybook(ctx: Ctx, opts: { name: string; body
       `CONTRACT — ${opts.name}:`,
       opts.body,
     ].join("\n");
-    const { object } = await retry(() => generateObject({ schema: reviewSchema, name: "playbook_review", system, user, modelKey, solution: SOL, task: "playbook-review", maxTokens: 3600 }));
-    done++;
-    s.update(`${done}/${groups.length}`);
+    const { object } = await retry(() => generateObject({ schema: reviewSchema, name: "playbook_review", system, user, modelKey, solution: SOL, task: "playbook-review", maxTokens: 2400 }));
+    doneIds.push(...positions.map((p) => p.id));
+    emit.data("reviewProgress", { done: [...doneIds] });
+    s.update(lang === "ar" ? `${doneIds.length} من ${opts.playbook.positions.length} موقفاً` : `${doneIds.length} of ${opts.playbook.positions.length} positions checked`);
     return object.findings;
   });
   const findings: Finding[] = opts.playbook.positions.map((p) => {
@@ -163,6 +165,16 @@ export async function extractObligations(ctx: Ctx, opts: { name: string; body: s
           : r === "service_manager" && c?.id === "MNDA-CON-2025-011"
             ? "Yousef Ibrahim Al Hosani"
             : c?.owner ?? "Shamma Khalid Al Mansoori";
+  const roleTitle = (r: string) =>
+    r === "contracts_officer"
+      ? "Senior Contracts Officer"
+      : r === "finance"
+        ? "Chief Financial Officer"
+        : r === "legal"
+          ? "Head of Legal Affairs"
+          : r === "service_manager" && c?.id === "MNDA-CON-2025-011"
+            ? "IT Service Desk Lead"
+            : c?.ownerRole ?? (r === "contract_owner" ? "contract_owner" : "Senior Contracts Officer");
   const items: ExtractedObligation[] = object.obligations
     .map((o, i) => {
       const trigger = toTrigger(o.trigger);
@@ -176,7 +188,7 @@ export async function extractObligations(ctx: Ctx, opts: { name: string; body: s
         recurrence: "",
         sourceClause: o.sourceClause,
         quote: groundQuote(o.quote, opts.body),
-        ownerRole: o.ownerRole,
+        ownerRole: roleTitle(o.ownerRole),
         owner: roleOwner(o.ownerRole),
         due: valid || trigger.kind === "date" ? dueDate(trigger, valid ? dates : null) : null,
       };

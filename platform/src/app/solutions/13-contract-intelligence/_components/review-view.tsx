@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { Check, ChevronDown, FileText, Gavel, ScrollText, Upload, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Check, ChevronDown, FileText, Gavel, Loader2, ScrollText, Upload, X } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,11 +12,12 @@ import { RunButton } from "@/components/narvo/run-button";
 import { StatusPill } from "@/components/narvo/status";
 import { FileDrop } from "@/components/narvo/file-drop";
 import { ApprovalCard } from "@/components/narvo/approval-card";
-import { EmptyState, ThinkingLines } from "@/components/narvo/empty";
+import { EmptyState } from "@/components/narvo/empty";
 import type { NarvoRun } from "@/hooks/use-narvo-run";
-import { useFormat, useL } from "@/lib/i18n";
+import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { ContractState, Finding, Playbook, Review } from "../_lib/types";
+import { person } from "./fmt";
 
 const RISK = { high: "danger", medium: "warning", low: "neutral" } as const;
 
@@ -120,11 +121,8 @@ export function ReviewView({
         </div>
       )}
 
-      {reviewing && !review ? (
-        <div className="rounded-lg border border-border p-5">
-          <ThinkingLines lines={8} />
-        </div>
-      ) : !review ? (
+      {reviewing && <ReviewProgress playbook={playbook} run={run} />}
+      {reviewing && !review ? null : !review ? (
         <EmptyState icon={<Gavel className="size-4" />} title={L({ en: "Compare the agreement with approved positions", ar: "قارن الاتفاقية بالمواقف المعتمدة" })}>
           {L({
             en: `Every clause is checked against the ${playbook.positions.length} positions of ${playbook.ref}; each flag links to the exact clause text, carries a risk level and a proposed redline. A qualified reviewer accepts or rejects each one.`,
@@ -162,7 +160,7 @@ export function ReviewView({
             </div>
           </div>
 
-          <ul className="space-y-2.5">
+          <ul className={cn("space-y-2.5", reviewing && "pointer-events-none opacity-50")}>
             {findings.map((x) => (
               <FindingCard key={x.positionId} x={x} playbook={playbook} disabled={!!approval && approval.status !== "rejected"} onDecide={(d) => onDecide(review.contractId, x.positionId, d)} onOpen={() => onOpenDoc(review.contractId)} />
             ))}
@@ -203,8 +201,10 @@ export function ReviewView({
 
 function FindingCard({ x, playbook, disabled, onDecide, onOpen }: { x: Finding; playbook: Playbook; disabled: boolean; onDecide: (d: Finding["decision"] | null) => Promise<void>; onOpen: () => void }) {
   const L = useL();
+  const { lang } = usePrefs();
   const [busy, setBusy] = useState(false);
   const pos = playbook.positions.find((p) => p.id === x.positionId)!;
+  const txt = lang === "ar" && pos.ar ? pos.ar : pos;
   const decide = async (d: Finding["decision"] | null) => {
     setBusy(true);
     try {
@@ -260,15 +260,15 @@ function FindingCard({ x, playbook, disabled, onDecide, onOpen }: { x: Finding; 
               <div className="mt-1.5 space-y-1 rounded-md bg-surface p-2.5 text-[11.5px] leading-relaxed">
                 <p>
                   <span className="font-medium">{L({ en: "Position: ", ar: "الموقف: " })}</span>
-                  {pos.position}
+                  {txt.position}
                 </p>
                 <p className="text-muted-foreground">
                   <span className="font-medium">{L({ en: "Fallback: ", ar: "البديل: " })}</span>
-                  {pos.fallback}
+                  {txt.fallback}
                 </p>
                 <p className="text-muted-foreground">
                   <span className="font-medium">{L({ en: "Escalation: ", ar: "التصعيد: " })}</span>
-                  {pos.escalation}
+                  {txt.escalation}
                 </p>
               </div>
             </CollapsibleContent>
@@ -286,7 +286,7 @@ function FindingCard({ x, playbook, disabled, onDecide, onOpen }: { x: Finding; 
               {x.decision ? (
                 <>
                   <StatusPill tone={x.decision === "accepted" ? "success" : "neutral"}>
-                    {x.decision === "accepted" ? L({ en: "Accepted", ar: "مقبول" }) : L({ en: "Rejected", ar: "مرفوض" })} · {x.decidedBy}
+                    {x.decision === "accepted" ? L({ en: "Accepted", ar: "مقبول" }) : L({ en: "Rejected", ar: "مرفوض" })} · {person(x.decidedBy, lang)}
                   </StatusPill>
                   {!disabled && (
                     <Button size="xs" variant="ghost" disabled={busy} onClick={() => decide(null)}>
@@ -294,12 +294,16 @@ function FindingCard({ x, playbook, disabled, onDecide, onOpen }: { x: Finding; 
                     </Button>
                   )}
                 </>
+              ) : disabled ? (
+                <StatusPill tone="neutral" dot={false}>
+                  {L({ en: "Not in this redline pack — kept for the next round", ar: "غير مشمول في هذه الحزمة — مؤجل للجولة التالية" })}
+                </StatusPill>
               ) : (
                 <>
-                  <Button size="xs" disabled={busy || disabled} onClick={() => decide("accepted")}>
+                  <Button size="xs" disabled={busy} onClick={() => decide("accepted")}>
                     <Check /> {L({ en: "Accept redline", ar: "قبول التعديل" })}
                   </Button>
-                  <Button size="xs" variant="outline" disabled={busy || disabled} onClick={() => decide("rejected")}>
+                  <Button size="xs" variant="outline" disabled={busy} onClick={() => decide("rejected")}>
                     <X /> {L({ en: "Reject", ar: "رفض" })}
                   </Button>
                 </>
@@ -311,5 +315,56 @@ function FindingCard({ x, playbook, disabled, onDecide, onOpen }: { x: Finding; 
         )}
       </div>
     </li>
+  );
+}
+
+/** Live progress while the playbook review runs (it compares the full text with 16 positions — the slowest step of the module). */
+function ReviewProgress({ playbook, run }: { playbook: Playbook; run: NarvoRun }) {
+  const L = useL();
+  const { lang } = usePrefs();
+  const [now, setNow] = useState(Date.now);
+  useEffect(() => {
+    const t = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, []);
+  const done: string[] = (run.data.reviewProgress as { done?: string[] } | undefined)?.done ?? [];
+  const n = playbook.positions.length;
+  const secs = run.startedAt ? Math.max(0, Math.round((now - run.startedAt) / 1000)) : 0;
+  return (
+    <div className="@container overflow-hidden rounded-lg border border-ai/25 bg-card">
+      <div className="flex flex-wrap items-center gap-3 px-4 py-3">
+        <Loader2 className="size-4 shrink-0 animate-spin text-ai" />
+        <div className="min-w-0 flex-1">
+          <div className="text-[13px] font-medium">
+            {L({ en: `Checking the contract against ${n} approved positions`, ar: `فحص العقد مقابل ${n} موقفاً معتمداً` })}
+          </div>
+          <div className="text-[11.5px] text-muted-foreground">
+            {L({
+              en: `${playbook.ref} · four parallel passes over the full text, each returning quotes and redlines · usually under a minute`,
+              ar: `${playbook.ref} · أربع مراجعات متوازية للنص الكامل تعيد الاقتباسات والتعديلات · عادةً أقل من دقيقة`,
+            })}
+          </div>
+        </div>
+        <div className="num shrink-0 text-[12px] text-muted-foreground">
+          {done.length}/{n} · {secs}
+          {L({ en: "s", ar: " ث" })}
+        </div>
+      </div>
+      <div className="h-0.5 bg-muted">
+        <div className="h-full bg-ai transition-[width] duration-500" style={{ width: `${Math.max(3, (done.length / n) * 100)}%` }} />
+      </div>
+      <ul className="grid grid-cols-1 gap-x-5 gap-y-1.5 px-4 py-3 @md:grid-cols-2 @3xl:grid-cols-4">
+        {playbook.positions.map((p) => {
+          const ok = done.includes(p.id);
+          return (
+            <li key={p.id} className={cn("flex items-center gap-1.5 text-[11.5px]", ok ? "text-foreground" : "text-muted-foreground")}>
+              {ok ? <Check className="size-3 shrink-0 text-success" /> : <span className="size-1.5 shrink-0 animate-pulse rounded-full bg-ai/50 mx-[3px]" />}
+              <span className="font-mono text-[10px] text-faint">{p.id}</span>
+              <span className="truncate">{p.topic[lang === "ar" ? "ar" : "en"]}</span>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }

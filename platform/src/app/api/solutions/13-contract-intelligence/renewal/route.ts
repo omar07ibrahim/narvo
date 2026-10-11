@@ -115,6 +115,7 @@ export async function POST(req: Request) {
         [
           `Draft the formal notice letter from Marsa Al Noor Development Authority (MNDA), signed by Rashed Ali Al Dhaheri, Director, Procurement & Contracts, to the General Manager, Raseen Facilities Management LLC, Raseen Building, Al Quoz Industrial 3, Dubai.`,
           `Reference ${letterRef}; date ${fmtDate(TODAY)}; served under Clause 17 in accordance with Clause 3.3 of contract ${c.ref}.`,
+          "Letterhead / sender address: Marsa Al Noor Development Authority, MNDA Tower, Corniche Road, Marsa Al Noor (هيئة مرسى النور للتطوير، برج الهيئة، طريق الكورنيش، مرسى النور). Use the Raseen address only for the addressee.",
           `Decision: ${recLabel[l]} — ${decision.headline}. Conditions to state precisely: ${decision.conditions.join(" | ") || "none"}.`,
           "If renewing: the Renewal Term is 1 January 2027 – 31 December 2027 on the same terms and rates (Clause 3.4.1); require written acceptance of the performance improvement plan within 14 days (Clause 3.4.3), extension of the performance security (Clause 4.5.2) and renewed insurance certificates (Clause 8.2.2).",
           "If not renewing: confirm expiry on 31 December 2026 and exit and handover obligations (Clause 9.6). If a short extension: state that it will be documented by a variation agreement under Clause 3.5.",

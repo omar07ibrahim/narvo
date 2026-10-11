@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { StatusPill } from "@/components/narvo/status";
 import { CHART, axisProps, gridProps, ChartTooltip } from "@/components/narvo/chart";
 import { EmptyState } from "@/components/narvo/empty";
-import { useFormat, useL } from "@/lib/i18n";
+import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { computeScores, flipAnalysis, sensitivity, type ScoreRow } from "../_lib/scoring";
 import type { PriceSchedule, ProcState, Tender } from "../_lib/types";
@@ -28,13 +28,18 @@ export function ScoringView({
   onOverride: (supplierId: string, criterionId: string, score: number | null, reason: string, by: string) => Promise<void>;
 }) {
   const L = useL();
+  const { lang } = usePrefs();
   const f = useFormat();
   const [tw, setTw] = useState(tender.weights.technical);
   const weights = { technical: tw, commercial: 100 - tw };
   const rows = useMemo(() => computeScores(tender, state.suppliers, prices, state.evaluations, state.overrides, weights), [tender, state, prices, tw]); // eslint-disable-line react-hooks/exhaustive-deps
   const sens = useMemo(() => sensitivity(tender, state.suppliers, prices, state.evaluations, state.overrides), [tender, state, prices]);
   const flip = flipAnalysis(rows, weights);
-  const short = (id: string) => state.suppliers.find((s) => s.id === id)?.short ?? id;
+  const sname = (s: { short: string; short_ar?: string }) => (lang === "ar" && s.short_ar ? s.short_ar : s.short);
+  const short = (id: string) => {
+    const s = state.suppliers.find((x) => x.id === id);
+    return s ? sname(s) : id;
+  };
   const ready = state.suppliers.every((s) => state.evaluations[s.id]);
   const overrideCount = Object.values(state.overrides).reduce((a, m) => a + Object.keys(m).length, 0);
 
@@ -127,7 +132,7 @@ export function ScoringView({
                 <Tooltip content={<ChartTooltip format={(v) => (typeof v === "number" ? v.toFixed(2) : String(v))} />} />
                 <ReferenceLine x={tender.weights.technical} stroke="var(--border-strong)" strokeDasharray="3 3" />
                 {state.suppliers.map((s, i) => (
-                  <Line key={s.id} type="monotone" dataKey={s.id} name={s.short} stroke={CHART.series[i]} strokeWidth={1.75} dot={{ r: 2 }} connectNulls={false} />
+                  <Line key={s.id} type="monotone" dataKey={s.id} name={sname(s)} stroke={CHART.series[i]} strokeWidth={1.75} dot={{ r: 2 }} connectNulls={false} />
                 ))}
               </LineChart>
             </ResponsiveContainer>
@@ -135,7 +140,7 @@ export function ScoringView({
           <div className="mt-2 flex flex-wrap gap-3 text-[11.5px] text-muted-foreground">
             {state.suppliers.map((s, i) => (
               <span key={s.id} className="inline-flex items-center gap-1.5">
-                <span className="h-0.5 w-3 rounded" style={{ background: CHART.series[i] }} /> {s.short}
+                <span className="h-0.5 w-3 rounded" style={{ background: CHART.series[i] }} /> {sname(s)}
               </span>
             ))}
           </div>
@@ -164,7 +169,7 @@ export function ScoringView({
                   <th className="label-caps !text-[9.5px] px-2.5 py-2 text-start font-medium">{L({ en: "Criterion", ar: "المعيار" })}</th>
                   {state.suppliers.map((s) => (
                     <th key={s.id} className="px-1.5 py-2 text-center text-[11px] font-medium leading-tight text-muted-foreground">
-                      {s.short}
+                      {sname(s)}
                     </th>
                   ))}
                 </tr>

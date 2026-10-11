@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import type { Citation } from "@/lib/ai/events";
 import { cn } from "@/lib/utils";
+import { cleanQuote } from "@/lib/text";
 
 /**
  * Markdown renderer for model output. Turns citation markers like [3] into interactive chips
@@ -33,7 +34,7 @@ function CitationChip({ n, citation, onClick }: { n: number; citation?: Citation
         <div className="text-[12.5px] font-medium leading-snug">{citation.title}</div>
         {citation.section && <div className="mt-0.5 text-[11px] text-muted-foreground">§ {citation.section}</div>}
         <p className="mt-2 line-clamp-6 border-s-2 border-ai/40 ps-2 text-[11.5px] leading-relaxed text-muted-foreground">
-          {citation.quote}
+          {cleanQuote(citation.quote, 700)}
         </p>
       </HoverCardContent>
     </HoverCard>

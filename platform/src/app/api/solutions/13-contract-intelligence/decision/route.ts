@@ -9,7 +9,8 @@ export async function POST(req: Request) {
   if (!review) return new Response("Review not found", { status: 404 });
   const f = review.findings.find((x) => x.positionId === body.positionId);
   if (!f) return new Response("Finding not found", { status: 404 });
-  const by = body.by || "Adv. Noura Khalifa Al Qubaisi";
+  // The contracts officer decides each flag; the Head of Legal Affairs signs off the pack (segregation of duties).
+  const by = body.by || "Shamma Khalid Al Mansoori";
   if (body.decision) {
     f.decision = body.decision;
     f.decidedBy = by;
@@ -23,7 +24,7 @@ export async function POST(req: Request) {
   const pos = loadPlaybook().positions.find((p) => p.id === f.positionId);
   addAudit({
     solution: SOL,
-    actor: { name: by, role: "Contract reviewer", kind: "human" },
+    actor: { name: by, role: "Senior Contracts Officer", kind: "human" },
     action: body.decision === "accepted" ? "Accepted proposed redline" : body.decision === "rejected" ? "Rejected flag" : "Reopened flag",
     subject: `${review.name} — ${f.positionId} ${pos?.topic.en ?? ""} (clause ${f.clauseRef})`,
     detail: body.note,

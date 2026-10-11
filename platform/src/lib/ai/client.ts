@@ -40,6 +40,8 @@ export interface ChatOptions {
   responseFormat?: Record<string, unknown>;
   /** Enable model "thinking". Off by default for snappy demos. */
   reasoning?: boolean;
+  /** Abort a streamed call if no data arrives within this time (default 75 s). */
+  firstTokenTimeoutMs?: number;
   /** Telemetry labels */
   solution?: string;
   task?: string;
@@ -185,7 +187,25 @@ export async function* chatStream(opts: ChatOptions): AsyncGenerator<StreamDelta
   const started = Date.now();
   const { body, model } = buildBody(opts, true);
   const { provider } = getEndpoint();
-  const { res, egress } = await post("/chat/completions", body, opts.signal);
+  // Combine the caller's abort signal with a first-token watchdog.
+  const watchdog = new AbortController();
+  const onAbort = () => watchdog.abort();
+  opts.signal?.addEventListener("abort", onAbort);
+  let gotData = false;
+  const timeoutMs = opts.firstTokenTimeoutMs ?? 75_000;
+  const timer = setTimeout(() => {
+    if (!gotData) watchdog.abort();
+  }, timeoutMs);
+  let res: Response;
+  let egress: number;
+  try {
+    ({ res, egress } = await post("/chat/completions", body, watchdog.signal));
+  } catch (err) {
+    clearTimeout(timer);
+    opts.signal?.removeEventListener("abort", onAbort);
+    if (watchdog.signal.aborted && !opts.signal?.aborted) throw new ModelError(`The model did not start responding within ${Math.round(timeoutMs / 1000)} s — please try again.`);
+    throw err;
+  }
   if (!res.ok || !res.body) {
     const text = await res.text();
     recordCall({
@@ -214,8 +234,22 @@ export async function* chatStream(opts: ChatOptions): AsyncGenerator<StreamDelta
   const toolAcc: Record<number, ToolCall> = {};
 
   while (true) {
-    const { done, value } = await reader.read();
+    let chunkRead;
+    try {
+      chunkRead = await reader.read();
+    } catch (err) {
+      clearTimeout(timer);
+      opts.signal?.removeEventListener("abort", onAbort);
+      if (watchdog.signal.aborted && !opts.signal?.aborted && !gotData)
+        throw new ModelError(`The model did not start responding within ${Math.round(timeoutMs / 1000)} s — please try again.`);
+      throw err;
+    }
+    const { done, value } = chunkRead;
     if (done) break;
+    if (!gotData) {
+      gotData = true;
+      clearTimeout(timer);
+    }
     received += value.byteLength;
     buffer += decoder.decode(value, { stream: true });
     const lines = buffer.split("\n");
@@ -281,6 +315,8 @@ export async function* chatStream(opts: ChatOptions): AsyncGenerator<StreamDelta
     }
   }
 
+  clearTimeout(timer);
+  opts.signal?.removeEventListener("abort", onAbort);
   const ms = Date.now() - started;
   recordCall({
     solution: opts.solution ?? "platform",

@@ -36,7 +36,7 @@ const SCENARIO: ScenarioStep[] = [
     },
   },
   {
-    title: { en: "Paste the site engineer's WhatsApp", ar: "لصق رسالة واتساب من مهندس الموقع" },
+    title: { en: "Paste the project director's WhatsApp", ar: "لصق رسالة واتساب من مدير المشاريع" },
     body: {
       en: "On the Customer message tab pick the Gulf Arabic WhatsApp (or paste your own). NARVO extracts each request with its exact quote — Sunday 07:00 or Monday 09:30, at least 60 t first, balance by 22 Oct, +6 t of 12 mm, PO price claim — applies it as a proposal and re-runs detection: the window conflict clears, credit exposure rises.",
       ar: "في تبويب رسالة المتعامل اختر رسالة الواتساب باللهجة الخليجية (أو الصق رسالتك). يستخرج نارفو كل طلب مع اقتباسه الحرفي — الأحد 07:00 أو الاثنين 09:30، و60 طناً على الأقل أولاً، والباقي قبل 22 أكتوبر، و6 أطنان إضافية من 12 مم، ومطالبة بسعر أمر الشراء — ثم يطبّقها كمقترح ويعيد الفحص: يزول تعارض النافذة ويرتفع التعرض الائتماني.",
@@ -158,10 +158,10 @@ export function Workspace({ initial, docs }: { initial: Snapshot; docs: Customer
   const activeRun = active === "interpret" ? interpretRun : active === "approve" ? approveRun : optionsRun;
   const runTitle =
     active === "interpret"
-      ? L({ en: "Trace — customer message", ar: "المسار — رسالة المتعامل" })
+      ? L({ en: "Customer message", ar: "رسالة المتعامل" })
       : active === "approve"
-        ? L({ en: "Trace — approval package", ar: "المسار — حزمة الاعتماد" })
-        : L({ en: "Trace — resolution options", ar: "المسار — خيارات المعالجة" });
+        ? L({ en: "Approval package", ar: "حزمة الاعتماد" })
+        : L({ en: "Resolution options", ar: "خيارات المعالجة" });
   const citations = ((runFor.options === selected && optionsRun.data.citations) || stored?.citations || []) as Citation[];
   const inlineIds = new Set(approveRun.approvals.map((a) => a.id));
   const railPending = pending.filter((p) => !(runFor.approve === selected && inlineIds.has(p.id)));
@@ -239,7 +239,7 @@ export function Workspace({ initial, docs }: { initial: Snapshot; docs: Customer
         />
       </div>
 
-      <Workbench cols="320px minmax(0,1fr) 340px">
+      <Workbench cols="minmax(290px,0.82fr) minmax(0,1.9fr) minmax(300px,0.95fr)">
         <Pane title={L({ en: "Exception queue", ar: "قائمة الاستثناءات" })} flush className="h-[calc(100vh-235px)] min-h-[720px]">
           <ExceptionQueue orders={world.orders} history={snapshot.exceptionHistory} selected={selected} onSelect={select} customerNames={customerNames} />
         </Pane>

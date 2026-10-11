@@ -26,6 +26,8 @@ export interface RagOptions {
   instructions?: string;
   k?: number;
   channel?: string;
+  /** Restrict retrieval to these document ids and/or classifications */
+  searchOptions?: { docIds?: string[]; classifications?: string[] };
 }
 
 export interface RagResult {
@@ -62,7 +64,7 @@ export async function answerWithCitations(o: RagOptions): Promise<RagResult> {
 
   const s2 = emit.step("search", o.lang === "ar" ? `البحث في قاعدة المعرفة (${docCount} مستند)` : `Searching ${docCount} documents`);
   const queries = [o.question, ...plan.object.queries];
-  const all = corpora.flatMap((c) => search(c, queries, o.k ?? 8));
+  const all = corpora.flatMap((c) => search(c, queries, o.k ?? 8, o.searchOptions));
   const seen = new Set<string>();
   const hits = all
     .sort((a, b) => b.score - a.score)

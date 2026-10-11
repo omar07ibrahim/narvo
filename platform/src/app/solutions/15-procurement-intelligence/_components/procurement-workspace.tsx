@@ -23,6 +23,8 @@ import { DocDialog } from "./doc-dialog";
 import { SCENARIO } from "./scenario";
 
 const API = "/api/solutions/15-procurement-intelligence";
+/** Six tabs: on 1440-px screens the icons drop so every label stays visible. */
+const TAB = "px-2.5 text-[12.5px] @max-4xl:px-2 @max-4xl:[&>svg]:hidden";
 type RunKey = "evaluate" | "clarify" | "response" | "report" | "sourcing";
 const RUN_LABEL: Record<RunKey, { en: string; ar: string }> = {
   evaluate: { en: "Submission comparison", ar: "مقارنة العروض" },
@@ -104,7 +106,10 @@ export function ProcurementWorkspace({
   const evidenced = cells.length ? Math.round((cells.filter((c) => c.status === "met").length / cells.length) * 100) : null;
   const openClar = state.clarifications.filter((c) => c.status === "issued").length + state.approvals.filter((a) => a.status === "pending" && a.title.includes("CLR")).length;
   const overrideCount = Object.values(state.overrides).reduce((a, m) => a + Object.keys(m).length, 0);
-  const short = (id?: string) => state.suppliers.find((s) => s.id === id)?.short ?? "—";
+  const short = (id?: string) => {
+    const s = state.suppliers.find((x) => x.id === id);
+    return s ? (lang === "ar" && s.short_ar ? s.short_ar : s.short) : "—";
+  };
 
   async function override(supplierId: string, criterionId: string, score: number | null, reason: string, by: string) {
     const res = await fetch(`${API}/override`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ supplierId, criterionId, score, reason, by }) });
@@ -180,7 +185,7 @@ export function ProcurementWorkspace({
 
       <div className="grid grid-cols-6 gap-3 max-xl:grid-cols-3 max-md:grid-cols-2">
         <MetricTile label={L({ en: "Bids received", ar: "العروض المستلمة" })} value={state.suppliers.length} sub={L({ en: "no late bids", ar: "لا عروض متأخرة" })} />
-        <MetricTile label={L({ en: "Lowest compliant", ar: "أدنى سعر مطابق" })} value={lowest ? `${(lowest / 1e6).toFixed(2)}M` : "—"} sub={lowest ? `AED · ${short(ranked.find((r) => r.normPrice === lowest)?.supplierId)}` : L({ en: "after evaluation", ar: "بعد التقييم" })} />
+        <MetricTile label={L({ en: "Lowest compliant", ar: "أدنى سعر مطابق" })} value={lowest ? `${(lowest / 1e6).toFixed(2)}M` : "—"} sub={lowest ? `${L({ en: "AED", ar: "درهم" })} · ${short(ranked.find((r) => r.normPrice === lowest)?.supplierId)}` : L({ en: "after evaluation", ar: "بعد التقييم" })} />
         <MetricTile label={L({ en: "Criteria evidenced", ar: "المعايير المثبتة" })} value={evidenced != null ? `${evidenced}%` : "—"} tone="ai" sub={`${cells.filter((c) => c.status === "met").length}/${cells.length || 24}`} />
         <MetricTile label={L({ en: "Open clarifications", ar: "استيضاحات مفتوحة" })} value={openClar} tone={openClar ? "warning" : "default"} sub={`${state.clarifications.filter((c) => c.status === "answered").length} ${L({ en: "answered", ar: "أُجيبت" })}`} />
         <MetricTile label={L({ en: "Leading bid", ar: "العرض المتصدر" })} value={leader ? short(leader.supplierId) : "—"} sub={leader ? `${leader.total?.toFixed(2)} / 100` : undefined} />
@@ -190,25 +195,25 @@ export function ProcurementWorkspace({
       <Workbench cols="minmax(0,1fr) 320px">
         <Pane flush className="min-h-[640px]">
           <Tabs value={tab} onValueChange={setTab} className="gap-0">
-            <div className="border-b border-border px-3 pt-2">
-              <TabsList variant="line" className="h-9">
-                <TabsTrigger value="evaluation" className="px-2.5 text-[12.5px]">
+            <div className="@container border-b border-border px-3 pt-2">
+              <TabsList variant="line" className="scrollbar-thin h-9 max-w-full justify-start overflow-x-auto overflow-y-hidden">
+                <TabsTrigger value="evaluation" className={TAB}>
                   <Scale /> {L({ en: "Evaluation matrix", ar: "مصفوفة التقييم" })}
                 </TabsTrigger>
-                <TabsTrigger value="scoring" className="px-2.5 text-[12.5px]">
+                <TabsTrigger value="scoring" className={TAB}>
                   <SlidersHorizontal /> {L({ en: "Scoring & sensitivity", ar: "الدرجات والحساسية" })}
                 </TabsTrigger>
-                <TabsTrigger value="clar" className="px-2.5 text-[12.5px]">
+                <TabsTrigger value="clar" className={TAB}>
                   <MailQuestion /> {L({ en: "Clarifications", ar: "الاستيضاحات" })}
                   {openClar > 0 && <span className="num ms-1 text-[11px] text-warning">{openClar}</span>}
                 </TabsTrigger>
-                <TabsTrigger value="report" className="px-2.5 text-[12.5px]">
+                <TabsTrigger value="report" className={TAB}>
                   <FileText /> {L({ en: "Report & award", ar: "التقرير والترسية" })}
                 </TabsTrigger>
-                <TabsTrigger value="register" className="px-2.5 text-[12.5px]">
+                <TabsTrigger value="register" className={TAB}>
                   <Building2 /> {L({ en: "Supplier register", ar: "سجل الموردين" })}
                 </TabsTrigger>
-                <TabsTrigger value="sourcing" className="px-2.5 text-[12.5px]">
+                <TabsTrigger value="sourcing" className={TAB}>
                   <ClipboardList /> {L({ en: "Sourcing", ar: "التوريد" })}
                 </TabsTrigger>
               </TabsList>

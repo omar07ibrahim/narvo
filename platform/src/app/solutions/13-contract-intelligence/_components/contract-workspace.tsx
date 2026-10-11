@@ -21,6 +21,7 @@ import { AskView } from "./ask-view";
 import { RenewalView } from "./renewal-view";
 import { DocDialog } from "./doc-dialog";
 import { SCENARIO } from "./scenario";
+import { daysShort, person } from "./fmt";
 
 const API = "/api/solutions/13-contract-intelligence";
 type RunKey = "review" | "extract" | "ask" | "renewal";
@@ -119,7 +120,7 @@ export function ContractWorkspace({ initial, playbook, kpi }: { initial: Contrac
     <SolutionPage slug="13-contract-intelligence" scenario={SCENARIO}>
       <div className="grid grid-cols-6 gap-3 max-xl:grid-cols-3 max-md:grid-cols-2">
         <MetricTile label={L({ en: "Contracts in force", ar: "العقود السارية" })} value={active_.length} sub={`+1 ${L({ en: "draft under review", ar: "مسودة قيد المراجعة" })}`} />
-        <MetricTile label={L({ en: "Annual committed", ar: "الالتزام السنوي" })} value={`${(annual / 1e6).toFixed(2)}M`} sub="AED / yr" />
+        <MetricTile label={L({ en: "Annual committed", ar: "الالتزام السنوي" })} value={`${(annual / 1e6).toFixed(2)}M`} sub={L({ en: "AED / yr", ar: "درهم / سنة" })} />
         <MetricTile label={L({ en: "Due ≤ 30 days", ar: "مستحقة خلال 30 يوماً" })} value={due30} tone={due30 ? "warning" : "default"} sub={L({ en: `from ${f.date(TODAY)}`, ar: `من ${f.date(TODAY)}` })} />
         <MetricTile label={L({ en: "Overdue", ar: "متأخرة" })} value={overdue} tone={overdue ? "danger" : "success"} />
         <MetricTile label={L({ en: "Notices before 31 Dec", ar: "إشعارات قبل 31 ديسمبر" })} value={notices} tone="ai" sub={L({ en: "renewal / non-renewal", ar: "تجديد / عدم تجديد" })} />
@@ -225,13 +226,13 @@ export function ContractWorkspace({ initial, playbook, kpi }: { initial: Contrac
             <ul className="divide-y divide-border">
               {upcoming.map((v) => (
                 <li key={v.o.id} className="flex items-start gap-2.5 px-4 py-2">
-                  <StatusPill tone={STATUS_TONE[v.status]} className="mt-0.5 w-12 justify-center">
-                    {v.days != null ? `${v.days}d` : "—"}
+                  <StatusPill tone={STATUS_TONE[v.status]} className="mt-0.5 min-w-12 shrink-0 justify-center">
+                    {daysShort(v.days, lang)}
                   </StatusPill>
                   <div className="min-w-0 text-[12px] leading-snug">
                     <div className={cn("truncate", v.o.critical && "font-medium")}>{L(v.o.title)}</div>
                     <div className="truncate text-[11px] text-muted-foreground">
-                      {v.c?.ref} · {v.o.owner}
+                      {v.c?.ref} · {person(v.o.owner, lang)}
                     </div>
                   </div>
                 </li>
@@ -247,12 +248,12 @@ export function ContractWorkspace({ initial, playbook, kpi }: { initial: Contrac
                     <span className="font-medium">{L(p.topic)}</span>
                     <span className={cn("ms-auto size-1.5 rounded-full", p.severity === "high" ? "bg-danger" : p.severity === "medium" ? "bg-warning" : "bg-faint")} />
                   </div>
-                  <p className="mt-0.5 line-clamp-2 text-[11px] leading-snug text-muted-foreground">{p.position}</p>
+                  <p className="mt-0.5 line-clamp-2 text-[11px] leading-snug text-muted-foreground">{lang === "ar" && p.ar ? p.ar.position : p.position}</p>
                 </li>
               ))}
             </ul>
             <div className="flex items-center gap-1.5 border-t border-border px-4 py-2 text-[11px] text-muted-foreground">
-              <BookOpenCheck className="size-3" /> {playbook.owner}
+              <BookOpenCheck className="size-3" /> {lang === "ar" && playbook.ownerAr ? playbook.ownerAr : playbook.owner}
             </div>
           </Pane>
         </div>

@@ -17,9 +17,9 @@ const TABS: Array<{ id: Tab; en: string; ar: string }> = [
   { id: "all", en: "All", ar: "الكل" },
   { id: "stock", en: "Stock", ar: "المخزون" },
   { id: "price", en: "Price", ar: "السعر" },
-  { id: "window", en: "Delivery", ar: "التسليم" },
+  { id: "window", en: "Window", ar: "النافذة" },
   { id: "credit", en: "Credit", ar: "الائتمان" },
-  { id: "resolved", en: "Resolved", ar: "المعالجة" },
+  { id: "resolved", en: "Done", ar: "منجزة" },
 ];
 
 const SEV_BAR: Record<string, string> = { critical: "bg-danger", high: "bg-warning", medium: "bg-info", low: "bg-faint" };
@@ -88,7 +88,7 @@ export function ExceptionQueue({
             <Input
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder={L({ en: "Order, customer, PO, project", ar: "الطلب، المتعامل، أمر الشراء، المشروع" })}
+              placeholder={L({ en: "Search orders", ar: "ابحث في الطلبات" })}
               className="h-8 bg-surface ps-8 text-[12.5px]"
             />
           </div>
@@ -106,18 +106,18 @@ export function ExceptionQueue({
             </SelectContent>
           </Select>
         </div>
-        <div className="grid grid-cols-6 gap-0.5 rounded-md bg-muted p-0.5">
+        <div className="flex gap-0.5 rounded-md bg-muted p-0.5">
           {TABS.map((x) => (
             <button
               key={x.id}
               type="button"
               onClick={() => setTab(x.id)}
               className={cn(
-                "flex h-[34px] flex-col items-center justify-center rounded text-[10.5px] leading-tight font-medium transition-colors",
+                "flex h-[34px] min-w-0 flex-auto flex-col items-center justify-center rounded px-1 text-[10.5px] leading-tight font-medium whitespace-nowrap transition-colors",
                 tab === x.id ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground",
               )}
             >
-              <span className="max-w-full truncate px-0.5">{L(x)}</span>
+              <span>{L(x)}</span>
               <span className="num text-[10px] text-faint">{counts[x.id]}</span>
             </button>
           ))}

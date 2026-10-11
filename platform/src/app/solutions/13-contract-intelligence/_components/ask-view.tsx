@@ -41,7 +41,9 @@ export function AskView({ state, contractId, onContract, run, onAsk }: { state: 
   const end = useRef<HTMLDivElement>(null);
   const withText = state.contracts.filter((c) => c.file);
 
-  useEffect(() => setTurns([]), [contractId]);
+  useEffect(() => {
+    setTurns([]);
+  }, [contractId]);
   useEffect(() => {
     if (run.status === "done" && pending && run.text.answer) {
       setTurns((t) => [...t, { q: pending, a: run.text.answer, citations: (run.data.citations as Citation[]) ?? [] }]);
@@ -49,7 +51,10 @@ export function AskView({ state, contractId, onContract, run, onAsk }: { state: 
     }
     if (run.status === "error") setPending(null);
   }, [run.status]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => end.current?.scrollIntoView({ block: "end", behavior: "smooth" }), [turns, run.text.answer]);
+  // Braces matter: newer Chrome returns a Promise from scrollIntoView, which React would treat as a cleanup.
+  useEffect(() => {
+    end.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }, [turns, run.text.answer]);
 
   const ask = (question: string) => {
     if (!question.trim() || run.running) return;
@@ -65,7 +70,8 @@ export function AskView({ state, contractId, onContract, run, onAsk }: { state: 
   const liveCitations = (run.data.citations as Citation[] | undefined) ?? [];
 
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_320px] gap-5 max-xl:grid-cols-1">
+    <div className="@container">
+    <div className="grid grid-cols-1 gap-5 @3xl:grid-cols-[minmax(0,1fr)_300px]">
       <div className="flex min-h-[520px] min-w-0 flex-col rounded-lg border border-border bg-card">
         <div className="flex items-center gap-2 border-b border-border px-4 py-2.5">
           <Select value={contractId} onValueChange={onContract}>
@@ -142,6 +148,7 @@ export function AskView({ state, contractId, onContract, run, onAsk }: { state: 
         <div className="label-caps mb-2">{L({ en: "Clauses used", ar: "البنود المستخدمة" })}</div>
         <SourceList citations={pending ? liveCitations : (last?.citations ?? [])} usedOnly={!pending && !!last} text={pending ? undefined : last?.a} />
       </div>
+    </div>
     </div>
   );
 }

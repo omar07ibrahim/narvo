@@ -32,7 +32,8 @@ export function SourcingView({ run, rfqs, onRun, onSave }: { run: NarvoRun; rfqs
   const rfq = run.data.rfq as Rfq | undefined;
 
   return (
-    <div className="grid grid-cols-[minmax(0,1fr)_300px] gap-5 max-xl:grid-cols-1">
+    <div className="@container">
+    <div className="grid grid-cols-1 gap-5 @4xl:grid-cols-[minmax(0,1fr)_300px]">
       <div className="min-w-0 space-y-4">
         <div className="rounded-lg border border-border bg-card p-4">
           <div className="label-caps mb-2">{L({ en: "Business need", ar: "الاحتياج" })}</div>
@@ -67,7 +68,7 @@ export function SourcingView({ run, rfqs, onRun, onSave }: { run: NarvoRun; rfqs
               <div className="mb-1 text-[11.5px] text-muted-foreground">{L({ en: "Estimated value (AED, excl. VAT)", ar: "القيمة التقديرية (درهم، دون الضريبة)" })}</div>
               <Input value={est} onChange={(e) => setEst(e.target.value)} inputMode="numeric" placeholder="186,000" className="num h-8 w-44 text-[12.5px]" />
             </div>
-            <div className="min-w-0 flex-1 text-[12px]">
+            <div className="min-w-[220px] flex-1 text-[12px]">
               {method ? (
                 <div>
                   <span className="font-medium">{L(method.label)}</span> <span className="text-muted-foreground">· {L(method.rule)}</span>
@@ -120,7 +121,7 @@ export function SourcingView({ run, rfqs, onRun, onSave }: { run: NarvoRun; rfqs
                 </Button>
               </div>
             </header>
-            <div className="grid grid-cols-2 gap-5 px-5 py-4 max-lg:grid-cols-1">
+            <div className="grid grid-cols-1 gap-5 px-5 py-4 @2xl:grid-cols-2">
               <Block title={L({ en: "Scope of services", ar: "نطاق الخدمات" })}>
                 <ul className="list-disc space-y-1 ps-4">{rfq.scope.map((x, i) => <li key={i} dir="auto">{x}</li>)}</ul>
               </Block>
@@ -194,6 +195,7 @@ export function SourcingView({ run, rfqs, onRun, onSave }: { run: NarvoRun; rfqs
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }

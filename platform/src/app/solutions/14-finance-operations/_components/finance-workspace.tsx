@@ -199,7 +199,8 @@ export function FinanceWorkspace({
         />
       </div>
 
-      <Workbench cols="minmax(360px,470px) minmax(0,1fr) minmax(290px,336px)">
+      {/* fr-based tracks: fixed max widths let the side panes grow first and squeeze the match pane on 1440-px screens */}
+      <Workbench cols="minmax(360px,1fr) minmax(0,1.15fr) minmax(280px,0.66fr)">
         <Pane
           title={L({ en: "September AP batch", ar: "دفعة الحسابات الدائنة — سبتمبر" })}
           subtitle={L({ en: `${kpis.batchDocs} documents · AED ${fmt2(kpis.batchValue)}`, ar: `${kpis.batchDocs} مستنداً · ${fmt2(kpis.batchValue)} درهم` })}

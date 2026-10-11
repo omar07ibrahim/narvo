@@ -239,7 +239,8 @@ export function reportSources(tender: Tender, suppliers: Supplier[], answered: C
       const key = `${h.docId}|${h.section}`;
       if (seen.has(key)) continue;
       seen.add(key);
-      cites.push({ n: cites.length + 1, docId: h.docId, title: h.title, ref: h.ref, section: h.section, quote: h.text.length > 700 ? h.text.slice(0, 700) + "…" : h.text });
+      const text = plainMd(h.text);
+      cites.push({ n: cites.length + 1, docId: h.docId, title: h.title, ref: h.ref, section: h.section, quote: text.length > 700 ? text.slice(0, 700) + "…" : text });
       if (cites.length >= 14) break;
     }
   }
@@ -247,9 +248,21 @@ export function reportSources(tender: Tender, suppliers: Supplier[], answered: C
   for (const c of answered) {
     const s = suppliers.find((x) => x.id === c.supplierId);
     if (!c.responseExcerpt) continue;
-    cites.push({ n: cites.length + 1, docId: c.ref, title: `Clarification response — ${s?.name ?? c.supplierId}`, ref: c.ref, section: c.ref, quote: c.responseExcerpt });
+    cites.push({ n: cites.length + 1, docId: c.ref, title: `Clarification response — ${s?.name ?? c.supplierId}`, ref: c.ref, section: c.ref, quote: plainMd(c.responseExcerpt) });
   }
   return cites;
+}
+
+/** Source cards show plain text: no Markdown emphasis, headings or table separators. */
+function plainMd(md: string): string {
+  return md
+    .split("\n")
+    .filter((l) => !/^\s*\|?\s*:?-{3,}/.test(l))
+    .map((l) => (l.trim().startsWith("|") ? l.split("|").map((c) => c.trim()).filter(Boolean).join(" — ") : l))
+    .join("\n")
+    .replace(/\*\*|__/g, "")
+    .replace(/^#+\s*/gm, "")
+    .trim();
 }
 
 export async function* streamReport(ctx: Ctx, opts: { tender: Tender; facts: string; citations: Citation[] }): AsyncGenerator<string, string> {
@@ -263,6 +276,7 @@ export async function* streamReport(ctx: Ctx, opts: { tender: Tender; facts: str
     "Use the COMPUTED RESULTS exactly as given — never recompute, round differently or invent scores, prices, ranks or sensitivity conclusions.",
     "State only facts present in the record or the sources: clarifications exist only if listed in the record; do not invent attendance, meetings, signatures or conditions not supported by the findings.",
     "Cite the numbered sources [n] for statements about bids, clarifications and procedure. Computed figures need no citation.",
+    "Gate status is exactly as recorded: a gate marked partial, clarify or pending is still OPEN — report it as a condition to be resolved, never as resolved. Only items listed under 'Changes after clarification' changed after a clarification.",
     `Structure with exactly these headings: ${headings}.`,
     "Section 7 must contain the REQUIRED TABLE and the REQUIRED SENSITIVITY STATEMENT copied exactly — nothing else about sensitivity.",
     "In the recommendation, name the top-ranked compliant bidder, state that award is subject to approval by the competent authority (Art. 17/32), and list conditions precedent and risks drawn from the findings. Mention evaluator overrides if any. No signature block.",

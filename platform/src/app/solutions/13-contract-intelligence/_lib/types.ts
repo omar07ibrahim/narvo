@@ -21,7 +21,7 @@ export interface Contract {
   status: "active" | "extended" | "draft" | "expired";
   file: string | null;
   performanceSecurity?: { amount: number; expiry: string };
-  flags: string[];
+  flags: Array<string | Bi>;
   received?: string;
   reviewStatus?: string;
   renewalDecision?: { decision: string; at: number; by: string };
@@ -35,12 +35,15 @@ export interface PlaybookPosition {
   position: string;
   fallback: string;
   escalation: string;
+  /** Arabic rendering of the position (the English text is what the model is prompted with). */
+  ar?: { position: string; fallback: string; escalation: string };
 }
 
 export interface Playbook {
   ref: string;
   title: Bi;
   owner: string;
+  ownerAr?: string;
   approved: string;
   positions: PlaybookPosition[];
 }
@@ -109,6 +112,8 @@ export interface ExtractedObligation {
   ownerRole: string;
   owner: string;
   due: string | null;
+  /** A register obligation of the same contract that this item restates (not added again by default). */
+  existing?: { id: string; title: Bi } | null;
 }
 
 export interface Extraction {

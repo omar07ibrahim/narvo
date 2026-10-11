@@ -16,7 +16,7 @@
     "status": "active",
     "file": "contracts/MNDA-CON-2023-019.md",
     "performanceSecurity": { "amount": 630000, "expiry": "2027-03-31" },
-    "flags": ["Renewal decision due", "PPM below KPI since June 2026"]
+    "flags": [{ "en": "Renewal decision due", "ar": "قرار التجديد مستحق" }, { "en": "PPM below KPI since June 2026", "ar": "الصيانة الوقائية دون المستهدف منذ يونيو 2026" }]
   },
   {
     "id": "MNDA-CON-2024-007",
@@ -35,7 +35,7 @@
     "status": "active",
     "file": "contracts/MNDA-CON-2024-007.md",
     "performanceSecurity": { "amount": 68595, "expiry": "2027-05-29" },
-    "flags": ["Auto-renewal (approved deviation)"]
+    "flags": [{ "en": "Auto-renewal (approved deviation)", "ar": "تجديد تلقائي (انحراف معتمد)" }]
   },
   {
     "id": "MNDA-CON-2025-004",
@@ -73,7 +73,7 @@
     "status": "active",
     "file": "contracts/MNDA-CON-2025-011.md",
     "performanceSecurity": { "amount": 218400, "expiry": "2027-05-01" },
-    "flags": ["Renewal decision due"]
+    "flags": [{ "en": "Renewal decision due", "ar": "قرار التجديد مستحق" }]
   },
   {
     "id": "MNDA-CON-2024-015",
@@ -91,7 +91,7 @@
     "renewal": { "type": "option", "months": 12, "noticeDays": 60, "party": "MNDA", "clause": "3.2" },
     "status": "active",
     "file": null,
-    "flags": ["Scope overlaps tender MNDA/PRC/2026/041"]
+    "flags": [{ "en": "Scope overlaps tender MNDA/PRC/2026/041", "ar": "النطاق يتداخل مع المناقصة MNDA/PRC/2026/041" }]
   },
   {
     "id": "MNDA-CON-2024-022",
@@ -127,7 +127,7 @@
     "renewal": { "type": "none" },
     "status": "active",
     "file": null,
-    "flags": ["Final milestone due November 2026"]
+    "flags": [{ "en": "Final milestone due November 2026", "ar": "المرحلة النهائية مستحقة في نوفمبر 2026" }]
   },
   {
     "id": "MNDA-CON-2023-031",
@@ -145,7 +145,7 @@
     "renewal": { "type": "none", "note": "Extended from 30 Sep 2026 by Addendum 1 pending tender MNDA/PRC/2026/041" },
     "status": "extended",
     "file": null,
-    "flags": ["Extended by Addendum 1"]
+    "flags": [{ "en": "Extended by Addendum 1", "ar": "ممدد بموجب الملحق 1" }]
   },
   {
     "id": "MNDA-CON-2026-006",
@@ -163,7 +163,7 @@
     "renewal": { "type": "option", "months": 12, "noticeDays": 60, "party": "MNDA", "clause": "3.2" },
     "status": "active",
     "file": null,
-    "flags": ["Demand +31% in September (S5)"]
+    "flags": [{ "en": "Contact volume +31% in September", "ar": "ارتفاع الاتصالات 31% في سبتمبر" }]
   },
   {
     "id": "MNDA-CON-2024-028",
@@ -199,7 +199,7 @@
     "renewal": { "type": "none" },
     "status": "active",
     "file": null,
-    "flags": ["Personal data — UAE residency required"]
+    "flags": [{ "en": "Personal data — UAE residency required", "ar": "بيانات شخصية — الحفظ داخل الدولة إلزامي" }]
   },
   {
     "id": "DRAFT-2026-CHC-OMNI",
@@ -218,6 +218,6 @@
     "status": "draft",
     "file": "drafts/nuvola-contact-platform-draft.md",
     "received": "2026-10-06",
-    "flags": ["Vendor paper — review against playbook"]
+    "flags": [{ "en": "Vendor paper — review against playbook", "ar": "نموذج المورد — يُراجع مقابل الدليل" }]
   }
 ]

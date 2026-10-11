@@ -24,15 +24,15 @@ const SAMPLE = "/demo/14-finance-operations/byo-sample-act-inv-0791.png";
 export type RunKey = "case" | "extract" | "byo" | "ask";
 
 const TRACE_TITLE: Record<RunKey, { en: string; ar: string }> = {
-  case: { en: "Agent trace — resolution case", ar: "مسار الوكيل — ملف المعالجة" },
-  extract: { en: "Agent trace — invoice reading", ar: "مسار الوكيل — قراءة الفاتورة" },
-  byo: { en: "Agent trace — your invoice", ar: "مسار الوكيل — فاتورتك" },
-  ask: { en: "Agent trace — AP policy", ar: "مسار الوكيل — سياسة الحسابات الدائنة" },
+  case: { en: "resolution case", ar: "ملف المعالجة" },
+  extract: { en: "invoice reading", ar: "قراءة الفاتورة" },
+  byo: { en: "your invoice", ar: "فاتورتك" },
+  ask: { en: "AP policy", ar: "سياسة الحسابات الدائنة" },
 };
 
 const SUGGESTED = [
   { en: "Can we pay a surcharge that is not on the PO?", ar: "هل يمكن سداد رسوم إضافية غير واردة في أمر الشراء؟" },
-  { en: "Who approves a AED 74,995 adjustment?", ar: "من يعتمد تسوية بقيمة 74,995 درهم؟" },
+  { en: "Who approves an AED 74,995 adjustment?", ar: "من يعتمد تسوية بقيمة 74,995 درهم؟" },
   { en: "What do we do when a supplier invoice has no TRN?", ar: "ما الإجراء عندما لا تحمل فاتورة المورد رقماً ضريبياً؟" },
 ];
 
@@ -80,7 +80,7 @@ export function SideRail({
                   active === k ? "border-ai/40 bg-ai-soft text-ai" : "border-border text-muted-foreground hover:text-foreground",
                 )}
               >
-                {L(TRACE_TITLE[k]).split("—")[1]?.trim() ?? k}
+                {L(TRACE_TITLE[k])}
               </button>
             ))}
           </div>

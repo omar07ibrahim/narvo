@@ -184,10 +184,13 @@ export function MatchView({
           <table className="w-full table-fixed text-[12px]">
             <thead>
               <tr className="border-b border-border bg-muted/50">
-                <th className="label-caps !text-[9.5px] w-[30%] px-3 py-2 text-start font-medium">{L({ en: "Check", ar: "الفحص" })}</th>
-                <th className="label-caps !text-[9.5px] px-3 py-2 text-start font-medium">{L({ en: "Expected", ar: "المتوقع" })}</th>
-                <th className="label-caps !text-[9.5px] px-3 py-2 text-start font-medium">{L({ en: "Actual", ar: "الفعلي" })}</th>
-                <th className="label-caps !text-[9.5px] w-[96px] px-3 py-2 text-end font-medium">{L({ en: "Variance", ar: "الفرق" })}</th>
+                <th className="label-caps !text-[9.5px] px-3 py-2 text-start font-medium @2xl:w-[30%]">
+                  {L({ en: "Check", ar: "الفحص" })}
+                  <span className="@2xl:hidden"> · {L({ en: "expected → actual", ar: "المتوقع ← الفعلي" })}</span>
+                </th>
+                <th className="label-caps !text-[9.5px] hidden px-3 py-2 text-start font-medium @2xl:table-cell">{L({ en: "Expected", ar: "المتوقع" })}</th>
+                <th className="label-caps !text-[9.5px] hidden px-3 py-2 text-start font-medium @2xl:table-cell">{L({ en: "Actual", ar: "الفعلي" })}</th>
+                <th className="label-caps !text-[9.5px] w-[92px] px-3 py-2 text-end font-medium">{L({ en: "Variance", ar: "الفرق" })}</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -201,11 +204,18 @@ export function MatchView({
                       <div className="min-w-0">
                         <div className="font-medium">{L(c.label)}</div>
                         {L(c.detail) && <div className="mt-0.5 text-[11px] leading-snug text-muted-foreground">{L(c.detail)}</div>}
+                        {/* narrow pane: expected / actual under the check instead of two cramped columns */}
+                        <dl className="mt-1.5 grid grid-cols-[auto_minmax(0,1fr)] gap-x-2.5 gap-y-0.5 text-[11.5px] leading-snug @2xl:hidden">
+                          <dt className="text-faint">{L({ en: "Expected", ar: "المتوقع" })}</dt>
+                          <dd className="text-muted-foreground">{L({ en: c.expected, ar: c.expectedAr })}</dd>
+                          <dt className="text-faint">{L({ en: "Actual", ar: "الفعلي" })}</dt>
+                          <dd className={cn(c.status === "fail" ? "text-danger" : "text-foreground/85")}>{L({ en: c.actual, ar: c.actualAr })}</dd>
+                        </dl>
                       </div>
                     </div>
                   </td>
-                  <td className="px-3 py-2 align-top break-words text-muted-foreground">{L({ en: c.expected, ar: c.expectedAr })}</td>
-                  <td className={cn("px-3 py-2 align-top break-words", c.status === "fail" && "text-danger")}>{L({ en: c.actual, ar: c.actualAr })}</td>
+                  <td className="hidden px-3 py-2 align-top break-words text-muted-foreground @2xl:table-cell">{L({ en: c.expected, ar: c.expectedAr })}</td>
+                  <td className={cn("hidden px-3 py-2 align-top break-words @2xl:table-cell", c.status === "fail" && "text-danger")}>{L({ en: c.actual, ar: c.actualAr })}</td>
                   <td className={cn("num px-3 py-2 text-end align-top", c.status === "fail" ? "font-medium text-danger" : "text-faint")}>
                     {c.status === "fail" ? fmt2(c.variance) : "—"}
                   </td>

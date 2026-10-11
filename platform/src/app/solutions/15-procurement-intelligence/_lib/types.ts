@@ -63,6 +63,7 @@ export interface Supplier {
   name: string;
   name_ar: string;
   short: string;
+  short_ar?: string;
   licence: string;
   trn: string;
   address: string;

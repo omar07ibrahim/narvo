@@ -7,7 +7,7 @@ import { RunButton } from "@/components/narvo/run-button";
 import { StatusPill } from "@/components/narvo/status";
 import { EmptyState } from "@/components/narvo/empty";
 import type { NarvoRun } from "@/hooks/use-narvo-run";
-import { useFormat, useL } from "@/lib/i18n";
+import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { effectiveScore, gateResults, type ScoreRow } from "../_lib/scoring";
 import type { PriceSchedule, ProcState, Supplier, Tender } from "../_lib/types";
@@ -30,6 +30,7 @@ export function EvaluationView({
   onOpenDoc: (id: string) => void;
 }) {
   const L = useL();
+  const { lang } = usePrefs();
   const f = useFormat();
   const evaluated = state.suppliers.filter((s) => state.evaluations[s.id]);
   const labels = {
@@ -46,7 +47,7 @@ export function EvaluationView({
       id: s.id,
       label: (
         <button type="button" onClick={() => onOpenDoc(s.id)} className="inline-flex items-center gap-1.5 text-start hover:underline">
-          {s.short}
+          {lang === "ar" && s.short_ar ? s.short_ar : s.short}
           <FileText className="size-3 text-faint" />
         </button>
       ),
@@ -98,11 +99,12 @@ export function EvaluationView({
           if (!ce) return undefined;
           const eff = effectiveScore(state.evaluations[s.id], state.overrides[s.id], c.id);
           const over = state.overrides[s.id]?.[c.id];
+          const gap = realText(ce.gap);
           return {
             status: ce.status,
             score: eff ?? undefined,
-            value: over ? `${L({ en: "override", ar: "تعديل" })} · AI ${ce.score}` : (ce.gap ?? ce.strength ?? undefined),
-            evidence: [ce.evidence ? `“${ce.evidence.quote}”` : "", ce.gap ? `${L({ en: "Gap", ar: "الفجوة" })}: ${ce.gap}` : "", over ? `${L({ en: "Override", ar: "تعديل المقيّم" })} (${over.by}): ${over.reason}` : ""].filter(Boolean).join("\n\n"),
+            value: over ? `${L({ en: "override", ar: "تعديل" })} · AI ${ce.score}` : (gap ?? realText(ce.strength) ?? undefined),
+            evidence: [ce.evidence ? `“${ce.evidence.quote}”` : "", gap ? `${L({ en: "Gap", ar: "الفجوة" })}: ${gap}` : "", over ? `${L({ en: "Override", ar: "تعديل المقيّم" })} (${over.by}): ${over.reason}` : ""].filter(Boolean).join("\n\n"),
             source: ce.evidence ? `${ce.evidence.source === "clarification" ? "↺ " : ""}§ ${ce.evidence.section}` : undefined,
           };
         }),
@@ -203,7 +205,7 @@ export function EvaluationView({
             <div key={s.id} className="rounded-lg border border-border bg-card p-3.5">
               <div className="flex items-start justify-between gap-2">
                 <div>
-                  <div className="text-[13px] font-medium">{s.short}</div>
+                  <div className="text-[13px] font-medium">{lang === "ar" && s.short_ar ? s.short_ar : s.short}</div>
                   <div className="mt-0.5 text-[11px] text-muted-foreground">
                     {s.submission.teamSize} {L({ en: "staff", ar: "موظفاً" })} · {L({ en: "mobilisation", ar: "التعبئة" })} {s.submission.mobilisationDays} {L({ en: "days", ar: "يوماً" })}
                   </div>
@@ -273,4 +275,11 @@ export function EvaluationView({
       </p>
     </div>
   );
+}
+
+/** The model sometimes writes "None" / "N/A" instead of leaving a gap empty — never show that as a finding. */
+function realText(v: string | null | undefined): string | null {
+  const t = v?.trim();
+  if (!t || /^(none|n\/?a|nil|no gaps?|not applicable|لا يوجد|لا توجد)[.!]?$/i.test(t)) return null;
+  return t;
 }

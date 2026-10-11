@@ -51,7 +51,7 @@ export function OrderDetail({ oa, snapshot, world }: { oa: OrderAnalysis; snapsh
   const limitEff = cr.limit + cr.release;
 
   return (
-    <div className="space-y-5">
+    <div className="@container space-y-5">
       {/* header */}
       <div>
         <div className="flex flex-wrap items-center gap-2">
@@ -70,7 +70,7 @@ export function OrderDetail({ oa, snapshot, world }: { oa: OrderAnalysis; snapsh
         <p className="mt-0.5 text-[13px] text-muted-foreground">
           {o.project} · {o.site}
         </p>
-        <div className="mt-3 grid grid-cols-4 gap-px overflow-hidden rounded-md border border-border bg-border max-md:grid-cols-2">
+        <div className="mt-3 grid grid-cols-2 gap-px overflow-hidden rounded-md border border-border bg-border @2xl:grid-cols-4">
           {[
             [{ en: "Requested", ar: "الموعد المطلوب" }, fmtSlot(o.requestedDelivery, lang)],
             [{ en: "Promise", ar: "الموعد الملتزم" }, fmtDay(o.promiseDate, lang)],
@@ -88,7 +88,7 @@ export function OrderDetail({ oa, snapshot, world }: { oa: OrderAnalysis; snapsh
       </div>
 
       {/* four checks */}
-      <div className="grid grid-cols-2 gap-2.5 max-md:grid-cols-1">
+      <div className="grid grid-cols-1 gap-2.5 @xl:grid-cols-2">
         {(["stock", "price", "window", "credit"] as ExceptionType[]).map((t) => {
           const ex = byType(t);
           const bad = ex.length > 0;
@@ -193,9 +193,9 @@ export function OrderDetail({ oa, snapshot, world }: { oa: OrderAnalysis; snapsh
       </div>
 
       {/* credit + window */}
-      <div className="grid grid-cols-2 gap-3 max-md:grid-cols-1">
+      <div className="grid grid-cols-1 gap-3 @3xl:grid-cols-2">
         <div className="rounded-md border border-border p-3.5">
-          <div className="flex items-baseline justify-between">
+          <div className="flex items-baseline justify-between gap-3">
             <Caps>{L({ en: "Customer credit — RBM-FIN-POL-04", ar: "ائتمان المتعامل — RBM-FIN-POL-04" })}</Caps>
             <span className={cn("num text-[20px] font-light", cr.over ? "text-danger" : "text-foreground")}>{fmtNum(cr.pct * 100, 1)}%</span>
           </div>
@@ -241,7 +241,7 @@ export function OrderDetail({ oa, snapshot, world }: { oa: OrderAnalysis; snapsh
           <div className="mt-2 text-[14px] font-light">{lang === "ar" ? ZONE_AR[o.zone] ?? o.zone : o.zone}</div>
           <div className="mt-2 space-y-1 text-[12px]">
             {[
-              [{ en: "Days · window", ar: "الأيام · النافذة" }, `${oa.window.rule?.days ?? "—"} · ${oa.window.effectiveWindow}`],
+              [{ en: "Days · window", ar: "الأيام · النافذة" }, `${lang === "ar" ? daysAr(oa.window.rule?.days ?? "—") : (oa.window.rule?.days ?? "—")} · ${oa.window.effectiveWindow}`],
               [{ en: "Gate", ar: "البوابة" }, oa.window.rule?.gate ?? "—"],
               [{ en: "Vehicle", ar: "المركبة" }, oa.window.rule?.maxVehicle ?? "—"],
               [{ en: "Gate permit", ar: "تصريح البوابة" }, o.gatePermit ? `${o.gatePermit.ref} · ${fmtDay(o.gatePermit.date, lang)}` : L({ en: "Not booked", ar: "غير محجوز" })],
@@ -317,7 +317,7 @@ export function OrderDetail({ oa, snapshot, world }: { oa: OrderAnalysis; snapsh
               <Record
                 key={n.id}
                 icon={<MessageSquareText className="size-3.5" />}
-                title={L({ en: `Customer notice (${n.channel}) → ${n.recipient}`, ar: `إشعار المتعامل (${n.channel === "whatsapp" ? "واتساب" : "بريد"}) ← ${n.recipient}` })}
+                title={L({ en: `Customer notice (${n.channel === "whatsapp" ? "WhatsApp" : "e-mail"}) → ${n.recipient}`, ar: `إشعار المتعامل (${n.channel === "whatsapp" ? "واتساب" : "بريد"}) ← ${n.recipient}` })}
                 body={lang === "ar" ? n.ar : n.en}
               />
             ))}
@@ -344,4 +344,10 @@ function Record({ icon, title, body }: { icon: React.ReactNode; title: string; b
       )}
     </div>
   );
+}
+
+const DAY_AR: Record<string, string> = { Mon: "الإثنين", Tue: "الثلاثاء", Wed: "الأربعاء", Thu: "الخميس", Fri: "الجمعة", Sat: "السبت", Sun: "الأحد" };
+/** "Mon–Sat" → "الإثنين–السبت" (site rules are kept in English in the master data). */
+function daysAr(s: string): string {
+  return s.replace(/(Mon|Tue|Wed|Thu|Fri|Sat|Sun)/g, (d) => DAY_AR[d] ?? d);
 }

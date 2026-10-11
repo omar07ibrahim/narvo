@@ -145,9 +145,9 @@ export function AgentTrace({
   const [showThought, setShowThought] = useState(false);
   return (
     <div className={cn("flex flex-col", className)}>
-      <div className="mb-3 flex items-center justify-between gap-2">
+      <div className="mb-3 flex flex-wrap items-center justify-between gap-x-2 gap-y-1">
         <span className="label-caps">{title ?? L({ en: "Agent trace", ar: "مسار عمل الوكيل" })}</span>
-        <span className="flex items-center gap-2 text-[10.5px] text-muted-foreground">
+        <span className="flex min-w-0 items-center gap-2 text-[10.5px] text-muted-foreground">
           {run.model && <span dir="ltr" className="font-mono">{run.model.split("/").pop()}</span>}
           <Elapsed startedAt={run.startedAt} running={run.running} ms={run.ms} />
         </span>

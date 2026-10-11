@@ -55,18 +55,40 @@ export async function POST(req: Request) {
       const kam = snapshot.master.people.find((p) => p.name === order.kam);
       const commitment = snapshot.paymentCommitments.find((p) => p.customerId === order.customerId && p.date >= "2026-10-11") ?? null;
 
+      // Three drafts stream in parallel. A request that never starts streaming (a queued or stalled provider call)
+      // is abandoned after FIRST_TOKEN_MS and retried once, so one stuck call cannot hold the package for minutes.
+      const FIRST_TOKEN_MS = 60_000;
       const draft = async (channelKey: string, stepLabel: string, system: string, user: string, maxTokens: number) => {
         const st = emit.step(channelKey, stepLabel);
-        let out = "";
-        const gen = chatStream({ messages: [{ role: "system", content: system }, { role: "user", content: user }], modelKey, solution: SLUG, task: `approve.${channelKey}`, maxTokens, temperature: 0.3, signal: emit.signal });
-        for (let n = await gen.next(); !n.done; n = await gen.next()) {
-          if (n.value.content) {
-            out += n.value.content;
-            emit.text(n.value.content, channelKey);
+        for (let attempt = 0; ; attempt++) {
+          const ctrl = new AbortController();
+          const forward = () => ctrl.abort();
+          emit.signal.addEventListener("abort", forward);
+          let stalled = false;
+          const timer = setTimeout(() => {
+            stalled = true;
+            ctrl.abort();
+          }, FIRST_TOKEN_MS);
+          let out = "";
+          try {
+            const gen = chatStream({ messages: [{ role: "system", content: system }, { role: "user", content: user }], modelKey, solution: SLUG, task: `approve.${channelKey}`, maxTokens, temperature: 0.3, signal: ctrl.signal });
+            for (let n = await gen.next(); !n.done; n = await gen.next()) {
+              if (n.value.content) {
+                if (!out) clearTimeout(timer);
+                out += n.value.content;
+                emit.text(n.value.content, channelKey);
+              }
+            }
+            st.done(ar ? `${out.trim().split(/\s+/).length} كلمة` : `${out.trim().split(/\s+/).length} words`);
+            return out.trim();
+          } catch (e) {
+            if (!stalled || out || attempt > 0 || emit.signal.aborted) throw e;
+            st.update(ar ? "لم يبدأ النموذج بالرد — إعادة المحاولة" : "No response from the model — retrying");
+          } finally {
+            clearTimeout(timer);
+            emit.signal.removeEventListener("abort", forward);
           }
         }
-        st.done(ar ? `${out.trim().split(/\s+/).length} كلمة` : `${out.trim().split(/\s+/).length} words`);
-        return out.trim();
       };
 
       const handoverSys = [

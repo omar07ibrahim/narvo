@@ -41,7 +41,8 @@ export function RenewalView({ state, kpi, run, onRun, onDecided }: { state: Cont
   const chart = kpi.months.map((m) => ({ m: f.date(`${m.month}-01`, { month: "short" }), ppm: m.ppm, complaints: m.complaintsAlGhaf }));
 
   return (
-    <div className="grid grid-cols-[360px_minmax(0,1fr)] gap-5 max-xl:grid-cols-1">
+    <div className="@container">
+    <div className="grid grid-cols-1 gap-5 @3xl:grid-cols-[340px_minmax(0,1fr)]">
       <div className="flex min-w-0 flex-col gap-4">
         <div className="rounded-lg border border-border bg-card p-4">
           <div className="label-caps">{c.ref}</div>
@@ -64,10 +65,10 @@ export function RenewalView({ state, kpi, run, onRun, onDecided }: { state: Cont
           <div className="label-caps mb-2">{L({ en: "PPM compliance 2026 vs 95% KPI", ar: "امتثال الصيانة الوقائية 2026 مقابل 95%" })}</div>
           <div className="h-40">
             <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={chart} margin={{ top: 6, right: 6, bottom: 0, left: -18 }}>
+              <LineChart data={chart} margin={{ top: 6, right: 6, bottom: 0, left: -8 }}>
                 <CartesianGrid {...gridProps} />
                 <XAxis dataKey="m" {...axisProps} />
-                <YAxis {...axisProps} domain={[86, 100]} width={40} />
+                <YAxis {...axisProps} domain={[86, 100]} ticks={[86, 90, 95, 100]} width={34} />
                 <Tooltip content={<ChartTooltip format={(x) => `${x}%`} />} />
                 <ReferenceLine y={95} stroke={CHART.warning} strokeDasharray="3 3" />
                 <Line type="monotone" dataKey="ppm" name="PPM %" stroke={CHART.ai} strokeWidth={1.75} dot={{ r: 2 }} />
@@ -159,6 +160,7 @@ export function RenewalView({ state, kpi, run, onRun, onDecided }: { state: Cont
           </div>
         )}
       </div>
+    </div>
     </div>
   );
 }

@@ -43,7 +43,7 @@ export function StockChart({ data, unit, maintenanceEnd, showTransfer }: { data:
       </div>
       <div className="h-[168px]" dir="ltr">
         <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data} margin={{ top: 8, right: 12, bottom: 0, left: -12 }}>
+          <LineChart data={data} margin={{ top: 8, right: 22, bottom: 0, left: -12 }}>
             <CartesianGrid {...gridProps} />
             <ReferenceArea x1={first} x2={maintenanceEnd < last ? maintenanceEnd : last} fill="var(--muted)" fillOpacity={0.7} strokeOpacity={0} />
             <XAxis dataKey="date" {...axisProps} tickFormatter={(d: string) => fmtDay(d, lang).split(" ").slice(1).join(" ")} interval={2} />

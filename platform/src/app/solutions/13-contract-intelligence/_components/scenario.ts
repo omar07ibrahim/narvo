@@ -4,8 +4,8 @@ export const SCENARIO: ScenarioStep[] = [
   {
     title: { en: "One register, every commitment", ar: "سجل واحد لكل الالتزامات" },
     body: {
-      en: "Twelve MNDA contracts and one incoming vendor draft. Every due date is computed from the contract's own rules — e.g. MNDA/CON/2023/019 expires 31 Dec, so the 60-day renewal notice falls on 1 Nov 2026: 21 days from today. The lift inspection certificates are already overdue.",
-      ar: "اثنا عشر عقداً ومسودة مورد واردة. تُحسب كل مواعيد الاستحقاق من قواعد العقد نفسه — مثلاً ينتهي العقد MNDA/CON/2023/019 في 31 ديسمبر فيكون إشعار التجديد (60 يوماً) في 1 نوفمبر 2026: بعد 21 يوماً. وشهادات فحص المصاعد متأخرة بالفعل.",
+      en: "Eleven MNDA contracts in force and one incoming vendor draft. Every due date is computed from the contract's own rules — e.g. MNDA/CON/2023/019 expires 31 Dec, so the 60-day renewal notice falls on 1 Nov 2026: 21 days from today. The lift inspection certificates are already overdue.",
+      ar: "أحد عشر عقداً سارياً ومسودة مورد واردة. تُحسب كل مواعيد الاستحقاق من قواعد العقد نفسه — مثلاً ينتهي العقد MNDA/CON/2023/019 في 31 ديسمبر فيكون إشعار التجديد (60 يوماً) في 1 نوفمبر 2026: بعد 21 يوماً. وشهادات فحص المصاعد متأخرة بالفعل.",
     },
   },
   {

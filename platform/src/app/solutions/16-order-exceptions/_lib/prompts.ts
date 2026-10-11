@@ -60,7 +60,7 @@ export function policyCitations(types: string[], extra: string[] = [], k = 6): C
       return true;
     })
     .slice(0, k);
-  return uniq.map((h, i) => ({ n: i + 1, docId: h.docId, title: h.title, ref: h.ref, section: h.section, quote: h.text.slice(0, 700) }));
+  return uniq.map((h, i) => ({ n: i + 1, docId: h.docId, title: h.title, ref: h.ref, section: h.section, quote: plainMd(h.text).slice(0, 700) }));
 }
 
 export function citationsText(c: Citation[]) {
@@ -185,3 +185,15 @@ export function openValue(o: SalesOrder) {
 }
 
 export { TODAY, fmtDay, aedText, deliverableFrom };
+
+/** Source cards show plain text: no Markdown emphasis, headings or table separator rows. */
+function plainMd(md: string): string {
+  return md
+    .split(/\r?\n/)
+    .filter((l) => !/^\s*\|?\s*:?-{3,}/.test(l))
+    .map((l) => (l.trim().startsWith("|") ? l.split("|").map((c) => c.trim()).filter(Boolean).join(" — ") : l))
+    .join("\n")
+    .replace(/\*\*|__/g, "")
+    .replace(/^#+\s*/gm, "")
+    .trim();
+}

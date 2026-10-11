@@ -13,11 +13,12 @@ import { StatusPill } from "@/components/narvo/status";
 import { ApprovalCard } from "@/components/narvo/approval-card";
 import { EmptyState, ThinkingLines } from "@/components/narvo/empty";
 import type { NarvoRun } from "@/hooks/use-narvo-run";
-import { useFormat, useL } from "@/lib/i18n";
+import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { TODAY, addDays, obligationView, recurrenceLabel } from "../_lib/dates";
 import type { ContractState, Extraction } from "../_lib/types";
 import { STATUS_TONE, STATUS_TXT } from "./register-view";
+import { daysShort, person, role } from "./fmt";
 
 export function ObligationsView({
   state,
@@ -38,6 +39,7 @@ export function ObligationsView({
 }) {
   const L = useL();
   const f = useFormat();
+  const { lang } = usePrefs();
   const views = useMemo(() => state.obligations.map((o) => obligationView(o, state.contracts)).sort((a, b) => ((a.due ?? "9999") < (b.due ?? "9999") ? -1 : 1)), [state]);
   const hero = views.find((v) => v.o.id === "OBL-019-01");
   const months = Array.from({ length: 6 }, (_, i) => {
@@ -69,7 +71,7 @@ export function ObligationsView({
             <div className="mt-1 text-[15px] font-medium">{L(hero.o.title)}</div>
             <div className="mt-0.5 text-[12px] text-muted-foreground">
               {L({ en: "Due", ar: "الاستحقاق" })} <span className="num font-medium text-foreground">{hero.due ? f.date(hero.due, { weekday: "long", day: "numeric", month: "long", year: "numeric" }) : "—"}</span> ·{" "}
-              {L({ en: "computed as expiry", ar: "محسوب من تاريخ الانتهاء" })} {hero.c ? f.date(hero.c.end) : ""} − 60 {L({ en: "days", ar: "يوماً" })} · {L({ en: "owner", ar: "المسؤول" })} {hero.o.owner}
+              {L({ en: "computed as expiry", ar: "محسوب من تاريخ الانتهاء" })} {hero.c ? f.date(hero.c.end) : ""} − 60 {L({ en: "days", ar: "يوماً" })} · {L({ en: "owner", ar: "المسؤول" })} {person(hero.o.owner, lang)}
             </div>
             {hero.o.action && <div className="mt-1 text-[12px] text-success">{hero.o.action}</div>}
           </div>
@@ -114,20 +116,20 @@ export function ObligationsView({
                         <td className="w-[112px] px-3 py-2">
                           <div className="num font-medium">{v.due ? f.date(v.due, { day: "numeric", month: "short", year: "numeric" }) : "—"}</div>
                           <StatusPill tone={STATUS_TONE[v.status]} className="mt-1">
-                            {v.status === "done" ? L(STATUS_TXT.done) : v.days! < 0 ? `${-v.days!}d ${L({ en: "late", ar: "تأخير" })}` : `${v.days}d`}
+                            {v.status === "done" ? L(STATUS_TXT.done) : daysShort(v.days, lang)}
                           </StatusPill>
                         </td>
                         <td className="px-3 py-2">
                           <div className="leading-snug font-medium">{L(v.o.title)}</div>
                           <div className="mt-0.5 text-[11px] text-muted-foreground">
-                            <span className="font-mono">{v.c?.ref ?? (v.o.contractName as string) ?? v.o.contractId}</span> · {L({ en: "cl.", ar: "بند" })} {v.o.sourceClause} · {L(recurrenceLabel(v.o.trigger))} · {v.o.party === "MNDA" ? "MNDA" : L({ en: "Supplier", ar: "المورد" })}
+                            <span className="font-mono">{v.c?.ref ?? (v.o.contractName as string) ?? v.o.contractId}</span> · {L({ en: "cl.", ar: "بند" })} {v.o.sourceClause} · {L(recurrenceLabel(v.o.trigger))} · {v.o.party === "MNDA" ? L({ en: "MNDA", ar: "الهيئة" }) : L({ en: "Supplier", ar: "المورد" })}
                             {v.o.source === "ai" && <span className="ms-1 text-ai">· {L({ en: "extracted by NARVO", ar: "مستخرج بواسطة نارفو" })}</span>}
                           </div>
                           {v.o.action && <div className="mt-1 text-[11.5px] text-foreground/80">↳ {v.o.action}</div>}
                         </td>
                         <td className="w-[190px] px-3 py-2 text-[12px]">
-                          <div>{v.o.owner}</div>
-                          <div className="text-[11px] text-muted-foreground">{v.o.ownerRole}</div>
+                          <div>{person(v.o.owner, lang)}</div>
+                          <div className="text-[11px] text-muted-foreground">{role(v.o.ownerRole, lang)}</div>
                         </td>
                         <td className="w-[136px] px-3 py-2 text-end">{v.status !== "done" && <ActionButton onSave={(a, c) => onAction(v.o.id, a, c)} />}</td>
                       </tr>
@@ -144,6 +146,7 @@ export function ObligationsView({
 
 function CalCol({ title, items, danger }: { title: string; items: ReturnType<typeof obligationView>[]; danger?: boolean }) {
   const L = useL();
+  const { lang } = usePrefs();
   return (
     <div className={cn("min-h-[120px] rounded-md border p-2", danger ? "border-danger/25 bg-danger-soft/30" : "border-border bg-surface")}>
       <div className={cn("label-caps !text-[9.5px] mb-1.5", danger && "text-danger")}>
@@ -170,7 +173,7 @@ function CalCol({ title, items, danger }: { title: string; items: ReturnType<typ
                   {v.c?.ref} · {L({ en: "Clause", ar: "البند" })} {v.o.sourceClause}
                 </div>
                 <div className="mt-1 text-muted-foreground">
-                  {v.o.owner} · {v.due}
+                  {person(v.o.owner, lang)} · {v.due}
                 </div>
               </HoverCardContent>
             </HoverCard>
@@ -241,8 +244,10 @@ function ExtractionPanel({
 }) {
   const L = useL();
   const f = useFormat();
+  const { lang } = usePrefs();
   const future = (d: string | null) => !!d && d >= addDays(TODAY, -45);
-  const [keys, setKeys] = useState<string[]>(() => (extraction?.items ?? []).filter((i) => future(i.due)).map((i) => i.key));
+  const [keys, setKeys] = useState<string[]>(() => (extraction?.items ?? []).filter((i) => future(i.due) && !i.existing).map((i) => i.key));
+  const tracked = (extraction?.items ?? []).filter((i) => i.existing).length;
   const [busy, setBusy] = useState(false);
   const approval = extraction?.approvalId ? state.approvals.find((a) => a.id === extraction.approvalId) : undefined;
   return (
@@ -252,6 +257,11 @@ function ExtractionPanel({
           <ListChecks className="size-4 text-ai" />
           <span className="text-[13px] font-medium">{L({ en: "Proposed obligations", ar: "الالتزامات المقترحة" })}</span>
           {extraction && <span className="text-[12px] text-muted-foreground">· {extraction.name}</span>}
+          {extraction && tracked > 0 && (
+            <span className="text-[12px] text-muted-foreground">
+              · {tracked} {L({ en: "already tracked", ar: "مسجلة مسبقاً" })}
+            </span>
+          )}
         </div>
         {extraction && !approval && (
           <RunButton
@@ -281,7 +291,7 @@ function ExtractionPanel({
           {approval && <ApprovalCard key={approval.id} approval={approval} className="mb-3" onDecided={onDecided} />}
           <ul className="divide-y divide-border">
             {extraction.items.map((i) => (
-              <li key={i.key} className="flex items-start gap-3 py-2">
+              <li key={i.key} className={cn("flex items-start gap-3 py-2", i.existing && !keys.includes(i.key) && "opacity-60")}>
                 <input
                   type="checkbox"
                   className="mt-1 accent-[var(--ai)]"
@@ -294,8 +304,13 @@ function ExtractionPanel({
                     {i.title}
                   </div>
                   <div className="mt-0.5 text-[11px] text-muted-foreground">
-                    {i.party === "MNDA" ? "MNDA" : L({ en: "Supplier", ar: "المورد" })} · {L(recurrenceLabel(i.trigger))} · {L({ en: "cl.", ar: "بند" })} {i.sourceClause} · {i.owner}
+                    {i.party === "MNDA" ? L({ en: "MNDA", ar: "الهيئة" }) : L({ en: "Supplier", ar: "المورد" })} · {L(recurrenceLabel(i.trigger))} · {L({ en: "cl.", ar: "بند" })} {i.sourceClause} · {person(i.owner, lang)}
                   </div>
+                  {i.existing && (
+                    <div className="mt-0.5 text-[11px] text-info">
+                      {L({ en: "Already in the register as", ar: "مسجل مسبقاً باسم" })} “{L(i.existing.title)}”
+                    </div>
+                  )}
                   {i.quote && <div className="mt-1 line-clamp-2 border-s-2 border-ai/30 ps-2 text-[11px] text-muted-foreground">“{i.quote}”</div>}
                 </div>
                 <div className="w-28 shrink-0 text-end">

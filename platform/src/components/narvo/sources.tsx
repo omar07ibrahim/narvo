@@ -4,6 +4,7 @@ import { FileText } from "lucide-react";
 import type { Citation } from "@/lib/ai/events";
 import { cn } from "@/lib/utils";
 import { useL } from "@/lib/i18n";
+import { cleanQuote } from "@/lib/text";
 
 export function SourceList({
   citations,
@@ -56,7 +57,7 @@ export function SourceList({
                 {c.section ? ` · § ${c.section}` : ""}
               </div>
               <p className="mt-1.5 line-clamp-3 text-[11.5px] leading-relaxed text-muted-foreground" dir="auto">
-                {c.quote}
+                {cleanQuote(c.quote, 600)}
               </p>
             </div>
           </div>
