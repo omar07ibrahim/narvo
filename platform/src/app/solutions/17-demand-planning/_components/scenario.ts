@@ -4,15 +4,15 @@ export const SCENARIO: ScenarioStep[] = [
   {
     title: { en: "Read a forecast you can trust", ar: "توقعات يمكن الوثوق بها" },
     body: {
-      en: "Forecast tab, RB-B500-16 at Jebel Ali: three years of weekly sales, the Q4 peak and a P10–P90 band. Toggle Backtest — the model was refitted without the last 12 weeks and beats the same-week-last-year baseline. The model card shows the Ramadan, Eid, summer-ban and promotion effects it estimated.",
-      ar: "في تبويب التوقعات، اختر RB-B500-16 في جبل علي: ثلاث سنوات من المبيعات الأسبوعية وذروة الربع الرابع ونطاق P10–P90. فعّل الاختبار الرجعي — أُعيدت ملاءمة النموذج دون آخر 12 أسبوعاً ويتفوق على نموذج «نفس الأسبوع من العام الماضي». تعرض بطاقة النموذج آثار رمضان والعيد وحظر الظهيرة والعروض.",
+      en: "The Forecast tab opens on RB-B500-16 at Ras Al Marsa (MN-05), the depot serving the Marina Quarter projects: three years of weekly sales, the Q4 peak and a P10–P90 band. Backtest is on — the model was refitted without the last 12 weeks and beats the same-week-last-year baseline, which misses this year's growth. Where the baseline wins on a series (for example RB-B500-16 at Jebel Ali), the card says so instead of hiding it. The model card also shows the Ramadan, Eid, summer-ban and holiday effects it estimated.",
+      ar: "يفتح تبويب التوقعات على RB-B500-16 في رأس المرسى (MN-05)، المستودع الذي يخدم مشاريع حي المارينا: ثلاث سنوات من المبيعات الأسبوعية وذروة الربع الرابع ونطاق P10–P90. الاختبار الرجعي مفعّل — أُعيدت ملاءمة النموذج دون آخر 12 أسبوعاً ويتفوق على نموذج «نفس الأسبوع من العام الماضي» الذي لا يرى نمو هذا العام. وحيث يتفوق النموذج البسيط على سلسلة ما (مثل RB-B500-16 في جبل علي) تُظهر البطاقة ذلك بوضوح. وتعرض بطاقة النموذج آثار رمضان والعيد وحظر الظهيرة والعطل الرسمية التي قدّرها.",
     },
   },
   {
     title: { en: "A launch with no history", ar: "منتج جديد بلا سجل مبيعات" },
     body: {
-      en: "Select PNT-TS-20 (ThermaShield, launching 2 Nov). With no history, the engine borrows roofing seasonality from WPF-BIT-4, adds the 1,140 pre-ordered pails and shows a deliberately wide range.",
-      ar: "اختر PNT-TS-20 (ثيرماشيلد، يُطلق في 2 نوفمبر). في غياب السجل يستعير المحرك موسمية العزل من WPF-BIT-4، ويضيف 1,140 دلواً محجوزاً مسبقاً، ويعرض نطاقاً واسعاً عن قصد.",
+      en: "Select PNT-TS-20 (ThermaShield, launching 1 Nov). With no history, the engine borrows roofing seasonality from WPF-BIT-4, adds the 1,140 pre-ordered pails and shows a deliberately wide range.",
+      ar: "اختر PNT-TS-20 (ثيرماشيلد، يُطلق في 1 نوفمبر). في غياب السجل يستعير المحرك موسمية العزل من WPF-BIT-4، ويضيف 1,140 دلواً محجوزاً مسبقاً، ويعرض نطاقاً واسعاً عن قصد.",
     },
   },
   {

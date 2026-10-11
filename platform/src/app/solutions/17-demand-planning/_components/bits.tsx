@@ -62,7 +62,7 @@ export function Segmented<T extends string | number>({
           type="button"
           onClick={() => onChange(o.value)}
           className={cn(
-            "num rounded-[5px] px-2 py-1 text-[11.5px] transition-colors",
+            "num rounded-[5px] px-2 py-1 text-[11.5px] whitespace-nowrap transition-colors",
             o.value === value ? "bg-card font-medium text-foreground shadow-[0_0_0_1px_var(--border)]" : "text-muted-foreground hover:text-foreground",
           )}
         >
@@ -86,14 +86,15 @@ export function Sparkline({ history, forecast, className }: { history: number[];
   const y = (v: number) => Hh - 2 - ((v - min) / span) * (Hh - 4);
   const path = (vals: number[], offset: number) => vals.map((v, i) => `${i === 0 ? "M" : "L"}${x(i + offset).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
   return (
-    <svg viewBox={`0 0 ${W} ${Hh}`} className={cn("h-[22px] w-[92px] rtl:-scale-x-100", className)} aria-hidden>
-      {history.length > 0 && <path d={path(history, 0)} fill="none" stroke="var(--muted-foreground)" strokeWidth={1} />}
+    <svg viewBox={`0 0 ${W} ${Hh}`} preserveAspectRatio="none" className={cn("h-[22px] w-[64px] shrink-0 rtl:-scale-x-100 2xl:w-[92px]", className)} aria-hidden>
+      {history.length > 0 && <path d={path(history, 0)} fill="none" stroke="var(--muted-foreground)" strokeWidth={1} vectorEffect="non-scaling-stroke" />}
       {forecast.length > 0 && (
         <path
           d={path(history.length ? [history[history.length - 1], ...forecast] : forecast, history.length ? history.length - 1 : 0)}
           fill="none"
           stroke="var(--ai)"
           strokeWidth={1.4}
+          vectorEffect="non-scaling-stroke"
         />
       )}
     </svg>

@@ -4,8 +4,9 @@ import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 import { SolutionPage } from "@/components/narvo/solution-page";
 import { MetricTile } from "@/components/narvo/metric";
+import { DirectionProvider } from "@/components/ui/direction";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useL } from "@/lib/i18n";
+import { useL, usePrefs } from "@/lib/i18n";
 import type { ApprovalSummary } from "@/lib/ai/events";
 import { buildSimSeries, runPlans } from "../_lib/simulate";
 import { DEFAULT_WHATIF, type CalendarDef, type ForecastBundle, type Override, type PlanningConfig, type Position, type PublishedPlan, type WhatIf } from "../_lib/types";
@@ -35,12 +36,14 @@ export function PlanningWorkspace({
   initialApprovals: ApprovalSummary[];
 }) {
   const L = useL();
+  const { dir } = usePrefs();
   const [tab, setTab] = useState("forecast");
   useEffect(() => {
     const t = new URLSearchParams(window.location.search).get("tab");
     if (t) setTab(t);
   }, []);
-  const [selectedKey, setSelectedKey] = useState("RB-B500-16|JA");
+  // Ras Al Marsa (MN-05) serves the Marina Quarter projects — the series the demo opens on.
+  const [selectedKey, setSelectedKey] = useState("RB-B500-16|MN");
   const [whatIf, setWhatIf] = useState<WhatIf>(DEFAULT_WHATIF);
   const [overrides, setOverrides] = useState<Override[]>(initialOverrides);
   const [published, setPublished] = useState<PublishedPlan[]>(initialPublished);
@@ -98,6 +101,7 @@ export function PlanningWorkspace({
 
   return (
     <SolutionPage slug="17-demand-planning" scenario={SCENARIO}>
+      <DirectionProvider dir={dir}>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5">
         <MetricTile
           label={L({ en: "Forecast error · WAPE", ar: "خطأ التوقع · WAPE" })}
@@ -117,7 +121,7 @@ export function PlanningWorkspace({
           label={L({ en: `Constraint fit · plan ${plan}`, ar: `التوافق مع القيود · الخطة ${plan}` })}
           value={fmtPct(sel.constraintFit, 0)}
           tone={sel.violations.length ? "danger" : "success"}
-          sub={sel.violations.length ? L({ en: `${sel.violations.length} resource-weeks over limit`, ar: `${sel.violations.length} أسبوع-مورد فوق الحد` }) : L({ en: "4 resources × 13 weeks within limits", ar: "4 موارد × 13 أسبوعاً ضمن الحدود" })}
+          sub={sel.violations.length ? L({ en: `${sel.violations.length} resource-week${sel.violations.length === 1 ? "" : "s"} over limit`, ar: `${sel.violations.length} أسبوع-مورد فوق الحد` }) : L({ en: "4 resources × 13 weeks within limits", ar: "4 موارد × 13 أسبوعاً ضمن الحدود" })}
         />
         <MetricTile
           label={L({ en: `13-week cost · plan ${plan}`, ar: `تكلفة 13 أسبوعاً · الخطة ${plan}` })}
@@ -132,7 +136,7 @@ export function PlanningWorkspace({
         />
       </div>
 
-      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_400px]">
+      <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1fr)_340px] 2xl:grid-cols-[minmax(0,1fr)_400px]">
         <Tabs value={tab} onValueChange={setTab} className="min-w-0 gap-4">
           <TabsList variant="line" className="h-9">
             <TabsTrigger value="forecast">{L({ en: "Forecast", ar: "التوقعات" })}</TabsTrigger>
@@ -161,11 +165,11 @@ export function PlanningWorkspace({
             <WhatIfBar whatIf={whatIf} onChange={setWhatIf} computing={computing} ms={run.ms} />
             <PlanCards cfg={cfg} run={run} selected={plan} onSelect={setPlan} />
             <SubmitBar cfg={cfg} run={run} selected={plan} onSubmit={submit} busy={submitting} pending={approvals.some((a) => a.status === "pending")} />
-            <div className="grid gap-4 xl:grid-cols-2">
+            <div className="grid gap-4 2xl:grid-cols-2">
               <StorageChart run={run} selected={plan} />
               <CostChart run={run} />
             </div>
-            <div className="grid gap-4 xl:grid-cols-2">
+            <div className="grid gap-4 2xl:grid-cols-2">
               <SkuRiskTable
                 cfg={cfg}
                 run={run}
@@ -211,6 +215,7 @@ export function PlanningWorkspace({
           />
         </div>
       </div>
+      </DirectionProvider>
     </SolutionPage>
   );
 }

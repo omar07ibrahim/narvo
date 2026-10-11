@@ -169,7 +169,7 @@ export function DecisionLog({
             {overrides.map((o) => (
               <div key={o.id} className="rounded-md border border-border bg-surface p-2.5 text-[12px]">
                 <div className="flex items-center justify-between gap-2">
-                  <span className="font-mono text-[11.5px]">{o.key.replace("|", " · ")}</span>
+                  <span className="font-mono text-[11.5px]">{o.key.replace("|", " · ").replace(/ · MN$/, " · MN-05")}</span>
                   <Button size="xs" variant="ghost" className="text-muted-foreground" onClick={() => onWithdraw(o.id)}>
                     {L({ en: "Withdraw", ar: "سحب" })}
                   </Button>

@@ -12,18 +12,20 @@ import { StatusPill } from "@/components/narvo/status";
 import { EmptyState, ThinkingLines } from "@/components/narvo/empty";
 import { CHART, ChartTooltip, axisProps, gridProps } from "@/components/narvo/chart";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { useFormat, useL } from "@/lib/i18n";
+import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { Citation } from "@/lib/ai/events";
 import type { BmsLog, Job, PartAvailability } from "../_lib/types";
+import { textDir } from "./text-dir";
 
 export interface BriefData {
   text: string;
   citations: Citation[];
   parts: PartAvailability[];
-  cautions?: Array<{ partNo: string; desc: string; warning: string }>;
+  cautions?: Array<{ partNo: string; desc: string; warning: string; warning_ar?: string }>;
   ms?: number;
   generatedAt?: number;
+  lang?: "en" | "ar";
 }
 
 const STATUS_TONE: Record<PartAvailability["status"], "success" | "info" | "warning" | "danger"> = {
@@ -35,6 +37,8 @@ const STATUS_TONE: Record<PartAvailability["status"], "success" | "info" | "warn
 
 export function PartsTable({ parts, compact }: { parts: PartAvailability[]; compact?: boolean }) {
   const L = useL();
+  const { lang } = usePrefs();
+  const ar = lang === "ar";
   const label: Record<PartAvailability["status"], { en: string; ar: string }> = {
     in_van: { en: "In van", ar: "في الشاحنة" },
     site_store: { en: "Site store", ar: "مخزن الموقع" },
@@ -51,15 +55,17 @@ export function PartsTable({ parts, compact }: { parts: PartAvailability[]; comp
                 <span className="font-mono text-[11px] font-medium">{p.partNo}</span>
                 <span className="num text-muted-foreground">× {p.qty}</span>
               </div>
-              <div className="truncate text-muted-foreground">{p.desc}</div>
+              <div className="truncate text-muted-foreground" title={ar && p.desc_ar ? p.desc_ar : p.desc}>
+                {ar && p.desc_ar ? p.desc_ar : p.desc}
+              </div>
             </div>
             <StatusPill tone={STATUS_TONE[p.status]}>{L(label[p.status])}</StatusPill>
           </div>
-          {!compact && <div className="mt-0.5 text-[11px] text-faint">{p.action}</div>}
+          {!compact && <div className="mt-0.5 text-[11px] text-faint">{ar && p.action_ar ? p.action_ar : p.action}</div>}
           {p.warning && (
             <div className="mt-1 flex items-start gap-1.5 rounded bg-danger-soft px-2 py-1 text-[11px] text-danger">
               <AlertTriangle className="mt-px size-3 shrink-0" />
-              {p.warning}
+              {ar && p.warning_ar ? p.warning_ar : p.warning}
             </div>
           )}
         </li>
@@ -116,6 +122,7 @@ export function BmsChart({ bms }: { bms: BmsLog }) {
 export function BriefView({ job, run, stored, bms, onRun }: { job: Job; run: NarvoRun; stored?: BriefData; bms?: BmsLog; onRun: () => void }) {
   const L = useL();
   const f = useFormat();
+  const { lang } = usePrefs();
   const live = run.status !== "idle";
   const text = live ? (run.text.main ?? "") : (stored?.text ?? "");
   const citations = ((live ? run.data.citations : stored?.citations) as Citation[]) ?? [];
@@ -129,7 +136,8 @@ export function BriefView({ job, run, stored, bms, onRun }: { job: Job; run: Nar
         title={L({ en: "Job brief", ar: "ملخص المهمة" })}
         subtitle={
           stored && !live
-            ? L({ en: `Prepared ${f.date(stored.generatedAt ?? 0, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} in ${((stored.ms ?? 0) / 1000).toFixed(0)} s`, ar: `أُعدّ ${f.date(stored.generatedAt ?? 0, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} خلال ${((stored.ms ?? 0) / 1000).toFixed(0)} ث` })
+            ? L({ en: `Prepared ${f.date(stored.generatedAt ?? 0, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} in ${((stored.ms ?? 0) / 1000).toFixed(0)} s`, ar: `أُعدّ ${f.date(stored.generatedAt ?? 0, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} خلال ${((stored.ms ?? 0) / 1000).toFixed(0)} ث` }) +
+              (stored.lang && stored.lang !== lang ? L({ en: " · written in Arabic — regenerate for English", ar: " · مكتوب بالإنجليزية — أعد الإعداد للعربية" }) : "")
             : L({ en: "Service history, BMS trends and approved manuals → cited brief", ar: "سجل الخدمة واتجاهات نظام المبنى والأدلة المعتمدة ← ملخص موثق" })
         }
         actions={
@@ -150,9 +158,11 @@ export function BriefView({ job, run, stored, bms, onRun }: { job: Job; run: Nar
             </EmptyState>
           )
         ) : text ? (
-          <Markdown citations={citations} streaming={run.running} className="text-[13px]">
-            {text}
-          </Markdown>
+          <div dir={textDir(text)}>
+            <Markdown citations={citations} streaming={run.running} className="text-[13px]">
+              {text}
+            </Markdown>
+          </div>
         ) : (
           <ThinkingLines lines={8} />
         )}
@@ -167,29 +177,44 @@ export function BriefView({ job, run, stored, bms, onRun }: { job: Job; run: Nar
           </Collapsible>
         )}
       </Pane>
-      <div className="grid gap-4 md:grid-cols-2">
-        <Pane title={L({ en: "Preparation pipeline", ar: "مسار الإعداد" })}>
-          <AgentTrace run={run} showReasoning={false} emptyHint={L({ en: "History → BMS → manuals → brief → parts check.", ar: "السجل ← نظام المبنى ← الأدلة ← الملخص ← فحص القطع." })} />
-        </Pane>
-        {parts.length > 0 && (
-          <Pane title={L({ en: "Parts & tools — stock check", ar: "القطع والأدوات — فحص المخزون" })} bodyClassName="pt-1">
-            <PartsTable parts={parts} />
-            {cautions.map((c) => (
-              <div key={c.partNo} className="mt-2 flex items-start gap-1.5 rounded-md border border-danger/25 bg-danger-soft px-2.5 py-1.5 text-[11.5px] text-danger">
-                <AlertTriangle className="mt-0.5 size-3.5 shrink-0" />
-                <span>
-                  <span className="font-mono font-medium">{c.partNo}</span> — {c.warning}
-                </span>
-              </div>
-            ))}
+      {(() => {
+        const pipeline = (
+          <Pane title={L({ en: "Preparation pipeline", ar: "مسار الإعداد" })}>
+            <AgentTrace run={run} showReasoning={false} emptyHint={L({ en: "History → BMS → manuals → brief → parts check.", ar: "السجل ← نظام المبنى ← الأدلة ← الملخص ← فحص القطع." })} />
           </Pane>
-        )}
-        {bms && (
+        );
+        const chart = bms && (
           <Pane title={L({ en: "CH-02 · ambient vs A21 trips", ar: "CH-02 · الحرارة مقابل حالات التوقف" })}>
             <BmsChart bms={bms} />
           </Pane>
-        )}
-      </div>
+        );
+        if (!parts.length)
+          return (
+            <div className="grid items-start gap-4 md:grid-cols-2">
+              {pipeline}
+              {chart}
+            </div>
+          );
+        return (
+          <div className="grid items-start gap-4 md:grid-cols-2">
+            <div className="flex min-w-0 flex-col gap-4">
+              {pipeline}
+              {chart}
+            </div>
+            <Pane title={L({ en: "Parts & tools — stock check", ar: "القطع والأدوات — فحص المخزون" })} bodyClassName="pt-1">
+              <PartsTable parts={parts} />
+              {cautions.map((c) => (
+                <div key={c.partNo} className="mt-2 flex items-start gap-1.5 rounded-md border border-danger/25 bg-danger-soft px-2.5 py-1.5 text-[11.5px] text-danger">
+                  <AlertTriangle className="mt-0.5 size-3.5 shrink-0" />
+                  <span>
+                    <span className="font-mono font-medium">{c.partNo}</span> — {lang === "ar" && c.warning_ar ? c.warning_ar : c.warning}
+                  </span>
+                </div>
+              ))}
+            </Pane>
+          </div>
+        );
+      })()}
     </div>
   );
 }

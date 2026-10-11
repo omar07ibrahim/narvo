@@ -218,26 +218,28 @@
   }
 }
 
-/* Markdown produced by the models */
-.prose-narvo {
-  @apply text-[13.5px] leading-relaxed text-foreground;
+/* Markdown produced by the models — in the components layer so utility classes can override it */
+@layer components {
+  .prose-narvo {
+    @apply text-[13.5px] leading-relaxed text-foreground;
+  }
+  .prose-narvo h1,
+  .prose-narvo h2,
+  .prose-narvo h3 {
+    @apply mt-4 mb-2 font-medium tracking-tight;
+  }
+  .prose-narvo h1 { @apply text-lg; }
+  .prose-narvo h2 { @apply text-base; }
+  .prose-narvo h3 { @apply text-sm; }
+  .prose-narvo p { @apply my-2; }
+  .prose-narvo ul { @apply my-2 list-disc ps-5; }
+  .prose-narvo ol { @apply my-2 list-decimal ps-5; }
+  .prose-narvo li { @apply my-0.5; }
+  .prose-narvo strong { @apply font-semibold; }
+  .prose-narvo table { @apply my-3 w-full border-collapse text-[12.5px]; }
+  .prose-narvo th { @apply border-b border-border-strong py-1.5 pe-3 text-start font-medium text-muted-foreground; }
+  .prose-narvo td { @apply border-b border-border py-1.5 pe-3 align-top; }
+  .prose-narvo code { @apply rounded bg-muted px-1 py-0.5 font-mono text-[12px]; }
+  .prose-narvo blockquote { @apply my-2 border-s-2 border-ai ps-3 text-muted-foreground; }
+  .prose-narvo a { @apply text-ai underline underline-offset-2; }
 }
-.prose-narvo h1,
-.prose-narvo h2,
-.prose-narvo h3 {
-  @apply mt-4 mb-2 font-medium tracking-tight;
-}
-.prose-narvo h1 { @apply text-lg; }
-.prose-narvo h2 { @apply text-base; }
-.prose-narvo h3 { @apply text-sm; }
-.prose-narvo p { @apply my-2; }
-.prose-narvo ul { @apply my-2 list-disc ps-5; }
-.prose-narvo ol { @apply my-2 list-decimal ps-5; }
-.prose-narvo li { @apply my-0.5; }
-.prose-narvo strong { @apply font-semibold; }
-.prose-narvo table { @apply my-3 w-full border-collapse text-[12.5px]; }
-.prose-narvo th { @apply border-b border-border-strong py-1.5 pe-3 text-start font-medium text-muted-foreground; }
-.prose-narvo td { @apply border-b border-border py-1.5 pe-3 align-top; }
-.prose-narvo code { @apply rounded bg-muted px-1 py-0.5 font-mono text-[12px]; }
-.prose-narvo blockquote { @apply my-2 border-s-2 border-ai ps-3 text-muted-foreground; }
-.prose-narvo a { @apply text-ai underline underline-offset-2; }

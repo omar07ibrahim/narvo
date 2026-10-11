@@ -16,6 +16,7 @@ import type { NarvoRun } from "@/hooks/use-narvo-run";
 import { useL } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { COMFORT, efficiencyMatched, occupiedAgc, occupiedHq, weatherNormalised, zoneCol, type Complaint, type Series, type Trip } from "../_lib/signals";
+import { CATEGORY, label } from "./labels";
 
 /* ───────────── Energy ───────────── */
 
@@ -132,7 +133,7 @@ export function ComplaintsPanel({ s, complaints, trips, zones }: { s: Series; co
             </div>
             <div>
               <div className="text-[11.5px] text-muted-foreground">
-                {z ? L({ en: z.name, ar: z.nameAr }) : c.zone} · {c.category}
+                {z ? L({ en: z.name, ar: z.nameAr }) : c.zone} · {L(label(CATEGORY, c.category))}
               </div>
               <p className="mt-1 text-[13px] leading-relaxed" dir="auto">
                 {c.text}
@@ -315,13 +316,15 @@ export function TriageCard({ run, site, onTriage, onWorkOrder }: { run: NarvoRun
           <div className="flex flex-wrap items-center gap-1.5">
             <StatusPill tone={t.priority === "P1" ? "danger" : t.priority === "P2" ? "warning" : "neutral"}>{t.priority}</StatusPill>
             <StatusPill tone="neutral" dot={false}>
-              {t.category}
+              {L(label(CATEGORY, t.category))}
             </StatusPill>
             <Confidence value={t.confidence} className="ms-auto" />
           </div>
           <KeyValue k={L({ en: "Zone", ar: "المساحة" })} v={t.zoneName ?? t.zone} />
           <KeyValue k={L({ en: "Asset", ar: "الأصل" })} v={t.assetName ?? t.asset} />
-          <p className="text-[12px] leading-relaxed text-muted-foreground">{t.observation}</p>
+          <p className="text-[12px] leading-relaxed text-muted-foreground" dir="auto">
+            {t.observation}
+          </p>
           <p className="text-[12px] leading-relaxed">
             <span className="label-caps me-1 !text-[9.5px]">{L({ en: "Likely cause", ar: "السبب المرجح" })}</span>
             {t.likelyCause}

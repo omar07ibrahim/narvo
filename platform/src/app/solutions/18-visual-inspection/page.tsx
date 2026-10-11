@@ -2,7 +2,7 @@ export const dynamic = "force-dynamic";
 
 import { listApprovals } from "@/lib/store/db";
 import { InspectionWorkspace } from "./_components/workspace";
-import { loadRegistry, loadState, loadTaxonomy } from "./_lib/data";
+import { loadNameMap, loadRegistry, loadState, loadTaxonomy } from "./_lib/data";
 
 export default function Page() {
   const approvals = listApprovals({ solution: "18-visual-inspection", status: "pending" }).map((a) => ({
@@ -16,5 +16,5 @@ export default function Page() {
     createdAt: a.createdAt,
     inspectionId: (a.payload as { inspectionId?: string } | undefined)?.inspectionId,
   }));
-  return <InspectionWorkspace initialState={loadState()} tax={loadTaxonomy()} contractors={loadRegistry().contractors} initialApprovals={approvals} serverNow={Date.now()} />;
+  return <InspectionWorkspace initialState={loadState()} tax={loadTaxonomy()} contractors={loadRegistry().contractors} names={loadNameMap()} initialApprovals={approvals} serverNow={Date.now()} />;
 }

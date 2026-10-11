@@ -175,7 +175,7 @@ export async function POST(req: Request) {
         schema: partsSchema,
         name: "parts_to_bring",
         system:
-          "Extract the parts, consumables, tools and PPE the technician should bring, from the job brief. Use ONLY exact part numbers that exist in the catalogue. Include a part that may need replacing (e.g. a component under suspicion) with qty 1. Do not include items the brief advises against.",
+          "Extract the parts, consumables, tools and PPE the technician should bring, from the job brief. Use ONLY exact part numbers that exist in the catalogue. For every component the brief names as a likely cause (e.g. a fan motor with a noisy bearing, a drifting transducer), include its replacement spare from the catalogue with qty 1, so its stock is checked before travelling. Do not include items the brief advises against.",
         user: `Brief:\n${text}\n\nCatalogue:\n${catalogue}`,
         modelKey,
         maxTokens: 900,
@@ -194,7 +194,12 @@ export async function POST(req: Request) {
       // Computed safety catch: items carried in the van that must NOT be used on this asset
       const cautions = inv.parts
         .filter((p) => p.partNo === "RFM-CHM-0109" && (p.stock[tech.van] ?? 0) > 0 && /epoxy|coated/i.test(asset.description))
-        .map((p) => ({ partNo: p.partNo, desc: p.desc, warning: `In ${tech.van}: not approved for this asset's epoxy-coated coil — use RFM-CHM-0112 (RFM-MS-HVAC-014)` }));
+        .map((p) => ({
+          partNo: p.partNo,
+          desc: p.desc,
+          warning: `In ${tech.van}: not approved for this asset's epoxy-coated coil — use RFM-CHM-0112 (RFM-MS-HVAC-014)`,
+          warning_ar: `موجود في ${tech.van}: غير معتمد لملف هذا الأصل المطلي بالإيبوكسي — استخدم RFM-CHM-0112 (RFM-MS-HVAC-014)`,
+        }));
       emit.data("cautions", cautions);
       const gaps = parts.filter((p) => p.status !== "in_van");
       s5.done(

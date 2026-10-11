@@ -64,6 +64,7 @@ export interface Inspection {
   permit: string;
   contractor: string;
   consultant: string;
+  consultant_ar?: string;
   inspector: Person;
   type: "Routine" | "Complaint follow-up" | "Re-inspection" | "Ad-hoc capture";
   photos: InspectionPhoto[];
@@ -71,6 +72,7 @@ export interface Inspection {
   note: string;
   note_ar?: string;
   weather?: string;
+  weather_ar?: string;
   adhoc?: boolean;
   noticeId?: string;
 }
@@ -81,7 +83,9 @@ export interface Finding {
   photo: number;
   code: string;
   title: string;
+  title_ar?: string;
   description: string;
+  description_ar?: string;
   bbox: [number, number, number, number] | null;
   confidence: number | null;
   source: "ai" | "reviewer";
@@ -102,6 +106,7 @@ export interface Closure {
   afterThumb?: string;
   decision: "closed" | "kept_open";
   reason: string;
+  reason_ar?: string;
   decidedBy: string;
   decidedAt: number;
 }
@@ -115,6 +120,7 @@ export interface CorrectiveTask {
   severity: Severity;
   escalated?: boolean;
   title: string;
+  title_ar?: string;
   owner: string;
   plot: string;
   dueAt: string;
@@ -122,7 +128,7 @@ export interface CorrectiveTask {
   status: "open" | "closed";
   closure?: Closure;
   /** Closure evidence submitted by the contractor through MNDA e-services */
-  submission?: { src: string; submittedAt: string; by: string; note: string };
+  submission?: { src: string; submittedAt: string; by: string; by_ar?: string; note: string; note_ar?: string };
   attempts?: Array<{ at: number; verdict: string; reason: string }>;
   createdAt: number;
 }

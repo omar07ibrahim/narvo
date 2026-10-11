@@ -7,11 +7,12 @@ import { SolutionPage } from "@/components/narvo/solution-page";
 import { Pane } from "@/components/narvo/pane";
 import { MetricTile } from "@/components/narvo/metric";
 import { StatusPill } from "@/components/narvo/status";
+import { DirectionProvider } from "@/components/ui/direction";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { ApprovalSummary } from "@/lib/ai/events";
-import { computeKpis } from "../_lib/rules";
+import { computeKpis, partAvailability } from "../_lib/rules";
 import type { Asset, BmsLog, HistoryEntry, Inventory, Job, JobStatus, Site, Technician } from "../_lib/types";
 import { AssetView } from "./asset-view";
 import { BriefView, type BriefData } from "./brief-view";
@@ -60,12 +61,13 @@ export function FieldWorkspace({
   techs: Technician[];
   inventory: Inventory;
   bms: BmsLog;
-  samplePhotos: Array<{ src: string; caption: string; phase: string }>;
+  samplePhotos: Array<{ src: string; caption: string; caption_ar?: string; phase: string }>;
   initialApprovals: Array<ApprovalSummary & { jobId?: string }>;
 }) {
   const L = useL();
   const f = useFormat();
-  const { lang } = usePrefs();
+  const { lang, dir } = usePrefs();
+  const personName = (t?: Technician) => (t ? (lang === "ar" && t.name_ar) || t.name : "");
   const [state, setState] = useState<FieldState>(initial);
   const [selectedId, setSelectedId] = useState("JOB-RFM-26-04471");
   const [tab, setTab] = useState("brief");
@@ -125,10 +127,27 @@ export function FieldWorkspace({
     .sort((a, b) => (a.id === "JOB-RFM-26-04471" ? -1 : b.id === "JOB-RFM-26-04471" ? 1 : a.scheduledFor.localeCompare(b.scheduledFor)));
   const draft = (reportRun.data.draft as Draft | undefined) ?? state.drafts[job.id];
   const jobApprovals = approvals.filter((a) => a.jobId === job.id);
-  const brief = state.briefs[job.id];
+  const storedBrief = state.briefs[job.id];
+  const brief = useMemo(
+    () =>
+      storedBrief && {
+        ...storedBrief,
+        parts: storedBrief.parts.some((p) => !p.action_ar)
+          ? partAvailability(
+              storedBrief.parts.map((p) => ({ partNo: p.partNo, qty: p.qty, purpose: p.purpose })),
+              inventory,
+              tech.van,
+              site.id,
+              asset.description,
+            )
+          : storedBrief.parts,
+      },
+    [storedBrief, inventory, tech.van, site.id, asset.description],
+  );
 
   return (
     <SolutionPage slug="19-field-service" scenario={SCENARIO}>
+      <DirectionProvider dir={dir}>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5">
         <MetricTile
           label={L({ en: "Preparation time", ar: "وقت التحضير" })}
@@ -191,7 +210,7 @@ export function FieldWorkspace({
                       {lang === "ar" ? j.title_ar : j.title}
                     </div>
                     <div className="mt-1 flex flex-wrap items-center gap-x-2 text-[10.5px] text-muted-foreground">
-                      <span>{L(TYPE[j.type] ?? j.type)}</span>·<span>{j.priority}</span>·<span>{j.site}</span>·<span>{t?.name}</span>
+                      <span>{L(TYPE[j.type] ?? j.type)}</span>·<span>{j.priority}</span>·<span>{j.site}</span>·<span>{personName(t)}</span>
                     </div>
                     <div className="num text-[10.5px] text-faint">{f.date(j.scheduledFor, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</div>
                   </button>
@@ -218,8 +237,8 @@ export function FieldWorkspace({
                 </p>
               </div>
               <div className="text-end text-[11.5px] text-muted-foreground">
-                <div>{tech.name} · {lang === "ar" ? tech.role_ar : tech.role}</div>
-                <div>{L({ en: "Supervisor", ar: "المشرف" })}: {techs.find((t) => t.id === job.supervisor)?.name}</div>
+                <div>{personName(tech)} · {lang === "ar" ? tech.role_ar : tech.role}</div>
+                <div>{L({ en: "Supervisor", ar: "المشرف" })}: {personName(techs.find((t) => t.id === job.supervisor))}</div>
                 <div className="num">{f.date(job.scheduledFor, { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}</div>
               </div>
             </div>
@@ -281,6 +300,7 @@ export function FieldWorkspace({
           />
         </div>
       </div>
+      </DirectionProvider>
     </SolutionPage>
   );
 }

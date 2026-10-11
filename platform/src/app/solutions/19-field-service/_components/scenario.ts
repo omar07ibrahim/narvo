@@ -18,8 +18,8 @@ export const SCENARIO: ScenarioStep[] = [
   {
     title: { en: "Parts checked against real stock", ar: "مطابقة القطع مع المخزون الفعلي" },
     body: {
-      en: "The parts list is checked against Arun's van, the site store and the central store. The approved pH-neutral cleaner is at the site store — and the alkaline cleaner in the van is flagged as not allowed on coated coils. The fan motor shows zero stock. On the phone, “Mark brief reviewed” records the preparation time KPI.",
-      ar: "تُطابق قائمة القطع مع شاحنة أرون ومخزن الموقع والمخزن المركزي. المنظف المعتمد متعادل الحموضة في مخزن الموقع — ويُنبَّه إلى أن المنظف القلوي الموجود في الشاحنة غير مسموح للملفات المطلية. محرك المروحة غير متوفر. على الهاتف يسجل «تمت مراجعة الملخص» مؤشر وقت التحضير.",
+      en: "The parts list is checked against Arun's van, the site store and the central store. The approved pH-neutral cleaner is at the site store — and the alkaline cleaner in the van is flagged as not allowed on coated coils. A suspect spare that is out of stock (such as the condenser fan motor) shows “Order” with its supplier lead time. On the phone, “Mark brief reviewed” records the preparation time KPI.",
+      ar: "تُطابق قائمة القطع مع شاحنة أرون ومخزن الموقع والمخزن المركزي. المنظف المعتمد متعادل الحموضة في مخزن الموقع — ويُنبَّه إلى أن المنظف القلوي الموجود في الشاحنة غير مسموح للملفات المطلية. وأي قطعة احتياطية مشتبه بها غير متوفرة (مثل محرك مروحة المكثف) تظهر بحالة «طلب شراء» مع مدة التوريد. على الهاتف يسجل «تمت مراجعة الملخص» مؤشر وقت التحضير.",
     },
   },
   {
@@ -32,8 +32,8 @@ export const SCENARIO: ScenarioStep[] = [
   {
     title: { en: "Record the visit", ar: "سجّل الزيارة" },
     body: {
-      en: "Phone → Visit: dictate the notes (or use Arun's recorded note), add the coil photo, and press “Create service report”. The multimodal model structures readings, actions, parts, root cause and sign-off — and keeps the noisy fan-motor bearing open because the part is not in stock.",
-      ar: "الهاتف ← الزيارة: أملِ الملاحظات (أو استخدم ملاحظة أرون المسجلة)، وأضف صورة الملف، واضغط «إنشاء تقرير الخدمة». يرتب النموذج متعدد الوسائط القراءات والأعمال والقطع والسبب الجذري والتوقيع — ويبقي محمل المروحة ذا الصوت المرتفع مفتوحاً لعدم توفر القطعة.",
+      en: "Phone → Visit: dictate the notes (or press “Arun's dictated note”), add the coil photos from the sample chips, and press “Create service report”. The multimodal model structures readings, actions, parts, root cause and sign-off — and keeps the noisy fan-motor bearing open because the part is not in stock.",
+      ar: "الهاتف ← الزيارة: أملِ الملاحظات (أو اضغط «ملاحظة أرون المسجلة»)، وأضف صور الملف من أزرار العينات، واضغط «إنشاء تقرير الخدمة». يرتب النموذج متعدد الوسائط القراءات والأعمال والقطع والسبب الجذري والتوقيع — ويبقي محمل المروحة ذا الصوت المرتفع مفتوحاً لعدم توفر القطعة.",
     },
   },
   {

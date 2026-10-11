@@ -37,6 +37,7 @@ export interface Asset {
 export interface Technician {
   id: string;
   name: string;
+  name_ar?: string;
   role: string;
   role_ar: string;
   years: number;
@@ -51,6 +52,7 @@ export interface Technician {
 export interface Part {
   partNo: string;
   desc: string;
+  desc_ar?: string;
   unit: string;
   kind: "consumable" | "tool" | "spare" | "ppe";
   stock: Record<string, number>;
@@ -128,6 +130,9 @@ export interface PartLine {
 
 export interface PartAvailability extends PartLine {
   desc: string;
+  desc_ar?: string;
+  action_ar?: string;
+  warning_ar?: string;
   kind: string;
   unit: string;
   van: number;

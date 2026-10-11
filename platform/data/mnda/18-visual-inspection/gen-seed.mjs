@@ -42,8 +42,8 @@ const P = {
   N3: { id: "MNDA-INS-2026-07055", date: "2026-10-05T10:15:00+04:00", end: "2026-10-05T11:00:00+04:00", plot: "MN-02-041-0088", project: "Al Murjan — villa extension, first floor plastering", project_ar: "المرجان — توسعة فيلا، لياسة الطابق الأول", permit: "MNDA-BP-2026-01433", contractor: 5, consultant: 2, inspector: 1, type: "Routine", status: "notice_issued", photo: "site-03-timber-pole-scaffold.jpg", caption: "Rear elevation, pole scaffold and ladder to first floor", caption_ar: "الواجهة الخلفية، سقالة أعمدة وسلم إلى الطابق الأول", note: "Improvised pole scaffold without boarding or guardrails; aluminium ladder resting on a cross-pole.", note_ar: "سقالة أعمدة مرتجلة دون ألواح أو درابزين؛ سلم ألمنيوم مستند إلى عمود عرضي.", weather: "35 °C" },
   N4: { id: "MNDA-INS-2026-07078", date: "2026-10-06T11:40:00+04:00", end: "2026-10-06T12:20:00+04:00", plot: "MN-07-112-0201", project: "Al Ghaf Community — sewer house connections, Street 14", project_ar: "مجتمع الغاف — توصيلات الصرف المنزلية، الشارع 14", permit: "MNDA-BP-2026-01560", contractor: 3, consultant: 3, inspector: 2, type: "Routine", status: "notice_issued", photo: "site-10-sewer-trench-workers.jpg", caption: "Trench at chainage 0+085, facing north (faces blurred)", caption_ar: "الخندق عند المسافة 0+085، باتجاه الشمال (الوجوه مموهة)", note: "Trench about 2.1 m deep with partial timber shoring; no barriers; several workers barefoot on the edge.", note_ar: "خندق بعمق 2.1 م تقريباً مع تدعيم خشبي جزئي؛ دون حواجز؛ عدة عمال حفاة على الحافة.", weather: "36 °C" },
   N5: { id: "MNDA-INS-2026-07091", date: "2026-10-08T07:50:00+04:00", end: "2026-10-08T08:40:00+04:00", plot: "MN-01-015-0002", project: "Downtown — two-level basement for hotel (drone survey)", project_ar: "وسط المدينة — قبو من طابقين لفندق (مسح بطائرة مسيّرة)", permit: "MNDA-BP-2026-01247", contractor: 1, consultant: 3, inspector: 3, type: "Routine", status: "notice_issued", photo: "site-11-basement-excavation-aerial.jpg", caption: "Drone image from 35 m, north up", caption_ar: "صورة جوية من ارتفاع 35 م، الشمال للأعلى", note: "Pile cap excavations flooded and unbarricaded; rebar bundles laid at the excavation edge.", note_ar: "حفر قواعد الخوازيق مغمورة بالمياه ودون حواجز؛ حزم حديد موضوعة على حافة الحفر.", weather: "33 °C, humid" },
-  C1: { id: "MNDA-INS-2026-06862", date: "2026-09-23T08:30:00+04:00", end: "2026-09-23T09:20:00+04:00", plot: "MN-04-117-0031", project: "Al Waha Gardens — citizen villa, first-floor columns", project_ar: "حدائق الواحة — فيلا مواطن، أعمدة الطابق الأول", permit: "MNDA-BP-2026-00231", contractor: 3, consultant: 2, inspector: 0, type: "Routine", status: "closed", photo: "site-05-column-starter-bars.jpg", caption: "Roof of ground floor, column starters C1–C9", caption_ar: "سطح الطابق الأرضي، أشاير الأعمدة C1–C9", note: "All column starters uncapped; steel fixer without helmet.", note_ar: "جميع أشاير الأعمدة غير مغطاة؛ عامل حديد دون خوذة.", weather: "40 °C" },
-  C2: { id: "MNDA-INS-2026-06811", date: "2026-09-18T09:10:00+04:00", end: "2026-09-18T09:55:00+04:00", plot: "MN-04-109-0062", project: "Al Waha Gardens — citizen villa, strip foundations", project_ar: "حدائق الواحة — فيلا مواطن، الأساسات الشريطية", permit: "MNDA-BP-2026-01102", contractor: 4, consultant: 1, inspector: 1, type: "Routine", status: "closed", photo: "site-09-foundation-trenches.jpg", caption: "Foundation trenches, view from the east boundary", caption_ar: "خنادق الأساسات، من الحد الشرقي", note: "Open foundation trenches without barriers next to the access path; bricks and spoil at the edges.", note_ar: "خنادق أساسات مفتوحة دون حواجز بجوار ممر الدخول؛ طوب وناتج حفر على الحواف.", weather: "41 °C" },
+  C1: { id: "MNDA-INS-2026-06862", date: "2026-09-23T08:30:00+04:00", end: "2026-09-23T09:20:00+04:00", plot: "MN-04-117-0031", project: "Al Waha Gardens — citizen villa, first-floor columns", project_ar: "حدائق الواحة — فيلا مواطن، أعمدة الطابق الأول", permit: "MNDA-BP-2026-00231", contractor: 3, consultant: 2, inspector: 0, type: "Routine", status: "closed", photo: "site-05-column-starter-bars.jpg", caption: "Roof of ground floor, column starters C1–C9", caption_ar: "سطح الطابق الأرضي، أشاير الأعمدة C1–C9", note: "All column starters uncapped; steel fixer without helmet.", note_ar: "جميع أشاير الأعمدة غير مغطاة؛ عامل حديد دون خوذة.", weather: "36 °C" },
+  C2: { id: "MNDA-INS-2026-06811", date: "2026-09-18T09:10:00+04:00", end: "2026-09-18T09:55:00+04:00", plot: "MN-04-109-0062", project: "Al Waha Gardens — citizen villa, strip foundations", project_ar: "حدائق الواحة — فيلا مواطن، الأساسات الشريطية", permit: "MNDA-BP-2026-01102", contractor: 4, consultant: 1, inspector: 1, type: "Routine", status: "closed", photo: "site-09-foundation-trenches.jpg", caption: "Foundation trenches, view from the east boundary", caption_ar: "خنادق الأساسات، من الحد الشرقي", note: "Open foundation trenches without barriers next to the access path; bricks and spoil at the edges.", note_ar: "خنادق أساسات مفتوحة دون حواجز بجوار ممر الدخول؛ طوب وناتج حفر على الحواف.", weather: "37 °C" },
 };
 
 // Findings: [key, code, title, description, bbox, confidence, source, status, rejectReason]
@@ -67,19 +67,51 @@ const F = [
   ["C2", "D11", "Bricks and spoil stacked at trench edges", "Bricks and loose spoil placed directly on the trench edges in the foreground.", [0.44, 0.64, 0.7, 0.76], 0.66, "ai", "accepted"],
 ];
 
+// Arabic titles / descriptions for the seeded findings (keyed by the English title).
+const F_AR = {
+  "Open foundation trenches without barriers": ["خنادق أساسات مفتوحة دون حواجز", "شبكة خنادق أساسات شريطية بعمق 1.3 م تقريباً دون حواجز بجوار ممر الدخول."],
+  "Bricks and spoil stacked at trench edges": ["طوب وناتج حفر مكدّس على حواف الخنادق", "طوب وناتج حفر سائب موضوع مباشرة على حواف الخنادق في مقدمة الصورة."],
+  "Column starters C1–C9 uncapped": ["أشاير الأعمدة C1–C9 دون أغطية", "جميع أشاير الأعمدة على سطح الطابق الأرضي دون أغطية، وعامل حديد يعمل بينها."],
+  "Steel fixer without safety helmet": ["عامل حديد دون خوذة سلامة", "عامل عند العمود الأوسط يرتدي قبعة عادية بدلاً من خوذة السلامة."],
+  "Uncapped column starter bars along walkway": ["أشاير أعمدة غير مغطاة على طول الممر", "صفوف من أشاير الأعمدة البارزة في مقدمة الصورة يساراً بجوار ممر المخزن الأرضي، ولا غطاء على أيٍّ منها."],
+  "Aggregate heap and debris in basement bay": ["كومة ركام ومخلفات في جناح القبو", "كومة ركام سائب وأكياس وقصاصات تحت بلاطة الطابق الأول، أسفل وسط الصورة."],
+  "First-floor slab edge without guardrail": ["حافة بلاطة الطابق الأول دون درابزين", "حافة مفتوحة لبلاطة الطابق الأول تمتد عبر وسط الصورة."],
+  "Suspended truss guided by hand, no exclusion zone": ["توجيه جملون معلّق باليد دون منطقة حظر", "جملون معلّق بخطاف الرافعة (في الوسط) يوجهه عامل تركيب بيده من رأس العمود، دون حواجز أو مُرشد رفع ظاهر."],
+  "Erector at height without visible harness": ["عامل تركيب على ارتفاع دون حزام أمان ظاهر", "عامل يقف على رأس العمود يميناً دون حزام أمان كامل للجسم أو حبل ربط ظاهر."],
+  "Pole scaffold without boarding or guardrails": ["سقالة أعمدة دون ألواح عمل أو درابزين", "سقالة أعمدة مرتجلة على امتداد الواجهة: مستويات العمل أعمدة مفردة دون ألواح أو درابزين أو ألواح قدم، والعمال يقفون على الأعمدة العرضية."],
+  "Ladder resting on a cross-pole, not secured": ["سلم مستند إلى عمود عرضي دون تثبيت", "سلم ألمنيوم (يمين الوسط) مستند إلى عمود عرضي في السقالة دون ربط أو تثبيت للقاعدة."],
+  "Debris near the ground-floor entrance": ["مخلفات قرب مدخل الطابق الأرضي", "مواد سائبة محتملة عند المدخل أسفل الصورة."],
+  "2.1 m trench, partial shoring, no edge barriers": ["خندق بعمق 2.1 م بتدعيم جزئي ودون حواجز", "خندق عميق في الوسط بتدعيم خشبي من جهة واحدة فقط، وناتج الحفر مكوّم على الحافتين ودون حاجز على طول الممر."],
+  "Barefoot workers at the trench edge": ["عمال حفاة على حافة الخندق", "عمال على يسار الخندق يقفون حفاة على ناتج الحفر والألواح عند الحافة."],
+  "Flooded pile-cap excavations without barriers": ["حفر قواعد خوازيق مغمورة بالمياه دون حواجز", "حفرتان مفتوحتان لقواعد الخوازيق في الوسط مغمورتان بالمياه دون حاجز أو غطاء، والعمال يسيرون على الحواف."],
+  "Waste and loose materials across the site": ["مخلفات ومواد سائبة في أرجاء الموقع", "أكياس وقصاصات وبلاستيك وأنقاض متناثرة حول الحفريات وطريق الدخول."],
+  "Rebar bundles stored at the excavation edge": ["حزم حديد مخزنة على حافة الحفر", "حزم حديد موضوعة على طول الحافة اليسرى للحفر على بعد أقل من متر من الحافة."],
+};
+const weatherAr = (w) =>
+  w &&
+  w
+    .replace(/°C/g, "°م")
+    .replace(", clear", "، صافٍ")
+    .replace(/, wind (\d+) km\/h/, "، رياح $1 كم/س")
+    .replace(", haze", "، ضباب خفيف")
+    .replace(", overcast", "، غائم")
+    .replace(", dusty", "، مغبر")
+    .replace(", humid", "، رطب")
+    .replace(" at ", " عند ");
+
 const SERVE_OFFSET_H = 4; // notices served ~4 h after the visit, after inspector review
 const closures = {
-  "N2-D13": { at: "2026-10-03T09:30:00+04:00", how: "Re-inspection: lift plan issued, exclusion zone barricaded and certified banksman on duty." },
-  "N3-D03": { at: "2026-10-06T08:45:00+04:00", how: "Re-inspection: pole scaffold dismantled; system scaffold with boarded lifts, guardrails and toe boards erected, green tag dated 6 Oct." },
-  "N4-D07": { at: "2026-10-07T09:20:00+04:00", how: "Re-inspection: trench shored both sides and barriers installed 1 m from the edge." },
-  "C1-D04": { at: "2026-09-25T10:10:00+04:00", how: "Photo review: mushroom caps fitted on all starters (contractor photo via e-services).", thumb: IMG + "after-rebar-caps.jpg" },
-  "C1-D02": { at: "2026-09-24T08:00:00+04:00", how: "Re-inspection: all operatives in helmets and safety boots." },
-  "C2-D07": { at: "2026-09-19T09:30:00+04:00", how: "Re-inspection: rigid barriers 1 m back from trench edges along the access path." },
-  "C2-D11": { at: "2026-09-21T11:15:00+04:00", how: "Re-inspection: bricks restacked 1.5 m from the trenches on level ground." },
+  "N2-D13": { at: "2026-10-03T09:30:00+04:00", how: "Re-inspection: lift plan issued, exclusion zone barricaded and certified banksman on duty.", how_ar: "إعادة التفتيش: صدرت خطة الرفع، وأُحيطت منطقة الحظر بحواجز، ومُرشد رفع معتمد في موقعه." },
+  "N3-D03": { at: "2026-10-06T08:45:00+04:00", how: "Re-inspection: pole scaffold dismantled; system scaffold with boarded lifts, guardrails and toe boards erected, green tag dated 6 Oct.", how_ar: "إعادة التفتيش: فُكّت سقالة الأعمدة ورُكّبت سقالة نظامية بمستويات عمل مغطاة بالألواح ودرابزين وألواح قدم، مع بطاقة فحص خضراء بتاريخ 6 أكتوبر." },
+  "N4-D07": { at: "2026-10-07T09:20:00+04:00", how: "Re-inspection: trench shored both sides and barriers installed 1 m from the edge.", how_ar: "إعادة التفتيش: دُعّم الخندق من الجهتين ورُكّبت حواجز على بعد متر من الحافة." },
+  "C1-D04": { at: "2026-09-25T10:10:00+04:00", how: "Photo review: mushroom caps fitted on all starters (contractor photo via e-services).", how_ar: "مراجعة بالصور: رُكّبت أغطية واقية على جميع الأشاير (صورة من المقاول عبر الخدمات الإلكترونية).", thumb: IMG + "after-rebar-caps.jpg" },
+  "C1-D02": { at: "2026-09-24T08:00:00+04:00", how: "Re-inspection: all operatives in helmets and safety boots.", how_ar: "إعادة التفتيش: جميع العمال يرتدون الخوذ وأحذية السلامة." },
+  "C2-D07": { at: "2026-09-19T09:30:00+04:00", how: "Re-inspection: rigid barriers 1 m back from trench edges along the access path.", how_ar: "إعادة التفتيش: حواجز صلبة على بعد متر من حواف الخنادق على طول ممر الدخول." },
+  "C2-D11": { at: "2026-09-21T11:15:00+04:00", how: "Re-inspection: bricks restacked 1.5 m from the trenches on level ground.", how_ar: "إعادة التفتيش: أُعيد تكديس الطوب على أرض مستوية على بعد 1.5 م من الخنادق." },
 };
 const submissions = {
-  "N1-D04": { src: IMG + "after-rebar-caps.jpg", submittedAt: "2026-10-01T16:20:00+04:00", by: "Eng. Khaled Mustafa Odeh (Al Marsa Engineering & Contracting)", note: "Caps fitted to all exposed starters along the store walkway." },
-  "N5-D07": { src: IMG + "after-excavation-barrier.jpg", submittedAt: "2026-10-09T09:40:00+04:00", by: "Mohammed Saif Bin Hilal (Bin Hilal Contracting)", note: "Mesh barriers installed around the excavation and pedestrian route signed." },
+  "N1-D04": { src: IMG + "after-rebar-caps.jpg", submittedAt: "2026-10-01T16:20:00+04:00", by: "Eng. Khaled Mustafa Odeh (Al Marsa Engineering & Contracting)", by_ar: "م. خالد مصطفى عودة (المرسى للهندسة والمقاولات)", note: "Caps fitted to all exposed starters along the store walkway.", note_ar: "رُكّبت الأغطية على جميع الأشاير المكشوفة على طول ممر المخزن." },
+  "N5-D07": { src: IMG + "after-excavation-barrier.jpg", submittedAt: "2026-10-09T09:40:00+04:00", by: "Mohammed Saif Bin Hilal (Bin Hilal Contracting)", by_ar: "محمد سيف بن هلال (بن هلال للمقاولات)", note: "Mesh barriers installed around the excavation and pedestrian route signed.", note_ar: "رُكّبت حواجز شبكية حول الحفر ووُضعت لافتات لمسار المشاة." },
 };
 
 const inspections = [];
@@ -105,6 +137,7 @@ for (const [key, p] of Object.entries(P)) {
     permit: p.permit,
     contractor: reg.contractors[p.contractor].name,
     consultant: reg.consultants[p.consultant],
+    consultant_ar: reg.consultants_ar[p.consultant],
     inspector: insp(p.inspector),
     type: p.type,
     photos: [{ src: IMG + p.photo, caption: p.caption, caption_ar: p.caption_ar, credit: "Wikimedia Commons — see CREDITS.md" }],
@@ -112,6 +145,7 @@ for (const [key, p] of Object.entries(P)) {
     note: p.note,
     note_ar: p.note_ar,
     weather: p.weather,
+    weather_ar: weatherAr(p.weather),
   });
 }
 for (const key of order) {
@@ -129,7 +163,9 @@ for (const key of order) {
       photo: 0,
       code: f[1],
       title: f[2],
+      title_ar: F_AR[f[2]][0],
       description: f[3],
+      description_ar: F_AR[f[2]][1],
       bbox: f[4],
       confidence: f[5],
       source: f[6],
@@ -159,13 +195,14 @@ for (const key of order) {
       code: f.code,
       severity: sev,
       title: f.title,
+      title_ar: f.title_ar,
       owner: reg.contractors[p.contractor].name,
       plot: p.plot,
       dueAt: due(served, sev),
       penaltyAed: penalty,
       status: c ? "closed" : "open",
       createdAt: ms(served),
-      ...(c ? { closure: { verdict: "resolved", confidence: 1, summary: c.how, remaining: [], ...(c.thumb ? { afterThumb: c.thumb } : {}), decision: "closed", reason: c.how, decidedBy: insp(p.inspector).name, decidedAt: ms(c.at) } } : {}),
+      ...(c ? { closure: { verdict: "resolved", confidence: 1, summary: c.how, remaining: [], ...(c.thumb ? { afterThumb: c.thumb } : {}), decision: "closed", reason: c.how, reason_ar: c.how_ar, decidedBy: insp(p.inspector).name, decidedAt: ms(c.at) } } : {}),
       ...(submissions[k] ? { submission: submissions[k] } : {}),
     };
     tasks.push(task);
@@ -173,7 +210,7 @@ for (const key of order) {
   }
   const table = (lang) =>
     rows
-      .map(({ d, f, task }, i) => `| ${i + 1} | ${d.code} — ${lang === "ar" ? d.name_ar : d.name}: ${f.title} | ${lang === "ar" ? d.article.replace("Art.", "المادة") : d.article} | ${tax.severities[task.severity][lang === "ar" ? "ar" : "en"]} | ${fmt(task.dueAt, lang)} | ${lang === "ar" ? `${task.penaltyAed.toLocaleString("en-US")} درهم` : `AED ${task.penaltyAed.toLocaleString("en-US")}`} |`)
+      .map(({ d, f, task }, i) => `| ${i + 1} | ${d.code} — ${lang === "ar" ? d.name_ar : d.name}: ${lang === "ar" ? f.title_ar : f.title} | ${lang === "ar" ? d.article.replace("Art.", "المادة") : d.article} | ${tax.severities[task.severity][lang === "ar" ? "ar" : "en"]} | ${fmt(task.dueAt, lang)} | ${lang === "ar" ? `${task.penaltyAed.toLocaleString("en-US")} درهم` : `AED ${task.penaltyAed.toLocaleString("en-US")}`} |`)
       .join("\n");
   const c = reg.contractors[p.contractor];
   const textEn = [
@@ -203,7 +240,7 @@ for (const key of order) {
     `- **مرجع التفتيش:** ${p.id} — ${fmt(p.date, "ar")}`,
     `- **رقم القطعة:** ${p.plot} · **رخصة البناء:** ${p.permit}`,
     `- **المقاول الرئيسي:** ${c.name_ar} (${c.licence})`,
-    `- **الاستشاري:** ${reg.consultants[p.consultant]}`,
+    `- **الاستشاري:** ${reg.consultants_ar[p.consultant]}`,
     "",
     "| م | الرمز والملاحظة | المادة | الدرجة | موعد التصحيح | الغرامة |",
     "|---|---|---|---|---|---|",
@@ -224,9 +261,9 @@ for (const key of order) {
 // Prior notice on the Marina Quarter Tower B plot (repeat history for A1) — older inspection, not in the current list
 const prior = { id: "MNDA-INS-2026-06521", date: "2026-09-03T10:05:00+04:00" };
 const priorNotice = "MNDA-VN-2026-01341";
-for (const [code, sev, title, closedAt] of [
-  ["D01", "critical", "Level 6 east slab edge open over 14 m", "2026-09-04T09:00:00+04:00"],
-  ["D02", "major", "Two steel fixers at the slab edge without harness", "2026-09-05T10:30:00+04:00"],
+for (const [code, sev, title, title_ar, closedAt] of [
+  ["D01", "critical", "Level 6 east slab edge open over 14 m", "حافة بلاطة الطابق السادس الشرقية مفتوحة بطول 14 م", "2026-09-04T09:00:00+04:00"],
+  ["D02", "major", "Two steel fixers at the slab edge without harness", "عاملا حديد على حافة البلاطة دون حزام أمان", "2026-09-05T10:30:00+04:00"],
 ]) {
   const served = "2026-09-03T14:00:00+04:00";
   tasks.push({
@@ -237,13 +274,14 @@ for (const [code, sev, title, closedAt] of [
     code,
     severity: sev,
     title,
+    title_ar,
     owner: reg.contractors[0].name,
     plot: "MN-08-204-0012",
     dueAt: due(served, sev),
     penaltyAed: tax.severities[sev].penaltyAed,
     status: "closed",
     createdAt: ms(served),
-    closure: { verdict: "resolved", confidence: 1, summary: "Re-inspection", remaining: [], decision: "closed", reason: "Re-inspection: guardrails with toe boards along the east edge; harness anchor line installed.", decidedBy: insp(0).name, decidedAt: ms(closedAt) },
+    closure: { verdict: "resolved", confidence: 1, summary: "Re-inspection", remaining: [], decision: "closed", reason: "Re-inspection: guardrails with toe boards along the east edge; harness anchor line installed.", reason_ar: "إعادة التفتيش: درابزين مع ألواح قدم على طول الحافة الشرقية، وتركيب خط تثبيت لأحزمة الأمان.", decidedBy: insp(0).name, decidedAt: ms(closedAt) },
   });
 }
 notices.push({ id: priorNotice, inspectionId: prior.id, contractor: reg.contractors[0].name, plot: "MN-08-204-0012", issuedAt: ms("2026-09-03T14:00:00+04:00"), approvedBy: "Eng. Hamad Juma Al Kaabi", textEn: `## Notice of Violation ${priorNotice}\n\nInspection ${prior.id} (3 September 2026) — D01 Art. 12.3 (Critical, AED 10,000) and D02 Art. 8.1 (Major, AED 5,000). Both closed on re-inspection.`, textAr: `## إشعار مخالفة رقم ${priorNotice}\n\nالتفتيش ${prior.id} (3 سبتمبر 2026) — D01 المادة 12.3 (حرجة، 10,000 درهم) وD02 المادة 8.1 (جسيمة، 5,000 درهم). أُغلقت كلتاهما بإعادة التفتيش.`, penaltyTotal: 15000, stopWork: true, findingIds: [] });

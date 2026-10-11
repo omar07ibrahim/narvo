@@ -10,9 +10,11 @@ import { useFormat, useL } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { CorrectiveTask, InspectionState } from "../_lib/types";
 import { Segmented, SeverityPill } from "./ui";
+import { useTr } from "./names";
 
 export function TaskRegister({ state, onOpen, onInspection, now }: { state: InspectionState; onOpen: (t: CorrectiveTask) => void; onInspection: (id: string) => void; now: number }) {
   const L = useL();
+  const tr = useTr();
   const f = useFormat();
   const [filter, setFilter] = useState<"open" | "overdue" | "closed" | "all">("open");
   const isOverdue = (t: CorrectiveTask) => t.status === "open" && Date.parse(t.dueAt) < now;
@@ -77,10 +79,10 @@ export function TaskRegister({ state, onOpen, onInspection, now }: { state: Insp
                     </td>
                     <td className="max-w-[260px] px-3 py-2">
                       <span className="me-1 font-mono text-[11px] text-muted-foreground">{t.code}</span>
-                      <span dir="auto">{t.title}</span>
+                      <span dir="auto">{tr(t.title, t.title_ar)}</span>
                     </td>
                     <td className="px-3 py-2">
-                      <div className="truncate">{t.owner}</div>
+                      <div className="truncate">{tr(t.owner)}</div>
                       <div className="font-mono text-[10.5px] text-muted-foreground">{t.plot}</div>
                     </td>
                     <td className="px-3 py-2">

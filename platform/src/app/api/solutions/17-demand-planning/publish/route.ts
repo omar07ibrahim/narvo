@@ -1,4 +1,5 @@
 import { readBody } from "@/lib/ai/stream";
+import { getPrefs } from "@/lib/ai/request";
 import { createApproval, listApprovals } from "@/lib/store/db";
 import { buildFacts } from "@/app/solutions/17-demand-planning/_lib/facts";
 import { COL_PLANS, loadConfig, loadOverrides, loadPublished } from "@/app/solutions/17-demand-planning/_lib/data";
@@ -33,25 +34,45 @@ export async function POST(req: Request) {
     peakJaPallets: peak("JA-pallets"),
     peakJaYard: peak("JA-yard"),
   };
+  const { lang } = getPrefs(req, body);
+  const ar = lang === "ar";
+  const n = (v: number) => v.toLocaleString("en-US");
+  const scopeEn = { mq: "Marina Quarter projects", structural: "all structural SKUs", all: "all SKUs" }[whatIf.upliftScope];
+  const scopeAr = { mq: "مشاريع حي المارينا", structural: "جميع المواد الإنشائية", all: "جميع الأصناف" }[whatIf.upliftScope];
+  // Stored with the published plan (English, like the rest of the plan record).
   const assumptions = [
-    whatIf.upliftPct ? `demand +${whatIf.upliftPct}% (${whatIf.upliftScope})` : "base demand",
-    whatIf.palletLossJA ? `JA −${whatIf.palletLossJA} pallet positions` : null,
-    whatIf.yardLossJA ? `JA yard −${whatIf.yardLossJA} t` : null,
+    whatIf.upliftPct ? `demand ${whatIf.upliftPct > 0 ? "+" : ""}${whatIf.upliftPct}% (${scopeEn})` : "base demand",
+    whatIf.palletLossJA ? `JA −${n(whatIf.palletLossJA)} pallet positions` : null,
+    whatIf.yardLossJA ? `JA yard −${n(whatIf.yardLossJA)} t` : null,
     whatIf.millDelayWeeks ? `Sahara restart +${whatIf.millDelayWeeks} wk` : null,
     `service target ${(whatIf.serviceTarget * 100).toFixed(1)}%`,
   ]
     .filter(Boolean)
     .join(", ");
-  const summary =
+  const assumptionsAr = [
+    whatIf.upliftPct ? `الطلب ${whatIf.upliftPct > 0 ? "+" : ""}${whatIf.upliftPct}% (${scopeAr})` : "الطلب الأساسي",
+    whatIf.palletLossJA ? `جبل علي −${n(whatIf.palletLossJA)} موقع منصة` : null,
+    whatIf.yardLossJA ? `ساحة الحديد −${n(whatIf.yardLossJA)} طن` : null,
+    whatIf.millDelayWeeks ? `تأخر تشغيل صحارى +${whatIf.millDelayWeeks} أسبوع` : null,
+    `مستوى الخدمة المستهدف ${(whatIf.serviceTarget * 100).toFixed(1)}%`,
+  ]
+    .filter(Boolean)
+    .join("، ");
+  const summaryEn =
     `Plan ${spec.id} — ${spec.name}. Assumptions: ${assumptions}. Expected fill ${(kpis.fillRate * 100).toFixed(1)}% (P10 ${(kpis.fillRateP10 * 100).toFixed(1)}%), ` +
-    `13-week cost AED ${kpis.totalCost.toLocaleString("en-US")}, ${kpis.violations} capacity violations, JA peak ${kpis.peakJaPallets.toLocaleString("en-US")} pallets / ${kpis.peakJaYard.toLocaleString("en-US")} t rebar. ` +
-    `${overrides} planner override(s) included.${spec.catchUp ? " Commits the Sahara catch-up allocation (1,950 t/week, confirm by 14 Oct)." : ""}${body.note ? ` Note: ${body.note}` : ""}`;
+    `13-week cost AED ${n(kpis.totalCost)}, ${kpis.violations} capacity violation${kpis.violations === 1 ? "" : "s"}, JA peak ${n(kpis.peakJaPallets)} pallets / ${n(kpis.peakJaYard)} t rebar. ` +
+    `${overrides} planner override${overrides === 1 ? "" : "s"} included.${spec.catchUp ? " Commits the Sahara catch-up allocation (1,950 t/week, confirm by 14 Oct)." : ""}${body.note ? ` Note: ${body.note}` : ""}`;
+  const summaryAr =
+    `الخطة ${spec.id} — ${spec.name_ar}. الافتراضات: ${assumptionsAr}. نسبة التلبية المتوقعة ${(kpis.fillRate * 100).toFixed(1)}% (P10 ${(kpis.fillRateP10 * 100).toFixed(1)}%)، ` +
+    `تكلفة 13 أسبوعاً ${n(kpis.totalCost)} درهم، ${kpis.violations} مخالفة سعة، ذروة جبل علي ${n(kpis.peakJaPallets)} منصة / ${n(kpis.peakJaYard)} طن حديد. ` +
+    `تتضمن ${overrides} تعديلاً من المخطِّط.${spec.catchUp ? " تُلزم بحصة التعويض من صحارى (1,950 طن/أسبوع، التأكيد قبل 14 أكتوبر)." : ""}${body.note ? ` ملاحظة: ${body.note}` : ""}`;
+  const summary = ar ? summaryAr : summaryEn;
 
   const approval = createApproval({
     solution: "17-demand-planning",
-    title: `Publish replenishment plan ${id} (Plan ${spec.id})`,
+    title: ar ? `نشر خطة الإمداد ${id} (الخطة ${spec.id})` : `Publish replenishment plan ${id} (Plan ${spec.id})`,
     summary,
-    actionLabel: "Approve & publish",
+    actionLabel: ar ? "اعتماد ونشر" : "Approve & publish",
     approver: { name: cfg.planner.name, title: cfg.planner.title },
     requestedBy: "NARVO planning engine",
     payload: { planId: spec.id, whatIf, kpis },
@@ -73,7 +94,7 @@ export async function POST(req: Request) {
           status: "published",
         },
       },
-      { type: "audit", action: "Published replenishment plan to ERP purchase proposals", subject: id, detail: summary.slice(0, 400) },
+      { type: "audit", action: "Published replenishment plan to ERP purchase proposals", subject: id, detail: summaryEn.slice(0, 400) },
       ...(spec.catchUp
         ? [{ type: "audit" as const, action: "Queued Sahara catch-up allocation confirmation", subject: "Sahara Rebar Mills LLC", detail: "Commit 1,950 t/week for arrivals w/c 26 Oct – 23 Nov 2026" }]
         : []),

@@ -7,10 +7,10 @@ import { PUBLIC_DIR } from "@/lib/world/data";
 import { FieldWorkspace, type FieldState } from "./_components/workspace";
 import { briefKey, draftKey, loadAssets, loadBms, loadHistory, loadInventory, loadJobs, loadReports, loadSites, loadTechs } from "./_lib/data";
 
-const PHOTO_CAPTIONS: Record<string, { caption: string; phase: string }> = {
-  "condenser-coil-fouled": { caption: "Condenser coil — before", phase: "before" },
-  "chiller-rooftop": { caption: "Chiller on roof deck", phase: "other" },
-  "technician-gauges": { caption: "Gauges after cleaning", phase: "after" },
+const PHOTO_CAPTIONS: Record<string, { caption: string; caption_ar: string; phase: string }> = {
+  "condenser-coil-fouled": { caption: "Condenser coil — before", caption_ar: "ملف المكثف — قبل", phase: "before" },
+  "chiller-rooftop": { caption: "Chiller on roof deck", caption_ar: "المبرد على سطح المبنى", phase: "other" },
+  "technician-gauges": { caption: "Gauges after cleaning", caption_ar: "المقاييس بعد التنظيف", phase: "after" },
 };
 
 function samplePhotos() {
@@ -21,7 +21,7 @@ function samplePhotos() {
     .filter((f) => /\.(jpe?g|png|webp)$/i.test(f))
     .map((f) => {
       const key = f.replace(/\.[^.]+$/, "");
-      const meta = PHOTO_CAPTIONS[key] ?? { caption: key.replace(/-/g, " "), phase: "other" };
+      const meta = PHOTO_CAPTIONS[key] ?? { caption: key.replace(/-/g, " "), caption_ar: key.replace(/-/g, " "), phase: "other" };
       return { src: `/demo/19-field-service/${f}`, ...meta };
     });
 }

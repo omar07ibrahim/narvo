@@ -119,7 +119,7 @@ export async function POST(req: Request) {
         .filter((x) => x.r.prior);
       s3.done(
         (ar ? "المواد: " : "Articles: ") +
-          (findings.map((f) => `${f.code}→${tax.defects.find((d) => d.code === f.code)!.article}`).join(", ") || "—") +
+          (findings.map((f) => `${f.code}→${ar ? tax.defects.find((d) => d.code === f.code)!.article.replace("Art.", "المادة") : tax.defects.find((d) => d.code === f.code)!.article}`).join(ar ? "، " : ", ") || "—") +
           (repeats.length ? (ar ? ` · تكرار سابق: ${repeats.map((x) => x.code).join(", ")}` : ` · prior violation on this plot: ${repeats.map((x) => x.code).join(", ")}`) : ""),
       );
 

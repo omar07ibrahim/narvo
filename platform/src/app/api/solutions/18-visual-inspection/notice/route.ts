@@ -84,7 +84,8 @@ export async function POST(req: Request) {
                   ? `${sev(x.severity)} (${l === "ar" ? `تكرار خلال ${x.repeat.prior.days} يوماً` : `repeat within ${x.repeat.prior.days} days`})`
                   : sev(x.severity);
             const titleIsAr = /[؀-ۿ]/.test(x.finding.title);
-            const title = (l === "ar") === titleIsAr ? `: ${x.finding.title}` : "";
+            const own = l === "ar" ? (x.finding.title_ar ?? (titleIsAr ? x.finding.title : null)) : titleIsAr ? null : x.finding.title;
+            const title = own ? `: ${own}` : "";
             return `| ${i + 1} | ${d.code} — ${l === "ar" ? d.name_ar : d.name}${title} | ${l === "ar" ? x.article.replace("Art.", "المادة") : x.article} | ${sevTxt} | ${fmtDate(x.dueAt, l)} | ${aed(x.penaltyAed, l)}${x.repeat.doubled ? (l === "ar" ? " (مضاعفة)" : " (doubled)") : ""} |`;
           })
           .join("\n");
@@ -96,7 +97,7 @@ export async function POST(req: Request) {
             `- **مرجع التفتيش:** ${insp.id} — ${inspDate("ar")}`,
             `- **رقم القطعة:** ${insp.plot} · **رخصة البناء:** ${insp.permit}`,
             `- **المقاول الرئيسي:** ${contractor?.name_ar ?? insp.contractor} (${contractor?.licence ?? "—"})`,
-            `- **الاستشاري:** ${insp.consultant}`,
+            `- **الاستشاري:** ${insp.consultant_ar ?? insp.consultant}`,
             "",
             `بالإشارة إلى التفتيش على السلامة الذي أُجري في الموقع بتاريخ ${fmtDate(insp.date, "ar", false)}، ثبتت المخالفات التالية للائحة السلامة في مواقع البناء (CSSR-2025) بعد مراجعتها واعتمادها من المفتش المخوّل:`,
             "",
@@ -238,6 +239,7 @@ export async function POST(req: Request) {
         severity: x.severity,
         escalated: x.repeat.escalated,
         title: x.finding.title,
+        title_ar: x.finding.title_ar,
         owner: insp.contractor,
         plot: insp.plot,
         dueAt: x.dueAt,
@@ -261,9 +263,11 @@ export async function POST(req: Request) {
       patchRecord(COL.inspections, insp.id, { status: "notice_pending" });
       const approval = createApproval({
         solution: "18-visual-inspection",
-        title: `Issue Notice of Violation ${noticeId} — ${insp.contractor}`,
-        summary: `${insp.id} · plot ${insp.plot}: ${items.length} finding(s) (${critical} critical) — ${items.map((x) => `${x.finding.code} due ${fmtDate(x.dueAt, "en")}`).join("; ")}. Penalties ${aed(total, "en")}.${critical ? " Area stop-work applies." : ""} Creates ${tasks.length} corrective task(s) owned by ${insp.contractor}.`,
-        actionLabel: "Approve & serve notice",
+        title: ar ? `إصدار إشعار المخالفة ${noticeId} — ${contractor?.name_ar ?? insp.contractor}` : `Issue Notice of Violation ${noticeId} — ${insp.contractor}`,
+        summary: ar
+          ? `${insp.id} · القطعة ${insp.plot}: ${items.length} ملاحظة (${critical} حرجة) — ${items.map((x) => `${x.finding.code} موعدها ${fmtDate(x.dueAt, "ar")}`).join("؛ ")}. الغرامات ${aed(total, "ar")}.${critical ? " يسري إيقاف العمل في المناطق المتأثرة." : ""} تُنشأ ${tasks.length} مهمة تصحيحية على ${contractor?.name_ar ?? insp.contractor}.`
+          : `${insp.id} · plot ${insp.plot}: ${items.length} finding${items.length === 1 ? "" : "s"} (${critical} critical) — ${items.map((x) => `${x.finding.code} due ${fmtDate(x.dueAt, "en")}`).join("; ")}. Penalties ${aed(total, "en")}.${critical ? " Area stop-work applies." : ""} Creates ${tasks.length} corrective task${tasks.length === 1 ? "" : "s"} owned by ${insp.contractor}.`,
+        actionLabel: ar ? "اعتماد وإبلاغ الإشعار" : "Approve & serve notice",
         approver: DIRECTOR,
         requestedBy: insp.inspector.name,
         payload: { noticeId, inspectionId: insp.id },
@@ -288,7 +292,7 @@ export async function POST(req: Request) {
           createdAt: approval.createdAt,
         },
       });
-      s5.waiting(ar ? `بانتظار ${DIRECTOR.name}` : `Awaiting ${DIRECTOR.name}`);
+      s5.waiting(ar ? "بانتظار م. حمد جمعة الكعبي" : `Awaiting ${DIRECTOR.name}`);
     },
     { modelKey },
   );

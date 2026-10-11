@@ -37,8 +37,8 @@ export function WhatIfBar({ whatIf, onChange, computing, ms }: { whatIf: WhatIf;
     <Pane
       title={L({ en: "What-if — demand and constraints", ar: "ماذا لو — الطلب والقيود" })}
       subtitle={L({
-        en: `3 plans × 100 demand paths × 13 weeks, re-simulated on every change${ms ? ` · ${ms} ms` : ""}`,
-        ar: `3 خطط × 100 مسار طلب × 13 أسبوعاً تُعاد محاكاتها مع كل تغيير${ms ? ` · ${ms} مللي ثانية` : ""}`,
+        en: `3 plans × 100 demand paths × 13 weeks · re-simulated live${ms ? ` in ${ms} ms` : ""}`,
+        ar: `3 خطط × 100 مسار طلب × 13 أسبوعاً · محاكاة فورية${ms ? ` خلال ${ms} مللي ثانية` : ""}`,
       })}
       actions={
         <div className="flex flex-wrap items-center gap-1.5">
@@ -151,8 +151,8 @@ export function PlanCards({
             )}
           >
             <div className="flex items-start justify-between gap-2">
-              <div className="flex items-center gap-2">
-                <span className={cn("flex size-6 items-center justify-center rounded-full border text-[11px] font-semibold", active ? "border-foreground bg-foreground text-background" : "border-border-strong")}>
+              <div className="flex min-w-0 items-center gap-2">
+                <span className={cn("flex size-6 shrink-0 items-center justify-center rounded-full border text-[11px] font-semibold", active ? "border-foreground bg-foreground text-background" : "border-border-strong")}>
                   {p.id}
                 </span>
                 <span className="text-[13.5px] font-medium">{lang === "ar" ? spec.name_ar : spec.name}</span>
@@ -228,10 +228,10 @@ export function StorageChart({ run, selected }: { run: PlanRun; selected: string
   return (
     <Pane
       title={L({ en: "Storage use vs limit", ar: "استخدام التخزين مقابل الحد" })}
-      subtitle={L({ en: "Median path per plan; band = P10–P90 for the selected plan", ar: "المسار الوسيط لكل خطة؛ النطاق = P10–P90 للخطة المختارة" })}
+      subtitle={L({ en: "Median path · P10–P90 band for the selected plan", ar: "المسار الوسيط · نطاق P10–P90 للخطة المختارة" })}
       actions={
         <Select value={res} onValueChange={setRes}>
-          <SelectTrigger size="sm" className="h-7 w-[210px] text-[11.5px]">
+          <SelectTrigger size="sm" className="h-7 w-[190px] text-[11.5px]">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -246,7 +246,7 @@ export function StorageChart({ run, selected }: { run: PlanRun; selected: string
     >
       <div className="h-[230px]" dir="ltr">
         <ResponsiveContainer width="100%" height="100%">
-          <ComposedChart data={data} margin={{ top: 10, right: 10, bottom: 0, left: 0 }}>
+          <ComposedChart data={data} margin={{ top: 10, right: 22, bottom: 0, left: 0 }}>
             <CartesianGrid {...gridProps} />
             <XAxis dataKey="w" {...axisProps} tickFormatter={(w) => f.date(w, { day: "numeric", month: "short" })} interval={1} />
             <YAxis {...axisProps} width={50} tickFormatter={(v) => (v >= 10000 ? `${(v / 1000).toFixed(0)}k` : String(v))} domain={[(min: number) => Math.max(0, Math.floor((Math.min(min, cap) * 0.82) / 100) * 100), (max: number) => Math.ceil((Math.max(max, cap) * 1.04) / 100) * 100]} />
@@ -383,12 +383,12 @@ export function SkuRiskTable({ cfg, run, onPick }: { cfg: PlanningConfig; run: P
             <tr key={r.key} className="cursor-pointer hover:bg-muted/40" onClick={() => onPick(r.key)}>
               <td className="px-4 py-1.5">
                 <span className="font-mono text-[11.5px]">{r.sku}</span>
-                <span className="ms-1.5 text-[10.5px] text-muted-foreground">{r.wh === "JA" ? "JA" : "MN-05"}</span>
+                <span className="ms-1.5 text-[10.5px] whitespace-nowrap text-muted-foreground">{r.wh === "JA" ? "JA" : "MN-05"}</span>
                 {cfg.skus.find((k) => k.sku === r.sku)?.newProduct && <span className="ms-1.5 text-[10px] text-ai">{L({ en: "launch", ar: "إطلاق" })}</span>}
               </td>
               {r.fills.map((x, i) => (
                 <td key={i} className="px-3 py-1 text-end">
-                  <span className={cn("num inline-block rounded px-1.5 py-0.5", tone(x.fill))}>
+                  <span className={cn("num inline-block rounded px-1.5 py-0.5 whitespace-nowrap", tone(x.fill))}>
                     {fmtPct(x.fill)} <span className="text-[10px] opacity-70">({f.number(x.stockoutWeeks, { maximumFractionDigits: 1 })})</span>
                   </span>
                 </td>
@@ -456,14 +456,17 @@ export function SubmitBar({
           {L({ en: "Selected:", ar: "المختارة:" })} {L({ en: "Plan", ar: "الخطة" })} {selected} — {lang === "ar" ? spec.name_ar : spec.name}
         </span>
         <span className="ms-2 text-muted-foreground">
-          {fmtPct(p.fillRate)} · AED {fmtK(p.cost.total)} · {p.violations.length ? `${p.violations.length} ${L({ en: "violations", ar: "مخالفات" })}` : L({ en: "within limits", ar: "ضمن الحدود" })}
+          {fmtPct(p.fillRate)} · AED {fmtK(p.cost.total)} ·{" "}
+          {p.violations.length
+            ? L({ en: `${p.violations.length} resource-week${p.violations.length === 1 ? "" : "s"} over limit`, ar: `${p.violations.length} أسبوع-مورد فوق الحد` })
+            : L({ en: "within limits", ar: "ضمن الحدود" })}
         </span>
       </div>
       <Button onClick={onSubmit} disabled={busy || pending}>
         <Send />
         {pending
           ? L({ en: "Awaiting approval", ar: "بانتظار الاعتماد" })
-          : L({ en: `Submit to ${cfg.planner.name} for approval`, ar: `إرسال إلى ${cfg.planner.name} للاعتماد` })}
+          : L({ en: `Submit to ${cfg.planner.name} for approval`, ar: "إرسال إلى جوزيف أبراهام للاعتماد" })}
       </Button>
     </div>
   );

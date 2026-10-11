@@ -13,6 +13,7 @@ import { useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { REJECT_REASONS, type Finding, type Inspection, type InspectionState, type Taxonomy } from "../_lib/types";
 import { SEV_COLOR, SeverityPill } from "./ui";
+import { useTr } from "./names";
 
 async function post(body: Record<string, unknown>) {
   const res = await fetch("/api/solutions/18-visual-inspection/findings", {
@@ -52,6 +53,7 @@ export function FindingsPanel({
   photo: number;
 }) {
   const L = useL();
+  const tr = useTr();
   const { lang } = usePrefs();
   const [busy, setBusy] = useState<string | null>(null);
   const [addCode, setAddCode] = useState<string>("D05");
@@ -135,11 +137,11 @@ export function FindingsPanel({
                 </span>
               </div>
               <div className="mt-1.5 text-[13px] font-medium leading-snug" dir="auto">
-                {f.title}
+                {tr(f.title, f.title_ar)}
               </div>
               {f.description && (
                 <p className="mt-0.5 text-[12px] leading-relaxed text-muted-foreground" dir="auto">
-                  {f.description}
+                  {tr(f.description, f.description_ar)}
                 </p>
               )}
               <div className="mt-2 flex flex-wrap items-center gap-1.5">
@@ -188,7 +190,7 @@ export function FindingsPanel({
                 )}
                 {f.status === "accepted" && (
                   <span className="inline-flex items-center gap-1 text-[11.5px] text-success">
-                    <Check className="size-3.5" /> {L({ en: "Accepted", ar: "مقبولة" })} · {f.reviewer}
+                    <Check className="size-3.5" /> {L({ en: "Accepted", ar: "مقبولة" })} · {tr(f.reviewer)}
                   </span>
                 )}
                 {f.status === "rejected" && (

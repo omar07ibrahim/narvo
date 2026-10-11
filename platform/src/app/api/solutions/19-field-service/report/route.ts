@@ -58,7 +58,7 @@ function flagReading(r: Reading): Reading["flag"] {
 
 /** Visit capture → structured service report (notes + photos via the multimodal model) → computed checks and follow-ups → draft for supervisor. */
 export async function POST(req: Request) {
-  const body = await readBody<{ jobId?: string; notes?: string; photos?: Array<{ dataUrl: string; caption?: string; phase?: string }> }>(req);
+  const body = await readBody<{ jobId?: string; notes?: string; photos?: Array<{ dataUrl: string; thumb?: string; caption?: string; phase?: string }> }>(req);
   const { modelKey, lang } = getPrefs(req, body);
   const ar = lang === "ar";
   const ctx = jobContext(body.jobId ?? "");
@@ -181,7 +181,7 @@ export async function POST(req: Request) {
         generatedAt: Date.now(),
         ms: Date.now() - t0,
         notes,
-        photos: photos.map((p, i) => ({ thumb: p.dataUrl.length < 350_000 ? p.dataUrl : "", caption: report.photos[i]?.caption ?? p.caption ?? "", phase: report.photos[i]?.phase ?? p.phase ?? "other" })),
+        photos: photos.map((p, i) => ({ thumb: p.thumb?.startsWith("data:image/") && p.thumb.length < 200_000 ? p.thumb : p.dataUrl.length < 350_000 ? p.dataUrl : "", caption: report.photos[i]?.caption ?? p.caption ?? "", phase: report.photos[i]?.phase ?? p.phase ?? "other" })),
       };
       kvSet(draftKey(job.id), draft);
       patchRecord(COL.jobs, job.id, { status: "awaiting_review" });

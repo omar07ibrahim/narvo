@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
+import { DirectionProvider } from "@/components/ui/direction";
 
 export type Lang = "en" | "ar";
 
@@ -55,7 +56,11 @@ export function PrefsProvider({
     () => ({ lang, dir: lang === "ar" ? "rtl" : "ltr", setLang, modelKey, setModelKey }),
     [lang, setLang, modelKey, setModelKey],
   );
-  return <PrefsContext.Provider value={value}>{children}</PrefsContext.Provider>;
+  return (
+    <PrefsContext.Provider value={value}>
+      <DirectionProvider dir={value.dir}>{children}</DirectionProvider>
+    </PrefsContext.Provider>
+  );
 }
 
 export function usePrefs() {

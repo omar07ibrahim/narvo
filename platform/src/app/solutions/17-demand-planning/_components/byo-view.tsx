@@ -82,7 +82,10 @@ export function ByoView() {
           <>
             <Pane
               title={result.fileName}
-              subtitle={`${s.method} · ${s.periods} ${L({ en: s.frequency === "weekly" ? "weeks" : "months", ar: s.frequency === "weekly" ? "أسبوعاً" : "شهراً" })}${result.totalSeries > result.series.length ? ` · ${L({ en: `top ${result.series.length} of ${result.totalSeries} series`, ar: `أعلى ${result.series.length} من ${result.totalSeries} سلسلة` })}` : ""}`}
+              subtitle={`${L({
+                en: s.method,
+                ar: s.seasonLength > 1 ? `هولت-وينترز (ضربي، اتجاه مخمَّد، موسم ${s.seasonLength})` : "هولت باتجاه مخمَّد (السلسلة أقصر من أن تُظهر موسمية)",
+              })} · ${s.periods} ${L({ en: s.frequency === "weekly" ? "weeks" : "months", ar: s.frequency === "weekly" ? "أسبوعاً" : "شهراً" })}${result.totalSeries > result.series.length ? ` · ${L({ en: `top ${result.series.length} of ${result.totalSeries} series`, ar: `أعلى ${result.series.length} من ${result.totalSeries} سلسلة` })}` : ""}`}
               actions={
                 result.series.length > 1 && (
                   <Segmented value={pick} onChange={setPick} options={result.series.map((x, i) => ({ value: i, label: x.key }))} />

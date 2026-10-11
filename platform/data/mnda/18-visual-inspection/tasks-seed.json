@@ -7,6 +7,7 @@
     "code": "D07",
     "severity": "critical",
     "title": "Open foundation trenches without barriers",
+    "title_ar": "خنادق أساسات مفتوحة دون حواجز",
     "owner": "Emerald Line Construction LLC",
     "plot": "MN-04-109-0062",
     "dueAt": "2026-09-19T13:10:00+04:00",
@@ -20,6 +21,7 @@
       "remaining": [],
       "decision": "closed",
       "reason": "Re-inspection: rigid barriers 1 m back from trench edges along the access path.",
+      "reason_ar": "إعادة التفتيش: حواجز صلبة على بعد متر من حواف الخنادق على طول ممر الدخول.",
       "decidedBy": "Reem Salem Al Marzooqi",
       "decidedAt": 1789795800000
     }
@@ -32,6 +34,7 @@
     "code": "D11",
     "severity": "major",
     "title": "Bricks and spoil stacked at trench edges",
+    "title_ar": "طوب وناتج حفر مكدّس على حواف الخنادق",
     "owner": "Emerald Line Construction LLC",
     "plot": "MN-04-109-0062",
     "dueAt": "2026-09-23T23:59:00+04:00",
@@ -45,6 +48,7 @@
       "remaining": [],
       "decision": "closed",
       "reason": "Re-inspection: bricks restacked 1.5 m from the trenches on level ground.",
+      "reason_ar": "إعادة التفتيش: أُعيد تكديس الطوب على أرض مستوية على بعد 1.5 م من الخنادق.",
       "decidedBy": "Reem Salem Al Marzooqi",
       "decidedAt": 1789974900000
     }
@@ -57,6 +61,7 @@
     "code": "D04",
     "severity": "major",
     "title": "Column starters C1–C9 uncapped",
+    "title_ar": "أشاير الأعمدة C1–C9 دون أغطية",
     "owner": "Al Marsa Engineering & Contracting LLC",
     "plot": "MN-04-117-0031",
     "dueAt": "2026-09-28T23:59:00+04:00",
@@ -71,6 +76,7 @@
       "afterThumb": "/demo/18-visual-inspection/after-rebar-caps.jpg",
       "decision": "closed",
       "reason": "Photo review: mushroom caps fitted on all starters (contractor photo via e-services).",
+      "reason_ar": "مراجعة بالصور: رُكّبت أغطية واقية على جميع الأشاير (صورة من المقاول عبر الخدمات الإلكترونية).",
       "decidedBy": "Eng. Badr Saleh Al Marri",
       "decidedAt": 1790316600000
     }
@@ -83,6 +89,7 @@
     "code": "D02",
     "severity": "major",
     "title": "Steel fixer without safety helmet",
+    "title_ar": "عامل حديد دون خوذة سلامة",
     "owner": "Al Marsa Engineering & Contracting LLC",
     "plot": "MN-04-117-0031",
     "dueAt": "2026-09-28T23:59:00+04:00",
@@ -96,6 +103,7 @@
       "remaining": [],
       "decision": "closed",
       "reason": "Re-inspection: all operatives in helmets and safety boots.",
+      "reason_ar": "إعادة التفتيش: جميع العمال يرتدون الخوذ وأحذية السلامة.",
       "decidedBy": "Eng. Badr Saleh Al Marri",
       "decidedAt": 1790222400000
     }
@@ -108,6 +116,7 @@
     "code": "D04",
     "severity": "major",
     "title": "Uncapped column starter bars along walkway",
+    "title_ar": "أشاير أعمدة غير مغطاة على طول الممر",
     "owner": "Al Marsa Engineering & Contracting LLC",
     "plot": "MN-05-031-0007",
     "dueAt": "2026-10-02T23:59:00+04:00",
@@ -118,7 +127,9 @@
       "src": "/demo/18-visual-inspection/after-rebar-caps.jpg",
       "submittedAt": "2026-10-01T16:20:00+04:00",
       "by": "Eng. Khaled Mustafa Odeh (Al Marsa Engineering & Contracting)",
-      "note": "Caps fitted to all exposed starters along the store walkway."
+      "by_ar": "م. خالد مصطفى عودة (المرسى للهندسة والمقاولات)",
+      "note": "Caps fitted to all exposed starters along the store walkway.",
+      "note_ar": "رُكّبت الأغطية على جميع الأشاير المكشوفة على طول ممر المخزن."
     }
   },
   {
@@ -129,6 +140,7 @@
     "code": "D05",
     "severity": "minor",
     "title": "Aggregate heap and debris in basement bay",
+    "title_ar": "كومة ركام ومخلفات في جناح القبو",
     "owner": "Al Marsa Engineering & Contracting LLC",
     "plot": "MN-05-031-0007",
     "dueAt": "2026-10-08T23:59:00+04:00",
@@ -144,6 +156,7 @@
     "code": "D13",
     "severity": "critical",
     "title": "Suspended truss guided by hand, no exclusion zone",
+    "title_ar": "توجيه جملون معلّق باليد دون منطقة حظر",
     "owner": "Arabian Peninsula Construction Co. (APCC)",
     "plot": "MN-08-210-0003",
     "dueAt": "2026-10-03T18:20:00+04:00",
@@ -157,6 +170,7 @@
       "remaining": [],
       "decision": "closed",
       "reason": "Re-inspection: lift plan issued, exclusion zone barricaded and certified banksman on duty.",
+      "reason_ar": "إعادة التفتيش: صدرت خطة الرفع، وأُحيطت منطقة الحظر بحواجز، ومُرشد رفع معتمد في موقعه.",
       "decidedBy": "Sanjay Nair",
       "decidedAt": 1791005400000
     }
@@ -169,6 +183,7 @@
     "code": "D02",
     "severity": "major",
     "title": "Erector at height without visible harness",
+    "title_ar": "عامل تركيب على ارتفاع دون حزام أمان ظاهر",
     "owner": "Arabian Peninsula Construction Co. (APCC)",
     "plot": "MN-08-210-0003",
     "dueAt": "2026-10-07T23:59:00+04:00",
@@ -184,6 +199,7 @@
     "code": "D03",
     "severity": "critical",
     "title": "Pole scaffold without boarding or guardrails",
+    "title_ar": "سقالة أعمدة دون ألواح عمل أو درابزين",
     "owner": "Saqr Al Noor Contracting LLC",
     "plot": "MN-02-041-0088",
     "dueAt": "2026-10-06T14:15:00+04:00",
@@ -197,6 +213,7 @@
       "remaining": [],
       "decision": "closed",
       "reason": "Re-inspection: pole scaffold dismantled; system scaffold with boarded lifts, guardrails and toe boards erected, green tag dated 6 Oct.",
+      "reason_ar": "إعادة التفتيش: فُكّت سقالة الأعمدة ورُكّبت سقالة نظامية بمستويات عمل مغطاة بالألواح ودرابزين وألواح قدم، مع بطاقة فحص خضراء بتاريخ 6 أكتوبر.",
       "decidedBy": "Reem Salem Al Marzooqi",
       "decidedAt": 1791261900000
     }
@@ -209,6 +226,7 @@
     "code": "D09",
     "severity": "major",
     "title": "Ladder resting on a cross-pole, not secured",
+    "title_ar": "سلم مستند إلى عمود عرضي دون تثبيت",
     "owner": "Saqr Al Noor Contracting LLC",
     "plot": "MN-02-041-0088",
     "dueAt": "2026-10-08T23:59:00+04:00",
@@ -224,6 +242,7 @@
     "code": "D07",
     "severity": "critical",
     "title": "2.1 m trench, partial shoring, no edge barriers",
+    "title_ar": "خندق بعمق 2.1 م بتدعيم جزئي ودون حواجز",
     "owner": "Al Marsa Engineering & Contracting LLC",
     "plot": "MN-07-112-0201",
     "dueAt": "2026-10-07T15:40:00+04:00",
@@ -237,6 +256,7 @@
       "remaining": [],
       "decision": "closed",
       "reason": "Re-inspection: trench shored both sides and barriers installed 1 m from the edge.",
+      "reason_ar": "إعادة التفتيش: دُعّم الخندق من الجهتين ورُكّبت حواجز على بعد متر من الحافة.",
       "decidedBy": "Abdullah Hamdan Al Shehhi",
       "decidedAt": 1791350400000
     }
@@ -249,6 +269,7 @@
     "code": "D02",
     "severity": "major",
     "title": "Barefoot workers at the trench edge",
+    "title_ar": "عمال حفاة على حافة الخندق",
     "owner": "Al Marsa Engineering & Contracting LLC",
     "plot": "MN-07-112-0201",
     "dueAt": "2026-10-09T23:59:00+04:00",
@@ -264,6 +285,7 @@
     "code": "D07",
     "severity": "critical",
     "title": "Flooded pile-cap excavations without barriers",
+    "title_ar": "حفر قواعد خوازيق مغمورة بالمياه دون حواجز",
     "owner": "Bin Hilal Contracting LLC",
     "plot": "MN-01-015-0002",
     "dueAt": "2026-10-09T11:50:00+04:00",
@@ -274,7 +296,9 @@
       "src": "/demo/18-visual-inspection/after-excavation-barrier.jpg",
       "submittedAt": "2026-10-09T09:40:00+04:00",
       "by": "Mohammed Saif Bin Hilal (Bin Hilal Contracting)",
-      "note": "Mesh barriers installed around the excavation and pedestrian route signed."
+      "by_ar": "محمد سيف بن هلال (بن هلال للمقاولات)",
+      "note": "Mesh barriers installed around the excavation and pedestrian route signed.",
+      "note_ar": "رُكّبت حواجز شبكية حول الحفر ووُضعت لافتات لمسار المشاة."
     }
   },
   {
@@ -285,6 +309,7 @@
     "code": "D05",
     "severity": "minor",
     "title": "Waste and loose materials across the site",
+    "title_ar": "مخلفات ومواد سائبة في أرجاء الموقع",
     "owner": "Bin Hilal Contracting LLC",
     "plot": "MN-01-015-0002",
     "dueAt": "2026-10-19T23:59:00+04:00",
@@ -300,6 +325,7 @@
     "code": "D11",
     "severity": "major",
     "title": "Rebar bundles stored at the excavation edge",
+    "title_ar": "حزم حديد مخزنة على حافة الحفر",
     "owner": "Bin Hilal Contracting LLC",
     "plot": "MN-01-015-0002",
     "dueAt": "2026-10-13T23:59:00+04:00",
@@ -315,6 +341,7 @@
     "code": "D01",
     "severity": "critical",
     "title": "Level 6 east slab edge open over 14 m",
+    "title_ar": "حافة بلاطة الطابق السادس الشرقية مفتوحة بطول 14 م",
     "owner": "Gulf Crest Builders LLC",
     "plot": "MN-08-204-0012",
     "dueAt": "2026-09-04T14:00:00+04:00",
@@ -328,6 +355,7 @@
       "remaining": [],
       "decision": "closed",
       "reason": "Re-inspection: guardrails with toe boards along the east edge; harness anchor line installed.",
+      "reason_ar": "إعادة التفتيش: درابزين مع ألواح قدم على طول الحافة الشرقية، وتركيب خط تثبيت لأحزمة الأمان.",
       "decidedBy": "Eng. Badr Saleh Al Marri",
       "decidedAt": 1788498000000
     }
@@ -340,6 +368,7 @@
     "code": "D02",
     "severity": "major",
     "title": "Two steel fixers at the slab edge without harness",
+    "title_ar": "عاملا حديد على حافة البلاطة دون حزام أمان",
     "owner": "Gulf Crest Builders LLC",
     "plot": "MN-08-204-0012",
     "dueAt": "2026-09-08T23:59:00+04:00",
@@ -353,6 +382,7 @@
       "remaining": [],
       "decision": "closed",
       "reason": "Re-inspection: guardrails with toe boards along the east edge; harness anchor line installed.",
+      "reason_ar": "إعادة التفتيش: درابزين مع ألواح قدم على طول الحافة الشرقية، وتركيب خط تثبيت لأحزمة الأمان.",
       "decidedBy": "Eng. Badr Saleh Al Marri",
       "decidedAt": 1788589800000
     }

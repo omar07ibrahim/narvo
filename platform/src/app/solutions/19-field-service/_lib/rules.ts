@@ -29,23 +29,31 @@ export function partAvailability(lines: PartLine[], inv: Inventory, van: string,
     const c = p.stock.STORE ?? 0;
     let status: PartAvailability["status"];
     let action: string;
+    let action_ar: string;
     if (v >= l.qty) {
       status = "in_van";
       action = `In van ${van} (${v})`;
+      action_ar = `في الشاحنة ${van} (${v})`;
     } else if (v + s >= l.qty) {
       status = "site_store";
       action = `${v ? `${v} in van + ` : ""}collect ${l.qty - v} from ${site} site store`;
+      action_ar = `${v ? `${v} في الشاحنة + ` : ""}استلام ${l.qty - v} من مخزن موقع ${site}`;
     } else if (v + s + c >= l.qty) {
       status = "central_store";
       action = `Collect ${l.qty - v - s} from central store (Al Quoz) before travelling`;
+      action_ar = `استلام ${l.qty - v - s} من المخزن المركزي (القوز) قبل التوجه`;
     } else {
       status = "order";
       action = `Not in stock — order${p.supplier ? ` from ${p.supplier}` : ""}, lead time ${p.leadDays} working days`;
+      action_ar = `غير متوفر — يُطلب${p.supplier ? ` من ${p.supplier}` : ""}، مدة التوريد ${p.leadDays} أيام عمل`;
     }
     let warning: string | undefined;
-    if (p.partNo === "RFM-CHM-0109" && /epoxy|coated/i.test(assetDescription))
+    let warning_ar: string | undefined;
+    if (p.partNo === "RFM-CHM-0109" && /epoxy|coated/i.test(assetDescription)) {
       warning = "Alkaline cleaner (pH 11.5) is NOT approved for epoxy-coated coils — use RFM-CHM-0112 (RFM-MS-HVAC-014)";
-    return { ...l, desc: p.desc, kind: p.kind, unit: p.unit, van: v, site: s, store: c, status, action, leadDays: p.leadDays, warning };
+      warning_ar = "المنظف القلوي (pH 11.5) غير معتمد للملفات المطلية بالإيبوكسي — استخدم RFM-CHM-0112 (RFM-MS-HVAC-014)";
+    }
+    return { ...l, desc: p.desc, desc_ar: p.desc_ar, kind: p.kind, unit: p.unit, van: v, site: s, store: c, status, action, action_ar, leadDays: p.leadDays, warning, warning_ar };
   });
 }
 

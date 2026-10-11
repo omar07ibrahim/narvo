@@ -19,6 +19,36 @@ import { Segmented, Sparkline, fmtPct } from "./bits";
 const DAY = 86400000;
 const parse = (s: string) => Date.parse(s + "T00:00:00Z");
 
+const PROMO_AR: Record<string, string> = {
+  "Contractor Rewards Q1": "مكافآت المقاولين — الربع الأول",
+  "Contractor Rewards Q2": "مكافآت المقاولين — الربع الثاني",
+  "Contractor Rewards Q4": "مكافآت المقاولين — الربع الرابع",
+  "Pre-summer roofing offer": "عرض العزل قبل الصيف",
+  "ThermaShield launch bundle": "باقة إطلاق ثيرماشيلد",
+  "Tile Week": "أسبوع البلاط",
+};
+
+/** Calendar notes are computed server-side in English; render them in the UI language. */
+function noteText(note: string, lang: string) {
+  if (!note || lang !== "ar") return note;
+  return note
+    .split(" · ")
+    .map((part) => {
+      if (part.startsWith("Ramadan")) return "رمضان";
+      if (part === "Eid") return "عطلة العيد";
+      if (part === "Public holiday") return "عطلة رسمية";
+      if (part === "Post-promo") return "ما بعد العرض";
+      if (part === "Pre-launch") return "قبل الإطلاق";
+      if (part.startsWith("Launch week")) return "أسبوع الإطلاق (مع الطلبات المسبقة)";
+      if (part.startsWith("Promo: ")) {
+        const name = part.slice(7);
+        return `عرض: ${PROMO_AR[name] ?? name}`;
+      }
+      return part;
+    })
+    .join(" · ");
+}
+
 export function ForecastView({
   cfg,
   bundle,
@@ -52,7 +82,7 @@ export function ForecastView({
   const list = bundle.series.filter((s) => wh === "all" || s.wh === wh);
 
   return (
-    <div className="grid gap-4 lg:grid-cols-[300px_minmax(0,1fr)]">
+    <div className="grid gap-4 lg:grid-cols-[264px_minmax(0,1fr)] 2xl:grid-cols-[300px_minmax(0,1fr)]">
       <Pane
         title={L({ en: "SKU × warehouse", ar: "الصنف × المستودع" })}
         flush
@@ -67,7 +97,8 @@ export function ForecastView({
             ]}
           />
         }
-        bodyClassName="max-h-[760px] overflow-auto scrollbar-thin"
+        className="lg:sticky lg:top-4 lg:self-start"
+        bodyClassName="max-h-[min(1040px,calc(100vh-7rem))] overflow-auto scrollbar-thin"
       >
         {families.map((fam) => {
           const rows = list.filter((s) => cfg.skus.find((k) => k.sku === s.sku)?.family === fam);
@@ -92,7 +123,7 @@ export function ForecastView({
                             <span className="rounded border border-border px-1 text-[9.5px] text-muted-foreground">{s.wh === "JA" ? "JA" : "MN-05"}</span>
                             {overrides.some((o) => o.key === s.key) && <PencilLine className="size-3 text-warning" />}
                           </div>
-                          <div className="mt-0.5 flex items-center gap-2 text-[10.5px] text-muted-foreground">
+                          <div className="mt-0.5 flex flex-wrap items-center gap-x-2 text-[10.5px] whitespace-nowrap text-muted-foreground">
                             {s.backtest ? (
                               <span className="num">MAPE {fmtPct(s.backtest.mape)}</span>
                             ) : (
@@ -146,10 +177,8 @@ export function ForecastView({
           </div>
         </Pane>
 
-        <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_340px]">
-          <ForecastTable series={series} unit={unit} overrides={overrides} onOverridesChange={onOverridesChange} />
-          <ModelCard series={series} cfg={cfg} />
-        </div>
+        <ForecastTable series={series} unit={unit} overrides={overrides} onOverridesChange={onOverridesChange} />
+        <ModelCard series={series} cfg={cfg} />
       </div>
     </div>
   );
@@ -221,6 +250,8 @@ function ForecastChart({
     return out;
   }, [weeks, calendar]);
   const today = series.forecast.weeks[0];
+  // One tick per quarter (first week starting in Jan / Apr / Jul / Oct) so labels never collide.
+  const quarterTicks = weeks.filter((w, i) => i > 0 && [0, 3, 6, 9].includes(new Date(parse(w)).getUTCMonth()) && new Date(parse(weeks[i - 1])).getUTCMonth() !== new Date(parse(w)).getUTCMonth() && i < weeks.length - 5);
   const fmtW = (w: string) => f.date(w, { day: "numeric", month: "short", year: "numeric" });
   const fmtTick = (w: string) => f.date(w, { month: "short", year: "2-digit" });
   const fmtV = (v: number | string) => (typeof v === "number" ? f.number(v, { maximumFractionDigits: series.key.startsWith("RB-") ? 1 : 0 }) : String(v));
@@ -241,7 +272,7 @@ function ForecastChart({
               ifOverflow="hidden"
             />
           ))}
-          <XAxis dataKey="w" {...axisProps} tickFormatter={fmtTick} interval={12} minTickGap={24} />
+          <XAxis dataKey="w" {...axisProps} tickFormatter={fmtTick} ticks={quarterTicks} interval={0} />
           <YAxis {...axisProps} width={56} tickFormatter={(v) => (v >= 10000 ? `${Math.round(v / 1000)}k` : String(v))} />
           <Tooltip
             content={({ active, payload, label }) => (
@@ -284,6 +315,7 @@ function ForecastTable({
 }) {
   const L = useL();
   const f = useFormat();
+  const { lang } = usePrefs();
   const dec = series.sku.startsWith("RB-") ? 1 : 0;
   const rows = series.forecast.weeks.slice(0, 13).map((w, h) => ({
     w,
@@ -310,18 +342,18 @@ function ForecastTable({
             {rows.map((r) => (
               <tr key={r.w} className={cn(r.o && "bg-warning-soft/40")}>
                 <td className="num px-4 py-1.5 whitespace-nowrap">{f.date(r.w, { day: "numeric", month: "short", year: "2-digit" })}</td>
-                <td className="num px-3 py-1.5 text-end text-muted-foreground">{f.number(r.p10, { maximumFractionDigits: dec })}</td>
+                <td className="num px-3 py-1.5 text-end text-muted-foreground">{f.number(r.p10, { minimumFractionDigits: dec, maximumFractionDigits: dec })}</td>
                 <td className="px-3 py-1 text-end">
                   <OverrideCell series={series} week={r.w} p50={r.p50} unit={unit} existing={r.o} onChange={onOverridesChange} />
                 </td>
-                <td className="num px-3 py-1.5 text-end text-muted-foreground">{f.number(r.p90, { maximumFractionDigits: dec })}</td>
+                <td className="num px-3 py-1.5 text-end text-muted-foreground">{f.number(r.p90, { minimumFractionDigits: dec, maximumFractionDigits: dec })}</td>
                 <td className="px-4 py-1.5 text-[11px] text-muted-foreground">
                   {r.o ? (
                     <span className="text-warning" dir="auto">
                       {L({ en: "Override", ar: "تعديل" })}: {r.o.reason}
                     </span>
                   ) : (
-                    r.note
+                    noteText(r.note, lang)
                   )}
                 </td>
               </tr>
@@ -405,7 +437,7 @@ function OverrideCell({
             existing ? "text-warning underline decoration-dotted underline-offset-2" : "text-ai",
           )}
         >
-          {f.number(existing ? existing.value : p50, { maximumFractionDigits: dec })}
+          {f.number(existing ? existing.value : p50, { minimumFractionDigits: dec, maximumFractionDigits: dec })}
         </button>
       </PopoverTrigger>
       <PopoverContent className="w-72 p-3" align="end">
@@ -457,8 +489,8 @@ function ModelCard({ series, cfg }: { series: SeriesForecast; cfg: PlanningConfi
         </div>
         <p className="mt-2 text-[12px] leading-relaxed text-muted-foreground">
           {L({
-            en: `No sales history — ThermaShield launches on 2 Nov 2026. Seasonality borrowed from ${l.analogue} (roofing), run-rate ${l.runRate[series.wh]} pails/week after an ${l.rampWeeks}-week ramp, plus ${l.preOrders[series.wh]} pre-ordered pails (${l.preOrderAccounts} trade accounts in total) in launch week. Wide range: ±${Math.round(l.levelCv * 100)}% level uncertainty.`,
-            ar: `لا يوجد سجل مبيعات — يُطلق ثيرماشيلد في 2 نوفمبر 2026. الموسمية مستعارة من ${l.analogue} (العزل)، ومعدل ${l.runRate[series.wh]} دلواً أسبوعياً بعد فترة تصاعد ${l.rampWeeks} أسابيع، إضافة إلى ${l.preOrders[series.wh]} دلواً محجوزاً مسبقاً في أسبوع الإطلاق. نطاق واسع: ±${Math.round(l.levelCv * 100)}% عدم يقين في المستوى.`,
+            en: `No sales history — ThermaShield launches on 1 Nov 2026 (first trading week from 2 Nov). Seasonality borrowed from ${l.analogue} (roofing), run-rate ${l.runRate[series.wh]} pails/week after an ${l.rampWeeks}-week ramp, plus ${l.preOrders[series.wh]} pre-ordered pails (${l.preOrderAccounts} trade accounts in total) in launch week. Wide range: ±${Math.round(l.levelCv * 100)}% level uncertainty.`,
+            ar: `لا يوجد سجل مبيعات — يُطلق ثيرماشيلد في 1 نوفمبر 2026 (أول أسبوع بيع يبدأ 2 نوفمبر). الموسمية مستعارة من ${l.analogue} (العزل)، ومعدل ${l.runRate[series.wh]} دلواً أسبوعياً بعد فترة تصاعد ${l.rampWeeks} أسابيع، إضافة إلى ${l.preOrders[series.wh]} دلواً محجوزاً مسبقاً في أسبوع الإطلاق. نطاق واسع: ±${Math.round(l.levelCv * 100)}% عدم يقين في المستوى.`,
           })}
         </p>
       </Pane>
@@ -479,43 +511,49 @@ function ModelCard({ series, cfg }: { series: SeriesForecast; cfg: PlanningConfi
   );
   return (
     <Pane title={L({ en: "Model & backtest", ar: "النموذج والاختبار الرجعي" })}>
-      <div className="text-[12.5px] font-medium">{L({ en: "Holt-Winters · 52-week seasonality · damped trend", ar: "هولت-وينترز · موسمية 52 أسبوعاً · اتجاه مخمَّد" })}</div>
-      <div className="num mt-1 font-mono text-[11px] text-muted-foreground">
-        α {p.alpha} · β {p.beta} · γ {p.gamma} · φ {p.phi} · σ {(series.residualCv * 100).toFixed(1)}%
+      <div className="grid gap-x-8 gap-y-4 2xl:grid-cols-2">
+        <div className="min-w-0">
+          <div className="text-[12.5px] font-medium">{L({ en: "Holt-Winters · 52-week seasonality · damped trend", ar: "هولت-وينترز · موسمية 52 أسبوعاً · اتجاه مخمَّد" })}</div>
+          <div className="num mt-1 font-mono text-[11px] text-muted-foreground" dir="ltr">
+            α {p.alpha} · β {p.beta} · γ {p.gamma} · φ {p.phi} · σ {(series.residualCv * 100).toFixed(1)}%
+          </div>
+          <div className="mt-3 grid grid-cols-3 gap-2 rounded-md border border-border bg-surface p-2.5 text-center">
+            <div>
+              <div className="label-caps !text-[9px]">NARVO</div>
+              <div className={cn("num mt-1 text-[18px] font-light", better ? "text-ai" : "")}>{fmtPct(b.mape)}</div>
+            </div>
+            <div>
+              <div className="label-caps !text-[9px]">{L({ en: "Naive", ar: "بسيط" })}</div>
+              <div className="num mt-1 text-[18px] font-light text-muted-foreground">{fmtPct(b.naiveMape)}</div>
+            </div>
+            <div>
+              <div className="label-caps !text-[9px]">{L({ en: "Coverage", ar: "التغطية" })}</div>
+              <div className="num mt-1 text-[18px] font-light">{fmtPct(b.coverage, 0)}</div>
+            </div>
+          </div>
+          <p className="mt-1.5 text-[10.5px] leading-snug text-faint">
+            {L({
+              en: "MAPE over the last 12 weeks, model refitted without them; naive = same week last year; coverage = actuals inside P10–P90.",
+              ar: "متوسط الخطأ المطلق النسبي لآخر 12 أسبوعاً بعد إعادة الملاءمة دونها؛ البسيط = نفس الأسبوع من العام الماضي؛ التغطية = القيم الفعلية ضمن P10–P90.",
+            })}
+          </p>
+          {!better && (
+            <div className="mt-2">
+              <StatusPill tone="warning">{L({ en: "Naive wins on this series — review", ar: "النموذج البسيط أفضل هنا — للمراجعة" })}</StatusPill>
+            </div>
+          )}
+        </div>
+        <div className="min-w-0">
+          <div className="label-caps mb-1 !text-[9.5px]">{L({ en: "Calendar effects (estimated)", ar: "آثار التقويم (مقدّرة)" })}</div>
+          <div className="divide-y divide-border">
+            {eff(L({ en: "Ramadan week", ar: "أسبوع رمضان" }), e.ramadan)}
+            {eff(L({ en: "Eid holidays", ar: "عطلة العيد" }), e.eid)}
+            {eff(L({ en: "Summer midday ban", ar: "حظر العمل وقت الظهيرة" }), e.summer)}
+            {eff(L({ en: "Public holidays", ar: "العطل الرسمية" }), e.holiday)}
+            {eff(L({ en: "Promotion week", ar: "أسبوع العروض" }), e.promo)}
+          </div>
+        </div>
       </div>
-      <div className="mt-3 grid grid-cols-3 gap-2 rounded-md border border-border bg-surface p-2.5 text-center">
-        <div>
-          <div className="label-caps !text-[9px]">NARVO</div>
-          <div className={cn("num mt-1 text-[18px] font-light", better ? "text-ai" : "")}>{fmtPct(b.mape)}</div>
-        </div>
-        <div>
-          <div className="label-caps !text-[9px]">{L({ en: "Naive", ar: "بسيط" })}</div>
-          <div className="num mt-1 text-[18px] font-light text-muted-foreground">{fmtPct(b.naiveMape)}</div>
-        </div>
-        <div>
-          <div className="label-caps !text-[9px]">{L({ en: "Coverage", ar: "التغطية" })}</div>
-          <div className="num mt-1 text-[18px] font-light">{fmtPct(b.coverage, 0)}</div>
-        </div>
-      </div>
-      <p className="mt-1.5 text-[10.5px] leading-snug text-faint">
-        {L({
-          en: "MAPE over the last 12 weeks, model refitted without them; naive = same week last year; coverage = actuals inside P10–P90.",
-          ar: "متوسط الخطأ المطلق النسبي لآخر 12 أسبوعاً بعد إعادة الملاءمة دونها؛ البسيط = نفس الأسبوع من العام الماضي؛ التغطية = القيم الفعلية ضمن P10–P90.",
-        })}
-      </p>
-      <div className="label-caps mt-3 mb-1 !text-[9.5px]">{L({ en: "Calendar effects (estimated)", ar: "آثار التقويم (مقدّرة)" })}</div>
-      <div className="divide-y divide-border">
-        {eff(L({ en: "Ramadan week", ar: "أسبوع رمضان" }), e.ramadan)}
-        {eff(L({ en: "Eid holidays", ar: "عطلة العيد" }), e.eid)}
-        {eff(L({ en: "Summer midday ban", ar: "حظر العمل وقت الظهيرة" }), e.summer)}
-        {eff(L({ en: "Public holidays", ar: "العطل الرسمية" }), e.holiday)}
-        {eff(L({ en: "Promotion week", ar: "أسبوع العروض" }), e.promo)}
-      </div>
-      {!better && (
-        <div className="mt-2">
-          <StatusPill tone="warning">{L({ en: "Naive wins on this series — review", ar: "النموذج البسيط أفضل هنا — للمراجعة" })}</StatusPill>
-        </div>
-      )}
     </Pane>
   );
 }

@@ -19,6 +19,7 @@ import { PhotoInput } from "./photo-input";
 import { PhotoViewer } from "./photo-viewer";
 import { SeverityPill } from "./ui";
 import { downscale } from "./image-utils";
+import { useTr } from "./names";
 
 interface Verdict {
   sameLocation: "likely" | "unlikely" | "uncertain";
@@ -46,6 +47,7 @@ export function ClosureDialog({
   onState: (s: InspectionState) => void;
 }) {
   const L = useL();
+  const tr = useTr();
   const f = useFormat();
   const run = useNarvoRun();
   const [after, setAfter] = useState<string | null>(null);
@@ -97,12 +99,12 @@ export function ClosureDialog({
           <DialogTitle className="flex flex-wrap items-center gap-2 text-[15px] font-medium">
             <span className="font-mono">{task.id}</span>
             <span className="text-muted-foreground">·</span>
-            {task.code} {task.title}
+            {task.code} {tr(task.title, task.title_ar)}
           </DialogTitle>
           <DialogDescription className="flex flex-wrap items-center gap-2 text-[12px]">
             <SeverityPill severity={task.severity} escalated={task.escalated} />
             <span>
-              {task.owner} · {task.plot} · {L({ en: "due", ar: "الموعد" })} {f.date(task.dueAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
+              {tr(task.owner)} · {task.plot} · {L({ en: "due", ar: "الموعد" })} {f.date(task.dueAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
             </span>
             {overdue && <StatusPill tone="danger">{L({ en: "Overdue", ar: "متأخرة" })}</StatusPill>}
           </DialogDescription>
@@ -115,7 +117,7 @@ export function ClosureDialog({
               <PhotoViewer src={before} alt="before" findings={[finding]} tax={tax} showBoxes activeId={finding.id} onHover={() => {}} />
             )}
             <p className="mt-2 text-[11.5px] leading-relaxed text-muted-foreground" dir="auto">
-              {finding?.description}
+              {tr(finding?.description, finding?.description_ar)}
             </p>
           </div>
           <div>
@@ -131,7 +133,7 @@ export function ClosureDialog({
                   </div>
                 )}
                 <p className="text-[12px]" dir="auto">
-                  <b className="font-medium">{task.closure.decidedBy}</b> · {f.date(task.closure.decidedAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} — {task.closure.reason}
+                  <b className="font-medium">{tr(task.closure.decidedBy)}</b> · {f.date(task.closure.decidedAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} — {tr(task.closure.reason, task.closure.reason_ar)}
                 </p>
               </div>
             ) : (
@@ -143,7 +145,7 @@ export function ClosureDialog({
                     <div className="min-w-0 flex-1 text-[11.5px]">
                       <div className="font-medium">{L({ en: "Submitted via MNDA e-services", ar: "مقدّم عبر الخدمات الإلكترونية للهيئة" })}</div>
                       <div className="text-muted-foreground" dir="auto">
-                        {task.submission.by} · {f.date(task.submission.submittedAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} — {task.submission.note}
+                        {tr(task.submission.by, task.submission.by_ar)} · {f.date(task.submission.submittedAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} — {tr(task.submission.note, task.submission.note_ar)}
                       </div>
                     </div>
                     <Button

@@ -14,6 +14,7 @@ import { EmptyState } from "@/components/narvo/empty";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
+import { DirectionProvider } from "@/components/ui/direction";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
@@ -28,6 +29,7 @@ import { NoticePanel } from "./notice-panel";
 import { PhotoViewer } from "./photo-viewer";
 import { TaskRegister } from "./task-register";
 import { SCENARIO } from "./scenario";
+import { INSPECTION_TYPE, NamesProvider } from "./names";
 import { Segmented, SeverityPill } from "./ui";
 
 const STATUS: Record<InspectionStatus, { en: string; ar: string; tone: "neutral" | "ai" | "warning" | "success" | "info" }> = {
@@ -42,18 +44,21 @@ export function InspectionWorkspace({
   initialState,
   tax,
   contractors,
+  names,
   initialApprovals,
   serverNow,
 }: {
   initialState: InspectionState;
   tax: Taxonomy;
   contractors: Contractor[];
+  names: Record<string, string>;
   initialApprovals: Array<ApprovalSummary & { inspectionId?: string }>;
   serverNow: number;
 }) {
   const L = useL();
   const f = useFormat();
-  const { lang } = usePrefs();
+  const { lang, dir } = usePrefs();
+  const tr = (en?: string | null, ar?: string | null) => (lang === "ar" ? ar || (en ? names[en] : undefined) || en || "" : en || "");
   const [state, setState] = useState(initialState);
   const [tab, setTab] = useState("inspections");
   useEffect(() => {
@@ -63,7 +68,7 @@ export function InspectionWorkspace({
   const [filter, setFilter] = useState<"all" | "review" | "notice" | "closed">("all");
   const [q, setQ] = useState("");
   const [selectedId, setSelectedId] = useState(
-    initialState.inspections.find((i) => i.id === "MNDA-INS-2026-07114" && (i.status === "awaiting_review" || i.status === "in_review"))?.id ??
+    initialState.inspections.find((i) => i.id === "MNDA-INS-2026-07114" && (i.status === "awaiting_review" || i.status === "in_review" || i.status === "notice_pending"))?.id ??
       initialState.inspections.find((i) => i.status === "awaiting_review")?.id ??
       initialState.inspections[0]?.id,
   );
@@ -129,6 +134,8 @@ export function InspectionWorkspace({
 
   return (
     <SolutionPage slug="18-visual-inspection" scenario={SCENARIO}>
+      <NamesProvider map={names}>
+      <DirectionProvider dir={dir}>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-5">
         <MetricTile
           label={L({ en: "Confirmed findings", ar: "الملاحظات المؤكدة" })}
@@ -219,10 +226,10 @@ export function InspectionWorkspace({
                             {lang === "ar" ? i.project_ar : i.project}
                           </div>
                           <div className="mt-0.5 flex items-center gap-1.5 truncate text-[10.5px] text-muted-foreground">
-                            <span className="font-mono">{i.plot}</span>·<span className="truncate">{i.contractor}</span>
+                            <span className="font-mono">{i.plot}</span>·<span className="truncate">{tr(i.contractor)}</span>
                           </div>
-                          <div className="mt-0.5 text-[10.5px] text-faint">
-                            {f.date(i.date, { day: "numeric", month: "short" })} · {i.inspector.name}
+                          <div className="mt-0.5 truncate text-[10.5px] text-faint">
+                            {f.date(i.date, { day: "numeric", month: "short" })} · {tr(i.inspector.name, i.inspector.name_ar)}
                             {nf > 0 && ` · ${nf} ${L({ en: "findings", ar: "ملاحظات" })}`}
                           </div>
                         </div>
@@ -239,7 +246,7 @@ export function InspectionWorkspace({
               <div className="flex min-w-0 flex-col gap-4">
                 <Pane
                   title={<span className="font-mono normal-case tracking-normal text-foreground">{insp.id}</span>}
-                  subtitle={`${lang === "ar" ? insp.project_ar : insp.project} · ${insp.type}`}
+                  subtitle={`${lang === "ar" ? insp.project_ar : insp.project} · ${L(INSPECTION_TYPE[insp.type] ?? { en: insp.type, ar: insp.type })}`}
                   actions={
                     <label className="flex items-center gap-2 text-[11.5px] text-muted-foreground">
                       <Switch checked={showBoxes} onCheckedChange={setShowBoxes} />
@@ -249,6 +256,7 @@ export function InspectionWorkspace({
                 >
                   <div className="min-w-0">
                     <PhotoViewer
+                      className="mx-auto max-w-[720px]"
                       src={insp.photos[photo]?.src ?? insp.photos[0].src}
                       alt={insp.photos[photo]?.caption ?? ""}
                       findings={photoFindings}
@@ -265,7 +273,13 @@ export function InspectionWorkspace({
                       <span className="flex items-center gap-1.5 text-faint">
                         <Info className="size-3" />
                         {L({ en: "Boxes are approximate — the inspector decides", ar: "الإطارات تقريبية — القرار للمفتش" })}
-                        {insp.photos[photo]?.credit && <span>· {insp.photos[photo].credit}</span>}
+                        {insp.photos[photo]?.credit?.includes("Wikimedia") ? (
+                          <a href="/demo/18-visual-inspection/CREDITS.md" target="_blank" rel="noreferrer" className="hover:text-foreground hover:underline">
+                            · {L({ en: "Photo: Wikimedia Commons", ar: "الصورة: ويكيميديا كومنز" })}
+                          </a>
+                        ) : (
+                          insp.photos[photo]?.credit && <span>· {insp.photos[photo].credit}</span>
+                        )}
                       </span>
                     </div>
                     {insp.photos.length > 1 && (
@@ -283,11 +297,11 @@ export function InspectionWorkspace({
                     {[
                       [L({ en: "Plot", ar: "القطعة" }), <span key="p" className="font-mono">{insp.plot}</span>],
                       [L({ en: "Permit", ar: "الرخصة" }), <span key="r" className="font-mono">{insp.permit}</span>],
-                      [L({ en: "Contractor", ar: "المقاول" }), insp.contractor],
-                      [L({ en: "Consultant", ar: "الاستشاري" }), insp.consultant],
+                      [L({ en: "Contractor", ar: "المقاول" }), tr(insp.contractor)],
+                      [L({ en: "Consultant", ar: "الاستشاري" }), tr(insp.consultant, insp.consultant_ar)],
                       [L({ en: "Inspector", ar: "المفتش" }), `${lang === "ar" ? insp.inspector.name_ar : insp.inspector.name} · ${insp.inspector.id}`],
                       [L({ en: "Visited", ar: "الزيارة" }), f.date(insp.date, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })],
-                      [L({ en: "Conditions", ar: "الأحوال" }), insp.weather ?? "—"],
+                      [L({ en: "Conditions", ar: "الأحوال" }), tr(insp.weather, insp.weather_ar) || "—"],
                       [L({ en: "Status", ar: "الحالة" }), <StatusPill key="s" tone={STATUS[insp.status].tone}>{L(STATUS[insp.status])}</StatusPill>],
                     ].map(([k, v], i) => (
                       <div key={i} className="min-w-0">
@@ -389,7 +403,7 @@ export function InspectionWorkspace({
                                 <SeverityPill severity={t.severity} escalated={t.escalated} />
                               </div>
                               <div className="mt-0.5 truncate text-[12px]" dir="auto">
-                                {t.code} · {t.title}
+                                {t.code} · {tr(t.title, t.title_ar)}
                               </div>
                               <div className={cn("num text-[10.5px]", od ? "text-danger" : "text-muted-foreground")}>
                                 {t.status === "closed" ? L({ en: "Closed", ar: "مغلقة" }) : `${L({ en: "Due", ar: "الموعد" })} ${f.date(t.dueAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}`}
@@ -436,6 +450,8 @@ export function InspectionWorkspace({
           toast.message(L({ en: "Closure KPI updated", ar: "تم تحديث مؤشر الإغلاق" }));
         }}
       />
+      </DirectionProvider>
+      </NamesProvider>
     </SolutionPage>
   );
 }

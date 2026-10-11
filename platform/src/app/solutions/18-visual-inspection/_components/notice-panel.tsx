@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { FileWarning, Stamp } from "lucide-react";
+import { FileWarning, Maximize2, Stamp } from "lucide-react";
 import { useNarvoRun } from "@/hooks/use-narvo-run";
 import { AgentTrace } from "@/components/narvo/agent-trace";
 import { ApprovalCard } from "@/components/narvo/approval-card";
@@ -10,11 +10,14 @@ import { RunButton } from "@/components/narvo/run-button";
 import { SourceList } from "@/components/narvo/sources";
 import { ThinkingLines } from "@/components/narvo/empty";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import type { ApprovalSummary, Citation } from "@/lib/ai/events";
 import { assess } from "../_lib/rules";
 import type { Inspection, InspectionState, Taxonomy } from "../_lib/types";
 import { Segmented, SeverityPill } from "./ui";
+import { useTr } from "./names";
 
 export function NoticePanel({
   insp,
@@ -32,12 +35,18 @@ export function NoticePanel({
   pendingApproval?: ApprovalSummary;
 }) {
   const L = useL();
+  const tr = useTr();
   const f = useFormat();
   const { lang } = usePrefs();
   const run = useNarvoRun();
   const [tab, setTab] = useState<"en" | "ar">(lang);
-  useEffect(() => setTab(lang), [lang]);
-  useEffect(() => run.reset(), [insp.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  const [expanded, setExpanded] = useState(false);
+  useEffect(() => {
+    setTab(lang);
+  }, [lang]);
+  useEffect(() => {
+    run.reset();
+  }, [insp.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const accepted = state.findings.filter((x) => x.inspectionId === insp.id && x.status === "accepted");
   const proposed = state.findings.filter((x) => x.inspectionId === insp.id && x.status === "proposed").length;
@@ -54,10 +63,16 @@ export function NoticePanel({
             <Stamp className="size-4 text-success" />
             <span className="font-mono font-medium">{issued.id}</span>
           </div>
-          <Segmented value={tab} onChange={setTab} options={[{ value: "en", label: "EN" }, { value: "ar", label: "عربي" }]} />
+          <div className="flex items-center gap-1">
+            <Segmented value={tab} onChange={setTab} options={[{ value: "en", label: "EN" }, { value: "ar", label: "عربي" }]} />
+            <Button size="icon-xs" variant="ghost" className="text-muted-foreground" onClick={() => setExpanded(true)} aria-label={L({ en: "Open full notice", ar: "فتح الإشعار كاملاً" })}>
+              <Maximize2 />
+            </Button>
+          </div>
         </div>
+        <NoticeDialog open={expanded} onOpenChange={setExpanded} id={issued.id} tab={tab} setTab={setTab} text={tab === "ar" ? issued.textAr : issued.textEn} />
         <div className="text-[11.5px] text-muted-foreground">
-          {L({ en: "Served", ar: "أُبلغ" })} {f.date(issued.issuedAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} · {L({ en: "approved by", ar: "اعتمده" })} {issued.approvedBy} · AED {issued.penaltyTotal.toLocaleString("en-US")}
+          {L({ en: "Served", ar: "أُبلغ" })} {f.date(issued.issuedAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} · {L({ en: "approved by", ar: "اعتمده" })} {tr(issued.approvedBy)} · AED {issued.penaltyTotal.toLocaleString("en-US")}
         </div>
         <div className="max-h-[520px] overflow-auto rounded-md border border-border bg-surface p-3 scrollbar-thin" dir={tab === "ar" ? "rtl" : "ltr"}>
           <Markdown className="text-[12.5px]">{tab === "ar" ? issued.textAr : issued.textEn}</Markdown>
@@ -120,7 +135,7 @@ export function NoticePanel({
       )}
       {proposed > 0 && accepted.length > 0 && (
         <p className="text-[11.5px] text-warning">
-          {L({ en: `${proposed} AI flag(s) not yet reviewed will be excluded.`, ar: `${proposed} ملاحظة آلية لم تُراجع بعد ستُستبعد.` })}
+          {L({ en: `${proposed} AI flag${proposed === 1 ? "" : "s"} not yet reviewed will be excluded.`, ar: `${proposed} ملاحظة آلية لم تُراجع بعد ستُستبعد.` })}
         </p>
       )}
       <RunButton
@@ -142,8 +157,14 @@ export function NoticePanel({
           <AgentTrace run={run} showReasoning={false} />
           <div className="flex items-center justify-between">
             <span className="label-caps">{L({ en: "Draft notice", ar: "مسودة الإشعار" })}</span>
-            <Segmented value={tab} onChange={setTab} options={[{ value: "en", label: "EN" }, { value: "ar", label: "عربي" }]} />
+            <div className="flex items-center gap-1">
+              <Segmented value={tab} onChange={setTab} options={[{ value: "en", label: "EN" }, { value: "ar", label: "عربي" }]} />
+              <Button size="icon-xs" variant="ghost" className="text-muted-foreground" disabled={run.running} onClick={() => setExpanded(true)} aria-label={L({ en: "Open full notice", ar: "فتح الإشعار كاملاً" })}>
+                <Maximize2 />
+              </Button>
+            </div>
           </div>
+          <NoticeDialog open={expanded} onOpenChange={setExpanded} id={L({ en: "Draft notice", ar: "مسودة الإشعار" })} tab={tab} setTab={setTab} text={run.text[tab] ?? ""} />
           <div className="max-h-[520px] overflow-auto rounded-md border border-border bg-surface p-3 scrollbar-thin" dir={tab === "ar" ? "rtl" : "ltr"}>
             {run.text[tab] ? <Markdown className="text-[12.5px]" streaming={run.running}>{run.text[tab]}</Markdown> : <ThinkingLines lines={6} />}
           </div>
@@ -170,5 +191,40 @@ export function NoticePanel({
         </>
       )}
     </div>
+  );
+}
+
+/** The notice as a readable document (the rail is too narrow for its table). */
+function NoticeDialog({
+  open,
+  onOpenChange,
+  id,
+  tab,
+  setTab,
+  text,
+}: {
+  open: boolean;
+  onOpenChange: (v: boolean) => void;
+  id: string;
+  tab: "en" | "ar";
+  setTab: (t: "en" | "ar") => void;
+  text: string;
+}) {
+  const L = useL();
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="max-h-[90vh] overflow-auto sm:max-w-[860px]">
+        <DialogHeader className="flex-row items-center justify-between gap-3 space-y-0 pe-8">
+          <div>
+            <DialogTitle className="font-mono text-[14px] font-medium">{id}</DialogTitle>
+            <DialogDescription className="text-[12px]">{L({ en: "Notice of Violation — bilingual, Arabic text prevails", ar: "إشعار مخالفة — ثنائي اللغة، ويُعتد بالنص العربي" })}</DialogDescription>
+          </div>
+          <Segmented value={tab} onChange={setTab} options={[{ value: "en", label: "EN" }, { value: "ar", label: "عربي" }]} />
+        </DialogHeader>
+        <div className="rounded-md border border-border bg-surface px-8 py-6" dir={tab === "ar" ? "rtl" : "ltr"}>
+          <Markdown className="text-[13px]">{text}</Markdown>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }

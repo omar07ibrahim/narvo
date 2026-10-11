@@ -5,7 +5,9 @@
     "photo": 0,
     "code": "D07",
     "title": "Open foundation trenches without barriers",
+    "title_ar": "خنادق أساسات مفتوحة دون حواجز",
     "description": "Network of strip-foundation trenches about 1.3 m deep with no barriers beside the access path.",
+    "description_ar": "شبكة خنادق أساسات شريطية بعمق 1.3 م تقريباً دون حواجز بجوار ممر الدخول.",
     "bbox": [
       0,
       0.25,
@@ -25,7 +27,9 @@
     "photo": 0,
     "code": "D11",
     "title": "Bricks and spoil stacked at trench edges",
+    "title_ar": "طوب وناتج حفر مكدّس على حواف الخنادق",
     "description": "Bricks and loose spoil placed directly on the trench edges in the foreground.",
+    "description_ar": "طوب وناتج حفر سائب موضوع مباشرة على حواف الخنادق في مقدمة الصورة.",
     "bbox": [
       0.44,
       0.64,
@@ -45,7 +49,9 @@
     "photo": 0,
     "code": "D04",
     "title": "Column starters C1–C9 uncapped",
+    "title_ar": "أشاير الأعمدة C1–C9 دون أغطية",
     "description": "All column starter cages on the roof of the ground floor without caps; steel fixer working between them.",
+    "description_ar": "جميع أشاير الأعمدة على سطح الطابق الأرضي دون أغطية، وعامل حديد يعمل بينها.",
     "bbox": [
       0.02,
       0.33,
@@ -65,7 +71,9 @@
     "photo": 0,
     "code": "D02",
     "title": "Steel fixer without safety helmet",
+    "title_ar": "عامل حديد دون خوذة سلامة",
     "description": "Worker at the centre column wearing a brimmed hat instead of a safety helmet.",
+    "description_ar": "عامل عند العمود الأوسط يرتدي قبعة عادية بدلاً من خوذة السلامة.",
     "bbox": [
       0.43,
       0.74,
@@ -85,7 +93,9 @@
     "photo": 0,
     "code": "D04",
     "title": "Uncapped column starter bars along walkway",
+    "title_ar": "أشاير أعمدة غير مغطاة على طول الممر",
     "description": "Rows of protruding column starters in the left foreground beside the walkway to the ground-floor store, none capped.",
+    "description_ar": "صفوف من أشاير الأعمدة البارزة في مقدمة الصورة يساراً بجوار ممر المخزن الأرضي، ولا غطاء على أيٍّ منها.",
     "bbox": [
       0,
       0.63,
@@ -105,7 +115,9 @@
     "photo": 0,
     "code": "D05",
     "title": "Aggregate heap and debris in basement bay",
+    "title_ar": "كومة ركام ومخلفات في جناح القبو",
     "description": "Loose aggregate heap, bags and offcuts under the first-floor slab, centre-bottom of the photo.",
+    "description_ar": "كومة ركام سائب وأكياس وقصاصات تحت بلاطة الطابق الأول، أسفل وسط الصورة.",
     "bbox": [
       0.35,
       0.81,
@@ -125,7 +137,9 @@
     "photo": 0,
     "code": "D01",
     "title": "First-floor slab edge without guardrail",
+    "title_ar": "حافة بلاطة الطابق الأول دون درابزين",
     "description": "Open edge of the first-floor slab running across the centre of the photo.",
+    "description_ar": "حافة مفتوحة لبلاطة الطابق الأول تمتد عبر وسط الصورة.",
     "bbox": [
       0,
       0.5,
@@ -146,7 +160,9 @@
     "photo": 0,
     "code": "D13",
     "title": "Suspended truss guided by hand, no exclusion zone",
+    "title_ar": "توجيه جملون معلّق باليد دون منطقة حظر",
     "description": "Truss suspended from the crane hook (centre) being guided by an erector reaching from the column head; no barricade or banksman visible.",
+    "description_ar": "جملون معلّق بخطاف الرافعة (في الوسط) يوجهه عامل تركيب بيده من رأس العمود، دون حواجز أو مُرشد رفع ظاهر.",
     "bbox": [
       0.28,
       0.33,
@@ -166,7 +182,9 @@
     "photo": 0,
     "code": "D02",
     "title": "Erector at height without visible harness",
+    "title_ar": "عامل تركيب على ارتفاع دون حزام أمان ظاهر",
     "description": "Worker standing on the column head on the right with no full-body harness or lanyard visible.",
+    "description_ar": "عامل يقف على رأس العمود يميناً دون حزام أمان كامل للجسم أو حبل ربط ظاهر.",
     "bbox": [
       0.67,
       0.37,
@@ -186,7 +204,9 @@
     "photo": 0,
     "code": "D03",
     "title": "Pole scaffold without boarding or guardrails",
+    "title_ar": "سقالة أعمدة دون ألواح عمل أو درابزين",
     "description": "Improvised pole scaffold across the façade: working lifts are single poles, no boarding, guardrails or toe boards; workers on the cross-poles.",
+    "description_ar": "سقالة أعمدة مرتجلة على امتداد الواجهة: مستويات العمل أعمدة مفردة دون ألواح أو درابزين أو ألواح قدم، والعمال يقفون على الأعمدة العرضية.",
     "bbox": [
       0,
       0.1,
@@ -206,7 +226,9 @@
     "photo": 0,
     "code": "D09",
     "title": "Ladder resting on a cross-pole, not secured",
+    "title_ar": "سلم مستند إلى عمود عرضي دون تثبيت",
     "description": "Aluminium ladder (right of centre) leaning on a scaffold cross-pole without tie or footing.",
+    "description_ar": "سلم ألمنيوم (يمين الوسط) مستند إلى عمود عرضي في السقالة دون ربط أو تثبيت للقاعدة.",
     "bbox": [
       0.69,
       0.55,
@@ -226,7 +248,9 @@
     "photo": 0,
     "code": "D05",
     "title": "Debris near the ground-floor entrance",
+    "title_ar": "مخلفات قرب مدخل الطابق الأرضي",
     "description": "Possible loose material by the doorway at the bottom of the photo.",
+    "description_ar": "مواد سائبة محتملة عند المدخل أسفل الصورة.",
     "bbox": [
       0.3,
       0.9,
@@ -247,7 +271,9 @@
     "photo": 0,
     "code": "D07",
     "title": "2.1 m trench, partial shoring, no edge barriers",
+    "title_ar": "خندق بعمق 2.1 م بتدعيم جزئي ودون حواجز",
     "description": "Deep trench in the centre with timber shoring on one side only; spoil heaped at both edges and no barrier along the walkway.",
+    "description_ar": "خندق عميق في الوسط بتدعيم خشبي من جهة واحدة فقط، وناتج الحفر مكوّم على الحافتين ودون حاجز على طول الممر.",
     "bbox": [
       0.2,
       0.3,
@@ -267,7 +293,9 @@
     "photo": 0,
     "code": "D02",
     "title": "Barefoot workers at the trench edge",
+    "title_ar": "عمال حفاة على حافة الخندق",
     "description": "Workers on the left of the trench standing barefoot on the spoil and planks at the edge.",
+    "description_ar": "عمال على يسار الخندق يقفون حفاة على ناتج الحفر والألواح عند الحافة.",
     "bbox": [
       0,
       0.14,
@@ -287,7 +315,9 @@
     "photo": 0,
     "code": "D07",
     "title": "Flooded pile-cap excavations without barriers",
+    "title_ar": "حفر قواعد خوازيق مغمورة بالمياه دون حواجز",
     "description": "Two open pile-cap excavations in the centre, flooded, with no barrier or cover; workers walking along the edges.",
+    "description_ar": "حفرتان مفتوحتان لقواعد الخوازيق في الوسط مغمورتان بالمياه دون حاجز أو غطاء، والعمال يسيرون على الحواف.",
     "bbox": [
       0.34,
       0.39,
@@ -307,7 +337,9 @@
     "photo": 0,
     "code": "D05",
     "title": "Waste and loose materials across the site",
+    "title_ar": "مخلفات ومواد سائبة في أرجاء الموقع",
     "description": "Bags, offcuts, plastic and rubble scattered around the excavations and access route.",
+    "description_ar": "أكياس وقصاصات وبلاستيك وأنقاض متناثرة حول الحفريات وطريق الدخول.",
     "bbox": [
       0.15,
       0.17,
@@ -327,7 +359,9 @@
     "photo": 0,
     "code": "D11",
     "title": "Rebar bundles stored at the excavation edge",
+    "title_ar": "حزم حديد مخزنة على حافة الحفر",
     "description": "Rebar bundles laid along the left edge of the excavation, within 1 m of the drop.",
+    "description_ar": "حزم حديد موضوعة على طول الحافة اليسرى للحفر على بعد أقل من متر من الحافة.",
     "bbox": [
       0.26,
       0.4,

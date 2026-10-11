@@ -14,7 +14,10 @@ import { StatusPill } from "@/components/narvo/status";
 import { ThinkingLines } from "@/components/narvo/empty";
 import { SectionLabel } from "@/components/narvo/pane";
 import type { NarvoRun } from "@/hooks/use-narvo-run";
-import { useL } from "@/lib/i18n";
+import type { ApprovalSummary } from "@/lib/ai/events";
+import { useL, usePrefs } from "@/lib/i18n";
+import { fmtFull } from "./signal-charts";
+import { WO_STATUS, label, textDir } from "./labels";
 import { cn } from "@/lib/utils";
 import type { Job, Verification } from "../_lib/signals";
 
@@ -73,10 +76,12 @@ function WoDetail({ wo, onComplete, verifyRun, draft }: { wo: WO; onComplete: ()
             {draft ? (
               <StatusPill tone="ai">{L({ en: "Draft — awaiting approval", ar: "مسودة — بانتظار الاعتماد" })}</StatusPill>
             ) : (
-              <StatusPill tone={tone(verifyRun?.data.status ?? wo.status)}>{verifyRun?.data.status ?? wo.status}</StatusPill>
+              <StatusPill tone={tone(verifyRun?.data.status ?? wo.status)}>{L(label(WO_STATUS, verifyRun?.data.status ?? wo.status))}</StatusPill>
             )}
           </div>
-          <h3 className="mt-1.5 text-[16px] leading-snug font-medium">{wo.title}</h3>
+          <h3 className="mt-1.5 text-[16px] leading-snug font-medium" dir="auto">
+            {wo.title}
+          </h3>
           <p className="mt-1 text-[12px] text-muted-foreground">
             {wo.contractor} · {wo.asset}
             {wo.zones.length ? ` · ${wo.zones.join(", ")}` : ""} · {draft ? L({ en: "prepared", ar: "أُعدّ" }) : L({ en: "issued", ar: "صدر" })} {wo.issuedAt} · {wo.schedule}
@@ -105,7 +110,9 @@ function WoDetail({ wo, onComplete, verifyRun, draft }: { wo: WO; onComplete: ()
           </SectionLabel>
           <ol className="list-decimal space-y-1.5 ps-5 text-[12.5px] leading-relaxed">
             {wo.scope.map((x, i) => (
-              <li key={i}>{x}</li>
+              <li key={i} dir="auto">
+                {x}
+              </li>
             ))}
           </ol>
         </div>
@@ -115,7 +122,9 @@ function WoDetail({ wo, onComplete, verifyRun, draft }: { wo: WO; onComplete: ()
           </SectionLabel>
           <ul className="list-disc space-y-1.5 ps-5 text-[12.5px] leading-relaxed">
             {wo.safety.map((x, i) => (
-              <li key={i}>{x}</li>
+              <li key={i} dir="auto">
+                {x}
+              </li>
             ))}
           </ul>
         </div>
@@ -133,8 +142,14 @@ function WoDetail({ wo, onComplete, verifyRun, draft }: { wo: WO; onComplete: ()
                     {r.pass === true ? <CheckCircle2 className="size-4 text-success" /> : r.pass === false ? <XCircle className="size-4 text-danger" /> : <span className="mt-1 block size-2 rounded-full bg-faint" />}
                   </td>
                   <td className="py-2 pe-3">
-                    <div className="font-medium">{r.description}</div>
-                    {r.detail && <div className="mt-0.5 text-[11.5px] text-muted-foreground">{r.detail}</div>}
+                    <div className="font-medium" dir="auto">
+                      {r.description}
+                    </div>
+                    {r.detail && (
+                      <div className="mt-0.5 text-[11.5px] text-muted-foreground" dir="auto">
+                        {r.detail}
+                      </div>
+                    )}
                   </td>
                 </tr>
               ))}
@@ -163,9 +178,11 @@ function WoDetail({ wo, onComplete, verifyRun, draft }: { wo: WO; onComplete: ()
       {note && (
         <div className={cn("rounded-md border p-4", v?.verdict === "verified" ? "border-success/30 bg-success-soft/40" : v?.verdict === "not_verified" ? "border-danger/30 bg-danger-soft/40" : "border-border bg-surface")}>
           <div className="label-caps mb-2">{L({ en: "Verification note", ar: "مذكرة التحقق" })}</div>
-          <Markdown streaming={verifyRun?.running} className="text-[12.5px] [&_p]:my-1">
-            {note}
-          </Markdown>
+          <div dir={textDir(note)}>
+            <Markdown streaming={verifyRun?.running} className="text-[12.5px] [&_p]:my-1">
+              {note}
+            </Markdown>
+          </div>
         </div>
       )}
       {verifyRun?.status === "error" && <div className="rounded-md border border-danger/25 bg-danger-soft p-3 text-[12.5px] text-danger">{verifyRun.error}</div>}
@@ -176,6 +193,8 @@ function WoDetail({ wo, onComplete, verifyRun, draft }: { wo: WO; onComplete: ()
 export function WorkOrders({
   site,
   workOrders,
+  pending = [],
+  onPendingDecided,
   jobs,
   feed,
   draftRun,
@@ -187,6 +206,8 @@ export function WorkOrders({
 }: {
   site: "AGC" | "HQ";
   workOrders: WO[];
+  pending?: Array<{ approval: ApprovalSummary; record: WO }>;
+  onPendingDecided?: (approvalId: string) => void;
   jobs: Job[];
   feed: Feed[];
   draftRun: NarvoRun;
@@ -197,6 +218,7 @@ export function WorkOrders({
   onVerify: (id: string) => void;
 }) {
   const L = useL();
+  const { lang } = usePrefs();
   const [selected, setSelected] = useState<string | null>(null);
   const [completing, setCompleting] = useState<WO | null>(null);
   const [when, setWhen] = useState("2026-10-06T11:40");
@@ -255,6 +277,24 @@ export function WorkOrders({
         </div>
         {draftRun.running && !draft && <ThinkingLines lines={5} className="mt-4" />}
         {draftRun.status === "error" && <div className="mt-3 rounded-md border border-danger/25 bg-danger-soft p-3 text-[12.5px] text-danger">{draftRun.error}</div>}
+        {!draft &&
+          !draftRun.running &&
+          pending.map((p) => (
+            <div key={p.approval.id} className="mt-4 rounded-md border border-border bg-card p-4">
+              <WoDetail wo={p.record} onComplete={() => {}} verifyRun={null} draft />
+              <ApprovalCard
+                approval={p.approval}
+                className="mt-4"
+                onDecided={async (s) => {
+                  onPendingDecided?.(p.approval.id);
+                  if (s === "approved") {
+                    const list = await onRefresh();
+                    setSelected(list.find((w) => w.id === p.record.id)?.id ?? null);
+                  }
+                }}
+              />
+            </div>
+          ))}
         {draft && (
           <div className="mt-4 rounded-md border border-border bg-card p-4">
             <WoDetail wo={draft} onComplete={() => {}} verifyRun={null} draft />
@@ -290,7 +330,7 @@ export function WorkOrders({
                     <div className="font-mono text-[10.5px] text-muted-foreground">{w.id}</div>
                     <div className="mt-0.5 line-clamp-2 text-[12.5px] leading-snug">{w.title}</div>
                     <StatusPill className="mt-1.5" tone={tone(w.status)}>
-                      {w.status}
+                      {L(label(WO_STATUS, w.status))}
                     </StatusPill>
                   </button>
                 </li>
@@ -330,7 +370,7 @@ export function WorkOrders({
                       {j.resolution && <div className="mt-0.5 line-clamp-2 text-[11px] text-muted-foreground">{j.resolution}</div>}
                     </td>
                     <td className="px-3 py-2">{j.priority}</td>
-                    <td className="num px-3 py-2 text-muted-foreground">{j.raisedAt.slice(5, 16).replace("T", " ")}</td>
+                    <td className="num px-3 py-2 text-muted-foreground">{fmtFull(Date.parse(j.raisedAt), lang)}</td>
                     <td className={cn("num px-3 py-2 text-end", resp != null && sla != null && resp > sla && "text-danger", tripJob && resp != null && resp > 1 && "font-medium")}>
                       {resp != null ? `${resp.toFixed(1)} h` : "—"}
                       {tripJob && <div className="text-[10px] font-normal text-faint">{L({ en: "P1 target 1 h", ar: "هدف P1 ساعة" })}</div>}

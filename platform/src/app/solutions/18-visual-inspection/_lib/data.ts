@@ -18,8 +18,20 @@ export function loadTaxonomy(): Taxonomy {
   return readJson<Taxonomy>(`${DIR}/taxonomy.json`);
 }
 
-export function loadRegistry(): { contractors: Contractor[]; inspectors: Person[]; consultants: string[] } {
+export function loadRegistry(): { contractors: Contractor[]; inspectors: Person[]; consultants: string[]; consultants_ar?: string[] } {
   return readJson(`${DIR}/registry.json`);
+}
+
+/** English → Arabic display names for people and companies shown in the UI. */
+export function loadNameMap(): Record<string, string> {
+  const r = loadRegistry();
+  const map: Record<string, string> = { [DIRECTOR.name]: "م. حمد جمعة الكعبي" };
+  for (const c of r.contractors) map[c.name] = c.name_ar;
+  for (const p of r.inspectors) map[p.name] = p.name_ar;
+  r.consultants.forEach((c, i) => {
+    if (r.consultants_ar?.[i]) map[c] = r.consultants_ar[i];
+  });
+  return map;
 }
 
 export function loadState(): InspectionState {

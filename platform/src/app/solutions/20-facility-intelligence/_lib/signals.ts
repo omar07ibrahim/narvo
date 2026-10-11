@@ -112,6 +112,7 @@ export interface Anomaly {
   peak: number;
   severity: "high" | "medium" | "low";
   label: string;
+  label_ar: string;
 }
 
 function episodes(s: Series, pred: (i: number) => boolean) {
@@ -128,7 +129,7 @@ function episodes(s: Series, pred: (i: number) => boolean) {
   return out;
 }
 
-export function detectAnomalies(s: Series, zones: Array<{ id: string; name: string }>): Anomaly[] {
+export function detectAnomalies(s: Series, zones: Array<{ id: string; name: string; nameAr?: string }>): Anomaly[] {
   const out: Anomaly[] = [];
   const c = s.cols;
   const occ = s.site === "HQ" ? occupiedHq : occupiedAgc;
@@ -137,16 +138,16 @@ export function detectAnomalies(s: Series, zones: Array<{ id: string; name: stri
   if (c.ch02_trip) {
     for (let i = 0; i < s.t.length; i++)
       if (c.ch02_trip[i] === 1)
-        add({ kind: "trip", asset: "CH-02", start: s.t[i], end: s.t[i], hours: 1, peak: c.ch02_dp_kpa[i], severity: "high", label: `CH-02 high-pressure trip at ${c.ambient_c[i].toFixed(1)} °C ambient` });
+        add({ kind: "trip", asset: "CH-02", start: s.t[i], end: s.t[i], hours: 1, peak: c.ch02_dp_kpa[i], severity: "high", label: `CH-02 high-pressure trip at ${c.ambient_c[i].toFixed(1)} °C ambient`, label_ar: `توقف CH-02 بسبب الضغط العالي عند حرارة خارجية ${c.ambient_c[i].toFixed(1)} °م` });
     for (const [a, b] of episodes(s, (i) => c.ch02_status[i] === 1 && c.ch02_trip[i] === 0 && c.ch02_dp_kpa[i] >= 1700)) {
       const peak = Math.max(...c.ch02_dp_kpa.slice(a, b + 1));
-      add({ kind: "near_trip", asset: "CH-02", start: s.t[a], end: s.t[b], hours: b - a + 1, peak, severity: "medium", label: `CH-02 on high-pressure unloading (peak ${Math.round(peak)} kPa)` });
+      add({ kind: "near_trip", asset: "CH-02", start: s.t[a], end: s.t[b], hours: b - a + 1, peak, severity: "medium", label: `CH-02 on high-pressure unloading (peak ${Math.round(peak)} kPa)`, label_ar: `تخفيض حمل CH-02 بسبب الضغط العالي (الذروة ${Math.round(peak)} kPa)` });
     }
   }
   if (c.chws_c) {
     for (const [a, b] of episodes(s, (i) => c.chws_c[i] > 8)) {
       const peak = Math.max(...c.chws_c.slice(a, b + 1));
-      add({ kind: "shortfall", asset: "CHW loop", start: s.t[a], end: s.t[b], hours: b - a + 1, peak, severity: peak > 9.5 ? "high" : "medium", label: `Chilled-water supply up to ${peak.toFixed(1)} °C (setpoint 6.7 °C)` });
+      add({ kind: "shortfall", asset: "CHW loop", start: s.t[a], end: s.t[b], hours: b - a + 1, peak, severity: peak > 9.5 ? "high" : "medium", label: `Chilled-water supply up to ${peak.toFixed(1)} °C (setpoint 6.7 °C)`, label_ar: `حرارة مياه التبريد حتى ${peak.toFixed(1)} °م (القيمة المرجعية 6.7 °م)` });
     }
   }
   for (const z of zones) {
@@ -155,12 +156,12 @@ export function detectAnomalies(s: Series, zones: Array<{ id: string; name: stri
     for (const [a, b] of episodes(s, (i) => occ(s.t[i]) && col[i] > COMFORT.high + 0.3)) {
       const peak = Math.max(...col.slice(a, b + 1));
       if (b - a + 1 < 1) continue;
-      add({ kind: "zone_hot", zone: z.id, start: s.t[a], end: s.t[b], hours: b - a + 1, peak, severity: peak > 26.5 ? "high" : "medium", label: `${z.name} at ${peak.toFixed(1)} °C (band 22.5–24.5 °C)` });
+      add({ kind: "zone_hot", zone: z.id, start: s.t[a], end: s.t[b], hours: b - a + 1, peak, severity: peak > 26.5 ? "high" : "medium", label: `${z.name} at ${peak.toFixed(1)} °C (band 22.5–24.5 °C)`, label_ar: `${z.nameAr ?? z.name} عند ${peak.toFixed(1)} °م (النطاق 22.5–24.5 °م)` });
     }
     for (const [a, b] of episodes(s, (i) => occ(s.t[i]) && col[i] < COMFORT.low - 0.7)) {
       const peak = Math.min(...col.slice(a, b + 1));
       if (b - a + 1 < 2) continue;
-      add({ kind: "zone_cold", zone: z.id, start: s.t[a], end: s.t[b], hours: b - a + 1, peak, severity: "low", label: `${z.name} at ${peak.toFixed(1)} °C — below band` });
+      add({ kind: "zone_cold", zone: z.id, start: s.t[a], end: s.t[b], hours: b - a + 1, peak, severity: "low", label: `${z.name} at ${peak.toFixed(1)} °C — below band`, label_ar: `${z.nameAr ?? z.name} عند ${peak.toFixed(1)} °م — دون النطاق` });
     }
   }
   return out.sort((a, b) => a.start - b.start);

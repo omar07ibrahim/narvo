@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
-import { useFormat, useL } from "@/lib/i18n";
+import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { ApprovalSummary } from "@/lib/ai/events";
 import { addWorkingDays, partAvailability, scoreReport } from "../_lib/rules";
@@ -63,11 +63,14 @@ export function ReviewView({
   onReturned: () => void;
 }) {
   const L = useL();
+  const { lang } = usePrefs();
   const f = useFormat();
   const [r, setR] = useState<ServiceReport | null>(draft?.report ?? null);
   const [busy, setBusy] = useState(false);
   const [comment, setComment] = useState("");
-  useEffect(() => setR(draft?.report ?? null), [draft?.generatedAt, job.id]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    setR(draft?.report ?? null);
+  }, [draft?.generatedAt, job.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const score = useMemo(() => (r ? scoreReport(r, job, { followUpJobs: r.unresolved.length }) : null), [r, job]);
   const pending = approvals.find((a) => a.status === "pending");
@@ -137,7 +140,7 @@ export function ReviewView({
               {L({ en: "Draft service report", ar: "مسودة تقرير الخدمة" })} · <span className="font-mono">{job.id}</span>
             </div>
             <div className="text-[11.5px] text-muted-foreground">
-              {tech.name} · {asset.id} · {L({ en: "drafted", ar: "صيغت" })} {f.date(draft.generatedAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} {L({ en: "from voice notes and photos", ar: "من الملاحظات الصوتية والصور" })}
+              {(lang === "ar" && tech.name_ar) || tech.name} · {asset.id} · {L({ en: "drafted", ar: "صيغت" })} {f.date(draft.generatedAt, { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })} {L({ en: "from voice notes and photos", ar: "من الملاحظات الصوتية والصور" })}
             </div>
           </div>
           {locked ? <StatusPill tone={job.status === "completed" ? "success" : "warning"}>{job.status === "completed" ? L({ en: "Approved", ar: "معتمد" }) : L({ en: "Awaiting approval", ar: "بانتظار الاعتماد" })}</StatusPill> : <StatusPill tone="ai">{L({ en: "Editable", ar: "قابل للتعديل" })}</StatusPill>}

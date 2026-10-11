@@ -62,7 +62,7 @@ export async function POST(req: Request) {
       const { object } = await generateObject({
         schema,
         name: "triage",
-        system: triageSystem(),
+        system: triageSystem(lang),
         user,
         modelKey,
         solution: SLUG,

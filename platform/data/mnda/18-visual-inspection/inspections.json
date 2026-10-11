@@ -10,6 +10,7 @@
     "permit": "MNDA-BP-2026-01644",
     "contractor": "Gulf Crest Builders LLC",
     "consultant": "Meridian Gulf Engineering Consultants",
+    "consultant_ar": "ميريديان الخليج للاستشارات الهندسية",
     "inspector": {
       "name": "Eng. Badr Saleh Al Marri",
       "name_ar": "م. بدر صالح المري",
@@ -28,7 +29,8 @@
     "status": "awaiting_review",
     "note": "Rebar fixing for level 10 beams in progress. Worker at the slab edge during the visit. Same plot had an edge-protection notice on 3 Sep (MNDA-VN-2026-01341).",
     "note_ar": "أعمال تركيب حديد كمرات الطابق العاشر جارية، وكان أحد العمال عند حافة البلاطة أثناء الزيارة. صدر للقطعة نفسها إشعار يتعلق بحماية الحواف في 3 سبتمبر (MNDA-VN-2026-01341).",
-    "weather": "34 °C, clear, wind 18 km/h"
+    "weather": "34 °C, clear, wind 18 km/h",
+    "weather_ar": "34 °م، صافٍ، رياح 18 كم/س"
   },
   {
     "id": "MNDA-INS-2026-07128",
@@ -41,6 +43,7 @@
     "permit": "MNDA-BP-2026-01487",
     "contractor": "Saqr Al Noor Contracting LLC",
     "consultant": "Dar Al Sahel Consulting Engineers",
+    "consultant_ar": "دار الساحل للاستشارات الهندسية",
     "inspector": {
       "name": "Reem Salem Al Marzooqi",
       "name_ar": "ريم سالم المرزوقي",
@@ -59,7 +62,8 @@
     "status": "awaiting_review",
     "note": "Three workers on a tube scaffold lift. Check guardrails, toe boards and scaffold tag. Spoil and rubble on the open plot to the west.",
     "note_ar": "ثلاثة عمال على منصة سقالة أنبوبية. يُتحقق من الدرابزين وألواح القدم وبطاقة الفحص. توجد مخلفات وأنقاض في الأرض المفتوحة غرباً.",
-    "weather": "35 °C, haze"
+    "weather": "35 °C, haze",
+    "weather_ar": "35 °م، ضباب خفيف"
   },
   {
     "id": "MNDA-INS-2026-07142",
@@ -72,6 +76,7 @@
     "permit": "MNDA-BP-2026-01702",
     "contractor": "Arabian Peninsula Construction Co. (APCC)",
     "consultant": "Coastline Design & Supervision LLC",
+    "consultant_ar": "كوستلاين للتصميم والإشراف ذ.م.م",
     "inspector": {
       "name": "Abdullah Hamdan Al Shehhi",
       "name_ar": "عبدالله حمدان الشحي",
@@ -90,7 +95,8 @@
     "status": "awaiting_review",
     "note": "Follow-up to Customer Happiness complaint CHC-2026-122318: 'site fence fallen onto the pavement since Thursday night'. Excavators working on spoil mound.",
     "note_ar": "متابعة لبلاغ مركز سعادة المتعاملين CHC-2026-122318: «سقط سياج الموقع على الرصيف منذ ليلة الخميس». الحفارات تعمل على كومة ناتج الحفر.",
-    "weather": "33 °C, overcast"
+    "weather": "33 °C, overcast",
+    "weather_ar": "33 °م، غائم"
   },
   {
     "id": "MNDA-INS-2026-07156",
@@ -103,6 +109,7 @@
     "permit": "MNDA-BP-2026-01391",
     "contractor": "Bin Hilal Contracting LLC",
     "consultant": "Meridian Gulf Engineering Consultants",
+    "consultant_ar": "ميريديان الخليج للاستشارات الهندسية",
     "inspector": {
       "name": "Eng. Badr Saleh Al Marri",
       "name_ar": "م. بدر صالح المري",
@@ -121,7 +128,8 @@
     "status": "awaiting_review",
     "note": "Steel fixers and carpenters on column formwork; worker crossing on a scaffold tube.",
     "note_ar": "عمال حديد ونجارون على قوالب الأعمدة؛ أحد العمال يعبر على أنبوب سقالة.",
-    "weather": "36 °C"
+    "weather": "36 °C",
+    "weather_ar": "36 °م"
   },
   {
     "id": "MNDA-INS-2026-07163",
@@ -134,6 +142,7 @@
     "permit": "MNDA-BP-2026-00918",
     "contractor": "Emerald Line Construction LLC",
     "consultant": "Al Noor Engineering Consultancy",
+    "consultant_ar": "النور للاستشارات الهندسية",
     "inspector": {
       "name": "Sanjay Nair",
       "name_ar": "سانجاي ناير",
@@ -152,7 +161,8 @@
     "status": "awaiting_review",
     "note": "Roof slab edge with workers; starter bars along the perimeter; block stacks near the entrance. Gate pass via Sidr Communities LLC.",
     "note_ar": "عمال على حافة بلاطة السطح، وأشاير حديد على المحيط، وأكوام طابوق قرب المدخل. الدخول بتصريح من شركة السدر للمجتمعات.",
-    "weather": "34 °C, dusty"
+    "weather": "34 °C, dusty",
+    "weather_ar": "34 °م، مغبر"
   },
   {
     "id": "MNDA-INS-2026-06948",
@@ -165,6 +175,7 @@
     "permit": "MNDA-BP-2026-01295",
     "contractor": "Al Marsa Engineering & Contracting LLC",
     "consultant": "Dar Al Sahel Consulting Engineers",
+    "consultant_ar": "دار الساحل للاستشارات الهندسية",
     "inspector": {
       "name": "Abdullah Hamdan Al Shehhi",
       "name_ar": "عبدالله حمدان الشحي",
@@ -184,6 +195,7 @@
     "note": "Uncapped starters along the walkway to the ground-floor store; aggregate and debris in the basement bay.",
     "note_ar": "أشاير غير مغطاة على طول ممر المخزن الأرضي، وركام ومخلفات في القبو.",
     "weather": "37 °C",
+    "weather_ar": "37 °م",
     "noticeId": "MNDA-VN-2026-01358"
   },
   {
@@ -197,6 +209,7 @@
     "permit": "MNDA-BP-2026-01518",
     "contractor": "Arabian Peninsula Construction Co. (APCC)",
     "consultant": "Meridian Gulf Engineering Consultants",
+    "consultant_ar": "ميريديان الخليج للاستشارات الهندسية",
     "inspector": {
       "name": "Sanjay Nair",
       "name_ar": "سانجاي ناير",
@@ -216,6 +229,7 @@
     "note": "Erector guiding a suspended truss by hand from the column head; no exclusion zone or banksman visible.",
     "note_ar": "عامل تركيب يوجه جملوناً معلقاً بيده من رأس العمود دون منطقة حظر أو مُرشد رفع ظاهر.",
     "weather": "39 °C at 14:20",
+    "weather_ar": "39 °م عند 14:20",
     "noticeId": "MNDA-VN-2026-01361"
   },
   {
@@ -229,6 +243,7 @@
     "permit": "MNDA-BP-2026-01433",
     "contractor": "Saqr Al Noor Contracting LLC",
     "consultant": "Al Noor Engineering Consultancy",
+    "consultant_ar": "النور للاستشارات الهندسية",
     "inspector": {
       "name": "Reem Salem Al Marzooqi",
       "name_ar": "ريم سالم المرزوقي",
@@ -248,6 +263,7 @@
     "note": "Improvised pole scaffold without boarding or guardrails; aluminium ladder resting on a cross-pole.",
     "note_ar": "سقالة أعمدة مرتجلة دون ألواح أو درابزين؛ سلم ألمنيوم مستند إلى عمود عرضي.",
     "weather": "35 °C",
+    "weather_ar": "35 °م",
     "noticeId": "MNDA-VN-2026-01364"
   },
   {
@@ -261,6 +277,7 @@
     "permit": "MNDA-BP-2026-01560",
     "contractor": "Al Marsa Engineering & Contracting LLC",
     "consultant": "Coastline Design & Supervision LLC",
+    "consultant_ar": "كوستلاين للتصميم والإشراف ذ.م.م",
     "inspector": {
       "name": "Abdullah Hamdan Al Shehhi",
       "name_ar": "عبدالله حمدان الشحي",
@@ -280,6 +297,7 @@
     "note": "Trench about 2.1 m deep with partial timber shoring; no barriers; several workers barefoot on the edge.",
     "note_ar": "خندق بعمق 2.1 م تقريباً مع تدعيم خشبي جزئي؛ دون حواجز؛ عدة عمال حفاة على الحافة.",
     "weather": "36 °C",
+    "weather_ar": "36 °م",
     "noticeId": "MNDA-VN-2026-01367"
   },
   {
@@ -293,6 +311,7 @@
     "permit": "MNDA-BP-2026-01247",
     "contractor": "Bin Hilal Contracting LLC",
     "consultant": "Coastline Design & Supervision LLC",
+    "consultant_ar": "كوستلاين للتصميم والإشراف ذ.م.م",
     "inspector": {
       "name": "Sanjay Nair",
       "name_ar": "سانجاي ناير",
@@ -312,6 +331,7 @@
     "note": "Pile cap excavations flooded and unbarricaded; rebar bundles laid at the excavation edge.",
     "note_ar": "حفر قواعد الخوازيق مغمورة بالمياه ودون حواجز؛ حزم حديد موضوعة على حافة الحفر.",
     "weather": "33 °C, humid",
+    "weather_ar": "33 °م، رطب",
     "noticeId": "MNDA-VN-2026-01370"
   },
   {
@@ -325,6 +345,7 @@
     "permit": "MNDA-BP-2026-00231",
     "contractor": "Al Marsa Engineering & Contracting LLC",
     "consultant": "Al Noor Engineering Consultancy",
+    "consultant_ar": "النور للاستشارات الهندسية",
     "inspector": {
       "name": "Eng. Badr Saleh Al Marri",
       "name_ar": "م. بدر صالح المري",
@@ -343,7 +364,8 @@
     "status": "closed",
     "note": "All column starters uncapped; steel fixer without helmet.",
     "note_ar": "جميع أشاير الأعمدة غير مغطاة؛ عامل حديد دون خوذة.",
-    "weather": "40 °C",
+    "weather": "36 °C",
+    "weather_ar": "36 °م",
     "noticeId": "MNDA-VN-2026-01355"
   },
   {
@@ -357,6 +379,7 @@
     "permit": "MNDA-BP-2026-01102",
     "contractor": "Emerald Line Construction LLC",
     "consultant": "Dar Al Sahel Consulting Engineers",
+    "consultant_ar": "دار الساحل للاستشارات الهندسية",
     "inspector": {
       "name": "Reem Salem Al Marzooqi",
       "name_ar": "ريم سالم المرزوقي",
@@ -375,7 +398,8 @@
     "status": "closed",
     "note": "Open foundation trenches without barriers next to the access path; bricks and spoil at the edges.",
     "note_ar": "خنادق أساسات مفتوحة دون حواجز بجوار ممر الدخول؛ طوب وناتج حفر على الحواف.",
-    "weather": "41 °C",
+    "weather": "37 °C",
+    "weather_ar": "37 °م",
     "noticeId": "MNDA-VN-2026-01352"
   }
 ]

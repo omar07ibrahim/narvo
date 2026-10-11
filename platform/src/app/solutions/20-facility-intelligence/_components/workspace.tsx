@@ -11,17 +11,19 @@ import { Markdown } from "@/components/narvo/markdown";
 import { RunButton } from "@/components/narvo/run-button";
 import { Confidence, StatusPill } from "@/components/narvo/status";
 import { ThinkingLines } from "@/components/narvo/empty";
+import { DirectionProvider } from "@/components/ui/direction";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { useNarvoRun } from "@/hooks/use-narvo-run";
-import type { Citation } from "@/lib/ai/events";
-import { useL } from "@/lib/i18n";
+import type { ApprovalSummary, Citation } from "@/lib/ai/events";
+import { useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { COMFORT, detectAnomalies, occupiedAgc, occupiedHq, zoneCol, type Anomaly, type Complaint, type Job, type Series, type Trip } from "../_lib/signals";
-import { PlantChart, SpaceChart } from "./signal-charts";
+import { PlantChart, SpaceChart, fmtFull } from "./signal-charts";
 import { WorkOrders, type Feed, type WO } from "./work-orders";
 import { ComplaintsPanel, EnergyPanel, SpacesPanel, TriageCard, type TriageResult } from "./panels";
 import { SCENARIO } from "./scenario";
+import { textDir } from "./labels";
 
 const API = "/api/solutions/20-facility-intelligence";
 type Tab = "signals" | "work" | "complaints" | "spaces" | "energy";
@@ -31,12 +33,15 @@ interface SiteMeta {
   name: string;
   nameAr: string;
   district: string;
+  districtAr?: string;
   built: number;
   gfa: number;
   contract: string;
   contractor: string;
+  contractorAr?: string;
   openingHours: string;
   cooling: string;
+  coolingAr?: string;
   zones: Array<{ id: string; name: string; nameAr: string; floor: string; area: number; capacity: number; ahu: string[]; use: string; setpoint: number }>;
   assets: Array<{ id: string; type: string; name: string; location: string; capacityTR?: number; note?: string }>;
 }
@@ -53,6 +58,7 @@ export interface InitialData {
   sep25: Array<{ date: string; ambient_mean_c: number; chiller_kwh: number }>;
   workOrders: WO[];
   cleanAt: string;
+  pending: Array<{ approval: ApprovalSummary; record: WO }>;
 }
 
 const T0 = Date.parse("2026-09-01T00:00:00+04:00");
@@ -64,15 +70,18 @@ const RANGES: Array<{ key: string; en: string; ar: string; r: [number, number] }
   { key: "oct", en: "1–9 Oct", ar: "1–9 أكتوبر", r: [Date.parse("2026-10-01T00:00:00+04:00"), T1] },
 ];
 
-const fmtDay = (ms: number) => new Date(ms + 4 * 3600000).toISOString().slice(5, 16).replace("T", " ");
+/** Day, month and hour in UAE time, in the UI language (e.g. "9 Sep 14:00"). */
+const fmtDay = (ms: number, lang: string) => fmtFull(ms, lang);
 
 export function Workspace({ data }: { data: InitialData }) {
   const L = useL();
+  const { lang, dir } = usePrefs();
   const [siteId, setSiteId] = useState<"AGC" | "HQ">("AGC");
   const [tab, setTab] = useState<Tab>("signals");
   const [rangeKey, setRangeKey] = useState("all");
   const [custom, setCustom] = useState<[number, number] | null>(null);
   const [workOrders, setWorkOrders] = useState<WO[]>(data.workOrders);
+  const [pending, setPending] = useState(data.pending ?? []);
   const [verifyingId, setVerifyingId] = useState<string | null>(null);
   const [active, setActive] = useState<"correlate" | "draft" | "verify" | "triage">("correlate");
   const [highlight, setHighlight] = useState<number | null>(null);
@@ -164,6 +173,7 @@ export function Workspace({ data }: { data: InitialData }) {
         </StatusPill>
       }
     >
+      <DirectionProvider dir={dir}>
       {/* site bar */}
       <div className="flex flex-wrap items-center gap-x-4 gap-y-3 rounded-lg border border-border bg-card px-4 py-3">
         <ToggleGroup type="single" size="sm" variant="outline" value={siteId} onValueChange={(v) => v && (setSiteId(v as "AGC" | "HQ"), setCustom(null))}>
@@ -175,15 +185,21 @@ export function Workspace({ data }: { data: InitialData }) {
           ))}
         </ToggleGroup>
         <div className="min-w-0 text-[12px] text-muted-foreground">
-          {site.district} · {site.gfa.toLocaleString("en-US")} m² · {site.cooling}
+          {L({ en: site.district, ar: site.districtAr ?? site.district })} · <bdi dir="ltr">{site.gfa.toLocaleString("en-US")} m²</bdi> · {L({ en: site.cooling, ar: site.coolingAr ?? site.cooling })}
         </div>
         <div className="ms-auto text-[12px] text-muted-foreground">
-          {site.contractor} · <span className="font-mono text-[11px]">{site.contract.split(" ")[0]}</span>
+          {L({ en: site.contractor, ar: site.contractorAr ?? site.contractor })}
+          {site.contract.startsWith("MNDA/") && (
+            <>
+              {" · "}
+              <span className="font-mono text-[11px]">{site.contract.split(" ")[0]}</span>
+            </>
+          )}
         </div>
       </div>
 
       {/* KPIs */}
-      <div className="grid grid-cols-6 gap-3 max-xl:grid-cols-3 max-md:grid-cols-2">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3 2xl:grid-cols-6">
         <MetricTile
           label={L({ en: "Comfort complaints", ar: "شكاوى الراحة" })}
           value={kpi.augSep}
@@ -197,7 +213,7 @@ export function Workspace({ data }: { data: InitialData }) {
           tone={kpi.trips ? "danger" : "success"}
         />
         <MetricTile
-          label={L({ en: "Hours above 24.5 °C (Sep)", ar: "ساعات فوق 24.5 (سبتمبر)" })}
+          label={L({ en: "Hours > 24.5 °C · Sep", ar: "ساعات فوق 24.5 °م · سبتمبر" })}
           value={kpi.hoursAbove[0]?.h ?? 0}
           sub={kpi.hoursAbove[0] ? `${L({ en: kpi.hoursAbove[0].z.name, ar: kpi.hoursAbove[0].z.nameAr })}${kpi.hoursAbove[1] ? ` · ${L({ en: kpi.hoursAbove[1].z.name, ar: kpi.hoursAbove[1].z.nameAr })} ${kpi.hoursAbove[1].h}` : ""}` : ""}
           tone={(kpi.hoursAbove[0]?.h ?? 0) > 20 ? "warning" : "default"}
@@ -205,7 +221,14 @@ export function Workspace({ data }: { data: InitialData }) {
         <MetricTile
           label={L({ en: "Overdue PPM", ar: "صيانة وقائية متأخرة" })}
           value={kpi.overdue.length}
-          sub={kpi.overdue[0] ? <>{L({ en: `${kpi.overdue[0].task} · due`, ar: `${kpi.overdue[0].taskAr} · الاستحقاق` })} <bdi dir="ltr">{kpi.overdue[0].due}</bdi></> : L({ en: "all on schedule", ar: "جميعها في موعدها" })}
+          sub={
+            kpi.overdue[0]
+              ? L({
+                  en: `${kpi.overdue[0].task} · due ${new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "short" }).format(Date.parse(kpi.overdue[0].due))}`,
+                  ar: `${kpi.overdue[0].taskAr} · الاستحقاق ${new Intl.DateTimeFormat("ar-AE-u-nu-latn", { day: "numeric", month: "long" }).format(Date.parse(kpi.overdue[0].due))}`,
+                })
+              : L({ en: "all on schedule", ar: "جميعها في موعدها" })
+          }
           tone={kpi.overdue.length ? "danger" : "success"}
         />
         <MetricTile
@@ -269,14 +292,22 @@ export function Workspace({ data }: { data: InitialData }) {
                       </ToggleGroupItem>
                     ))}
                   </ToggleGroup>
+                  {!custom && range[1] - range[0] > 16 * 86400000 && (
+                    <span className="text-[11px] text-faint">
+                      {L({ en: "Daily peaks — pick a fortnight or an anomaly for hourly detail", ar: "القيم القصوى اليومية — اختر نصف شهر أو حالة شاذة لعرض البيانات كل ساعة" })}
+                    </span>
+                  )}
                   {custom && (
                     <StatusPill tone="ai" dot={false}>
-                      {fmtDay(custom[0])} → {fmtDay(custom[1])}
+                      <bdi dir="ltr">
+                        {fmtDay(custom[0], lang)} → {fmtDay(custom[1], lang)}
+                      </bdi>
                     </StatusPill>
                   )}
                 </div>
                 <div className="label-caps mb-1">{siteId === "AGC" ? L({ en: "Chiller plant — discharge pressure and ambient", ar: "محطة التبريد — ضغط التصريف والحرارة الخارجية" }) : L({ en: "Chiller plant — power and ambient", ar: "محطة التبريد — القدرة والحرارة الخارجية" })}</div>
                 <PlantChart s={s} range={range} trips={siteId === "AGC" ? data.trips : []} cleanAt={cleanAt} />
+
                 <div className="label-caps mt-5 mb-1">{L({ en: "Spaces — zone temperatures, comfort band 22.5–24.5 °C, complaints (○)", ar: "المساحات — درجات الحرارة ونطاق الراحة 22.5–24.5 والشكاوى (○)" })}</div>
                 <SpaceChart s={s} range={range} zones={site.zones} complaints={data.complaints} />
                 <div className="mt-6">
@@ -296,8 +327,8 @@ export function Workspace({ data }: { data: InitialData }) {
                                 onClick={() => setCustom([a.start - 30 * 3600000, a.end + 30 * 3600000])}
                                 className="flex w-full items-baseline justify-between gap-2 px-3 py-1.5 text-start text-[11.5px] hover:bg-muted/50"
                               >
-                                <span className="min-w-0 truncate">{a.label}</span>
-                                <span className={cn("num shrink-0 text-muted-foreground", a.severity === "high" && "text-danger")}>{fmtDay(a.start)}</span>
+                                <span className="min-w-0 truncate">{lang === "ar" ? a.label_ar : a.label}</span>
+                                <span className={cn("num shrink-0 text-muted-foreground", a.severity === "high" && "text-danger")}>{fmtDay(a.start, lang)}</span>
                               </button>
                             </li>
                           ))}
@@ -318,6 +349,8 @@ export function Workspace({ data }: { data: InitialData }) {
                 <WorkOrders
                   site={siteId}
                   workOrders={workOrders}
+                  pending={pending.filter((p) => p.record.site === siteId)}
+                  onPendingDecided={(id) => setPending((x) => x.filter((p) => p.approval.id !== id))}
                   jobs={data.jobs}
                   feed={data.feed}
                   draftRun={draft}
@@ -410,8 +443,8 @@ export function Workspace({ data }: { data: InitialData }) {
                   </div>
                 )}
                 {explain && (
-                  <div className="scrollbar-thin max-h-[520px] overflow-y-auto pe-1">
-                    <Markdown citations={citations} onCite={onCite} streaming={correlate.running} className="text-[13px] [&_h2]:mt-4 [&_h2]:text-[10.5px] [&_h2]:font-medium [&_h2]:tracking-[0.16em] [&_h2]:text-muted-foreground [&_h2]:uppercase [&_h2:first-child]:mt-0">
+                  <div className="scrollbar-thin max-h-[520px] overflow-y-auto pe-1" dir={textDir(explain)}>
+                    <Markdown citations={citations} onCite={onCite} streaming={correlate.running} className="text-[13px] [&_h2]:!mt-4 [&_h2]:!mb-1.5 [&_h2]:!text-[10.5px] [&_h2]:!font-medium [&_h2]:tracking-[0.16em] [&_h2]:!text-muted-foreground [&_h2]:uppercase [&_h2:first-child]:!mt-0">
                       {explain.replace(/\[(\d+(?:\s*,\s*\d+)+)\]/g, (_, g2: string) => g2.split(/\s*,\s*/).map((n) => `[${n}]`).join("")).replace(/\]\s*,\s*\[/g, "][")}
                     </Markdown>
                   </div>
@@ -457,6 +490,7 @@ export function Workspace({ data }: { data: InitialData }) {
           </Pane>
         </div>
       </Workbench>
+      </DirectionProvider>
     </SolutionPage>
   );
 }

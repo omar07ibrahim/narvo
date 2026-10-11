@@ -62,11 +62,14 @@ export function verifySystem(lang: "en" | "ar") {
   ].join("\n");
 }
 
-export function triageSystem() {
+export function triageSystem(lang: "en" | "ar" = "en") {
   return [
     `You triage facility issues reported by visitors or staff for ${ORG}`,
     "Classify the report, link it to the most likely zone and asset from the site register, set the contract priority (Schedule 3), say whether it matches a known open issue from the context, suggest the immediate action and write a short, courteous reply to the reporter in the reporter's language (Gulf Arabic reports get a reply in clear Modern Standard Arabic).",
     "If a photo is attached, describe what it shows that is relevant (e.g. fouled coil, water leak, damaged diffuser, thermostat reading).",
     "Use only the register and context given. Be honest about uncertainty in confidence (0–1). In Arabic replies write the contractor's name as «رصين لإدارة المرافق» and the centre as «مركز الغاف المجتمعي».",
+    lang === "ar"
+      ? "Write priorityReason, observation, likelyCause, knownIssue.reason and suggestedAction in Arabic (Modern Standard Arabic) for the MNDA facilities team; keep zone and asset ids, codes and units in Latin characters. Keep the category value exactly as one of the allowed English options."
+      : "Write priorityReason, observation, likelyCause, knownIssue.reason and suggestedAction in English.",
   ].join("\n");
 }
