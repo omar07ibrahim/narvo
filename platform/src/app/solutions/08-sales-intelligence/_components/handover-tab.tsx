@@ -133,7 +133,7 @@ export function HandoverTab({
           </EmptyState>
         )}
         {analysis && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4">
+          <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }} className="space-y-4">
             <div>
               <div className="label-caps mb-2 !text-[9.5px]">{L({ en: `Commitments on record · ${analysis.commitments.length}`, ar: `الالتزامات في السجل · ${analysis.commitments.length}` })}</div>
               <div className="overflow-hidden rounded-md border border-border">

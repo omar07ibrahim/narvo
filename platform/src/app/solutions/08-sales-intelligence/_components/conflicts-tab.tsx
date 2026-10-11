@@ -212,7 +212,7 @@ export function ConflictsTab({
                     <ChevronDown className={cn("mt-1 size-3.5 shrink-0 text-faint transition-transform", isOpen && "rotate-180")} />
                   </button>
                   {isOpen && (
-                    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-2 px-3.5 pb-3 ps-[94px] text-[12px] leading-relaxed">
+                    <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }} className="space-y-2 px-3.5 pb-3 ps-[94px] text-[12px] leading-relaxed">
                       <p className="text-muted-foreground" dir="auto">
                         {L(c.detail)}
                       </p>
@@ -295,7 +295,7 @@ export function ConflictsTab({
           {run.status === "error" && <ErrorBox message={run.error} onRetry={onRun} />}
           {run.running && !explanation && <ThinkingLines lines={6} />}
           {explanation && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-3.5">
+            <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }} className="space-y-3.5">
               <p className="border-s-2 border-ai ps-3 text-[15px] font-light leading-snug" dir="auto">
                 {explanation.headline}
               </p>

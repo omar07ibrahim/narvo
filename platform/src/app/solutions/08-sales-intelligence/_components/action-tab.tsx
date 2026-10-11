@@ -184,7 +184,7 @@ export function ActionTab({
       )}
 
       {edit && (
-        <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
+        <motion.div initial={{ opacity: 1, y: 4 }} animate={{ opacity: 1, y: 0 }} className="space-y-4">
           <div className="rounded-lg border border-ai/25 bg-ai-soft/40 p-4">
             <div className="flex items-center justify-between gap-2">
               <span className="label-caps text-ai">{L({ en: "Recommended", ar: "المقترح" })}</span>

@@ -89,7 +89,7 @@ function Row({ item }: { item: TraceItem }) {
       <AnimatePresence initial={false}>
         {open && expandable && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
+            initial={{ height: 0, opacity: 1 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden"

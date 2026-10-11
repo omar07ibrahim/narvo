@@ -84,7 +84,7 @@ export function RequestForm({
   const blocking = draft.checks.filter((c) => c.blocking);
   return (
     <motion.div
-      initial={{ opacity: 0, y: 6 }}
+      initial={{ opacity: 1, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       className={cn("rounded-lg border bg-card", submitted ? "border-success/30" : draft.eligible ? "border-ai/35" : "border-danger/30")}
     >

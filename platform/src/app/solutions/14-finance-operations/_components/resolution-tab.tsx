@@ -134,7 +134,7 @@ function evidenceLine(e: { text: string; cites: number[] }) {
 function CaseBody({ ai, citations }: { ai: CaseAi; citations: Citation[] }) {
   const L = useL();
   return (
-    <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }} className="space-y-4">
+    <motion.div initial={{ opacity: 1, y: 4 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }} className="space-y-4">
       <div>
         <div className="label-caps mb-1.5 flex items-center gap-1.5 text-ai">
           <Sparkles className="size-3" />

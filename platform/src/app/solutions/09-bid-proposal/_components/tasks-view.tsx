@@ -190,7 +190,7 @@ function TaskItem({
         </Button>
       )}
       {t.status === "open" && open && (
-        <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} className="mt-2 space-y-2">
+        <motion.div initial={{ opacity: 1, y: 4 }} animate={{ opacity: 1, y: 0 }} className="mt-2 space-y-2">
           {reply && !text && (
             <button
               type="button"

@@ -457,7 +457,7 @@ export function LiveConsole({ data, refresh }: { data: ConsoleData; refresh: () 
                 ))}
               </AnimatePresence>
               {run.running && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-end">
+                <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }} className="flex justify-end">
                   <div className="w-full max-w-[80%] rounded-lg border border-ai/25 bg-card px-3.5 py-2.5">
                     <div className="mb-1 flex items-center gap-1.5 text-[10.5px] text-ai">
                       <Sparkles className="size-3" />
@@ -636,14 +636,14 @@ function MessageBubble({ m, onApproval }: { m: Msg; onApproval: () => void }) {
   const [approvals, setApprovals] = useState(m.approvals ?? []);
   if (m.role === "system")
     return (
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-center">
+      <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }} className="flex justify-center">
         <span className={cn("rounded-full px-3 py-1 text-[11px]", m.error ? "bg-danger-soft text-danger" : "bg-muted text-muted-foreground")}>{m.text}</span>
       </motion.div>
     );
   const mine = m.role !== "customer";
   return (
     <motion.div
-      initial={{ opacity: 0, y: 6 }}
+      initial={{ opacity: 1, y: 6 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2 }}
       className={cn("flex", mine ? "justify-end" : "justify-start")}

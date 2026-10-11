@@ -95,7 +95,7 @@ export function OrderDetail({ oa, snapshot, world }: { oa: OrderAnalysis; snapsh
           return (
             <motion.div
               key={t}
-              initial={{ opacity: 0, y: 4 }}
+              initial={{ opacity: 1, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.2 }}
               className={cn("rounded-md border p-3", bad ? (t === "credit" || t === "stock" ? "border-danger/25 bg-danger-soft/50" : "border-warning/30 bg-warning-soft/50") : "border-border bg-surface")}

@@ -149,7 +149,7 @@ export function FigureTab({ run, saved, onRun }: { run: NarvoRun; saved: FigureC
         ) : (
           <div className="divide-y divide-border">
             {disc.map((c, i) => (
-              <motion.div key={i} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.04 }}>
+              <motion.div key={i} initial={{ opacity: 1 }} animate={{ opacity: 1 }} transition={{ delay: i * 0.04 }}>
                 <Row c={c} />
               </motion.div>
             ))}
@@ -166,7 +166,7 @@ export function FigureTab({ run, saved, onRun }: { run: NarvoRun; saved: FigureC
         </button>
         <AnimatePresence initial={false}>
           {showOk && (
-            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+            <motion.div initial={{ height: 0, opacity: 1 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
               <div className="mt-1 divide-y divide-border">
                 {ok.map((c, i) => (
                   <Row key={i} c={c} />

@@ -294,14 +294,14 @@ function Bubble({ m, streaming, onCite }: { m: Msg; streaming?: boolean; onCite:
   const L = useL();
   if (m.role === "user")
     return (
-      <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} className="flex justify-end">
+      <motion.div initial={{ opacity: 1, y: 4 }} animate={{ opacity: 1, y: 0 }} className="flex justify-end">
         <div className="max-w-[80%] rounded-lg rounded-ee-sm bg-foreground px-3.5 py-2 text-[13.5px] leading-relaxed text-background" dir="auto">
           {m.content}
         </div>
       </motion.div>
     );
   return (
-    <motion.div initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} className="flex justify-start">
+    <motion.div initial={{ opacity: 1, y: 4 }} animate={{ opacity: 1, y: 0 }} className="flex justify-start">
       <div className="max-w-[88%] rounded-lg rounded-es-sm border border-border bg-surface px-3.5 py-2.5">
         <div className="mb-1 flex items-center gap-1.5">
           <span className={`size-1.5 rounded-full bg-ai ${streaming ? "animate-pulse-soft" : ""}`} />

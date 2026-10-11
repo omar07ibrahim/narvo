@@ -177,7 +177,7 @@ export function InterpretPanel({
       )}
 
       {x && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4">
+        <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }} className="space-y-4">
           <div className="rounded-md border border-ai/20 bg-ai-soft/40 p-3.5">
             <div className="flex flex-wrap items-center gap-2">
               <Sparkles className="size-3.5 text-ai" />

@@ -144,7 +144,7 @@ export function TasksTab({
                   </button>
                   <AnimatePresence initial={false}>
                     {isOpen && (
-                      <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+                      <motion.div initial={{ height: 0, opacity: 1 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
                         <div className="space-y-3 px-4 pb-4 ps-9">
                           {t.description && (
                             <p className="max-w-3xl text-[12.5px] leading-relaxed text-muted-foreground" dir="auto">

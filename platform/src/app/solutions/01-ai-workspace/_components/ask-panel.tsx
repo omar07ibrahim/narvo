@@ -323,7 +323,7 @@ function TurnView({
   const r = ROLES[turn.role];
   const used = new Set(Array.from(turn.answer.matchAll(/\[(\d+)\]/g)).map((m) => Number(m[1])));
   return (
-    <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }} onClick={onSelect}>
+    <motion.div initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.2 }} onClick={onSelect}>
       <div className="flex items-start gap-3">
         <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-foreground text-[9.5px] font-medium text-background">
           {lang === "ar" ? r.persona.nameAr.slice(0, 1) : r.persona.name.split(" ")[0][0]}

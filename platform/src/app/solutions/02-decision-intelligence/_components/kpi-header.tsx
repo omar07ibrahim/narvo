@@ -50,7 +50,7 @@ export function KpiCard({ s, active, onClick, index = 0 }: { s: KpiSnapshot; act
     <motion.button
       type="button"
       onClick={onClick}
-      initial={{ opacity: 0, y: 4 }}
+      initial={{ opacity: 1, y: 4 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, delay: index * 0.025 }}
       className={cn(

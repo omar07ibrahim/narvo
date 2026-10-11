@@ -147,7 +147,7 @@ export function OptionsPanel({
       )}
 
       {options.length > 0 && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="overflow-x-auto rounded-md border border-border">
+        <motion.div initial={{ opacity: 1 }} animate={{ opacity: 1 }} className="overflow-x-auto rounded-md border border-border">
           <table className="w-full min-w-[620px] text-[12px]">
             <thead>
               <tr className="border-b border-border bg-muted/50">
@@ -414,7 +414,7 @@ function ApprovalPackage({ run, onDecided }: { run: NarvoRun; onDecided: (s: "ap
   const pkg = run.data.package as { channel: string; recipient?: { name: string; role: string } } | undefined;
   const channel = pkg?.channel ?? (run.data.impact ? undefined : undefined);
   return (
-    <motion.div initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} className="space-y-3 rounded-md border border-border bg-surface/60 p-3.5">
+    <motion.div initial={{ opacity: 1, y: 6 }} animate={{ opacity: 1, y: 0 }} className="space-y-3 rounded-md border border-border bg-surface/60 p-3.5">
       <div className="flex items-center gap-2">
         <FileText className="size-4 text-muted-foreground" />
         <span className="text-[13px] font-medium">{L({ en: "Approval package", ar: "حزمة الاعتماد" })}</span>
