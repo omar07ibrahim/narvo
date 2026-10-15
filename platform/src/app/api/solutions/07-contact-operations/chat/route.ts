@@ -138,6 +138,7 @@ export async function POST(req: Request) {
         modelKey,
         maxSteps: 7,
         temperature: 0.25,
+        replyLang: ctx.prefAr ? "ar" : undefined,
       });
 
       // ── Integrity guard: any reference number in the reply must exist (created by a tool or on record).
@@ -161,6 +162,7 @@ export async function POST(req: Request) {
           maxSteps: 5,
           temperature: 0.1,
           channel: "retry",
+          replyLang: ctx.prefAr ? "ar" : undefined,
         });
         g.done(lang === "ar" ? "أعيدت صياغة الرد بعد تنفيذ الأداة" : "Reply regenerated with real tool results");
       }

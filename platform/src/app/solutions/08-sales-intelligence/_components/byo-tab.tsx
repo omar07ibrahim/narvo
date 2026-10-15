@@ -139,7 +139,7 @@ export function ByoTab({
             accept=".txt,.eml,.md"
             className="min-w-[220px] flex-1"
             label={L({ en: "Or drop an .eml / .txt", ar: "أو أسقط ملف ‎.eml / .txt" })}
-            hint={L({ en: "Read on this machine", ar: "يُقرأ على هذا الجهاز" })}
+            hint={L({ en: "Read on your own servers", ar: "يُقرأ على خوادم الجهة" })}
             onFiles={(files) => files[0]?.text && setText(files[0].text)}
           />
           <VoiceButton size="md" onTranscript={(t) => setText((cur) => (cur ? `${cur}\n${t.text}` : t.text))} onError={(e) => toast.error(e)} />

@@ -299,7 +299,7 @@ export function FinalistsTab({
                   accept=".md,.txt"
                   className="flex-1"
                   label={L({ en: "Or drop interview notes (.md/.txt)", ar: "أو أسقط ملاحظات المقابلة (.md/.txt)" })}
-                  hint={L({ en: "Kept on this machine", ar: "تبقى على هذا الجهاز" })}
+                  hint={L({ en: "Kept on your own servers", ar: "تبقى على خوادم الجهة" })}
                   onFiles={(fs) => fs[0]?.text && setNotes(fs[0].text)}
                 />
               </div>

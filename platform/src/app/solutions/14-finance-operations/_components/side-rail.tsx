@@ -130,7 +130,7 @@ export function SideRail({
           accept="image/png,image/jpeg,image/webp"
           onFiles={(fs) => fs[0]?.dataUrl && onUpload(fs[0])}
           label={L({ en: "Drop a supplier invoice photo or scan", ar: "اسحب صورة أو مسحاً لفاتورة مورد" })}
-          hint={L({ en: "Read, matched to PO & GRN, registered — on this machine", ar: "تُقرأ وتُطابق مع أمر الشراء والاستلام وتُسجّل — على هذا الجهاز" })}
+          hint={L({ en: "Read, matched to PO & GRN, registered — on your own servers", ar: "تُقرأ وتُطابق مع أمر الشراء والاستلام وتُسجّل — على خوادم الجهة" })}
         />
         {!byo.running && !reg && (
           <button

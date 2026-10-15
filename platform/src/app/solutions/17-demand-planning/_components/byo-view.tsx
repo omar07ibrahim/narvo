@@ -41,7 +41,7 @@ export function ByoView() {
           <FileDrop
             accept=".csv,.txt"
             label={L({ en: "Upload a CSV — date, value[, sku]", ar: "حمّل ملف CSV — التاريخ، القيمة[، الصنف]" })}
-            hint={L({ en: "Daily, weekly or monthly; up to 4 series are forecast. Processed on this machine.", ar: "يومي أو أسبوعي أو شهري؛ حتى 4 سلاسل. تتم المعالجة على هذا الجهاز." })}
+            hint={L({ en: "Daily, weekly or monthly; up to 4 series are forecast. Processed on your own servers.", ar: "يومي أو أسبوعي أو شهري؛ حتى 4 سلاسل. تتم المعالجة على خوادم الجهة." })}
             onFiles={(files) => {
               const f0 = files[0];
               if (f0?.text) go(f0.text, f0.name);

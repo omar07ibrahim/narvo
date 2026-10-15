@@ -34,7 +34,7 @@ const SCENARIO: ScenarioStep[] = [
     title: { en: "The model, measured", ar: "النموذج تحت القياس" },
     body: {
       en: "Open Models: Qwen3.8 27B is served from this machine. Run the Arabic benchmark — time to first token, tokens per second and the actual text.",
-      ar: "افتح النماذج: يعمل Qwen3.8 27B على هذا الجهاز. شغّل الاختبار العربي — زمن أول رمز وسرعة التوليد والنص الفعلي.",
+      ar: "افتح النماذج: يعمل Qwen3.8 27B على خوادم الجهة. شغّل الاختبار العربي — زمن أول رمز وسرعة التوليد والنص الفعلي.",
     },
   },
   {
@@ -192,7 +192,7 @@ export function PlatformConsole() {
         <MetricTile
           label={L({ en: "Data egress", ar: "البيانات الخارجة" })}
           value={formatBytes(t?.egressBytes ?? 0)}
-          sub={local ? L({ en: "on-device — nothing leaves", ar: "على الجهاز — لا شيء يغادر" }) : L({ en: `development via ${t?.host ?? "…"}`, ar: `تطوير عبر ${t?.host ?? "…"}` })}
+          sub={local ? L({ en: "on-premises — nothing leaves", ar: "داخل الجهة — لا شيء يغادر" }) : L({ en: `development via ${t?.host ?? "…"}`, ar: `تطوير عبر ${t?.host ?? "…"}` })}
           tone={local ? "success" : "default"}
         />
         <MetricTile
@@ -280,7 +280,7 @@ export function PlatformConsole() {
           <p className="text-[11px] text-muted-foreground">
             {L({
               en: "Cost model: on-device at 70 W during inference and AED 0.38/kWh; cloud comparison at USD 3 / 15 per million input / output tokens (typical frontier API list price), converted at 3.6725.",
-              ar: "نموذج التكلفة: على الجهاز بقدرة 70 واط أثناء الاستدلال و0.38 درهم/كيلوواط ساعة؛ المقارنة السحابية بسعر 3 / 15 دولاراً لكل مليون رمز إدخال / إخراج (سعر نموذجي)، بسعر صرف 3.6725.",
+              ar: "نموذج التكلفة: داخل الجهة بقدرة 70 واط أثناء الاستدلال و0.38 درهم/كيلوواط ساعة؛ المقارنة السحابية بسعر 3 / 15 دولاراً لكل مليون رمز إدخال / إخراج (سعر نموذجي)، بسعر صرف 3.6725.",
             })}
           </p>
         </TabsContent>
@@ -309,7 +309,7 @@ export function PlatformConsole() {
                       {m.note && <div className="mt-1 text-[12px] text-muted-foreground">{m.note}</div>}
                     </div>
                     <StatusPill tone={m.available ? "success" : "neutral"}>
-                      {m.available ? L({ en: "Available", ar: "متاح" }) : L({ en: "On-device only", ar: "على الجهاز فقط" })}
+                      {m.available ? L({ en: "Available", ar: "متاح" }) : L({ en: "On-premises only", ar: "داخل الجهة فقط" })}
                     </StatusPill>
                   </div>
                   <div className="mt-3 flex flex-wrap gap-1">

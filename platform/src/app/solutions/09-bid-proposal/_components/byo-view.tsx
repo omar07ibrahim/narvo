@@ -70,7 +70,7 @@ export function ByoView({
         <FileDrop
           accept=".txt,.md,.csv,.json"
           label={L({ en: "Drop an RFP text file", ar: "أسقط ملف نص كراسة الشروط" })}
-          hint={L({ en: ".md or .txt — processed on this machine", ar: ".md أو .txt — تتم المعالجة على هذا الجهاز" })}
+          hint={L({ en: ".md or .txt — processed on your own servers", ar: ".md أو .txt — تتم المعالجة على خوادم الجهة" })}
           onFiles={(files) => {
             const fl = files[0];
             if (!fl?.text) {

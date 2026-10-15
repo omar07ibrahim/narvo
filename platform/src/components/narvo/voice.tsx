@@ -175,7 +175,7 @@ export function VoiceButton({
         {state === "recording"
           ? L({ en: "Listening… tap to send", ar: "جارٍ الاستماع… اضغط للإرسال" })
           : state === "transcribing"
-            ? L({ en: "Transcribing on-device…", ar: "جارٍ التفريغ على الجهاز…" })
+            ? L({ en: "Transcribing on-premises…", ar: "جارٍ التفريغ داخل الجهة…" })
             : L({ en: "Tap to speak", ar: "اضغط للتحدث" })}
       </span>
     </div>

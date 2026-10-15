@@ -54,6 +54,8 @@ export interface RunAgentOptions {
   temperature?: number;
   /** Tool choice for the first step ("required" forces a tool call); later steps use "auto". */
   toolChoice?: "auto" | "none" | "required";
+  /** The reply must be in this language: a draft in another one is rewritten before anyone sees it. */
+  replyLang?: "ar";
 }
 
 export interface RunAgentResult {
@@ -67,6 +69,14 @@ function toSpec(t: AgentTool<any>): ToolSpec {
   const params = z.toJSONSchema(t.parameters, { target: "draft-7", unrepresentable: "any" }) as Record<string, unknown>;
   delete params.$schema;
   return { type: "function", function: { name: t.name, description: t.description, parameters: params } };
+}
+
+/** Plays a held-back answer out quickly, so the reply still types in rather than popping up. */
+async function reveal(emit: Emitter, text: string, channel: string) {
+  for (let i = 0; i < text.length; i += 18) {
+    emit.text(text.slice(i, i + 18), channel);
+    await new Promise((r) => setTimeout(r, 14));
+  }
 }
 
 export async function runAgent(opts: RunAgentOptions): Promise<RunAgentResult> {
@@ -101,19 +111,30 @@ export async function runAgent(opts: RunAgentOptions): Promise<RunAgentResult> {
       }
       if (n.value.content) {
         streamed += n.value.content;
-        emit.text(n.value.content, channel);
+        // With tools available, hold the text back until we know whether this step is an answer or a tool call:
+        // a model's "I need to check…" preamble must never reach the customer.
+        if (!specs.length) emit.text(n.value.content, channel);
       }
       if (n.value.reasoning) emit.reasoning(n.value.reasoning);
     }
 
     if (!res.toolCalls.length) {
+      const letters = (res.content.match(/\p{L}/gu) ?? []).length;
+      const arabic = (res.content.match(/[؀-ۿ]/g) ?? []).length;
+      if (opts.replyLang === "ar" && specs.length && letters > 20 && arabic / letters < 0.5 && step < maxSteps - 1) {
+        // drafted in the wrong language (tool results are English) — rewrite once, silently
+        messages.push({ role: "assistant", content: res.content });
+        messages.push({ role: "user", content: "[للمساعد: ردّك السابق لم يكن بالعربية. أعد كتابة الرد نفسه للمتعامل بالعربية الفصحى المبسّطة فقط، دون أي جملة بالإنجليزية.]" });
+        continue;
+      }
       final = res.content;
+      if (specs.length) await reveal(emit, streamed, channel);
       messages.push({ role: "assistant", content: res.content });
       break;
     }
 
-    // The model may have produced a short preamble before calling tools — keep it in the transcript.
-    if (streamed.trim()) emit.text("\n\n", channel);
+    // A preamble before tool calls is the model's working note — show it as reasoning, not as the reply.
+    if (streamed.trim()) emit.reasoning(streamed.trim() + "\n");
     messages.push({ role: "assistant", content: res.content || null, tool_calls: res.toolCalls });
 
     for (const call of res.toolCalls) {

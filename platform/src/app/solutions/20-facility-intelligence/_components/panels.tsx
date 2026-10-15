@@ -304,7 +304,7 @@ export function TriageCard({ run, site, onTriage, onWorkOrder }: { run: NarvoRun
           </Button>
         </div>
       ) : (
-        <FileDrop compact accept="image/*" label={L({ en: "Add a photo of the issue", ar: "أضف صورة للمشكلة" })} hint={L({ en: "Read by the vision model on this machine", ar: "يقرؤها نموذج الرؤية على هذا الجهاز" })} onFiles={(fs) => fs[0]?.dataUrl && setPhoto(fs[0])} />
+        <FileDrop compact accept="image/*" label={L({ en: "Add a photo of the issue", ar: "أضف صورة للمشكلة" })} hint={L({ en: "Read by the vision model on your own servers", ar: "يقرؤها نموذج الرؤية على خوادم الجهة" })} onFiles={(fs) => fs[0]?.dataUrl && setPhoto(fs[0])} />
       )}
       <RunButton running={run.running} onRun={() => onTriage(text, photo?.dataUrl)} disabled={!text.trim() && !photo} size="sm" icon={photo ? <Camera /> : <Stethoscope />}>
         {L({ en: "Triage", ar: "فرز البلاغ" })}

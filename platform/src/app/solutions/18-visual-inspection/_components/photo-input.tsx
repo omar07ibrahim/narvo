@@ -108,7 +108,7 @@ export function PhotoInput({
         <FileDrop
           accept="image/*"
           label={L({ en: "Drop a site photo", ar: "أسقط صورة الموقع" })}
-          hint={L({ en: "JPG or PNG — resized to 1,280 px on this machine", ar: "JPG أو PNG — يُصغَّر إلى 1,280 بكسل على هذا الجهاز" })}
+          hint={L({ en: "JPG or PNG — resized to 1,280 px on your own servers", ar: "JPG أو PNG — يُصغَّر إلى 1,280 بكسل على خوادم الجهة" })}
           onFiles={async (files) => {
             const f = files[0];
             if (f?.dataUrl) onChange(await downscale(f.dataUrl));

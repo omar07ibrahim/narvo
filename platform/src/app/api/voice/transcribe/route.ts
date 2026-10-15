@@ -4,7 +4,7 @@ import { recordCall } from "@/lib/ai/telemetry";
 
 /**
  * Speech-to-text.
- *  - Private mode: OpenAI-compatible Whisper server on this machine
+ *  - Private mode: OpenAI-compatible Whisper server on your own servers
  *    (LOCAL_STT_BASE_URL, e.g. mlx-whisper / speaches / whisper.cpp server).
  *  - Development: Qwen omni model with audio input via OpenRouter.
  */
@@ -20,7 +20,8 @@ export async function POST(req: Request) {
     form.append("model", resolveModelId("audio"));
     if (body.lang) form.append("language", body.lang);
     form.append("response_format", "json");
-    const res = await fetch(`${base}/audio/transcriptions`, { method: "POST", body: form });
+    const key = process.env.LOCAL_STT_API_KEY;
+    const res = await fetch(`${base}/audio/transcriptions`, { method: "POST", body: form, headers: key ? { Authorization: `Bearer ${key}` } : undefined });
     if (!res.ok) return new Response(`Local speech server error: ${await res.text()}`, { status: 502 });
     const data = await res.json();
     recordCall({

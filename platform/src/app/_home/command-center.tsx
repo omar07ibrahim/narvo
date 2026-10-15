@@ -107,7 +107,7 @@ export function CommandCenter() {
               href="/stack"
               className="inline-flex h-9 items-center gap-2 rounded-md border border-border-strong bg-card px-4 text-[13px] font-medium transition-colors hover:bg-muted"
             >
-              {L({ en: "How it runs on-device", ar: "كيف تعمل على الجهاز" })}
+              {L({ en: "How it runs on-premises", ar: "كيف تعمل داخل الجهة" })}
             </Link>
           </div>
         </div>
@@ -121,7 +121,7 @@ export function CommandCenter() {
             </span>
             <div>
               <div className="text-[14px] font-medium text-white">
-                {local ? L({ en: "Private mode — on this device", ar: "الوضع الخاص — على هذا الجهاز" }) : dev ? L({ en: "Development mode", ar: "وضع التطوير" }) : "…"}
+                {local ? L({ en: "Private mode — on your servers", ar: "الوضع الخاص — على خوادم الجهة" }) : dev ? L({ en: "Development mode", ar: "وضع التطوير" }) : "…"}
               </div>
               <div className="text-[11.5px] text-sidebar-muted">{status ? `${status.modelLabel} · ${status.host}` : "…"}</div>
             </div>
@@ -141,8 +141,8 @@ export function CommandCenter() {
           <div className="mt-6 flex items-start gap-2.5 rounded-lg border border-sidebar-border bg-white/[0.03] p-3 text-[12px] leading-relaxed text-sidebar-foreground/80">
             <WifiOff className="mt-0.5 size-3.5 shrink-0 text-sidebar-muted" />
             {!dev
-              ? L({ en: "Disconnect the network — every solution keeps working. Nothing leaves this machine.", ar: "افصل الشبكة — تستمر جميع الحلول بالعمل. لا شيء يغادر هذا الجهاز." })
-              : L({ en: "Same open-weight models as on-device, served remotely for development. Switch NARVO_PROVIDER=local to run fully private.", ar: "النماذج المفتوحة نفسها كما على الجهاز، تُخدَّم عن بُعد للتطوير. بدّل إلى الوضع المحلي للتشغيل الخاص بالكامل." })}
+              ? L({ en: "Disconnect the network — every solution keeps working. Nothing leaves your infrastructure.", ar: "افصل الشبكة — تستمر جميع الحلول بالعمل. لا شيء يغادر خوادم الجهة." })
+              : L({ en: "Same open-weight models as on-premises, served remotely for development. Switch NARVO_PROVIDER=local to run fully private.", ar: "النماذج المفتوحة نفسها كما داخل الجهة، تُخدَّم عن بُعد للتطوير. بدّل إلى الوضع المحلي للتشغيل الخاص بالكامل." })}
           </div>
         </div>
       </section>

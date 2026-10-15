@@ -88,7 +88,7 @@ export function FileDrop({
       <span className="min-w-0">
         <span className="block text-[12.5px] font-medium">{label ?? L({ en: "Add your own file", ar: "أضف ملفك الخاص" })}</span>
         <span className="block text-[11px] text-muted-foreground">
-          {hint ?? L({ en: "Drop a document or photo — it is processed on this machine", ar: "اسحب مستنداً أو صورة — تتم المعالجة على هذا الجهاز" })}
+          {hint ?? L({ en: "Drop a document or photo — it is processed on your own servers", ar: "اسحب مستنداً أو صورة — تتم المعالجة على خوادم الجهة" })}
         </span>
       </span>
       <input

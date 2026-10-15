@@ -256,7 +256,7 @@ export function ComparisonTab({
                 accept=".md,.txt"
                 compact
                 label={L({ en: "Drop a CV (.md / .txt)", ar: "أسقط سيرة (.md / .txt)" })}
-                hint={L({ en: "Processed on this machine", ar: "تتم المعالجة على هذا الجهاز" })}
+                hint={L({ en: "Processed on your own servers", ar: "تتم المعالجة على خوادم الجهة" })}
                 onFiles={(fs) => {
                   const t = fs[0]?.text;
                   if (t) {

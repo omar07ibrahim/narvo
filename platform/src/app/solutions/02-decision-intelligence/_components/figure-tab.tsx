@@ -85,7 +85,7 @@ export function FigureTab({ run, saved, onRun }: { run: NarvoRun; saved: FigureC
           accept=".md,.txt"
           className="flex-1"
           label={L({ en: "Or drop a .md / .txt update", ar: "أو أسقط ملف .md / .txt" })}
-          hint={L({ en: "Processed on this machine", ar: "تتم المعالجة على هذا الجهاز" })}
+          hint={L({ en: "Processed on your own servers", ar: "تتم المعالجة على خوادم الجهة" })}
           onFiles={(fs) => fs[0]?.text && setPaste(fs[0].text)}
         />
         <RunButton running={run.running} onRun={() => onRun(paste)} disabled={paste.trim().length < 20} size="sm" variant="outline" icon={<ScanSearch />}>

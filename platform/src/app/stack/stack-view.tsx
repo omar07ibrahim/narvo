@@ -75,7 +75,7 @@ export function StackView() {
       {/* Live status */}
       <div className="mt-8 grid grid-cols-4 divide-x divide-border overflow-hidden rounded-lg border border-border bg-card rtl:divide-x-reverse max-lg:grid-cols-2 max-lg:divide-x-0">
         {[
-          { k: L({ en: "Mode", ar: "الوضع" }), v: !s ? "—" : local ? L({ en: "On-device", ar: "على الجهاز" }) : L({ en: "Development", ar: "تطوير" }), icon: s && !local ? Cloud : ShieldCheck },
+          { k: L({ en: "Mode", ar: "الوضع" }), v: !s ? "—" : local ? L({ en: "On-premises", ar: "داخل الجهة" }) : L({ en: "Development", ar: "تطوير" }), icon: s && !local ? Cloud : ShieldCheck },
           { k: L({ en: "Serving", ar: "الخادم" }), v: s?.host ?? "—", icon: Cpu },
           { k: L({ en: "Active model", ar: "النموذج النشط" }), v: s?.modelLabel ?? "—", icon: Lock },
           { k: L({ en: "Bytes that left the machine", ar: "البيانات التي غادرت الجهاز" }), v: s ? formatBytes(s.egressBytes) : "—", icon: HardDrive },
@@ -126,7 +126,7 @@ export function StackView() {
               ))}
             </div>
           </Layer>
-          <Layer n="02" title={L({ en: "Open-weight models", ar: "نماذج مفتوحة الأوزان" })} sub={L({ en: "Open weights, served on this machine", ar: "أوزان مفتوحة تعمل على هذا الجهاز" })} delay={0.15}>
+          <Layer n="02" title={L({ en: "Open-weight models", ar: "نماذج مفتوحة الأوزان" })} sub={L({ en: "Open weights, served on your own servers", ar: "أوزان مفتوحة تعمل على خوادم الجهة" })} delay={0.15}>
             <div className="grid gap-1.5">
               {MODEL_OPTIONS.map((m) => (
                 <div key={m.key} className="rounded-md border border-border bg-surface px-3 py-2.5">
@@ -187,8 +187,8 @@ export function StackView() {
             <code className="block rounded-md bg-muted px-3 py-2 font-mono text-[11.5px] text-foreground">NARVO_PROVIDER=local</code>
             <p className="mt-2">
               {L({
-                en: "One setting. The same solutions, prompts and approvals run against the model server on this machine; the egress meter stays at zero.",
-                ar: "إعداد واحد. تعمل الحلول والتعليمات والاعتمادات نفسها على خادم النماذج في هذا الجهاز، ويبقى عداد البيانات الخارجة عند الصفر.",
+                en: "One setting. The same solutions, prompts and approvals run against the model server on your own servers; the egress meter stays at zero.",
+                ar: "إعداد واحد. تعمل الحلول والتعليمات والاعتمادات نفسها على خادم النماذج على خوادم الجهة، ويبقى عداد البيانات الخارجة عند الصفر.",
               })}
             </p>
           </div>

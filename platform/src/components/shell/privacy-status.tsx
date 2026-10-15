@@ -59,7 +59,7 @@ export function PrivacyStatus() {
         </span>
         <div className="min-w-0 flex-1 leading-tight">
           <div className="text-[12px] font-medium text-white">
-            {local ? L({ en: "On-device · Private", ar: "على الجهاز · خاص" }) : dev ? L({ en: "Development mode", ar: "وضع التطوير" }) : "…"}
+            {local ? L({ en: "On-premises · Private", ar: "داخل الجهة · خاص" }) : dev ? L({ en: "Development mode", ar: "وضع التطوير" }) : "…"}
           </div>
           <div className="truncate text-[10.5px] text-sidebar-muted">{s ? `${s.modelLabel} · ${s.host}` : "…"}</div>
         </div>

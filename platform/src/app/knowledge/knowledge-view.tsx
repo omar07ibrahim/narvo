@@ -87,7 +87,7 @@ export function KnowledgeView() {
 
   return (
     <div className="mx-auto w-full max-w-[1580px] px-6 pt-8 pb-14">
-      <div className="label-caps">{L({ en: "Your data, indexed on this machine", ar: "بياناتك، مفهرسة على هذا الجهاز" })}</div>
+      <div className="label-caps">{L({ en: "Your data, indexed on your own servers", ar: "بياناتك، مفهرسة على خوادم الجهة" })}</div>
       <h1 className="display-title mt-2 text-[38px]">{L({ en: "Knowledge sources", ar: "مصادر المعرفة" })}</h1>
 
       <div className="mt-6 grid grid-cols-2 gap-4 max-md:grid-cols-1">

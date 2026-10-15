@@ -108,7 +108,7 @@ export function AttachmentSlot({ state, className, compact = true }: { state: At
       accept="image/*,.txt,.md"
       onFiles={state.onFiles}
       label={L({ en: "Ask your document", ar: "اسأل مستندك" })}
-      hint={L({ en: "Drop a .md / .txt file or a photo of a page — read on this machine", ar: "أضف ملف .md أو .txt أو صورة صفحة — تتم القراءة على هذا الجهاز" })}
+      hint={L({ en: "Drop a .md / .txt file or a photo of a page — read on your own servers", ar: "أضف ملف .md أو .txt أو صورة صفحة — تتم القراءة على خوادم الجهة" })}
     />
   );
 }

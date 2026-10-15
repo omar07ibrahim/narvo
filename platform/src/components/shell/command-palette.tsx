@@ -48,7 +48,7 @@ export function CommandPalette({ open, onOpenChange }: { open: boolean; onOpenCh
             <Library /> {L({ en: "Knowledge sources", ar: "مصادر المعرفة" })}
           </CommandItem>
           <CommandItem onSelect={() => go("/stack")}>
-            <Layers /> {L({ en: "How it runs — on-device stack", ar: "كيف تعمل — البنية على الجهاز" })}
+            <Layers /> {L({ en: "How it runs — on-premises stack", ar: "كيف تعمل — البنية داخل الجهة" })}
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />

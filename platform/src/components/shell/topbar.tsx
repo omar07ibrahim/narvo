@@ -69,7 +69,7 @@ function ModelSwitcher() {
                 </span>
                 {!available && (
                   <span className="block text-[10.5px] text-warning">
-                    {L({ en: "Runs on-device only (private mode)", ar: "يعمل على الجهاز فقط (الوضع الخاص)" })}
+                    {L({ en: "Runs on-premises only (private mode)", ar: "يعمل داخل الجهة فقط (الوضع الخاص)" })}
                   </span>
                 )}
               </span>
