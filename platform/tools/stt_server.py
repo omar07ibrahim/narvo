@@ -23,6 +23,14 @@ import uvicorn
 from fastapi import FastAPI, File, Form, UploadFile
 
 MODEL = os.environ.get("NARVO_WHISPER_MODEL", "mlx-community/whisper-large-v3-turbo")
+if not os.path.isdir(MODEL):
+    # Once downloaded, load the cached copy without contacting the Hugging Face Hub (fully offline).
+    try:
+        from huggingface_hub import snapshot_download
+
+        MODEL = snapshot_download(MODEL, local_files_only=True)
+    except Exception:
+        pass  # first run: mlx-whisper downloads the model
 app = FastAPI(title="NARVO STT")
 
 

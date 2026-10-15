@@ -108,7 +108,13 @@ export function useNarvoRun() {
         case "done":
           return { ...s, status: s.status === "error" ? "error" : "done", ms: e.ms };
         case "error":
-          return { ...s, status: "error", error: e.message };
+          // Steps still spinning when the run fails did not complete — show them as failed.
+          return {
+            ...s,
+            status: "error",
+            error: e.message,
+            trace: s.trace.map((t) => (t.status === "running" ? ({ ...t, status: "error" } as TraceItem) : t)),
+          };
         default:
           return s;
       }

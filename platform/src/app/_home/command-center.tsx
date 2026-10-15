@@ -10,6 +10,7 @@ import { formatBytes, usePlatformStatus } from "@/components/shell/privacy-statu
 import { useFormat, useL, usePrefs } from "@/lib/i18n";
 import { SOLUTIONS, pad2, solutionPath } from "@/lib/solutions/registry";
 import { ORGS } from "@/lib/world/orgs";
+import { MODEL_OPTIONS } from "@/lib/ai/models";
 import { cn } from "@/lib/utils";
 import { DemoPath, SolutionsLauncher } from "./solutions-launcher";
 
@@ -69,6 +70,8 @@ export function CommandCenter() {
   }, []);
 
   const local = status?.provider === "local";
+  // Until the first status poll returns, show neither mode (avoids flashing "Development mode" in private mode).
+  const dev = status?.provider === "openrouter";
   const executed = allApprovals.filter((a) => a.status === "approved").length;
   const persona = ORGS.mnda.persona;
   const bySolution = useMemo(() => Object.fromEntries(SOLUTIONS.map((s) => [s.slug, s])), []);
@@ -113,12 +116,12 @@ export function CommandCenter() {
         <div className="relative overflow-hidden rounded-xl bg-sidebar p-6 text-sidebar-foreground">
           <NarvoMark className="absolute -end-6 -bottom-8 h-56 text-white/[0.04]" />
           <div className="flex items-center gap-2.5">
-            <span className={cn("flex size-8 items-center justify-center rounded-full", local ? "bg-[#5fb8ad]/15 text-[#5fb8ad]" : "bg-[#c98a2b]/15 text-[#e0a64a]")}>
-              {local ? <ShieldCheck className="size-4" /> : <Cloud className="size-4" />}
+            <span className={cn("flex size-8 items-center justify-center rounded-full", dev ? "bg-[#c98a2b]/15 text-[#e0a64a]" : "bg-[#5fb8ad]/15 text-[#5fb8ad]")}>
+              {dev ? <Cloud className="size-4" /> : <ShieldCheck className="size-4" />}
             </span>
             <div>
               <div className="text-[14px] font-medium text-white">
-                {local ? L({ en: "Private mode — on this device", ar: "الوضع الخاص — على هذا الجهاز" }) : L({ en: "Development mode", ar: "وضع التطوير" })}
+                {local ? L({ en: "Private mode — on this device", ar: "الوضع الخاص — على هذا الجهاز" }) : dev ? L({ en: "Development mode", ar: "وضع التطوير" }) : "…"}
               </div>
               <div className="text-[11.5px] text-sidebar-muted">{status ? `${status.modelLabel} · ${status.host}` : "…"}</div>
             </div>
@@ -137,7 +140,7 @@ export function CommandCenter() {
           </div>
           <div className="mt-6 flex items-start gap-2.5 rounded-lg border border-sidebar-border bg-white/[0.03] p-3 text-[12px] leading-relaxed text-sidebar-foreground/80">
             <WifiOff className="mt-0.5 size-3.5 shrink-0 text-sidebar-muted" />
-            {local
+            {!dev
               ? L({ en: "Disconnect the network — every solution keeps working. Nothing leaves this machine.", ar: "افصل الشبكة — تستمر جميع الحلول بالعمل. لا شيء يغادر هذا الجهاز." })
               : L({ en: "Same open-weight models as on-device, served remotely for development. Switch NARVO_PROVIDER=local to run fully private.", ar: "النماذج المفتوحة نفسها كما على الجهاز، تُخدَّم عن بُعد للتطوير. بدّل إلى الوضع المحلي للتشغيل الخاص بالكامل." })}
           </div>
@@ -151,7 +154,7 @@ export function CommandCenter() {
           { k: L({ en: "Client workspaces", ar: "مساحات العملاء" }), v: "2", s: "MNDA · Raseen Group" },
           { k: L({ en: "Awaiting approval", ar: "بانتظار الاعتماد" }), v: `${approvals.length}`, s: L({ en: "people decide, AI prepares", ar: "البشر يقررون، والذكاء يجهّز" }), warn: approvals.length > 0 },
           { k: L({ en: "Actions executed", ar: "إجراءات منفذة" }), v: `${executed}`, s: L({ en: "after human approval", ar: "بعد الاعتماد البشري" }) },
-          { k: L({ en: "Models available", ar: "النماذج المتاحة" }), v: "4", s: "Qwen · Gemma · Falcon · Jais" },
+          { k: L({ en: "Models available", ar: "النماذج المتاحة" }), v: `${MODEL_OPTIONS.length}`, s: MODEL_OPTIONS.map((m) => m.label).join(" · ") },
         ].map((x) => (
           <div key={x.k} className="px-5 py-4">
             <div className="label-caps">{x.k}</div>

@@ -28,19 +28,16 @@ npm ci
 Open LM Studio once, then use its CLI (`lms`, installed from LM Studio → Settings → CLI):
 
 ```bash
-lms get qwen3.8-27b@4bit        # main model (Apache 2.0, multimodal) ~16 GB — pick the MLX build
-lms get gemma-4-26b-a4b@4bit    # fast MoE alternative ~15 GB — optional
-lms ls                          # shows the exact model ids
+lms get qwen3.8-27b@4bit        # the only model (Apache 2.0, multimodal: text + vision + tools) ~16 GB — pick the MLX build
+lms ls                          # shows the exact model id
 lms server start --port 1234    # OpenAI-compatible API at http://127.0.0.1:1234/v1
+lms load qwen/qwen3.8-27b --context-length 65536 --parallel 4   # load it explicitly, no TTL
 ```
 
-32 GB cannot hold two ~16 GB models at once. In LM Studio → Developer → Server settings enable
-**Just-in-Time model loading** with **auto-unload** so switching models in the NARVO top bar swaps them.
-Recommended per-model settings: context length 16 384, flash attention on, KV-cache quantisation on.
-
-Optional Emirati models for the model switcher (MLX or GGUF builds, ~5 GB each):
-`Falcon-H1 Arabic 7B` (TII) and `Jais 2 8B Chat` (Inception/MBZUAI). If no build runs, they simply stay
-"on-device only" in the switcher.
+Load the model explicitly as above and keep it loaded. Several flows send 8–11K-token prompts; a model
+that LM Studio loads "just in time" gets its default 8 192-token context and a 1 h TTL, and those flows
+then fail or are truncated (`lms ps` must show CONTEXT 65536 and no TTL). Do not load a second large model
+next to it: on 32–36 GB the Mac runs out of memory and macOS kills the NARVO processes.
 
 ## 4. Speech (Whisper on MLX)
 
@@ -68,7 +65,7 @@ LOCAL_BASE_URL=http://127.0.0.1:1234/v1
 LOCAL_API_KEY=lm-studio
 LOCAL_STT_BASE_URL=http://127.0.0.1:8090/v1
 # Map catalogue keys to the ids printed by `lms ls` / GET http://127.0.0.1:1234/v1/models
-NARVO_LOCAL_MODEL_MAP={"qwen3.8-27b":"<id of the Qwen build>","gemma-4-26b":"<id of the Gemma build>"}
+NARVO_LOCAL_MODEL_MAP={"qwen3.8-27b":"<id of the Qwen build>"}
 ```
 
 ## 6. Run
@@ -92,8 +89,6 @@ npm start          # http://localhost:3000
 
 - Qwen3.8 27B (dense, 4-bit) on M4 Max: roughly 15–25 tokens/s; M4 Pro about half. Vision reading of a
   document page takes several seconds — the review runs three documents in parallel.
-- If the demo needs to feel faster, switch the top-bar model to **Gemma 4 26B A4B** (MoE, ~4B active):
-  typically 2–4× faster generation.
 - Keep reasoning off (default). Close other memory-heavy apps before the demo.
 
 ## 9. Troubleshooting
@@ -102,6 +97,7 @@ npm start          # http://localhost:3000
 |---|---|
 | "Model provider error 404 model not found" | Fix `NARVO_LOCAL_MODEL_MAP` with the exact id from `lms ls` |
 | Very slow first answer | Model is loading (JIT). Warm it up by running the benchmark once |
-| Voice: "Local speech server error" | Start `tools/stt_server.py`; check `LOCAL_STT_BASE_URL` |
-| Out-of-memory / swap | Unload the second model; reduce context length to 8 192 |
+| Voice: "Local speech server error" | Start `tools/stt_server.py` (ffmpeg must be on `PATH`); check `LOCAL_STT_BASE_URL` |
+| Out-of-memory / swap, NARVO processes killed | Only Qwen3.8 27B may be loaded (`lms ps`); close other memory-heavy apps; if still tight, reload with `--context-length 32768` |
+| "Model unloaded" / long prompts fail | The model was JIT-reloaded with an 8 192 context: `lms unload --all` then the `lms load … --context-length 65536 --parallel 4` line from section 3 |
 | Fonts look wrong offline | Run `npm run build` once while online |

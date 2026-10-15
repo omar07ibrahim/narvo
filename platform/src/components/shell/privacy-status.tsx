@@ -45,20 +45,21 @@ export function PrivacyStatus() {
   const L = useL();
   const s = usePlatformStatus();
   const local = s?.provider === "local";
+  const dev = s?.provider === "openrouter";
   return (
     <div className="rounded-lg border border-sidebar-border bg-white/[0.03] p-3">
       <div className="flex items-center gap-2">
         <span
           className={cn(
             "flex size-6 items-center justify-center rounded-full",
-            local ? "bg-[#5fb8ad]/15 text-[#5fb8ad]" : "bg-[#c98a2b]/15 text-[#e0a64a]",
+            dev ? "bg-[#c98a2b]/15 text-[#e0a64a]" : "bg-[#5fb8ad]/15 text-[#5fb8ad]",
           )}
         >
-          {local ? <ShieldCheck className="size-3.5" /> : <Cloud className="size-3.5" />}
+          {dev ? <Cloud className="size-3.5" /> : <ShieldCheck className="size-3.5" />}
         </span>
         <div className="min-w-0 flex-1 leading-tight">
           <div className="text-[12px] font-medium text-white">
-            {local ? L({ en: "On-device · Private", ar: "على الجهاز · خاص" }) : L({ en: "Development mode", ar: "وضع التطوير" })}
+            {local ? L({ en: "On-device · Private", ar: "على الجهاز · خاص" }) : dev ? L({ en: "Development mode", ar: "وضع التطوير" }) : "…"}
           </div>
           <div className="truncate text-[10.5px] text-sidebar-muted">{s ? `${s.modelLabel} · ${s.host}` : "…"}</div>
         </div>

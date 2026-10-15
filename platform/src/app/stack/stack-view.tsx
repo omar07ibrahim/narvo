@@ -58,7 +58,7 @@ const GUARANTEES = [
   { en: "Arabic-first: documents, speech, UI and answers", ar: "العربية أولاً: المستندات والكلام والواجهة والإجابات" },
 ];
 
-const STACK = ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "Qwen3.8 27B", "Gemma 4", "Falcon-H1 Arabic", "Jais 2", "MLX", "vLLM", "Whisper", "OpenAI-compatible API", "Zod-validated structured output", "Server-Sent Events"];
+const STACK = ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "Qwen3.8 27B", "LM Studio", "MLX", "vLLM", "Whisper", "OpenAI-compatible API", "Zod-validated structured output", "Server-Sent Events"];
 
 export function StackView() {
   const L = useL();
@@ -75,7 +75,7 @@ export function StackView() {
       {/* Live status */}
       <div className="mt-8 grid grid-cols-4 divide-x divide-border overflow-hidden rounded-lg border border-border bg-card rtl:divide-x-reverse max-lg:grid-cols-2 max-lg:divide-x-0">
         {[
-          { k: L({ en: "Mode", ar: "الوضع" }), v: local ? L({ en: "On-device", ar: "على الجهاز" }) : L({ en: "Development", ar: "تطوير" }), icon: local ? ShieldCheck : Cloud },
+          { k: L({ en: "Mode", ar: "الوضع" }), v: !s ? "—" : local ? L({ en: "On-device", ar: "على الجهاز" }) : L({ en: "Development", ar: "تطوير" }), icon: s && !local ? Cloud : ShieldCheck },
           { k: L({ en: "Serving", ar: "الخادم" }), v: s?.host ?? "—", icon: Cpu },
           { k: L({ en: "Active model", ar: "النموذج النشط" }), v: s?.modelLabel ?? "—", icon: Lock },
           { k: L({ en: "Bytes that left the machine", ar: "البيانات التي غادرت الجهاز" }), v: s ? formatBytes(s.egressBytes) : "—", icon: HardDrive },
@@ -84,7 +84,9 @@ export function StackView() {
             <x.icon className="size-4 text-muted-foreground" />
             <div>
               <div className="label-caps">{x.k}</div>
-              <div className="mt-1 text-[15px] font-medium">{x.v}</div>
+              <div className="mt-1 text-[15px] font-medium">
+                <bdi>{x.v}</bdi>
+              </div>
             </div>
           </div>
         ))}
@@ -124,8 +126,8 @@ export function StackView() {
               ))}
             </div>
           </Layer>
-          <Layer n="02" title={L({ en: "Open-weight models", ar: "نماذج مفتوحة الأوزان" })} sub={L({ en: "Choose per workload; switch from the top bar", ar: "اختر لكل حمل عمل؛ بدّل من الشريط العلوي" })} delay={0.15}>
-            <div className="grid grid-cols-4 gap-1.5 max-lg:grid-cols-2">
+          <Layer n="02" title={L({ en: "Open-weight models", ar: "نماذج مفتوحة الأوزان" })} sub={L({ en: "Open weights, served on this machine", ar: "أوزان مفتوحة تعمل على هذا الجهاز" })} delay={0.15}>
+            <div className="grid gap-1.5">
               {MODEL_OPTIONS.map((m) => (
                 <div key={m.key} className="rounded-md border border-border bg-surface px-3 py-2.5">
                   <div className="text-[12.5px] font-medium">{m.label}</div>
@@ -138,7 +140,7 @@ export function StackView() {
               ))}
             </div>
             <div className="mt-1.5 flex flex-wrap gap-1.5 text-[11.5px] text-muted-foreground">
-              <span className="rounded-md border border-dashed border-border px-2 py-1">Whisper large-v3-turbo · speech</span>
+              <span className="rounded-md border border-dashed border-border px-2 py-1">Whisper large-v3-turbo · speech (MLX)</span>
               <span className="rounded-md border border-dashed border-border px-2 py-1">Cohere Transcribe Arabic · speech</span>
               <span className="rounded-md border border-dashed border-border px-2 py-1">Chronos-2 · forecasting</span>
             </div>

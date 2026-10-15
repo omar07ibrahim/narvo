@@ -105,7 +105,7 @@ export function ConflictsTab({
         }
       >
         <div className="scrollbar-thin -mx-3.5 -my-3.5 overflow-x-auto">
-          <table className="w-full min-w-[500px] table-fixed text-[12px]">
+          <table className="w-full min-w-[680px] table-fixed text-[12px]">
             <colgroup>
               <col className="w-[30%]" />
               <col span={6} />

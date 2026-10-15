@@ -40,3 +40,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 data/runtime/
+
+# on-device speech server venv (MAC_SETUP.md section 4)
+.venv-stt/

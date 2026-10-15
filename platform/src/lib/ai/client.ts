@@ -40,7 +40,7 @@ export interface ChatOptions {
   responseFormat?: Record<string, unknown>;
   /** Enable model "thinking". Off by default for snappy demos. */
   reasoning?: boolean;
-  /** Abort a streamed call if no data arrives within this time (default 75 s). */
+  /** Abort a streamed call if no data arrives within this time (default 75 s; 180 s on a local server, which queues requests and may be loading the model). */
   firstTokenTimeoutMs?: number;
   /** Telemetry labels */
   solution?: string;
@@ -85,8 +85,10 @@ function buildBody(opts: ChatOptions, stream: boolean) {
     body.reasoning = opts.reasoning ? { effort: "low" } : { enabled: false };
     if (stream) body.usage = { include: true };
   } else {
-    // Qwen-family local servers honour this flag to skip the thinking phase.
+    // Qwen-family local servers honour one of these to skip the thinking phase:
+    // mlx-lm / vLLM read chat_template_kwargs, LM Studio reads reasoning_effort.
     body.chat_template_kwargs = { enable_thinking: !!opts.reasoning };
+    body.reasoning_effort = opts.reasoning ? "low" : "none";
     if (stream) body.stream_options = { include_usage: true };
   }
   return { body, model };
@@ -122,6 +124,14 @@ function splitThinking(text: string): { content: string; reasoning: string } {
 }
 
 export async function chat(opts: ChatOptions): Promise<ChatResult> {
+  // A local server sends nothing until a non-streamed completion is finished, and Node's fetch gives up
+  // waiting for response headers after 300 s. Stream instead: same result, plus the first-token watchdog.
+  if (getEndpoint().provider === "local") {
+    const gen = chatStream({ ...opts, task: opts.task ?? "chat" });
+    let n = await gen.next();
+    while (!n.done) n = await gen.next();
+    return n.value;
+  }
   const started = Date.now();
   const { body, model } = buildBody(opts, false);
   const { provider } = getEndpoint();
@@ -192,7 +202,7 @@ export async function* chatStream(opts: ChatOptions): AsyncGenerator<StreamDelta
   const onAbort = () => watchdog.abort();
   opts.signal?.addEventListener("abort", onAbort);
   let gotData = false;
-  const timeoutMs = opts.firstTokenTimeoutMs ?? 75_000;
+  const timeoutMs = opts.firstTokenTimeoutMs ?? (provider === "local" ? 180_000 : 75_000);
   const timer = setTimeout(() => {
     if (!gotData) watchdog.abort();
   }, timeoutMs);

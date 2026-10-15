@@ -223,7 +223,9 @@ export async function POST(req: Request) {
           : "This user is external: you cannot create tasks or send emails. If asked, explain politely that internal actions are only available to MNDA staff, and point to public channels (permits@mnda.gov.ae, 800 6632).",
         "Do not write any text before or between tool calls — work silently, then write only the final answer. Cite every fact with the [n] numbers returned by the tools — only those numbers. Do not mention tool names.",
         "Never claim a task was created or an email was sent: they are awaiting human approval (name the approver).",
-        "Final answer format (markdown): '## Summary' (2–3 sentences), '## Key facts' (bullets with citations), '## What it means' (implications for the user's request), and if you proposed actions '## Proposed actions' (one line each: task — owner — due date — awaiting approval by …). Keep it under 380 words.",
+        ar
+          ? "Final answer format (markdown, Arabic headings exactly as written): '## الخلاصة' (2–3 sentences), '## أبرز الحقائق' (bullets with citations), '## ماذا يعني ذلك' (implications for the user's request), and if you proposed actions '## الإجراءات المقترحة' (one line each: task — owner — due date — awaiting approval by …). Keep it under 380 words."
+          : "Final answer format (markdown): '## Summary' (2–3 sentences), '## Key facts' (bullets with citations), '## What it means' (implications for the user's request), and if you proposed actions '## Proposed actions' (one line each: task — owner — due date — awaiting approval by …). Keep it under 380 words.",
         `Write the final answer in ${ar ? "formal Modern Standard Arabic" : "English"}; task titles and descriptions in the same language.`,
         r.canAct ? `MNDA directory (task owners and email recipients):\n${directoryForPrompt()}` : "",
       ]

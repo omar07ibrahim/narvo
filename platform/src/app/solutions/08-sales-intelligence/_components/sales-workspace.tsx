@@ -287,8 +287,8 @@ export function SalesWorkspace({ initial }: { initial: SalesData }) {
           <section className="flex h-[calc(100vh-200px)] min-h-[700px] min-w-0 flex-col overflow-hidden rounded-lg border border-border bg-card">
             <OppHeader opp={opp} account={account} health={health} quote={report.quote} />
             <Tabs value={tab} onValueChange={(v) => setTab(v as TabKey)} className="min-h-0 flex-1 gap-0">
-              <div className="border-b border-border px-4">
-                <TabsList variant="line" className="h-10">
+              <div className="scrollbar-thin overflow-x-auto border-b border-border px-4">
+                <TabsList variant="line" className="h-10 min-w-max">
                   <TabsTrigger value="brief" className="text-[12.5px]">
                     {L({ en: "Brief", ar: "الملخص" })}
                   </TabsTrigger>

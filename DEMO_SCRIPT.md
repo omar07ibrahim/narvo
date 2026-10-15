@@ -29,7 +29,7 @@ This file is the presenter's overview: what to open, in which order, and the mom
 | 01 | Enterprise AI Workspace | Switch role Contractor → Director and ask the same question: restricted documents are withheld, then cited. Ask the agent for a Marina Quarter briefing with review tasks, approve one, see it in Tasks. |
 | 02 | Decision Intelligence | Briefing with 31 traced figures; figure check catches the planted discrepancies; *Ask the data* answers with a computed chart. |
 | 03 | Process Intelligence | The process map of 1,047 permits; root cause quotes officer notes; simulate the NOC intake check (21.6 → 18.9 days, 27% → 13% rework). |
-| 04 | Private AI Platform | Telemetry of every call; Arabic benchmark Qwen vs Gemma; evaluation suite scored in code (10/10); access matrix per role. |
+| 04 | Private AI Platform | Telemetry of every call; Arabic benchmark of the on-device Qwen3.8 27B (time to first token, tokens/s); evaluation suite scored in code (10/10); access matrix per role. |
 | 05 | Case Operations | See the tour above. Then 005231 (complete loan file → move to verification) and 005219 (income above the grant ceiling). *Inspect a document* with any photo. |
 | 06 | Arabic Documents | Translate Circular 14/2026 AR → EN with 100% glossary compliance; the EN spec keeps its tables; a disputed term goes to the terminology lead. |
 | 07 | Contact Operations | See the tour. Supervisor → *Find themes* clusters 50 conversations and drafts an FAQ update. |
@@ -49,7 +49,7 @@ This file is the presenter's overview: what to open, in which order, and the mom
 
 ## If something goes wrong
 
-- A step seems stuck: the model may be loading. Wait 20 s or switch to Gemma 4 in the top bar.
+- A step seems stuck: the model may be loading. Wait 20–30 s (first call after a load) and try again.
 - Data looks "used": ⌘K → Reset all demo data (or *Reset* on the solution page).
 - Voice does not respond: check the speech server (private mode) or type instead — the flow is identical.
 

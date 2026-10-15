@@ -31,10 +31,10 @@ const SCENARIO: ScenarioStep[] = [
     },
   },
   {
-    title: { en: "Models are interchangeable", ar: "النماذج قابلة للتبديل" },
+    title: { en: "The model, measured", ar: "النموذج تحت القياس" },
     body: {
-      en: "Open Models and run the same Arabic workload on Qwen and Gemma side by side — time to first token, tokens per second and the actual text.",
-      ar: "افتح النماذج وشغّل حمل العمل العربي نفسه على Qwen وGemma جنباً إلى جنب — زمن أول رمز وسرعة التوليد والنص الفعلي.",
+      en: "Open Models: Qwen3.8 27B is served from this machine. Run the Arabic benchmark — time to first token, tokens per second and the actual text.",
+      ar: "افتح النماذج: يعمل Qwen3.8 27B على هذا الجهاز. شغّل الاختبار العربي — زمن أول رمز وسرعة التوليد والنص الفعلي.",
     },
   },
   {
