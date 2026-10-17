@@ -349,5 +349,5 @@ function Record({ icon, title, body }: { icon: React.ReactNode; title: string; b
 const DAY_AR: Record<string, string> = { Mon: "الإثنين", Tue: "الثلاثاء", Wed: "الأربعاء", Thu: "الخميس", Fri: "الجمعة", Sat: "السبت", Sun: "الأحد" };
 /** "Mon–Sat" → "الإثنين–السبت" (site rules are kept in English in the master data). */
 function daysAr(s: string): string {
-  return s.replace(/(Mon|Tue|Wed|Thu|Fri|Sat|Sun)/g, (d) => DAY_AR[d] ?? d);
+  return s.replace(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\b/g, (d) => DAY_AR[d] ?? d);
 }

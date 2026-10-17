@@ -65,7 +65,8 @@ export async function POST(req: Request) {
         ].join("\n"),
         user: `COMPUTED FACTS:\n${facts}\n\nSOURCES:\n\n${pack.context}`,
         modelKey,
-        maxTokens: 2600,
+        // thirteen-odd commitments with their sources, gaps and deadlines: 2600 tokens cut the English JSON short
+        maxTokens: 4500,
         temperature: 0.1,
         solution: SLUG,
         task: "handover.extract",
