@@ -85,9 +85,11 @@ export function Markdown({
     function Wrapped({ children: c }: { children?: ReactNode }) {
       return <Tag>{withCitations(c, citations, onCite)}</Tag>;
     };
-  // right-to-left only when the text is mostly Arabic: an English answer that quotes an Arabic name stays left-to-right
+  // the text's own direction, whatever the page's: right-to-left when mostly Arabic, left-to-right when mostly Latin (an
+  // English bid section in the Arabic UI must not be right-aligned with its full stops at the start of lines)
   const head = children.slice(0, 400);
-  const dir = (head.match(/[؀-ۿ]/g)?.length ?? 0) > (head.match(/[A-Za-z]/g)?.length ?? 0) ? "rtl" : undefined;
+  const ar = head.match(/[؀-ۿ]/g)?.length ?? 0, la = head.match(/[A-Za-z]/g)?.length ?? 0;
+  const dir = ar > la ? "rtl" : la > 0 ? "ltr" : undefined;
   return (
     <div className={cn("prose-narvo", className)} dir={dir}>
       <ReactMarkdown
