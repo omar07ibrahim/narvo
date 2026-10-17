@@ -56,7 +56,8 @@ export function MetricTile({
   );
 }
 
-/** Arabic rendering of catalogue measure values ("19.4 days" → "19.4 يوماً"). Numbers stay Latin. */
+/** Arabic rendering of catalogue measure values ("13 days" → "13 يوماً", "3 min" → "3 دقائق", "312 / mo" → "312 شهرياً").
+ *  Numbers stay Latin. (These regexes once held literal backspace bytes instead of \b and never matched.) */
 const AR_PHRASES: Array<[RegExp, string]> = [
   [/^same day$/i, "في اليوم نفسه"],
   [/^Fully sourced$/i, "موثّق بالكامل"],
@@ -65,28 +66,35 @@ const AR_PHRASES: Array<[RegExp, string]> = [
   [/weekly/i, "أسبوعياً"],
   [/eval/i, "تقييم"],
   [/energy/i, "طاقة"],
-  [/\/ task/, "/ مهمة"],
-  [/\/ doc/, "/ مستند"],
-  [/\/ inv/, "/ فاتورة"],
-  [/\/ contract/, "/ عقد"],
-  [/\/ mo/, "/ شهرياً"],
-  [/\/ yr/, "/ سنوياً"],
-  [/1 day/, "يوم واحد"],
-  [/days/, "يوم"],
-  [/day/, "يوم"],
-  [/min/, "دقيقة"],
-  [/h/, "ساعة"],
-  [/touches/, "مرات"],
-  [/touch/, "مرة"],
-  [/rounds/, "جولات"],
-  [/round/, "جولة"],
+  [/\s*\/ task\b/, " لكل مهمة"],
+  [/\s*\/ doc\b/, " لكل مستند"],
+  [/\s*\/ inv\b/, " لكل فاتورة"],
+  [/\s*\/ contract\b/, " لكل عقد"],
+  [/\s*\/ mo\b/, " شهرياً"],
+  [/\s*\/ yr\b/, " سنوياً"],
+  [/\b1 day\b/, "يوم واحد"],
+  [/\b1 round\b/, "جولة واحدة"],
+  [/^([3-9]|10) درهم/, "$1 دراهم"],
 ];
+
+/** unit → [singular (fractions, 1, 2, 11+), plural for 3–10] */
+const AR_UNITS: Record<string, [string, string]> = {
+  days: ["يوم", "أيام"], day: ["يوم", "أيام"], min: ["دقيقة", "دقائق"], h: ["ساعة", "ساعات"],
+  touches: ["مرة", "مرات"], touch: ["مرة", "مرات"], rounds: ["جولة", "جولات"], round: ["جولة", "جولات"],
+};
 
 export function localizeMeasure(v: string, lang: "en" | "ar") {
   if (lang !== "ar") return v;
   let out = v;
   for (const [re, rep] of AR_PHRASES) out = out.replace(re, rep);
-  return out;
+  // a count agrees with its unit: 3–10 take the plural, whole numbers from 11 the accusative singular (يوماً)
+  return out.replace(/(\d+(?:\.\d+)?) (days|day|min|h|touches|touch|rounds|round)\b/g, (_, n: string, u: string) => {
+    const [one, few] = AR_UNITS[u];
+    const x = Number(n);
+    if (Number.isInteger(x) && x >= 3 && x <= 10) return `${n} ${few}`;
+    if (Number.isInteger(x) && x >= 11 && one === "يوم") return `${n} يوماً`;
+    return `${n} ${one}`;
+  });
 }
 
 /** Catalogue "Measures to agree" — baseline vs. pilot target. */

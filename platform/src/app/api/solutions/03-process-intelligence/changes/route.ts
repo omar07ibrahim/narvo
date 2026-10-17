@@ -40,7 +40,8 @@ export async function POST(req: Request) {
   const fmt = (x: number | null | undefined, unit = "") => (x == null ? "—" : `${x.toFixed(1)}${unit}`);
   const summary =
     lang === "ar"
-      ? `${changeId} · ${names.join("، ")}. الأثر المحاكى: الوسيط ${fmt(expected?.medianBefore)} ← ${fmt(expected?.medianAfter)} يوم، إعادة العمل ${fmt(expected?.reworkBefore, "%")} ← ${fmt(expected?.reworkAfter, "%")}.`
+      ? // starts with an Arabic word: the card lays the summary out by its first strong character (dir="auto")
+        `التغيير ${changeId} · ${names.join("، ")}. الأثر المحاكى: الوسيط ${fmt(expected?.medianBefore)} ← ${fmt(expected?.medianAfter)} يوم، إعادة العمل ${fmt(expected?.reworkBefore, "%")} ← ${fmt(expected?.reworkAfter, "%")}.`
       : `${changeId} · ${names.join(" + ")}. Simulated impact: median ${fmt(expected?.medianBefore)} → ${fmt(expected?.medianAfter)} days, rework ${fmt(expected?.reworkBefore, "%")} → ${fmt(expected?.reworkAfter, "%")}.`;
 
   const approval = createApproval({
@@ -48,7 +49,7 @@ export async function POST(req: Request) {
     title: `${lang === "ar" ? "تغيير في إجراءات رخص البناء" : "Permit process change"} — ${title}`.slice(0, 220),
     summary,
     actionLabel: lang === "ar" ? "اعتماد التغيير وتسجيله" : "Approve change & log it",
-    approver: { name: "Eng. Omar Yousef Al Hammadi", title: "Director, Planning & Building Permits" },
+    approver: { name: "Eng. Omar Yousef Al Hammadi", title: "Director, Planning & Building Permits", nameAr: "م. عمر يوسف الحمادي", titleAr: "مدير إدارة التخطيط وتصاريح البناء" },
     requestedBy: "Hessa Abdulla Al Suwaidi",
     payload: { changeId, interventions, expected },
     effects: [

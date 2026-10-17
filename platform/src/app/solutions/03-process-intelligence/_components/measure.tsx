@@ -26,6 +26,8 @@ export interface ChangeRow {
 }
 
 const DATA_END = Date.parse("2026-10-09T23:59:00+04:00") / 60000;
+/** The change log keeps the approver's English name; the Arabic UI shows it in Arabic. */
+const APPROVERS_AR: Record<string, string> = { "Eng. Omar Yousef Al Hammadi": "م. عمر يوسف الحمادي" };
 
 export function Measure({ log, changes }: { log: PLog; changes: ChangeRow[] }) {
   const L = useL();
@@ -141,7 +143,7 @@ export function Measure({ log, changes }: { log: PLog; changes: ChangeRow[] }) {
                 </StatusPill>
                 {c.approvedAt && (
                   <span className="text-[11px] text-faint">
-                    {c.approvedBy} · {f.date(`${c.approvedAt}T12:00:00+04:00`)}
+                    {L({ en: c.approvedBy ?? "", ar: (c.approvedBy && APPROVERS_AR[c.approvedBy]) || c.approvedBy || "" })} · {f.date(`${c.approvedAt}T12:00:00+04:00`)}
                   </span>
                 )}
               </div>
