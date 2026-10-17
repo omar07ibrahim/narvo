@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useL, usePrefs } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { ApprovalSummary } from "@/lib/ai/events";
-import { FIELD_LABELS, OPTIONS, TYPE_META, type Draft, type ServiceRequest } from "../_lib/shared";
+import { FIELD_LABELS, OPTIONS, TYPE_META, daysAr, personL, type Draft, type ServiceRequest } from "../_lib/shared";
 
 type Fields = Draft["fields"];
 
@@ -72,7 +72,7 @@ export function RequestForm({
       onDraft(j.draft);
       onSubmitted(j.request, j.approval);
       toast.success(L({ en: `Submitted as ${j.request.id}`, ar: `قُدّم الطلب برقم ${j.request.id}` }), {
-        description: L({ en: `Routed to ${j.request.approver.name}`, ar: `أُحيل إلى ${j.request.approver.name}` }),
+        description: L({ en: `Routed to ${j.request.approver.name}`, ar: `أُحيل إلى ${personL(j.request.approver, "ar").name}` }),
       });
     } catch (e) {
       toast.error((e as Error).message);
@@ -184,9 +184,10 @@ export function RequestForm({
       <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border bg-surface px-3.5 py-2.5">
         <div className="text-[11.5px] leading-tight">
           <div className="text-muted-foreground">{L({ en: "Approver", ar: "المعتمِد" })}</div>
-          <div className="font-medium">{draft.approver.name}</div>
+          <div className="font-medium">{personL(draft.approver, lang).name}</div>
           <div className="text-[10.5px] text-muted-foreground">
-            {draft.approver.title} · SLA {draft.slaDays} {L({ en: draft.slaDays > 1 ? "working days" : "working day", ar: "يوم عمل" })}
+            {personL(draft.approver, lang).title} ·{" "}
+            {L({ en: `SLA ${draft.slaDays} ${draft.slaDays > 1 ? "working days" : "working day"}`, ar: `مهلة ${daysAr(draft.slaDays, "working")}` })}
           </div>
         </div>
         {submitted ? (

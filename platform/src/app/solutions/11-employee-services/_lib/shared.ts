@@ -192,6 +192,24 @@ export const NAMES_AR: Record<string, string> = {
   "Maryam Hassan Al Shamsi": "مريم حسن الشامسي",
 };
 
+/** Arabic forms of the approvers' job titles (the records keep them in English). */
+export const TITLES_AR: Record<string, string> = {
+  "Senior HR Services Officer": "أخصائي أول خدمات الموارد البشرية",
+  "IT Service Desk Lead": "رئيس مكتب خدمة تقنية المعلومات",
+  "Director, Field Operations & Inspection": "مدير إدارة العمليات الميدانية والتفتيش",
+  "Head, Permit Review Section": "رئيس قسم مراجعة التصاريح",
+  "Director, Planning & Building Permits": "مدير إدارة التخطيط وتصاريح البناء",
+  "Director, Housing & Community Services": "مدير إدارة الإسكان وخدمات المجتمع",
+  "Director, Digital Transformation Office": "مدير مكتب التحول الرقمي",
+  "Head, Housing Applications Section": "رئيس قسم الطلبات السكنية",
+  "Manager, Customer Happiness Centre": "مدير مركز سعادة المتعاملين",
+};
+
+/** A person (approver, assignee) as the UI shows them: the Arabic forms in Arabic, the record as is otherwise. */
+export function personL(p: { name: string; title: string }, lang: "en" | "ar") {
+  return lang === "ar" ? { name: NAMES_AR[p.name] ?? p.name, title: TITLES_AR[p.title] ?? p.title } : { name: p.name, title: p.title };
+}
+
 /** "19 Oct 2026" / "19 أكتوبر 2026" for an ISO day (YYYY-MM-DD). */
 export function dayLabel(iso: string, lang: "en" | "ar") {
   const d = new Date(`${iso.slice(0, 10)}T12:00:00+04:00`);
@@ -200,11 +218,13 @@ export function dayLabel(iso: string, lang: "en" | "ar") {
 }
 
 const arCount = (n: number, one: string, two: string, few: string, many: string) => (n === 1 ? one : n === 2 ? two : n >= 3 && n <= 10 ? `${n} ${few}` : `${n} ${many}`);
-/** Arabic duration such as «يومان و3 ساعات» or «5 ساعات و20 دقيقة». */
+/** Arabic duration such as «يومين و3 ساعات» or «5 ساعات و20 دقيقة». It always follows a word («خلال …»، «متأخر …»),
+ *  so the duals take the oblique form (يومين، ساعتين، دقيقتين), never «يومان». */
 export function durationAr(d: number, h: number, m: number) {
-  const hrs = (x: number) => arCount(x, "ساعة", "ساعتان", "ساعات", "ساعة");
-  const mins = (x: number) => arCount(x, "دقيقة", "دقيقتان", "دقائق", "دقيقة");
-  if (d >= 1) return h ? `${daysAr(d)} و${hrs(h)}` : daysAr(d);
+  const days = (x: number) => (x === 2 ? "يومين" : daysAr(x));
+  const hrs = (x: number) => arCount(x, "ساعة", "ساعتين", "ساعات", "ساعة");
+  const mins = (x: number) => arCount(x, "دقيقة", "دقيقتين", "دقائق", "دقيقة");
+  if (d >= 1) return h ? `${days(d)} و${hrs(h)}` : days(d);
   if (h >= 1) return m ? `${hrs(h)} و${mins(m)}` : hrs(h);
   return mins(m);
 }

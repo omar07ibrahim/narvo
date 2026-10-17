@@ -6,7 +6,7 @@ import { Check, Hand, LoaderCircle, ShieldCheck, X } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { useL } from "@/lib/i18n";
+import { useL, usePrefs } from "@/lib/i18n";
 import type { ApprovalSummary } from "@/lib/ai/events";
 import { cn } from "@/lib/utils";
 
@@ -32,6 +32,8 @@ export function ApprovalCard({
   compact?: boolean;
 }) {
   const L = useL();
+  const { lang } = usePrefs();
+  const who = lang === "ar" ? { name: approval.approver.nameAr ?? approval.approver.name, title: approval.approver.titleAr ?? approval.approver.title } : approval.approver;
   const [busy, setBusy] = useState<null | "approved" | "rejected">(null);
   const [status, setStatus] = useState(approval.status);
   const [comment, setComment] = useState("");
@@ -119,8 +121,8 @@ export function ApprovalCard({
               {initials(approval.approver.name)}
             </span>
             <div className="min-w-0 text-[11.5px] leading-tight">
-              <div className="font-medium">{approval.approver.name}</div>
-              <div className="text-muted-foreground">{approval.approver.title}</div>
+              <div className="font-medium">{who.name}</div>
+              <div className="text-muted-foreground">{who.title}</div>
             </div>
           </div>
           {!decided && showComment && (

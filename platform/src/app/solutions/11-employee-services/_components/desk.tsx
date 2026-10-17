@@ -207,7 +207,7 @@ export function ServiceDesk({
                 ))}
               <KeyValue k={L({ en: "Approver", ar: "المعتمِد" })} v={lang === "ar" ? (NAMES_AR[r.approver.name] ?? r.approver.name) : r.approver.name} />
               <KeyValue k={L({ en: "Service level", ar: "مستوى الخدمة" })} v={lang === "ar" ? daysAr(r.slaDays, "working") : `${r.slaDays} ${r.slaDays > 1 ? "working days" : "working day"}`} />
-              {r.assignee && <KeyValue k={L({ en: "Assignee", ar: "المكلّف" })} v={r.assignee} />}
+              {r.assignee && <KeyValue k={L({ en: "Assignee", ar: "المكلّف" })} v={lang === "ar" ? (NAMES_AR[r.assignee] ?? r.assignee) : r.assignee} />}
             </div>
             {r.rejectionNote && <p className="rounded-md border border-danger/25 bg-danger-soft p-2.5 text-[12px] text-danger">{r.rejectionNote}</p>}
             {r.resolution && (

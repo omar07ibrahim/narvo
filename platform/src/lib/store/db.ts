@@ -22,7 +22,8 @@ export interface Approval {
   title: string;
   summary: string;
   actionLabel: string;
-  approver: { name: string; title: string };
+  /** nameAr / titleAr: display forms for the Arabic UI only; records and the audit trail keep name and title */
+  approver: { name: string; title: string; nameAr?: string; titleAr?: string };
   requestedBy: string;
   effects: Effect[];
   payload?: unknown;

@@ -12,7 +12,7 @@ import {
   type Draft,
   type Employee,
   type RequestType,
-  type ServiceRequest, NAMES_AR, dayLabel, daysAr } from "./shared";
+  type ServiceRequest, NAMES_AR, TITLES_AR, dayLabel, daysAr } from "./shared";
 
 export const SOLUTION = "11-employee-services";
 export const REQUESTS = `${SOLUTION}/requests`;
@@ -559,7 +559,8 @@ export function submitDraft(draft: Draft, editedFields?: Fields, lang: "en" | "a
     title: lang === "ar" ? `${request.id} — ${d.title.ar} (${e.nameAr})` : `${request.id} — ${d.title.en} (${e.name})`,
     summary: (lang === "ar" ? `${e.nameAr}، ${e.titleAr} — ${fieldsSummary}` : `${e.name}, ${e.title} — ${fieldsSummary}`).slice(0, 380),
     actionLabel: lang === "ar" ? "اعتماد الطلب" : "Approve request",
-    approver: d.approver,
+    // the Arabic UI shows the approver in Arabic; the record keeps the English name for the audit trail
+    approver: { ...d.approver, nameAr: NAMES_AR[d.approver.name], titleAr: TITLES_AR[d.approver.title] },
     effects: [
       { type: "patch", collection: REQUESTS, id: request.id, patch: { status: "approved" } },
       { type: "audit", action: "Request approved", subject: `${request.id} · ${d.title.en}`, detail: `Queued for ${d.queue} fulfilment` },

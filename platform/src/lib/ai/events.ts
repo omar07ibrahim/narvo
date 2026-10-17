@@ -32,7 +32,8 @@ export interface ApprovalSummary {
   summary: string;
   solution: string;
   actionLabel: string;
-  approver: { name: string; title: string };
+  /** nameAr / titleAr: display forms for the Arabic UI only; records and the audit trail keep name and title */
+  approver: { name: string; title: string; nameAr?: string; titleAr?: string };
   status: "pending" | "approved" | "rejected";
   createdAt: number;
 }

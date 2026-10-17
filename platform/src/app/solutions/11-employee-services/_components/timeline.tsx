@@ -18,7 +18,7 @@ export function RequestTimeline({ r, compact }: { r: ServiceRequest; compact?: b
     steps.push({ key: "rejected", label: L({ en: "Rejected", ar: "رُفض" }), at: r.rejectedAt, who: approverName, tone: "danger" });
   } else {
     steps.push({ key: "approved", label: L({ en: "Approved", ar: "اعتُمد" }), at: r.approvedAt, who: approverName });
-    steps.push({ key: "in_fulfilment", label: L({ en: "In fulfilment", ar: "قيد التنفيذ" }), at: r.fulfilmentAt, who: r.assignee });
+    steps.push({ key: "in_fulfilment", label: L({ en: "In fulfilment", ar: "قيد التنفيذ" }), at: r.fulfilmentAt, who: r.assignee && lang === "ar" ? (NAMES_AR[r.assignee] ?? r.assignee) : r.assignee });
     steps.push({ key: "completed", label: L({ en: "Completed", ar: "اكتمل" }), at: r.completedAt, who: r.outputRef });
   }
   const currentIdx = steps.findIndex((s) => !s.at);
