@@ -85,7 +85,9 @@ export function Markdown({
     function Wrapped({ children: c }: { children?: ReactNode }) {
       return <Tag>{withCitations(c, citations, onCite)}</Tag>;
     };
-  const dir = /[؀-ۿ]/.test(children.slice(0, 200)) ? "rtl" : undefined;
+  // right-to-left only when the text is mostly Arabic: an English answer that quotes an Arabic name stays left-to-right
+  const head = children.slice(0, 400);
+  const dir = (head.match(/[؀-ۿ]/g)?.length ?? 0) > (head.match(/[A-Za-z]/g)?.length ?? 0) ? "rtl" : undefined;
   return (
     <div className={cn("prose-narvo", className)} dir={dir}>
       <ReactMarkdown
