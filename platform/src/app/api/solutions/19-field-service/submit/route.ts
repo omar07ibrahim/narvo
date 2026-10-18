@@ -1,3 +1,4 @@
+import { getPrefs } from "@/lib/ai/request";
 import { readBody } from "@/lib/ai/stream";
 import { addAudit, createApproval, kvGet, kvSet, patchRecord } from "@/lib/store/db";
 import { COL, SUPERVISOR, draftKey, getBrief, jobContext, loadInventory, loadJobs, loadReports } from "@/app/solutions/19-field-service/_lib/data";
@@ -70,16 +71,20 @@ export async function POST(req: Request) {
   const reportId = `RPT-26-${String(7310 + loadReports().length + 1).padStart(5, "0")}`;
   const brief = getBrief(job.id);
   const ordered = followJobs.filter((f) => f.status === "awaiting_parts");
-  const summary =
-    `${job.id} · ${asset.id} — completeness ${completeness.total}%. Root cause: ${report.rootCause.replace(/[.\s]+$/, "")}. ` +
+  const ar = getPrefs(req, body as Record<string, unknown>).lang === "ar";
+  const summary = ar
+    ? `${job.id} · ${asset.id} — اكتمال التقرير ${completeness.total}%. السبب الجذري: ${report.rootCause.replace(/[.\s]+$/, "")}. ` +
+      (followJobs.length ? `يُنشئ ${followJobs.length} مهمة متابعة: ${followJobs.map((f) => `${f.id} (${f.partsNeeded?.map((p) => p.partNo).join("، ") || "دون قطعة"}، الموعد ${f.scheduledFor.slice(0, 10)})`).join("؛ ")}. ` : "لا توجد مسائل مفتوحة. ") +
+      `${asset.criticality === "A" && followJobs.length ? "أصل من الفئة A مع مسألة مفتوحة — يُبلَّغ العميل في اليوم نفسه." : ""}`
+    : `${job.id} · ${asset.id} — completeness ${completeness.total}%. Root cause: ${report.rootCause.replace(/[.\s]+$/, "")}. ` +
     (followJobs.length ? `Creates ${followJobs.length} follow-up job(s): ${followJobs.map((f) => `${f.id} (${f.partsNeeded?.map((p) => p.partNo).join(", ") || "no part"}, target ${f.scheduledFor.slice(0, 10)})`).join("; ")}. ` : "No open issues. ") +
     `${asset.criticality === "A" && followJobs.length ? "Criticality A asset with an open issue — client informed the same day." : ""}`;
 
   const approval = createApproval({
     solution: "19-field-service",
-    title: `Approve service report ${reportId} — ${job.id}`,
+    title: ar ? `اعتماد تقرير الخدمة ${reportId} — ${job.id}` : `Approve service report ${reportId} — ${job.id}`,
     summary,
-    actionLabel: "Approve & close job",
+    actionLabel: ar ? "اعتماد وإغلاق المهمة" : "Approve & close job",
     approver: SUPERVISOR,
     requestedBy: tech.name,
     payload: { jobId: job.id, reportId },

@@ -7,7 +7,7 @@ export const SLUG = "19-field-service";
 export const COL = { jobs: `${SLUG}/jobs`, reports: `${SLUG}/reports`, history: `${SLUG}/history` };
 export const CORPUS = "raseen/knowledge/field-service";
 const DIR = "raseen/19-field-service";
-export const SUPERVISOR = { name: "Mohammed Rafiq", title: "HVAC Supervisor, Raseen FM" };
+export const SUPERVISOR = { name: "Mohammed Rafiq", title: "HVAC Supervisor, Raseen FM", nameAr: "محمد رفيق", titleAr: "مشرف التكييف، رصين لإدارة المرافق" };
 
 export const loadSites = () => readJson<Site[]>(`${DIR}/sites.json`);
 export const loadAssets = () => readJson<Asset[]>(`${DIR}/assets.json`);
